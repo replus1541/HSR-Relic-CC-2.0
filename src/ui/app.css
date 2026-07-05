@@ -1,0 +1,103 @@
+:root {
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #e9edf2;
+  background: #111317;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #111317;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 48px;
+}
+
+.app-header {
+  display: grid;
+  gap: 18px;
+  padding: 18px 0 22px;
+  border-bottom: 1px solid #2a3038;
+}
+
+.app-kicker {
+  margin: 0 0 6px;
+  color: #9ba7b5;
+  font-size: 13px;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+p {
+  color: #bdc6d2;
+  line-height: 1.65;
+}
+
+.app-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.app-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 13px;
+  border: 1px solid #303843;
+  border-radius: 8px;
+  color: #cdd5df;
+  background: #171b21;
+  font-size: 14px;
+}
+
+.app-nav a.is-active {
+  border-color: #7587a3;
+  color: #ffffff;
+  background: #263142;
+}
+
+.page-panel {
+  margin-top: 24px;
+  padding: 22px;
+  border: 1px solid #2a3038;
+  border-radius: 8px;
+  background: #171b21;
+}
+
+@media (min-width: 760px) {
+  .app-header {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "hsr-relic-cc-v2",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "dev:local": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "verify": "npm.cmd run build"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "vite": "^7.0.0"
+  }
+}

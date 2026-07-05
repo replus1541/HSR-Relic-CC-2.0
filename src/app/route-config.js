@@ -1,0 +1,31 @@
+import { ExtractionRoute } from "./routes/ExtractionRoute.jsx";
+import { HomeRoute } from "./routes/HomeRoute.jsx";
+import { LedgerRoute } from "./routes/LedgerRoute.jsx";
+import { LegacyDiffRoute } from "./routes/LegacyDiffRoute.jsx";
+
+export const routes = [
+  {
+    path: "/",
+    label: "홈",
+    title: "v2 작업 대시보드",
+    component: HomeRoute,
+  },
+  {
+    path: "/extraction",
+    label: "Extraction",
+    title: "Canonical Dataset 검토",
+    component: ExtractionRoute,
+  },
+  {
+    path: "/ledger",
+    label: "Ledger",
+    title: "Combat Ledger",
+    component: LedgerRoute,
+  },
+  {
+    path: "/legacy-diff",
+    label: "Legacy Diff",
+    title: "Legacy 비교",
+    component: LegacyDiffRoute,
+  },
+];
