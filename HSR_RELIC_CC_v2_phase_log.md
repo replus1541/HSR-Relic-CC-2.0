@@ -324,9 +324,9 @@
 
 ### 상태
 
-- 상태: in_progress
+- 상태: complete
 - 시작일: 2026-07-05
-- 완료일:
+- 완료일: 2026-07-05
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
@@ -339,6 +339,11 @@
 - 2026-07-05: `game-db` snapshot 4개와 `character-effects` snapshot 2개를 복사했습니다. 복사 대상은 `hoyowiki-character-skills`, `character-effect-candidates`, `attack-coefficient-candidates`, `lightcone-effect-candidates`, `curated-source-effects`, `source-effect-mappings`입니다.
 - 2026-07-05: `data/legacy-reference/manifest.json`을 작성했습니다. 각 entry에 source path, snapshot path, source origin/kind, runtime import 금지, calculation use, bytes를 기록했습니다.
 - 2026-07-05: Task 4-B complete. 다음 Task 4-C에는 manifest 파일 존재, path, purpose, prohibitedRuntimeImport flag 검증을 넘깁니다.
+- 2026-07-05: Task 4-C 시작. adapter/calculation 구현 없이 legacy manifest 검증 스크립트와 report 생성을 추가합니다.
+- 2026-07-05: `tools/validate_legacy_manifest.mjs`와 `validate:legacy` script를 추가했습니다. manifest schemaVersion, policy, entry id, snapshot path, purpose, `prohibitedRuntimeImport`, bytes를 검증합니다.
+- 2026-07-05: 첫 `npm.cmd run validate:legacy`는 manifest 검증 후 report write에서 Windows EPERM으로 실패했습니다. 같은 Task 범위에서 권한 상승 재실행했고 성공했습니다.
+- 2026-07-05: `reports/legacy/legacy-manifest-report.md`를 생성했습니다. manifest entries 6개, failed 0개를 기록했습니다.
+- 2026-07-05: Task 4-C complete. Phase 4-A/B/C 기준 Phase 4는 완료 처리합니다.
 
 ### 생성/수정 파일
 
@@ -351,6 +356,9 @@
 - `data/legacy-reference/character-effects/curated-source-effects.json`
 - `data/legacy-reference/character-effects/source-effect-mappings.json`
 - `reports/legacy/legacy-fixtures.md`
+- `reports/legacy/legacy-manifest-report.md`
+- `tools/validate_legacy_manifest.mjs`
+- `package.json`
 - `HSR_RELIC_CC_v2_phase_log.md`
 
 ### 설계 결정
@@ -359,11 +367,14 @@
 - manifest entry는 `purpose`, `sourceOrigin`, `sourceKind`, `prohibitedRuntimeImport`, `calculationUse`, `blockedReason`을 분리해서 기록합니다.
 - Phase 4-B 복사는 최소 adapter input 후보부터 시작하고, guide/default/manual mapping 자료는 blocked/reference로만 둡니다.
 - Phase 4-B snapshot은 runtime import 연결 없이 파일 보관과 manifest 기록까지만 수행합니다.
+- Phase 4-C validation은 manifest와 snapshot 파일 존재/정책만 검사하며 adapter 변환은 수행하지 않습니다.
 
 ### 검증
 
 - `npm.cmd run build`: Task 4-A 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
 - `npm.cmd run build`: Task 4-B 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+- `npm.cmd run validate:legacy`: 첫 실행은 report write EPERM으로 실패, 권한 상승 재실행 성공. entries=6, failed=0.
+- `npm.cmd run build`: Task 4-C 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
 
 ### 막힌 점 / 리스크
 
@@ -373,6 +384,7 @@
 
 - Phase 4-B에서 최소 legacy reference 후보를 `data/legacy-reference`로 복사하고 `manifest.json`을 작성합니다.
 - Phase 4-C에서 `manifest.json`의 entry path 존재, purpose, `prohibitedRuntimeImport: true`를 검증합니다.
+- Phase 5-A에서 adapter contract를 문서화하고, Phase 4 manifest entry shape를 adapter input contract에 반영합니다.
 
 ---
 

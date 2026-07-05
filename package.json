@@ -9,7 +9,8 @@
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
     "verify": "npm.cmd run build",
-    "validate:schema": "node tools/validate_schema.mjs"
+    "validate:schema": "node tools/validate_schema.mjs",
+    "validate:legacy": "node tools/validate_legacy_manifest.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.0.0",
