@@ -253,14 +253,42 @@
 
 ### 상태
 
-- 상태: not_started
-- 시작일:
+- 상태: in_progress
+- 시작일: 2026-07-05
 - 완료일:
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
 
--
+- 2026-07-05: Task 3-A 시작. runtime 구현 없이 canonical data model 문서를 먼저 작성합니다.
+- 2026-07-05: `docs/canonical-data-model.md`를 작성했습니다. `SourceRow`, `EffectRow`, `CoefficientRow`, `Condition`, `StackRule`, `ResolvedEffect`, `CombatLedgerRow`, `AggregationResult`의 필수/선택 필드와 계산 가능 여부 필드를 문서화했습니다.
+- 2026-07-05: `manual_hint`, `manual_guide`, fallback, audit reference가 계산 가능 row로 들어가지 않도록 source guard와 blocked reason 후보를 문서에 포함했습니다.
+- 2026-07-05: Task 3-A complete. 다음 Task 3-B에는 source origin, calculation status, blocked reason, value mode, effect type, attack type, target profile enum skeleton 작성을 넘깁니다.
+
+### 생성/수정 파일
+
+- `docs/canonical-data-model.md`
+- `HSR_RELIC_CC_v2_phase_log.md`
+
+### 설계 결정
+
+- schema runtime 구현 전에 문서로 field contract를 먼저 고정합니다.
+- source provenance와 calculation eligibility는 분리된 필드로 표현합니다.
+- provider, target, calculation subject, enemy target policy는 effect row에서 별도 축으로 유지합니다.
+- ledger row id와 aggregation row id를 UI trace 기준으로 사용합니다.
+
+### 검증
+
+- `npm.cmd run build`: Task 3-A 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+
+### 막힌 점 / 리스크
+
+- 없음.
+
+### 다음 Task로 넘길 항목
+
+- `sourceOrigin`, `calculationStatus`, `blockedReason`, `valueMode`, `effectType`, `attackType`, `targetProfile` enum skeleton을 `src/data-model/schemas`에 작성합니다.
+- Task 3-C validator에서 source guard, manual guard, value guard를 최소 검증으로 옮깁니다.
 
 ---
 
