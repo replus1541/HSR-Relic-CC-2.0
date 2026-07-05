@@ -613,14 +613,17 @@
 
 ### 상태
 
-- 상태: not_started
-- 시작일:
+- 상태: in_progress
+- 시작일: 2026-07-05
 - 완료일:
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
 
--
+- Task 9-A 시작: valueMode별 resolver 입력 context, ResolverResult shape, blockedReason 정책을 문서화했습니다.
+- `src/effect-engine/value-resolvers/README.md`에 ValueResolutionContext와 valueMode별 required context를 정의했습니다.
+- `reports/effect-engine/value-resolution-report.md`에 resolver contract와 9-C fixture 계획을 기록했습니다.
+- 실제 resolver 구현, dedupe, aggregation, 계산 로직은 구현하지 않았습니다.
 
 ---
 
