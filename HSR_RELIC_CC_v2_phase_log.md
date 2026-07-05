@@ -873,6 +873,18 @@
 - Task 16-B 시작: `tools/compare_legacy_and_v2.mjs`와 `diff:legacy` script를 추가했습니다.
 - diff runner는 v2 내부 fixture manifest를 읽고 expected/unexpected difference를 JSON/MD report로 분리합니다.
 - legacy result를 정답으로 강제하거나 v2 계산 로직을 수정하지 않았습니다.
+- Task 16-C 시작: `reports/diff/legacy-v2-triage.md`를 작성해 expected category와 backlog를 분리했습니다.
+- 현재 diff report 기준 unexpected difference는 0개입니다.
+- Phase 16 완료: fixture 정의, diff runner/report, triage report가 준비됐습니다.
+
+### 검증
+
+- `npm.cmd run diff:legacy`: 성공. fixtures=5, expected=5, unexpected=0.
+- `npm.cmd run build`: 성공. Vite 7.3.6 기준 production build 완료.
+
+### 다음 Task로 넘길 항목
+
+- Phase 17-A에서 schema/adapter/canonical/effect/ledger/import 검증을 한 명령으로 묶습니다.
 
 ---
 
