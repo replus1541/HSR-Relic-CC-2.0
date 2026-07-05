@@ -718,14 +718,17 @@
 
 ### 상태
 
-- 상태: not_started
-- 시작일:
+- 상태: in_progress
+- 시작일: 2026-07-05
 - 완료일:
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
 
--
+- Task 12-A 시작: aggregation result envelope와 bucket contract를 정의했습니다.
+- `src/calculator/aggregation-contract.js`에 AggregationBuckets, AggregationResultFields, empty result factory를 추가했습니다.
+- `reports/calculation/aggregation-report.md`에 stat/damage/enemy/party/additionalDamage bucket과 guardrail을 기록했습니다.
+- 실제 aggregation, runCalculationV2, UI, legacy 비교는 구현하지 않았습니다.
 
 ---
 
