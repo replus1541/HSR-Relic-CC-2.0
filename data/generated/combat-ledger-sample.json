@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedBy": "src/effect-engine/build-combat-ledger.js",
+  "generatedBy": "tools/validate_combat_ledger.mjs",
   "rows": [
     {
       "ledgerId": "ledger:resolved:effect:PlayerBoy_20:0",

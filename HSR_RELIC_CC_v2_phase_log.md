@@ -698,6 +698,19 @@
 - `data/generated/combat-ledger-sample.json`를 생성했습니다. 현재 rows 9개, usedForCalculation 6개, blocked/skipped 3개입니다.
 - blocked row는 blockedReason을 유지하고 used row는 resolvedValue를 필수로 둡니다.
 - stat/damage aggregation, UI trace 화면, manual guide 계산 유입은 구현하지 않았습니다.
+- Task 11-C 시작: `tools/validate_combat_ledger.mjs`와 `validate:combat-ledger` script를 추가했습니다.
+- validator는 ledger sample을 재생성하고 used row source trace/resolvedValue, blocked row blockedReason을 검증합니다.
+- source 없는 used ledger row fixture는 검증 실패로 차단됩니다.
+- Phase 11 완료: ledger mapping, ledger sample, validator/report가 준비됐습니다.
+
+### 검증
+
+- `npm.cmd run validate:combat-ledger`: 성공. rows 9개, used 6개, blocked 3개, source_guard=blocked.
+- `npm.cmd run build`: 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+
+### 다음 Task로 넘길 항목
+
+- Phase 12-A에서 aggregation result shape와 skeleton module을 정의합니다.
 
 ---
 
