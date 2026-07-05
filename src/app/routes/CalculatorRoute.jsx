@@ -23,6 +23,7 @@ const appTabs = [
 ];
 
 const defaultPartyIds = ["PlayerBoy_20", "Sparkle_00", "Sunday_10", "RuanMei_00"];
+const appVersionName = "2.001";
 const calculatorStateCookieName = "hsr_relic_cc_v2_calculator_state";
 const calculatorStateVersion = 1;
 const cookieMaxAgeSeconds = 60 * 60 * 24 * 180;
@@ -2685,6 +2686,10 @@ function SettingsSheet({ onClose, ownedCharacterEidolon = 0, onOwnedCharacterEid
             </button>
           ))}
         </div>
+        <footer className="calc-settings-version">
+          <span>HSR RELIC CC 2.0</span>
+          <strong>v{appVersionName}</strong>
+        </footer>
       </aside>
     </div>
   );

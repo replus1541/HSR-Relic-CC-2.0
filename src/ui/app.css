@@ -3420,6 +3420,24 @@ p {
   line-height: 1.35;
 }
 
+.calc-settings-version {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-top: 1px solid var(--calc-line);
+  color: var(--calc-muted);
+  padding: 10px 2px 2px;
+  font-size: 12.5px;
+  font-weight: 760;
+}
+
+.calc-settings-version strong {
+  color: var(--calc-text);
+  font-size: 13px;
+  font-weight: 900;
+}
+
 @media (min-width: 820px) {
   .calc-main-grid {
     grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
@@ -4253,12 +4271,86 @@ p {
     font-size: 14px;
   }
 
+  .calc-party-evaluation,
+  .calc-condition-compare {
+    font-size: 14px;
+  }
+
+  .calc-party-evaluation button,
+  .calc-party-evaluation select,
+  .calc-party-evaluation input,
+  .calc-condition-compare button,
+  .calc-condition-compare select,
+  .calc-condition-compare input {
+    font-size: 14px;
+  }
+
+  .calc-main-dealer-option strong,
+  .calc-current-party-summary-copy strong,
+  .calc-condition-editor-head h3,
+  .calc-damage-analysis-head h3,
+  .calc-damage-skill-head strong {
+    font-size: 15px;
+  }
+
+  .calc-main-dealer-option small,
+  .calc-current-party-summary-copy small,
+  .calc-enemy-card label,
+  .calc-damage-analysis-head p,
+  .calc-damage-skill-head small,
+  .calc-evaluation-group h3,
+  .calc-condition-row-main small,
+  .calc-condition-delta-strip small,
+  .calc-condition-empty-note {
+    font-size: 13px;
+  }
+
+  .calc-main-dealer-eidolon,
+  .calc-contribution-eidolon,
+  .calc-contribution-rank,
+  .calc-auto-recommend-keep-badge {
+    font-size: 12px;
+  }
+
+  .calc-main-dealer-trigger,
+  .calc-main-dealer-menu button,
+  .calc-enemy-card input,
+  .calc-enemy-card select,
+  .calc-text-action-button,
+  .calc-condition-row-main strong,
+  .calc-contribution-tabs button,
+  .calc-contribution-label strong,
+  .calc-contribution-unit,
+  .calc-contribution-row-card strong,
+  .calc-damage-skill-title-line span {
+    font-size: 14px;
+  }
+
+  .calc-evaluation-row b,
+  .calc-contribution-row-card b,
+  .calc-damage-skill-head b,
+  .calc-condition-delta-strip b {
+    font-size: 16px;
+  }
+
+  .calc-condition-row-main > span {
+    font-size: 13px;
+  }
+
+  .calc-contribution-row em.is-damage-gain small,
+  .calc-contribution-detail-list div small,
+  .calc-evaluation-source-label small,
+  .calc-contribution-detail-list .calc-evaluation-source-label small,
+  .calc-evaluation-source-meta small {
+    font-size: 12.5px;
+  }
+
   .calc-contribution-eidolon,
   .calc-contribution-rank,
   .calc-evaluation-source-label small,
   .calc-contribution-detail-list div small,
   .calc-contribution-detail-list .calc-evaluation-source-label small {
-    font-size: 12px;
+    font-size: 12.5px;
   }
 
   .calc-contribution-detail-list {

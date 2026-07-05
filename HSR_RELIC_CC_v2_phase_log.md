@@ -1730,6 +1730,29 @@
 - `npm.cmd run verify:damage-formulas`: passed; checks=10.
 - `npm.cmd run validate:imports`: passed.
 - `npm.cmd run verify:app`: passed.
+
+---
+
+## Mobile Readability and Version Label Pass
+
+### Status
+
+- status: completed
+- started: 2026-07-06
+- completed: 2026-07-06
+- request: increase mobile text readability for tabs 2 and 3, and add a visible version label starting from 2.001
+
+### Work Log
+
+- Increased mobile typography for the stat/damage tab and condition-compare tab, including main character selector, enemy settings, state cards, stat evaluation rows, contribution tabs, damage rows, and condition result rows.
+- Kept the typography override scoped to calculator tab 2 and tab 3 containers so the first tab layout is not broadly restyled.
+- Added `appVersionName = "2.001"`.
+- Added the settings-sheet footer showing `HSR RELIC CC 2.0` and `v2.001`.
+
+### Verification
+
+- `npm.cmd run build -- --emptyOutDir=false`: passed. Vite chunk-size warning remains.
+- `npm.cmd run verify:app`: passed.
 - `node tools\verify_elation_settings_ui.mjs`: passed with escalated browser launch; screenshots `v2-elation-settings-mobile-390.png` and `v2-condition-elation-settings-mobile-390.png`.
 - `node tools\inspect_stats_damage_v1_v2.mjs`: passed; screenshots regenerated under `artifacts/stats-damage-v1-v2`.
 
