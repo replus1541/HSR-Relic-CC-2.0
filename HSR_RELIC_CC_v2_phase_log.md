@@ -555,6 +555,9 @@
 - `src/extraction/build-canonical-dataset.js`를 추가해 source/effect/coefficient rows 입력, manifest counts, source/effect/coefficient 분포, policy marker를 반환하도록 했습니다.
 - `reports/extraction/canonical-dataset-report.md`에 Task 7-A 범위와 7-B로 넘길 source priority/readiness 정책을 기록했습니다.
 - priority 병합, 계산 가능 여부 판정, effect normalization, 계산 로직은 구현하지 않았습니다.
+- Task 7-B 시작: `src/extraction/source-policy.js`를 추가해 sourceOrigin 기반 priority와 calculationReady 정책을 정의했습니다.
+- canonical dataset builder가 source policy marker를 적용하도록 갱신했습니다. manual_hint/manual_guide/fallback/audit_reference는 계산 가능 row로 승격하지 않습니다.
+- `tools/validate_canonical_dataset.mjs`와 `validate:canonical-dataset` script를 추가해 manual_hint 계산 가능 우회가 검증 실패하도록 했습니다.
 
 ---
 

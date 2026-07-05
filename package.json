@@ -12,7 +12,8 @@
     "validate:schema": "node tools/validate_schema.mjs",
     "validate:legacy": "node tools/validate_legacy_manifest.mjs",
     "validate:adapters": "node tools/validate_adapters.mjs",
-    "data:adapters": "node tools/run_adapters.mjs"
+    "data:adapters": "node tools/run_adapters.mjs",
+    "validate:canonical-dataset": "node tools/validate_canonical_dataset.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.0.0",

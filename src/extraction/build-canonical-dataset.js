@@ -1,4 +1,6 @@
-﻿const emptyRows = Object.freeze([]);
+import { applySourcePolicy, summarizeSourcePolicy } from "./source-policy.js";
+
+const emptyRows = Object.freeze([]);
 
 function asRows(input, key) {
   const rows = input?.[key];
@@ -18,10 +20,12 @@ function collectUniqueIds(rows, field) {
 }
 
 export function buildCanonicalDataset(input = {}, options = {}) {
-  const sourceRows = [...asRows(input, "sourceRows")];
+  const rawSourceRows = [...asRows(input, "sourceRows")];
+  const sourceRows = options.applySourcePolicy === false ? rawSourceRows : applySourcePolicy(rawSourceRows);
   const effectRows = [...asRows(input, "effectRows")];
   const coefficientRows = [...asRows(input, "coefficientRows")];
   const generatedBy = options.generatedBy ?? "src/extraction/build-canonical-dataset.js";
+  const sourcePolicySummary = summarizeSourcePolicy(sourceRows);
 
   return {
     version: 1,
@@ -37,6 +41,7 @@ export function buildCanonicalDataset(input = {}, options = {}) {
       effectTypes: countBy(effectRows, "effectType"),
       coefficientAttackTypes: countBy(coefficientRows, "attackType"),
       characterIds: collectUniqueIds([...sourceRows, ...effectRows, ...coefficientRows], "characterId"),
+      sourcePolicy: sourcePolicySummary,
     },
     rows: {
       sourceRows,
@@ -44,8 +49,8 @@ export function buildCanonicalDataset(input = {}, options = {}) {
       coefficientRows,
     },
     policy: {
-      priorityApplied: false,
-      calculationReadinessApplied: false,
+      sourcePriorityApplied: options.applySourcePolicy !== false,
+      calculationReadinessApplied: options.applySourcePolicy !== false,
       manualGuideCalculationAllowed: false,
     },
   };
