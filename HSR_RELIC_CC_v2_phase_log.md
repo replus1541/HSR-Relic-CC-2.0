@@ -1835,3 +1835,15 @@
 - `git diff --check`: passed with CRLF conversion warnings only.
 - `node tools\inspect_calculator_mobile.mjs`: passed with escalated browser launch.
 - Mobile screenshots generated for 360/390/430px under `artifacts/calculator-mobile`, including character setup, stat/damage calculation, and condition compare tabs.
+
+### Follow-up
+
+- Restored text-included party slot profile images for the character setup tab.
+- Reduced character setup card density by separating primary stat label/detail text and lowering non-primary stat and type value hierarchy.
+- Kept speed and primary stat values visually stronger than HP/attack/energy recovery rows.
+- Reduced condition compare action button height/text size and lowered skill-row detail text hierarchy.
+- Reused the stat/damage contribution tab accent style for condition compare primary action styling.
+- Changed the mobile template import CTA from overlay/fixed positioning to normal flow so it no longer covers character cards.
+- Rebalanced mobile top tabs into a 3-column grid so the labels use the available width more evenly.
+- Bumped the visible settings version from `v2.005` to `v2.006`.
+- Verification: `npm.cmd run build -- --emptyOutDir=false` passed; `npm.cmd run verify:app` passed; `node tools\inspect_calculator_mobile.mjs` passed with escalated browser launch.

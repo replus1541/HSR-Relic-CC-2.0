@@ -2567,8 +2567,9 @@ p {
 }
 
 .calc-text-action-button.is-primary {
-  background: var(--calc-action);
-  color: var(--calc-action-text);
+  background: rgba(187, 121, 63, 0.16);
+  color: #c58b55;
+  box-shadow: inset 0 0 0 1px rgba(230, 165, 92, 0.21);
 }
 
 .calc-condition-actions-row {
@@ -3648,16 +3649,13 @@ p {
   }
 
   .calc-template-import-button {
-    position: fixed;
-    right: var(--m-page-x);
-    bottom: calc(env(safe-area-inset-bottom, 0px) + 10px);
-    left: var(--m-page-x);
-    z-index: 18;
-    width: auto;
-    min-height: 52px;
-    margin-top: 0;
+    position: static;
+    z-index: auto;
+    width: 100%;
+    min-height: 42px;
+    margin-top: 8px;
     border-radius: var(--m-card-radius);
-    font-size: var(--m-font-body);
+    font-size: 14px;
   }
 
   .calc-status-head strong {
@@ -3749,7 +3747,7 @@ p {
   .calc-precombat-stat-value {
     flex: 0 0 auto;
     min-width: 0;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     line-height: 1.25;
   }
@@ -3757,7 +3755,7 @@ p {
   .calc-precombat-stat-cell.is-role .calc-precombat-stat-value {
     flex: 1 1 auto;
     overflow: hidden;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     text-overflow: ellipsis;
   }
@@ -3768,6 +3766,8 @@ p {
   }
 
   .calc-precombat-stat-cell.is-primary .calc-stat-row-label {
+    display: grid;
+    gap: 1px;
     font-size: 11px;
     letter-spacing: 0;
   }
@@ -4573,6 +4573,25 @@ p {
   line-height: var(--text-metric-long-line);
 }
 
+.calc-precombat-stat-cell.is-speed .calc-precombat-stat-value {
+  font-size: var(--text-metric-size);
+  font-weight: var(--text-metric-weight);
+  line-height: var(--text-metric-line);
+}
+
+.calc-precombat-stat-cell.is-metric .calc-precombat-stat-value {
+  font-size: 18px;
+  font-weight: var(--text-metric-weight);
+  line-height: 24px;
+}
+
+.calc-precombat-stat-cell.is-role .calc-precombat-stat-value {
+  color: var(--calc-muted);
+  font-size: var(--text-label-size);
+  font-weight: var(--text-label-weight);
+  line-height: var(--text-label-line);
+}
+
 .calc-status-head span,
 .calc-status-card small,
 .calc-stat-row-label,
@@ -4672,15 +4691,19 @@ p {
 
   .calc-top-tabs button,
   .calc-top-tabs button.is-active {
-    flex: 0 0 auto;
-    min-width: max-content;
-    padding: 0 6px;
+    flex: none;
+    min-width: 0;
+    width: 100%;
+    padding: 0 4px;
     font-size: var(--text-tab-size);
     line-height: var(--text-tab-line);
   }
 
   .calc-top-tabs {
+    display: grid;
+    grid-template-columns: minmax(78px, 0.9fr) minmax(126px, 1.35fr) minmax(78px, 0.9fr);
     gap: 5px;
+    justify-content: stretch;
     scrollbar-width: none;
   }
 
@@ -4710,6 +4733,13 @@ p {
     opacity: 0.78;
   }
 
+  .calc-template-import-button {
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 8px);
+    min-height: 42px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
   .calc-status-head {
     grid-template-columns: 48px minmax(0, 1fr);
   }
@@ -4729,19 +4759,65 @@ p {
   }
 
   .calc-precombat-stats > .calc-precombat-stat-cell {
-    min-height: 48px;
+    min-height: 46px;
   }
 
   .calc-precombat-stat-value {
     max-width: 58%;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .calc-precombat-stat-cell.is-primary {
+    align-items: center;
+    gap: 6px;
+  }
+
+  .calc-precombat-stat-cell.is-primary .calc-stat-row-label {
+    display: grid;
+    gap: 1px;
+    white-space: normal;
+  }
+
+  .calc-precombat-stat-cell.is-primary .calc-stat-row-label span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .calc-precombat-stat-cell.is-primary .calc-precombat-stat-value {
+    font-size: var(--text-metric-long-size);
+    line-height: var(--text-metric-long-line);
+  }
+
+  .calc-precombat-stat-cell.is-speed .calc-precombat-stat-value {
     font-size: var(--text-metric-size);
     line-height: var(--text-metric-line);
   }
 
-  .calc-precombat-stat-cell.is-primary .calc-precombat-stat-value,
+  .calc-precombat-stat-cell.is-metric .calc-precombat-stat-value {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
   .calc-precombat-stat-cell.is-role .calc-precombat-stat-value {
-    font-size: var(--text-metric-long-size);
-    line-height: var(--text-metric-long-line);
+    max-width: 62%;
+    color: var(--calc-muted);
+    font-size: var(--text-label-size);
+    font-weight: var(--text-label-weight);
+    line-height: var(--text-label-line);
+  }
+
+  .calc-condition-actions-row .calc-text-action-button {
+    min-height: 32px;
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .calc-condition-row-main small {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18px;
   }
 
   .calc-evaluation-source-label small,

@@ -23,7 +23,7 @@ const appTabs = [
 ];
 
 const defaultPartyIds = ["PlayerBoy_20", "Sparkle_00", "Sunday_10", "RuanMei_00"];
-const appVersionName = "2.005";
+const appVersionName = "2.006";
 const calculatorStateCookieName = "hsr_relic_cc_v2_calculator_state";
 const calculatorStateVersion = 1;
 const cookieMaxAgeSeconds = 60 * 60 * 24 * 180;
@@ -795,7 +795,7 @@ function buildCharacterProfileRows(character, slot, selfStats) {
   ];
   for (const [label, stat] of getProfileStatSpecs(character, profile, slot)) {
     if (stat === primaryStat) continue;
-    rows.push({ label, value: formatCalculatedSelfStat(selfStats?.stats, stat), kind: "metric" });
+    rows.push({ label, value: formatCalculatedSelfStat(selfStats?.stats, stat), kind: stat === "speed" ? "speed" : "metric" });
   }
   return rows;
 }
@@ -890,7 +890,7 @@ function PartySlot({ slot, active, onSelect }) {
   return (
     <button className={`calc-party-slot ${active ? "is-active" : ""} ${character ? "" : "is-empty"}`} type="button" onClick={onSelect}>
       <span className="calc-party-face">
-        <CharacterAvatar character={character} />
+        <CharacterAvatar character={character} variant="withText" />
       </span>
       <strong>{character?.displayName ?? "빈 슬롯"}</strong>
       <span>E{slot.eidolon}</span>
@@ -953,12 +953,20 @@ function CharacterStatusCard({ slot, active, onSelect, onEidolonChange, onOpenLi
       </button>
 
       <div className="calc-precombat-stats">
-        {statRows.map(({ label, value, kind }) => (
+        {statRows.map(({ label, value, kind }) => {
+          const [groupLabel, detailLabel] = kind === "primary" && label.includes(":")
+            ? label.split(":").map((part) => part.trim())
+            : [label, ""];
+          return (
           <span key={label} className={`calc-precombat-stat-cell is-${kind}`}>
-            <small className="calc-stat-row-label">{label}</small>
+            <small className="calc-stat-row-label">
+              <span>{groupLabel}</span>
+              {detailLabel && <span>{detailLabel}</span>}
+            </small>
             <b className="calc-precombat-stat-value">{value}</b>
           </span>
-        ))}
+          );
+        })}
       </div>
     </article>
   );
