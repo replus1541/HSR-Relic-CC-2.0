@@ -403,10 +403,20 @@
 - 2026-07-05: `reports/adapter/adapter-contract.md`를 작성했습니다. `adapterId`, `sourceKind`, `load`, `normalize`, `report`, output shape, validation flow, source guard, manifest integration을 정의했습니다.
 - 2026-07-05: `src/adapters/README.md`에 contract 위치와 adapter report/count 원칙을 반영했습니다.
 - 2026-07-05: Task 5-A complete. 다음 Task 5-B에는 side-effect 없는 adapter registry skeleton과 placeholder adapter 폴더를 넘깁니다.
+- 2026-07-05: Task 5-B 시작. 실제 legacy/HoyoWiki parsing 없이 adapter registry와 contract helper skeleton만 작성합니다.
+- 2026-07-05: `src/adapters/adapter-contract.js`와 `src/adapters/adapter-registry.js`를 추가했습니다. `local-json`, `hoyowiki`, `curated-source` placeholder adapter를 registry에 등록했습니다.
+- 2026-07-05: placeholder adapter README 3개를 추가했습니다. 각 README에는 현재 파싱/계산 로직이 없고 이후 Phase에서 구현한다는 제한을 기록했습니다.
+- 2026-07-05: adapter registry import smoke를 실행해 `local-json,hoyowiki,curated-source`가 side-effect 없이 import되는 것을 확인했습니다.
+- 2026-07-05: Task 5-B complete. 다음 Task 5-C에는 adapter output validator 입력 shape와 placeholder output 검증을 넘깁니다.
 
 ### 생성/수정 파일
 
 - `reports/adapter/adapter-contract.md`
+- `src/adapters/adapter-contract.js`
+- `src/adapters/adapter-registry.js`
+- `src/adapters/local-json/README.md`
+- `src/adapters/hoyowiki/README.md`
+- `src/adapters/curated-source/README.md`
 - `src/adapters/README.md`
 - `HSR_RELIC_CC_v2_phase_log.md`
 
@@ -415,10 +425,14 @@
 - adapter는 source/snapshot을 canonical row 후보로 변환하는 경계이며 damage calculation을 수행하지 않습니다.
 - output은 `sourceRows`, `effectRows`, `coefficientRows`, `blockedRows`, report counts를 포함해야 합니다.
 - manifest entry의 `prohibitedRuntimeImport`, `allowCalculationSourcePromotion`, source provenance 정책을 adapter contract에 반영합니다.
+- registry skeleton은 import 가능하고 side effect가 없어야 합니다.
+- placeholder adapters는 empty output/report만 반환하며 source 파일을 읽지 않습니다.
 
 ### 검증
 
 - `npm.cmd run build`: Task 5-A 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+- adapter registry import smoke: 성공. `local-json,hoyowiki,curated-source`.
+- `npm.cmd run build`: Task 5-B 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
 
 ### 막힌 점 / 리스크
 
@@ -427,7 +441,7 @@
 ### 다음 Task로 넘길 항목
 
 - Phase 5-B에서 `src/adapters/adapter-contract.js`, `src/adapters/adapter-registry.js`, placeholder adapter README를 작성합니다.
-- registry skeleton은 import 가능하고 side effect가 없어야 하며 legacy JSON parsing은 아직 하지 않습니다.
+- Phase 5-C에서 adapter output validator를 추가하고 placeholder adapter output이 canonical 최소 shape를 만족하는지 검사합니다.
 
 ---
 
