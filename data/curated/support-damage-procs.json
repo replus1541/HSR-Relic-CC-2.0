@@ -1,0 +1,88 @@
+{
+  "procs": [
+    {
+      "key": "robinConcertoAdditionalDamage",
+      "ownerId": "Robin_00",
+      "label": "필살기 · 협주 추가피해",
+      "triggerAttackTypes": ["basic", "skill", "ultimate", "follow_up"],
+      "type": "additionalDamage",
+      "scalingOwner": "support",
+      "scalingStat": "atk",
+      "coefficient": 0.72,
+      "element": "physical",
+      "critMode": "fixed",
+      "critMultiplier": 2.5,
+      "sourceEffectRowId": "effect:Robin_00:2"
+    },
+    {
+      "key": "tingyunBenedictionAdditionalDamage",
+      "ownerId": "Tingyun_00",
+      "label": "전투스킬 · 축복 추가피해",
+      "triggerAttackTypes": ["basic", "skill", "ultimate", "follow_up"],
+      "type": "additionalDamage",
+      "scalingOwner": "active",
+      "scalingStat": "atk",
+      "coefficient": 0.2,
+      "element": "lightning",
+      "critMode": "active",
+      "sourceEffectRowId": "effect:Tingyun_00:2"
+    },
+    {
+      "key": "cerydraMilitaryMeritAdditionalDamage",
+      "ownerId": "Cerydra_00",
+      "label": "특성 · 군공 추가피해",
+      "triggerAttackTypes": ["basic", "skill", "ultimate", "follow_up"],
+      "type": "additionalDamage",
+      "scalingOwner": "support",
+      "scalingStat": "atk",
+      "coefficient": 0.3,
+      "element": "wind",
+      "critMode": "support",
+      "sourceEffectRowId": "effect:Cerydra_00:6"
+    },
+    {
+      "key": "cyreneFieldTrueDamage",
+      "ownerId": "Cyrene_00",
+      "label": "전투스킬 · 결계 확정피해",
+      "triggerAttackTypes": ["basic", "skill", "ultimate", "follow_up", "dot"],
+      "type": "trueDamageRatio",
+      "ratio": 0.12,
+      "sourceEffectRowId": "effect:Cyrene_00:19"
+    },
+    {
+      "key": "tribbieFieldTrueDamage",
+      "ownerId": "Tribbie_00",
+      "label": "특성 · 결계 확정피해",
+      "triggerAttackTypes": ["basic", "skill", "ultimate", "follow_up", "dot"],
+      "type": "trueDamageRatio",
+      "ratio": 0.24,
+      "sourceEffectRowId": "effect:Tribbie_00:3"
+    },
+    {
+      "key": "tribbieFieldAdditionalDamage",
+      "ownerId": "Tribbie_00",
+      "label": "필살기 · 결계 추가피해",
+      "triggerAttackTypes": ["basic", "skill", "ultimate", "follow_up"],
+      "type": "additionalDamage",
+      "scalingOwner": "support",
+      "scalingStat": "hp",
+      "coefficient": 0.06,
+      "element": "quantum",
+      "critMode": "none",
+      "sourceEffectRowId": "effect:Tribbie_00:5"
+    },
+    {
+      "key": "danHengPtWarriorAdditionalDamage",
+      "ownerId": "DanHengPT_00",
+      "label": "필살기 · 전우 추가피해",
+      "triggerAttackTypes": ["ultimate"],
+      "type": "additionalDamage",
+      "scalingOwner": "support",
+      "scalingStat": "atk",
+      "coefficient": 3.3,
+      "element": "active",
+      "critMode": "support",
+      "sourceEffectRowId": "effect:DanHengPT_00:0"
+    }
+  ]
+}

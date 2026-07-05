@@ -1678,6 +1678,32 @@
 - `npm.cmd run build -- --emptyOutDir=false`: passed. Vite chunk-size warning remains.
 - `npm.cmd run validate:imports`: passed.
 - `npm.cmd run verify:app`: passed.
+
+---
+
+## Party Recommendation Eidolon and Support Proc Damage Pass
+
+### Status
+
+- status: completed
+- started: 2026-07-06
+- completed: 2026-07-06
+- request: add owned-character bulk eidolon settings and include support additional/true damage in party recommendations
+
+### Work Log
+
+- Added a settings-sheet control for owned-character eidolon presets: E0, E1, E2, and E6.
+- Wired the preset to current party slots and party-recommendation candidate calculations so the recommendation pool uses the selected eidolon baseline.
+- Added `data/curated/support-damage-procs.json` for support-triggered damage procs.
+- Connected party recommendations to support proc damage for Robin, Tingyun, Cerydra, Cyrene, Tribbie, and Dan Heng PT entries.
+- Modeled additional damage as separate added damage and true damage as post-final direct damage ratio, while avoiding double-counting true damage rows that are already present in the battle ledger.
+
+### Verification
+
+- `npm.cmd run build -- --emptyOutDir=false`: passed. Vite chunk-size warning remains.
+- `npm.cmd run verify:damage-formulas`: passed; checks=10.
+- `npm.cmd run validate:imports`: passed.
+- `npm.cmd run verify:app`: passed.
 - `node tools\verify_elation_settings_ui.mjs`: passed with escalated browser launch; screenshots `v2-elation-settings-mobile-390.png` and `v2-condition-elation-settings-mobile-390.png`.
 - `node tools\inspect_stats_damage_v1_v2.mjs`: passed; screenshots regenerated under `artifacts/stats-damage-v1-v2`.
 

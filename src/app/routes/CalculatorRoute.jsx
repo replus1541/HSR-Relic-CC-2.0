@@ -9,6 +9,7 @@ import defaultCharacterBuilds from "../../../data/generated/default-character-bu
 import equipmentStatModel from "../../../data/generated/equipment-stat-model.json";
 import skillDamageMetadata from "../../../data/generated/skill-damage-metadata.json";
 import lightconeCandidates from "../../../data/legacy-reference/game-db/lightcone-effect-candidates.json";
+import supportDamageProcs from "../../../data/curated/support-damage-procs.json";
 import { buildBattleStatEvaluation, buildDamageContributionViews } from "../../calculator/battle-stat-evaluation.js";
 import { calculateBattleFinalStats } from "../../calculator/battle-final-stat-calculator.js";
 import { calculateSkillDamageCards } from "../../calculator/skill-damage-calculator.js";
@@ -138,6 +139,7 @@ const statLabels = {
   defenseIgnore: "방무",
   defenseDown: "방깎",
   vulnerability: "받피증",
+  additionalDamage: "추가피해",
 };
 
 const primaryStatLabels = {
@@ -159,6 +161,7 @@ function createInitialCalculatorState() {
     activeSlotId: "slot-1",
     enemy: { count: 3, level: 95, toughness: 90, resistance: 20 },
     partySpecificSettings: {},
+    ownedCharacterEidolon: 0,
   };
   const persisted = readPersistedCalculatorState();
   if (!persisted) return fallback;
@@ -171,6 +174,7 @@ function createInitialCalculatorState() {
     activeSlotId,
     enemy: sanitizeEnemy(persisted.enemy, fallback.enemy),
     partySpecificSettings: sanitizePartySpecificSettings(persisted.partySpecificSettings),
+    ownedCharacterEidolon: sanitizeEidolonPreset(persisted.ownedCharacterEidolon, fallback.ownedCharacterEidolon),
   };
 }
 
@@ -220,12 +224,13 @@ function readPersistedCalculatorState() {
   }
 }
 
-function writePersistedCalculatorState({ party, activeSlotId, enemy, partySpecificSettings }) {
+function writePersistedCalculatorState({ party, activeSlotId, enemy, partySpecificSettings, ownedCharacterEidolon }) {
   const payload = {
     version: calculatorStateVersion,
     activeSlotId,
     enemy: sanitizeEnemy(enemy),
     partySpecificSettings: sanitizePartySpecificSettings(partySpecificSettings),
+    ownedCharacterEidolon: sanitizeEidolonPreset(ownedCharacterEidolon, 0),
     party: party.map(serializePartySlot),
   };
   writeCookieValue(calculatorStateCookieName, encodeURIComponent(JSON.stringify(payload)), cookieMaxAgeSeconds);
@@ -455,6 +460,11 @@ function clampToAllowedNumber(value, allowedValues, fallback) {
 function clampInteger(value, min, max) {
   if (!Number.isFinite(Number(value))) return min;
   return Math.min(Math.max(Math.round(Number(value)), min), max);
+}
+
+function sanitizeEidolonPreset(value, fallback = 0) {
+  const number = Number(value);
+  return partyRecommendationEidolonOptions.some((option) => option.value === number) ? number : fallback;
 }
 
 function getCharacter(characterId) {
@@ -1447,6 +1457,12 @@ const contributionTabs = [
   { key: "party", label: "파티원 추천" },
 ];
 const partyRecommendationPreviewCount = 5;
+const partyRecommendationEidolonOptions = [
+  { value: 0, label: "명함" },
+  { value: 1, label: "1돌" },
+  { value: 2, label: "2돌" },
+  { value: 6, label: "6돌" },
+];
 
 function buildPartySpecificControls(party, activeSlotId) {
   const activeSlot = party.find((slot) => slot.slotId === activeSlotId) ?? party[0] ?? null;
@@ -1814,7 +1830,14 @@ function ContributionTabs({ value, onChange }) {
   );
 }
 
-function ContributionPanel({ viewMode, contributionViews, skillCards, partyRecommendationGroups = [] }) {
+function ContributionPanel({
+  viewMode,
+  contributionViews,
+  skillCards,
+  partyRecommendationGroups = [],
+  partyRecommendationEidolon = 0,
+  onPartyRecommendationEidolonChange,
+}) {
   const [expandedRows, setExpandedRows] = useState(() => new Set());
   const [expandedGroups, setExpandedGroups] = useState(() => new Set());
   const eidolonsByCharacterId = useMemo(() => buildEidolonMap(contributionViews?.battleResult), [contributionViews?.battleResult]);
@@ -1840,6 +1863,21 @@ function ContributionPanel({ viewMode, contributionViews, skillCards, partyRecom
       : buildPartyRecommendationGroups(skillCards, contributionViews);
     return (
       <section className="calc-contribution-panel" aria-label="파티원 추천">
+        <div className="calc-party-recommendation-toolbar" aria-label="추천 후보 성혼 기준">
+          <span>추천 기준</span>
+          <div className="calc-party-recommendation-eidolon-tabs">
+            {partyRecommendationEidolonOptions.map((option) => (
+              <button
+                key={option.value}
+                className={Number(partyRecommendationEidolon) === option.value ? "is-active" : ""}
+                type="button"
+                onClick={() => onPartyRecommendationEidolonChange?.(option.value)}
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
+        </div>
         <div className="calc-damage-analysis-list">
           {recommendationGroups.length ? recommendationGroups.map((group) => (
             <article key={group.key} className="calc-damage-skill-card calc-party-recommendation-card">
@@ -1868,7 +1906,7 @@ function ContributionPanel({ viewMode, contributionViews, skillCards, partyRecom
                           <div className="calc-contribution-label">
                             <strong>
                               <span>{row.ownerLabel}</span>
-                              <small className="calc-contribution-eidolon">E{getOwnerEidolon(eidolonsByCharacterId, row.ownerId)}</small>
+                              <small className="calc-contribution-eidolon">E{row.eidolon ?? getOwnerEidolon(eidolonsByCharacterId, row.ownerId)}</small>
                             </strong>
                           </div>
                         </div>
@@ -2000,7 +2038,7 @@ function buildPartyRecommendationGroups(skillCards = [], contributionViews = {})
   }).filter((group) => group.rows.length);
 }
 
-function buildPartyCandidateRecommendationGroups({ party = [], activeSlotId, enemy, baseSkillCards = [], scenarioSettings = {} } = {}) {
+function buildPartyCandidateRecommendationGroups({ party = [], activeSlotId, enemy, baseSkillCards = [], scenarioSettings = {}, candidateEidolon = 0 } = {}) {
   const baseBySkillId = new Map(baseSkillCards.map((card) => [card.id, card]));
   const activeSlot = party.find((slot) => slot.slotId === activeSlotId) ?? party[0] ?? null;
   if (!activeSlot?.characterId || !baseSkillCards.length) return [];
@@ -2019,6 +2057,7 @@ function buildPartyCandidateRecommendationGroups({ party = [], activeSlotId, ene
       baseBySkillId,
       alreadySelected: selectedIds.has(character.characterId),
       scenarioSettings,
+      candidateEidolon,
     }))
     .filter(Boolean);
 
@@ -2036,14 +2075,14 @@ function buildPartyCandidateRecommendationGroups({ party = [], activeSlotId, ene
   }).filter((group) => group.rows.length);
 }
 
-function buildCandidateDamageDelta({ character, party, activeSlotId, replacementSlots = [], enemy, baseBySkillId, alreadySelected, scenarioSettings = {} }) {
+function buildCandidateDamageDelta({ character, party, activeSlotId, replacementSlots = [], enemy, baseBySkillId, alreadySelected, scenarioSettings = {}, candidateEidolon = 0 }) {
   const skillRows = new Map();
   for (const replacementSlot of replacementSlots) {
     const candidateSlot = {
       ...createDefaultEquipmentForCharacter(character),
       slotId: replacementSlot.slotId,
       characterId: character.characterId,
-      eidolon: 0,
+      eidolon: candidateEidolon,
     };
     const candidateParty = party.map((slot) => (slot.slotId === replacementSlot.slotId ? candidateSlot : slot));
     const candidateStateControls = buildPartySpecificControls(candidateParty, activeSlotId);
@@ -2080,15 +2119,27 @@ function buildCandidateDamageDelta({ character, party, activeSlotId, replacement
     for (const candidateCard of candidateSkillCards) {
       const baseCard = baseBySkillId.get(candidateCard.id);
       if (!baseCard) continue;
-      const deltaDamage = Number(candidateCard.critDamage ?? 0) - Number(baseCard.critDamage ?? 0);
+      const supportProcDamage = calculateCandidateSupportProcDamage({
+        supportCharacter: character,
+        supportSlot: candidateSlot,
+        activeCard: candidateCard,
+        activeBattleResult: candidateBattleResult,
+        enemy,
+      });
+      const adjustedCandidateDamage = Number(candidateCard.critDamage ?? 0) + supportProcDamage.damage;
+      const deltaDamage = adjustedCandidateDamage - Number(baseCard.critDamage ?? 0);
       const sourceRows = buildSkillSourceRows(candidateCard, contributionViews.sourceRows ?? [])
         .filter((row) => row.ownerId === character.characterId)
         .sort(sortSourceRowsByContribution);
+      if (supportProcDamage.rows.length) {
+        sourceRows.unshift(...supportProcDamage.rows);
+      }
       const gainRatio = Number(baseCard.critDamage ?? 0) > 0 ? deltaDamage / Number(baseCard.critDamage ?? 0) : 0;
       const nextRow = {
         key: `${candidateCard.id}:${character.characterId}`,
         ownerId: character.characterId,
         ownerLabel: character.displayName ?? character.name ?? character.characterId,
+        eidolon: candidateEidolon,
         deltaDamage,
         gainRatio,
         percent: gainRatio,
@@ -2102,6 +2153,119 @@ function buildCandidateDamageDelta({ character, party, activeSlotId, replacement
     }
   }
   return { characterId: character.characterId, skillRows };
+}
+
+function calculateCandidateSupportProcDamage({ supportCharacter, supportSlot, activeCard, activeBattleResult, enemy }) {
+  if (!supportCharacter?.characterId || !activeCard) return { damage: 0, rows: [] };
+  const procs = (supportDamageProcs.procs ?? [])
+    .filter((proc) => proc.ownerId === supportCharacter.characterId)
+    .filter((proc) => (proc.triggerAttackTypes ?? []).includes(activeCard.attackType));
+  if (!procs.length) return { damage: 0, rows: [] };
+
+  const supportSelf = calculateSelfEquipmentStats({
+    character: supportCharacter,
+    slot: supportSlot,
+    defaultBuild: getDefaultBuild(supportCharacter.characterId),
+    characterStatBaseline,
+    equipmentStatModel,
+    lightCones,
+  });
+  const supportStats = supportSelf.stats ?? {};
+  const activeStats = activeBattleResult?.finalStats ?? {};
+  const rows = procs
+    .map((proc) => {
+      const damage = calculateSupportProcDamageValue({
+        proc,
+        supportStats,
+        activeStats,
+        activeCard,
+        activeBattleResult,
+        enemy,
+      });
+      if (!Number.isFinite(damage) || damage <= 0) return null;
+      const stat = proc.type === "trueDamageRatio" ? "trueDamageRatio" : "additionalDamage";
+      return {
+        id: `support-proc:${proc.key}:${activeCard.id}`,
+        ownerId: supportCharacter.characterId,
+        ownerLabel: supportCharacter.displayName ?? supportCharacter.name ?? supportCharacter.characterId,
+        label: proc.label,
+        stat,
+        effectiveStat: stat,
+        value: damage,
+        effectiveValue: damage,
+        contributionValue: damage,
+        sourceType: "characterSkill",
+      };
+    })
+    .filter(Boolean);
+  return {
+    damage: rows.reduce((sum, row) => sum + Number(row.contributionValue ?? 0), 0),
+    rows,
+  };
+}
+
+function calculateSupportProcDamageValue({ proc, supportStats = {}, activeStats = {}, activeCard, activeBattleResult, enemy }) {
+  if (proc.type === "trueDamageRatio") {
+    if (isSupportProcAlreadyApplied(proc, activeBattleResult)) return 0;
+    return Number(activeCard?.directCritDamage ?? activeCard?.critDamage ?? 0) * Number(proc.ratio ?? 0);
+  }
+  const stats = proc.scalingOwner === "active" ? activeStats : supportStats;
+  const scalingValue = Number(stats[proc.scalingStat] ?? 0);
+  if (!Number.isFinite(scalingValue) || scalingValue <= 0) return 0;
+  const critMultiplier = resolveSupportProcCritMultiplier(proc, supportStats, activeStats);
+  const attackDamageKey = getAttackDamageStatKey(activeCard?.attackType);
+  const damageBoost = Number(stats.allDamage ?? 0)
+    + Number(stats.elementDamage ?? 0)
+    + Number(stats[attackDamageKey] ?? 0);
+  return Math.max(0, scalingValue
+    * Number(proc.coefficient ?? 0)
+    * (1 + damageBoost)
+    * critMultiplier
+    * calculateSupportDefenseMultiplier(enemy?.level)
+    * calculateSupportResistanceMultiplier(enemy?.resistance)
+    * calculateSupportBrokenMultiplier(enemy));
+}
+
+function resolveSupportProcCritMultiplier(proc, supportStats = {}, activeStats = {}) {
+  if (proc.critMode === "none") return 1;
+  if (proc.critMode === "fixed") return Number(proc.critMultiplier ?? 1);
+  const stats = proc.critMode === "active" ? activeStats : supportStats;
+  return 1 + Number(stats.critDamage ?? 0);
+}
+
+function getAttackDamageStatKey(attackType) {
+  return {
+    basic: "basicDamage",
+    skill: "skillDamage",
+    ultimate: "ultimateDamage",
+    follow_up: "followDamage",
+    dot: "dotDamage",
+  }[attackType] ?? null;
+}
+
+function isSupportProcAlreadyApplied(proc, battleResult) {
+  if (!proc.sourceEffectRowId) return false;
+  return (battleResult?.appliedRows ?? []).some((row) => (
+    row.ownerId === proc.ownerId
+    && (row.effectRowId === proc.sourceEffectRowId || row.sourceTrace?.effectRowId === proc.sourceEffectRowId)
+    && row.stat === proc.type
+  ));
+}
+
+function calculateSupportDefenseMultiplier(enemyLevel = 95) {
+  const attackerLevel = 80;
+  const attackerTerm = attackerLevel + 20;
+  const enemyTerm = Number(enemyLevel ?? 95) + 20;
+  return attackerTerm / (attackerTerm + enemyTerm);
+}
+
+function calculateSupportResistanceMultiplier(enemyResistance = 20) {
+  const resistance = Number(enemyResistance ?? 20) / 100;
+  return Math.min(Math.max(1 - resistance, 0.1), 2);
+}
+
+function calculateSupportBrokenMultiplier(enemy = {}) {
+  return enemy?.isBroken === false ? 0.9 : 1;
 }
 
 function formatContributionUnit(row) {
@@ -2460,7 +2624,7 @@ function AppliedEffectPanel({ battleResult }) {
   );
 }
 
-function SettingsSheet({ onClose }) {
+function SettingsSheet({ onClose, ownedCharacterEidolon = 0, onOwnedCharacterEidolonChange }) {
   const links = [
     { label: "데이터 검증", note: "스킬, 성혼, 계수, 효과 추출 현황", href: "/extraction" },
     { label: "효과 원장", note: "계산 적용/미적용 효과 추적", href: "/ledger" },
@@ -2479,6 +2643,24 @@ function SettingsSheet({ onClose }) {
         </div>
 
         <div className="calc-settings-list">
+          <section className="calc-settings-control-card" aria-label="보유 캐릭터 성혼 기준">
+            <div>
+              <strong>보유 캐릭터 성혼 기준</strong>
+              <small>현재 파티와 파티원 추천 후보를 같은 성혼 기준으로 계산</small>
+            </div>
+            <div className="calc-settings-segmented">
+              {partyRecommendationEidolonOptions.map((option) => (
+                <button
+                  key={option.value}
+                  className={Number(ownedCharacterEidolon) === option.value ? "is-active" : ""}
+                  type="button"
+                  onClick={() => onOwnedCharacterEidolonChange?.(option.value)}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          </section>
           {links.map((link) => (
             <button key={link.href} className="calc-settings-action" type="button" onClick={() => window.location.assign(link.href)}>
               <span aria-hidden="true">D</span>
@@ -2762,6 +2944,7 @@ export function CalculatorRoute() {
   const [activeSlotId, setActiveSlotId] = useState(initialState.activeSlotId);
   const [enemy, setEnemy] = useState(initialState.enemy);
   const [partySpecificSettings, setPartySpecificSettings] = useState(initialState.partySpecificSettings);
+  const [ownedCharacterEidolon, setOwnedCharacterEidolon] = useState(initialState.ownedCharacterEidolon);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [pickerOpen, setPickerOpen] = useState(false);
   const [lightconeSlotId, setLightconeSlotId] = useState(null);
@@ -2813,11 +2996,12 @@ export function CalculatorRoute() {
     enemy,
     baseSkillCards: skillCards,
     scenarioSettings: partySpecificSettings,
-  }), [activeSlotId, enemy, party, partySpecificSettings, skillCards]);
+    candidateEidolon: ownedCharacterEidolon,
+  }), [activeSlotId, enemy, ownedCharacterEidolon, party, partySpecificSettings, skillCards]);
 
   useEffect(() => {
-    writePersistedCalculatorState({ party, activeSlotId, enemy, partySpecificSettings });
-  }, [activeSlotId, enemy, party, partySpecificSettings]);
+    writePersistedCalculatorState({ party, activeSlotId, enemy, partySpecificSettings, ownedCharacterEidolon });
+  }, [activeSlotId, enemy, ownedCharacterEidolon, party, partySpecificSettings]);
 
   function patchActiveSlot(patch) {
     setParty((current) => current.map((slot) => (slot.slotId === activeSlotId ? { ...slot, ...patch } : slot)));
@@ -2825,6 +3009,12 @@ export function CalculatorRoute() {
 
   function patchSlot(slotId, patch) {
     setParty((current) => current.map((slot) => (slot.slotId === slotId ? { ...slot, ...patch } : slot)));
+  }
+
+  function applyOwnedCharacterEidolon(value) {
+    const eidolon = sanitizeEidolonPreset(value, ownedCharacterEidolon);
+    setOwnedCharacterEidolon(eidolon);
+    setParty((current) => current.map((slot) => ({ ...slot, eidolon })));
   }
 
   return (
@@ -2917,7 +3107,14 @@ export function CalculatorRoute() {
           ) : null}
           <ContributionTabs value={contributionViewMode} onChange={setContributionViewMode} />
           {contributionViewMode === "party" ? (
-            <ContributionPanel viewMode={contributionViewMode} contributionViews={contributionViews} skillCards={skillCards} partyRecommendationGroups={partyRecommendationGroups} />
+            <ContributionPanel
+              viewMode={contributionViewMode}
+              contributionViews={contributionViews}
+              skillCards={skillCards}
+              partyRecommendationGroups={partyRecommendationGroups}
+              partyRecommendationEidolon={ownedCharacterEidolon}
+              onPartyRecommendationEidolonChange={applyOwnedCharacterEidolon}
+            />
           ) : (
             <DamageResultPanel battleResult={battleResult} skillCards={skillCards} contributionViews={contributionViews} viewMode={contributionViewMode} />
           )}
@@ -2935,7 +3132,13 @@ export function CalculatorRoute() {
           baseScenarioSettings={partySpecificSettings}
         />
       )}
-      {settingsOpen && <SettingsSheet onClose={() => setSettingsOpen(false)} />}
+      {settingsOpen && (
+        <SettingsSheet
+          onClose={() => setSettingsOpen(false)}
+          ownedCharacterEidolon={ownedCharacterEidolon}
+          onOwnedCharacterEidolonChange={applyOwnedCharacterEidolon}
+        />
+      )}
       {pickerOpen && (
         <CharacterPickerSheet
           value={activeSlot.characterId}
