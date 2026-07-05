@@ -694,6 +694,10 @@
 - `src/effect-engine/build-combat-ledger.js`에 CombatLedgerFieldMapping, RequiredCombatLedgerFields, contract row 생성 skeleton을 추가했습니다.
 - `reports/calculation/combat-ledger-report.md`에 ledger field source와 guardrail을 기록했습니다.
 - aggregation, UI, sample ledger 생성, manual guide 계산 유입은 구현하지 않았습니다.
+- Task 11-B 시작: `buildCombatLedger()`를 구현해 deduped effect를 used/blocked ledger row로 변환합니다.
+- `data/generated/combat-ledger-sample.json`를 생성했습니다. 현재 rows 9개, usedForCalculation 6개, blocked/skipped 3개입니다.
+- blocked row는 blockedReason을 유지하고 used row는 resolvedValue를 필수로 둡니다.
+- stat/damage aggregation, UI trace 화면, manual guide 계산 유입은 구현하지 않았습니다.
 
 ---
 

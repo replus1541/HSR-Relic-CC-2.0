@@ -11,6 +11,7 @@ export const CombatLedgerFieldMapping = Object.freeze({
   resolvedValue: "dedupedEffect.resolvedValue when used",
   blockedReason: "dedupedEffect.blockedReason or dedupeResult.reason when blocked",
   usedForCalculation: "dedupeResult.role === winner and calculationStatus is calculation_ready",
+  category: "effect",
   sourceTrace: "source, normalized, resolved, dedupe ids",
 });
 
@@ -25,13 +26,24 @@ export const RequiredCombatLedgerFields = Object.freeze([
   "targetPolicy",
   "stat",
   "usedForCalculation",
+  "category",
   "sourceTrace",
 ]);
+
+function mapBy(rows, keyFn) {
+  const map = new Map();
+  for (const row of rows ?? []) {
+    const key = keyFn(row);
+    if (key) map.set(key, row);
+  }
+  return map;
+}
 
 export function createCombatLedgerContractRow(dedupedEffect, context = {}) {
   const normalizedEffect = context.normalizedEffect ?? {};
   const ownerId = normalizedEffect.effectProviderId ?? context.ownerId ?? "unknown_owner";
   const usedForCalculation = dedupedEffect?.dedupeResult?.role === "winner" && dedupedEffect?.calculationStatus === "calculation_ready";
+  const blockedReason = usedForCalculation ? null : dedupedEffect?.blockedReason ?? dedupedEffect?.dedupeResult?.reason ?? "not_used_for_calculation";
 
   return {
     ledgerId: `ledger:${dedupedEffect?.id ?? "unknown"}`,
@@ -44,13 +56,27 @@ export function createCombatLedgerContractRow(dedupedEffect, context = {}) {
     targetPolicy: normalizedEffect.targetScope ?? null,
     stat: dedupedEffect?.stat ?? null,
     resolvedValue: usedForCalculation ? dedupedEffect.resolvedValue : null,
-    blockedReason: usedForCalculation ? null : dedupedEffect?.blockedReason ?? dedupedEffect?.dedupeResult?.reason ?? "not_used_for_calculation",
+    blockedReason,
+    skippedReason: blockedReason,
     usedForCalculation,
+    category: "effect",
+    calculationStatus: dedupedEffect?.calculationStatus ?? "blocked",
     sourceTrace: {
       sourceId: dedupedEffect?.sourceId ?? null,
+      sourceRowId: dedupedEffect?.sourceId ?? null,
       effectRowId: dedupedEffect?.effectRowId ?? null,
       resolvedEffectId: dedupedEffect?.id ?? null,
+      normalizedEffectId: normalizedEffect.id ?? null,
       canonicalEffectKey: dedupedEffect?.canonicalEffectKey ?? null,
+      dedupeRole: dedupedEffect?.dedupeResult?.role ?? null,
     },
   };
+}
+
+export function buildCombatLedger(dedupedEffects = [], context = {}) {
+  const normalizedByEffectRowId = mapBy(context.normalizedEffects, (row) => row.effectRowId);
+  return dedupedEffects.map((dedupedEffect) => createCombatLedgerContractRow(dedupedEffect, {
+    ...context,
+    normalizedEffect: normalizedByEffectRowId.get(dedupedEffect.effectRowId),
+  }));
 }
