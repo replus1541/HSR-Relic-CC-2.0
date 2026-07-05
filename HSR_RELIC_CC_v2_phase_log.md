@@ -820,14 +820,17 @@
 
 ### 상태
 
-- 상태: not_started
-- 시작일:
+- 상태: in_progress
+- 시작일: 2026-07-05
 - 완료일:
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
 
--
+- Task 15-A 시작: SRTools/FreeSR import 결과가 들어갈 canonical loadout state shape를 정의했습니다.
+- `src/data-model/schemas/loadout-state.js`에 LoadoutSourceKind, empty loadout state factory, required field list를 추가했습니다.
+- `reports/import/import-state-contract.md`에 roster/party/equipment/hints/warnings/failedRows contract와 guardrail을 기록했습니다.
+- parser 구현, 계산 로직, legacy state 재사용, manual guide 계산 유입은 수행하지 않았습니다.
 
 ---
 
