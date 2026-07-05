@@ -460,9 +460,9 @@
 
 ### 상태
 
-- 상태: in_progress
+- 상태: complete
 - 시작일: 2026-07-05
-- 완료일:
+- 완료일: 2026-07-05
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
@@ -480,6 +480,11 @@
 - 2026-07-05: `reports/adapter/hoyowiki-report.md`를 생성했습니다. sourceRows 17개, coefficientRows 24개, sampledCharacters 3명을 기록했습니다.
 - 2026-07-05: calculation-ready SourceRow의 `sourceText`와 `sourcePath` 존재 여부를 smoke로 확인했습니다.
 - 2026-07-05: Task 6-B complete. 다음 Task 6-C에는 adapter run script와 generated output 생성을 넘깁니다.
+- 2026-07-05: Task 6-C 시작. local-json/HoyoWiki adapter output을 generated JSON으로 저장하는 adapter runner를 추가합니다.
+- 2026-07-05: `tools/run_adapters.mjs`와 `data:adapters` script를 추가했습니다. 첫 실행은 `data/generated/source-rows.json` write EPERM으로 실패했고, 같은 Task 범위에서 권한 상승 재실행해 성공했습니다.
+- 2026-07-05: `data/generated/source-rows.json`, `effect-rows.json`, `coefficient-rows.json`를 생성했습니다. sourceRows 26개, effectRows 9개, coefficientRows 24개입니다.
+- 2026-07-05: `reports/adapter/adapter-run-report.md`를 생성했습니다. adapter별 row count와 warning count를 기록했습니다.
+- 2026-07-05: Task 6-C complete. Phase 6-A/B/C 기준 Phase 6은 완료 처리합니다.
 
 ### 생성/수정 파일
 
@@ -491,6 +496,12 @@
 - `tools/validate_adapters.mjs`
 - `reports/adapter/local-json-report.md`
 - `reports/adapter/hoyowiki-report.md`
+- `tools/run_adapters.mjs`
+- `data/generated/source-rows.json`
+- `data/generated/effect-rows.json`
+- `data/generated/coefficient-rows.json`
+- `reports/adapter/adapter-run-report.md`
+- `package.json`
 - `HSR_RELIC_CC_v2_phase_log.md`
 
 ### 설계 결정
@@ -501,6 +512,8 @@
 - `manual_hint`나 guide fallback은 adapter output으로 승격하지 않습니다.
 - HoyoWiki adapter는 source description이 있는 skill row만 calculation-ready SourceRow로 내보냅니다.
 - HoyoWiki adapter의 coefficient row는 아직 계산에 사용하지 않고 adapter output 후보로만 검증합니다.
+- `data:adapters` output은 canonical dataset 병합이 아니라 adapter별 row 후보를 단순 연결한 generated output입니다.
+- curated-source adapter는 아직 placeholder라 row 0개를 반환합니다.
 
 ### 검증
 
@@ -510,6 +523,10 @@
 - `npm.cmd run validate:adapters`: Task 6-B 성공. adapters=3, invalid_manual_hint_guard=blocked.
 - HoyoWiki output smoke: sourceRows 17개, coefficientRows 24개, sourceText/sourcePath missing 0개.
 - `npm.cmd run build`: Task 6-B 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+- `npm.cmd run data:adapters`: 첫 실행은 generated output write EPERM으로 실패, 권한 상승 재실행 성공. sourceRows=26, effectRows=9, coefficientRows=24.
+- `npm.cmd run validate:adapters`: Task 6-C 성공. adapters=3, invalid_manual_hint_guard=blocked.
+- generated output smoke: sourceRows 26개, effectRows 9개, coefficientRows 24개.
+- `npm.cmd run build`: Task 6-C 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
 
 ### 막힌 점 / 리스크
 
@@ -519,6 +536,7 @@
 
 - Phase 6-B에서 HoyoWiki adapter가 skill text/source path를 SourceRow로 변환하고 sourceText/sourcePath 없는 calculation-ready row를 차단합니다.
 - Phase 6-C에서 adapter runner가 local-json/HoyoWiki output을 `data/generated/source-rows.json`, `effect-rows.json`, `coefficient-rows.json`로 저장합니다.
+- Phase 7-A에서 generated adapter output을 받아 canonical dataset shape로 묶는 skeleton을 작성합니다.
 
 ---
 

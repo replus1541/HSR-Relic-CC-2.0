@@ -1,0 +1,123 @@
+{
+  "version": 1,
+  "generatedBy": "tools/run_adapters.mjs",
+  "rows": [
+    {
+      "id": "effect:PlayerBoy_20:0",
+      "sourceId": "source:PlayerBoy_20:0",
+      "sourceOrigin": "raw_source",
+      "effectType": "buff",
+      "stat": "critDamage",
+      "rawValue": 0.132,
+      "valueMode": "skill_level_scaled",
+      "effectProviderId": "PlayerBoy_20",
+      "effectTargetPolicy": "allAllies",
+      "calculationSubjectPolicy": "allAllies",
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "effect:PlayerBoy_20:1",
+      "sourceId": "source:PlayerBoy_20:1",
+      "sourceOrigin": "raw_source",
+      "effectType": "buff",
+      "stat": "critRate",
+      "rawValue": 0.1,
+      "valueMode": "eidolon_adjusted",
+      "effectProviderId": "PlayerBoy_20",
+      "effectTargetPolicy": "allAllies",
+      "calculationSubjectPolicy": "allAllies",
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "effect:PlayerBoy_20:2",
+      "sourceId": "source:PlayerBoy_20:2",
+      "sourceOrigin": "raw_source",
+      "effectType": "buff",
+      "stat": "specialFinal",
+      "rawValue": 0.06,
+      "valueMode": "eidolon_adjusted",
+      "effectProviderId": "PlayerBoy_20",
+      "effectTargetPolicy": "singleAlly",
+      "calculationSubjectPolicy": "singleAlly",
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "effect:PlayerBoy_00:0",
+      "sourceId": "source:PlayerBoy_00:0",
+      "sourceOrigin": "raw_source",
+      "effectType": "buff",
+      "stat": "atkRatio",
+      "rawValue": 0.2,
+      "valueMode": "dynamic_formula",
+      "effectProviderId": "PlayerBoy_00",
+      "effectTargetPolicy": "self",
+      "calculationSubjectPolicy": "self",
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "effect:PlayerBoy_00:1",
+      "sourceId": "source:PlayerBoy_00:1",
+      "sourceOrigin": "raw_source",
+      "effectType": "buff",
+      "stat": "allDamage",
+      "rawValue": 0.25,
+      "valueMode": "dynamic_formula",
+      "effectProviderId": "PlayerBoy_00",
+      "effectTargetPolicy": "self",
+      "calculationSubjectPolicy": "self",
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "effect:PlayerBoy_00:2",
+      "sourceId": "source:PlayerBoy_00:2",
+      "sourceOrigin": "raw_source",
+      "effectType": "buff",
+      "stat": "critRate",
+      "rawValue": 0.25,
+      "valueMode": "eidolon_adjusted",
+      "effectProviderId": "PlayerBoy_00",
+      "effectTargetPolicy": "self",
+      "calculationSubjectPolicy": "self",
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "effect:PlayerBoy_40:0",
+      "sourceId": "source:PlayerBoy_40:0",
+      "sourceOrigin": "raw_source",
+      "effectType": "buff",
+      "stat": "critDamage",
+      "rawValue": 0.3,
+      "valueMode": "dynamic_formula",
+      "effectProviderId": "PlayerBoy_40",
+      "effectTargetPolicy": "singleAlly",
+      "calculationSubjectPolicy": "singleAlly",
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "effect:PlayerBoy_40:1",
+      "sourceId": "source:PlayerBoy_40:1",
+      "sourceOrigin": "raw_source",
+      "effectType": "buff",
+      "stat": "critRate",
+      "rawValue": 0.15,
+      "valueMode": "fixed",
+      "effectProviderId": "PlayerBoy_40",
+      "effectTargetPolicy": "allAllies",
+      "calculationSubjectPolicy": "allAllies",
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "effect:PlayerBoy_40:2",
+      "sourceId": "source:PlayerBoy_40:2",
+      "sourceOrigin": "raw_source",
+      "effectType": "debuff",
+      "stat": "vulnerability",
+      "rawValue": 0.1,
+      "valueMode": "eidolon_adjusted",
+      "effectProviderId": "PlayerBoy_40",
+      "effectTargetPolicy": "enemySingle",
+      "calculationSubjectPolicy": "enemySingle",
+      "calculationStatus": "calculation_ready"
+    }
+  ]
+}

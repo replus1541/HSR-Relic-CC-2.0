@@ -11,7 +11,8 @@
     "verify": "npm.cmd run build",
     "validate:schema": "node tools/validate_schema.mjs",
     "validate:legacy": "node tools/validate_legacy_manifest.mjs",
-    "validate:adapters": "node tools/validate_adapters.mjs"
+    "validate:adapters": "node tools/validate_adapters.mjs",
+    "data:adapters": "node tools/run_adapters.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.0.0",
