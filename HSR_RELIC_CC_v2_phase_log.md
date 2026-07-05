@@ -1753,6 +1753,13 @@
 
 - `npm.cmd run build -- --emptyOutDir=false`: passed. Vite chunk-size warning remains.
 - `npm.cmd run verify:app`: passed.
+
+### Follow-up
+
+- Increased the mobile override again for tabs 2 and 3 because the first pass was only a subtle 13-14px adjustment.
+- Set tab 2/3 mobile base controls to 16px, headings to 17px, primary values/damage to 18px, and secondary text to 14-15px.
+- Bumped visible settings version from `v2.001` to `v2.002`.
+- Verification: `npm.cmd run build -- --emptyOutDir=false` passed; `npm.cmd run verify:app` passed.
 - `node tools\verify_elation_settings_ui.mjs`: passed with escalated browser launch; screenshots `v2-elation-settings-mobile-390.png` and `v2-condition-elation-settings-mobile-390.png`.
 - `node tools\inspect_stats_damage_v1_v2.mjs`: passed; screenshots regenerated under `artifacts/stats-damage-v1-v2`.
 

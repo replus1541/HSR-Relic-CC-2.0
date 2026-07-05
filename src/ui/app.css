@@ -4370,4 +4370,76 @@ p {
   .calc-source-ratio-row span {
     grid-column: 2 / 3;
   }
+
+  .calc-party-evaluation,
+  .calc-condition-compare {
+    font-size: 16px;
+  }
+
+  .calc-party-evaluation button,
+  .calc-party-evaluation select,
+  .calc-party-evaluation input,
+  .calc-condition-compare button,
+  .calc-condition-compare select,
+  .calc-condition-compare input {
+    font-size: 16px;
+  }
+
+  .calc-party-evaluation small,
+  .calc-condition-compare small,
+  .calc-party-evaluation em,
+  .calc-condition-compare em,
+  .calc-party-evaluation .calc-evaluation-source-label small,
+  .calc-party-evaluation .calc-contribution-detail-list div small,
+  .calc-condition-compare .calc-condition-row-main small,
+  .calc-condition-compare .calc-condition-delta-strip small {
+    font-size: 14px;
+  }
+
+  .calc-party-evaluation h2,
+  .calc-party-evaluation h3,
+  .calc-condition-compare h2,
+  .calc-condition-compare h3,
+  .calc-main-dealer-option strong,
+  .calc-current-party-summary-copy strong,
+  .calc-party-settings-head strong,
+  .calc-condition-row-main strong,
+  .calc-damage-skill-head strong,
+  .calc-contribution-label strong,
+  .calc-contribution-row-card strong,
+  .calc-damage-skill-title-line span {
+    font-size: 17px;
+  }
+
+  .calc-evaluation-row b,
+  .calc-contribution-row em,
+  .calc-contribution-row-card b,
+  .calc-damage-skill-head b,
+  .calc-condition-delta-strip b,
+  .calc-party-settings-owner b {
+    font-size: 18px;
+  }
+
+  .calc-contribution-tabs button,
+  .calc-party-settings-owner em,
+  .calc-party-settings-controls small,
+  .calc-evaluation-row small,
+  .calc-evaluation-row em,
+  .calc-contribution-row-card small,
+  .calc-contribution-label > small,
+  .calc-contribution-detail-list div b,
+  .calc-contribution-detail-list > li > span,
+  .calc-evaluation-source-stat,
+  .calc-evaluation-source-amount,
+  .calc-text-action-button {
+    font-size: 15px;
+  }
+
+  .calc-main-dealer-eidolon,
+  .calc-contribution-eidolon,
+  .calc-contribution-rank,
+  .calc-auto-recommend-keep-badge,
+  .calc-condition-row-main > span {
+    font-size: 13px;
+  }
 }
