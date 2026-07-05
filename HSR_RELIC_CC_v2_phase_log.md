@@ -786,14 +786,17 @@
 
 ### 상태
 
-- 상태: not_started
-- 시작일:
+- 상태: in_progress
+- 시작일: 2026-07-05
 - 완료일:
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
 
--
+- Task 14-A 시작: generated extraction status를 overview route에서 표시하는 contract를 연결했습니다.
+- `src/extraction/ExtractionOverview.jsx`는 `data/generated/extraction-status.json` shape를 읽고 character별 source/effect/coefficient count와 ready badge를 표시합니다.
+- `src/app/routes/ExtractionRoute.jsx`를 overview component composition으로 교체했습니다.
+- adapter 구현, 계산 로직, manual_hint 계산 허용은 수행하지 않았습니다.
 
 ---
 
