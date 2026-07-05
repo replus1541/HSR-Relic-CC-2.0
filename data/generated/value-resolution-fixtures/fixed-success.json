@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "generatedBy": "tools/validate_value_resolution.mjs",
+  "input": {
+    "id": "normalized:fixture",
+    "effectRowId": "fixture:effect",
+    "sourceId": "source:fixture",
+    "sourceOrigin": "raw_source",
+    "effectProviderId": "fixture",
+    "stat": "atkRatio",
+    "rawValue": 0.2,
+    "effectType": "buff",
+    "targetScope": "self",
+    "attackType": "support",
+    "valueMode": "fixed",
+    "calculationStatus": "calculation_ready"
+  },
+  "options": {},
+  "output": {
+    "id": "resolved:fixture:effect",
+    "effectRowId": "fixture:effect",
+    "sourceId": "source:fixture",
+    "stat": "atkRatio",
+    "valueTrace": {
+      "resolver": "fixed",
+      "source": "rawValue"
+    },
+    "dedupeKey": "pending_dedupe:fixture:source:fixture:atkRatio:buff:self",
+    "calculationStatus": "calculation_ready",
+    "resolvedValue": 0.2
+  }
+}

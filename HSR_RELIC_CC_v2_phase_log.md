@@ -628,6 +628,19 @@
 - fixed/skill_level_scaled/eidolon_adjusted/superimposition_scaled는 rawValue 전달값을 만들고, dynamic_formula와 unknown valueMode는 blocked candidate로 둡니다.
 - `data/generated/resolved-effects.json`를 생성했습니다. 현재 normalized rows 9개 중 resolvedValue 6개, unsupported_dynamic_formula blocked 3개입니다.
 - dedupe, aggregation, UI trace, manual guide 계산 유입은 구현하지 않았습니다.
+- Task 9-C 시작: `tools/validate_value_resolution.mjs`, `validate:value-resolution`, value resolution fixtures를 추가했습니다.
+- validator는 resolved-effects를 재생성하고 모든 row가 resolvedValue 또는 blockedReason 중 정확히 하나만 갖는지 확인합니다.
+- fixed/skill-level/eidolon/superimposition/dynamic/unknown fixture를 `data/generated/value-resolution-fixtures/`에 생성합니다.
+- Phase 9 완료: value resolver contract, resolver skeleton, resolved output, validator/fixtures가 준비됐습니다.
+
+### 검증
+
+- `npm.cmd run validate:value-resolution`: 성공. rows 9개, ready 6개, blocked 3개, fixtures 6개, unknown_guard=blocked.
+- `npm.cmd run build`: 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+
+### 다음 Task로 넘길 항목
+
+- Phase 10-A에서 canonicalEffectKey 구성요소와 deterministic key 생성을 정의합니다.
 
 ---
 

@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "generatedBy": "tools/validate_value_resolution.mjs",
+  "input": {
+    "id": "normalized:fixture",
+    "effectRowId": "fixture:effect",
+    "sourceId": "source:fixture",
+    "sourceOrigin": "raw_source",
+    "effectProviderId": "fixture",
+    "stat": "atkRatio",
+    "rawValue": 0.12,
+    "effectType": "buff",
+    "targetScope": "self",
+    "attackType": "support",
+    "valueMode": "eidolon_adjusted",
+    "calculationStatus": "calculation_ready"
+  },
+  "options": {
+    "context": {
+      "eidolon": null
+    }
+  },
+  "output": {
+    "id": "resolved:fixture:effect",
+    "effectRowId": "fixture:effect",
+    "sourceId": "source:fixture",
+    "stat": "atkRatio",
+    "valueTrace": {
+      "resolver": "eidolon_adjusted",
+      "reason": "eidolon missing"
+    },
+    "dedupeKey": "pending_dedupe:fixture:source:fixture:atkRatio:buff:self",
+    "calculationStatus": "blocked",
+    "blockedReason": "condition_not_met"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedBy": "src/effect-engine/resolve-values.js",
+  "generatedBy": "tools/validate_value_resolution.mjs",
   "rows": [
     {
       "id": "resolved:effect:PlayerBoy_20:0",
