@@ -1,0 +1,2905 @@
+{
+  "version": 1,
+  "generatedBy": "tools/validate_canonical_dataset.mjs",
+  "summary": {
+    "characters": 90,
+    "partial": 66,
+    "blocked": 3,
+    "missingItems": 98,
+    "autoMatchPossible": 6,
+    "curatedSourceRequired": 35,
+    "adapterParserImprovements": 3,
+    "failureReasonCounts": {
+      "effect_trace_not_found": 30,
+      "valueMode_dynamic_formula_unresolved": 54,
+      "source_exists_but_id_mismatch": 3,
+      "curated_source_required": 3,
+      "parser_not_implemented": 3,
+      "coefficient_not_found": 2,
+      "source_not_loaded": 3
+    }
+  },
+  "rows": [
+    {
+      "characterId": "PlayerBoy_10",
+      "displayName": "개척자 • 보존",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "missing_effect_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "개척자 • 보존",
+            "PlayerBoy_10",
+            "8003",
+            "23",
+            "PlayerGirl_10",
+            "8004",
+            "보존척자",
+            "source:hoyowiki:23:A"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "effect_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "개척자 • 보존",
+            "PlayerBoy_10",
+            "8003",
+            "23",
+            "PlayerGirl_10",
+            "8004",
+            "보존척자",
+            "source:hoyowiki:23:A"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        }
+      ]
+    },
+    {
+      "characterId": "PlayerBoy_00",
+      "displayName": "개척자 • 파멸",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 2,
+          "closestCandidates": [
+            "개척자 • 파멸",
+            "PlayerBoy_00",
+            "8001",
+            "6",
+            "PlayerGirl_00",
+            "8002",
+            "파멸척자",
+            "source:PlayerBoy_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "PlayerBoy_30",
+      "displayName": "개척자 • 화합",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "missing_effect_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "개척자 • 화합",
+            "PlayerBoy_30",
+            "8007",
+            "2511",
+            "PlayerGirl_30",
+            "8008",
+            "화척자",
+            "source:hoyowiki:2511:A"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "effect_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "개척자 • 화합",
+            "PlayerBoy_30",
+            "8007",
+            "2511",
+            "PlayerGirl_30",
+            "8008",
+            "화척자",
+            "source:hoyowiki:2511:A"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        }
+      ]
+    },
+    {
+      "characterId": "PlayerBoy_40",
+      "displayName": "개척자 • 환락",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "coefficient_rows_zero",
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "coefficient_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+            "data/generated/coefficient-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "개척자 • 환락",
+            "PlayerBoy_40",
+            "8009",
+            "5006",
+            "PlayerGirl_40",
+            "8010",
+            "환락 척자",
+            "source:PlayerBoy_40:0"
+          ],
+          "failureReason": "source_exists_but_id_mismatch",
+          "autoMatchPossible": true,
+          "needsCuratedSource": false,
+          "nextAction": "Align coefficient avatar ids with character identity ids; do not infer coefficients."
+        },
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "개척자 • 환락",
+            "PlayerBoy_40",
+            "8009",
+            "5006",
+            "PlayerGirl_40",
+            "8010",
+            "환락 척자",
+            "source:PlayerBoy_40:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Gallagher_00",
+      "displayName": "갤러거",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "missing_effect_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "갤러거",
+            "Gallagher_00",
+            "1301",
+            "1924",
+            "source:hoyowiki:1924:A",
+            "source:hoyowiki:1924:B",
+            "source:hoyowiki:1924:B1",
+            "coefficient:hoyowiki:1924:A:main"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "effect_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "갤러거",
+            "Gallagher_00",
+            "1301",
+            "1924",
+            "source:hoyowiki:1924:A",
+            "source:hoyowiki:1924:B",
+            "source:hoyowiki:1924:B1",
+            "coefficient:hoyowiki:1924:A:main"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        }
+      ]
+    },
+    {
+      "characterId": "Gepard_00",
+      "displayName": "게파드",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "missing_effect_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "게파드",
+            "Gepard_00",
+            "1104",
+            "17",
+            "source:hoyowiki:17:A",
+            "source:hoyowiki:17:B",
+            "source:hoyowiki:17:C",
+            "coefficient:hoyowiki:17:A:main"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "effect_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "게파드",
+            "Gepard_00",
+            "1104",
+            "17",
+            "source:hoyowiki:17:A",
+            "source:hoyowiki:17:B",
+            "source:hoyowiki:17:C",
+            "coefficient:hoyowiki:17:A:main"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        }
+      ]
+    },
+    {
+      "characterId": "Jingliu_00",
+      "displayName": "경류",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 2,
+          "closestCandidates": [
+            "경류",
+            "Jingliu_00",
+            "1212",
+            "1387",
+            "source:Jingliu_00:0",
+            "source:Jingliu_00:1",
+            "source:hoyowiki:1387:A",
+            "effect:Jingliu_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "JingYuan_00",
+      "displayName": "경원",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 2,
+          "closestCandidates": [
+            "경원",
+            "JingYuan_00",
+            "1204",
+            "26",
+            "source:JingYuan_00:0",
+            "source:JingYuan_00:1",
+            "source:JingYuan_00:2",
+            "effect:JingYuan_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Gilgamesh_00",
+      "displayName": "길가메시",
+      "readinessStatus": "blocked",
+      "requiredMissingItems": [
+        "no_calculation_ready_rows"
+      ],
+      "optionalMissingItems": [
+        "missing_skill_text",
+        "missing_effect_trace",
+        "missing_coefficient",
+        "missing_eidolon_trace",
+        "effect_rows_zero",
+        "coefficient_rows_zero"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "no_calculation_ready_rows",
+          "attemptedSources": [
+            "data/generated/source-rows.json",
+            "data/generated/effect-rows.json",
+            "data/generated/coefficient-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "길가메시",
+            "Gilgamesh_00",
+            "1509",
+            "5338",
+            "길가메쉬"
+          ],
+          "failureReason": "curated_source_required",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add source-backed rows or clear blocking policy before readiness can improve."
+        },
+        {
+          "missingType": "missing_skill_text",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/hoyowiki-character-skills.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "길가메시",
+            "Gilgamesh_00",
+            "1509",
+            "5338",
+            "길가메쉬"
+          ],
+          "failureReason": "parser_not_implemented",
+          "autoMatchPossible": true,
+          "needsCuratedSource": false,
+          "nextAction": "Extend HoyoWiki skill parser for this identity and regenerate adapters."
+        },
+        {
+          "missingType": "missing_effect_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "길가메시",
+            "Gilgamesh_00",
+            "1509",
+            "5338",
+            "길가메쉬"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "missing_coefficient",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+            "data/generated/coefficient-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "길가메시",
+            "Gilgamesh_00",
+            "1509",
+            "5338",
+            "길가메쉬"
+          ],
+          "failureReason": "coefficient_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add source-backed coefficient extraction coverage for this character."
+        },
+        {
+          "missingType": "missing_eidolon_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/hoyowiki-character-skills.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "길가메시",
+            "Gilgamesh_00",
+            "1509",
+            "5338",
+            "길가메쉬"
+          ],
+          "failureReason": "source_not_loaded",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Load skill/eidolon source before parsing eidolon traces."
+        },
+        {
+          "missingType": "effect_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "길가메시",
+            "Gilgamesh_00",
+            "1509",
+            "5338",
+            "길가메쉬"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "coefficient_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+            "data/generated/coefficient-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "길가메시",
+            "Gilgamesh_00",
+            "1509",
+            "5338",
+            "길가메쉬"
+          ],
+          "failureReason": "coefficient_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add source-backed coefficient extraction coverage for this character."
+        }
+      ]
+    },
+    {
+      "characterId": "Natasha_00",
+      "displayName": "나타샤",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "missing_effect_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "나타샤",
+            "Natasha_00",
+            "1105",
+            "18",
+            "source:hoyowiki:18:A",
+            "source:hoyowiki:18:B",
+            "source:hoyowiki:18:B1",
+            "coefficient:hoyowiki:18:E:main"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "effect_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "나타샤",
+            "Natasha_00",
+            "1105",
+            "18",
+            "source:hoyowiki:18:A",
+            "source:hoyowiki:18:B",
+            "source:hoyowiki:18:B1",
+            "coefficient:hoyowiki:18:E:main"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        }
+      ]
+    },
+    {
+      "characterId": "DanHeng_00",
+      "displayName": "단항",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "단항",
+            "DanHeng_00",
+            "1002",
+            "8",
+            "source:DanHeng_00:0",
+            "source:DanHeng_00:1",
+            "source:hoyowiki:8:A",
+            "effect:DanHeng_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "DanHengPT_00",
+      "displayName": "단항 • 등황",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "단항 • 등황",
+            "DanHengPT_00",
+            "1414",
+            "3957",
+            "등황",
+            "source:DanHengPT_00:0",
+            "source:DanHengPT_00:1",
+            "source:DanHengPT_00:2"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "DanHengIL_00",
+      "displayName": "단항•음월",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "단항•음월",
+            "DanHengIL_00",
+            "1213",
+            "1226",
+            "음월",
+            "source:DanHengIL_00:0",
+            "source:DanHengIL_00:1",
+            "source:hoyowiki:1226:A"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Constance_00",
+      "displayName": "달리아",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "달리아",
+            "Constance_00",
+            "1321",
+            "4060",
+            "source:Constance_00:0",
+            "source:Constance_00:1",
+            "source:Constance_00:2",
+            "effect:Constance_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "TheHerta_00",
+      "displayName": "더 헤르타",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 2,
+          "closestCandidates": [
+            "더 헤르타",
+            "TheHerta_00",
+            "1401",
+            "3285",
+            "source:TheHerta_00:0",
+            "source:TheHerta_00:1",
+            "source:hoyowiki:3285:A",
+            "effect:TheHerta_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Robin_00",
+      "displayName": "로빈",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "로빈",
+            "Robin_00",
+            "1309",
+            "2366",
+            "source:Robin_00:0",
+            "source:Robin_00:1",
+            "source:Robin_00:2",
+            "effect:Robin_00:2"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Luka_00",
+      "displayName": "루카",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "루카",
+            "Luka_00",
+            "1111",
+            "801",
+            "source:Luka_00:0",
+            "source:Luka_00:1",
+            "source:hoyowiki:801:A",
+            "effect:Luka_00:1"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Lynx_00",
+      "displayName": "링스",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "missing_effect_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "링스",
+            "Lynx_00",
+            "1110",
+            "1228",
+            "source:hoyowiki:1228:A",
+            "source:hoyowiki:1228:B",
+            "source:hoyowiki:1228:B1",
+            "coefficient:hoyowiki:1228:E:main"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "effect_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "링스",
+            "Lynx_00",
+            "1110",
+            "1228",
+            "source:hoyowiki:1228:A",
+            "source:hoyowiki:1228:B",
+            "source:hoyowiki:1228:B1",
+            "coefficient:hoyowiki:1228:E:main"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        }
+      ]
+    },
+    {
+      "characterId": "Fugue_00",
+      "displayName": "망귀인",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "망귀인",
+            "Fugue_00",
+            "1225",
+            "3151",
+            "source:Fugue_00:0",
+            "source:hoyowiki:3151:A",
+            "source:hoyowiki:3151:B",
+            "effect:Fugue_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Moze_00",
+      "displayName": "맥택",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "맥택",
+            "Moze_00",
+            "1223",
+            "2949",
+            "source:Moze_00:0",
+            "source:Moze_00:1",
+            "source:Moze_00:2",
+            "effect:Moze_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Sam_00",
+      "displayName": "반디",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "missing_effect_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "반디",
+            "Sam_00",
+            "1310",
+            "2494",
+            "source:hoyowiki:2494:A",
+            "source:hoyowiki:2494:B",
+            "source:hoyowiki:2494:C",
+            "coefficient:hoyowiki:2494:A:main"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "effect_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "반디",
+            "Sam_00",
+            "1310",
+            "2494",
+            "source:hoyowiki:2494:A",
+            "source:hoyowiki:2494:B",
+            "source:hoyowiki:2494:C",
+            "coefficient:hoyowiki:2494:A:main"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        }
+      ]
+    },
+    {
+      "characterId": "Bailu_00",
+      "displayName": "백로",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "missing_effect_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "백로",
+            "Bailu_00",
+            "1211",
+            "29",
+            "source:hoyowiki:29:A",
+            "source:hoyowiki:29:B",
+            "source:hoyowiki:29:C",
+            "coefficient:hoyowiki:29:E:main"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "effect_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "백로",
+            "Bailu_00",
+            "1211",
+            "29",
+            "source:hoyowiki:29:A",
+            "source:hoyowiki:29:B",
+            "source:hoyowiki:29:C",
+            "coefficient:hoyowiki:29:E:main"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        }
+      ]
+    },
+    {
+      "characterId": "FuXuan_00",
+      "displayName": "부현",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "부현",
+            "FuXuan_00",
+            "1208",
+            "804",
+            "source:FuXuan_00:0",
+            "source:FuXuan_00:1",
+            "source:hoyowiki:804:A",
+            "effect:FuXuan_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Bronya_00",
+      "displayName": "브로냐",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 2,
+          "closestCandidates": [
+            "브로냐",
+            "Bronya_00",
+            "1101",
+            "14",
+            "source:Bronya_00:0",
+            "source:Bronya_00:1",
+            "source:Bronya_00:2",
+            "effect:Bronya_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "BlackSwan_00",
+      "displayName": "블랙 스완",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 3,
+          "closestCandidates": [
+            "블랙 스완",
+            "BlackSwan_00",
+            "1307",
+            "1806",
+            "블랙스완",
+            "source:BlackSwan_00:0",
+            "source:BlackSwan_00:1",
+            "source:BlackSwan_00:2"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Ren_00",
+      "displayName": "블레이드",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "블레이드",
+            "Ren_00",
+            "1205",
+            "789",
+            "source:Ren_00:0",
+            "source:Ren_00:1",
+            "source:Ren_00:2",
+            "effect:Ren_00:1"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Feixiao_00",
+      "displayName": "비소",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 2,
+          "closestCandidates": [
+            "비소",
+            "Feixiao_00",
+            "1220",
+            "2947",
+            "source:Feixiao_00:0",
+            "source:Feixiao_00:1",
+            "source:Feixiao_00:2",
+            "effect:Feixiao_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Cipher_00",
+      "displayName": "사이퍼",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 4,
+          "closestCandidates": [
+            "사이퍼",
+            "Cipher_00",
+            "1406",
+            "3691",
+            "source:Cipher_00:0",
+            "source:Cipher_00:1",
+            "source:Cipher_00:2",
+            "effect:Cipher_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Sampo_00",
+      "displayName": "삼포",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "missing_effect_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "삼포",
+            "Sampo_00",
+            "1108",
+            "21",
+            "source:hoyowiki:21:A",
+            "source:hoyowiki:21:B",
+            "source:hoyowiki:21:C",
+            "coefficient:hoyowiki:21:A:main"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "effect_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "삼포",
+            "Sampo_00",
+            "1108",
+            "21",
+            "source:hoyowiki:21:A",
+            "source:hoyowiki:21:B",
+            "source:hoyowiki:21:C",
+            "coefficient:hoyowiki:21:A:main"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        }
+      ]
+    },
+    {
+      "characterId": "Sunday_10",
+      "displayName": "선데이",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "선데이",
+            "Sunday_10",
+            "1313",
+            "3150",
+            "source:Sunday_10:0",
+            "source:Sunday_10:1",
+            "source:Sunday_10:2",
+            "effect:Sunday_10:2"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Saber_00",
+      "displayName": "세이버",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 3,
+          "closestCandidates": [
+            "세이버",
+            "Saber_00",
+            "1014",
+            "3767",
+            "source:Saber_00:0",
+            "source:Saber_00:1",
+            "source:Saber_00:2",
+            "effect:Saber_00:1"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Sushang_00",
+      "displayName": "소상",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "소상",
+            "Sushang_00",
+            "1206",
+            "27",
+            "source:Sushang_00:0",
+            "source:hoyowiki:27:A",
+            "source:hoyowiki:27:B",
+            "effect:Sushang_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Sparkle_00",
+      "displayName": "스파클",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 4,
+          "closestCandidates": [
+            "스파클",
+            "Sparkle_00",
+            "1306",
+            "1807",
+            "source:Sparkle_00:0",
+            "source:Sparkle_00:1",
+            "source:Sparkle_00:2",
+            "effect:Sparkle_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Anaxa_00",
+      "displayName": "아낙사",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 2,
+          "closestCandidates": [
+            "아낙사",
+            "Anaxa_00",
+            "1405",
+            "3561",
+            "source:Anaxa_00:0",
+            "source:Anaxa_00:1",
+            "source:Anaxa_00:2",
+            "effect:Anaxa_00:1"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Asta_00",
+      "displayName": "아스타",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "아스타",
+            "Asta_00",
+            "1009",
+            "12",
+            "source:Asta_00:0",
+            "source:hoyowiki:12:A",
+            "source:hoyowiki:12:B",
+            "effect:Asta_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Argenti_00",
+      "displayName": "아젠티",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "아젠티",
+            "Argenti_00",
+            "1302",
+            "1535",
+            "source:Argenti_00:0",
+            "source:Argenti_00:1",
+            "source:Argenti_00:2",
+            "effect:Argenti_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Archer_00",
+      "displayName": "아처",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "아처",
+            "Archer_00",
+            "1015",
+            "3768",
+            "source:Archer_00:0",
+            "source:Archer_00:1",
+            "source:Archer_00:2",
+            "effect:Archer_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Acheron_00",
+      "displayName": "아케론",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 2,
+          "closestCandidates": [
+            "아케론",
+            "Acheron_00",
+            "1308",
+            "1919",
+            "source:Acheron_00:0",
+            "source:Acheron_00:1",
+            "source:Acheron_00:2",
+            "effect:Acheron_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Ashveil_00",
+      "displayName": "애쉬베일",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "애쉬베일",
+            "Ashveil_00",
+            "1504",
+            "4781",
+            "source:Ashveil_00:0",
+            "source:Ashveil_00:1",
+            "source:Ashveil_00:2",
+            "effect:Ashveil_00:6"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Yukong_00",
+      "displayName": "어공",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "어공",
+            "Yukong_00",
+            "1207",
+            "712",
+            "source:Yukong_00:0",
+            "source:Yukong_00:1",
+            "source:Yukong_00:2",
+            "effect:Yukong_00:1"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Evanescia_00",
+      "displayName": "에바네시아",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "에바네시아",
+            "Evanescia_00",
+            "1505",
+            "5005",
+            "source:Evanescia_00:0",
+            "source:Evanescia_00:1",
+            "source:Evanescia_00:2",
+            "effect:Evanescia_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Evernight_00",
+      "displayName": "에버나이트",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 2,
+          "closestCandidates": [
+            "에버나이트",
+            "Evernight_00",
+            "1413",
+            "3956",
+            "source:Evernight_00:0",
+            "source:Evernight_00:1",
+            "source:Evernight_00:2",
+            "effect:Evernight_00:2"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Yanqing_00",
+      "displayName": "연경",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "연경",
+            "Yanqing_00",
+            "1209",
+            "28",
+            "source:Yanqing_00:0",
+            "source:Yanqing_00:1",
+            "source:Yanqing_00:2",
+            "effect:Yanqing_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "RuanMei_00",
+      "displayName": "완•매",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 2,
+          "closestCandidates": [
+            "완•매",
+            "RuanMei_00",
+            "1303",
+            "1638",
+            "완매",
+            "source:RuanMei_00:0",
+            "source:RuanMei_00:1",
+            "source:RuanMei_00:2"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Welt_00",
+      "displayName": "웰트",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 2,
+          "closestCandidates": [
+            "웰트",
+            "Welt_00",
+            "1004",
+            "10",
+            "source:Welt_00:0",
+            "source:Welt_00:1",
+            "source:Welt_00:2",
+            "effect:Welt_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Silwolf_00",
+      "displayName": "은랑",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "은랑",
+            "Silwolf_00",
+            "1006",
+            "710",
+            "source:Silwolf_00:0",
+            "source:Silwolf_00:1",
+            "source:Silwolf_00:2",
+            "effect:Silwolf_00:2"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "SilverWolf999_00",
+      "displayName": "은랑 LV.999",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "은랑 LV.999",
+            "SilverWolf999_00",
+            "1506",
+            "4997",
+            "은랑 LV 999",
+            "source:SilverWolf999_00:0",
+            "source:SilverWolf999_00:1",
+            "source:SilverWolf999_00:2"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Tingyun_00",
+      "displayName": "정운",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 2,
+          "closestCandidates": [
+            "정운",
+            "Tingyun_00",
+            "1202",
+            "25",
+            "source:Tingyun_00:0",
+            "source:Tingyun_00:1",
+            "source:Tingyun_00:2",
+            "effect:Tingyun_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Seele_00",
+      "displayName": "제레",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "제레",
+            "Seele_00",
+            "1102",
+            "15",
+            "source:Seele_00:0",
+            "source:Seele_00:1",
+            "source:Seele_00:2",
+            "effect:Seele_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Jade_00",
+      "displayName": "제이드",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "제이드",
+            "Jade_00",
+            "1314",
+            "2495",
+            "source:Jade_00:0",
+            "source:Jade_00:1",
+            "source:Jade_00:2",
+            "effect:Jade_00:1"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "MortenaxBlade_00",
+      "displayName": "천야 • 블레이드",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 4,
+          "closestCandidates": [
+            "천야 • 블레이드",
+            "MortenaxBlade_00",
+            "1507",
+            "5217",
+            "천야 블레이드",
+            "source:MortenaxBlade_00:0",
+            "source:MortenaxBlade_00:1",
+            "source:MortenaxBlade_00:2"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Qingque_00",
+      "displayName": "청작",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 2,
+          "closestCandidates": [
+            "청작",
+            "Qingque_00",
+            "1201",
+            "24",
+            "source:Qingque_00:0",
+            "source:Qingque_00:1",
+            "source:Qingque_00:2",
+            "effect:Qingque_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Jiaoqiu_00",
+      "displayName": "초구",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "초구",
+            "Jiaoqiu_00",
+            "1218",
+            "2643",
+            "source:Jiaoqiu_00:0",
+            "source:Jiaoqiu_00:1",
+            "source:Jiaoqiu_00:2",
+            "effect:Jiaoqiu_00:2"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Castorice_00",
+      "displayName": "카스토리스",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "카스토리스",
+            "Castorice_00",
+            "1407",
+            "3560",
+            "source:Castorice_00:0",
+            "source:Castorice_00:1",
+            "source:hoyowiki:3560:A",
+            "effect:Castorice_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Kafka_00",
+      "displayName": "카프카",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "missing_effect_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "카프카",
+            "Kafka_00",
+            "1005",
+            "791",
+            "source:hoyowiki:791:A",
+            "source:hoyowiki:791:B",
+            "source:hoyowiki:791:B1",
+            "coefficient:hoyowiki:791:A:main"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "effect_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "카프카",
+            "Kafka_00",
+            "1005",
+            "791",
+            "source:hoyowiki:791:A",
+            "source:hoyowiki:791:B",
+            "source:hoyowiki:791:B1",
+            "coefficient:hoyowiki:791:A:main"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        }
+      ]
+    },
+    {
+      "characterId": "Cerydra_00",
+      "displayName": "케리드라",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 6,
+          "closestCandidates": [
+            "케리드라",
+            "Cerydra_00",
+            "1412",
+            "3886",
+            "source:Cerydra_00:0",
+            "source:Cerydra_00:1",
+            "source:Cerydra_00:2",
+            "effect:Cerydra_00:1"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Cyrene_00",
+      "displayName": "키레네",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 14,
+          "closestCandidates": [
+            "키레네",
+            "Cyrene_00",
+            "1415",
+            "4003",
+            "source:Cyrene_00:0",
+            "source:Cyrene_00:1",
+            "source:Cyrene_00:2",
+            "effect:Cyrene_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "TohsakaRin_00",
+      "displayName": "토오사카 린",
+      "readinessStatus": "blocked",
+      "requiredMissingItems": [
+        "no_calculation_ready_rows"
+      ],
+      "optionalMissingItems": [
+        "missing_skill_text",
+        "missing_effect_trace",
+        "missing_eidolon_trace",
+        "effect_rows_zero",
+        "coefficient_rows_zero"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "no_calculation_ready_rows",
+          "attemptedSources": [
+            "data/generated/source-rows.json",
+            "data/generated/effect-rows.json",
+            "data/generated/coefficient-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "토오사카 린",
+            "TohsakaRin_00",
+            "1508",
+            "5339"
+          ],
+          "failureReason": "curated_source_required",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add source-backed rows or clear blocking policy before readiness can improve."
+        },
+        {
+          "missingType": "missing_skill_text",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/hoyowiki-character-skills.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "토오사카 린",
+            "TohsakaRin_00",
+            "1508",
+            "5339"
+          ],
+          "failureReason": "parser_not_implemented",
+          "autoMatchPossible": true,
+          "needsCuratedSource": false,
+          "nextAction": "Extend HoyoWiki skill parser for this identity and regenerate adapters."
+        },
+        {
+          "missingType": "missing_effect_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "토오사카 린",
+            "TohsakaRin_00",
+            "1508",
+            "5339"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "missing_eidolon_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/hoyowiki-character-skills.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "토오사카 린",
+            "TohsakaRin_00",
+            "1508",
+            "5339"
+          ],
+          "failureReason": "source_not_loaded",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Load skill/eidolon source before parsing eidolon traces."
+        },
+        {
+          "missingType": "effect_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "토오사카 린",
+            "TohsakaRin_00",
+            "1508",
+            "5339"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "coefficient_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+            "data/generated/coefficient-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "토오사카 린",
+            "TohsakaRin_00",
+            "1508",
+            "5339"
+          ],
+          "failureReason": "source_exists_but_id_mismatch",
+          "autoMatchPossible": true,
+          "needsCuratedSource": false,
+          "nextAction": "Align coefficient avatar ids with character identity ids; do not infer coefficients."
+        }
+      ]
+    },
+    {
+      "characterId": "Topaz_00",
+      "displayName": "토파즈&복순이",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "missing_effect_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "토파즈&복순이",
+            "Topaz_00",
+            "1112",
+            "토파즈",
+            "1389",
+            "source:hoyowiki:1389:A",
+            "source:hoyowiki:1389:B",
+            "source:hoyowiki:1389:C"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "effect_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "토파즈&복순이",
+            "Topaz_00",
+            "1112",
+            "토파즈",
+            "1389",
+            "source:hoyowiki:1389:A",
+            "source:hoyowiki:1389:B",
+            "source:hoyowiki:1389:C"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        }
+      ]
+    },
+    {
+      "characterId": "Tribbie_00",
+      "displayName": "트리비",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 2,
+          "closestCandidates": [
+            "트리비",
+            "Tribbie_00",
+            "1403",
+            "3322",
+            "source:Tribbie_00:0",
+            "source:Tribbie_00:1",
+            "source:Tribbie_00:2",
+            "effect:Tribbie_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Phainon_00",
+      "displayName": "파이논",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "파이논",
+            "Phainon_00",
+            "1408",
+            "3769",
+            "source:Phainon_00:0",
+            "source:Phainon_00:1",
+            "source:Phainon_00:2",
+            "effect:Phainon_00:1"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Pela_00",
+      "displayName": "페라",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "페라",
+            "Pela_00",
+            "1106",
+            "19",
+            "source:Pela_00:0",
+            "source:Pela_00:1",
+            "source:Pela_00:2",
+            "effect:Pela_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Hanya_00",
+      "displayName": "한아",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 2,
+          "closestCandidates": [
+            "한아",
+            "Hanya_00",
+            "1215",
+            "1537",
+            "source:Hanya_00:0",
+            "source:Hanya_00:1",
+            "source:Hanya_00:2",
+            "effect:Hanya_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Herta_00",
+      "displayName": "헤르타",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 2,
+          "closestCandidates": [
+            "헤르타",
+            "Herta_00",
+            "1013",
+            "13",
+            "source:Herta_00:0",
+            "source:Herta_00:1",
+            "source:Herta_00:2",
+            "effect:Herta_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Himeko_00",
+      "displayName": "히메코",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "히메코",
+            "Himeko_00",
+            "1003",
+            "9",
+            "source:Himeko_00:0",
+            "source:Himeko_00:1",
+            "source:hoyowiki:9:A",
+            "effect:Himeko_00:0"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "HimekoNova_00",
+      "displayName": "히메코 • 노바",
+      "readinessStatus": "blocked",
+      "requiredMissingItems": [
+        "no_calculation_ready_rows"
+      ],
+      "optionalMissingItems": [
+        "missing_skill_text",
+        "missing_effect_trace",
+        "missing_eidolon_trace",
+        "effect_rows_zero",
+        "coefficient_rows_zero"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "no_calculation_ready_rows",
+          "attemptedSources": [
+            "data/generated/source-rows.json",
+            "data/generated/effect-rows.json",
+            "data/generated/coefficient-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "히메코 • 노바",
+            "HimekoNova_00",
+            "1510",
+            "5335",
+            "히메코 노바"
+          ],
+          "failureReason": "curated_source_required",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add source-backed rows or clear blocking policy before readiness can improve."
+        },
+        {
+          "missingType": "missing_skill_text",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/hoyowiki-character-skills.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "히메코 • 노바",
+            "HimekoNova_00",
+            "1510",
+            "5335",
+            "히메코 노바"
+          ],
+          "failureReason": "parser_not_implemented",
+          "autoMatchPossible": true,
+          "needsCuratedSource": false,
+          "nextAction": "Extend HoyoWiki skill parser for this identity and regenerate adapters."
+        },
+        {
+          "missingType": "missing_effect_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "히메코 • 노바",
+            "HimekoNova_00",
+            "1510",
+            "5335",
+            "히메코 노바"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "missing_eidolon_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/hoyowiki-character-skills.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "히메코 • 노바",
+            "HimekoNova_00",
+            "1510",
+            "5335",
+            "히메코 노바"
+          ],
+          "failureReason": "source_not_loaded",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Load skill/eidolon source before parsing eidolon traces."
+        },
+        {
+          "missingType": "effect_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "히메코 • 노바",
+            "HimekoNova_00",
+            "1510",
+            "5335",
+            "히메코 노바"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "coefficient_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+            "data/generated/coefficient-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "히메코 • 노바",
+            "HimekoNova_00",
+            "1510",
+            "5335",
+            "히메코 노바"
+          ],
+          "failureReason": "source_exists_but_id_mismatch",
+          "autoMatchPossible": true,
+          "needsCuratedSource": false,
+          "nextAction": "Align coefficient avatar ids with character identity ids; do not infer coefficients."
+        }
+      ]
+    },
+    {
+      "characterId": "Dr_Ratio_00",
+      "displayName": "Dr. 레이시오",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 3,
+          "closestCandidates": [
+            "Dr. 레이시오",
+            "Dr_Ratio_00",
+            "1305",
+            "1639",
+            "레이시오",
+            "source:Dr_Ratio_00:0",
+            "source:Dr_Ratio_00:1",
+            "source:Dr_Ratio_00:2"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    },
+    {
+      "characterId": "Mar_7th_00",
+      "displayName": "Mar. 7th",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "missing_effect_trace",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "Mar. 7th",
+            "Mar_7th_00",
+            "1001",
+            "삼칠이",
+            "7",
+            "source:hoyowiki:7:A",
+            "source:hoyowiki:7:B",
+            "source:hoyowiki:7:B1"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        },
+        {
+          "missingType": "effect_rows_zero",
+          "attemptedSources": [
+            "data/legacy-reference/game-db/character-effect-candidates.json",
+            "data/generated/effect-rows.json"
+          ],
+          "matchedCandidateCount": 0,
+          "closestCandidates": [
+            "Mar. 7th",
+            "Mar_7th_00",
+            "1001",
+            "삼칠이",
+            "7",
+            "source:hoyowiki:7:A",
+            "source:hoyowiki:7:B",
+            "source:hoyowiki:7:B1"
+          ],
+          "failureReason": "effect_trace_not_found",
+          "autoMatchPossible": false,
+          "needsCuratedSource": true,
+          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+        }
+      ]
+    },
+    {
+      "characterId": "Mar_7th_10",
+      "displayName": "Mar. 7th•수렵",
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingDiagnostics": [
+        {
+          "missingType": "dynamic_formula_blocked",
+          "attemptedSources": [
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/dynamic-formula.js"
+          ],
+          "matchedCandidateCount": 1,
+          "closestCandidates": [
+            "Mar. 7th•수렵",
+            "Mar_7th_10",
+            "1224",
+            "2657",
+            "검칠이",
+            "source:Mar_7th_10:0",
+            "source:Mar_7th_10:1",
+            "source:Mar_7th_10:2"
+          ],
+          "failureReason": "valueMode_dynamic_formula_unresolved",
+          "autoMatchPossible": false,
+          "needsCuratedSource": false,
+          "nextAction": "Implement a source-backed dynamic formula resolver or keep these rows blocked."
+        }
+      ]
+    }
+  ]
+}

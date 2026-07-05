@@ -9,6 +9,8 @@ const statusPath = `${generatedDir}/extraction-status.json`;
 const coveragePath = `${generatedDir}/extraction-coverage.json`;
 const reportPath = "reports/extraction/canonical-dataset-report.md";
 const coverageReportPath = "reports/extraction/dataset-coverage-report.md";
+const missingMatchAnalysisPath = "reports/extraction/missing-match-analysis.json";
+const missingMatchAnalysisReportPath = "reports/extraction/missing-match-analysis.md";
 
 function readRows(fileName) {
   const payload = JSON.parse(fs.readFileSync(`${generatedDir}/${fileName}`, "utf8"));
@@ -168,6 +170,200 @@ function countItems(rows, field) {
   }, {});
 }
 
+function countDiagnostics(rows, field) {
+  return rows.reduce((counts, row) => {
+    for (const item of row.missingDiagnostics ?? []) {
+      const key = item[field] ?? "unknown";
+      counts[key] = (counts[key] ?? 0) + 1;
+    }
+    return counts;
+  }, {});
+}
+
+function closestCandidates(row, rowSets = {}) {
+  const candidates = [
+    row.displayName,
+    row.officialName,
+    row.localizedName,
+    row.internalName,
+    row.internalId,
+    row.identifiers?.effectAvatar,
+    row.identifiers?.effectName,
+    row.identifiers?.hoyowikiEntryPageId,
+    row.identifiers?.coefficientAvatar,
+    row.identifiers?.coefficientAvatarId,
+    ...(row.aliasNames ?? []),
+    ...(row.sourceNames ?? []),
+    ...(row.nameSources ?? []).map((source) => source.sourceName),
+    ...(rowSets.sourceRows ?? []).slice(0, 3).map((source) => source.id),
+    ...(rowSets.effectRows ?? []).slice(0, 3).map((effect) => effect.id),
+    ...(rowSets.coefficientRows ?? []).slice(0, 3).map((coefficient) => coefficient.id),
+  ].filter(Boolean).map(String);
+  return [...new Set(candidates)].slice(0, 8);
+}
+
+function diagnosticForMissing(missingType, row, rowSets) {
+  const base = {
+    missingType,
+    attemptedSources: [],
+    matchedCandidateCount: 0,
+    closestCandidates: closestCandidates(row, rowSets),
+    failureReason: "no_candidate_found",
+    autoMatchPossible: false,
+    needsCuratedSource: false,
+    nextAction: "Inspect source availability and adapter mapping.",
+  };
+  const dynamicRows = (rowSets.effectRows ?? []).filter((effect) => effect.valueMode === ValueMode.DYNAMIC_FORMULA);
+  const unknownRows = (rowSets.effectRows ?? []).filter((effect) => effect.valueMode === ValueMode.UNKNOWN);
+  const blockedRows = [
+    ...(rowSets.sourceRows ?? []).filter((source) => !source.calculationReady || source.policyBlockedReason),
+    ...(rowSets.effectRows ?? []).filter((effect) => effect.calculationStatus !== CalculationStatus.CALCULATION_READY),
+    ...(rowSets.coefficientRows ?? []).filter((coefficient) => coefficient.calculationStatus !== CalculationStatus.CALCULATION_READY),
+  ];
+
+  if (missingType === "missing_skill_text") {
+    return {
+      ...base,
+      attemptedSources: ["data/legacy-reference/game-db/hoyowiki-character-skills.json"],
+      matchedCandidateCount: row.sourceCounts?.skillRows ?? 0,
+      failureReason: row.identifiers?.hoyowikiEntryPageId ? "parser_not_implemented" : "source_exists_but_id_mismatch",
+      autoMatchPossible: Boolean(row.identifiers?.hoyowikiEntryPageId),
+      nextAction: row.identifiers?.hoyowikiEntryPageId
+        ? "Extend HoyoWiki skill parser for this identity and regenerate adapters."
+        : "Map this character to a HoyoWiki entryPageId before skill extraction.",
+    };
+  }
+  if (missingType === "missing_effect_trace" || missingType === "effect_rows_zero") {
+    const effectCandidateCount = row.sourceCounts?.effectCandidates ?? row.effectRows ?? 0;
+    return {
+      ...base,
+      attemptedSources: ["data/legacy-reference/game-db/character-effect-candidates.json", "data/generated/effect-rows.json"],
+      matchedCandidateCount: missingType === "effect_rows_zero" ? row.effectRows : effectCandidateCount,
+      failureReason: effectCandidateCount > 0 && row.effectRows === 0 ? "source_exists_but_id_mismatch" : "effect_trace_not_found",
+      autoMatchPossible: effectCandidateCount > 0 && row.effectRows === 0,
+      needsCuratedSource: effectCandidateCount === 0,
+      nextAction: effectCandidateCount > 0 && row.effectRows === 0
+        ? "Align effect provider ids with character identity ids; do not change values."
+        : "Add or curate source-backed effect extraction evidence for this character.",
+    };
+  }
+  if (missingType === "missing_coefficient" || missingType === "coefficient_rows_zero") {
+    const coefficientCandidateCount = row.sourceCounts?.coefficientSlots ?? row.coefficientRows ?? 0;
+    return {
+      ...base,
+      attemptedSources: ["data/legacy-reference/game-db/attack-coefficient-candidates.json", "data/generated/coefficient-rows.json"],
+      matchedCandidateCount: missingType === "coefficient_rows_zero" ? row.coefficientRows : coefficientCandidateCount,
+      failureReason: coefficientCandidateCount > 0 && row.coefficientRows === 0 ? "source_exists_but_id_mismatch" : "coefficient_not_found",
+      autoMatchPossible: coefficientCandidateCount > 0 && row.coefficientRows === 0,
+      needsCuratedSource: coefficientCandidateCount === 0,
+      nextAction: coefficientCandidateCount > 0 && row.coefficientRows === 0
+        ? "Align coefficient avatar ids with character identity ids; do not infer coefficients."
+        : "Add source-backed coefficient extraction coverage for this character.",
+    };
+  }
+  if (missingType === "missing_eidolon_trace") {
+    return {
+      ...base,
+      attemptedSources: ["data/legacy-reference/game-db/hoyowiki-character-skills.json"],
+      matchedCandidateCount: row.sourceCounts?.eidolons ?? 0,
+      failureReason: row.sourceAvailability?.skillText ? "parser_not_implemented" : "source_not_loaded",
+      autoMatchPossible: false,
+      nextAction: row.sourceAvailability?.skillText
+        ? "Extend the HoyoWiki eidolon parser and regenerate adapters."
+        : "Load skill/eidolon source before parsing eidolon traces.",
+    };
+  }
+  if (missingType === "dynamic_formula_blocked") {
+    return {
+      ...base,
+      attemptedSources: ["data/generated/effect-rows.json", "src/effect-engine/value-resolvers/dynamic-formula.js"],
+      matchedCandidateCount: dynamicRows.length || row.valueMode?.dynamicFormula || 0,
+      closestCandidates: closestCandidates(row, { ...rowSets, effectRows: dynamicRows }),
+      failureReason: "valueMode_dynamic_formula_unresolved",
+      autoMatchPossible: false,
+      needsCuratedSource: false,
+      nextAction: "Implement a source-backed dynamic formula resolver or keep these rows blocked.",
+    };
+  }
+  if (missingType === "value_mode_unknown") {
+    return {
+      ...base,
+      attemptedSources: ["data/generated/effect-rows.json", "src/effect-engine/value-resolvers/unknown.js"],
+      matchedCandidateCount: unknownRows.length || row.valueMode?.unknown || 0,
+      closestCandidates: closestCandidates(row, { ...rowSets, effectRows: unknownRows }),
+      failureReason: "parser_not_implemented",
+      autoMatchPossible: false,
+      needsCuratedSource: true,
+      nextAction: "Classify the source-backed value mode before allowing calculation.",
+    };
+  }
+  if (missingType === "blocked_rows_present") {
+    return {
+      ...base,
+      attemptedSources: ["data/generated/source-rows.json", "data/generated/effect-rows.json", "data/generated/coefficient-rows.json"],
+      matchedCandidateCount: blockedRows.length,
+      closestCandidates: closestCandidates(row, {
+        sourceRows: blockedRows.filter((item) => item.kind === "source_row"),
+        effectRows: blockedRows.filter((item) => item.effectType),
+        coefficientRows: blockedRows.filter((item) => item.attackType),
+      }),
+      failureReason: blockedRows.some((item) => item.policyBlockedReason) ? "source_exists_but_blocked_by_policy" : "curated_source_required",
+      autoMatchPossible: false,
+      needsCuratedSource: !blockedRows.some((item) => item.policyBlockedReason),
+      nextAction: "Inspect blocked rows and resolve the policy or curated source requirement without promoting manual hints.",
+    };
+  }
+  if (missingType === "calculation_ready_source_trace_missing") {
+    return {
+      ...base,
+      attemptedSources: ["data/generated/source-rows.json", "data/generated/effect-rows.json", "data/generated/coefficient-rows.json"],
+      matchedCandidateCount: row.sourceTraceMissingRows ?? 0,
+      failureReason: "source_exists_but_missing_sourcePath",
+      autoMatchPossible: false,
+      needsCuratedSource: true,
+      nextAction: "Add source trace metadata before treating these rows as calculation-ready.",
+    };
+  }
+  if (missingType === "display_name_source_missing") {
+    return {
+      ...base,
+      attemptedSources: ["data/generated/character-identity.json"],
+      matchedCandidateCount: row.nameSources?.length ?? 0,
+      failureReason: row.nameSources?.some((source) => source.sourceName === row.displayName) ? "source_exists_but_missing_sourcePath" : "source_exists_but_name_alias_mismatch",
+      autoMatchPossible: false,
+      needsCuratedSource: true,
+      nextAction: "Attach official localization evidence before allowing ready status.",
+    };
+  }
+  if (missingType === "character_identity_source_missing") {
+    return {
+      ...base,
+      attemptedSources: ["data/generated/character-identity.json"],
+      matchedCandidateCount: row.nameSources?.length ?? 0,
+      failureReason: "source_exists_but_id_mismatch",
+      autoMatchPossible: Boolean(row.nameSources?.length),
+      needsCuratedSource: !row.nameSources?.length,
+      nextAction: "Attach an internal id/name or official source identity record.",
+    };
+  }
+  if (missingType === "no_calculation_ready_rows") {
+    return {
+      ...base,
+      attemptedSources: ["data/generated/source-rows.json", "data/generated/effect-rows.json", "data/generated/coefficient-rows.json"],
+      matchedCandidateCount: row.sourceRows + row.effectRows + row.coefficientRows,
+      failureReason: row.sourceRows + row.effectRows + row.coefficientRows > 0 ? "source_exists_but_blocked_by_policy" : "curated_source_required",
+      autoMatchPossible: false,
+      needsCuratedSource: row.sourceRows + row.effectRows + row.coefficientRows === 0,
+      nextAction: "Add source-backed rows or clear blocking policy before readiness can improve.",
+    };
+  }
+  return base;
+}
+
+function createMissingDiagnostics(missingItems, row, rowSets) {
+  return missingItems.map((missingType) => diagnosticForMissing(missingType, row, rowSets));
+}
+
 function createEmptyStatus(characterId) {
   return {
     characterId,
@@ -262,6 +458,7 @@ export function buildExtractionCoverage(dataset) {
       optionalMissingItems,
     });
     const missingItems = [...requiredMissingItems, ...optionalMissingItems];
+    const missingDiagnostics = createMissingDiagnostics(missingItems, statusMetadata, { sourceRows, effectRows, coefficientRows });
     const readinessStatus = calculateReadinessStatus({
       ...statusMetadata,
       requiredMissingItems,
@@ -273,6 +470,7 @@ export function buildExtractionCoverage(dataset) {
       optionalMissingItems,
       missingItems,
       missingExtraction: missingItems,
+      missingDiagnostics,
       requiredMissingCount: requiredMissingItems.length,
       optionalMissingCount: optionalMissingItems.length,
       missingCount: missingItems.length,
@@ -303,9 +501,13 @@ export function buildExtractionCoverage(dataset) {
       legacyReadyWithMissing: rows.filter((row) => row.readyRows > 0 && row.blockedRows === 0 && row.missingCount > 0).length,
       displayNameSourceMissing: rows.filter((row) => !row.isDisplayNameSourceBacked).length,
       characterIdentitySourceMissing: rows.filter((row) => !row.isCharacterIdentitySourceBacked).length,
+      autoMatchPossible: rows.reduce((sum, row) => sum + (row.missingDiagnostics ?? []).filter((item) => item.autoMatchPossible).length, 0),
+      curatedSourceRequired: rows.reduce((sum, row) => sum + (row.missingDiagnostics ?? []).filter((item) => item.needsCuratedSource).length, 0),
+      adapterParserImprovements: rows.reduce((sum, row) => sum + (row.missingDiagnostics ?? []).filter((item) => ["adapter_not_implemented", "parser_not_implemented"].includes(item.failureReason)).length, 0),
     },
     requiredMissingCounts: countItems(rows, "requiredMissingItems"),
     optionalMissingCounts: countItems(rows, "optionalMissingItems"),
+    failureReasonCounts: countDiagnostics(rows, "failureReason"),
     sourceLinkage: coverageIndex.sourceLinkage,
   };
 }
@@ -353,6 +555,13 @@ function validateExtractionStatus(status, dataset) {
     if (!Array.isArray(row.optionalMissingItems)) errors.push(`${row.characterId}: optionalMissingItems must be an array`);
     if (row.missingCount !== (row.requiredMissingCount ?? 0) + (row.optionalMissingCount ?? 0)) {
       errors.push(`${row.characterId}: missingCount mismatch`);
+    }
+    if (!Array.isArray(row.missingDiagnostics)) errors.push(`${row.characterId}: missingDiagnostics must be an array`);
+    if ((row.missingDiagnostics?.length ?? 0) !== row.missingCount) errors.push(`${row.characterId}: missingDiagnostics count mismatch`);
+    for (const diagnostic of row.missingDiagnostics ?? []) {
+      for (const field of ["missingType", "attemptedSources", "matchedCandidateCount", "closestCandidates", "failureReason", "autoMatchPossible", "needsCuratedSource", "nextAction"]) {
+        if (!(field in diagnostic)) errors.push(`${row.characterId}: missing diagnostic ${diagnostic.missingType ?? "unknown"} missing ${field}`);
+      }
     }
     if (row.readyRows + row.blockedRows !== row.sourceRows + row.effectRows + row.coefficientRows) {
       errors.push(`${row.characterId}: ready/blocked row total mismatch`);
@@ -454,6 +663,39 @@ const requiredMissingRows = extractionStatus.rows.filter((row) => row.requiredMi
 const optionalMissingRows = extractionStatus.rows.filter((row) => row.optionalMissingCount > 0);
 const unknownRows = extractionStatus.rows.filter((row) => row.valueMode.unknown > 0);
 const dynamicRows = extractionStatus.rows.filter((row) => row.valueMode.dynamicFormula > 0);
+const missingDiagnostics = missingRows.flatMap((row) => (row.missingDiagnostics ?? []).map((diagnostic) => ({
+  characterId: row.characterId,
+  displayName: row.displayName,
+  readinessStatus: row.readinessStatus,
+  ...diagnostic,
+})));
+const failureReasonCounts = missingDiagnostics.reduce((counts, item) => {
+  counts[item.failureReason] = (counts[item.failureReason] ?? 0) + 1;
+  return counts;
+}, {});
+const missingMatchAnalysis = {
+  version: 1,
+  generatedBy: "tools/validate_canonical_dataset.mjs",
+  summary: {
+    characters: extractionStatus.summary.characters,
+    partial: extractionStatus.summary.partial,
+    blocked: extractionStatus.summary.blocked,
+    missingItems: missingDiagnostics.length,
+    autoMatchPossible: missingDiagnostics.filter((item) => item.autoMatchPossible).length,
+    curatedSourceRequired: missingDiagnostics.filter((item) => item.needsCuratedSource).length,
+    adapterParserImprovements: missingDiagnostics.filter((item) => ["adapter_not_implemented", "parser_not_implemented"].includes(item.failureReason)).length,
+    failureReasonCounts,
+  },
+  rows: missingRows.map((row) => ({
+    characterId: row.characterId,
+    displayName: row.displayName,
+    readinessStatus: row.readinessStatus,
+    requiredMissingItems: row.requiredMissingItems,
+    optionalMissingItems: row.optionalMissingItems,
+    missingDiagnostics: row.missingDiagnostics,
+  })),
+};
+writeJson(missingMatchAnalysisPath, missingMatchAnalysis);
 
 const reportLines = [
   "# Canonical Dataset Report",
@@ -513,6 +755,9 @@ const coverageReportLines = [
   `- dynamicFormulaCharacters: ${dynamicRows.length}`,
   `- displayNameSourceMissing: ${extractionStatus.summary.displayNameSourceMissing}`,
   `- characterIdentitySourceMissing: ${extractionStatus.summary.characterIdentitySourceMissing}`,
+  `- autoMatchPossible: ${missingMatchAnalysis.summary.autoMatchPossible}`,
+  `- curatedSourceRequired: ${missingMatchAnalysis.summary.curatedSourceRequired}`,
+  `- adapterParserImprovements: ${missingMatchAnalysis.summary.adapterParserImprovements}`,
   "",
   "## Readiness Status",
   "",
@@ -528,6 +773,10 @@ const coverageReportLines = [
   "## Optional Missing Counts",
   "",
   ...(Object.keys(extractionStatus.optionalMissingCounts).length ? Object.entries(extractionStatus.optionalMissingCounts).map(([key, value]) => `- ${key}: ${value}`) : ["- none"]),
+  "",
+  "## Failure Reason Counts",
+  "",
+  ...(Object.keys(failureReasonCounts).length ? Object.entries(failureReasonCounts).sort((a, b) => a[0].localeCompare(b[0])).map(([key, value]) => `- ${key}: ${value}`) : ["- none"]),
   "",
   "## Source Linkage",
   "",
@@ -558,5 +807,40 @@ const coverageReportLines = [
   "- Missing relic source remains missing instead of being filled from manual guide data.",
 ];
 fs.writeFileSync(coverageReportPath, `${coverageReportLines.join("\n")}\n`, "utf8");
+
+const missingMatchReportLines = [
+  "# Missing Match Analysis",
+  "",
+  "Generated by `npm.cmd run validate:canonical-dataset`.",
+  "",
+  "## Summary",
+  "",
+  `- partial: ${missingMatchAnalysis.summary.partial}`,
+  `- blocked: ${missingMatchAnalysis.summary.blocked}`,
+  `- missingItems: ${missingMatchAnalysis.summary.missingItems}`,
+  `- autoMatchPossible: ${missingMatchAnalysis.summary.autoMatchPossible}`,
+  `- curatedSourceRequired: ${missingMatchAnalysis.summary.curatedSourceRequired}`,
+  `- adapterParserImprovements: ${missingMatchAnalysis.summary.adapterParserImprovements}`,
+  "",
+  "## Failure Reason Counts",
+  "",
+  ...(Object.keys(failureReasonCounts).length ? Object.entries(failureReasonCounts).sort((a, b) => a[0].localeCompare(b[0])).map(([key, value]) => `- ${key}: ${value}`) : ["- none"]),
+  "",
+  "## Character Diagnostics",
+  "",
+  ...(missingMatchAnalysis.rows.length ? missingMatchAnalysis.rows.flatMap((row) => [
+    `### ${row.displayName}`,
+    "",
+    `- characterId: ${row.characterId}`,
+    `- readinessStatus: ${row.readinessStatus}`,
+    ...row.missingDiagnostics.map((item) => `- ${item.missingType}: reason=${item.failureReason}; matched=${item.matchedCandidateCount}; autoMatchPossible=${item.autoMatchPossible}; needsCuratedSource=${item.needsCuratedSource}; nextAction=${item.nextAction}`),
+    "",
+  ]) : ["- none"]),
+  "## Policy",
+  "",
+  "- This report is diagnostic only; it does not auto-match or patch character names/values.",
+  "- Manual hints and manual guides remain blocked from calculation readiness.",
+];
+fs.writeFileSync(missingMatchAnalysisReportPath, `${missingMatchReportLines.join("\n")}\n`, "utf8");
 
 console.log(`canonical dataset validation ok: sourceRows=${dataset.manifest.counts.sourceRows}, sourceReady=${dataset.manifest.sourcePolicy.ready}, sourceBlocked=${dataset.manifest.sourcePolicy.blocked}, statusCharacters=${extractionStatus.summary.characters}, readiness=ready:${extractionStatus.summary.ready}/partial:${extractionStatus.summary.partial}/blocked:${extractionStatus.summary.blocked}, readyWithMissing=0, datasetMode=${extractionStatus.datasetMode}, effectRowsZero=${extractionStatus.summary.effectRowsZero}, manual_hint_guard=blocked`);

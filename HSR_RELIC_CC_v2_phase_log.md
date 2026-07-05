@@ -1117,3 +1117,38 @@
 - `npm.cmd run validate`: passed. 12 sub-scripts passed.
 - `node tools\audit_character_display_names.mjs`: passed. rows=90, needsReview=0, highPriority=0.
 - `npm.cmd run build`: passed. Vite production build completed; generated JSON chunk-size warning remains.
+
+---
+
+## Follow-up Analysis. Missing Match Failure Reasons
+
+### Status
+
+- status: completed
+- started: 2026-07-05
+- completed: 2026-07-05
+- request: classify why partial/blocked missing items failed to match
+
+### Work Log
+
+- Added `missingDiagnostics` to extraction status rows for each required/optional missing item.
+- Each diagnostic records `missingType`, attempted sources, matched candidate count, closest candidates, failure reason, auto-match possibility, curated-source requirement, and next action.
+- Generated `reports/extraction/missing-match-analysis.json` and `reports/extraction/missing-match-analysis.md`.
+- Updated `/extraction/:characterId` to show missing failure reason and next action per character.
+- No automatic matching, character-name correction, value correction, or generated JSON manual edits were performed.
+- Existing `C:\CODEX\HSR RELIC CC` files were not modified.
+
+### Output Summary
+
+- partial: 66
+- blocked: 3
+- missingItems: 98
+- autoMatchPossible: 6
+- curatedSourceRequired: 35
+- adapterParserImprovements: 3
+- failureReasonCounts: effect_trace_not_found 30, valueMode_dynamic_formula_unresolved 54, source_exists_but_id_mismatch 3, curated_source_required 3, parser_not_implemented 3, coefficient_not_found 2, source_not_loaded 3
+
+### Verification
+
+- `npm.cmd run validate`: passed. 12 sub-scripts passed.
+- `npm.cmd run build`: passed. Vite production build completed; generated JSON chunk-size warning remains.

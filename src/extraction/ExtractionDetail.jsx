@@ -65,6 +65,7 @@ export function ExtractionDetail({ params = {} }) {
   const blockedSourceRows = sourceRows.filter((row) => !row.calculationReady || row.policyBlockedReason);
   const hasRows = sourceRows.length + effectRows.length + coefficientRows.length > 0;
   const statusTone = statusRow?.readinessStatus === "ready" ? "ready" : statusRow?.readinessStatus === "partial" ? "warning" : "blocked";
+  const missingDiagnostics = statusRow?.missingDiagnostics ?? [];
 
   return (
     <Panel eyebrow="Extraction Detail" title={title} toolbar={<Badge tone={statusTone}>{statusRow?.readinessStatus ?? (hasRows ? "partial" : "blocked")}</Badge>}>
@@ -87,6 +88,26 @@ export function ExtractionDetail({ params = {} }) {
             <TraceRow label="Relic source" value={statusRow?.sourceAvailability?.relic ?? "missing_snapshot"} />
             {(statusRow?.missingCount ?? 0) > 0 && <p>{[...(statusRow.requiredMissingItems ?? []), ...(statusRow.optionalMissingItems ?? [])].join(", ")}</p>}
           </Card>
+          {missingDiagnostics.length > 0 && (
+          <Card>
+            <h3>Missing Analysis</h3>
+            <MetricList
+              items={[
+                { label: "Auto match", value: missingDiagnostics.filter((item) => item.autoMatchPossible).length },
+                { label: "Curated source", value: missingDiagnostics.filter((item) => item.needsCuratedSource).length },
+                { label: "Parser", value: missingDiagnostics.filter((item) => item.failureReason === "parser_not_implemented").length },
+              ]}
+            />
+            {missingDiagnostics.slice(0, 6).map((item) => (
+              <TraceRow
+                key={`${item.missingType}:${item.failureReason}`}
+                label={item.missingType}
+                value={item.failureReason}
+                meta={item.nextAction}
+              />
+            ))}
+          </Card>
+          )}
           <Card>
             <h3>Sources</h3>
             <MetricList items={[{ label: "Rows", value: sourceRows.length }, { label: "Ready", value: sourceRows.filter((row) => row.calculationReady).length }, { label: "Blocked", value: blockedSourceRows.length }]} />
