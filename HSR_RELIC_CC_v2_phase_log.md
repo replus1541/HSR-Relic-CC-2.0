@@ -589,6 +589,10 @@
 - `src/effect-engine/effect-taxonomy.js`에 taxonomy constants, known-value predicate, unknown taxonomy policy를 추가했습니다.
 - `reports/effect-engine/normalization-report.md`에 unknown taxonomy는 계산 불가 후보로 처리한다는 정책을 기록했습니다.
 - value resolving, dedupe, 계산 로직, adapter target policy mapping은 구현하지 않았습니다.
+- Task 8-B 시작: `src/effect-engine/normalize-effects.js`를 추가해 EffectRow를 NormalizedEffect candidate로 변환합니다.
+- adapter `effectTargetPolicy` 값은 canonical targetScope로 매핑하고, attackType 미지정 buff/debuff row는 support attackType으로 둡니다.
+- `data/generated/normalized-effect-rows.json`를 생성했습니다. 현재 canonical effectRows 9개는 모두 calculation_ready candidate이며, unknown effectType/valueMode fixture는 blocked candidate로 확인했습니다.
+- resolvedValue 산출, dedupe, value resolver, 계산 로직은 구현하지 않았습니다.
 
 ---
 

@@ -1,0 +1,438 @@
+{
+  "version": 1,
+  "generatedBy": "src/effect-engine/normalize-effects.js",
+  "rows": [
+    {
+      "id": "normalized:effect:PlayerBoy_20:0",
+      "effectRowId": "effect:PlayerBoy_20:0",
+      "sourceId": "source:PlayerBoy_20:0",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "PlayerBoy_20",
+      "stat": "critDamage",
+      "rawValue": 0.132,
+      "effectType": "buff",
+      "targetScope": "all_allies",
+      "attackType": "support",
+      "valueMode": "skill_level_scaled",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "allAllies",
+        "calculationSubjectPolicy": "allAllies"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "normalized:effect:PlayerBoy_20:1",
+      "effectRowId": "effect:PlayerBoy_20:1",
+      "sourceId": "source:PlayerBoy_20:1",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "PlayerBoy_20",
+      "stat": "critRate",
+      "rawValue": 0.1,
+      "effectType": "buff",
+      "targetScope": "all_allies",
+      "attackType": "support",
+      "valueMode": "eidolon_adjusted",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "allAllies",
+        "calculationSubjectPolicy": "allAllies"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "normalized:effect:PlayerBoy_20:2",
+      "effectRowId": "effect:PlayerBoy_20:2",
+      "sourceId": "source:PlayerBoy_20:2",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "PlayerBoy_20",
+      "stat": "specialFinal",
+      "rawValue": 0.06,
+      "effectType": "buff",
+      "targetScope": "single_ally",
+      "attackType": "support",
+      "valueMode": "eidolon_adjusted",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "singleAlly",
+        "calculationSubjectPolicy": "singleAlly"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "normalized:effect:PlayerBoy_00:0",
+      "effectRowId": "effect:PlayerBoy_00:0",
+      "sourceId": "source:PlayerBoy_00:0",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "PlayerBoy_00",
+      "stat": "atkRatio",
+      "rawValue": 0.2,
+      "effectType": "buff",
+      "targetScope": "self",
+      "attackType": "support",
+      "valueMode": "dynamic_formula",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "self",
+        "calculationSubjectPolicy": "self"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "normalized:effect:PlayerBoy_00:1",
+      "effectRowId": "effect:PlayerBoy_00:1",
+      "sourceId": "source:PlayerBoy_00:1",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "PlayerBoy_00",
+      "stat": "allDamage",
+      "rawValue": 0.25,
+      "effectType": "buff",
+      "targetScope": "self",
+      "attackType": "support",
+      "valueMode": "dynamic_formula",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "self",
+        "calculationSubjectPolicy": "self"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "normalized:effect:PlayerBoy_00:2",
+      "effectRowId": "effect:PlayerBoy_00:2",
+      "sourceId": "source:PlayerBoy_00:2",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "PlayerBoy_00",
+      "stat": "critRate",
+      "rawValue": 0.25,
+      "effectType": "buff",
+      "targetScope": "self",
+      "attackType": "support",
+      "valueMode": "eidolon_adjusted",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "self",
+        "calculationSubjectPolicy": "self"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "normalized:effect:PlayerBoy_40:0",
+      "effectRowId": "effect:PlayerBoy_40:0",
+      "sourceId": "source:PlayerBoy_40:0",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "PlayerBoy_40",
+      "stat": "critDamage",
+      "rawValue": 0.3,
+      "effectType": "buff",
+      "targetScope": "single_ally",
+      "attackType": "support",
+      "valueMode": "dynamic_formula",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "singleAlly",
+        "calculationSubjectPolicy": "singleAlly"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "normalized:effect:PlayerBoy_40:1",
+      "effectRowId": "effect:PlayerBoy_40:1",
+      "sourceId": "source:PlayerBoy_40:1",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "PlayerBoy_40",
+      "stat": "critRate",
+      "rawValue": 0.15,
+      "effectType": "buff",
+      "targetScope": "all_allies",
+      "attackType": "support",
+      "valueMode": "fixed",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "allAllies",
+        "calculationSubjectPolicy": "allAllies"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "normalized:effect:PlayerBoy_40:2",
+      "effectRowId": "effect:PlayerBoy_40:2",
+      "sourceId": "source:PlayerBoy_40:2",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "PlayerBoy_40",
+      "stat": "vulnerability",
+      "rawValue": 0.1,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "eidolon_adjusted",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "calculation_ready"
+    }
+  ]
+}
