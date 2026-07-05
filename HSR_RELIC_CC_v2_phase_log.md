@@ -945,3 +945,6 @@
 ### 다음 Task로 넘길 항목
 
 - Phase 18-B에서 release summary와 known gaps를 사용자/미래 작업자용으로 정리합니다.
+- Task 18-B 시작: `reports/release/v2-phase1-summary.md`, `reports/release/v2-phase1-known-gaps.md`를 작성했습니다.
+- README에 v2 1차 통합 상태와 release 문서 링크를 추가했습니다.
+- 새 기능 구현, 기존 프로젝트 수정, 검증 실패 숨김은 수행하지 않았습니다.

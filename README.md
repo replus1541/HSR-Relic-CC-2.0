@@ -119,3 +119,12 @@ npm.cmd run build
 - route/generated data smoke: `npm.cmd run verify:app`
 
 검증 정책 상세는 `reports/validation/validation-policy.md`를 기준으로 합니다.
+## v2 1차 통합 상태
+
+1차 통합 summary와 known gaps는 아래 문서를 기준으로 합니다.
+
+- `reports/release/v2-phase1-summary.md`
+- `reports/release/v2-phase1-known-gaps.md`
+- `reports/release/v2-phase1-audit.md`
+
+현재 release blocker는 문서화된 기준에서 없습니다. 다만 dynamic formula resolver, full external import fixture, legacy runtime parity, full UI workflow는 known gap으로 남아 있습니다.
