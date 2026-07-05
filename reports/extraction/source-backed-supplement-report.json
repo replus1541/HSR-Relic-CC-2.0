@@ -1,0 +1,140 @@
+{
+  "generatedBy": "tools/analyze_source_backed_supplements.mjs",
+  "reinforcedCharacters": 15,
+  "reinforcedEffectRows": 66,
+  "supplementalEffectSourceRows": 66,
+  "designDataCoefficientRows": 763,
+  "designDataCoefficientSourceRows": 286,
+  "autoMatchApplied": 3,
+  "autoMatchCandidatesRemaining": 3,
+  "hoyowikiFilledItems": 66,
+  "designDataFilledItems": 763,
+  "curatedSourceRemaining": 21,
+  "stillBlockedCharacters": 13,
+  "stillBlockedRows": 132,
+  "readinessBefore": {
+    "ready": 21,
+    "partial": 66,
+    "blocked": 3
+  },
+  "readinessAfter": {
+    "ready": 21,
+    "partial": 56,
+    "blocked": 13
+  },
+  "readinessDelta": {
+    "ready": 0,
+    "partial": -10,
+    "blocked": 10
+  },
+  "supplementalEffectCharacters": [
+    "PlayerBoy_30",
+    "Sam_00",
+    "Gallagher_00",
+    "Topaz_00",
+    "Lynx_00",
+    "Kafka_00",
+    "Bailu_00",
+    "PlayerBoy_10",
+    "Sampo_00",
+    "Natasha_00",
+    "Gepard_00",
+    "Mar_7th_00"
+  ],
+  "autoMatchRows": [
+    {
+      "characterId": "PlayerBoy_40",
+      "displayName": "개척자 • 환락",
+      "coefficientRows": 8,
+      "effectRows": 4,
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "applied": true
+    },
+    {
+      "characterId": "Gilgamesh_00",
+      "displayName": "길가메시",
+      "coefficientRows": 0,
+      "effectRows": 0,
+      "missingItems": [
+        "no_calculation_ready_rows",
+        "missing_skill_text",
+        "missing_effect_trace",
+        "missing_coefficient",
+        "missing_eidolon_trace",
+        "effect_rows_zero",
+        "coefficient_rows_zero"
+      ],
+      "applied": false
+    },
+    {
+      "characterId": "TohsakaRin_00",
+      "displayName": "토오사카 린",
+      "coefficientRows": 1,
+      "effectRows": 0,
+      "missingItems": [
+        "missing_skill_text",
+        "missing_effect_trace",
+        "missing_eidolon_trace",
+        "effect_rows_zero"
+      ],
+      "applied": true
+    },
+    {
+      "characterId": "HimekoNova_00",
+      "displayName": "히메코 • 노바",
+      "coefficientRows": 1,
+      "effectRows": 0,
+      "missingItems": [
+        "missing_skill_text",
+        "missing_effect_trace",
+        "missing_eidolon_trace",
+        "effect_rows_zero"
+      ],
+      "applied": true
+    }
+  ],
+  "supplementalEffectRowsByTargetScope": {
+    "all_allies": 8,
+    "field": 16,
+    "enemy_single": 23,
+    "self": 5,
+    "enemy_all": 7,
+    "single_ally": 7
+  },
+  "supplementalEffectRowsByStat": {
+    "breakDamage": 2,
+    "unclassified_source_effect": 17,
+    "atkRatio": 26,
+    "speed": 1,
+    "damageReduction": 1,
+    "hpRatio": 13,
+    "critDamage": 1,
+    "allDamage": 1,
+    "defenseDown": 4
+  },
+  "failureReasonCounts": {
+    "source_exists_but_blocked_by_policy": 12,
+    "parser_not_implemented": 15,
+    "valueMode_dynamic_formula_unresolved": 54,
+    "curated_source_required": 1,
+    "effect_trace_not_found": 6,
+    "coefficient_not_found": 2,
+    "source_not_loaded": 3
+  },
+  "optionalMissingCounts": {
+    "value_mode_unknown": 12,
+    "dynamic_formula_blocked": 54,
+    "missing_skill_text": 3,
+    "missing_effect_trace": 3,
+    "missing_coefficient": 1,
+    "missing_eidolon_trace": 3,
+    "effect_rows_zero": 3,
+    "coefficient_rows_zero": 1
+  },
+  "requiredMissingCounts": {
+    "blocked_rows_present": 12,
+    "no_calculation_ready_rows": 1
+  }
+}

@@ -1,10 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
 import {
+  AttackType,
   CalculationStatus,
   EffectType,
+  ReviewStatus,
   SourceKind,
   SourceOrigin,
+  TargetProfile,
+  TargetScope,
   ValueMode,
 } from "../../data-model/schemas/index.js";
 
@@ -30,6 +34,18 @@ function inferEffectType(effect) {
   return EffectType.BUFF;
 }
 
+function dynamicFormulaType(effect) {
+  if (normalizeValueMode(effect.valueMode) !== ValueMode.DYNAMIC_FORMULA) return null;
+  const source = [effect.sourceText, effect.sourceRecord, effect.sourcePath, effect.sourceId, effect.stat].filter(Boolean).join(" ").toLowerCase();
+  if (source.includes("debuffcount")) return "enemy_debuff_count";
+  if (source.includes("stack") || source.includes("nobility") || source.includes("ashenroast") || source.includes("overcap")) return "stack_condition";
+  if (source.includes("sourcecombatatkratio") || source.includes("targetatkratio") || source.includes("source-atk") || source.includes("atk-threshold") || source.includes("breakeffect")) return "source_stat_ratio";
+  if (source.includes("basicattack") || source.includes("selfenhancedskill") || ["followDamage", "ultimateDamage", "basicDamage", "combatSkillDamage"].includes(effect.stat)) return "attack_type_condition";
+  if (effect.minEidolon != null) return "eidolon_condition";
+  if (source.includes("level") || source.includes("fixed")) return "level_scaled_value";
+  return "parser_type_unresolved";
+}
+
 function makeSourceRow({ entry, character, effect, index }) {
   const sourceRecord = effect.sourceId ?? effect.sourceRecord ?? effect.sourcePath ?? `${character.avatar ?? character.name}:effect:${index}`;
   return {
@@ -48,22 +64,107 @@ function makeSourceRow({ entry, character, effect, index }) {
 }
 
 function makeEffectRow({ sourceRow, character, effect, index }) {
+  const valueMode = normalizeValueMode(effect.valueMode);
   return {
     id: `effect:${character.avatar ?? character.name}:${index}`,
     sourceId: sourceRow.id,
     sourceOrigin: sourceRow.sourceOrigin,
+    sourcePath: sourceRow.sourcePath,
+    sourceText: sourceRow.sourceText,
+    sourceType: sourceRow.sourceKind,
     effectType: inferEffectType(effect),
     stat: effect.stat,
     rawValue: effect.value ?? null,
-    valueMode: normalizeValueMode(effect.valueMode),
+    valueMode,
+    dynamicFormulaType: dynamicFormulaType(effect),
     effectProviderId: character.avatar ?? character.name,
     characterName: character.name ?? character.avatar,
     minEidolon: effect.minEidolon ?? null,
     sourceTrace: effect.sourceRecord ?? effect.sourcePath ?? effect.sourceId ?? sourceRow.sourceRecord,
+    targetScope: effect.targetScope ?? effect.target ?? TargetScope.UNKNOWN,
     effectTargetPolicy: effect.targetScope ?? effect.target ?? "unknown",
     calculationSubjectPolicy: effect.targetScope ?? effect.target ?? "unknown",
+    reviewStatus: ReviewStatus.SOURCE_CONFIRMED,
     calculationStatus: CalculationStatus.CALCULATION_READY,
   };
+}
+
+function normalizeAttackType(category) {
+  const value = String(category ?? "").toLowerCase();
+  if (value.includes("basic")) return AttackType.BASIC;
+  if (value.includes("skill")) return AttackType.SKILL;
+  if (value.includes("ultimate")) return AttackType.ULTIMATE;
+  if (value.includes("follow") || value.includes("talent")) return AttackType.FOLLOW_UP;
+  return AttackType.SUPPORT;
+}
+
+function normalizeTargetProfile(targetProfile) {
+  const type = String(targetProfile?.type ?? targetProfile ?? "").toLowerCase();
+  const allowed = new Set(Object.values(TargetProfile));
+  return allowed.has(type) ? type : TargetProfile.UNKNOWN;
+}
+
+function makeCoefficientSourceRow({ entry, character, slot, index }) {
+  const values = slot.confirmedCoefficient?.values ?? slot.confirmedCoefficient?.rows?.flatMap((row) => row.values ?? []) ?? [];
+  return {
+    id: `source:coefficient:${character.avatar}:${slot.key}:${index}`,
+    kind: "source_row",
+    version: 1,
+    createdBy: "local-json-adapter",
+    sourceOrigin: SourceOrigin.RAW_SOURCE,
+    sourceKind: SourceKind.GAME_DB_GENERATED,
+    sourcePath: entry.snapshotPath,
+    sourceRecord: slot.confirmedCoefficient?.sourceRecord ?? `${character.avatar}:${slot.key}`,
+    characterId: character.avatar,
+    sourceText: `${character.nameKo ?? character.avatar} ${slot.key} ${slot.category} confirmedCoefficient=${values.join(",")}`,
+    calculationStatus: CalculationStatus.CALCULATION_READY,
+  };
+}
+
+function makeCoefficientRows({ sourceRow, character, slot }) {
+  const rows = [];
+  const confirmed = slot.confirmedCoefficient;
+  if (!confirmed) return rows;
+  if (Array.isArray(confirmed.values) && confirmed.values.length > 0) {
+    rows.push({
+      id: `coefficient:game-db:${character.avatar}:${slot.key}:main`,
+      sourceId: sourceRow.id,
+      sourceOrigin: sourceRow.sourceOrigin,
+      sourcePath: sourceRow.sourcePath,
+      sourceText: sourceRow.sourceText,
+      sourceType: sourceRow.sourceKind,
+      characterId: character.avatar,
+      skillId: `${character.avatar}:${slot.key}`,
+      attackType: normalizeAttackType(slot.category),
+      targetProfile: normalizeTargetProfile(slot.targetProfile),
+      targetScope: slot.targetProfile?.type ?? TargetScope.UNKNOWN,
+      scalingStat: "unknown",
+      coefficientValues: confirmed.values,
+      reviewStatus: confirmed.review?.status === "confirmed" ? ReviewStatus.SOURCE_CONFIRMED : ReviewStatus.UNREVIEWED,
+      calculationStatus: CalculationStatus.CALCULATION_READY,
+    });
+  }
+  for (const [rowIndex, coefficientRow] of (confirmed.rows ?? []).entries()) {
+    if (!Array.isArray(coefficientRow.values) || coefficientRow.values.length === 0) continue;
+    rows.push({
+      id: `coefficient:game-db:${character.avatar}:${slot.key}:row:${rowIndex}`,
+      sourceId: sourceRow.id,
+      sourceOrigin: sourceRow.sourceOrigin,
+      sourcePath: sourceRow.sourcePath,
+      sourceText: sourceRow.sourceText,
+      sourceType: sourceRow.sourceKind,
+      characterId: character.avatar,
+      skillId: `${character.avatar}:${slot.key}`,
+      attackType: normalizeAttackType(slot.category),
+      targetProfile: normalizeTargetProfile(slot.targetProfile),
+      targetScope: slot.targetProfile?.type ?? TargetScope.UNKNOWN,
+      scalingStat: "unknown",
+      coefficientValues: coefficientRow.values,
+      reviewStatus: ReviewStatus.SOURCE_CONFIRMED,
+      calculationStatus: CalculationStatus.CALCULATION_READY,
+    });
+  }
+  return rows;
 }
 
 export const localJsonAdapter = Object.freeze({
@@ -88,6 +189,7 @@ export const localJsonAdapter = Object.freeze({
     const characters = characterLimit == null ? allCharacters : allCharacters.slice(0, characterLimit);
     const sourceRows = [];
     const effectRows = [];
+    const coefficientRows = [];
     const blockedRows = [];
 
     for (const character of characters) {
@@ -106,10 +208,19 @@ export const localJsonAdapter = Object.freeze({
       }
     }
 
+    for (const character of loaded.coefficientPayload?.characters ?? []) {
+      for (const [slotIndex, slot] of (character.slots ?? []).entries()) {
+        if (!slot.confirmedCoefficient) continue;
+        const sourceRow = makeCoefficientSourceRow({ entry: loaded.coefficientEntry, character, slot, index: slotIndex });
+        sourceRows.push(sourceRow);
+        coefficientRows.push(...makeCoefficientRows({ sourceRow, character, slot }));
+      }
+    }
+
     return {
       sourceRows,
       effectRows,
-      coefficientRows: [],
+      coefficientRows,
       blockedRows,
       metadata: {
         datasetMode: characterLimit == null ? "full" : "sample",

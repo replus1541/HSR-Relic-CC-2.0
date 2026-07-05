@@ -13105,6 +13105,3240 @@
         }
       ],
       "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:2511:A",
+      "effectRowId": "effect:hoyowiki-effect:2511:A",
+      "sourceId": "source:hoyowiki-effect:2511:A",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "2511",
+      "stat": "breakDamage",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "all_allies",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "allAllies",
+        "calculationSubjectPolicy": "allAllies"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:2511:B",
+      "effectRowId": "effect:hoyowiki-effect:2511:B",
+      "sourceId": "source:hoyowiki-effect:2511:B",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "2511",
+      "stat": "unclassified_source_effect",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "field",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "field",
+        "calculationSubjectPolicy": "field"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:2511:C",
+      "effectRowId": "effect:hoyowiki-effect:2511:C",
+      "sourceId": "source:hoyowiki-effect:2511:C",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "2511",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:2511:C1",
+      "effectRowId": "effect:hoyowiki-effect:2511:C1",
+      "sourceId": "source:hoyowiki-effect:2511:C1",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "2511",
+      "stat": "unclassified_source_effect",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "field",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "field",
+        "calculationSubjectPolicy": "field"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:2511:E",
+      "effectRowId": "effect:hoyowiki-effect:2511:E",
+      "sourceId": "source:hoyowiki-effect:2511:E",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "2511",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:2494:A",
+      "effectRowId": "effect:hoyowiki-effect:2494:A",
+      "sourceId": "source:hoyowiki-effect:2494:A",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "2494",
+      "stat": "speed",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "self",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "self",
+        "calculationSubjectPolicy": "self"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:2494:B",
+      "effectRowId": "effect:hoyowiki-effect:2494:B",
+      "sourceId": "source:hoyowiki-effect:2494:B",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "2494",
+      "stat": "damageReduction",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "self",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "self",
+        "calculationSubjectPolicy": "self"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:2494:C",
+      "effectRowId": "effect:hoyowiki-effect:2494:C",
+      "sourceId": "source:hoyowiki-effect:2494:C",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "2494",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:2494:E",
+      "effectRowId": "effect:hoyowiki-effect:2494:E",
+      "sourceId": "source:hoyowiki-effect:2494:E",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "2494",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:1924:A",
+      "effectRowId": "effect:hoyowiki-effect:1924:A",
+      "sourceId": "source:hoyowiki-effect:1924:A",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "1924",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_all",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemyAll",
+        "calculationSubjectPolicy": "enemyAll"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:1924:B",
+      "effectRowId": "effect:hoyowiki-effect:1924:B",
+      "sourceId": "source:hoyowiki-effect:1924:B",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "1924",
+      "stat": "breakDamage",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:1924:B1",
+      "effectRowId": "effect:hoyowiki-effect:1924:B1",
+      "sourceId": "source:hoyowiki-effect:1924:B1",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "1924",
+      "stat": "hpRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:1924:C",
+      "effectRowId": "effect:hoyowiki-effect:1924:C",
+      "sourceId": "source:hoyowiki-effect:1924:C",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "1924",
+      "stat": "hpRatio",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "single_ally",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "singleAlly",
+        "calculationSubjectPolicy": "singleAlly"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:1924:D7",
+      "effectRowId": "effect:hoyowiki-effect:1924:D7",
+      "sourceId": "source:hoyowiki-effect:1924:D7",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "1924",
+      "stat": "unclassified_source_effect",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "self",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "self",
+        "calculationSubjectPolicy": "self"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:1924:E",
+      "effectRowId": "effect:hoyowiki-effect:1924:E",
+      "sourceId": "source:hoyowiki-effect:1924:E",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "1924",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:1389:A",
+      "effectRowId": "effect:hoyowiki-effect:1389:A",
+      "sourceId": "source:hoyowiki-effect:1389:A",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "1389",
+      "stat": "critDamage",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "field",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "field",
+        "calculationSubjectPolicy": "field"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:1389:B",
+      "effectRowId": "effect:hoyowiki-effect:1389:B",
+      "sourceId": "source:hoyowiki-effect:1389:B",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "1389",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:1389:C",
+      "effectRowId": "effect:hoyowiki-effect:1389:C",
+      "sourceId": "source:hoyowiki-effect:1389:C",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "1389",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:1389:D5",
+      "effectRowId": "effect:hoyowiki-effect:1389:D5",
+      "sourceId": "source:hoyowiki-effect:1389:D5",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "1389",
+      "stat": "unclassified_source_effect",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "field",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "field",
+        "calculationSubjectPolicy": "field"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:1389:E",
+      "effectRowId": "effect:hoyowiki-effect:1389:E",
+      "sourceId": "source:hoyowiki-effect:1389:E",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "1389",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:1228:A",
+      "effectRowId": "effect:hoyowiki-effect:1228:A",
+      "sourceId": "source:hoyowiki-effect:1228:A",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "1228",
+      "stat": "hpRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "all_allies",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "allAllies",
+        "calculationSubjectPolicy": "allAllies"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:1228:B",
+      "effectRowId": "effect:hoyowiki-effect:1228:B",
+      "sourceId": "source:hoyowiki-effect:1228:B",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "1228",
+      "stat": "hpRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:1228:B1",
+      "effectRowId": "effect:hoyowiki-effect:1228:B1",
+      "sourceId": "source:hoyowiki-effect:1228:B1",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "1228",
+      "stat": "unclassified_source_effect",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "field",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "field",
+        "calculationSubjectPolicy": "field"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:1228:C",
+      "effectRowId": "effect:hoyowiki-effect:1228:C",
+      "sourceId": "source:hoyowiki-effect:1228:C",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "1228",
+      "stat": "hpRatio",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "single_ally",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "singleAlly",
+        "calculationSubjectPolicy": "singleAlly"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:1228:D",
+      "effectRowId": "effect:hoyowiki-effect:1228:D",
+      "sourceId": "source:hoyowiki-effect:1228:D",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "1228",
+      "stat": "unclassified_source_effect",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "all_allies",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "allAllies",
+        "calculationSubjectPolicy": "allAllies"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:1228:E",
+      "effectRowId": "effect:hoyowiki-effect:1228:E",
+      "sourceId": "source:hoyowiki-effect:1228:E",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "1228",
+      "stat": "allDamage",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:791:A",
+      "effectRowId": "effect:hoyowiki-effect:791:A",
+      "sourceId": "source:hoyowiki-effect:791:A",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "791",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_all",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemyAll",
+        "calculationSubjectPolicy": "enemyAll"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:791:B",
+      "effectRowId": "effect:hoyowiki-effect:791:B",
+      "sourceId": "source:hoyowiki-effect:791:B",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "791",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:791:B1",
+      "effectRowId": "effect:hoyowiki-effect:791:B1",
+      "sourceId": "source:hoyowiki-effect:791:B1",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "791",
+      "stat": "unclassified_source_effect",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "field",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "field",
+        "calculationSubjectPolicy": "field"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:791:C",
+      "effectRowId": "effect:hoyowiki-effect:791:C",
+      "sourceId": "source:hoyowiki-effect:791:C",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "791",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:791:D",
+      "effectRowId": "effect:hoyowiki-effect:791:D",
+      "sourceId": "source:hoyowiki-effect:791:D",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "791",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_all",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemyAll",
+        "calculationSubjectPolicy": "enemyAll"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:791:E",
+      "effectRowId": "effect:hoyowiki-effect:791:E",
+      "sourceId": "source:hoyowiki-effect:791:E",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "791",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:791:E1",
+      "effectRowId": "effect:hoyowiki-effect:791:E1",
+      "sourceId": "source:hoyowiki-effect:791:E1",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "791",
+      "stat": "unclassified_source_effect",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "field",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "field",
+        "calculationSubjectPolicy": "field"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:29:A",
+      "effectRowId": "effect:hoyowiki-effect:29:A",
+      "sourceId": "source:hoyowiki-effect:29:A",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "29",
+      "stat": "hpRatio",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "all_allies",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "allAllies",
+        "calculationSubjectPolicy": "allAllies"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:29:B",
+      "effectRowId": "effect:hoyowiki-effect:29:B",
+      "sourceId": "source:hoyowiki-effect:29:B",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "29",
+      "stat": "hpRatio",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "field",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "field",
+        "calculationSubjectPolicy": "field"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:29:C",
+      "effectRowId": "effect:hoyowiki-effect:29:C",
+      "sourceId": "source:hoyowiki-effect:29:C",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "29",
+      "stat": "hpRatio",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "single_ally",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "singleAlly",
+        "calculationSubjectPolicy": "singleAlly"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:29:E",
+      "effectRowId": "effect:hoyowiki-effect:29:E",
+      "sourceId": "source:hoyowiki-effect:29:E",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "29",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:23:A",
+      "effectRowId": "effect:hoyowiki-effect:23:A",
+      "sourceId": "source:hoyowiki-effect:23:A",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "23",
+      "stat": "defenseDown",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_all",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemyAll",
+        "calculationSubjectPolicy": "enemyAll"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:23:B",
+      "effectRowId": "effect:hoyowiki-effect:23:B",
+      "sourceId": "source:hoyowiki-effect:23:B",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "23",
+      "stat": "defenseDown",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "all_allies",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "allAllies",
+        "calculationSubjectPolicy": "allAllies"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:23:C",
+      "effectRowId": "effect:hoyowiki-effect:23:C",
+      "sourceId": "source:hoyowiki-effect:23:C",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "23",
+      "stat": "unclassified_source_effect",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_all",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemyAll",
+        "calculationSubjectPolicy": "enemyAll"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:23:D2",
+      "effectRowId": "effect:hoyowiki-effect:23:D2",
+      "sourceId": "source:hoyowiki-effect:23:D2",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "23",
+      "stat": "hpRatio",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "self",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "self",
+        "calculationSubjectPolicy": "self"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:23:D5",
+      "effectRowId": "effect:hoyowiki-effect:23:D5",
+      "sourceId": "source:hoyowiki-effect:23:D5",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "23",
+      "stat": "unclassified_source_effect",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "all_allies",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "allAllies",
+        "calculationSubjectPolicy": "allAllies"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:23:E",
+      "effectRowId": "effect:hoyowiki-effect:23:E",
+      "sourceId": "source:hoyowiki-effect:23:E",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "23",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:21:A",
+      "effectRowId": "effect:hoyowiki-effect:21:A",
+      "sourceId": "source:hoyowiki-effect:21:A",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "21",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_all",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemyAll",
+        "calculationSubjectPolicy": "enemyAll"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:21:B",
+      "effectRowId": "effect:hoyowiki-effect:21:B",
+      "sourceId": "source:hoyowiki-effect:21:B",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "21",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "field",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "field",
+        "calculationSubjectPolicy": "field"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:21:C",
+      "effectRowId": "effect:hoyowiki-effect:21:C",
+      "sourceId": "source:hoyowiki-effect:21:C",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "21",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:21:C1",
+      "effectRowId": "effect:hoyowiki-effect:21:C1",
+      "sourceId": "source:hoyowiki-effect:21:C1",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "21",
+      "stat": "unclassified_source_effect",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "field",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "field",
+        "calculationSubjectPolicy": "field"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:21:E",
+      "effectRowId": "effect:hoyowiki-effect:21:E",
+      "sourceId": "source:hoyowiki-effect:21:E",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "21",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:21:E1",
+      "effectRowId": "effect:hoyowiki-effect:21:E1",
+      "sourceId": "source:hoyowiki-effect:21:E1",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "21",
+      "stat": "unclassified_source_effect",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "field",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "field",
+        "calculationSubjectPolicy": "field"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:18:A",
+      "effectRowId": "effect:hoyowiki-effect:18:A",
+      "sourceId": "source:hoyowiki-effect:18:A",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "18",
+      "stat": "hpRatio",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "all_allies",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "allAllies",
+        "calculationSubjectPolicy": "allAllies"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:18:B",
+      "effectRowId": "effect:hoyowiki-effect:18:B",
+      "sourceId": "source:hoyowiki-effect:18:B",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "18",
+      "stat": "hpRatio",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "field",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "field",
+        "calculationSubjectPolicy": "field"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:18:B1",
+      "effectRowId": "effect:hoyowiki-effect:18:B1",
+      "sourceId": "source:hoyowiki-effect:18:B1",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "18",
+      "stat": "unclassified_source_effect",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "field",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "field",
+        "calculationSubjectPolicy": "field"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:18:C",
+      "effectRowId": "effect:hoyowiki-effect:18:C",
+      "sourceId": "source:hoyowiki-effect:18:C",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "18",
+      "stat": "hpRatio",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "single_ally",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "singleAlly",
+        "calculationSubjectPolicy": "singleAlly"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:18:D3",
+      "effectRowId": "effect:hoyowiki-effect:18:D3",
+      "sourceId": "source:hoyowiki-effect:18:D3",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "18",
+      "stat": "unclassified_source_effect",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "single_ally",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "singleAlly",
+        "calculationSubjectPolicy": "singleAlly"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:18:E",
+      "effectRowId": "effect:hoyowiki-effect:18:E",
+      "sourceId": "source:hoyowiki-effect:18:E",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "18",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:17:A",
+      "effectRowId": "effect:hoyowiki-effect:17:A",
+      "sourceId": "source:hoyowiki-effect:17:A",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "17",
+      "stat": "defenseDown",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "all_allies",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "allAllies",
+        "calculationSubjectPolicy": "allAllies"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:17:B",
+      "effectRowId": "effect:hoyowiki-effect:17:B",
+      "sourceId": "source:hoyowiki-effect:17:B",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "17",
+      "stat": "hpRatio",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "self",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "self",
+        "calculationSubjectPolicy": "self"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:17:C",
+      "effectRowId": "effect:hoyowiki-effect:17:C",
+      "sourceId": "source:hoyowiki-effect:17:C",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "17",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:17:E",
+      "effectRowId": "effect:hoyowiki-effect:17:E",
+      "sourceId": "source:hoyowiki-effect:17:E",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "17",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:7:A",
+      "effectRowId": "effect:hoyowiki-effect:7:A",
+      "sourceId": "source:hoyowiki-effect:7:A",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "7",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_all",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemyAll",
+        "calculationSubjectPolicy": "enemyAll"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:7:B",
+      "effectRowId": "effect:hoyowiki-effect:7:B",
+      "sourceId": "source:hoyowiki-effect:7:B",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "7",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "field",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "field",
+        "calculationSubjectPolicy": "field"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:7:B1",
+      "effectRowId": "effect:hoyowiki-effect:7:B1",
+      "sourceId": "source:hoyowiki-effect:7:B1",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "7",
+      "stat": "unclassified_source_effect",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "field",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "field",
+        "calculationSubjectPolicy": "field"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:7:C",
+      "effectRowId": "effect:hoyowiki-effect:7:C",
+      "sourceId": "source:hoyowiki-effect:7:C",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "7",
+      "stat": "defenseDown",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "single_ally",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "singleAlly",
+        "calculationSubjectPolicy": "singleAlly"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:7:D2",
+      "effectRowId": "effect:hoyowiki-effect:7:D2",
+      "sourceId": "source:hoyowiki-effect:7:D2",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "7",
+      "stat": "unclassified_source_effect",
+      "rawValue": null,
+      "effectType": "buff",
+      "targetScope": "field",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "field",
+        "calculationSubjectPolicy": "field"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:7:D5",
+      "effectRowId": "effect:hoyowiki-effect:7:D5",
+      "sourceId": "source:hoyowiki-effect:7:D5",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "7",
+      "stat": "unclassified_source_effect",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "single_ally",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "singleAlly",
+        "calculationSubjectPolicy": "singleAlly"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
+    },
+    {
+      "id": "normalized:effect:hoyowiki-effect:7:E",
+      "effectRowId": "effect:hoyowiki-effect:7:E",
+      "sourceId": "source:hoyowiki-effect:7:E",
+      "sourceOrigin": "raw_source",
+      "effectProviderId": "7",
+      "stat": "atkRatio",
+      "rawValue": null,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "unknown",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown"
     }
   ]
 }

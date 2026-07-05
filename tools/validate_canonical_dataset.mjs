@@ -113,7 +113,7 @@ function classifyMissingExtraction(row) {
 function classifyOptionalMissing(row) {
   const missing = [];
   if (!row.sourceAvailability.skillText) missing.push("missing_skill_text");
-  if (!row.sourceAvailability.effectTrace) missing.push("missing_effect_trace");
+  if (!row.sourceAvailability.effectTrace && row.counts.effectRows === 0) missing.push("missing_effect_trace");
   if (!row.sourceAvailability.coefficient) missing.push("missing_coefficient");
   if (!row.sourceAvailability.eidolon) missing.push("missing_eidolon_trace");
   if (row.counts.effectRows === 0) missing.push("effect_rows_zero");

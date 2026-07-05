@@ -5720,6 +5720,1326 @@
         "winnerId": "resolved:effect:Mar_7th_10:2",
         "reason": "selected_by_source_priority"
       }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:2511:A",
+      "effectRowId": "effect:hoyowiki-effect:2511:A",
+      "sourceId": "source:hoyowiki-effect:2511:A",
+      "stat": "breakDamage",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:2511:source:hoyowiki-effect:2511:A:breakDamage:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|2511|raw_source|source:hoyowiki-effect:2511:a|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|all_allies|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:2511:B",
+      "effectRowId": "effect:hoyowiki-effect:2511:B",
+      "sourceId": "source:hoyowiki-effect:2511:B",
+      "stat": "unclassified_source_effect",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:2511:source:hoyowiki-effect:2511:B:unclassified_source_effect:buff:field",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|2511|raw_source|source:hoyowiki-effect:2511:b|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|field|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:2511:C",
+      "effectRowId": "effect:hoyowiki-effect:2511:C",
+      "sourceId": "source:hoyowiki-effect:2511:C",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:2511:source:hoyowiki-effect:2511:C:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|2511|raw_source|source:hoyowiki-effect:2511:c|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:2511:C1",
+      "effectRowId": "effect:hoyowiki-effect:2511:C1",
+      "sourceId": "source:hoyowiki-effect:2511:C1",
+      "stat": "unclassified_source_effect",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:2511:source:hoyowiki-effect:2511:C1:unclassified_source_effect:buff:field",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|2511|raw_source|source:hoyowiki-effect:2511:c1|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|field|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:2511:E",
+      "effectRowId": "effect:hoyowiki-effect:2511:E",
+      "sourceId": "source:hoyowiki-effect:2511:E",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:2511:source:hoyowiki-effect:2511:E:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|2511|raw_source|source:hoyowiki-effect:2511:e|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:2494:A",
+      "effectRowId": "effect:hoyowiki-effect:2494:A",
+      "sourceId": "source:hoyowiki-effect:2494:A",
+      "stat": "speed",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:2494:source:hoyowiki-effect:2494:A:speed:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|2494|raw_source|source:hoyowiki-effect:2494:a|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|self|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:2494:B",
+      "effectRowId": "effect:hoyowiki-effect:2494:B",
+      "sourceId": "source:hoyowiki-effect:2494:B",
+      "stat": "damageReduction",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:2494:source:hoyowiki-effect:2494:B:damageReduction:debuff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|2494|raw_source|source:hoyowiki-effect:2494:b|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|self|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:2494:C",
+      "effectRowId": "effect:hoyowiki-effect:2494:C",
+      "sourceId": "source:hoyowiki-effect:2494:C",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:2494:source:hoyowiki-effect:2494:C:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|2494|raw_source|source:hoyowiki-effect:2494:c|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:2494:E",
+      "effectRowId": "effect:hoyowiki-effect:2494:E",
+      "sourceId": "source:hoyowiki-effect:2494:E",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:2494:source:hoyowiki-effect:2494:E:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|2494|raw_source|source:hoyowiki-effect:2494:e|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:1924:A",
+      "effectRowId": "effect:hoyowiki-effect:1924:A",
+      "sourceId": "source:hoyowiki-effect:1924:A",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:1924:source:hoyowiki-effect:1924:A:atkRatio:debuff:enemy_all",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|1924|raw_source|source:hoyowiki-effect:1924:a|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_all|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:1924:B",
+      "effectRowId": "effect:hoyowiki-effect:1924:B",
+      "sourceId": "source:hoyowiki-effect:1924:B",
+      "stat": "breakDamage",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:1924:source:hoyowiki-effect:1924:B:breakDamage:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|1924|raw_source|source:hoyowiki-effect:1924:b|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:1924:B1",
+      "effectRowId": "effect:hoyowiki-effect:1924:B1",
+      "sourceId": "source:hoyowiki-effect:1924:B1",
+      "stat": "hpRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:1924:source:hoyowiki-effect:1924:B1:hpRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|1924|raw_source|source:hoyowiki-effect:1924:b1|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:1924:C",
+      "effectRowId": "effect:hoyowiki-effect:1924:C",
+      "sourceId": "source:hoyowiki-effect:1924:C",
+      "stat": "hpRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:1924:source:hoyowiki-effect:1924:C:hpRatio:buff:single_ally",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|1924|raw_source|source:hoyowiki-effect:1924:c|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|single_ally|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:1924:D7",
+      "effectRowId": "effect:hoyowiki-effect:1924:D7",
+      "sourceId": "source:hoyowiki-effect:1924:D7",
+      "stat": "unclassified_source_effect",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:1924:source:hoyowiki-effect:1924:D7:unclassified_source_effect:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|1924|raw_source|source:hoyowiki-effect:1924:d7|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|self|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:1924:E",
+      "effectRowId": "effect:hoyowiki-effect:1924:E",
+      "sourceId": "source:hoyowiki-effect:1924:E",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:1924:source:hoyowiki-effect:1924:E:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|1924|raw_source|source:hoyowiki-effect:1924:e|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:1389:A",
+      "effectRowId": "effect:hoyowiki-effect:1389:A",
+      "sourceId": "source:hoyowiki-effect:1389:A",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:1389:source:hoyowiki-effect:1389:A:critDamage:buff:field",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|1389|raw_source|source:hoyowiki-effect:1389:a|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|field|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:1389:B",
+      "effectRowId": "effect:hoyowiki-effect:1389:B",
+      "sourceId": "source:hoyowiki-effect:1389:B",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:1389:source:hoyowiki-effect:1389:B:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|1389|raw_source|source:hoyowiki-effect:1389:b|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:1389:C",
+      "effectRowId": "effect:hoyowiki-effect:1389:C",
+      "sourceId": "source:hoyowiki-effect:1389:C",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:1389:source:hoyowiki-effect:1389:C:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|1389|raw_source|source:hoyowiki-effect:1389:c|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:1389:D5",
+      "effectRowId": "effect:hoyowiki-effect:1389:D5",
+      "sourceId": "source:hoyowiki-effect:1389:D5",
+      "stat": "unclassified_source_effect",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:1389:source:hoyowiki-effect:1389:D5:unclassified_source_effect:buff:field",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|1389|raw_source|source:hoyowiki-effect:1389:d5|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|field|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:1389:E",
+      "effectRowId": "effect:hoyowiki-effect:1389:E",
+      "sourceId": "source:hoyowiki-effect:1389:E",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:1389:source:hoyowiki-effect:1389:E:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|1389|raw_source|source:hoyowiki-effect:1389:e|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:1228:A",
+      "effectRowId": "effect:hoyowiki-effect:1228:A",
+      "sourceId": "source:hoyowiki-effect:1228:A",
+      "stat": "hpRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:1228:source:hoyowiki-effect:1228:A:hpRatio:debuff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|1228|raw_source|source:hoyowiki-effect:1228:a|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|all_allies|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:1228:B",
+      "effectRowId": "effect:hoyowiki-effect:1228:B",
+      "sourceId": "source:hoyowiki-effect:1228:B",
+      "stat": "hpRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:1228:source:hoyowiki-effect:1228:B:hpRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|1228|raw_source|source:hoyowiki-effect:1228:b|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:1228:B1",
+      "effectRowId": "effect:hoyowiki-effect:1228:B1",
+      "sourceId": "source:hoyowiki-effect:1228:B1",
+      "stat": "unclassified_source_effect",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:1228:source:hoyowiki-effect:1228:B1:unclassified_source_effect:buff:field",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|1228|raw_source|source:hoyowiki-effect:1228:b1|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|field|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:1228:C",
+      "effectRowId": "effect:hoyowiki-effect:1228:C",
+      "sourceId": "source:hoyowiki-effect:1228:C",
+      "stat": "hpRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:1228:source:hoyowiki-effect:1228:C:hpRatio:buff:single_ally",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|1228|raw_source|source:hoyowiki-effect:1228:c|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|single_ally|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:1228:D",
+      "effectRowId": "effect:hoyowiki-effect:1228:D",
+      "sourceId": "source:hoyowiki-effect:1228:D",
+      "stat": "unclassified_source_effect",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:1228:source:hoyowiki-effect:1228:D:unclassified_source_effect:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|1228|raw_source|source:hoyowiki-effect:1228:d|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|all_allies|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:1228:E",
+      "effectRowId": "effect:hoyowiki-effect:1228:E",
+      "sourceId": "source:hoyowiki-effect:1228:E",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:1228:source:hoyowiki-effect:1228:E:allDamage:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|1228|raw_source|source:hoyowiki-effect:1228:e|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:791:A",
+      "effectRowId": "effect:hoyowiki-effect:791:A",
+      "sourceId": "source:hoyowiki-effect:791:A",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:791:source:hoyowiki-effect:791:A:atkRatio:debuff:enemy_all",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|791|raw_source|source:hoyowiki-effect:791:a|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_all|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:791:B",
+      "effectRowId": "effect:hoyowiki-effect:791:B",
+      "sourceId": "source:hoyowiki-effect:791:B",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:791:source:hoyowiki-effect:791:B:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|791|raw_source|source:hoyowiki-effect:791:b|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:791:B1",
+      "effectRowId": "effect:hoyowiki-effect:791:B1",
+      "sourceId": "source:hoyowiki-effect:791:B1",
+      "stat": "unclassified_source_effect",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:791:source:hoyowiki-effect:791:B1:unclassified_source_effect:buff:field",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|791|raw_source|source:hoyowiki-effect:791:b1|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|field|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:791:C",
+      "effectRowId": "effect:hoyowiki-effect:791:C",
+      "sourceId": "source:hoyowiki-effect:791:C",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:791:source:hoyowiki-effect:791:C:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|791|raw_source|source:hoyowiki-effect:791:c|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:791:D",
+      "effectRowId": "effect:hoyowiki-effect:791:D",
+      "sourceId": "source:hoyowiki-effect:791:D",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:791:source:hoyowiki-effect:791:D:atkRatio:debuff:enemy_all",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|791|raw_source|source:hoyowiki-effect:791:d|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_all|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:791:E",
+      "effectRowId": "effect:hoyowiki-effect:791:E",
+      "sourceId": "source:hoyowiki-effect:791:E",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:791:source:hoyowiki-effect:791:E:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|791|raw_source|source:hoyowiki-effect:791:e|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:791:E1",
+      "effectRowId": "effect:hoyowiki-effect:791:E1",
+      "sourceId": "source:hoyowiki-effect:791:E1",
+      "stat": "unclassified_source_effect",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:791:source:hoyowiki-effect:791:E1:unclassified_source_effect:debuff:field",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|791|raw_source|source:hoyowiki-effect:791:e1|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|field|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:29:A",
+      "effectRowId": "effect:hoyowiki-effect:29:A",
+      "sourceId": "source:hoyowiki-effect:29:A",
+      "stat": "hpRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:29:source:hoyowiki-effect:29:A:hpRatio:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|29|raw_source|source:hoyowiki-effect:29:a|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|all_allies|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:29:B",
+      "effectRowId": "effect:hoyowiki-effect:29:B",
+      "sourceId": "source:hoyowiki-effect:29:B",
+      "stat": "hpRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:29:source:hoyowiki-effect:29:B:hpRatio:buff:field",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|29|raw_source|source:hoyowiki-effect:29:b|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|field|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:29:C",
+      "effectRowId": "effect:hoyowiki-effect:29:C",
+      "sourceId": "source:hoyowiki-effect:29:C",
+      "stat": "hpRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:29:source:hoyowiki-effect:29:C:hpRatio:buff:single_ally",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|29|raw_source|source:hoyowiki-effect:29:c|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|single_ally|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:29:E",
+      "effectRowId": "effect:hoyowiki-effect:29:E",
+      "sourceId": "source:hoyowiki-effect:29:E",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:29:source:hoyowiki-effect:29:E:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|29|raw_source|source:hoyowiki-effect:29:e|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:23:A",
+      "effectRowId": "effect:hoyowiki-effect:23:A",
+      "sourceId": "source:hoyowiki-effect:23:A",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:23:source:hoyowiki-effect:23:A:defenseDown:debuff:enemy_all",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|23|raw_source|source:hoyowiki-effect:23:a|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_all|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:23:B",
+      "effectRowId": "effect:hoyowiki-effect:23:B",
+      "sourceId": "source:hoyowiki-effect:23:B",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:23:source:hoyowiki-effect:23:B:defenseDown:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|23|raw_source|source:hoyowiki-effect:23:b|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|all_allies|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:23:C",
+      "effectRowId": "effect:hoyowiki-effect:23:C",
+      "sourceId": "source:hoyowiki-effect:23:C",
+      "stat": "unclassified_source_effect",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:23:source:hoyowiki-effect:23:C:unclassified_source_effect:debuff:enemy_all",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|23|raw_source|source:hoyowiki-effect:23:c|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_all|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:23:D2",
+      "effectRowId": "effect:hoyowiki-effect:23:D2",
+      "sourceId": "source:hoyowiki-effect:23:D2",
+      "stat": "hpRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:23:source:hoyowiki-effect:23:D2:hpRatio:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|23|raw_source|source:hoyowiki-effect:23:d2|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|self|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:23:D5",
+      "effectRowId": "effect:hoyowiki-effect:23:D5",
+      "sourceId": "source:hoyowiki-effect:23:D5",
+      "stat": "unclassified_source_effect",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:23:source:hoyowiki-effect:23:D5:unclassified_source_effect:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|23|raw_source|source:hoyowiki-effect:23:d5|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|all_allies|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:23:E",
+      "effectRowId": "effect:hoyowiki-effect:23:E",
+      "sourceId": "source:hoyowiki-effect:23:E",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:23:source:hoyowiki-effect:23:E:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|23|raw_source|source:hoyowiki-effect:23:e|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:21:A",
+      "effectRowId": "effect:hoyowiki-effect:21:A",
+      "sourceId": "source:hoyowiki-effect:21:A",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:21:source:hoyowiki-effect:21:A:atkRatio:debuff:enemy_all",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|21|raw_source|source:hoyowiki-effect:21:a|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_all|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:21:B",
+      "effectRowId": "effect:hoyowiki-effect:21:B",
+      "sourceId": "source:hoyowiki-effect:21:B",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:21:source:hoyowiki-effect:21:B:atkRatio:buff:field",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|21|raw_source|source:hoyowiki-effect:21:b|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|field|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:21:C",
+      "effectRowId": "effect:hoyowiki-effect:21:C",
+      "sourceId": "source:hoyowiki-effect:21:C",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:21:source:hoyowiki-effect:21:C:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|21|raw_source|source:hoyowiki-effect:21:c|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:21:C1",
+      "effectRowId": "effect:hoyowiki-effect:21:C1",
+      "sourceId": "source:hoyowiki-effect:21:C1",
+      "stat": "unclassified_source_effect",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:21:source:hoyowiki-effect:21:C1:unclassified_source_effect:buff:field",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|21|raw_source|source:hoyowiki-effect:21:c1|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|field|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:21:E",
+      "effectRowId": "effect:hoyowiki-effect:21:E",
+      "sourceId": "source:hoyowiki-effect:21:E",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:21:source:hoyowiki-effect:21:E:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|21|raw_source|source:hoyowiki-effect:21:e|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:21:E1",
+      "effectRowId": "effect:hoyowiki-effect:21:E1",
+      "sourceId": "source:hoyowiki-effect:21:E1",
+      "stat": "unclassified_source_effect",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:21:source:hoyowiki-effect:21:E1:unclassified_source_effect:buff:field",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|21|raw_source|source:hoyowiki-effect:21:e1|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|field|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:18:A",
+      "effectRowId": "effect:hoyowiki-effect:18:A",
+      "sourceId": "source:hoyowiki-effect:18:A",
+      "stat": "hpRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:18:source:hoyowiki-effect:18:A:hpRatio:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|18|raw_source|source:hoyowiki-effect:18:a|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|all_allies|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:18:B",
+      "effectRowId": "effect:hoyowiki-effect:18:B",
+      "sourceId": "source:hoyowiki-effect:18:B",
+      "stat": "hpRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:18:source:hoyowiki-effect:18:B:hpRatio:buff:field",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|18|raw_source|source:hoyowiki-effect:18:b|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|field|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:18:B1",
+      "effectRowId": "effect:hoyowiki-effect:18:B1",
+      "sourceId": "source:hoyowiki-effect:18:B1",
+      "stat": "unclassified_source_effect",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:18:source:hoyowiki-effect:18:B1:unclassified_source_effect:buff:field",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|18|raw_source|source:hoyowiki-effect:18:b1|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|field|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:18:C",
+      "effectRowId": "effect:hoyowiki-effect:18:C",
+      "sourceId": "source:hoyowiki-effect:18:C",
+      "stat": "hpRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:18:source:hoyowiki-effect:18:C:hpRatio:buff:single_ally",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|18|raw_source|source:hoyowiki-effect:18:c|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|single_ally|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:18:D3",
+      "effectRowId": "effect:hoyowiki-effect:18:D3",
+      "sourceId": "source:hoyowiki-effect:18:D3",
+      "stat": "unclassified_source_effect",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:18:source:hoyowiki-effect:18:D3:unclassified_source_effect:debuff:single_ally",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|18|raw_source|source:hoyowiki-effect:18:d3|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|single_ally|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:18:E",
+      "effectRowId": "effect:hoyowiki-effect:18:E",
+      "sourceId": "source:hoyowiki-effect:18:E",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:18:source:hoyowiki-effect:18:E:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|18|raw_source|source:hoyowiki-effect:18:e|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:17:A",
+      "effectRowId": "effect:hoyowiki-effect:17:A",
+      "sourceId": "source:hoyowiki-effect:17:A",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:17:source:hoyowiki-effect:17:A:defenseDown:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|17|raw_source|source:hoyowiki-effect:17:a|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|all_allies|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:17:B",
+      "effectRowId": "effect:hoyowiki-effect:17:B",
+      "sourceId": "source:hoyowiki-effect:17:B",
+      "stat": "hpRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:17:source:hoyowiki-effect:17:B:hpRatio:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|17|raw_source|source:hoyowiki-effect:17:b|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|self|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:17:C",
+      "effectRowId": "effect:hoyowiki-effect:17:C",
+      "sourceId": "source:hoyowiki-effect:17:C",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:17:source:hoyowiki-effect:17:C:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|17|raw_source|source:hoyowiki-effect:17:c|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:17:E",
+      "effectRowId": "effect:hoyowiki-effect:17:E",
+      "sourceId": "source:hoyowiki-effect:17:E",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:17:source:hoyowiki-effect:17:E:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|17|raw_source|source:hoyowiki-effect:17:e|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:7:A",
+      "effectRowId": "effect:hoyowiki-effect:7:A",
+      "sourceId": "source:hoyowiki-effect:7:A",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:7:source:hoyowiki-effect:7:A:atkRatio:debuff:enemy_all",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|7|raw_source|source:hoyowiki-effect:7:a|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_all|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:7:B",
+      "effectRowId": "effect:hoyowiki-effect:7:B",
+      "sourceId": "source:hoyowiki-effect:7:B",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:7:source:hoyowiki-effect:7:B:atkRatio:buff:field",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|7|raw_source|source:hoyowiki-effect:7:b|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|field|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:7:B1",
+      "effectRowId": "effect:hoyowiki-effect:7:B1",
+      "sourceId": "source:hoyowiki-effect:7:B1",
+      "stat": "unclassified_source_effect",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:7:source:hoyowiki-effect:7:B1:unclassified_source_effect:buff:field",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|7|raw_source|source:hoyowiki-effect:7:b1|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|field|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:7:C",
+      "effectRowId": "effect:hoyowiki-effect:7:C",
+      "sourceId": "source:hoyowiki-effect:7:C",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:7:source:hoyowiki-effect:7:C:defenseDown:buff:single_ally",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|7|raw_source|source:hoyowiki-effect:7:c|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|single_ally|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:7:D2",
+      "effectRowId": "effect:hoyowiki-effect:7:D2",
+      "sourceId": "source:hoyowiki-effect:7:D2",
+      "stat": "unclassified_source_effect",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:7:source:hoyowiki-effect:7:D2:unclassified_source_effect:buff:field",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|7|raw_source|source:hoyowiki-effect:7:d2|data_legacy-reference_game-db_hoyowiki-character-skills.json|buff|field|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:7:D5",
+      "effectRowId": "effect:hoyowiki-effect:7:D5",
+      "sourceId": "source:hoyowiki-effect:7:D5",
+      "stat": "unclassified_source_effect",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:7:source:hoyowiki-effect:7:D5:unclassified_source_effect:debuff:single_ally",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|7|raw_source|source:hoyowiki-effect:7:d5|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|single_ally|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
+    },
+    {
+      "id": "resolved:effect:hoyowiki-effect:7:E",
+      "effectRowId": "effect:hoyowiki-effect:7:E",
+      "sourceId": "source:hoyowiki-effect:7:E",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "preblocked",
+        "reason": "value_mode_unknown"
+      },
+      "dedupeKey": "pending_dedupe:7:source:hoyowiki-effect:7:E:atkRatio:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "value_mode_unknown",
+      "canonicalEffectKey": "effect|7|raw_source|source:hoyowiki-effect:7:e|data_legacy-reference_game-db_hoyowiki-character-skills.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "blocked",
+        "groupSize": 1,
+        "winnerId": null,
+        "reason": "value_mode_unknown"
+      }
     }
   ]
 }

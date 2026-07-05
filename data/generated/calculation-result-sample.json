@@ -5,7 +5,7 @@
     "id": "aggregation:sample:sample",
     "scenarioId": "sample",
     "subjectId": "sample",
-    "inputHash": "7f3e1abb",
+    "inputHash": "3297298a",
     "ledgerRowIds": [
       "ledger:resolved:effect:PlayerBoy_20:0",
       "ledger:resolved:effect:PlayerBoy_20:1",
@@ -279,7 +279,73 @@
       "ledger:resolved:effect:Dr_Ratio_00:4",
       "ledger:resolved:effect:Mar_7th_10:0",
       "ledger:resolved:effect:Mar_7th_10:1",
-      "ledger:resolved:effect:Mar_7th_10:2"
+      "ledger:resolved:effect:Mar_7th_10:2",
+      "ledger:resolved:effect:hoyowiki-effect:2511:A",
+      "ledger:resolved:effect:hoyowiki-effect:2511:B",
+      "ledger:resolved:effect:hoyowiki-effect:2511:C",
+      "ledger:resolved:effect:hoyowiki-effect:2511:C1",
+      "ledger:resolved:effect:hoyowiki-effect:2511:E",
+      "ledger:resolved:effect:hoyowiki-effect:2494:A",
+      "ledger:resolved:effect:hoyowiki-effect:2494:B",
+      "ledger:resolved:effect:hoyowiki-effect:2494:C",
+      "ledger:resolved:effect:hoyowiki-effect:2494:E",
+      "ledger:resolved:effect:hoyowiki-effect:1924:A",
+      "ledger:resolved:effect:hoyowiki-effect:1924:B",
+      "ledger:resolved:effect:hoyowiki-effect:1924:B1",
+      "ledger:resolved:effect:hoyowiki-effect:1924:C",
+      "ledger:resolved:effect:hoyowiki-effect:1924:D7",
+      "ledger:resolved:effect:hoyowiki-effect:1924:E",
+      "ledger:resolved:effect:hoyowiki-effect:1389:A",
+      "ledger:resolved:effect:hoyowiki-effect:1389:B",
+      "ledger:resolved:effect:hoyowiki-effect:1389:C",
+      "ledger:resolved:effect:hoyowiki-effect:1389:D5",
+      "ledger:resolved:effect:hoyowiki-effect:1389:E",
+      "ledger:resolved:effect:hoyowiki-effect:1228:A",
+      "ledger:resolved:effect:hoyowiki-effect:1228:B",
+      "ledger:resolved:effect:hoyowiki-effect:1228:B1",
+      "ledger:resolved:effect:hoyowiki-effect:1228:C",
+      "ledger:resolved:effect:hoyowiki-effect:1228:D",
+      "ledger:resolved:effect:hoyowiki-effect:1228:E",
+      "ledger:resolved:effect:hoyowiki-effect:791:A",
+      "ledger:resolved:effect:hoyowiki-effect:791:B",
+      "ledger:resolved:effect:hoyowiki-effect:791:B1",
+      "ledger:resolved:effect:hoyowiki-effect:791:C",
+      "ledger:resolved:effect:hoyowiki-effect:791:D",
+      "ledger:resolved:effect:hoyowiki-effect:791:E",
+      "ledger:resolved:effect:hoyowiki-effect:791:E1",
+      "ledger:resolved:effect:hoyowiki-effect:29:A",
+      "ledger:resolved:effect:hoyowiki-effect:29:B",
+      "ledger:resolved:effect:hoyowiki-effect:29:C",
+      "ledger:resolved:effect:hoyowiki-effect:29:E",
+      "ledger:resolved:effect:hoyowiki-effect:23:A",
+      "ledger:resolved:effect:hoyowiki-effect:23:B",
+      "ledger:resolved:effect:hoyowiki-effect:23:C",
+      "ledger:resolved:effect:hoyowiki-effect:23:D2",
+      "ledger:resolved:effect:hoyowiki-effect:23:D5",
+      "ledger:resolved:effect:hoyowiki-effect:23:E",
+      "ledger:resolved:effect:hoyowiki-effect:21:A",
+      "ledger:resolved:effect:hoyowiki-effect:21:B",
+      "ledger:resolved:effect:hoyowiki-effect:21:C",
+      "ledger:resolved:effect:hoyowiki-effect:21:C1",
+      "ledger:resolved:effect:hoyowiki-effect:21:E",
+      "ledger:resolved:effect:hoyowiki-effect:21:E1",
+      "ledger:resolved:effect:hoyowiki-effect:18:A",
+      "ledger:resolved:effect:hoyowiki-effect:18:B",
+      "ledger:resolved:effect:hoyowiki-effect:18:B1",
+      "ledger:resolved:effect:hoyowiki-effect:18:C",
+      "ledger:resolved:effect:hoyowiki-effect:18:D3",
+      "ledger:resolved:effect:hoyowiki-effect:18:E",
+      "ledger:resolved:effect:hoyowiki-effect:17:A",
+      "ledger:resolved:effect:hoyowiki-effect:17:B",
+      "ledger:resolved:effect:hoyowiki-effect:17:C",
+      "ledger:resolved:effect:hoyowiki-effect:17:E",
+      "ledger:resolved:effect:hoyowiki-effect:7:A",
+      "ledger:resolved:effect:hoyowiki-effect:7:B",
+      "ledger:resolved:effect:hoyowiki-effect:7:B1",
+      "ledger:resolved:effect:hoyowiki-effect:7:C",
+      "ledger:resolved:effect:hoyowiki-effect:7:D2",
+      "ledger:resolved:effect:hoyowiki-effect:7:D5",
+      "ledger:resolved:effect:hoyowiki-effect:7:E"
     ],
     "statTotals": {
       "allDamage": 20.609999999999992,
@@ -315,9 +381,9 @@
     "partyEffects": {},
     "additionalDamage": {},
     "sourceTrace": {
-      "ledgerRows": 273,
+      "ledgerRows": 339,
       "usedRows": 170,
-      "blockedRows": 103
+      "blockedRows": 169
     },
     "skippedRows": [
       {
@@ -731,6 +797,270 @@
       {
         "ledgerId": "ledger:resolved:effect:Mar_7th_10:1",
         "blockedReason": "unsupported_dynamic_formula"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2511:A",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2511:B",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2511:C",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2511:C1",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2511:E",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2494:A",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2494:B",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2494:C",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2494:E",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1924:A",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1924:B",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1924:B1",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1924:C",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1924:D7",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1924:E",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1389:A",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1389:B",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1389:C",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1389:D5",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1389:E",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1228:A",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1228:B",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1228:B1",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1228:C",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1228:D",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1228:E",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:791:A",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:791:B",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:791:B1",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:791:C",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:791:D",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:791:E",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:791:E1",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:29:A",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:29:B",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:29:C",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:29:E",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:23:A",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:23:B",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:23:C",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:23:D2",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:23:D5",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:23:E",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:21:A",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:21:B",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:21:C",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:21:C1",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:21:E",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:21:E1",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:18:A",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:18:B",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:18:B1",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:18:C",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:18:D3",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:18:E",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:17:A",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:17:B",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:17:C",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:17:E",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:7:A",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:7:B",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:7:B1",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:7:C",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:7:D2",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:7:D5",
+        "blockedReason": "value_mode_unknown"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:7:E",
+        "blockedReason": "value_mode_unknown"
       }
     ]
   }

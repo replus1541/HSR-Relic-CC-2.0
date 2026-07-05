@@ -3,18 +3,18 @@
   "generatedBy": "tools/validate_canonical_dataset.mjs",
   "summary": {
     "characters": 90,
-    "partial": 66,
-    "blocked": 3,
-    "missingItems": 98,
-    "autoMatchPossible": 6,
-    "curatedSourceRequired": 35,
-    "adapterParserImprovements": 3,
+    "partial": 56,
+    "blocked": 13,
+    "missingItems": 93,
+    "autoMatchPossible": 3,
+    "curatedSourceRequired": 21,
+    "adapterParserImprovements": 15,
     "failureReasonCounts": {
-      "effect_trace_not_found": 30,
+      "source_exists_but_blocked_by_policy": 12,
+      "parser_not_implemented": 15,
       "valueMode_dynamic_formula_unresolved": 54,
-      "source_exists_but_id_mismatch": 3,
-      "curated_source_required": 3,
-      "parser_not_implemented": 3,
+      "curated_source_required": 1,
+      "effect_trace_not_found": 6,
       "coefficient_not_found": 2,
       "source_not_loaded": 3
     }
@@ -23,20 +23,22 @@
     {
       "characterId": "PlayerBoy_10",
       "displayName": "개척자 • 보존",
-      "readinessStatus": "partial",
-      "requiredMissingItems": [],
+      "readinessStatus": "blocked",
+      "requiredMissingItems": [
+        "blocked_rows_present"
+      ],
       "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
+        "value_mode_unknown"
       ],
       "missingDiagnostics": [
         {
-          "missingType": "missing_effect_trace",
+          "missingType": "blocked_rows_present",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/source-rows.json",
+            "data/generated/effect-rows.json",
+            "data/generated/coefficient-rows.json"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 12,
           "closestCandidates": [
             "개척자 • 보존",
             "PlayerBoy_10",
@@ -45,20 +47,20 @@
             "PlayerGirl_10",
             "8004",
             "보존척자",
-            "source:hoyowiki:23:A"
+            "source:hoyowiki-effect:23:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "source_exists_but_blocked_by_policy",
           "autoMatchPossible": false,
-          "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "needsCuratedSource": false,
+          "nextAction": "Inspect blocked rows and resolve the policy or curated source requirement without promoting manual hints."
         },
         {
-          "missingType": "effect_rows_zero",
+          "missingType": "value_mode_unknown",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/unknown.js"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 6,
           "closestCandidates": [
             "개척자 • 보존",
             "PlayerBoy_10",
@@ -67,12 +69,12 @@
             "PlayerGirl_10",
             "8004",
             "보존척자",
-            "source:hoyowiki:23:A"
+            "source:coefficient:PlayerBoy_10:Skill01:0"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "parser_not_implemented",
           "autoMatchPossible": false,
           "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "nextAction": "Classify the source-backed value mode before allowing calculation."
         }
       ]
     },
@@ -112,20 +114,22 @@
     {
       "characterId": "PlayerBoy_30",
       "displayName": "개척자 • 화합",
-      "readinessStatus": "partial",
-      "requiredMissingItems": [],
+      "readinessStatus": "blocked",
+      "requiredMissingItems": [
+        "blocked_rows_present"
+      ],
       "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
+        "value_mode_unknown"
       ],
       "missingDiagnostics": [
         {
-          "missingType": "missing_effect_trace",
+          "missingType": "blocked_rows_present",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/source-rows.json",
+            "data/generated/effect-rows.json",
+            "data/generated/coefficient-rows.json"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 10,
           "closestCandidates": [
             "개척자 • 화합",
             "PlayerBoy_30",
@@ -134,20 +138,20 @@
             "PlayerGirl_30",
             "8008",
             "화척자",
-            "source:hoyowiki:2511:A"
+            "source:hoyowiki-effect:2511:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "source_exists_but_blocked_by_policy",
           "autoMatchPossible": false,
-          "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "needsCuratedSource": false,
+          "nextAction": "Inspect blocked rows and resolve the policy or curated source requirement without promoting manual hints."
         },
         {
-          "missingType": "effect_rows_zero",
+          "missingType": "value_mode_unknown",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/unknown.js"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 5,
           "closestCandidates": [
             "개척자 • 화합",
             "PlayerBoy_30",
@@ -156,12 +160,12 @@
             "PlayerGirl_30",
             "8008",
             "화척자",
-            "source:hoyowiki:2511:A"
+            "source:coefficient:PlayerBoy_30:Skill01:0"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "parser_not_implemented",
           "autoMatchPossible": false,
           "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "nextAction": "Classify the source-backed value mode before allowing calculation."
         }
       ]
     },
@@ -171,32 +175,9 @@
       "readinessStatus": "partial",
       "requiredMissingItems": [],
       "optionalMissingItems": [
-        "coefficient_rows_zero",
         "dynamic_formula_blocked"
       ],
       "missingDiagnostics": [
-        {
-          "missingType": "coefficient_rows_zero",
-          "attemptedSources": [
-            "data/legacy-reference/game-db/attack-coefficient-candidates.json",
-            "data/generated/coefficient-rows.json"
-          ],
-          "matchedCandidateCount": 0,
-          "closestCandidates": [
-            "개척자 • 환락",
-            "PlayerBoy_40",
-            "8009",
-            "5006",
-            "PlayerGirl_40",
-            "8010",
-            "환락 척자",
-            "source:PlayerBoy_40:0"
-          ],
-          "failureReason": "source_exists_but_id_mismatch",
-          "autoMatchPossible": true,
-          "needsCuratedSource": false,
-          "nextAction": "Align coefficient avatar ids with character identity ids; do not infer coefficients."
-        },
         {
           "missingType": "dynamic_formula_blocked",
           "attemptedSources": [
@@ -224,112 +205,116 @@
     {
       "characterId": "Gallagher_00",
       "displayName": "갤러거",
-      "readinessStatus": "partial",
-      "requiredMissingItems": [],
+      "readinessStatus": "blocked",
+      "requiredMissingItems": [
+        "blocked_rows_present"
+      ],
       "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
+        "value_mode_unknown"
       ],
       "missingDiagnostics": [
         {
-          "missingType": "missing_effect_trace",
+          "missingType": "blocked_rows_present",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/source-rows.json",
+            "data/generated/effect-rows.json",
+            "data/generated/coefficient-rows.json"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 12,
           "closestCandidates": [
             "갤러거",
             "Gallagher_00",
             "1301",
             "1924",
-            "source:hoyowiki:1924:A",
-            "source:hoyowiki:1924:B",
-            "source:hoyowiki:1924:B1",
-            "coefficient:hoyowiki:1924:A:main"
+            "source:hoyowiki-effect:1924:A",
+            "source:hoyowiki-effect:1924:B",
+            "source:hoyowiki-effect:1924:B1",
+            "effect:hoyowiki-effect:1924:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "source_exists_but_blocked_by_policy",
           "autoMatchPossible": false,
-          "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "needsCuratedSource": false,
+          "nextAction": "Inspect blocked rows and resolve the policy or curated source requirement without promoting manual hints."
         },
         {
-          "missingType": "effect_rows_zero",
+          "missingType": "value_mode_unknown",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/unknown.js"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 6,
           "closestCandidates": [
             "갤러거",
             "Gallagher_00",
             "1301",
             "1924",
+            "source:coefficient:Gallagher_00:Skill01:0",
+            "source:coefficient:Gallagher_00:Skill03:1",
             "source:hoyowiki:1924:A",
-            "source:hoyowiki:1924:B",
-            "source:hoyowiki:1924:B1",
-            "coefficient:hoyowiki:1924:A:main"
+            "effect:hoyowiki-effect:1924:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "parser_not_implemented",
           "autoMatchPossible": false,
           "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "nextAction": "Classify the source-backed value mode before allowing calculation."
         }
       ]
     },
     {
       "characterId": "Gepard_00",
       "displayName": "게파드",
-      "readinessStatus": "partial",
-      "requiredMissingItems": [],
+      "readinessStatus": "blocked",
+      "requiredMissingItems": [
+        "blocked_rows_present"
+      ],
       "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
+        "value_mode_unknown"
       ],
       "missingDiagnostics": [
         {
-          "missingType": "missing_effect_trace",
+          "missingType": "blocked_rows_present",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/source-rows.json",
+            "data/generated/effect-rows.json",
+            "data/generated/coefficient-rows.json"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 8,
           "closestCandidates": [
             "게파드",
             "Gepard_00",
             "1104",
             "17",
-            "source:hoyowiki:17:A",
-            "source:hoyowiki:17:B",
-            "source:hoyowiki:17:C",
-            "coefficient:hoyowiki:17:A:main"
+            "source:hoyowiki-effect:17:A",
+            "source:hoyowiki-effect:17:B",
+            "source:hoyowiki-effect:17:C",
+            "effect:hoyowiki-effect:17:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "source_exists_but_blocked_by_policy",
           "autoMatchPossible": false,
-          "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "needsCuratedSource": false,
+          "nextAction": "Inspect blocked rows and resolve the policy or curated source requirement without promoting manual hints."
         },
         {
-          "missingType": "effect_rows_zero",
+          "missingType": "value_mode_unknown",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/unknown.js"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 4,
           "closestCandidates": [
             "게파드",
             "Gepard_00",
             "1104",
             "17",
+            "source:coefficient:Gepard_00:Skill01:0",
+            "source:coefficient:Gepard_00:Skill02:1",
             "source:hoyowiki:17:A",
-            "source:hoyowiki:17:B",
-            "source:hoyowiki:17:C",
-            "coefficient:hoyowiki:17:A:main"
+            "effect:hoyowiki-effect:17:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "parser_not_implemented",
           "autoMatchPossible": false,
           "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "nextAction": "Classify the source-backed value mode before allowing calculation."
         }
       ]
     },
@@ -356,7 +341,7 @@
             "1387",
             "source:Jingliu_00:0",
             "source:Jingliu_00:1",
-            "source:hoyowiki:1387:A",
+            "source:coefficient:Jingliu_00:Skill01:0",
             "effect:Jingliu_00:0"
           ],
           "failureReason": "valueMode_dynamic_formula_unresolved",
@@ -552,56 +537,58 @@
     {
       "characterId": "Natasha_00",
       "displayName": "나타샤",
-      "readinessStatus": "partial",
-      "requiredMissingItems": [],
+      "readinessStatus": "blocked",
+      "requiredMissingItems": [
+        "blocked_rows_present"
+      ],
       "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
+        "value_mode_unknown"
       ],
       "missingDiagnostics": [
         {
-          "missingType": "missing_effect_trace",
+          "missingType": "blocked_rows_present",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/source-rows.json",
+            "data/generated/effect-rows.json",
+            "data/generated/coefficient-rows.json"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 12,
           "closestCandidates": [
             "나타샤",
             "Natasha_00",
             "1105",
             "18",
-            "source:hoyowiki:18:A",
-            "source:hoyowiki:18:B",
-            "source:hoyowiki:18:B1",
-            "coefficient:hoyowiki:18:E:main"
+            "source:hoyowiki-effect:18:A",
+            "source:hoyowiki-effect:18:B",
+            "source:hoyowiki-effect:18:B1",
+            "effect:hoyowiki-effect:18:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "source_exists_but_blocked_by_policy",
           "autoMatchPossible": false,
-          "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "needsCuratedSource": false,
+          "nextAction": "Inspect blocked rows and resolve the policy or curated source requirement without promoting manual hints."
         },
         {
-          "missingType": "effect_rows_zero",
+          "missingType": "value_mode_unknown",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/unknown.js"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 6,
           "closestCandidates": [
             "나타샤",
             "Natasha_00",
             "1105",
             "18",
+            "source:coefficient:Natasha_00:Skill01:0",
             "source:hoyowiki:18:A",
-            "source:hoyowiki:18:B",
-            "source:hoyowiki:18:B1",
-            "coefficient:hoyowiki:18:E:main"
+            "source:hoyowiki-effect:18:A",
+            "effect:hoyowiki-effect:18:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "parser_not_implemented",
           "autoMatchPossible": false,
           "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "nextAction": "Classify the source-backed value mode before allowing calculation."
         }
       ]
     },
@@ -628,7 +615,7 @@
             "8",
             "source:DanHeng_00:0",
             "source:DanHeng_00:1",
-            "source:hoyowiki:8:A",
+            "source:coefficient:DanHeng_00:Skill01:0",
             "effect:DanHeng_00:0"
           ],
           "failureReason": "valueMode_dynamic_formula_unresolved",
@@ -695,7 +682,7 @@
             "음월",
             "source:DanHengIL_00:0",
             "source:DanHengIL_00:1",
-            "source:hoyowiki:1226:A"
+            "source:coefficient:DanHengIL_00:Skill01:0"
           ],
           "failureReason": "valueMode_dynamic_formula_unresolved",
           "autoMatchPossible": false,
@@ -760,7 +747,7 @@
             "3285",
             "source:TheHerta_00:0",
             "source:TheHerta_00:1",
-            "source:hoyowiki:3285:A",
+            "source:coefficient:TheHerta_00:Skill01:0",
             "effect:TheHerta_00:0"
           ],
           "failureReason": "valueMode_dynamic_formula_unresolved",
@@ -826,7 +813,7 @@
             "801",
             "source:Luka_00:0",
             "source:Luka_00:1",
-            "source:hoyowiki:801:A",
+            "source:coefficient:Luka_00:Skill01:0",
             "effect:Luka_00:1"
           ],
           "failureReason": "valueMode_dynamic_formula_unresolved",
@@ -839,56 +826,58 @@
     {
       "characterId": "Lynx_00",
       "displayName": "링스",
-      "readinessStatus": "partial",
-      "requiredMissingItems": [],
+      "readinessStatus": "blocked",
+      "requiredMissingItems": [
+        "blocked_rows_present"
+      ],
       "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
+        "value_mode_unknown"
       ],
       "missingDiagnostics": [
         {
-          "missingType": "missing_effect_trace",
+          "missingType": "blocked_rows_present",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/source-rows.json",
+            "data/generated/effect-rows.json",
+            "data/generated/coefficient-rows.json"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 12,
           "closestCandidates": [
             "링스",
             "Lynx_00",
             "1110",
             "1228",
-            "source:hoyowiki:1228:A",
-            "source:hoyowiki:1228:B",
-            "source:hoyowiki:1228:B1",
-            "coefficient:hoyowiki:1228:E:main"
+            "source:hoyowiki-effect:1228:A",
+            "source:hoyowiki-effect:1228:B",
+            "source:hoyowiki-effect:1228:B1",
+            "effect:hoyowiki-effect:1228:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "source_exists_but_blocked_by_policy",
           "autoMatchPossible": false,
-          "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "needsCuratedSource": false,
+          "nextAction": "Inspect blocked rows and resolve the policy or curated source requirement without promoting manual hints."
         },
         {
-          "missingType": "effect_rows_zero",
+          "missingType": "value_mode_unknown",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/unknown.js"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 6,
           "closestCandidates": [
             "링스",
             "Lynx_00",
             "1110",
             "1228",
+            "source:coefficient:Lynx_00:Skill01:0",
             "source:hoyowiki:1228:A",
-            "source:hoyowiki:1228:B",
-            "source:hoyowiki:1228:B1",
-            "coefficient:hoyowiki:1228:E:main"
+            "source:hoyowiki-effect:1228:A",
+            "effect:hoyowiki-effect:1228:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "parser_not_implemented",
           "autoMatchPossible": false,
           "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "nextAction": "Classify the source-backed value mode before allowing calculation."
         }
       ]
     },
@@ -914,8 +903,8 @@
             "1225",
             "3151",
             "source:Fugue_00:0",
-            "source:hoyowiki:3151:A",
-            "source:hoyowiki:3151:B",
+            "source:coefficient:Fugue_00:Skill01:0",
+            "source:coefficient:Fugue_00:Skill03:1",
             "effect:Fugue_00:0"
           ],
           "failureReason": "valueMode_dynamic_formula_unresolved",
@@ -961,112 +950,116 @@
     {
       "characterId": "Sam_00",
       "displayName": "반디",
-      "readinessStatus": "partial",
-      "requiredMissingItems": [],
+      "readinessStatus": "blocked",
+      "requiredMissingItems": [
+        "blocked_rows_present"
+      ],
       "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
+        "value_mode_unknown"
       ],
       "missingDiagnostics": [
         {
-          "missingType": "missing_effect_trace",
+          "missingType": "blocked_rows_present",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/source-rows.json",
+            "data/generated/effect-rows.json",
+            "data/generated/coefficient-rows.json"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 8,
           "closestCandidates": [
             "반디",
             "Sam_00",
             "1310",
             "2494",
-            "source:hoyowiki:2494:A",
-            "source:hoyowiki:2494:B",
-            "source:hoyowiki:2494:C",
-            "coefficient:hoyowiki:2494:A:main"
+            "source:hoyowiki-effect:2494:A",
+            "source:hoyowiki-effect:2494:B",
+            "source:hoyowiki-effect:2494:C",
+            "effect:hoyowiki-effect:2494:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "source_exists_but_blocked_by_policy",
           "autoMatchPossible": false,
-          "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "needsCuratedSource": false,
+          "nextAction": "Inspect blocked rows and resolve the policy or curated source requirement without promoting manual hints."
         },
         {
-          "missingType": "effect_rows_zero",
+          "missingType": "value_mode_unknown",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/unknown.js"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 4,
           "closestCandidates": [
             "반디",
             "Sam_00",
             "1310",
             "2494",
-            "source:hoyowiki:2494:A",
-            "source:hoyowiki:2494:B",
-            "source:hoyowiki:2494:C",
-            "coefficient:hoyowiki:2494:A:main"
+            "source:coefficient:Sam_00:Skill01:0",
+            "source:coefficient:Sam_00:Skill11:1",
+            "source:coefficient:Sam_00:Skill21:2",
+            "effect:hoyowiki-effect:2494:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "parser_not_implemented",
           "autoMatchPossible": false,
           "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "nextAction": "Classify the source-backed value mode before allowing calculation."
         }
       ]
     },
     {
       "characterId": "Bailu_00",
       "displayName": "백로",
-      "readinessStatus": "partial",
-      "requiredMissingItems": [],
+      "readinessStatus": "blocked",
+      "requiredMissingItems": [
+        "blocked_rows_present"
+      ],
       "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
+        "value_mode_unknown"
       ],
       "missingDiagnostics": [
         {
-          "missingType": "missing_effect_trace",
+          "missingType": "blocked_rows_present",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/source-rows.json",
+            "data/generated/effect-rows.json",
+            "data/generated/coefficient-rows.json"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 8,
           "closestCandidates": [
             "백로",
             "Bailu_00",
             "1211",
             "29",
-            "source:hoyowiki:29:A",
-            "source:hoyowiki:29:B",
-            "source:hoyowiki:29:C",
-            "coefficient:hoyowiki:29:E:main"
+            "source:hoyowiki-effect:29:A",
+            "source:hoyowiki-effect:29:B",
+            "source:hoyowiki-effect:29:C",
+            "effect:hoyowiki-effect:29:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "source_exists_but_blocked_by_policy",
           "autoMatchPossible": false,
-          "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "needsCuratedSource": false,
+          "nextAction": "Inspect blocked rows and resolve the policy or curated source requirement without promoting manual hints."
         },
         {
-          "missingType": "effect_rows_zero",
+          "missingType": "value_mode_unknown",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/unknown.js"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 4,
           "closestCandidates": [
             "백로",
             "Bailu_00",
             "1211",
             "29",
+            "source:coefficient:Bailu_00:Skill01:0",
             "source:hoyowiki:29:A",
-            "source:hoyowiki:29:B",
-            "source:hoyowiki:29:C",
-            "coefficient:hoyowiki:29:E:main"
+            "source:hoyowiki-effect:29:A",
+            "effect:hoyowiki-effect:29:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "parser_not_implemented",
           "autoMatchPossible": false,
           "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "nextAction": "Classify the source-backed value mode before allowing calculation."
         }
       ]
     },
@@ -1093,7 +1086,7 @@
             "804",
             "source:FuXuan_00:0",
             "source:FuXuan_00:1",
-            "source:hoyowiki:804:A",
+            "source:coefficient:FuXuan_00:Skill01:0",
             "effect:FuXuan_00:0"
           ],
           "failureReason": "valueMode_dynamic_formula_unresolved",
@@ -1271,56 +1264,58 @@
     {
       "characterId": "Sampo_00",
       "displayName": "삼포",
-      "readinessStatus": "partial",
-      "requiredMissingItems": [],
+      "readinessStatus": "blocked",
+      "requiredMissingItems": [
+        "blocked_rows_present"
+      ],
       "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
+        "value_mode_unknown"
       ],
       "missingDiagnostics": [
         {
-          "missingType": "missing_effect_trace",
+          "missingType": "blocked_rows_present",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/source-rows.json",
+            "data/generated/effect-rows.json",
+            "data/generated/coefficient-rows.json"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 12,
           "closestCandidates": [
             "삼포",
             "Sampo_00",
             "1108",
             "21",
-            "source:hoyowiki:21:A",
-            "source:hoyowiki:21:B",
-            "source:hoyowiki:21:C",
-            "coefficient:hoyowiki:21:A:main"
+            "source:hoyowiki-effect:21:A",
+            "source:hoyowiki-effect:21:B",
+            "source:hoyowiki-effect:21:C",
+            "effect:hoyowiki-effect:21:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "source_exists_but_blocked_by_policy",
           "autoMatchPossible": false,
-          "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "needsCuratedSource": false,
+          "nextAction": "Inspect blocked rows and resolve the policy or curated source requirement without promoting manual hints."
         },
         {
-          "missingType": "effect_rows_zero",
+          "missingType": "value_mode_unknown",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/unknown.js"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 6,
           "closestCandidates": [
             "삼포",
             "Sampo_00",
             "1108",
             "21",
-            "source:hoyowiki:21:A",
-            "source:hoyowiki:21:B",
-            "source:hoyowiki:21:C",
-            "coefficient:hoyowiki:21:A:main"
+            "source:coefficient:Sampo_00:Skill01:0",
+            "source:coefficient:Sampo_00:Skill02:1",
+            "source:coefficient:Sampo_00:Skill03:2",
+            "effect:hoyowiki-effect:21:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "parser_not_implemented",
           "autoMatchPossible": false,
           "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "nextAction": "Classify the source-backed value mode before allowing calculation."
         }
       ]
     },
@@ -1412,8 +1407,8 @@
             "1206",
             "27",
             "source:Sushang_00:0",
-            "source:hoyowiki:27:A",
-            "source:hoyowiki:27:B",
+            "source:coefficient:Sushang_00:Skill01:0",
+            "source:coefficient:Sushang_00:Skill02:1",
             "effect:Sushang_00:0"
           ],
           "failureReason": "valueMode_dynamic_formula_unresolved",
@@ -1511,8 +1506,8 @@
             "1009",
             "12",
             "source:Asta_00:0",
-            "source:hoyowiki:12:A",
-            "source:hoyowiki:12:B",
+            "source:coefficient:Asta_00:Skill01:0",
+            "source:coefficient:Asta_00:Skill02:1",
             "effect:Asta_00:0"
           ],
           "failureReason": "valueMode_dynamic_formula_unresolved",
@@ -2139,7 +2134,7 @@
             "3560",
             "source:Castorice_00:0",
             "source:Castorice_00:1",
-            "source:hoyowiki:3560:A",
+            "source:coefficient:Castorice_00:Skill01:0",
             "effect:Castorice_00:0"
           ],
           "failureReason": "valueMode_dynamic_formula_unresolved",
@@ -2152,56 +2147,58 @@
     {
       "characterId": "Kafka_00",
       "displayName": "카프카",
-      "readinessStatus": "partial",
-      "requiredMissingItems": [],
+      "readinessStatus": "blocked",
+      "requiredMissingItems": [
+        "blocked_rows_present"
+      ],
       "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
+        "value_mode_unknown"
       ],
       "missingDiagnostics": [
         {
-          "missingType": "missing_effect_trace",
+          "missingType": "blocked_rows_present",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/source-rows.json",
+            "data/generated/effect-rows.json",
+            "data/generated/coefficient-rows.json"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 14,
           "closestCandidates": [
             "카프카",
             "Kafka_00",
             "1005",
             "791",
-            "source:hoyowiki:791:A",
-            "source:hoyowiki:791:B",
-            "source:hoyowiki:791:B1",
-            "coefficient:hoyowiki:791:A:main"
+            "source:hoyowiki-effect:791:A",
+            "source:hoyowiki-effect:791:B",
+            "source:hoyowiki-effect:791:B1",
+            "effect:hoyowiki-effect:791:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "source_exists_but_blocked_by_policy",
           "autoMatchPossible": false,
-          "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "needsCuratedSource": false,
+          "nextAction": "Inspect blocked rows and resolve the policy or curated source requirement without promoting manual hints."
         },
         {
-          "missingType": "effect_rows_zero",
+          "missingType": "value_mode_unknown",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/unknown.js"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 7,
           "closestCandidates": [
             "카프카",
             "Kafka_00",
             "1005",
             "791",
-            "source:hoyowiki:791:A",
-            "source:hoyowiki:791:B",
-            "source:hoyowiki:791:B1",
-            "coefficient:hoyowiki:791:A:main"
+            "source:coefficient:Kafka_00:Skill01:0",
+            "source:coefficient:Kafka_00:Skill02:1",
+            "source:coefficient:Kafka_00:Skill03:2",
+            "effect:hoyowiki-effect:791:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "parser_not_implemented",
           "autoMatchPossible": false,
           "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "nextAction": "Classify the source-backed value mode before allowing calculation."
         }
       ]
     },
@@ -2274,37 +2271,15 @@
     {
       "characterId": "TohsakaRin_00",
       "displayName": "토오사카 린",
-      "readinessStatus": "blocked",
-      "requiredMissingItems": [
-        "no_calculation_ready_rows"
-      ],
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
       "optionalMissingItems": [
         "missing_skill_text",
         "missing_effect_trace",
         "missing_eidolon_trace",
-        "effect_rows_zero",
-        "coefficient_rows_zero"
+        "effect_rows_zero"
       ],
       "missingDiagnostics": [
-        {
-          "missingType": "no_calculation_ready_rows",
-          "attemptedSources": [
-            "data/generated/source-rows.json",
-            "data/generated/effect-rows.json",
-            "data/generated/coefficient-rows.json"
-          ],
-          "matchedCandidateCount": 0,
-          "closestCandidates": [
-            "토오사카 린",
-            "TohsakaRin_00",
-            "1508",
-            "5339"
-          ],
-          "failureReason": "curated_source_required",
-          "autoMatchPossible": false,
-          "needsCuratedSource": true,
-          "nextAction": "Add source-backed rows or clear blocking policy before readiness can improve."
-        },
         {
           "missingType": "missing_skill_text",
           "attemptedSources": [
@@ -2315,7 +2290,9 @@
             "토오사카 린",
             "TohsakaRin_00",
             "1508",
-            "5339"
+            "5339",
+            "source:coefficient:TohsakaRin_00:Skill02:1",
+            "coefficient:game-db:TohsakaRin_00:Skill02:main"
           ],
           "failureReason": "parser_not_implemented",
           "autoMatchPossible": true,
@@ -2333,7 +2310,9 @@
             "토오사카 린",
             "TohsakaRin_00",
             "1508",
-            "5339"
+            "5339",
+            "source:coefficient:TohsakaRin_00:Skill02:1",
+            "coefficient:game-db:TohsakaRin_00:Skill02:main"
           ],
           "failureReason": "effect_trace_not_found",
           "autoMatchPossible": false,
@@ -2350,7 +2329,9 @@
             "토오사카 린",
             "TohsakaRin_00",
             "1508",
-            "5339"
+            "5339",
+            "source:coefficient:TohsakaRin_00:Skill02:1",
+            "coefficient:game-db:TohsakaRin_00:Skill02:main"
           ],
           "failureReason": "source_not_loaded",
           "autoMatchPossible": false,
@@ -2368,86 +2349,72 @@
             "토오사카 린",
             "TohsakaRin_00",
             "1508",
-            "5339"
+            "5339",
+            "source:coefficient:TohsakaRin_00:Skill02:1",
+            "coefficient:game-db:TohsakaRin_00:Skill02:main"
           ],
           "failureReason": "effect_trace_not_found",
           "autoMatchPossible": false,
           "needsCuratedSource": true,
           "nextAction": "Add or curate source-backed effect extraction evidence for this character."
-        },
-        {
-          "missingType": "coefficient_rows_zero",
-          "attemptedSources": [
-            "data/legacy-reference/game-db/attack-coefficient-candidates.json",
-            "data/generated/coefficient-rows.json"
-          ],
-          "matchedCandidateCount": 0,
-          "closestCandidates": [
-            "토오사카 린",
-            "TohsakaRin_00",
-            "1508",
-            "5339"
-          ],
-          "failureReason": "source_exists_but_id_mismatch",
-          "autoMatchPossible": true,
-          "needsCuratedSource": false,
-          "nextAction": "Align coefficient avatar ids with character identity ids; do not infer coefficients."
         }
       ]
     },
     {
       "characterId": "Topaz_00",
       "displayName": "토파즈&복순이",
-      "readinessStatus": "partial",
-      "requiredMissingItems": [],
+      "readinessStatus": "blocked",
+      "requiredMissingItems": [
+        "blocked_rows_present"
+      ],
       "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
+        "value_mode_unknown"
       ],
       "missingDiagnostics": [
         {
-          "missingType": "missing_effect_trace",
+          "missingType": "blocked_rows_present",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/source-rows.json",
+            "data/generated/effect-rows.json",
+            "data/generated/coefficient-rows.json"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 10,
           "closestCandidates": [
             "토파즈&복순이",
             "Topaz_00",
             "1112",
             "토파즈",
             "1389",
-            "source:hoyowiki:1389:A",
-            "source:hoyowiki:1389:B",
-            "source:hoyowiki:1389:C"
+            "source:hoyowiki-effect:1389:A",
+            "source:hoyowiki-effect:1389:B",
+            "source:hoyowiki-effect:1389:C"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "source_exists_but_blocked_by_policy",
           "autoMatchPossible": false,
-          "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "needsCuratedSource": false,
+          "nextAction": "Inspect blocked rows and resolve the policy or curated source requirement without promoting manual hints."
         },
         {
-          "missingType": "effect_rows_zero",
+          "missingType": "value_mode_unknown",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/unknown.js"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 5,
           "closestCandidates": [
             "토파즈&복순이",
             "Topaz_00",
             "1112",
             "토파즈",
             "1389",
-            "source:hoyowiki:1389:A",
-            "source:hoyowiki:1389:B",
-            "source:hoyowiki:1389:C"
+            "source:coefficient:Topaz_00:Skill01:0",
+            "source:coefficient:Topaz_00:Skill02:1",
+            "source:coefficient:Topaz_00:SkillP01:2"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "parser_not_implemented",
           "autoMatchPossible": false,
           "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "nextAction": "Classify the source-backed value mode before allowing calculation."
         }
       ]
     },
@@ -2639,7 +2606,7 @@
             "9",
             "source:Himeko_00:0",
             "source:Himeko_00:1",
-            "source:hoyowiki:9:A",
+            "source:coefficient:Himeko_00:Skill01:0",
             "effect:Himeko_00:0"
           ],
           "failureReason": "valueMode_dynamic_formula_unresolved",
@@ -2652,38 +2619,15 @@
     {
       "characterId": "HimekoNova_00",
       "displayName": "히메코 • 노바",
-      "readinessStatus": "blocked",
-      "requiredMissingItems": [
-        "no_calculation_ready_rows"
-      ],
+      "readinessStatus": "partial",
+      "requiredMissingItems": [],
       "optionalMissingItems": [
         "missing_skill_text",
         "missing_effect_trace",
         "missing_eidolon_trace",
-        "effect_rows_zero",
-        "coefficient_rows_zero"
+        "effect_rows_zero"
       ],
       "missingDiagnostics": [
-        {
-          "missingType": "no_calculation_ready_rows",
-          "attemptedSources": [
-            "data/generated/source-rows.json",
-            "data/generated/effect-rows.json",
-            "data/generated/coefficient-rows.json"
-          ],
-          "matchedCandidateCount": 0,
-          "closestCandidates": [
-            "히메코 • 노바",
-            "HimekoNova_00",
-            "1510",
-            "5335",
-            "히메코 노바"
-          ],
-          "failureReason": "curated_source_required",
-          "autoMatchPossible": false,
-          "needsCuratedSource": true,
-          "nextAction": "Add source-backed rows or clear blocking policy before readiness can improve."
-        },
         {
           "missingType": "missing_skill_text",
           "attemptedSources": [
@@ -2695,7 +2639,9 @@
             "HimekoNova_00",
             "1510",
             "5335",
-            "히메코 노바"
+            "히메코 노바",
+            "source:coefficient:HimekoNova_00:Skill02:1",
+            "coefficient:game-db:HimekoNova_00:Skill02:main"
           ],
           "failureReason": "parser_not_implemented",
           "autoMatchPossible": true,
@@ -2714,7 +2660,9 @@
             "HimekoNova_00",
             "1510",
             "5335",
-            "히메코 노바"
+            "히메코 노바",
+            "source:coefficient:HimekoNova_00:Skill02:1",
+            "coefficient:game-db:HimekoNova_00:Skill02:main"
           ],
           "failureReason": "effect_trace_not_found",
           "autoMatchPossible": false,
@@ -2732,7 +2680,9 @@
             "HimekoNova_00",
             "1510",
             "5335",
-            "히메코 노바"
+            "히메코 노바",
+            "source:coefficient:HimekoNova_00:Skill02:1",
+            "coefficient:game-db:HimekoNova_00:Skill02:main"
           ],
           "failureReason": "source_not_loaded",
           "autoMatchPossible": false,
@@ -2751,31 +2701,14 @@
             "HimekoNova_00",
             "1510",
             "5335",
-            "히메코 노바"
+            "히메코 노바",
+            "source:coefficient:HimekoNova_00:Skill02:1",
+            "coefficient:game-db:HimekoNova_00:Skill02:main"
           ],
           "failureReason": "effect_trace_not_found",
           "autoMatchPossible": false,
           "needsCuratedSource": true,
           "nextAction": "Add or curate source-backed effect extraction evidence for this character."
-        },
-        {
-          "missingType": "coefficient_rows_zero",
-          "attemptedSources": [
-            "data/legacy-reference/game-db/attack-coefficient-candidates.json",
-            "data/generated/coefficient-rows.json"
-          ],
-          "matchedCandidateCount": 0,
-          "closestCandidates": [
-            "히메코 • 노바",
-            "HimekoNova_00",
-            "1510",
-            "5335",
-            "히메코 노바"
-          ],
-          "failureReason": "source_exists_but_id_mismatch",
-          "autoMatchPossible": true,
-          "needsCuratedSource": false,
-          "nextAction": "Align coefficient avatar ids with character identity ids; do not infer coefficients."
         }
       ]
     },
@@ -2815,56 +2748,58 @@
     {
       "characterId": "Mar_7th_00",
       "displayName": "Mar. 7th",
-      "readinessStatus": "partial",
-      "requiredMissingItems": [],
+      "readinessStatus": "blocked",
+      "requiredMissingItems": [
+        "blocked_rows_present"
+      ],
       "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
+        "value_mode_unknown"
       ],
       "missingDiagnostics": [
         {
-          "missingType": "missing_effect_trace",
+          "missingType": "blocked_rows_present",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/source-rows.json",
+            "data/generated/effect-rows.json",
+            "data/generated/coefficient-rows.json"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 14,
           "closestCandidates": [
             "Mar. 7th",
             "Mar_7th_00",
             "1001",
             "삼칠이",
             "7",
-            "source:hoyowiki:7:A",
-            "source:hoyowiki:7:B",
-            "source:hoyowiki:7:B1"
+            "source:hoyowiki-effect:7:A",
+            "source:hoyowiki-effect:7:B",
+            "source:hoyowiki-effect:7:B1"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "source_exists_but_blocked_by_policy",
           "autoMatchPossible": false,
-          "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "needsCuratedSource": false,
+          "nextAction": "Inspect blocked rows and resolve the policy or curated source requirement without promoting manual hints."
         },
         {
-          "missingType": "effect_rows_zero",
+          "missingType": "value_mode_unknown",
           "attemptedSources": [
-            "data/legacy-reference/game-db/character-effect-candidates.json",
-            "data/generated/effect-rows.json"
+            "data/generated/effect-rows.json",
+            "src/effect-engine/value-resolvers/unknown.js"
           ],
-          "matchedCandidateCount": 0,
+          "matchedCandidateCount": 7,
           "closestCandidates": [
             "Mar. 7th",
             "Mar_7th_00",
             "1001",
             "삼칠이",
             "7",
-            "source:hoyowiki:7:A",
-            "source:hoyowiki:7:B",
-            "source:hoyowiki:7:B1"
+            "source:coefficient:Mar_7th_00:Skill01:0",
+            "source:coefficient:Mar_7th_00:Skill03:1",
+            "source:hoyowiki:7:A"
           ],
-          "failureReason": "effect_trace_not_found",
+          "failureReason": "parser_not_implemented",
           "autoMatchPossible": false,
           "needsCuratedSource": true,
-          "nextAction": "Add or curate source-backed effect extraction evidence for this character."
+          "nextAction": "Classify the source-backed value mode before allowing calculation."
         }
       ]
     },
