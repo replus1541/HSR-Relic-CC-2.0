@@ -101,3 +101,144 @@ p {
     align-items: end;
   }
 }
+.ui-panel {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid #2a3038;
+  border-radius: 8px;
+  background: #171b21;
+}
+
+.ui-panel__header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.ui-panel__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ui-eyebrow {
+  margin: 0 0 4px;
+  color: #8aa0b8;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ui-card {
+  padding: 14px;
+  border: 1px solid #303843;
+  border-radius: 8px;
+  background: #1d232b;
+}
+
+.ui-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 8px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ui-badge--neutral {
+  border-color: #3c4654;
+  color: #d6dee8;
+  background: #202733;
+}
+
+.ui-badge--ready {
+  border-color: #2f8067;
+  color: #c8f5e4;
+  background: #17352f;
+}
+
+.ui-badge--blocked {
+  border-color: #8a4b55;
+  color: #ffd4d9;
+  background: #3a1d24;
+}
+
+.ui-badge--warning {
+  border-color: #8a7440;
+  color: #ffe6a3;
+  background: #332a18;
+}
+
+.ui-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid #303843;
+  border-radius: 8px;
+  background: #11161d;
+}
+
+.ui-tabs button {
+  min-height: 32px;
+  border: 0;
+  border-radius: 6px;
+  padding: 0 10px;
+  color: #aeb9c7;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.ui-tabs button.is-active {
+  color: #ffffff;
+  background: #2d3848;
+}
+
+.ui-trace-row,
+.ui-metric-list div {
+  display: grid;
+  grid-template-columns: minmax(90px, 1fr) auto;
+  gap: 8px 14px;
+  align-items: baseline;
+  padding: 9px 0;
+  border-bottom: 1px solid #29313b;
+}
+
+.ui-trace-row small {
+  grid-column: 1 / -1;
+  color: #8f9bab;
+}
+
+.ui-empty-state {
+  padding: 18px;
+  border: 1px dashed #3b4654;
+  border-radius: 8px;
+  color: #c8d1dc;
+  background: #151a20;
+}
+
+.ui-empty-state p {
+  margin: 6px 0 0;
+}
+
+.ui-metric-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+}
+
+.ui-metric-list dt {
+  color: #9ba7b5;
+}
+
+.ui-metric-list dd {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 700;
+}
