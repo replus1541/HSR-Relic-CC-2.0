@@ -985,6 +985,576 @@ Phase 1
 
 ---
 
+## Phase 2~18 Task Breakdown
+
+아래 Task는 Codex 실행 단위입니다. Phase 구조는 유지하되, 실제 작업/커밋/Phase Log 기록은 `Task N-A`, `Task N-B` 형식으로 진행합니다. Phase 전체 완료는 모든 하위 Task가 완료된 뒤에만 기록합니다.
+
+모든 Task 공통 원칙:
+
+- 기존 `C:\CODEX\HSR RELIC CC` 프로젝트 수정 금지
+- v2 작업은 `C:\CODEX\HSR RELIC CC 2.0`에서만 수행
+- 계산 로직 조기 구현 금지
+- `manual_hint` / `manual_guide` 계산 유입 금지
+- source-backed row 원칙 유지
+- UI는 계산값을 재구성하지 않고 ledger / aggregation result만 표시
+- Task 완료 시 Phase Log에 `Task N-X complete`를 기록하고 별도 커밋 생성
+
+### Phase 2 Tasks. 기존 구조 재사용/금지 맵 작성
+
+#### Task 2-A. UI 재사용 후보 맵 작성
+
+- 목표: 기존 UI 파일을 재사용/참고/재작성/금지로 분류합니다.
+- 작업 범위: 기존 `src/calculator`, `src/components`, `src/conditions`, `src/active-effects`, `src/styles.css`를 읽고 UI 관점으로 분류합니다.
+- 하지 말 것: 기존 프로젝트 수정 금지, CSS 전체 복사 금지, 계산 로직 구현 금지, adapter/schema/effect-engine 구현 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `reports/ui-reuse/ui-source-map.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: 주요 UI 파일이 재사용 가능/스타일 참고/구조 참고/재작성/금지 중 하나로 분류됩니다.
+- 다음 Task로 넘길 항목: 금지로 분류된 UI 계산 조립 로직 목록.
+
+#### Task 2-B. Legacy 데이터/로직 source map 작성
+
+- 목표: 기존 데이터와 계산 로직을 adapter input, legacy reference, rewrite 금지로 분류합니다.
+- 작업 범위: 기존 `data`, `src/sample-data.js`, `src/model/damage.js`, `src/srtools`, `src/freesr`, `tools` 구조를 문서화합니다.
+- 하지 말 것: 기존 프로젝트 수정 금지, legacy data import 금지, 계산 로직 복사 금지, schema 구현 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `reports/legacy/legacy-source-map.md`, `reports/legacy/adapter-input-map.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: legacy 파일군이 v2에서 어떤 목적으로만 쓰일지 문서화됩니다.
+- 다음 Task로 넘길 항목: Phase 4 snapshot 후보 목록.
+
+#### Task 2-C. Rewrite 금지 목록 확정
+
+- 목표: v2에 그대로 가져오면 안 되는 구조를 명확히 금지합니다.
+- 작업 범위: 기존 guide fallback, activeEffects 생성, UI 계산 재구성, 이름 문자열 dedupe, damage.js 직접 합산 로직을 금지 목록으로 정리합니다.
+- 하지 말 것: 기존 프로젝트 수정 금지, 코드 구현 금지, 금지 대상을 우회적으로 복사 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `reports/legacy/rewrite-ban-list.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: Phase 3 이후 설계에서 참조할 금지 기준이 완성됩니다.
+- 다음 Task로 넘길 항목: schema에 반영해야 할 source guard 요구사항.
+
+### Phase 3 Tasks. Canonical Schema 정의
+
+#### Task 3-A. Schema 문서 초안 작성
+
+- 목표: canonical data model을 문서로 먼저 확정합니다.
+- 작업 범위: `SourceRow`, `EffectRow`, `CoefficientRow`, `Condition`, `StackRule`, `ResolvedEffect`, `CombatLedgerRow`, `AggregationResult` 필드를 문서화합니다.
+- 하지 말 것: schema runtime 구현 금지, adapter 구현 금지, 계산 로직 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `docs/canonical-data-model.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: 모든 schema의 필수/선택 필드와 계산 가능 여부 필드가 문서화됩니다.
+- 다음 Task로 넘길 항목: runtime assertion으로 옮길 필드 목록.
+
+#### Task 3-B. Schema 상수와 type skeleton 작성
+
+- 목표: 구현 없이 schema naming과 enum을 코드 skeleton으로 고정합니다.
+- 작업 범위: source kind, valueMode, targetScope, attackType, blockedReason enum skeleton을 작성합니다.
+- 하지 말 것: validation 로직 구현 금지, adapter 구현 금지, effect-engine 구현 금지, 계산 로직 구현 금지, 기존 프로젝트 수정 금지.
+- 생성/수정 파일: `src/data-model/schemas/*.js`, `src/data-model/README.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: import 가능한 순수 상수/skeleton만 존재하고 계산 로직은 없습니다.
+- 다음 Task로 넘길 항목: validator에서 검사할 enum 목록.
+
+#### Task 3-C. Schema validator와 fixtures 추가
+
+- 목표: source guard를 검사할 최소 validator와 fixture를 만듭니다.
+- 작업 범위: 계산 가능 raw_source, 계산 가능 curated_source, 계산 불가 manual_hint fixture와 validator를 추가합니다.
+- 하지 말 것: adapter 구현 금지, effect normalization 구현 금지, 계산 로직 구현 금지, 기존 프로젝트 수정 금지, manual_hint 계산 허용 금지.
+- 생성/수정 파일: `src/data-model/schema-validator.js`, `data/generated/schema-fixtures/*.json`, `tools/validate_schema.mjs`, `package.json`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:schema`, `npm.cmd run build`
+- 완료 기준: manual_hint fixture가 계산 가능으로 들어가면 validator가 실패합니다.
+- 다음 Task로 넘길 항목: Phase 5 adapter output validator 요구사항.
+
+### Phase 4 Tasks. Legacy Reference Snapshot 구성
+
+#### Task 4-A. Legacy snapshot manifest 설계
+
+- 목표: 어떤 legacy 파일을 reference로 보관할지 manifest 형식을 정합니다.
+- 작업 범위: manifest schema와 snapshot 정책 문서화.
+- 하지 말 것: 대량 데이터 복사 금지, 기존 프로젝트 수정 금지, adapter 구현 금지, 계산 로직 구현 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `data/legacy-reference/manifest.example.json`, `reports/legacy/legacy-fixtures.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: snapshot 대상과 용도가 manifest 예시로 설명됩니다.
+- 다음 Task로 넘길 항목: 실제 복사할 최소 파일 목록.
+
+#### Task 4-B. 최소 legacy reference snapshot 생성
+
+- 목표: Phase 6~7 adapter 개발에 필요한 최소 legacy reference만 복사합니다.
+- 작업 범위: 기존 generated/sample/import 관련 최소 JSON을 `data/legacy-reference`로 복사하고 manifest 갱신.
+- 하지 말 것: 기존 프로젝트 수정 금지, runtime import 연결 금지, 계산 로직 구현 금지, legacy data를 source-backed로 승격 금지.
+- 생성/수정 파일: `data/legacy-reference/**`, `data/legacy-reference/manifest.json`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: reference 파일은 v2 runtime 코드에서 직접 import되지 않습니다.
+- 다음 Task로 넘길 항목: snapshot 검증 스크립트 대상.
+
+#### Task 4-C. Legacy manifest 검증 추가
+
+- 목표: legacy reference 파일 존재와 용도를 검증합니다.
+- 작업 범위: manifest 파일 존재, path, purpose, prohibitedRuntimeImport flag 검사.
+- 하지 말 것: adapter 구현 금지, 계산 로직 구현 금지, 기존 프로젝트 수정 금지, reference-only data runtime import 금지.
+- 생성/수정 파일: `tools/validate_legacy_manifest.mjs`, `package.json`, `reports/legacy/legacy-manifest-report.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:legacy`, `npm.cmd run build`
+- 완료 기준: manifest 누락/잘못된 path가 검증에서 실패합니다.
+- 다음 Task로 넘길 항목: Phase 5 adapter input 목록.
+
+### Phase 5 Tasks. Source Adapter 기본 프레임 구현
+
+#### Task 5-A. Adapter contract 문서화
+
+- 목표: adapter interface와 output contract를 문서로 고정합니다.
+- 작업 범위: adapterId, sourceKind, load, normalize, report, validation flow 정의.
+- 하지 말 것: 실제 source adapter 구현 금지, 계산 로직 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `reports/adapter/adapter-contract.md`, `src/adapters/README.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: 모든 adapter가 따라야 할 입출력 기준이 정리됩니다.
+- 다음 Task로 넘길 항목: adapter registry skeleton 요구사항.
+
+#### Task 5-B. Adapter registry skeleton 작성
+
+- 목표: adapter를 등록하고 빈 report를 반환하는 skeleton을 만듭니다.
+- 작업 범위: registry, contract helper, placeholder adapters 생성.
+- 하지 말 것: 실제 legacy/HoyoWiki parsing 구현 금지, 계산 로직 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `src/adapters/adapter-registry.js`, `src/adapters/adapter-contract.js`, `src/adapters/*/README.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: registry import가 가능하고 side effect가 없습니다.
+- 다음 Task로 넘길 항목: validator 입력 shape.
+
+#### Task 5-C. Adapter output validator 추가
+
+- 목표: adapter output이 canonical schema를 위반하면 실패하도록 합니다.
+- 작업 범위: SourceRow/EffectRow/CoefficientRow 최소 검증 연결.
+- 하지 말 것: 실제 adapter 구현 금지, 계산 로직 구현 금지, 기존 프로젝트 수정 금지, manual_hint 계산 가능 처리 금지.
+- 생성/수정 파일: `src/adapters/adapter-validator.js`, `tools/validate_adapters.mjs`, `package.json`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:adapters`, `npm.cmd run build`
+- 완료 기준: invalid adapter fixture가 실패합니다.
+- 다음 Task로 넘길 항목: local-json adapter 구현 대상.
+
+### Phase 6 Tasks. Local JSON / HoyoWiki Adapter 구현
+
+#### Task 6-A. Local JSON adapter 최소 구현
+
+- 목표: legacy reference JSON 일부를 SourceRow/EffectRow 후보로 변환합니다.
+- 작업 범위: character baseline, skill DB, effect candidates 중 최소 subset 읽기.
+- 하지 말 것: 계산 로직 구현 금지, HoyoWiki adapter 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `src/adapters/local-json/local-json-adapter.js`, `reports/adapter/local-json-report.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:adapters`, `npm.cmd run build`
+- 완료 기준: 최소 3명 캐릭터의 sourceRows/effectRows 후보가 생성됩니다.
+- 다음 Task로 넘길 항목: HoyoWiki row 결합 기준.
+
+#### Task 6-B. HoyoWiki adapter 최소 구현
+
+- 목표: HoyoWiki legacy reference를 source trace가 있는 row로 변환합니다.
+- 작업 범위: skill text, base stat, trace stat subset 처리.
+- 하지 말 것: local-json adapter 변경 범위 확장 금지, 계산 로직 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `src/adapters/hoyowiki/hoyowiki-adapter.js`, `reports/adapter/hoyowiki-report.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:adapters`, `npm.cmd run build`
+- 완료 기준: sourceText/sourcePath 없는 계산 가능 row가 없습니다.
+- 다음 Task로 넘길 항목: adapter 실행 CLI 대상.
+
+#### Task 6-C. Adapter run script와 generated output 생성
+
+- 목표: local-json/HoyoWiki adapter output을 generated 파일로 저장합니다.
+- 작업 범위: adapter runner, output JSON, report 생성.
+- 하지 말 것: canonical dataset 병합 구현 금지, 계산 로직 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `tools/run_adapters.mjs`, `data/generated/source-rows.json`, `data/generated/effect-rows.json`, `data/generated/coefficient-rows.json`, `package.json`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run data:adapters`, `npm.cmd run validate:adapters`, `npm.cmd run build`
+- 완료 기준: adapter output이 생성되고 validator를 통과합니다.
+- 다음 Task로 넘길 항목: canonical dataset builder input.
+
+### Phase 7 Tasks. Extraction Canonical Dataset 생성
+
+#### Task 7-A. Canonical dataset builder skeleton
+
+- 목표: adapter output을 받아 canonical dataset 형태로 묶는 skeleton을 만듭니다.
+- 작업 범위: sourceRows/effectRows/coefficientRows 입력과 manifest 출력.
+- 하지 말 것: priority 병합 정책 과도 구현 금지, 계산 로직 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `src/extraction/build-canonical-dataset.js`, `reports/extraction/canonical-dataset-report.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: 빈/최소 input으로 dataset shape가 생성됩니다.
+- 다음 Task로 넘길 항목: source priority 정책.
+
+#### Task 7-B. Source priority와 계산 가능 여부 적용
+
+- 목표: raw_source/curated_source/manual_hint/missing_extraction 정책을 dataset에 반영합니다.
+- 작업 범위: 계산 가능 flag, blocked reason, source priority report.
+- 하지 말 것: effect normalization 구현 금지, 계산 로직 구현 금지, 기존 프로젝트 수정 금지, manual_hint 계산 허용 금지.
+- 생성/수정 파일: `src/extraction/source-policy.js`, `tools/validate_canonical_dataset.mjs`, `package.json`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:canonical-dataset`, `npm.cmd run build`
+- 완료 기준: manual_hint가 계산 가능으로 들어가면 검증 실패합니다.
+- 다음 Task로 넘길 항목: extraction status summary.
+
+#### Task 7-C. Extraction status output 생성
+
+- 목표: 캐릭터별 extraction readiness와 row count를 생성합니다.
+- 작업 범위: status JSON, report, route placeholder에서 읽을 수 있는 fixture 생성.
+- 하지 말 것: UI 상세 구현 금지, 계산 로직 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `data/generated/extraction-canonical-dataset.json`, `data/generated/extraction-status.json`, `reports/extraction/canonical-dataset-report.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:canonical-dataset`, `npm.cmd run build`
+- 완료 기준: 캐릭터별 계산 가능/불가 row 집계가 생성됩니다.
+- 다음 Task로 넘길 항목: effect normalizer input.
+
+### Phase 8 Tasks. Effect Normalizer 구현
+
+#### Task 8-A. Effect taxonomy 정의
+
+- 목표: effectType, targetScope, attackType taxonomy를 고정합니다.
+- 작업 범위: taxonomy constants, 문서, unknown 처리 정책.
+- 하지 말 것: value resolving 구현 금지, dedupe 구현 금지, 계산 로직 구현 금지, 기존 프로젝트 수정 금지.
+- 생성/수정 파일: `src/effect-engine/effect-taxonomy.js`, `reports/effect-engine/normalization-report.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: unknown taxonomy는 계산 불가로 표시될 준비가 됩니다.
+- 다음 Task로 넘길 항목: normalizer mapping.
+
+#### Task 8-B. normalizeEffects 구현
+
+- 목표: EffectRow를 NormalizedEffect로 변환합니다.
+- 작업 범위: effectType/targetScope/attackType/valueMode/condition/stackRule 정규화.
+- 하지 말 것: resolvedValue 산출 금지, dedupe 금지, 계산 로직 구현 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `src/effect-engine/normalize-effects.js`, `data/generated/normalized-effect-rows.json`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:effect-normalization`, `npm.cmd run build`
+- 완료 기준: unknown valueMode/effectType은 blocked candidate로 표시됩니다.
+- 다음 Task로 넘길 항목: normalization validator.
+
+#### Task 8-C. Normalization report와 검증 추가
+
+- 목표: normalized row 품질을 검증하고 report합니다.
+- 작업 범위: missing targetScope, unknown effectType/valueMode 검사.
+- 하지 말 것: value resolver 구현 금지, dedupe 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `tools/validate_effect_normalization.mjs`, `package.json`, `reports/effect-engine/normalization-report.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:effect-normalization`, `npm.cmd run build`
+- 완료 기준: normalization output이 검증과 report를 통과합니다.
+- 다음 Task로 넘길 항목: value resolver fixtures.
+
+### Phase 9 Tasks. Value Resolver 구현
+
+#### Task 9-A. Value resolver contract 정의
+
+- 목표: valueMode별 resolver 입출력과 blockedReason 정책을 고정합니다.
+- 작업 범위: contract 문서, resolver context shape, fixture 설계.
+- 하지 말 것: 실제 계산 aggregator 구현 금지, dedupe 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `reports/effect-engine/value-resolution-report.md`, `src/effect-engine/value-resolvers/README.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: 모든 valueMode의 입력 context와 실패 조건이 문서화됩니다.
+- 다음 Task로 넘길 항목: resolver skeleton.
+
+#### Task 9-B. resolveValues 구현
+
+- 목표: NormalizedEffect를 ResolvedEffect로 변환합니다.
+- 작업 범위: fixed, skill_level_scaled, eidolon_adjusted, dynamic_formula, lightcone_superimposition_scaled, relic_conditional, unknown 처리 skeleton/기본 구현.
+- 하지 말 것: dedupe 구현 금지, aggregation 구현 금지, 기존 프로젝트 수정 금지, unknown 계산 허용 금지.
+- 생성/수정 파일: `src/effect-engine/resolve-values.js`, `src/effect-engine/value-resolvers/*.js`, `data/generated/resolved-effects.json`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:value-resolution`, `npm.cmd run build`
+- 완료 기준: 모든 계산 전달값은 `resolvedValue` 또는 `blockedReason`을 갖습니다.
+- 다음 Task로 넘길 항목: resolver edge case.
+
+#### Task 9-C. Value resolution 검증 강화
+
+- 목표: level/eidolon/superimposition/unknown fixture를 검증합니다.
+- 작업 범위: validator, fixtures, report 갱신.
+- 하지 말 것: dedupe 구현 금지, aggregator 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `tools/validate_value_resolution.mjs`, `data/generated/value-resolution-fixtures/*.json`, `package.json`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:value-resolution`, `npm.cmd run build`
+- 완료 기준: unknown valueMode가 계산에 들어가면 실패합니다.
+- 다음 Task로 넘길 항목: canonicalEffectKey input.
+
+### Phase 10 Tasks. Dedupe Resolver 구현
+
+#### Task 10-A. canonicalEffectKey 정의
+
+- 목표: 중복 방지 key 구성요소를 코드와 문서로 고정합니다.
+- 작업 범위: providerId/sourceType/sourceId/sourcePath/effectType/targetScope/attackType/conditionKey/stackGroup/scalingSourcePath.
+- 하지 말 것: winner 정책 구현 금지, 계산 aggregator 구현 금지, 기존 프로젝트 수정 금지, 이름 문자열 dedupe 금지.
+- 생성/수정 파일: `src/effect-engine/canonical-effect-key.js`, `reports/effect-engine/dedupe-report.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: key가 deterministic하게 생성됩니다.
+- 다음 Task로 넘길 항목: dedupe winner policy.
+
+#### Task 10-B. dedupeEffects 구현
+
+- 목표: ResolvedEffect 목록에서 winner/loser를 결정합니다.
+- 작업 범위: 동일 key 중복 제거, source-backed vs curated 충돌, eidolon-adjusted 충돌 기본 정책.
+- 하지 말 것: aggregation 구현 금지, UI trace 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `src/effect-engine/dedupe-effects.js`, `data/generated/deduped-effects.json`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:dedupe`, `npm.cmd run build`
+- 완료 기준: 모든 resolvedEffect에 dedupeResult가 붙습니다.
+- 다음 Task로 넘길 항목: dedupe fixture 확장.
+
+#### Task 10-C. Dedupe 검증 fixtures 추가
+
+- 목표: 중복 source, 성혼 보정, enemy debuff 중복을 검증합니다.
+- 작업 범위: fixture와 validator/report 작성.
+- 하지 말 것: aggregation 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지, 이름 문자열 fallback 금지.
+- 생성/수정 파일: `tools/validate_dedupe.mjs`, `data/generated/dedupe-fixtures/*.json`, `package.json`, `reports/effect-engine/dedupe-report.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:dedupe`, `npm.cmd run build`
+- 완료 기준: 중복 row는 하나만 calculation winner가 됩니다.
+- 다음 Task로 넘길 항목: CombatLedger row builder input.
+
+### Phase 11 Tasks. Combat Ledger 구현
+
+#### Task 11-A. CombatLedger schema 연결
+
+- 목표: deduped effect를 ledger row로 옮길 필드 mapping을 정의합니다.
+- 작업 범위: ledger row builder contract, field mapping 문서.
+- 하지 말 것: aggregation 구현 금지, UI 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `reports/calculation/combat-ledger-report.md`, `src/effect-engine/build-combat-ledger.js`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: ledger 필수 필드 mapping이 누락 없이 정의됩니다.
+- 다음 Task로 넘길 항목: ledger grouping.
+
+#### Task 11-B. buildCombatLedger 구현
+
+- 목표: used/blocked effect를 모두 추적 가능한 ledger로 생성합니다.
+- 작업 범위: ledgerId, sourceRowId, canonicalEffectKey, valueMode, resolvedValue, usedForCalculation, blockedReason 작성.
+- 하지 말 것: stat/damage aggregation 구현 금지, UI trace 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `src/effect-engine/build-combat-ledger.js`, `data/generated/combat-ledger-sample.json`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:combat-ledger`, `npm.cmd run build`
+- 완료 기준: blocked row는 blockedReason 필수, used row는 resolvedValue 필수입니다.
+- 다음 Task로 넘길 항목: ledger validation.
+
+#### Task 11-C. Ledger 검증과 report 추가
+
+- 목표: ledger 품질과 source trace를 검증합니다.
+- 작업 범위: validator, report, sample fixture.
+- 하지 말 것: aggregator 구현 금지, UI 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `tools/validate_combat_ledger.mjs`, `package.json`, `reports/calculation/combat-ledger-report.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:combat-ledger`, `npm.cmd run build`
+- 완료 기준: source 없는 used ledger row는 실패합니다.
+- 다음 Task로 넘길 항목: aggregation input.
+
+### Phase 12 Tasks. Aggregator 구현
+
+#### Task 12-A. Aggregation contract 정의
+
+- 목표: stat/damage/enemy/party/additional damage aggregation result shape를 정의합니다.
+- 작업 범위: aggregation report와 skeleton module.
+- 하지 말 것: UI 구현 금지, legacy 비교 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `src/calculator/aggregation-contract.js`, `reports/calculation/aggregation-report.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: aggregation result 필드가 문서화됩니다.
+- 다음 Task로 넘길 항목: stat aggregation.
+
+#### Task 12-B. aggregateStats / aggregateDamageModifiers 구현
+
+- 목표: CombatLedger 기반 최소 stat/damage modifier aggregation을 구현합니다.
+- 작업 범위: statAggregation, damageModifierAggregation, enemyDebuffAggregation 기본 구현.
+- 하지 말 것: UI 구현 금지, legacy diff 구현 금지, 기존 프로젝트 수정 금지, ledger 외 데이터 직접 읽기 금지.
+- 생성/수정 파일: `src/calculator/aggregate-stats.js`, `src/calculator/aggregate-damage-modifiers.js`, `data/generated/calculation-result-sample.json`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:aggregation`, `npm.cmd run build`
+- 완료 기준: 같은 ledger input은 같은 aggregation result를 반환합니다.
+- 다음 Task로 넘길 항목: runCalculationV2 wrapper.
+
+#### Task 12-C. runCalculationV2와 aggregation 검증
+
+- 목표: ledger input을 받아 calculation result를 반환하는 v2 wrapper를 만듭니다.
+- 작업 범위: runCalculationV2, validator, report.
+- 하지 말 것: UI 구현 금지, legacy 비교 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `src/calculator/run-calculation-v2.js`, `tools/validate_aggregation.mjs`, `package.json`, `reports/calculation/aggregation-report.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:aggregation`, `npm.cmd run build`
+- 완료 기준: calculation result는 ledger/aggregation result에서만 나옵니다.
+- 다음 Task로 넘길 항목: UI shell 연결 data contract.
+
+### Phase 13 Tasks. v2 UI Shell 연결
+
+#### Task 13-A. UI component inventory 작성
+
+- 목표: v2 UI에서 필요한 presentational component 목록을 고정합니다.
+- 작업 범위: Card, Badge, Tab, Panel, TraceRow, EmptyState 등 문서화.
+- 하지 말 것: 계산 로직 구현 금지, adapter 구현 금지, 기존 CSS 전체 복사 금지, 기존 프로젝트 수정 금지.
+- 생성/수정 파일: `reports/ui-reuse/reused-style-map.md`, `src/ui/README.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: UI component 구현 범위가 작게 나뉩니다.
+- 다음 Task로 넘길 항목: presentational component 구현.
+
+#### Task 13-B. 기본 presentational UI 구현
+
+- 목표: route shell에서 쓸 공통 UI component를 구현합니다.
+- 작업 범위: Card/Badge/Panel/Tabs 등 표시 컴포넌트.
+- 하지 말 것: ledger 계산 조립 금지, effect 합산 금지, 기존 CSS 전체 복사 금지, 기존 프로젝트 수정 금지.
+- 생성/수정 파일: `src/ui/components/*.jsx`, `src/ui/app.css`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: UI component는 props 표시만 수행합니다.
+- 다음 Task로 넘길 항목: route composition.
+
+#### Task 13-C. Route shell을 v2 UI component로 재구성
+
+- 목표: Home/Extraction/Ledger/LegacyDiff placeholder를 공통 UI로 정리합니다.
+- 작업 범위: route component composition, placeholder copy, responsive layout 확인.
+- 하지 말 것: 계산 로직 구현 금지, real data 연결 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `src/app/routes/*.jsx`, `src/app/App.jsx`, `src/ui/app.css`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: 모든 route가 새 UI component로 렌더링됩니다.
+- 다음 Task로 넘길 항목: extraction 상세 route.
+
+### Phase 14 Tasks. Extraction 상세 라우트 구현
+
+#### Task 14-A. Extraction overview data contract 연결
+
+- 목표: generated extraction status를 route에서 표시할 contract를 정의합니다.
+- 작업 범위: data loading skeleton, overview placeholder table.
+- 하지 말 것: adapter 구현 금지, 계산 로직 구현 금지, 기존 프로젝트 수정 금지, manual_hint 계산 허용 금지.
+- 생성/수정 파일: `src/extraction/ExtractionOverview.jsx`, `src/app/routes/ExtractionRoute.jsx`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: overview가 mock/generated status shape를 표시합니다.
+- 다음 Task로 넘길 항목: detail route.
+
+#### Task 14-B. `/extraction/:characterId` 상세 shell 구현
+
+- 목표: 캐릭터 상세 검토 route shell을 구현합니다.
+- 작업 범위: pathname parsing, detail placeholder, source/effect/coefficient sections.
+- 하지 말 것: 계산 로직 구현 금지, adapter 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `src/extraction/ExtractionDetail.jsx`, `src/app/route-config.js`, `src/app/App.jsx`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: `/extraction/:characterId` shell이 렌더링됩니다.
+- 다음 Task로 넘길 항목: calculation-ready badge.
+
+#### Task 14-C. 계산 가능/불가 표시 연결
+
+- 목표: source-backed 가능 row와 blocked row를 UI에서 분리 표시합니다.
+- 작업 범위: badge/section display, manual_hint/missing_extraction 표시.
+- 하지 말 것: 계산값 산출 금지, effect 합산 금지, 기존 프로젝트 수정 금지, manual_hint 계산 유입 금지.
+- 생성/수정 파일: `src/extraction/*.jsx`, `src/ui/components/*.jsx`, `reports/extraction/ui-route-report.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: manual_hint는 계산 불가로만 표시됩니다.
+- 다음 Task로 넘길 항목: import adapter v2.
+
+### Phase 15 Tasks. SRTools / FreeSR v2 Import 연결
+
+#### Task 15-A. Canonical loadout state 정의
+
+- 목표: SRTools/FreeSR import 결과가 들어갈 v2 state shape를 정의합니다.
+- 작업 범위: roster, party slots, lightcone, relic pieces, eidolon, skill level hints 문서/fixture.
+- 하지 말 것: parser 구현 금지, 계산 로직 구현 금지, 기존 프로젝트 수정 금지, legacy state 재사용 금지.
+- 생성/수정 파일: `src/data-model/schemas/loadout-state.js`, `reports/import/import-state-contract.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: import 결과 state contract가 확정됩니다.
+- 다음 Task로 넘길 항목: SRTools adapter.
+
+#### Task 15-B. SRTools import adapter v2 구현
+
+- 목표: SRTools JSON을 canonical loadout state로 변환합니다.
+- 작업 범위: 기존 UX 참고, v2 state output, preview report.
+- 하지 말 것: 기존 프로젝트 수정 금지, 기존 state 구조 그대로 사용 금지, 계산 로직 구현 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `src/adapters/srtools/srtools-import-adapter.js`, `reports/import/srtools-import-report.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:imports`, `npm.cmd run build`
+- 완료 기준: SRTools sample이 canonical loadout state로 변환됩니다.
+- 다음 Task로 넘길 항목: FreeSR adapter.
+
+#### Task 15-C. FreeSR import adapter v2 구현
+
+- 목표: FreeSR JSON을 canonical loadout state로 변환합니다.
+- 작업 범위: avatars/lightcones/relics/loadout 변환, preview report.
+- 하지 말 것: 기존 프로젝트 수정 금지, legacy party state 사용 금지, 계산 로직 구현 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `src/adapters/freesr/freesr-import-adapter.js`, `tools/validate_imports.mjs`, `package.json`, `reports/import/freesr-import-report.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:imports`, `npm.cmd run build`
+- 완료 기준: FreeSR sample이 canonical loadout state로 변환됩니다.
+- 다음 Task로 넘길 항목: import preview UI.
+
+#### Task 15-D. Import preview UI shell 연결
+
+- 목표: import 결과와 실패 row를 표시하는 UI shell을 연결합니다.
+- 작업 범위: ImportPreview route/modal placeholder, mapped/failed rows 표시.
+- 하지 말 것: 계산 실행 연결 금지, legacy state 저장 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `src/app/import/ImportPreviewModal.jsx`, `src/app/routes/*.jsx`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate:imports`, `npm.cmd run build`
+- 완료 기준: import preview가 canonical state와 warnings를 표시합니다.
+- 다음 Task로 넘길 항목: legacy diff fixtures.
+
+### Phase 16 Tasks. Legacy 비교 시스템 구축
+
+#### Task 16-A. Legacy diff fixture 정의
+
+- 목표: 기존 계산 결과와 비교할 대표 fixture를 정합니다.
+- 작업 범위: fixture manifest, expected difference category 문서.
+- 하지 말 것: v2 계산 변경 금지, 기존 프로젝트 수정 금지, legacy data runtime import 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `reports/diff/legacy-v2-fixtures.md`, `data/legacy-reference/diff-fixtures/*.json`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run build`
+- 완료 기준: 최소 5개 fixture 후보가 문서화됩니다.
+- 다음 Task로 넘길 항목: compare script.
+
+#### Task 16-B. compareLegacyAndV2 script 구현
+
+- 목표: legacy snapshot과 v2 result를 비교하는 CLI를 만듭니다.
+- 작업 범위: diff runner, category classification, JSON/MD output.
+- 하지 말 것: v2 계산 로직 변경 금지, 기존 프로젝트 수정 금지, legacy result를 정답으로 강제 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `tools/compare_legacy_and_v2.mjs`, `reports/diff/legacy-v2-diff.json`, `reports/diff/legacy-v2-diff-report.md`, `package.json`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run diff:legacy`, `npm.cmd run build`
+- 완료 기준: expected/unexpected difference가 report로 분리됩니다.
+- 다음 Task로 넘길 항목: unexpected difference triage.
+
+#### Task 16-C. Legacy diff triage report 작성
+
+- 목표: 차이 원인과 후속 작업을 분류합니다.
+- 작업 범위: source guard/dedupe/value resolver/unknown 차이 분류.
+- 하지 말 것: 계산 로직 즉석 수정 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `reports/diff/legacy-v2-triage.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run diff:legacy`, `npm.cmd run build`
+- 완료 기준: unexpected difference가 0개이거나 backlog로 명시됩니다.
+- 다음 Task로 넘길 항목: Phase 17 검증 체계.
+
+### Phase 17 Tasks. 검증 체계 고정
+
+#### Task 17-A. validate script 통합
+
+- 목표: schema/adapter/canonical/effect/ledger/import 검증을 한 명령으로 묶습니다.
+- 작업 범위: npm scripts, validate runner.
+- 하지 말 것: 새 기능 구현 금지, 기존 프로젝트 수정 금지, 계산 로직 변경 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `tools/validate_all.mjs`, `package.json`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate`, `npm.cmd run build`
+- 완료 기준: validate가 하위 검증을 순서대로 실행합니다.
+- 다음 Task로 넘길 항목: verify smoke.
+
+#### Task 17-B. App smoke 검증 추가
+
+- 목표: route shell과 주요 generated data 존재 여부를 smoke로 확인합니다.
+- 작업 범위: dev server 또는 built output 기반 route check.
+- 하지 말 것: Playwright 과도 도입 금지, 기존 프로젝트 수정 금지, 계산 로직 변경 금지.
+- 생성/수정 파일: `tools/verify_app_smoke.mjs`, `package.json`, `reports/validation/app-smoke-report.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run verify:app`, `npm.cmd run build`
+- 완료 기준: 주요 route가 200 또는 expected shell을 반환합니다.
+- 다음 Task로 넘길 항목: validation policy.
+
+#### Task 17-C. Validation policy 문서화
+
+- 목표: Phase 완료 전 필요한 검증 기준을 문서화합니다.
+- 작업 범위: validate/build/diff/import/smoke 실행 기준 정리.
+- 하지 말 것: 기능 구현 금지, 기존 프로젝트 수정 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `reports/validation/validation-policy.md`, `README.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate`, `npm.cmd run build`
+- 완료 기준: 후속 Phase 완료 보고에 필요한 검증 기준이 명확해집니다.
+- 다음 Task로 넘길 항목: Phase 18 release summary.
+
+### Phase 18 Tasks. 1차 통합 완료
+
+#### Task 18-A. Phase 1~17 산출물 감사
+
+- 목표: v2 phase1 release 후보가 완료 기준을 만족하는지 점검합니다.
+- 작업 범위: 파일/검증/report/known gap 감사.
+- 하지 말 것: 새 기능 구현 금지, 기존 프로젝트 수정 금지, 계산 로직 즉석 변경 금지, manual guide 계산 유입 금지.
+- 생성/수정 파일: `reports/release/v2-phase1-audit.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate`, `npm.cmd run verify`, `npm.cmd run build`
+- 완료 기준: release blocker와 known gap이 분리됩니다.
+- 다음 Task로 넘길 항목: summary 작성.
+
+#### Task 18-B. Release summary / known gaps 작성
+
+- 목표: v2 1차 통합 상태를 사용자와 미래 작업자가 읽을 수 있게 정리합니다.
+- 작업 범위: 구현 범위, 검증 결과, known gaps, 다음 우선순위 작성.
+- 하지 말 것: 새 기능 구현 금지, 기존 프로젝트 수정 금지, 검증 실패 숨김 금지.
+- 생성/수정 파일: `reports/release/v2-phase1-summary.md`, `reports/release/v2-phase1-known-gaps.md`, `README.md`, `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate`, `npm.cmd run build`
+- 완료 기준: 1차 통합 결과와 남은 문제가 문서화됩니다.
+- 다음 Task로 넘길 항목: final complete log.
+
+#### Task 18-C. Phase 18 / v2 1차 완료 기록
+
+- 목표: Phase Log에서 Phase 18과 v2 1차 통합을 완료 처리합니다.
+- 작업 범위: Phase Log final update, final status check, commit.
+- 하지 말 것: 기능 구현 금지, 기존 프로젝트 수정 금지, 실패한 검증을 성공으로 기록 금지.
+- 생성/수정 파일: `HSR_RELIC_CC_v2_phase_log.md`
+- 검증 명령: `npm.cmd run validate`, `npm.cmd run verify`, `npm.cmd run build`, `git status --short`
+- 완료 기준: working tree가 clean이고 Phase 18 complete가 기록됩니다.
+- 다음 Task로 넘길 항목: v2 후속 roadmap.
+
+---
+
 ## 우선순위 기준
 
 1. 계산 출처 보호

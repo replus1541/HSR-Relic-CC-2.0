@@ -56,6 +56,52 @@
 
 ---
 
+## Planning Task. Phase 2~18 Task Breakdown
+
+### 상태
+
+- 상태: complete
+- 시작일: 2026-07-05
+- 완료일: 2026-07-05
+- 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
+
+### 목표
+
+- Phase 1 완료 후 Phase 2~18을 Codex 실행 가능한 Task 단위로 세분화합니다.
+
+### 진행 기록
+
+- 2026-07-05: `HSR_RELIC_CC_v2_refactoring_step_plan.md`에 `Phase 2~18 Task Breakdown` 섹션을 추가했습니다.
+- 2026-07-05: 각 Phase 아래에 `Task N-A`, `Task N-B`, `Task N-C` 형식의 하위 작업을 만들고, Phase 15는 import preview 범위 때문에 `Task 15-D`까지 분리했습니다.
+- 2026-07-05: 모든 Task에 목표, 작업 범위, 하지 말 것, 생성/수정 파일, 검증 명령, 완료 기준, 다음 Task로 넘길 항목을 포함했습니다.
+- 2026-07-05: Phase Log 기록 기준을 Task 완료와 Phase 완료로 구분하도록 세분화 문서에 반복 명시했습니다.
+
+### 생성/수정 파일
+
+- `HSR_RELIC_CC_v2_refactoring_step_plan.md`
+- `HSR_RELIC_CC_v2_phase_log.md`
+
+### 설계 결정
+
+- Phase 구조는 유지하고 실제 진행 단위만 Task로 쪼갭니다.
+- Phase 전체 완료는 모든 하위 Task 완료 후에만 기록합니다.
+- 기존 프로젝트 수정 금지, 계산 로직 조기 구현 금지, manual guide 계산 유입 금지 원칙을 모든 Task에 반복 기재합니다.
+
+### 검증
+
+- `npm.cmd run build`: 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+- 기존 `C:\CODEX\HSR RELIC CC` 변경 여부 확인: tracked file 변경 없음. 기존 reference untracked 파일 2개만 확인.
+
+### 막힌 점 / 리스크
+
+- 없음
+
+### 다음 Phase로 넘길 항목
+
+- Phase 2부터는 세분화된 Task 2-A 기준으로 시작합니다.
+
+---
+
 ## Phase 1. v2 프로젝트 골격 생성
 
 ### 상태
