@@ -66,6 +66,8 @@ export function normalizeEffect(effectRow) {
     effectRowId: effectRow.id,
     sourceId: effectRow.sourceId,
     sourceOrigin: effectRow.sourceOrigin,
+    sourceText: effectRow.sourceText ?? null,
+    sourceTrace: effectRow.sourceTrace ?? null,
     effectProviderId: effectRow.effectProviderId,
     stat: effectRow.stat,
     rawValue: effectRow.rawValue,
@@ -81,6 +83,9 @@ export function normalizeEffect(effectRow) {
       stackKey: effectRow.stackKey ?? null,
       sourcePolicy: "unresolved_until_value_resolution",
     },
+    skillScaling: effectRow.skillScaling ?? null,
+    dynamicFormulaType: effectRow.dynamicFormulaType ?? null,
+    userReview: effectRow.userReview ?? null,
     sourcePolicies: {
       effectTargetPolicy: effectRow.effectTargetPolicy ?? null,
       calculationSubjectPolicy: effectRow.calculationSubjectPolicy ?? null,

@@ -1580,6 +1580,59 @@
       ]
     },
     {
+      "characterId": "hoyowiki:6565",
+      "internalId": null,
+      "internalName": null,
+      "officialName": "로빈 • 서머레토",
+      "localizedName": "로빈 • 서머레토",
+      "displayName": "로빈 • 서머레토",
+      "aliasNames": [],
+      "element": "wind",
+      "path": "memory",
+      "iconPath": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2026/06/30/11390177/2841ca0fe316bbe99a3f6edee137f89b_142416161731091783.png",
+      "sourceOrigin": "hoyowiki",
+      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+      "sourceText": "로빈 • 서머레토",
+      "localizationSourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+      "nameReviewStatus": "source_backed",
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "identifiers": {
+        "effectAvatar": null,
+        "effectName": null,
+        "hoyowikiEntryPageId": "6565",
+        "coefficientAvatar": null,
+        "coefficientAvatarId": null
+      },
+      "sourceAvailability": {
+        "skillText": false,
+        "effectTrace": false,
+        "coefficient": false,
+        "eidolon": false,
+        "lightcone": "global_snapshot",
+        "relic": "missing_snapshot"
+      },
+      "sourceCounts": {
+        "skillRows": 0,
+        "effectCandidates": 0,
+        "coefficientSlots": 0,
+        "eidolons": 0
+      },
+      "sourceNames": [
+        "로빈 • 서머레토"
+      ],
+      "nameSources": [
+        {
+          "sourceName": "로빈 • 서머레토",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "sourceText": "로빈 • 서머레토",
+          "internalId": "6565",
+          "internalName": null
+        }
+      ]
+    },
+    {
       "characterId": "Luka_00",
       "internalId": "1111",
       "internalName": "Luka_00",
@@ -3864,6 +3917,59 @@
           "sourceText": "어벤츄린",
           "internalId": "1304",
           "internalName": "Aventurine_00"
+        }
+      ]
+    },
+    {
+      "characterId": "hoyowiki:6566",
+      "internalId": null,
+      "internalName": null,
+      "officialName": "어벤츄린 • 웨이브",
+      "localizedName": "어벤츄린 • 웨이브",
+      "displayName": "어벤츄린 • 웨이브",
+      "aliasNames": [],
+      "element": "quantum",
+      "path": "elation",
+      "iconPath": "https://act-upload.hoyoverse.com/event-ugc-hoyowiki/2026/06/30/11390177/c66c9f622a7384af40d895da8b6c34bc_8537785461004290462.png",
+      "sourceOrigin": "hoyowiki",
+      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+      "sourceText": "어벤츄린 • 웨이브",
+      "localizationSourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+      "nameReviewStatus": "source_backed",
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "identifiers": {
+        "effectAvatar": null,
+        "effectName": null,
+        "hoyowikiEntryPageId": "6566",
+        "coefficientAvatar": null,
+        "coefficientAvatarId": null
+      },
+      "sourceAvailability": {
+        "skillText": false,
+        "effectTrace": false,
+        "coefficient": false,
+        "eidolon": false,
+        "lightcone": "global_snapshot",
+        "relic": "missing_snapshot"
+      },
+      "sourceCounts": {
+        "skillRows": 0,
+        "effectCandidates": 0,
+        "coefficientSlots": 0,
+        "eidolons": 0
+      },
+      "sourceNames": [
+        "어벤츄린 • 웨이브"
+      ],
+      "nameSources": [
+        {
+          "sourceName": "어벤츄린 • 웨이브",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "sourceText": "어벤츄린 • 웨이브",
+          "internalId": "6566",
+          "internalName": null
         }
       ]
     },
@@ -6441,9 +6547,9 @@
     }
   ],
   "summary": {
-    "characters": 90,
-    "sourceBackedDisplayNames": 90,
-    "sourceBackedIdentities": 90,
+    "characters": 92,
+    "sourceBackedDisplayNames": 92,
+    "sourceBackedIdentities": 92,
     "aliases": 17,
     "lightconeEffects": 280
   }

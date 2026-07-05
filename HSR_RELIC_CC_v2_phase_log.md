@@ -56,6 +56,54 @@
 
 ---
 
+## Stats/Damage Formula Bucket and Party Recommendation Pass
+
+### 상태
+
+- 상태: complete
+- 시작일: 2026-07-06
+- 완료일: 2026-07-06
+- 관련 계획 문서: `reports/calculation/stats-damage-v1-ui-audit.md`
+
+### 목표
+
+- 스탯/데미지 계산 정확도 개선을 위해 피해 타입별 수식 버킷을 정리하고, 파티원추천 UI를 v1과 유사한 후보 리스트 구조로 맞춥니다.
+
+### 진행 기록
+
+- 2026-07-06: 일반/DoT/격파/슈퍼격파/환락 피해의 적용/미적용 버킷을 `reports/calculation/damage-formula-bucket-audit.md`에 정리했습니다.
+- 2026-07-06: 파티원추천을 현재 파티 3명 기준이 아닌 계산 가능한 후보 86명 기준으로 바꾸고, 각 후보를 서포터 슬롯 3곳에 대입해 가장 높은 증가량을 스킬별로 표시하게 했습니다.
+- 2026-07-06: 파티원추천은 기본 5명 노출과 `더보기 N명` 토글을 사용하며, 그래프를 제거하고 `+OOO DMG (+증가율%)` 형식으로 표시합니다.
+- 2026-07-06: `캐릭터별`, `스탯별`, `파티원추천` 아래의 `적용 효과` 패널을 제거했습니다.
+- 2026-07-06: 메타데이터에 `sourceDisplayLabel`을 추가해 상세 출처가 캐릭터명만 나오지 않고 `전투 스킬`, `필살기`, `특성`, `성혼`, `광추` 계열 명칭을 우선 표시하게 했습니다.
+
+### 생성/수정 파일
+
+- `src/app/routes/CalculatorRoute.jsx`
+- `src/ui/app.css`
+- `src/calculator/battle-stat-evaluation.js`
+- `tools/generate_battle_effect_metadata.mjs`
+- `data/generated/battle-effect-metadata.json`
+- `reports/calculation/damage-formula-bucket-audit.md`
+
+### 설계 결정
+
+- 파티원추천은 아직 실제 후보 보유/장비 인벤토리와 연결되지 않았으므로, v2 기본 세팅/E0 기준 후보 시뮬레이션으로 계산합니다.
+- 후보 점수는 현재 메인 딜러를 유지하고, 비메인 3개 슬롯 중 하나를 후보로 교체했을 때의 최고 스킬별 증가량으로 정렬합니다.
+- 정확한 수치 완성은 `damageFormulaType` 기반 엔진 분기와 기여도 재계산 단계로 넘깁니다.
+
+### 검증
+
+- `node tools\generate_battle_effect_metadata.mjs`
+- `npm.cmd run build -- --emptyOutDir=false`
+- `npm.cmd run verify:app`
+- `node tools\inspect_stats_damage_v1_v2.mjs`
+
+### 다음 Phase로 넘길 항목
+
+- `skill-damage-metadata`에 `damageFormulaType`을 추가하고 일반/DoT/격파/슈퍼격파/환락 계산 함수를 분리합니다.
+- 기여도와 파티원추천은 현재 추정/후보 시뮬레이션 기반이므로, source row 제거 또는 virtual stat delta 기반 재계산으로 교체해야 합니다.
+
 ## Planning Task. Phase 2~18 Task Breakdown
 
 ### 상태
@@ -1155,6 +1203,111 @@
 
 ---
 
+## Follow-up Frontend. Legacy Mobile Calculator Alignment
+
+### Status
+
+- status: in progress
+- started: 2026-07-06
+- request: align the v2 calculator skeleton with the legacy mobile-first UI instead of exposing development routes as the primary screen
+
+### Work Log
+
+- Switched the root calculator tabs to the legacy labels and route keys: `캐릭터 세팅`, `스탯 / 데미지 계산`, `조건부 비교`.
+- Removed the always-visible top character summary from the default calculator topbar; the legacy summary is conditional and should not appear on the character setup screen.
+- Copied legacy character profile images and relic/relic-piece icon folders into v2 `public/` for calculator UI rendering.
+- Added character setup cards that surface name, eidolon, light cone slot, cavern relic set, planar ornament set, and base element/path info.
+- Adjusted the mobile and narrow desktop layout so the calculator shell and fixed topbar fill the available width without horizontal overflow.
+- Captured Playwright screenshots for 390px, 430px, and 500px narrow desktop layouts under `artifacts/calculator-mobile/`.
+
+### Verification
+
+- `npm.cmd run build`: passed. Vite production build completed; generated JSON chunk-size warning remains.
+- `npm.cmd run verify:app`: passed. Smoke checks=8.
+- `node tools\inspect_calculator_mobile.mjs`: passed. 390px, 430px, and 500px checks reported no horizontal overflow.
+
+---
+
+## Follow-up Implementation. Legacy-Style Calculator Frontend Skeleton
+
+### Status
+
+- status: completed
+- started: 2026-07-06
+- completed: 2026-07-06
+- request: start frontend work by restoring the legacy calculator screen structure in v2
+
+### Work Log
+
+- Added a v2 calculator route at `/` and moved the previous pipeline dashboard to `/dashboard`.
+- Implemented a legacy-style calculator shell with sticky topbar, screen tabs, 4-slot party row, sticky selected-character summary, character status cards, character picker panel, enemy settings, aggregation result display, and combat ledger trace preview.
+- Kept the implementation as v2 route/UI code; no legacy calculation controller, guide fallback, scenario recompute, or legacy state shape was copied.
+- Added scoped calculator CSS based on the legacy UI density and layout patterns without copying the full legacy stylesheet.
+
+### Output Files
+
+- `src/app/routes/CalculatorRoute.jsx`
+- `src/app/route-config.js`
+- `src/app/App.jsx`
+- `src/ui/app.css`
+
+### Verification
+
+- `npm.cmd run build`: passed. Vite production build completed; generated JSON chunk-size warning remains.
+- `npm.cmd run validate`: passed. 12 sub-scripts passed.
+- `npm.cmd run verify:app`: passed. 8 route/shell checks passed.
+
+### Follow-up Corrections
+
+- Removed development route links from the calculator topbar.
+- Moved Extraction, Ledger, Dashboard, and Legacy Diff access into a settings sheet, matching the legacy app pattern where auxiliary tools are hidden under settings.
+- Replaced visible development labels such as aggregation/ledger/pending with user-facing calculator labels.
+- Copied legacy character profile-with-text assets into `public/character-profile-with-text` and updated calculator avatars to prefer those local images.
+- Tightened mobile-first calculator CSS around the legacy 430px mobile layout, 4-slot image-first party row, 95px sticky topbar area, compact card spacing, and legacy color tokens.
+
+### Follow-up Verification
+
+- `npm.cmd run build`: passed. Vite production build completed; generated JSON chunk-size warning remains.
+- `npm.cmd run verify:app`: passed. 8 route/shell checks passed.
+- copied profile-with-text assets: 90 files.
+
+---
+
+## Follow-up Implementation. Dynamic Formula User Review Decisions Applied to Extraction
+
+### Status
+
+- status: completed
+- started: 2026-07-06
+- completed: 2026-07-06
+- request: apply reviewed dynamic formula decisions to the existing `/extraction` blocked rows
+
+### Work Log
+
+- Completed `reports/extraction/dynamic-formula-user-review-progress.md` review decisions: 103 / 103 decided, remaining 0.
+- Added the Remembrance summon targeting policy: character-targeted buffs do not automatically apply to memosprites, except ally-wide buffs, field/zone buffs, and special memosprite-compatible buffs such as Sunday or Remembrance Trailblazer-style buffs.
+- Updated `local-json-adapter` to attach user review decisions from the progress document to generated effect rows.
+- Updated canonical extraction status to distinguish reviewed vs unreviewed dynamic formula rows.
+- Updated `/extraction` detail UI to show effect blocked reason plus user review decisions and modeling notes.
+- Regenerated adapter and canonical extraction data.
+
+### Output Summary
+
+- `reviewed and decided`: 103
+- `remaining`: 0
+- `userReviewedEffectRows`: 103
+- `dynamicFormulaReviewedCharacters`: 38
+- `dynamicFormulaUnreviewedCharacters`: 0
+- extraction readiness after regeneration: ready 46 / partial 2 / blocked 42
+
+### Verification
+
+- `npm.cmd run data:adapters`: passed.
+- `npm.cmd run validate:canonical-dataset`: passed.
+- `npm.cmd run build`: passed. Vite production build completed; generated JSON chunk-size warning remains.
+
+---
+
 ## Follow-up Analysis. Auto Match and Dynamic Unknown Breakdown
 
 ### Status
@@ -1227,3 +1380,341 @@
 
 - `npm.cmd run validate`: passed. 12 sub-scripts passed.
 - `npm.cmd run build`: passed. Vite production build completed; generated JSON chunk-size warning remains.
+
+---
+
+## Default Builds. HoYoWiki Defaults and FreeSR Import Separation
+
+### Status
+
+- status: completed
+- started: 2026-07-06
+- completed: 2026-07-06
+- request: keep character default relic/light cone settings based on HoYoWiki/reviewed recommendations, while using FreeSR only as an import format
+
+### Work Log
+
+- Added `tools/generate_default_character_builds.mjs`.
+- Generated `data/generated/default-character-builds.json` with 92 character default builds.
+- Generated `reports/import/default-character-builds-review.md` for manual review of every character's light cone, 4pc relic, 2pc relic, main stats, and substat priority.
+- Kept default build IDs in HoYoWiki/manual form: `wiki-*`, `wiki-relic-*`, and `manual-*`.
+- Removed the earlier mistaken FreeSR-native default build output. FreeSR numeric fields such as `item_id`, `relic_id`, `main_affix_id`, and `sub_affix_id` are import-only and are not used as the app default build source.
+- Updated `freesrToLoadoutState` to read the actual FreeSR shape: `avatars` object map, global `relics`, global `lightcones`, and `loadout`.
+- Connected `data/generated/default-character-builds.json` to the root calculator UI so character slots and character changes now populate recommended light cone, relic sets, main stats, and substat priorities instead of placeholder equipment labels.
+- Marked calculation-unavailable characters as disabled in the character picker: 길가메시, 토오사카 린, 히메코 • 노바, 로빈 • 서머레토, 어벤츄린 • 웨이브.
+
+### Output Summary
+
+- default build characters: 92
+- reviewed default builds: 90
+- profile fallback builds: 2
+- fallback characters: 로빈 • 서머레토, 어벤츄린 • 웨이브
+- user-reviewed override: 운리 uses `해 질 무렵 시작되는 춤`, `바람과 구름을 가르는 용맹함`, and `질주하는 늑대의 도람 왕조`.
+
+### Verification
+
+- `node tools\generate_default_character_builds.mjs`: passed.
+- `npm.cmd run validate:imports`: passed.
+- `npm.cmd run validate`: passed. 12 sub-scripts passed.
+- `npm.cmd run build`: passed. Vite production build completed; generated JSON chunk-size warning remains.
+- `npm.cmd run build -- --emptyOutDir=false`: passed after UI connection. Regular `build` was blocked once by an existing non-empty `dist/character-profile-image-only` directory lock, so compile verification used `emptyOutDir=false`.
+- Local UI verification at `http://127.0.0.1:5173/`: passed. 운리 displays `해 질 무렵 시작되는 춤`, `바람과 구름을 가르는 용맹함`, and `질주하는 늑대의 도람 왕조`; the five calculation-unavailable characters are disabled.
+
+---
+
+## Calculator Setup Stats. Self Equipment Stat Layer
+
+### Status
+
+- status: completed
+- started: 2026-07-06
+- completed: 2026-07-06
+- request: show setup-screen character stats separately from battle-final stats
+
+### Work Log
+
+- Added `tools/generate_custom_relic_type_profiles.mjs` to preserve the v1 user-curated `[타입]` and relic preset metadata separately from HoYoWiki/default-build source data.
+- Generated `data/curated/custom-relic-type-profiles.json` and `reports/import/custom-relic-type-profiles.md`.
+- Added a v2 manual supplement for 운리 as `manual_v2_user_curated`: `공퍼 / 치확 딜러`, `crit-follow`, `atk`, `critFollow`.
+- Added `tools/generate_self_stat_sources.mjs`.
+- Generated `data/generated/character-stat-baseline.json` from the v1 character stat baseline: 90 matched characters, 257 trace stat entries, 0 unmatched.
+- Generated `data/generated/equipment-stat-model.json` from the v1 relic stat model: level 15 relic main stat values, average-roll default substat assumptions, and 58 relic set stat rows.
+- Added `src/calculator/self-stat-calculator.js`.
+- Connected the root calculator character setup cards to the self-stat calculator. The setup card now displays `타입`, `주요 스탯`, and type-specific stat rows using self-only equipment stats.
+- Kept setup stats separate from battle-final stats: setup stats include character base stats, light cone base/self effects, relic main/sub/set effects, and trace additional stats; party buffs, enemy debuffs, and battle conditions are excluded.
+
+### Output Summary
+
+- custom type profiles: 90
+- self stat baseline rows: 90
+- equipment relic stat rows: 58
+- sample 운리 setup stats: HP 3,556 / ATK 2,956 / SPD 130.5 / CR 93.8% / CD 150.8% / physical damage 38.8%
+
+### Verification
+
+- `node tools\generate_custom_relic_type_profiles.mjs`: passed.
+- `node tools\generate_self_stat_sources.mjs`: passed.
+- `npm.cmd run validate:imports`: passed.
+- `npm.cmd run validate`: passed. 12 sub-scripts passed.
+- `npm.cmd run build -- --emptyOutDir=false`: passed. Vite production build completed; generated JSON chunk-size warning remains.
+
+---
+
+## Battle Final Stats. Current Party Ledger Wiring
+
+### Status
+
+- status: completed
+- started: 2026-07-06
+- completed: 2026-07-06
+- request: connect the `스탯 / 데미지 계산` tab to battle-final stats separately from setup stats
+
+### Work Log
+
+- Added `src/calculator/battle-final-stat-calculator.js`.
+- Battle stat calculation starts from the active character's self-only setup stats and applies current-party ledger rows.
+- Current target policy handling:
+  - `self`: active character only.
+  - `all_allies`: active if the effect owner is in the current party.
+  - `single_ally`: defaults to the currently selected dealer when the owner is another party member.
+  - `enemy*`: kept as enemy debuff / damage modifier data, separate from base stat totals.
+- Added `tools/generate_battle_effect_metadata.mjs`.
+- Generated `data/generated/battle-effect-metadata.json` as slim UI metadata so the root calculator does not import full `effect-rows.json` and `source-rows.json`.
+- Connected `DamageResultPanel` to show battle-final stats from the active party and active dealer.
+- Connected `AppliedEffectPanel` to the same battle result so applied-effect rows and final stat values share one source.
+- The setup tab remains self-only equipment stats; the stats/damage tab now shows battle-final stats.
+
+### Output Summary
+
+- battle effect metadata rows: 283
+- default party sample, active `개척자 • 기억` at E6: appliedRows 19, skippedRows 264, final critDamage 196.6%
+
+### Verification
+
+- `node tools\generate_battle_effect_metadata.mjs`: passed.
+- Direct `calculateBattleFinalStats` smoke test: passed.
+- `npm.cmd run validate:imports`: passed.
+- `npm.cmd run validate`: passed. 12 sub-scripts passed.
+- `npm.cmd run build -- --emptyOutDir=false`: passed. Vite production build completed; generated JSON chunk-size warning remains.
+
+---
+
+## Skill Damage Cards. Stats/Damage Tab Step 1-5 Wiring
+
+### Status
+
+- status: completed
+- started: 2026-07-06
+- completed: 2026-07-06
+- request: update the `스탯 / 데미지 계산` tab so steps 1-5 show real information
+
+### Work Log
+
+- Added `tools/generate_skill_damage_metadata.mjs`.
+- Generated `data/generated/skill-damage-metadata.json` and `reports/calculation/skill-damage-metadata-report.md`.
+- The metadata groups coefficient rows by character, skill, and attack type; if row parts exist, `main` rows are excluded to avoid duplicated coefficient sums.
+- HoYoWiki skill titles and E3/E5 level bonuses are joined from `data/legacy-reference/game-db/hoyowiki-character-skills.json`.
+- Custom type profiles provide the damage scaling stat, currently normalized to ATK/HP/DEF for direct damage cards.
+- Added `src/calculator/skill-damage-calculator.js`.
+- Connected the stats/damage tab to render per-skill cards from final battle stats, selected coefficient level, eidolon level bonuses, enemy defense/resistance, vulnerability, and damage bonus modifiers.
+- Skill card primary value is crit-hit damage for maximum-damage checking; expected damage is shown as a secondary value.
+- `validate:imports` now checks the skill damage metadata.
+
+### Output Summary
+
+- skill damage rows: 272
+- covered coefficient characters: 89
+- coefficient parts: 475
+- rows with E3/E5 level bonus metadata: 270
+- default active `개척자 • 기억`: 2 skill damage rows found
+
+### Verification
+
+- `node tools\generate_skill_damage_metadata.mjs`: passed.
+- `npm.cmd run validate:imports`: passed.
+- `npm.cmd run build -- --emptyOutDir=false`: passed. Vite production build completed; generated JSON chunk-size warning remains.
+- `npm.cmd run validate`: passed. 12 sub-scripts passed.
+- `npm.cmd run verify:app`: passed.
+
+---
+
+## Stats/Damage V1 UI Parity And Persistence Pass
+
+### Status
+
+- status: completed
+- started: 2026-07-06
+- completed: 2026-07-06
+- request: keep selected party state across refreshes and bring the stats/damage UI closer to the v1 screen
+
+### Work Log
+
+- Added calculator-state cookie persistence for party slots, active dealer, enemy settings, and party-specific controls.
+- Added v1-style stats/damage evaluation groups with an explicit first-level group card and second-level stat row cards.
+- Added sticky selected main dealer and sticky contribution tabs for `캐릭터별 / 스탯 별 / 파티원 추천`.
+- Added source/ratio rows to skill damage cards and contribution views grouped by character and stat.
+- Added Black Swan party-specific Arcana stack control with E0-E5 and E6 option sets.
+- Matched v2 calculator color tokens to v1 (`#0b0d10`, `#12161b`, `#191e24`, `#222831`) and removed the extra top padding under the fixed topbar.
+
+### Verification
+
+- `node tools\generate_skill_damage_metadata.mjs`: passed.
+- `npm.cmd run validate:imports`: passed.
+- `npm.cmd run build -- --emptyOutDir=false`: passed. Vite chunk-size warning remains.
+- `npm.cmd run verify:app`: passed.
+- Browser visual verification was attempted but blocked by a browser-tool sandbox metadata error.
+
+---
+
+## Stats/Damage Contribution Parity Pass
+
+### Status
+
+- status: completed
+- started: 2026-07-06
+- completed: 2026-07-06
+- request: compare the stats/damage screen against v1 screenshots and make character/stat/party recommendation rows sticky, expandable, and readable
+
+### Work Log
+
+- Extended `tools/inspect_stats_damage_v1_v2.mjs` to capture v1/v2 mobile and desktop screenshots for the base screen, expanded stat evaluation, contribution tabs, character contribution expansion, stat contribution expansion, and party recommendation tab.
+- Changed contribution rows to v1-style expandable cards with rank, owner/icon, wrapped names, percent track, chevron, and detailed source rows.
+- Fixed displayed stat values so ratio stats such as crit damage, vulnerability, resistance penetration, and energy regen render as percentages instead of raw decimals.
+- Kept ATK/HP/DEF percent-source sorting based on effective flat value from character plus light cone base stats.
+- Split contribution sorting/percent from display stat totals: contribution rows now estimate current skill-card damage impact, while row subtitles show real stat totals.
+- Adjusted sticky positioning so the current main dealer selector and contribution tabs remain visible under the fixed topbar while scrolling.
+- Relaxed the app smoke check's root div pattern to tolerate Vite output whitespace.
+
+### Verification
+
+- `npm.cmd run build -- --emptyOutDir=false`: passed. Vite chunk-size warning remains.
+- `npm.cmd run verify:app`: passed.
+- `node tools\inspect_stats_damage_v1_v2.mjs`: passed; screenshots regenerated under `artifacts/stats-damage-v1-v2`.
+
+---
+
+## Stats/Damage Formula Bucket Pass
+
+### Status
+
+- status: completed
+- started: 2026-07-06
+- completed: 2026-07-06
+- request: classify damage formula types and separate normal, DoT, break, super break, and elation buckets before trusting stats/damage values
+
+### Work Log
+
+- Added `damageFormulaType` and element metadata to `data/generated/skill-damage-metadata.json`.
+- Generated formula counts: normal 146, break 36, elation 64, dot 26, super_break 0.
+- Split `src/calculator/skill-damage-calculator.js` so DoT skips crit, break/super break skip normal damage bonus and crit, and elation skips normal damage bonus while retaining crit.
+- Added first-pass break/super-break formulas using level 80 break base damage, toughness, break effect, break damage, defense, resistance, vulnerability, special final, and broken-state correction.
+- Updated contribution estimation and skill source rows to filter by formula-specific valid stat buckets.
+- Documented the source bucket rules and remaining exact-delta/manual per-skill correction work in `reports/calculation/damage-formula-bucket-audit.md`.
+
+### Verification
+
+- `node tools\generate_skill_damage_metadata.mjs`: passed.
+- `npm.cmd run build -- --emptyOutDir=false`: passed. Vite chunk-size warning remains.
+- `npm.cmd run verify:app`: passed.
+- `node tools\inspect_stats_damage_v1_v2.mjs`: passed; screenshots regenerated under `artifacts/stats-damage-v1-v2`.
+
+---
+
+## Stats/Damage Formula Completion Pass
+
+### Status
+
+- status: completed
+- started: 2026-07-06
+- completed: 2026-07-06
+- request: finish all remaining formula work through skill-level correction, exact contribution delta, super break, elation, true damage, and validation
+
+### Work Log
+
+- Added `data/curated/skill-damage-formula-overrides.json` for row-level formula corrections.
+- Changed skill formula classification so ordinary `crit-follow` characters stay `normal`; only source text that explicitly says `환락 피해` becomes `elation`.
+- Regenerated skill damage metadata with counts: normal 201, break 32, dot 26, super_break 4, elation 9.
+- Added super break source-text mapping for the currently separated source-backed rows.
+- Added Elation level-80 multiplier calculation, Certified Banger/Punchline multiplier, and Merrymake multiplier.
+- Added `Certified Banger` and `Merrymake` dropdowns to the stats/damage party-specific settings UI when the active dealer has Elation damage rows.
+- Reclassified true-damage effect rows from `specialFinal` to `trueDamageRatio` and calculate them as post-final added damage.
+- Replaced contribution values with exact delta when possible by removing each source row and recalculating the same skill cards.
+- Added `tools/verify_damage_formula_buckets.mjs`, `npm.cmd run verify:damage-formulas`, and `reports/calculation/damage-formula-validation.md`.
+
+### Verification
+
+- `node tools\generate_skill_damage_metadata.mjs`: passed.
+- `node tools\generate_battle_effect_metadata.mjs`: passed.
+- `npm.cmd run build -- --emptyOutDir=false`: passed. Vite chunk-size warning remains.
+- `npm.cmd run verify:app`: passed.
+- `node tools\inspect_stats_damage_v1_v2.mjs`: passed; screenshots regenerated under `artifacts/stats-damage-v1-v2`.
+- `npm.cmd run validate:imports`: passed.
+- `npm.cmd run verify:damage-formulas`: passed.
+- `node tools\verify_elation_settings_ui.mjs`: passed with escalated browser launch; screenshot `artifacts/stats-damage-v1-v2/v2-elation-settings-mobile-390.png`.
+
+---
+
+## Character State Controls and Condition Compare Pass
+
+### Status
+
+- status: completed
+- started: 2026-07-06
+- completed: 2026-07-06
+- request: build character-specific state/stack inputs and connect steps 1-5 through UI, calculation, exceptions, and condition compare
+
+### Work Log
+
+- Added `data/curated/character-state-controls.json` as the data source for per-character and per-formula state controls.
+- Replaced hardcoded Black Swan/Elation controls with data-driven `buildPartySpecificControls`.
+- Added controls for Black Swan Arcana stacks, Elation Certified Banger, Merrymake, Cipher recorded damage, and super break toughness conversion multiplier.
+- Connected `superBreakToughnessMultiplier` to the super break formula and `cipherRecordedDamage` to Cipher ultimate true damage.
+- Updated condition compare so it reuses the same state controls, calculates base vs compare totals, and lists skill-level damage deltas.
+- Added `reports/calculation/character-state-controls.md` and expanded formula validation checks from 6 to 9.
+
+### Verification
+
+- `npm.cmd run verify:damage-formulas`: passed; checks=9.
+- `npm.cmd run build -- --emptyOutDir=false`: passed. Vite chunk-size warning remains.
+- `npm.cmd run validate:imports`: passed.
+- `npm.cmd run verify:app`: passed.
+- `node tools\verify_elation_settings_ui.mjs`: passed with escalated browser launch; screenshots `v2-elation-settings-mobile-390.png` and `v2-condition-elation-settings-mobile-390.png`.
+- `node tools\inspect_stats_damage_v1_v2.mjs`: passed; screenshots regenerated under `artifacts/stats-damage-v1-v2`.
+
+---
+
+## Character State Exception Full Audit Pass
+
+### Status
+
+- status: completed
+- started: 2026-07-06
+- completed: 2026-07-06
+- request: continue with the next state/exception pass, then commit and push
+
+### Work Log
+
+- Expanded `data/curated/character-state-controls.json` from 5 controls to 16 controls.
+- Added UI/calculation controls for 파멸 개척자, 단항•음월, 루카, 아스타, 애쉬베일, 은랑 LV.999, 청작, 케리드라, 키레네, 파이논, and Dr. 레이시오 dynamic stack/count rows.
+- Connected `stateControls` and `scenarioSettings` to `calculateBattleFinalStats` so selected UI values can override blocked/dynamic `combat-ledger` effect rows at battle-calculation time.
+- Kept the override source-scoped by `effectRowId`, so the same UI setting feeds both stats/damage and condition compare without regenerating the ledger.
+- Added `tools/audit_character_state_exceptions.mjs` and `npm.cmd run audit:character-state-exceptions`.
+- Generated `reports/calculation/character-state-exception-audit.json` and `.md`.
+- Updated formula validation to confirm Asta charge and Trailblazer destruction stack controls resolve dynamic effect rows.
+
+### Output Summary
+
+- HoyoWiki characters scanned: 92.
+- Released/joined characters: 87.
+- Selection-disabled/unjoined characters: 5.
+- UI-input effect rows found from reviewed dynamic decisions: 14.
+- Characters with state controls: 13.
+- Damage formula validation checks: 10.
+
+### Verification
+
+- `npm.cmd run audit:character-state-exceptions`: passed.
+- `npm.cmd run verify:damage-formulas`: passed; checks=10.
+- `npm.cmd run build -- --emptyOutDir=false`: passed. Vite chunk-size warning remains.
+- `npm.cmd run validate:imports`: passed.
+- `npm.cmd run verify:app`: passed.

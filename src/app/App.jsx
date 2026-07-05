@@ -28,6 +28,10 @@ export function App() {
   const ActiveComponent = activeRoute.component;
   const navRoutes = routes.filter((route) => !route.hideFromNav);
 
+  if (activeRoute.chrome === "calculator") {
+    return <ActiveComponent params={match.params} />;
+  }
+
   return (
     <main className="app-shell">
       <header className="app-header">

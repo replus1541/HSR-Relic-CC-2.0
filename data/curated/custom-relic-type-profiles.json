@@ -1,0 +1,4890 @@
+{
+  "app": "hsr-relic-cc-custom-relic-type-profiles",
+  "version": 1,
+  "generatedAt": "2026-07-05T17:22:26.584Z",
+  "policy": {
+    "roleTypeProfilesAreUserCurated": true,
+    "sourceBackedCombatEffect": false,
+    "defaultBuildsRemainSeparate": true,
+    "hoyowikiRecommendationSource": false
+  },
+  "sources": {
+    "legacyCharacterGuides": "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+    "legacyDefaultBuilds": "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+    "v2DefaultBuilds": "C:\\CODEX\\HSR RELIC CC 2.0\\data\\generated\\default-character-builds.json",
+    "legacyTypeLogic": "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+    "legacyRelicProfileLogic": "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+  },
+  "definitions": {
+    "damageTemplates": {
+      "crit": {
+        "evaluationKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "crit-follow": {
+        "evaluationKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "crit-summon": {
+        "evaluationKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "dot": {
+        "evaluationKey": "dot",
+        "usesCrit": false,
+        "usesDamageBonus": true
+      },
+      "break": {
+        "evaluationKey": "break",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "support": {
+        "evaluationKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "utility": {
+        "evaluationKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      }
+    },
+    "statProfiles": {
+      "atk": {
+        "label": "공격력 기반",
+        "primaryFallback": "atk"
+      },
+      "hp": {
+        "label": "체력 기반",
+        "primaryFallback": "hp"
+      },
+      "def": {
+        "label": "방어력 기반",
+        "primaryFallback": "def"
+      },
+      "break": {
+        "label": "격파 기반",
+        "primaryFallback": "breakEffect"
+      },
+      "support": {
+        "label": "지원 기반",
+        "primaryFallback": "speed"
+      }
+    },
+    "relicPresets": {
+      "crit": {
+        "label": "치명 세팅",
+        "description": "치확/치피 기반 직접 피해 프리셋"
+      },
+      "dot": {
+        "label": "DoT 세팅",
+        "description": "지속 피해 기반 프리셋"
+      },
+      "break": {
+        "label": "격파 세팅",
+        "description": "격파 특수효과/격파 피해 기반 프리셋"
+      },
+      "def": {
+        "label": "방어 계수 세팅",
+        "description": "방어력 계수 캐릭터 프리셋"
+      },
+      "hp": {
+        "label": "체력 계수 세팅",
+        "description": "HP 계수 캐릭터 프리셋"
+      },
+      "support": {
+        "label": "지원 세팅",
+        "description": "속도/생존/지원 계수 중심 프리셋"
+      }
+    },
+    "relicProfileToPresetId": {
+      "atk2pcSupport": "support",
+      "atkSpeedSupport": "support",
+      "break": "break",
+      "cerydraAtk2pcSupport": "support",
+      "crit95": "crit",
+      "critFollow": "crit",
+      "def": "def",
+      "dotEhr": "dot",
+      "elationDps": "crit",
+      "elationSupport": "crit",
+      "hpCrit": "hp",
+      "hpSpeedSupport": "support",
+      "speedDebufferEhr": "support",
+      "support": "support"
+    }
+  },
+  "summary": {
+    "characters": 90,
+    "matchedIdentity": 90,
+    "unmatchedIdentity": 0,
+    "bySourceStatus": {
+      "matched_identity": 89,
+      "manual_v2_user_curated": 1
+    },
+    "byRoleClass": {
+      "치확 / 치피 딜러": 33,
+      "지원형 서포터": 14,
+      "힐러": 9,
+      "지속피해 딜러": 7,
+      "공격형 서포터": 6,
+      "격파 딜러": 5,
+      "디버퍼": 5,
+      "체퍼기반 딜러": 5,
+      "탱커": 5,
+      "환락 서포터": 1
+    },
+    "byDamageTemplate": {
+      "crit": 27,
+      "support": 17,
+      "crit-follow": 15,
+      "break": 11,
+      "utility": 10,
+      "dot": 7,
+      "crit-summon": 3
+    },
+    "byStatProfile": {
+      "atk": 44,
+      "support": 24,
+      "hp": 11,
+      "break": 6,
+      "def": 5
+    },
+    "byRelicProfile": {
+      "crit95": 21,
+      "break": 11,
+      "critFollow": 9,
+      "hpCrit": 9,
+      "support": 9,
+      "dotEhr": 8,
+      "def": 6,
+      "hpSpeedSupport": 4,
+      "atkSpeedSupport": 3,
+      "elationDps": 3,
+      "speedDebufferEhr": 3,
+      "elationSupport": 2,
+      "atk2pcSupport": 1,
+      "cerydraAtk2pcSupport": 1
+    },
+    "byPresetId": {
+      "crit": 35,
+      "support": 21,
+      "break": 11,
+      "hp": 9,
+      "dot": 8,
+      "def": 6
+    }
+  },
+  "unmatchedSourceCharacters": [],
+  "rows": [
+    {
+      "characterId": "Gallagher_00",
+      "displayName": "갤러거",
+      "sourceCharacter": "갤러거",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "힐러",
+        "damageTemplate": "break",
+        "statProfile": "break",
+        "primaryStat": "breakEffect",
+        "displayTypeLabel": "힐러",
+        "evaluationTemplateKey": "break",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "break",
+        "presetId": "break",
+        "presetLabel": "격파 세팅",
+        "sourceRole": "힐러",
+        "set4Id": "wiki-relic-138",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-143",
+        "mainStats": {
+          "body": "atkRatio",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "breakEffect"
+        },
+        "subStatPriority": [
+          "hpRatio",
+          "breakEffect",
+          "atkRatio",
+          "speed",
+          "critRate",
+          "hpFlat",
+          "atkFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Mar_7th_10",
+      "displayName": "Mar. 7th•수렵",
+      "sourceCharacter": "검칠이",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit-follow",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "critFollow",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-1601",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-152",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "speed",
+          "atkRatio",
+          "critRate",
+          "effectHitRate",
+          "defRatio",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Gepard_00",
+      "displayName": "게파드",
+      "sourceCharacter": "게파드",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "탱커",
+        "damageTemplate": "utility",
+        "statProfile": "def",
+        "primaryStat": "def",
+        "displayTypeLabel": "탱커",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "def",
+        "presetId": "def",
+        "presetLabel": "방어 계수 세팅",
+        "sourceRole": "탱커",
+        "set4Id": "wiki-relic-142",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-151",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "defRatio",
+          "sphere": "elementDamage",
+          "rope": "defRatio"
+        },
+        "subStatPriority": [
+          "speed",
+          "critDamage",
+          "critRate",
+          "defRatio",
+          "defFlat",
+          "hpFlat",
+          "atkFlat",
+          "hpRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Jingliu_00",
+      "displayName": "경류",
+      "sourceCharacter": "경류",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "hp",
+        "primaryStat": "hp",
+        "displayTypeLabel": "체퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "hpCrit",
+        "presetId": "hp",
+        "presetLabel": "체력 계수 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-141",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1238",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "hpRatio",
+          "sphere": "hpRatio",
+          "rope": "hpRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "critRate",
+          "speed",
+          "breakEffect",
+          "hpRatio",
+          "defRatio",
+          "atkRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "JingYuan_00",
+      "displayName": "경원",
+      "sourceCharacter": "경원",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit-follow",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "critFollow",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-1601",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-152",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "critRate",
+          "atkRatio",
+          "breakEffect",
+          "speed",
+          "atkFlat",
+          "hpFlat",
+          "hpRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Guinaifen_00",
+      "displayName": "계네빈",
+      "sourceCharacter": "계네빈",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지속피해 딜러",
+        "damageTemplate": "dot",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "지속피해 딜러",
+        "evaluationTemplateKey": "dot",
+        "usesCrit": false,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "dotEhr",
+        "presetId": "dot",
+        "presetLabel": "DoT 세팅",
+        "sourceRole": "지속피해 딜러",
+        "set4Id": "wiki-relic-1600",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1599",
+        "mainStats": {
+          "body": "effectHitRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "breakEffect",
+          "atkRatio",
+          "effectHitRate",
+          "speed",
+          "critDamage",
+          "defRatio",
+          "defFlat",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Huohuo_00",
+      "displayName": "곽향",
+      "sourceCharacter": "곽향",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "힐러",
+        "damageTemplate": "utility",
+        "statProfile": "hp",
+        "primaryStat": "hp",
+        "displayTypeLabel": "힐러",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "hpCrit",
+        "presetId": "hp",
+        "presetLabel": "체력 계수 세팅",
+        "sourceRole": "힐러",
+        "set4Id": "wiki-relic-140",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-144",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "hpRatio",
+          "sphere": "hpRatio",
+          "rope": "hpRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "speed",
+          "critRate",
+          "hpRatio",
+          "atkFlat",
+          "breakEffect",
+          "defFlat",
+          "defRatio",
+          "effectHitRate",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "PlayerBoy_20",
+      "displayName": "개척자 • 기억",
+      "sourceCharacter": "기억척자",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지원형 서포터",
+        "damageTemplate": "support",
+        "statProfile": "support",
+        "primaryStat": "critDamage",
+        "displayTypeLabel": "지원형 서포터",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "support",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "지원형 서포터",
+        "set4Id": "wiki-relic-1237",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-3565",
+        "mainStats": {
+          "body": "hpRatio",
+          "feet": "speed",
+          "sphere": "hpRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "atkRatio",
+          "defRatio",
+          "speed",
+          "hpRatio",
+          "breakEffect",
+          "critDamage",
+          "defFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Gilgamesh_00",
+      "displayName": "길가메시",
+      "sourceCharacter": "길가메쉬",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-139",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1238",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "critRate",
+          "speed",
+          "atkRatio",
+          "defFlat",
+          "atkFlat",
+          "breakEffect",
+          "defRatio",
+          "effectHitRate"
+        ],
+        "missingItems": [
+          "캐릭터 메타데이터 없음: 길가메쉬"
+        ]
+      }
+    },
+    {
+      "characterId": "Luocha_00",
+      "displayName": "나찰",
+      "sourceCharacter": "나찰",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "힐러",
+        "damageTemplate": "utility",
+        "statProfile": "support",
+        "primaryStat": "atk",
+        "displayTypeLabel": "힐러",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "hpSpeedSupport",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "힐러",
+        "set4Id": "wiki-relic-140",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1235",
+        "mainStats": {
+          "body": "hpRatio",
+          "feet": "speed",
+          "sphere": "hpRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "atkRatio",
+          "defRatio",
+          "hpRatio",
+          "speed",
+          "defFlat",
+          "atkFlat",
+          "critDamage",
+          "effectHitRate",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Natasha_00",
+      "displayName": "나타샤",
+      "sourceCharacter": "나타샤",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "힐러",
+        "damageTemplate": "utility",
+        "statProfile": "support",
+        "primaryStat": "hp",
+        "displayTypeLabel": "힐러",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "hpSpeedSupport",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "힐러",
+        "set4Id": "wiki-relic-140",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-144",
+        "mainStats": {
+          "body": "hpRatio",
+          "feet": "speed",
+          "sphere": "hpRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "atkRatio",
+          "defRatio",
+          "hpRatio",
+          "speed",
+          "critDamage",
+          "critRate",
+          "defFlat",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "DanHeng_00",
+      "displayName": "단항",
+      "sourceCharacter": "단항",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-135",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-147",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "atkRatio",
+          "speed",
+          "critDamage",
+          "critRate",
+          "hpRatio",
+          "breakEffect",
+          "effectHitRate",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Constance_00",
+      "displayName": "달리아",
+      "sourceCharacter": "달리아",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "힐러",
+        "damageTemplate": "break",
+        "statProfile": "hp",
+        "primaryStat": "hp",
+        "displayTypeLabel": "힐러",
+        "evaluationTemplateKey": "break",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "break",
+        "presetId": "break",
+        "presetLabel": "격파 세팅",
+        "sourceRole": "격파 공격형 서포터",
+        "set4Id": "wiki-relic-2649",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-2651",
+        "mainStats": {
+          "body": "atkRatio",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "breakEffect"
+        },
+        "subStatPriority": [
+          "hpRatio",
+          "atkRatio",
+          "breakEffect",
+          "speed",
+          "atkFlat",
+          "defFlat",
+          "critRate"
+        ],
+        "missingItems": [
+          "광추 경로 불일치: 오직 향만이 변함없이 (abundance != nihility)"
+        ]
+      }
+    },
+    {
+      "characterId": "TheHerta_00",
+      "displayName": "더 헤르타",
+      "sourceCharacter": "더 헤르타",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-3161",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-2372",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "speed",
+          "critRate",
+          "atkRatio",
+          "defRatio",
+          "atkFlat",
+          "defFlat",
+          "effectHitRate",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "DanHengPT_00",
+      "displayName": "단항 • 등황",
+      "sourceCharacter": "등황",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "공격형 서포터",
+        "damageTemplate": "support",
+        "statProfile": "support",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공격형 서포터",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "def",
+        "presetId": "def",
+        "presetLabel": "방어 계수 세팅",
+        "sourceRole": "보존 실드 서포터",
+        "set4Id": "wiki-relic-4013",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1235",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "defRatio",
+          "sphere": "elementDamage",
+          "rope": "defRatio"
+        },
+        "subStatPriority": [
+          "speed",
+          "critDamage",
+          "critRate",
+          "atkRatio",
+          "defRatio",
+          "defFlat",
+          "atkFlat"
+        ],
+        "missingItems": [
+          "캐릭터 메타데이터 없음: 등황"
+        ]
+      }
+    },
+    {
+      "characterId": "Rappa_00",
+      "displayName": "라파",
+      "sourceCharacter": "라파",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "격파 딜러",
+        "damageTemplate": "break",
+        "statProfile": "break",
+        "primaryStat": "breakEffect",
+        "displayTypeLabel": "격파 딜러",
+        "evaluationTemplateKey": "break",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "break",
+        "presetId": "break",
+        "presetLabel": "격파 세팅",
+        "sourceRole": "격파 딜러",
+        "set4Id": "wiki-relic-2649",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-143",
+        "mainStats": {
+          "body": "atkRatio",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "breakEffect"
+        },
+        "subStatPriority": [
+          "hpRatio",
+          "speed",
+          "breakEffect",
+          "atkRatio",
+          "effectHitRate",
+          "critDamage",
+          "critRate",
+          "defFlat",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Dr_Ratio_00",
+      "displayName": "Dr. 레이시오",
+      "sourceCharacter": "레이시오",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit-follow",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "critFollow",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-1925",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-152",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "critRate",
+          "speed",
+          "atkRatio",
+          "atkFlat",
+          "defFlat",
+          "defRatio",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Robin_00",
+      "displayName": "로빈",
+      "sourceCharacter": "로빈",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "공격형 서포터",
+        "damageTemplate": "support",
+        "statProfile": "support",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공격형 서포터",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "atk2pcSupport",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "공격형 서포터",
+        "set4Id": "wiki-relic-139",
+        "set4AltId": "wiki-relic-1600",
+        "set4Mode": "2+2",
+        "set2Id": "wiki-relic-147",
+        "mainStats": {
+          "body": "atkRatio",
+          "feet": "atkRatio",
+          "sphere": "atkRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "speed",
+          "defRatio",
+          "atkFlat",
+          "atkRatio",
+          "critDamage",
+          "critRate",
+          "defFlat",
+          "effectHitRate",
+          "hpFlat",
+          "hpRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Luka_00",
+      "displayName": "루카",
+      "sourceCharacter": "루카",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지속피해 딜러",
+        "damageTemplate": "dot",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "지속피해 딜러",
+        "evaluationTemplateKey": "dot",
+        "usesCrit": false,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "dotEhr",
+        "presetId": "dot",
+        "presetLabel": "DoT 세팅",
+        "sourceRole": "지속피해 딜러",
+        "set4Id": "wiki-relic-1600",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1599",
+        "mainStats": {
+          "body": "effectHitRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "speed",
+          "breakEffect",
+          "effectHitRate",
+          "atkRatio",
+          "atkFlat",
+          "hpFlat",
+          "defFlat",
+          "defRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Lynx_00",
+      "displayName": "링스",
+      "sourceCharacter": "링스",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "힐러",
+        "damageTemplate": "utility",
+        "statProfile": "support",
+        "primaryStat": "hp",
+        "displayTypeLabel": "힐러",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "hpSpeedSupport",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "힐러",
+        "set4Id": "wiki-relic-140",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-144",
+        "mainStats": {
+          "body": "hpRatio",
+          "feet": "speed",
+          "sphere": "hpRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "defRatio",
+          "speed",
+          "atkRatio",
+          "breakEffect",
+          "hpRatio",
+          "critRate",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Mydeimos_00",
+      "displayName": "마이데이",
+      "sourceCharacter": "마이데이",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "체퍼기반 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "hp",
+        "primaryStat": "hp",
+        "displayTypeLabel": "체퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "hpCrit",
+        "presetId": "hp",
+        "presetLabel": "체력 계수 세팅",
+        "sourceRole": "체퍼기반 딜러",
+        "set4Id": "wiki-relic-3161",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-3566",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "hpRatio",
+          "sphere": "hpRatio",
+          "rope": "hpRatio"
+        },
+        "subStatPriority": [
+          "speed",
+          "critDamage",
+          "critRate",
+          "hpRatio",
+          "atkFlat",
+          "defFlat",
+          "atkRatio",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Fugue_00",
+      "displayName": "망귀인",
+      "sourceCharacter": "망귀인",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지원형 서포터",
+        "damageTemplate": "break",
+        "statProfile": "support",
+        "primaryStat": "breakEffect",
+        "displayTypeLabel": "지원형 서포터",
+        "evaluationTemplateKey": "break",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "break",
+        "presetId": "break",
+        "presetLabel": "격파 세팅",
+        "sourceRole": "격파 지원",
+        "set4Id": "wiki-relic-2649",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-2651",
+        "mainStats": {
+          "body": "atkRatio",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "breakEffect"
+        },
+        "subStatPriority": [
+          "speed",
+          "breakEffect",
+          "hpRatio",
+          "atkRatio",
+          "atkFlat",
+          "critDamage",
+          "defRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Moze_00",
+      "displayName": "맥택",
+      "sourceCharacter": "맥택",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit-follow",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "critFollow",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-1925",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-152",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "speed",
+          "critDamage",
+          "atkRatio",
+          "critRate",
+          "hpFlat",
+          "breakEffect",
+          "defFlat",
+          "defRatio",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Misha_00",
+      "displayName": "미샤",
+      "sourceCharacter": "미샤",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-141",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-152",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "speed",
+          "critRate",
+          "atkRatio",
+          "hpFlat",
+          "defFlat",
+          "defRatio",
+          "effectHitRate",
+          "hpRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Sam_00",
+      "displayName": "반디",
+      "sourceCharacter": "반디",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "격파 딜러",
+        "damageTemplate": "break",
+        "statProfile": "break",
+        "primaryStat": "breakEffect",
+        "displayTypeLabel": "격파 딜러",
+        "evaluationTemplateKey": "break",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "break",
+        "presetId": "break",
+        "presetLabel": "격파 세팅",
+        "sourceRole": "격파 딜러",
+        "set4Id": "wiki-relic-2649",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-2651",
+        "mainStats": {
+          "body": "atkRatio",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "breakEffect"
+        },
+        "subStatPriority": [
+          "speed",
+          "hpRatio",
+          "breakEffect",
+          "atkRatio",
+          "defFlat",
+          "critDamage",
+          "critRate",
+          "defRatio",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Bailu_00",
+      "displayName": "백로",
+      "sourceCharacter": "백로",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "힐러",
+        "damageTemplate": "utility",
+        "statProfile": "support",
+        "primaryStat": "hp",
+        "displayTypeLabel": "힐러",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "hpSpeedSupport",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "힐러",
+        "set4Id": "wiki-relic-140",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-144",
+        "mainStats": {
+          "body": "hpRatio",
+          "feet": "speed",
+          "sphere": "hpRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "defRatio",
+          "speed",
+          "atkRatio",
+          "hpRatio",
+          "atkFlat",
+          "breakEffect",
+          "critDamage",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "PlayerBoy_10",
+      "displayName": "개척자 • 보존",
+      "sourceCharacter": "보존척자",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "탱커",
+        "damageTemplate": "utility",
+        "statProfile": "def",
+        "primaryStat": "def",
+        "displayTypeLabel": "탱커",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "def",
+        "presetId": "def",
+        "presetLabel": "방어 계수 세팅",
+        "sourceRole": "탱커",
+        "set4Id": "wiki-relic-142",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-151",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "defRatio",
+          "sphere": "elementDamage",
+          "rope": "defRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "critRate",
+          "speed",
+          "defRatio",
+          "breakEffect",
+          "defFlat",
+          "hpFlat",
+          "hpRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Boothill_00",
+      "displayName": "부트힐",
+      "sourceCharacter": "부트힐",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "격파 딜러",
+        "damageTemplate": "break",
+        "statProfile": "break",
+        "primaryStat": "breakEffect",
+        "displayTypeLabel": "격파 딜러",
+        "evaluationTemplateKey": "break",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "break",
+        "presetId": "break",
+        "presetLabel": "격파 세팅",
+        "sourceRole": "격파 딜러",
+        "set4Id": "wiki-relic-2649",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-143",
+        "mainStats": {
+          "body": "atkRatio",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "breakEffect"
+        },
+        "subStatPriority": [
+          "hpRatio",
+          "atkRatio",
+          "breakEffect",
+          "speed",
+          "defFlat",
+          "atkFlat",
+          "critDamage",
+          "critRate",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "FuXuan_00",
+      "displayName": "부현",
+      "sourceCharacter": "부현",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "탱커",
+        "damageTemplate": "utility",
+        "statProfile": "hp",
+        "primaryStat": "hp",
+        "displayTypeLabel": "탱커",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "def",
+        "presetId": "def",
+        "presetLabel": "방어 계수 세팅",
+        "sourceRole": "탱커",
+        "set4Id": "wiki-relic-1236",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1235",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "defRatio",
+          "sphere": "elementDamage",
+          "rope": "defRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "speed",
+          "critRate",
+          "defRatio",
+          "atkFlat",
+          "atkRatio",
+          "breakEffect",
+          "defFlat",
+          "hpFlat",
+          "hpRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Bronya_00",
+      "displayName": "브로냐",
+      "sourceCharacter": "브로냐",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지원형 서포터",
+        "damageTemplate": "support",
+        "statProfile": "support",
+        "primaryStat": "critDamage",
+        "displayTypeLabel": "지원형 서포터",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "support",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "지원형 서포터",
+        "set4Id": "wiki-relic-1237",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1235",
+        "mainStats": {
+          "body": "critDamage",
+          "feet": "speed",
+          "sphere": "hpRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "atkRatio",
+          "hpRatio",
+          "speed",
+          "defRatio",
+          "effectHitRate",
+          "atkFlat",
+          "defFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "BlackSwan_00",
+      "displayName": "블랙 스완",
+      "sourceCharacter": "블랙스완",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지속피해 딜러",
+        "damageTemplate": "dot",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "지속피해 딜러",
+        "evaluationTemplateKey": "dot",
+        "usesCrit": false,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "dotEhr",
+        "presetId": "dot",
+        "presetLabel": "DoT 세팅",
+        "sourceRole": "지속피해 딜러",
+        "set4Id": "wiki-relic-1600",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-146",
+        "mainStats": {
+          "body": "effectHitRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "breakEffect",
+          "atkRatio",
+          "effectHitRate",
+          "speed",
+          "atkFlat",
+          "critDamage",
+          "defFlat",
+          "hpFlat",
+          "hpRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Ren_00",
+      "displayName": "블레이드",
+      "sourceCharacter": "블레이드",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "체퍼기반 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "hp",
+        "primaryStat": "hp",
+        "displayTypeLabel": "체퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "hpCrit",
+        "presetId": "hp",
+        "presetLabel": "체력 계수 세팅",
+        "sourceRole": "체퍼기반 딜러",
+        "set4Id": "wiki-relic-1236",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-3566",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "hpRatio",
+          "sphere": "hpRatio",
+          "rope": "hpRatio"
+        },
+        "subStatPriority": [
+          "speed",
+          "critDamage",
+          "critRate",
+          "hpRatio",
+          "hpFlat",
+          "atkFlat",
+          "breakEffect",
+          "defFlat",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Feixiao_00",
+      "displayName": "비소",
+      "sourceCharacter": "비소",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit-follow",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "critFollow",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-2655",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-152",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "critRate",
+          "speed",
+          "atkRatio",
+          "effectHitRate",
+          "atkFlat",
+          "defFlat",
+          "defRatio",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Cipher_00",
+      "displayName": "사이퍼",
+      "sourceCharacter": "사이퍼",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "공격형 서포터",
+        "damageTemplate": "crit-follow",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공격형 서포터",
+        "evaluationTemplateKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "atkSpeedSupport",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "공격형 서포터",
+        "set4Id": "wiki-relic-1237",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-3064",
+        "mainStats": {
+          "body": "atkRatio",
+          "feet": "speed",
+          "sphere": "atkRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "defRatio",
+          "speed",
+          "atkRatio",
+          "hpRatio",
+          "critDamage",
+          "atkFlat",
+          "critRate",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Mar_7th_00",
+      "displayName": "Mar. 7th",
+      "sourceCharacter": "삼칠이",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "탱커",
+        "damageTemplate": "utility",
+        "statProfile": "def",
+        "primaryStat": "def",
+        "displayTypeLabel": "탱커",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "def",
+        "presetId": "def",
+        "presetLabel": "방어 계수 세팅",
+        "sourceRole": "탱커",
+        "set4Id": "wiki-relic-142",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-151",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "defRatio",
+          "sphere": "elementDamage",
+          "rope": "defRatio"
+        },
+        "subStatPriority": [
+          "speed",
+          "critDamage",
+          "critRate",
+          "defRatio",
+          "defFlat",
+          "atkRatio",
+          "breakEffect",
+          "hpFlat",
+          "hpRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Sampo_00",
+      "displayName": "삼포",
+      "sourceCharacter": "삼포",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지속피해 딜러",
+        "damageTemplate": "dot",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "지속피해 딜러",
+        "evaluationTemplateKey": "dot",
+        "usesCrit": false,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "dotEhr",
+        "presetId": "dot",
+        "presetLabel": "DoT 세팅",
+        "sourceRole": "지속피해 딜러",
+        "set4Id": "wiki-relic-1600",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1599",
+        "mainStats": {
+          "body": "effectHitRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "speed",
+          "breakEffect",
+          "effectHitRate",
+          "atkRatio",
+          "defFlat",
+          "atkFlat",
+          "critDamage",
+          "critRate",
+          "defRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Serval_00",
+      "displayName": "서벌",
+      "sourceCharacter": "서벌",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지속피해 딜러",
+        "damageTemplate": "dot",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "지속피해 딜러",
+        "evaluationTemplateKey": "dot",
+        "usesCrit": false,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "dotEhr",
+        "presetId": "dot",
+        "presetLabel": "DoT 세팅",
+        "sourceRole": "지속피해 딜러",
+        "set4Id": "wiki-relic-136",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1599",
+        "mainStats": {
+          "body": "effectHitRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "breakEffect",
+          "speed",
+          "effectHitRate",
+          "atkRatio",
+          "defFlat",
+          "defRatio",
+          "critRate",
+          "hpRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Sunday_10",
+      "displayName": "선데이",
+      "sourceCharacter": "선데이",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지원형 서포터",
+        "damageTemplate": "support",
+        "statProfile": "support",
+        "primaryStat": "critDamage",
+        "displayTypeLabel": "지원형 서포터",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "support",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "지원형 서포터",
+        "set4Id": "wiki-relic-3162",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1235",
+        "mainStats": {
+          "body": "critDamage",
+          "feet": "speed",
+          "sphere": "hpRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "hpRatio",
+          "speed",
+          "atkRatio",
+          "atkFlat",
+          "defRatio",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Xueyi_00",
+      "displayName": "설의",
+      "sourceCharacter": "설의",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "격파 딜러",
+        "damageTemplate": "break",
+        "statProfile": "break",
+        "primaryStat": "breakEffect",
+        "displayTypeLabel": "격파 딜러",
+        "evaluationTemplateKey": "break",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "break",
+        "presetId": "break",
+        "presetLabel": "격파 세팅",
+        "sourceRole": "격파 딜러",
+        "set4Id": "wiki-relic-138",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-143",
+        "mainStats": {
+          "body": "atkRatio",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "breakEffect"
+        },
+        "subStatPriority": [
+          "speed",
+          "hpRatio",
+          "breakEffect",
+          "atkRatio",
+          "defRatio",
+          "critDamage",
+          "critRate",
+          "defFlat",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Saber_00",
+      "displayName": "세이버",
+      "sourceCharacter": "세이버",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-3782",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-152",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "speed",
+          "atkRatio",
+          "critRate",
+          "effectHitRate",
+          "atkFlat",
+          "breakEffect",
+          "defFlat",
+          "defRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Sushang_00",
+      "displayName": "소상",
+      "sourceCharacter": "소상",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "격파 딜러",
+        "damageTemplate": "break",
+        "statProfile": "break",
+        "primaryStat": "breakEffect",
+        "displayTypeLabel": "격파 딜러",
+        "evaluationTemplateKey": "break",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "break",
+        "presetId": "break",
+        "presetLabel": "격파 세팅",
+        "sourceRole": "격파 딜러",
+        "set4Id": "wiki-relic-134",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-143",
+        "mainStats": {
+          "body": "atkRatio",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "breakEffect"
+        },
+        "subStatPriority": [
+          "hpRatio",
+          "atkRatio",
+          "breakEffect",
+          "speed",
+          "critDamage",
+          "atkFlat",
+          "defFlat",
+          "defRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Sparkle_00",
+      "displayName": "스파클",
+      "sourceCharacter": "스파클",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지원형 서포터",
+        "damageTemplate": "support",
+        "statProfile": "support",
+        "primaryStat": "critDamage",
+        "displayTypeLabel": "지원형 서포터",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "support",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "지원형 서포터",
+        "set4Id": "wiki-relic-3162",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1235",
+        "mainStats": {
+          "body": "critDamage",
+          "feet": "speed",
+          "sphere": "hpRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "atkRatio",
+          "defRatio",
+          "hpRatio",
+          "effectHitRate",
+          "speed",
+          "atkFlat",
+          "breakEffect",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Sparxie_00",
+      "displayName": "스파키",
+      "sourceCharacter": "스파키",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "elationDps",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "환락 딜러",
+        "set4Id": "wiki-relic-4770",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-5012",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "speed",
+          "critDamage",
+          "atkRatio",
+          "critRate",
+          "effectHitRate",
+          "defRatio",
+          "breakEffect"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Aglaea_00",
+      "displayName": "아글라이아",
+      "sourceCharacter": "아글라이아",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit-summon",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "소환 딜러",
+        "set4Id": "wiki-relic-3342",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-3059",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "speed",
+          "atkRatio",
+          "critRate",
+          "atkFlat",
+          "breakEffect",
+          "defRatio",
+          "effectHitRate",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Anaxa_00",
+      "displayName": "아낙사",
+      "sourceCharacter": "아낙사",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-3161",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-2372",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "atkRatio",
+          "speed",
+          "critDamage",
+          "critRate",
+          "hpRatio",
+          "atkFlat",
+          "defFlat",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Arlan_00",
+      "displayName": "아를란",
+      "sourceCharacter": "아를란",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-136",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-147",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "speed",
+          "critDamage",
+          "atkRatio",
+          "critRate",
+          "hpFlat",
+          "defRatio",
+          "defFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Asta_00",
+      "displayName": "아스타",
+      "sourceCharacter": "아스타",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지원형 서포터",
+        "damageTemplate": "support",
+        "statProfile": "support",
+        "primaryStat": "atk",
+        "displayTypeLabel": "지원형 서포터",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "support",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "지원형 서포터",
+        "set4Id": "wiki-relic-1237",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-144",
+        "mainStats": {
+          "body": "hpRatio",
+          "feet": "speed",
+          "sphere": "hpRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "atkRatio",
+          "defRatio",
+          "speed",
+          "hpRatio",
+          "critDamage",
+          "atkFlat",
+          "breakEffect",
+          "defFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Argenti_00",
+      "displayName": "아젠티",
+      "sourceCharacter": "아젠티",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-134",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1238",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "speed",
+          "atkRatio",
+          "critRate",
+          "breakEffect",
+          "effectHitRate",
+          "atkFlat",
+          "defFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Archer_00",
+      "displayName": "아처",
+      "sourceCharacter": "아처",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-145",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1238",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "atkRatio",
+          "critRate",
+          "speed",
+          "defFlat",
+          "atkFlat",
+          "breakEffect",
+          "defRatio",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Acheron_00",
+      "displayName": "아케론",
+      "sourceCharacter": "아케론",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-1925",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-2372",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "speed",
+          "atkRatio",
+          "critRate",
+          "breakEffect",
+          "defFlat",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Ashveil_00",
+      "displayName": "애쉬베일",
+      "sourceCharacter": "애쉬베일",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "디버퍼",
+        "damageTemplate": "support",
+        "statProfile": "support",
+        "primaryStat": "effectHitRate",
+        "displayTypeLabel": "디버퍼",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "critFollow",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "수렵 딜러",
+        "set4Id": "wiki-relic-1601",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-152",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "speed",
+          "critRate",
+          "atkRatio",
+          "defRatio",
+          "atkFlat",
+          "defFlat",
+          "effectHitRate",
+          "hpRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Yukong_00",
+      "displayName": "어공",
+      "sourceCharacter": "어공",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지원형 서포터",
+        "damageTemplate": "support",
+        "statProfile": "support",
+        "primaryStat": "atk",
+        "displayTypeLabel": "지원형 서포터",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "support",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "지원형 서포터",
+        "set4Id": "wiki-relic-1237",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1235",
+        "mainStats": {
+          "body": "hpRatio",
+          "feet": "speed",
+          "sphere": "hpRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "defRatio",
+          "atkRatio",
+          "speed",
+          "breakEffect",
+          "hpRatio",
+          "atkFlat",
+          "critRate",
+          "defFlat",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Aventurine_00",
+      "displayName": "어벤츄린",
+      "sourceCharacter": "어벤츄린",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "탱커",
+        "damageTemplate": "crit-follow",
+        "statProfile": "def",
+        "primaryStat": "def",
+        "displayTypeLabel": "탱커",
+        "evaluationTemplateKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "def",
+        "presetId": "def",
+        "presetLabel": "방어 계수 세팅",
+        "sourceRole": "방어 기반 치확 / 치피 탱커",
+        "set4Id": "wiki-relic-1925",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1235",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "defRatio",
+          "sphere": "elementDamage",
+          "rope": "defRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "speed",
+          "critRate",
+          "atkRatio",
+          "defRatio",
+          "hpRatio",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Evanescia_00",
+      "displayName": "에바네시아",
+      "sourceCharacter": "에바네시아",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit-summon",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "elationDps",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "환락 딜러",
+        "set4Id": "wiki-relic-4770",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-5012",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "speed",
+          "atkRatio",
+          "critRate",
+          "defRatio",
+          "hpFlat",
+          "defFlat",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Evernight_00",
+      "displayName": "에버나이트",
+      "sourceCharacter": "에버나이트",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "체퍼기반 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "hp",
+        "primaryStat": "hp",
+        "displayTypeLabel": "체퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "hpCrit",
+        "presetId": "hp",
+        "presetLabel": "체력 계수 세팅",
+        "sourceRole": "체퍼기반 딜러",
+        "set4Id": "wiki-relic-4012",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-3566",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "hpRatio",
+          "sphere": "hpRatio",
+          "rope": "hpRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "speed",
+          "critRate",
+          "defFlat",
+          "defRatio",
+          "hpRatio",
+          "effectHitRate",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Yanqing_00",
+      "displayName": "연경",
+      "sourceCharacter": "연경",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit-follow",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-141",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1238",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "atkRatio",
+          "speed",
+          "critDamage",
+          "critRate",
+          "hpFlat",
+          "atkFlat",
+          "defFlat",
+          "defRatio",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Lingsha_00",
+      "displayName": "영사",
+      "sourceCharacter": "영사",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "힐러",
+        "damageTemplate": "break",
+        "statProfile": "support",
+        "primaryStat": "breakEffect",
+        "displayTypeLabel": "힐러",
+        "evaluationTemplateKey": "break",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "break",
+        "presetId": "break",
+        "presetLabel": "격파 세팅",
+        "sourceRole": "격파 힐러",
+        "set4Id": "wiki-relic-2649",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-2651",
+        "mainStats": {
+          "body": "atkRatio",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "breakEffect"
+        },
+        "subStatPriority": [
+          "breakEffect",
+          "speed",
+          "hpRatio",
+          "atkRatio",
+          "atkFlat",
+          "critDamage",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "RuanMei_00",
+      "displayName": "완•매",
+      "sourceCharacter": "완매",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지원형 서포터",
+        "damageTemplate": "break",
+        "statProfile": "support",
+        "primaryStat": "breakEffect",
+        "displayTypeLabel": "지원형 서포터",
+        "evaluationTemplateKey": "break",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "break",
+        "presetId": "break",
+        "presetLabel": "격파 세팅",
+        "sourceRole": "지원형 서포터",
+        "set4Id": "wiki-relic-138",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-137",
+        "mainStats": {
+          "body": "atkRatio",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "breakEffect"
+        },
+        "subStatPriority": [
+          "speed",
+          "hpRatio",
+          "breakEffect",
+          "atkRatio",
+          "defFlat",
+          "effectHitRate",
+          "critRate",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Welt_00",
+      "displayName": "웰트",
+      "sourceCharacter": "웰트",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "디버퍼",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "디버퍼",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "speedDebufferEhr",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "디버퍼",
+        "set4Id": "wiki-relic-148",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-146",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "critRate",
+          "atkRatio",
+          "speed",
+          "breakEffect",
+          "effectHitRate",
+          "atkFlat",
+          "defRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Silwolf_00",
+      "displayName": "은랑",
+      "sourceCharacter": "은랑",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "디버퍼",
+        "damageTemplate": "support",
+        "statProfile": "support",
+        "primaryStat": "effectHitRate",
+        "displayTypeLabel": "디버퍼",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "speedDebufferEhr",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "디버퍼",
+        "set4Id": "wiki-relic-145",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-146",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "atkRatio",
+          "speed",
+          "critDamage",
+          "critRate",
+          "breakEffect",
+          "atkFlat",
+          "defRatio",
+          "effectHitRate",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "SilverWolf999_00",
+      "displayName": "은랑 LV.999",
+      "sourceCharacter": "은랑 LV 999",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "elationDps",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "환락 딜러",
+        "set4Id": "wiki-relic-4770",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-5012",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "atkRatio",
+          "critRate",
+          "speed",
+          "breakEffect",
+          "atkFlat",
+          "defFlat",
+          "defRatio",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "DanHengIL_00",
+      "displayName": "단항•음월",
+      "sourceCharacter": "음월",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-148",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1238",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "critRate",
+          "speed",
+          "atkRatio",
+          "defFlat",
+          "hpRatio",
+          "atkFlat",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Tingyun_00",
+      "displayName": "정운",
+      "sourceCharacter": "정운",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지원형 서포터",
+        "damageTemplate": "support",
+        "statProfile": "support",
+        "primaryStat": "atk",
+        "displayTypeLabel": "지원형 서포터",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "support",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "지원형 서포터",
+        "set4Id": "wiki-relic-1237",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-144",
+        "mainStats": {
+          "body": "hpRatio",
+          "feet": "speed",
+          "sphere": "hpRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "defRatio",
+          "speed",
+          "atkRatio",
+          "hpRatio",
+          "breakEffect",
+          "atkFlat",
+          "critDamage",
+          "defFlat",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Seele_00",
+      "displayName": "제레",
+      "sourceCharacter": "제레",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-145",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1238",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "critRate",
+          "atkRatio",
+          "speed",
+          "defFlat",
+          "defRatio",
+          "breakEffect",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Jade_00",
+      "displayName": "제이드",
+      "sourceCharacter": "제이드",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "공격형 서포터",
+        "damageTemplate": "crit-follow",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공격형 서포터",
+        "evaluationTemplateKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "atkSpeedSupport",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "공격형 서포터",
+        "set4Id": "wiki-relic-1601",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-2373",
+        "mainStats": {
+          "body": "atkRatio",
+          "feet": "speed",
+          "sphere": "atkRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "defRatio",
+          "hpRatio",
+          "speed",
+          "atkRatio",
+          "atkFlat",
+          "defFlat",
+          "critDamage",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "MortenaxBlade_00",
+      "displayName": "천야 • 블레이드",
+      "sourceCharacter": "천야 블레이드",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "체퍼기반 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "hp",
+        "primaryStat": "hp",
+        "displayTypeLabel": "체퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "hpCrit",
+        "presetId": "hp",
+        "presetLabel": "체력 계수 세팅",
+        "sourceRole": "체퍼기반 딜러",
+        "set4Id": "manual-myeongjang",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-3566",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "hpRatio",
+          "sphere": "hpRatio",
+          "rope": "hpRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "speed",
+          "critRate",
+          "defRatio",
+          "hpRatio",
+          "atkFlat",
+          "atkRatio",
+          "breakEffect",
+          "defFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Qingque_00",
+      "displayName": "청작",
+      "sourceCharacter": "청작",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-145",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1238",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "speed",
+          "critDamage",
+          "atkRatio",
+          "critRate",
+          "hpFlat",
+          "defFlat",
+          "defRatio",
+          "effectHitRate",
+          "hpRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Jiaoqiu_00",
+      "displayName": "초구",
+      "sourceCharacter": "초구",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "디버퍼",
+        "damageTemplate": "support",
+        "statProfile": "support",
+        "primaryStat": "effectHitRate",
+        "displayTypeLabel": "디버퍼",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "dotEhr",
+        "presetId": "dot",
+        "presetLabel": "DoT 세팅",
+        "sourceRole": "디버퍼",
+        "set4Id": "wiki-relic-1600",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-3904",
+        "mainStats": {
+          "body": "effectHitRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "breakEffect",
+          "speed",
+          "effectHitRate",
+          "atkRatio",
+          "defRatio",
+          "critDamage",
+          "critRate",
+          "hpRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Castorice_00",
+      "displayName": "카스토리스",
+      "sourceCharacter": "카스토리스",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "체퍼기반 딜러",
+        "damageTemplate": "crit-summon",
+        "statProfile": "hp",
+        "primaryStat": "hp",
+        "displayTypeLabel": "체퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "hpCrit",
+        "presetId": "hp",
+        "presetLabel": "체력 계수 세팅",
+        "sourceRole": "HP 기반 기억 딜러",
+        "set4Id": "wiki-relic-3343",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-3566",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "hpRatio",
+          "sphere": "hpRatio",
+          "rope": "hpRatio"
+        },
+        "subStatPriority": [
+          "speed",
+          "critDamage",
+          "critRate",
+          "defRatio",
+          "hpRatio",
+          "atkFlat",
+          "defFlat",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Kafka_00",
+      "displayName": "카프카",
+      "sourceCharacter": "카프카",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지속피해 딜러",
+        "damageTemplate": "dot",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "지속피해 딜러",
+        "evaluationTemplateKey": "dot",
+        "usesCrit": false,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "dotEhr",
+        "presetId": "dot",
+        "presetLabel": "DoT 세팅",
+        "sourceRole": "지속피해 딜러",
+        "set4Id": "wiki-relic-1600",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-3904",
+        "mainStats": {
+          "body": "effectHitRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "breakEffect",
+          "atkRatio",
+          "speed",
+          "effectHitRate",
+          "defFlat",
+          "defRatio",
+          "atkFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Cerydra_00",
+      "displayName": "케리드라",
+      "sourceCharacter": "케리드라",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지원형 서포터",
+        "damageTemplate": "support",
+        "statProfile": "support",
+        "primaryStat": "atk",
+        "displayTypeLabel": "지원형 서포터",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "cerydraAtk2pcSupport",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "지원형 서포터",
+        "set4Id": "wiki-relic-139",
+        "set4AltId": "wiki-relic-1600",
+        "set4Mode": "2+2",
+        "set2Id": "wiki-relic-147",
+        "mainStats": {
+          "body": "critDamage",
+          "feet": "atkRatio",
+          "sphere": "atkRatio",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "atkFlat",
+          "critDamage",
+          "speed",
+          "atkRatio",
+          "hpRatio",
+          "breakEffect",
+          "defFlat",
+          "defRatio",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Klara_00",
+      "displayName": "클라라",
+      "sourceCharacter": "클라라",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit-follow",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-134",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-152",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "speed",
+          "atkRatio",
+          "hpFlat",
+          "critRate",
+          "defFlat",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Cyrene_00",
+      "displayName": "키레네",
+      "sourceCharacter": "키레네",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지원형 서포터",
+        "damageTemplate": "support",
+        "statProfile": "support",
+        "primaryStat": "critDamage",
+        "displayTypeLabel": "지원형 서포터",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "support",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "지원형 서포터",
+        "set4Id": "wiki-relic-4012",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-137",
+        "mainStats": {
+          "body": "hpRatio",
+          "feet": "speed",
+          "sphere": "hpRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "atkRatio",
+          "speed",
+          "defRatio",
+          "hpRatio",
+          "critRate",
+          "defFlat",
+          "breakEffect"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "TohsakaRin_00",
+      "displayName": "토오사카 린",
+      "sourceCharacter": "토오사카 린",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "지식 딜러",
+        "set4Id": "wiki-relic-3161",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1238",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "critRate",
+          "atkRatio",
+          "speed",
+          "defFlat",
+          "effectHitRate",
+          "breakEffect",
+          "hpRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Topaz_00",
+      "displayName": "토파즈&복순이",
+      "sourceCharacter": "토파즈",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "공격형 서포터",
+        "damageTemplate": "crit-follow",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공격형 서포터",
+        "evaluationTemplateKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "atkSpeedSupport",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "공격형 서포터",
+        "set4Id": "wiki-relic-1601",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-152",
+        "mainStats": {
+          "body": "atkRatio",
+          "feet": "speed",
+          "sphere": "atkRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "defRatio",
+          "speed",
+          "hpRatio",
+          "atkRatio",
+          "effectHitRate",
+          "breakEffect",
+          "critDamage",
+          "critRate",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Tribbie_00",
+      "displayName": "트리비",
+      "sourceCharacter": "트리비",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "공격형 서포터",
+        "damageTemplate": "crit",
+        "statProfile": "hp",
+        "primaryStat": "hp",
+        "displayTypeLabel": "공격형 서포터",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "hpCrit",
+        "presetId": "hp",
+        "presetLabel": "체력 계수 세팅",
+        "sourceRole": "공격형 서포터",
+        "set4Id": "wiki-relic-3343",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-3566",
+        "mainStats": {
+          "body": "critDamage",
+          "feet": "hpRatio",
+          "sphere": "hpRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "critRate",
+          "critDamage",
+          "hpRatio",
+          "defRatio",
+          "effectHitRate",
+          "breakEffect",
+          "defFlat",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "PlayerBoy_00",
+      "displayName": "개척자 • 파멸",
+      "sourceCharacter": "파멸척자",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-134",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-147",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "critRate",
+          "atkRatio",
+          "speed",
+          "breakEffect",
+          "effectHitRate",
+          "hpRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Phainon_00",
+      "displayName": "파이논",
+      "sourceCharacter": "파이논",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-3782",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-3903",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "speed",
+          "critDamage",
+          "atkRatio",
+          "critRate",
+          "defRatio",
+          "breakEffect",
+          "defFlat",
+          "hpFlat",
+          "hpRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Pela_00",
+      "displayName": "페라",
+      "sourceCharacter": "페라",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "디버퍼",
+        "damageTemplate": "support",
+        "statProfile": "support",
+        "primaryStat": "effectHitRate",
+        "displayTypeLabel": "디버퍼",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "speedDebufferEhr",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "디버퍼",
+        "set4Id": "wiki-relic-141",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-146",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "critRate",
+          "atkRatio",
+          "speed",
+          "breakEffect",
+          "defFlat",
+          "defRatio",
+          "effectHitRate",
+          "hpFlat",
+          "hpRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Hanya_00",
+      "displayName": "한아",
+      "sourceCharacter": "한아",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지원형 서포터",
+        "damageTemplate": "support",
+        "statProfile": "support",
+        "primaryStat": "speed",
+        "displayTypeLabel": "지원형 서포터",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "support",
+        "presetId": "support",
+        "presetLabel": "지원 세팅",
+        "sourceRole": "지원형 서포터",
+        "set4Id": "wiki-relic-1237",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-144",
+        "mainStats": {
+          "body": "hpRatio",
+          "feet": "speed",
+          "sphere": "hpRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "atkRatio",
+          "defRatio",
+          "hpRatio",
+          "speed",
+          "critDamage",
+          "breakEffect",
+          "critRate",
+          "defFlat",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Herta_00",
+      "displayName": "헤르타",
+      "sourceCharacter": "헤르타",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit-follow",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "critFollow",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-141",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-152",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "speed",
+          "critDamage",
+          "atkRatio",
+          "critRate",
+          "effectHitRate",
+          "defFlat",
+          "breakEffect"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "PlayerBoy_30",
+      "displayName": "개척자 • 화합",
+      "sourceCharacter": "화척자",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지원형 서포터",
+        "damageTemplate": "break",
+        "statProfile": "def",
+        "primaryStat": "breakEffect",
+        "displayTypeLabel": "지원형 서포터",
+        "evaluationTemplateKey": "break",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "break",
+        "presetId": "break",
+        "presetLabel": "격파 세팅",
+        "sourceRole": "지원형 서포터",
+        "set4Id": "wiki-relic-138",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-143",
+        "mainStats": {
+          "body": "atkRatio",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "breakEffect"
+        },
+        "subStatPriority": [
+          "hpRatio",
+          "atkRatio",
+          "breakEffect",
+          "speed",
+          "critDamage",
+          "defFlat",
+          "critRate",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "PlayerBoy_40",
+      "displayName": "개척자 • 환락",
+      "sourceCharacter": "환락 척자",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지원형 서포터",
+        "damageTemplate": "support",
+        "statProfile": "support",
+        "primaryStat": "critDamage",
+        "displayTypeLabel": "지원형 서포터",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "elationSupport",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "지원형 서포터",
+        "set4Id": "wiki-relic-1237",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-137",
+        "mainStats": {
+          "body": "hpRatio",
+          "feet": "speed",
+          "sphere": "hpRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "atkRatio",
+          "speed",
+          "hpRatio",
+          "defRatio",
+          "breakEffect",
+          "defFlat",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "YaoGuang_00",
+      "displayName": "효광",
+      "sourceCharacter": "효광",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "환락 서포터",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "환락 서포터",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "elationSupport",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "환락 서포터",
+        "set4Id": "wiki-relic-1237",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-137",
+        "mainStats": {
+          "body": "hpRatio",
+          "feet": "speed",
+          "sphere": "hpRatio",
+          "rope": "energyRegen"
+        },
+        "subStatPriority": [
+          "defRatio",
+          "speed",
+          "atkRatio",
+          "breakEffect",
+          "hpFlat",
+          "hpRatio",
+          "critDamage"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Hook_00",
+      "displayName": "후크",
+      "sourceCharacter": "후크",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "crit",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-150",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-147",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "critRate",
+          "atkRatio",
+          "speed",
+          "hpRatio",
+          "defRatio",
+          "hpFlat"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Himeko_00",
+      "displayName": "히메코",
+      "sourceCharacter": "히메코",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit-follow",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "critFollow",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "치확 / 치피 딜러",
+        "set4Id": "wiki-relic-1601",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-152",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "speed",
+          "critDamage",
+          "atkRatio",
+          "critRate",
+          "effectHitRate",
+          "atkFlat",
+          "breakEffect",
+          "hpFlat",
+          "hpRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "HimekoNova_00",
+      "displayName": "히메코 • 노바",
+      "sourceCharacter": "히메코 노바",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit-follow",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "crit95",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "지식 딜러",
+        "set4Id": "manual-navigator-ajip",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-1238",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "critRate",
+          "speed",
+          "atkRatio",
+          "breakEffect",
+          "defRatio",
+          "defFlat",
+          "effectHitRate"
+        ],
+        "missingItems": [
+          "캐릭터 메타데이터 없음: 히메코 노바",
+          "2셋 없음: 출항지"
+        ]
+      }
+    },
+    {
+      "characterId": "Harscyline_00",
+      "displayName": "히실렌스",
+      "sourceCharacter": "히실렌스",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "지속피해 딜러",
+        "damageTemplate": "dot",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "지속피해 딜러",
+        "evaluationTemplateKey": "dot",
+        "usesCrit": false,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "dotEhr",
+        "presetId": "dot",
+        "presetLabel": "DoT 세팅",
+        "sourceRole": "지속피해 딜러",
+        "set4Id": "wiki-relic-1600",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-3904",
+        "mainStats": {
+          "body": "effectHitRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "speed",
+          "breakEffect",
+          "effectHitRate",
+          "atkRatio",
+          "critRate",
+          "hpFlat",
+          "defFlat",
+          "defRatio"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Hyacine_00",
+      "displayName": "히아킨",
+      "sourceCharacter": "히아킨",
+      "sourceStatus": "matched_identity",
+      "customDataSource": "user_curated_v1",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\default-builds.json",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\character-role.jsx",
+        "C:\\CODEX\\HSR RELIC CC\\src\\calculator\\equipment\\relic-builds.js"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "힐러",
+        "damageTemplate": "utility",
+        "statProfile": "hp",
+        "primaryStat": "hp",
+        "displayTypeLabel": "힐러",
+        "evaluationTemplateKey": "utility",
+        "usesCrit": false,
+        "usesDamageBonus": false
+      },
+      "relicTypeProfile": {
+        "relicProfile": "hpCrit",
+        "presetId": "hp",
+        "presetLabel": "체력 계수 세팅",
+        "sourceRole": "힐러",
+        "set4Id": "wiki-relic-3783",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-3565",
+        "mainStats": {
+          "body": "critRate",
+          "feet": "hpRatio",
+          "sphere": "hpRatio",
+          "rope": "hpRatio"
+        },
+        "subStatPriority": [
+          "critDamage",
+          "speed",
+          "critRate",
+          "breakEffect",
+          "defRatio",
+          "hpRatio",
+          "defFlat",
+          "effectHitRate"
+        ],
+        "missingItems": []
+      }
+    },
+    {
+      "characterId": "Yunli_00",
+      "displayName": "운리",
+      "sourceCharacter": "운리",
+      "sourceStatus": "manual_v2_user_curated",
+      "customDataSource": "user_curated_v2_manual",
+      "customDataSourcePaths": [
+        "C:\\CODEX\\HSR RELIC CC\\data\\character-effects\\character-guides.json",
+        "C:\\CODEX\\HSR RELIC CC 2.0\\data\\generated\\default-character-builds.json"
+      ],
+      "calculationUse": "ui_and_default_profile_metadata_only",
+      "sourceBackedCombatEffect": false,
+      "uiTypeProfile": {
+        "roleClass": "치확 / 치피 딜러",
+        "damageTemplate": "crit-follow",
+        "statProfile": "atk",
+        "primaryStat": "atk",
+        "displayTypeLabel": "공퍼 / 치확 딜러",
+        "evaluationTemplateKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": true
+      },
+      "relicTypeProfile": {
+        "relicProfile": "critFollow",
+        "presetId": "crit",
+        "presetLabel": "치명 세팅",
+        "sourceRole": "follow_up_crit_dps",
+        "set4Id": "wiki-relic-2655",
+        "set4AltId": null,
+        "set4Mode": "4",
+        "set2Id": "wiki-relic-2650",
+        "mainStats": {
+          "head": "hpFlat",
+          "hands": "atkFlat",
+          "body": "critRate",
+          "feet": "speed",
+          "sphere": "elementDamage",
+          "rope": "atkRatio"
+        },
+        "subStatPriority": [
+          "critRate",
+          "critDamage",
+          "atkRatio",
+          "speed"
+        ],
+        "missingItems": []
+      },
+      "notes": [
+        "v1 커스텀 타입 데이터에 없던 운리를 v2 사용자 검수 기본 세팅 기준으로 보강"
+      ]
+    }
+  ]
+}

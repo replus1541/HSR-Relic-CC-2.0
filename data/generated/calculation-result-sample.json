@@ -5,7 +5,7 @@
     "id": "aggregation:sample:sample",
     "scenarioId": "sample",
     "subjectId": "sample",
-    "inputHash": "3297298a",
+    "inputHash": "a27e87da",
     "ledgerRowIds": [
       "ledger:resolved:effect:PlayerBoy_20:0",
       "ledger:resolved:effect:PlayerBoy_20:1",
@@ -280,787 +280,186 @@
       "ledger:resolved:effect:Mar_7th_10:0",
       "ledger:resolved:effect:Mar_7th_10:1",
       "ledger:resolved:effect:Mar_7th_10:2",
-      "ledger:resolved:effect:hoyowiki-effect:2511:A",
-      "ledger:resolved:effect:hoyowiki-effect:2511:B",
-      "ledger:resolved:effect:hoyowiki-effect:2511:C",
-      "ledger:resolved:effect:hoyowiki-effect:2511:C1",
-      "ledger:resolved:effect:hoyowiki-effect:2511:E",
-      "ledger:resolved:effect:hoyowiki-effect:2494:A",
-      "ledger:resolved:effect:hoyowiki-effect:2494:B",
-      "ledger:resolved:effect:hoyowiki-effect:2494:C",
-      "ledger:resolved:effect:hoyowiki-effect:2494:E",
-      "ledger:resolved:effect:hoyowiki-effect:1924:A",
-      "ledger:resolved:effect:hoyowiki-effect:1924:B",
-      "ledger:resolved:effect:hoyowiki-effect:1924:B1",
-      "ledger:resolved:effect:hoyowiki-effect:1924:C",
-      "ledger:resolved:effect:hoyowiki-effect:1924:D7",
-      "ledger:resolved:effect:hoyowiki-effect:1924:E",
-      "ledger:resolved:effect:hoyowiki-effect:1389:A",
-      "ledger:resolved:effect:hoyowiki-effect:1389:B",
-      "ledger:resolved:effect:hoyowiki-effect:1389:C",
-      "ledger:resolved:effect:hoyowiki-effect:1389:D5",
-      "ledger:resolved:effect:hoyowiki-effect:1389:E",
-      "ledger:resolved:effect:hoyowiki-effect:1228:A",
-      "ledger:resolved:effect:hoyowiki-effect:1228:B",
-      "ledger:resolved:effect:hoyowiki-effect:1228:B1",
-      "ledger:resolved:effect:hoyowiki-effect:1228:C",
-      "ledger:resolved:effect:hoyowiki-effect:1228:D",
-      "ledger:resolved:effect:hoyowiki-effect:1228:E",
-      "ledger:resolved:effect:hoyowiki-effect:791:A",
-      "ledger:resolved:effect:hoyowiki-effect:791:B",
-      "ledger:resolved:effect:hoyowiki-effect:791:B1",
-      "ledger:resolved:effect:hoyowiki-effect:791:C",
-      "ledger:resolved:effect:hoyowiki-effect:791:D",
-      "ledger:resolved:effect:hoyowiki-effect:791:E",
-      "ledger:resolved:effect:hoyowiki-effect:791:E1",
-      "ledger:resolved:effect:hoyowiki-effect:29:A",
-      "ledger:resolved:effect:hoyowiki-effect:29:B",
-      "ledger:resolved:effect:hoyowiki-effect:29:C",
-      "ledger:resolved:effect:hoyowiki-effect:29:E",
-      "ledger:resolved:effect:hoyowiki-effect:23:A",
-      "ledger:resolved:effect:hoyowiki-effect:23:B",
-      "ledger:resolved:effect:hoyowiki-effect:23:C",
-      "ledger:resolved:effect:hoyowiki-effect:23:D2",
-      "ledger:resolved:effect:hoyowiki-effect:23:D5",
-      "ledger:resolved:effect:hoyowiki-effect:23:E",
-      "ledger:resolved:effect:hoyowiki-effect:21:A",
-      "ledger:resolved:effect:hoyowiki-effect:21:B",
-      "ledger:resolved:effect:hoyowiki-effect:21:C",
-      "ledger:resolved:effect:hoyowiki-effect:21:C1",
-      "ledger:resolved:effect:hoyowiki-effect:21:E",
-      "ledger:resolved:effect:hoyowiki-effect:21:E1",
-      "ledger:resolved:effect:hoyowiki-effect:18:A",
-      "ledger:resolved:effect:hoyowiki-effect:18:B",
-      "ledger:resolved:effect:hoyowiki-effect:18:B1",
-      "ledger:resolved:effect:hoyowiki-effect:18:C",
-      "ledger:resolved:effect:hoyowiki-effect:18:D3",
-      "ledger:resolved:effect:hoyowiki-effect:18:E",
-      "ledger:resolved:effect:hoyowiki-effect:17:A",
-      "ledger:resolved:effect:hoyowiki-effect:17:B",
-      "ledger:resolved:effect:hoyowiki-effect:17:C",
-      "ledger:resolved:effect:hoyowiki-effect:17:E",
-      "ledger:resolved:effect:hoyowiki-effect:7:A",
-      "ledger:resolved:effect:hoyowiki-effect:7:B",
-      "ledger:resolved:effect:hoyowiki-effect:7:B1",
-      "ledger:resolved:effect:hoyowiki-effect:7:C",
-      "ledger:resolved:effect:hoyowiki-effect:7:D2",
-      "ledger:resolved:effect:hoyowiki-effect:7:D5",
-      "ledger:resolved:effect:hoyowiki-effect:7:E"
+      "ledger:resolved:effect:hoyowiki-effect:2511:A:0",
+      "ledger:resolved:effect:hoyowiki-effect:2494:A:0",
+      "ledger:resolved:effect:hoyowiki-effect:2494:A:1",
+      "ledger:resolved:effect:hoyowiki-effect:2494:A:2",
+      "ledger:resolved:effect:hoyowiki-effect:1924:B:0",
+      "ledger:resolved:effect:hoyowiki-effect:1924:E:0",
+      "ledger:resolved:effect:hoyowiki-effect:1389:A:0",
+      "ledger:resolved:effect:hoyowiki-effect:23:C:0",
+      "ledger:resolved:effect:hoyowiki-effect:23:D5:0",
+      "ledger:resolved:effect:hoyowiki-effect:21:A:0"
     ],
     "statTotals": {
-      "allDamage": 20.609999999999992,
-      "atkRatio": 3.8399999999999994,
-      "critDamage": 13.284,
-      "critRate": 1.7299999999999998,
-      "defenseDown": 2.78,
-      "defenseIgnore": 3.4000000000000012,
+      "allDamage": 31.03999999999999,
+      "atkRatio": 10.437000000000001,
+      "breakEffect": 0.15,
+      "breakVulnerability": 0.16,
+      "critDamage": 18.0818,
+      "critRate": 6.566400000000001,
+      "damageReduction": 0.55,
+      "defenseDown": 3.726,
+      "defenseIgnore": 3.7800000000000016,
+      "dotVulnerability": 0.2,
+      "effectResDown": 0.1,
       "followCritDamage": 0.8,
-      "followDamage": 13.32,
-      "resistancePen": 2.55,
-      "specialFinal": 0.54,
+      "followDamage": 15.73,
+      "resistancePen": 3.1850000000000005,
+      "specialFinal": 0.56,
+      "speed": 70,
+      "toughnessDamageRatio": 1,
       "ultimateAsFollowUp": 1,
-      "ultimateDamage": 0.15,
-      "vulnerability": 3.18
+      "ultimateDamage": 0.162,
+      "vulnerability": 5.0520000000000005
     },
     "damageModifiers": {
-      "allDamage": 20.609999999999992,
-      "specialFinal": 0.54
+      "allDamage": 31.03999999999999,
+      "specialFinal": 0.56
     },
     "enemyDebuffs": {
       "allDamage": 0.1,
-      "atkRatio": 0.4,
+      "atkRatio": 0.5,
+      "breakVulnerability": 0.06,
       "critDamage": 0.5,
       "critRate": 0.27,
-      "defenseDown": 2.78,
+      "damageReduction": 0.4,
+      "defenseDown": 3.726,
       "defenseIgnore": 1.8499999999999996,
+      "dotVulnerability": 0.2,
+      "effectResDown": 0.1,
       "followDamage": 0.32,
-      "resistancePen": 2.2,
-      "ultimateDamage": 0.15,
-      "vulnerability": 3.18
+      "resistancePen": 2.8150000000000004,
+      "ultimateDamage": 0.162,
+      "vulnerability": 5.0520000000000005
     },
     "partyEffects": {},
     "additionalDamage": {},
     "sourceTrace": {
-      "ledgerRows": 339,
-      "usedRows": 170,
-      "blockedRows": 169
+      "ledgerRows": 283,
+      "usedRows": 253,
+      "blockedRows": 30
     },
     "skippedRows": [
       {
         "ledgerId": "ledger:resolved:effect:PlayerBoy_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:PlayerBoy_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:PlayerBoy_40:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Jingliu_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Jingliu_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:JingYuan_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:JingYuan_00:2",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:DanHeng_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:DanHengPT_00:2",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:DanHengIL_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Constance_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:TheHerta_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:TheHerta_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "missing_resolved_value"
       },
       {
         "ledgerId": "ledger:resolved:effect:Robin_00:2",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Luka_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Fugue_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Moze_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:FuXuan_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Bronya_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Bronya_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:BlackSwan_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:BlackSwan_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:BlackSwan_00:2",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Ren_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Feixiao_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Feixiao_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Cipher_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Cipher_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "missing_resolved_value"
       },
       {
         "ledgerId": "ledger:resolved:effect:Cipher_00:2",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Cipher_00:3",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Sunday_10:2",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Saber_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Saber_00:2",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Saber_00:3",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Sushang_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Sparkle_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Sparkle_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Sparkle_00:5",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_not_met"
       },
       {
         "ledgerId": "ledger:resolved:effect:Sparkle_00:6",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "missing_resolved_value"
       },
       {
         "ledgerId": "ledger:resolved:effect:Anaxa_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Anaxa_00:4",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:Asta_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Argenti_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Archer_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Acheron_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Acheron_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:Ashveil_00:6",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Yukong_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Evanescia_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Evernight_00:2",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Evernight_00:3",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Yanqing_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:RuanMei_00:2",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:RuanMei_00:3",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "missing_resolved_value"
       },
       {
         "ledgerId": "ledger:resolved:effect:Welt_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_not_met"
       },
       {
         "ledgerId": "ledger:resolved:effect:Welt_00:4",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Silwolf_00:2",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:SilverWolf999_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Tingyun_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:Tingyun_00:2",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Seele_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Jade_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:MortenaxBlade_00:2",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:MortenaxBlade_00:4",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "missing_resolved_value"
       },
       {
         "ledgerId": "ledger:resolved:effect:MortenaxBlade_00:7",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:MortenaxBlade_00:8",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Qingque_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:Qingque_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Jiaoqiu_00:2",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Castorice_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Cerydra_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:Cerydra_00:6",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Cerydra_00:7",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Cerydra_00:8",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "missing_resolved_value"
       },
       {
         "ledgerId": "ledger:resolved:effect:Cerydra_00:9",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "missing_resolved_value"
       },
       {
         "ledgerId": "ledger:resolved:effect:Cerydra_00:10",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Cyrene_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Cyrene_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:Cyrene_00:3",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:Cyrene_00:4",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Cyrene_00:5",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:Cyrene_00:6",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Cyrene_00:9",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:Cyrene_00:10",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:Cyrene_00:11",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:Cyrene_00:12",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Cyrene_00:13",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Cyrene_00:14",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:Cyrene_00:15",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:Cyrene_00:18",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Tribbie_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Tribbie_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Phainon_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:Pela_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Hanya_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Hanya_00:2",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_not_met"
       },
       {
         "ledgerId": "ledger:resolved:effect:Herta_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Herta_00:2",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_not_met"
       },
       {
         "ledgerId": "ledger:resolved:effect:Himeko_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Dr_Ratio_00:0",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Dr_Ratio_00:1",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:Dr_Ratio_00:4",
-        "blockedReason": "unsupported_dynamic_formula"
+        "blockedReason": "condition_policy_missing"
       },
       {
         "ledgerId": "ledger:resolved:effect:Mar_7th_10:1",
-        "blockedReason": "unsupported_dynamic_formula"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2511:A",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2511:B",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2511:C",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2511:C1",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2511:E",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2494:A",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2494:B",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2494:C",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:2494:E",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1924:A",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1924:B",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1924:B1",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1924:C",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1924:D7",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1924:E",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1389:A",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1389:B",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1389:C",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1389:D5",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1389:E",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1228:A",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1228:B",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1228:B1",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1228:C",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1228:D",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:1228:E",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:791:A",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:791:B",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:791:B1",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:791:C",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:791:D",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:791:E",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:791:E1",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:29:A",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:29:B",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:29:C",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:29:E",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:23:A",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:23:B",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:23:C",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:23:D2",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:23:D5",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:23:E",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:21:A",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:21:B",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:21:C",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:21:C1",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:21:E",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:21:E1",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:18:A",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:18:B",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:18:B1",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:18:C",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:18:D3",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:18:E",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:17:A",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:17:B",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:17:C",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:17:E",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:7:A",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:7:B",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:7:B1",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:7:C",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:7:D2",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:7:D5",
-        "blockedReason": "value_mode_unknown"
-      },
-      {
-        "ledgerId": "ledger:resolved:effect:hoyowiki-effect:7:E",
-        "blockedReason": "value_mode_unknown"
+        "blockedReason": "condition_policy_missing"
       }
     ]
   }

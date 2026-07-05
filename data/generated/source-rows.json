@@ -9857,18 +9857,17 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:2511:A",
+      "id": "source:hoyowiki-effect:2511:A:0",
       "kind": "source_row",
       "version": 1,
       "createdBy": "hoyowiki-adapter",
       "sourceOrigin": "raw_source",
       "sourceKind": "hoyowiki",
       "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:2511:A:떠들썩한 풋라이트 퍼레이드:supplemental-effect",
+      "sourceRecord": "HoyoWiki:2511:A:떠들썩한 풋라이트 퍼레이드:supplemental-effect:0",
       "characterId": "2511",
-      "sourceText": "<필살기> 서포트 | 에너지 소모 140 모든 아군에게 [댄스 파트너] 효과를 부여한다. 지속 시간: 3턴. 개척자의 턴이 시작될 때마다 지속 턴 수가 1 감소한다. [댄스 파트너]를 보유한 아군의 격파 특수효과가 15% 증가하고, 약점 격파 상태의 적을 공격하면 이번 공격의 강인성 감소 수치가 1회의 슈퍼 격파 피해로 전환된다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "sourceText": "[댄스 파트너]를 보유한 아군의 격파 특수효과가 15% 증가하고, 약점 격파 상태의 적을 공격하면 이번 공격의 강인성 감소 수치가 1회의 슈퍼 격파 피해로 전환된다",
+      "calculationStatus": "calculation_ready"
     },
     {
       "id": "source:hoyowiki:2511:B",
@@ -9884,20 +9883,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:2511:B",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:2511:B:올 채널 에어리얼 댄스:supplemental-effect",
-      "characterId": "2511",
-      "sourceText": "<특성> 방해 적의 약점이 격파되면 개척자는 즉시 에너지를 5.0 pt 회복한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:2511:C",
       "kind": "source_row",
       "version": 1,
@@ -9909,20 +9894,6 @@
       "characterId": "2511",
       "sourceText": "<전투 스킬> 바운스 | 강인성 감소 수치: 10 지정된 단일 적에게 개척자 공격력의 25% 만큼 허수 속성 피해를 가하며, 추가로 피해를 4회 가한다. 피해를 가할 때마다 랜덤 단일 적에게 개척자 공격력의 25% 만큼 허수 속성 피해를 가한다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:2511:C",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:2511:C:인터미션에 내리는 비:supplemental-effect",
-      "characterId": "2511",
-      "sourceText": "<전투 스킬> 바운스 | 강인성 감소 수치: 10 지정된 단일 적에게 개척자 공격력의 25% 만큼 허수 속성 피해를 가하며, 추가로 피해를 4회 가한다. 피해를 가할 때마다 랜덤 단일 적에게 개척자 공격력의 25% 만큼 허수 속성 피해를 가한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:2511:C1",
@@ -9938,20 +9909,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:2511:C1",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:2511:C1:흐름에 몸을 맡기고:supplemental-effect",
-      "characterId": "2511",
-      "sourceText": "<추가 능력> 전투 스킬 발동 시, 첫 번째 피해의 강인성 감소 수치가 추가로 100% 증가한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:2511:E",
       "kind": "source_row",
       "version": 1,
@@ -9963,20 +9920,6 @@
       "characterId": "2511",
       "sourceText": "<일반 공격> 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 개척자 공격력의 50% 만큼 허수 속성 피해를 가한다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:2511:E",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:2511:E:스윙 댄스 에티켓:supplemental-effect",
-      "characterId": "2511",
-      "sourceText": "<일반 공격> 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 개척자 공격력의 50% 만큼 허수 속성 피해를 가한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:2495:A",
@@ -10057,18 +10000,43 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:2494:A",
+      "id": "source:hoyowiki-effect:2494:A:0",
       "kind": "source_row",
       "version": 1,
       "createdBy": "hoyowiki-adapter",
       "sourceOrigin": "raw_source",
       "sourceKind": "hoyowiki",
       "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:2494:A:반딧불이 Type-IV • 완전연소:supplemental-effect",
+      "sourceRecord": "HoyoWiki:2494:A:반딧불이 Type-IV • 완전연소:supplemental-effect:0",
       "characterId": "2494",
-      "sourceText": "<필살기> 강화 | 에너지 소모 240 「완전연소」 상태에 진입하고 자신의 행동 게이지가 100% 증가하며, 일반 공격 강화 및 전투 스킬 강화를 획득한다. 「완전연소」 상태에서는 속도가 30 pt 증가하며, 강화된 일반 공격 및 강화된 전투 스킬 발동 시 자신의 약점 격파 효율이 50% 증가하고, 적이 기갑 「샘」으로부터 받는 격파 피해가 10.0% 증가하며, 이번 공격이 끝날 때까지 지속된다. 행동 서열에 「완전연소」 카운트다운이 나타나고, 카운트다운 턴 시작 시 기갑 「샘」이 「완전연소」 상태를 해제한다. 카운트다운이 보유한 고정 속도는 70이다. 기갑 「샘」은 「완전연소」 상태에서 필살기를 발동할 수 없다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "sourceText": "「완전연소」 상태에서는 속도가 30 pt 증가하며, 강화된 일반 공격 및 강화된 전투 스킬 발동 시 자신의 약점 격파 효율이 50% 증가하고, 적이 기갑 「샘」으로부터 받는 격파 피해가 10.0% 증가하며, 이번 공격이 끝날 때까지 지속된다",
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "source:hoyowiki-effect:2494:A:1",
+      "kind": "source_row",
+      "version": 1,
+      "createdBy": "hoyowiki-adapter",
+      "sourceOrigin": "raw_source",
+      "sourceKind": "hoyowiki",
+      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+      "sourceRecord": "HoyoWiki:2494:A:반딧불이 Type-IV • 완전연소:supplemental-effect:1",
+      "characterId": "2494",
+      "sourceText": "「완전연소」 상태에서는 속도가 30 pt 증가하며, 강화된 일반 공격 및 강화된 전투 스킬 발동 시 자신의 약점 격파 효율이 50% 증가하고, 적이 기갑 「샘」으로부터 받는 격파 피해가 10.0% 증가하며, 이번 공격이 끝날 때까지 지속된다",
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "source:hoyowiki-effect:2494:A:2",
+      "kind": "source_row",
+      "version": 1,
+      "createdBy": "hoyowiki-adapter",
+      "sourceOrigin": "raw_source",
+      "sourceKind": "hoyowiki",
+      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+      "sourceRecord": "HoyoWiki:2494:A:반딧불이 Type-IV • 완전연소:supplemental-effect:2",
+      "characterId": "2494",
+      "sourceText": "「완전연소」 상태에서는 속도가 30 pt 증가하며, 강화된 일반 공격 및 강화된 전투 스킬 발동 시 자신의 약점 격파 효율이 50% 증가하고, 적이 기갑 「샘」으로부터 받는 격파 피해가 10.0% 증가하며, 이번 공격이 끝날 때까지 지속된다",
+      "calculationStatus": "calculation_ready"
     },
     {
       "id": "source:hoyowiki:2494:B",
@@ -10084,20 +10052,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:2494:B",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:2494:B:고치형 원초 화염 중추:supplemental-effect",
-      "characterId": "2494",
-      "sourceText": "<특성> [방어] HP가 낮을수록 받는 피해가 감소한다. HP가 20% 이하일 경우 피해 감소 효과가 최대치에 도달하며, 최대 20% 감소한다. 「완전연소」 상태에서는 피해 감소 효과가 최대치를 유지하며, 효과 저항이 10% 증가한다. 전투 시작 시 에너지가 50% 미만일 경우 에너지를 50%까지 회복한다. 에너지가 최대치까지 회복되면 자신의 모든 디버프 효과 가 해제된다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:2494:C",
       "kind": "source_row",
       "version": 1,
@@ -10111,20 +10065,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:2494:C",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:2494:C:지령-천공 포격 / 반딧불이 Type-IV • 데스 스타 과부하:supplemental-effect",
-      "characterId": "2494",
-      "sourceText": "<전투 스킬> [지령-천공 포격] 단일 공격 | 강인성 감소 수치: 20 자신의 HP 최대치 40%만큼 HP를 소모해 자신의 에너지 최대치 50% 만큼의 에너지를 고정으로 회복한다. 지정된 단일 적에게 기갑 「샘」 공격력의 100% 만큼 화염 속성 피해를 가한다. 현재 HP가 부족하면 전투 스킬 발동 시 기갑 「샘」의 현재 HP가 1pt로 감소한다. 자신의 다음번 행동 게이지 를 25% 증가시킨다 [반딧불이 Type-IV • 데스 스타 과부하] 확산 | 강인성 감소 수치: 30 자신의 HP 최대치의 25%만큼 HP를 회복한다. 지정된 단일 적에게 화염 속성 약점을 부여한다, 지속 시간: 2턴. 해당 목표에게 기갑 「샘」 공격력의 (0.2x격파 특수효과+ 100.0% )만큼 화염 속성 피해를 가하고, 인접한 목표에게 기갑 「샘」 공격력의 (0.1x격파 특수효과+ 50.0% )만큼 화염 속성 피해를 가한다. 격파 특수효과는 최대 360%까지 계산한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:2494:E",
       "kind": "source_row",
       "version": 1,
@@ -10136,20 +10076,6 @@
       "characterId": "2494",
       "sourceText": "<일반 공격> [지령-폭연 추진] 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 기갑 「샘」 공격력 50% 만큼 화염 속성 피해를 가한다 [반딧불이 Type-IV • 뇌관 참격] 단일 공격 | 강인성 감소 수치: 15 자신의 HP 최대치의 20%만큼 HP를 회복한다. 지정된 단일 적에게 기갑 「샘」 공격력의 100% 만큼 화염 속성 피해를 가한다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:2494:E",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:2494:E:지령-폭연 추진 / 반딧불이 Type-IV • 뇌관 참격:supplemental-effect",
-      "characterId": "2494",
-      "sourceText": "<일반 공격> [지령-폭연 추진] 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 기갑 「샘」 공격력 50% 만큼 화염 속성 피해를 가한다 [반딧불이 Type-IV • 뇌관 참격] 단일 공격 | 강인성 감소 수치: 15 자신의 HP 최대치의 20%만큼 HP를 회복한다. 지정된 단일 적에게 기갑 「샘」 공격력의 100% 만큼 화염 속성 피해를 가한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:2367:A",
@@ -10295,20 +10221,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:1924:A",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:1924:A:샴페인 에티켓:supplemental-effect",
-      "characterId": "1924",
-      "sourceText": "<필살기> 범위 공격 | 에너지 소모 110 | 강인성 감소 수치: 20 모든 적을 [만취] 상태에 빠트린다. 지속 시간: 2턴. 동시에 모든 적에게 갤러거 공격력의 75% 만큼 화염 속성 피해를 가하고, 다음번 일반 공격을 [솟구치는 거품]으로 강화한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:1924:B",
       "kind": "source_row",
       "version": 1,
@@ -10322,18 +10234,17 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:1924:B",
+      "id": "source:hoyowiki-effect:1924:B:0",
       "kind": "source_row",
       "version": 1,
       "createdBy": "hoyowiki-adapter",
       "sourceOrigin": "raw_source",
       "sourceKind": "hoyowiki",
       "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:1924:B:통쾌한 전투:supplemental-effect",
+      "sourceRecord": "HoyoWiki:1924:B:통쾌한 전투:supplemental-effect:0",
       "characterId": "1924",
-      "sourceText": "<특성> 회복 [만취]는 목표가 받는 격파 피해를 6.0% 증가시킨다. [만취] 상태의 목표가 아군 캐릭터의 공격을 받을 때마다 공격자는 HP를 80pt 회복한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "sourceText": "<특성> 회복 [만취]는 목표가 받는 격파 피해를 6.0% 증가시킨다",
+      "calculationStatus": "calculation_ready"
     },
     {
       "id": "source:hoyowiki:1924:B1",
@@ -10349,20 +10260,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:1924:B1",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:1924:B1:위하여!:supplemental-effect",
-      "characterId": "1924",
-      "sourceText": "<추가 능력> 갤러거가 [솟구치는 거품]을 발동하여 [만취] 상태에 빠진 목표를 공격하면 이번에 특성이 제공하는 HP 회복 효과가 아군 동료에게도 적용된다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:1924:C",
       "kind": "source_row",
       "version": 1,
@@ -10374,20 +10271,6 @@
       "characterId": "1924",
       "sourceText": "<전투 스킬> 회복 즉시 지정된 단일 아군의 HP를 200pt 회복한다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:1924:C",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:1924:C:특제 캔 음료:supplemental-effect",
-      "characterId": "1924",
-      "sourceText": "<전투 스킬> 회복 즉시 지정된 단일 아군의 HP를 200pt 회복한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:1924:D7",
@@ -10403,20 +10286,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:1924:D7",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:1924:D7:천연 효모:supplemental-effect",
-      "characterId": "1924",
-      "sourceText": "<추가 능력> 필살기 발동 후 즉시 자신의 행동 게이지가 100% 증가한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:1924:E",
       "kind": "source_row",
       "version": 1,
@@ -10430,18 +10299,17 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:1924:E",
+      "id": "source:hoyowiki-effect:1924:E:0",
       "kind": "source_row",
       "version": 1,
       "createdBy": "hoyowiki-adapter",
       "sourceOrigin": "raw_source",
       "sourceKind": "hoyowiki",
       "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:1924:E:콜키지:supplemental-effect",
+      "sourceRecord": "HoyoWiki:1924:E:콜키지:supplemental-effect:0",
       "characterId": "1924",
-      "sourceText": "<일반 공격> [콜키지] 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 갤러거 공격력의 50% 만큼 화염 속성 피해를 가한다 [솟구치는 거품] 단일 공격 | 강인성 감소 수치: 30 지정된 단일 적에게 갤러거 공격력의 125% 만큼 화염 속성 피해를 가하고, 목표의 공격력을 10.0% 감소시킨다. 지속 시간: 2턴",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "sourceText": "강인성 감소 수치: 30 지정된 단일 적에게 갤러거 공격력의 125% 만큼 화염 속성 피해를 가하고, 목표의 공격력을 10.0% 감소시킨다",
+      "calculationStatus": "calculation_ready"
     },
     {
       "id": "source:hoyowiki:1920:A",
@@ -11393,18 +11261,17 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:1389:A",
+      "id": "source:hoyowiki-effect:1389:A:0",
       "kind": "source_row",
       "version": 1,
       "createdBy": "hoyowiki-adapter",
       "sourceOrigin": "raw_source",
       "sourceKind": "hoyowiki",
       "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:1389:A:흑자 전환!:supplemental-effect",
+      "sourceRecord": "HoyoWiki:1389:A:흑자 전환!:supplemental-effect:0",
       "characterId": "1389",
-      "sourceText": "<필살기> 강화 | 에너지 소모 130 복순이가 [폭증!] 상태에 진입하고 복순이의 피해 배율이 75% , 치명타 피해가 12.5% 증가한다. [부채 증명] 상태에 빠진 적이 아군의 일반 공격, 전투 스킬 혹은 필살기로 공격을 받을 시 복순이의 행동 게이지가 50% 증가한다. 복순이가 2 회 공격 후 [폭증!] 상태가 해제된다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "sourceText": "에너지 소모 130 복순이가 [폭증!] 상태에 진입하고 복순이의 피해 배율이 75% , 치명타 피해가 12.5% 증가한다",
+      "calculationStatus": "calculation_ready"
     },
     {
       "id": "source:hoyowiki:1389:B",
@@ -11420,20 +11287,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:1389:B",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:1389:B:피그 마켓?!:supplemental-effect",
-      "characterId": "1389",
-      "sourceText": "<특성> 단일 공격 | 강인성 감소 수치: 20 전투 시작 시 복순이를 소환한다. 복순이의 기본 속도는 80 pt이며, 행동 시 추가 공격 을 발동한다. [부채 증명] 상태에 빠진 단일 적에게 토파즈 공격력 75% 만큼의 화염 속성 피해를 준다. [부채 증명] 상태에 빠진 적이 아군의 추가 공격을 받으면 복순이의 행동 게이지가 50% 증가한다. 복순이 자신의 턴에는 행동 게이지 증가 효과가 발동하지 않는다. 토파즈가 전투 불능 상태 에 빠지면 복순이도 사라진다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:1389:C",
       "kind": "source_row",
       "version": 1,
@@ -11445,20 +11298,6 @@
       "characterId": "1389",
       "sourceText": "<전투 스킬> 단일 공격 | 강인성 감소 수치: 20 지정된 단일 적을 [부채 증명] 상태에 빠트려 적이 받는 추가 공격 피해를 25% 증가시킨다. [부채 증명]은 가장 최근에 부여한 목표에게만 적용된다. 아군 턴 시작 또는 행동 시 필드 위에 [부채 증명] 상태에 빠진 적이 없으면 토파즈가 임의의 적을 [부채 증명] 상태에 빠트린다. 복순이는 해당 목표에게 토파즈 공격력 75% 만큼의 화염 속성 피해를 준다. 해당 전투 스킬 발동으로 피해를 가할 시 추가 공격 을 발동한 것으로 간주한다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:1389:C",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:1389:C:결제 불가?:supplemental-effect",
-      "characterId": "1389",
-      "sourceText": "<전투 스킬> 단일 공격 | 강인성 감소 수치: 20 지정된 단일 적을 [부채 증명] 상태에 빠트려 적이 받는 추가 공격 피해를 25% 증가시킨다. [부채 증명]은 가장 최근에 부여한 목표에게만 적용된다. 아군 턴 시작 또는 행동 시 필드 위에 [부채 증명] 상태에 빠진 적이 없으면 토파즈가 임의의 적을 [부채 증명] 상태에 빠트린다. 복순이는 해당 목표에게 토파즈 공격력 75% 만큼의 화염 속성 피해를 준다. 해당 전투 스킬 발동으로 피해를 가할 시 추가 공격 을 발동한 것으로 간주한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:1389:D5",
@@ -11474,20 +11313,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:1389:D5",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:1389:D5:당좌 대월:supplemental-effect",
-      "characterId": "1389",
-      "sourceText": "<추가 능력> 토파즈가 일반 공격으로 피해를 가할 시 추가 공격을 발동한 것으로 간주한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:1389:E",
       "kind": "source_row",
       "version": 1,
@@ -11499,20 +11324,6 @@
       "characterId": "1389",
       "sourceText": "<일반 공격> 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 토파즈 공격력 50% 만큼의 화염 속성 피해를 준다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:1389:E",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:1389:E:적자...:supplemental-effect",
-      "characterId": "1389",
-      "sourceText": "<일반 공격> 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 토파즈 공격력 50% 만큼의 화염 속성 피해를 준다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:1387:A",
@@ -11593,20 +11404,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:1228:A",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:1228:A:설원 구급 방침:supplemental-effect",
-      "characterId": "1228",
-      "sourceText": "<필살기> 회복 | 에너지 소모 100 모든 아군의 디버프 효과 를 1개 해제하고, 모든 아군의 HP를 즉시 링스 HP 최대치의 9%+90 만큼 회복시킨다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:1228:B",
       "kind": "source_row",
       "version": 1,
@@ -11618,20 +11415,6 @@
       "characterId": "1228",
       "sourceText": "<특성> 회복 전투 스킬 혹은 필살기 발동 시 아군은 2턴의 지속 치유 효과를 획득하고, 해당 목표는 턴이 시작될 때마다 HP를 링스 HP 최대치의 2.4%+24 만큼 회복한다. 해당 목표가 [생존 반응]을 보유하고 있으면 지속 치유되는 HP가 추가로 링스 HP 최대치의 3.0%+30 만큼 증가한다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:1228:B",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:1228:B:야외 생존 경험:supplemental-effect",
-      "characterId": "1228",
-      "sourceText": "<특성> 회복 전투 스킬 혹은 필살기 발동 시 아군은 2턴의 지속 치유 효과를 획득하고, 해당 목표는 턴이 시작될 때마다 HP를 링스 HP 최대치의 2.4%+24 만큼 회복한다. 해당 목표가 [생존 반응]을 보유하고 있으면 지속 치유되는 HP가 추가로 링스 HP 최대치의 3.0%+30 만큼 증가한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:1228:B1",
@@ -11647,20 +11430,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:1228:B1",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:1228:B1:극지 생존:supplemental-effect",
-      "characterId": "1228",
-      "sourceText": "<추가 능력> 특성으로 발동한 지속 회복 효과를 1턴 연장한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:1228:C",
       "kind": "source_row",
       "version": 1,
@@ -11672,20 +11441,6 @@
       "characterId": "1228",
       "sourceText": "<전투 스킬> 회복 지정된 단일 아군에게 [생존 반응]을 부여하며, HP 최대치가 링스 HP 최대치의 5.0%+50 만큼 증가하고, 해당 목표가 「파멸」 혹은 「보존」 운명의 길이면 적에게 피격될 확률이 대폭 증가한다. [생존 반응]은 2턴간 지속된다. 해당 목표의 HP를 링스 HP 최대치의 8.0%+80 만큼 회복시킨다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:1228:C",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:1228:C:캠핑용 절임 통조림:supplemental-effect",
-      "characterId": "1228",
-      "sourceText": "<전투 스킬> 회복 지정된 단일 아군에게 [생존 반응]을 부여하며, HP 최대치가 링스 HP 최대치의 5.0%+50 만큼 증가하고, 해당 목표가 「파멸」 혹은 「보존」 운명의 길이면 적에게 피격될 확률이 대폭 증가한다. [생존 반응]은 2턴간 지속된다. 해당 목표의 HP를 링스 HP 최대치의 8.0%+80 만큼 회복시킨다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:1228:D",
@@ -11701,20 +11456,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:1228:D",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:1228:D:초콜릿 에너지바:supplemental-effect",
-      "characterId": "1228",
-      "sourceText": "<비술> 회복 비술 발동 후 다음 전투 시작 시 모든 아군에게 링스 특성과 동일한 지속 치유 효과를 부여한다. 지속 시간: 2턴",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:1228:E",
       "kind": "source_row",
       "version": 1,
@@ -11726,20 +11467,6 @@
       "characterId": "1228",
       "sourceText": "<일반 공격> 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 자신의 HP 최대치의 25% 만큼 양자 속성 피해를 준다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:1228:E",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:1228:E:얼음 등반 갈고리 기술:supplemental-effect",
-      "characterId": "1228",
-      "sourceText": "<일반 공격> 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 자신의 HP 최대치의 25% 만큼 양자 속성 피해를 준다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:1226:A",
@@ -11976,20 +11703,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:791:A",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:791:A:비극 끝의 떨리는 소리:supplemental-effect",
-      "characterId": "791",
-      "sourceText": "<필살기> 범위 공격 | 에너지 소모 120 | 강인성 감소 수치: 20 모든 적에게 카프카의 공격력의 48% 만큼 번개 속성 피해를 가하고 피격된 적을 100%의 기본 확률 로 감전 상태에 빠트리며, 현재 대상이 받는 감전 상태는 즉시 기존 피해 80% 만큼의 피해를 생성한다. 감전 상태 지속 시간: 2턴 감전 상태인 적은 턴이 시작될 때 마다 카프카 공격력의 116% 만큼 번개 속성 지속 피해를 받는다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:791:B",
       "kind": "source_row",
       "version": 1,
@@ -12001,20 +11714,6 @@
       "characterId": "791",
       "sourceText": "<특성> 단일 공격 | 강인성 감소 수치: 10 카프카의 동료가 적에게 일반 공격을 발동하면 카프카는 즉시 추가 공격 을 발동하고 해당 목표에게 카프카 공격력 42% 만큼 번개 속성 피해를 주며, 100%의 기본 확률 로 피격된 적을 필살기와 동일한 감전 상태에 빠트린다. 감전 상태 지속 시간: 2턴. 해당 효과는 턴마다 1회만 발동한다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:791:B",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:791:B:상냥함이 곧 잔혹함:supplemental-effect",
-      "characterId": "791",
-      "sourceText": "<특성> 단일 공격 | 강인성 감소 수치: 10 카프카의 동료가 적에게 일반 공격을 발동하면 카프카는 즉시 추가 공격 을 발동하고 해당 목표에게 카프카 공격력 42% 만큼 번개 속성 피해를 주며, 100%의 기본 확률 로 피격된 적을 필살기와 동일한 감전 상태에 빠트린다. 감전 상태 지속 시간: 2턴. 해당 효과는 턴마다 1회만 발동한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:791:B1",
@@ -12030,20 +11729,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:791:B1",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:791:B1:가시:supplemental-effect",
-      "characterId": "791",
-      "sourceText": "<추가 능력> 필살기, 비술, 특성이 발동한 추가 공격 으로 적을 감전 상태에 빠트릴 기본 확률 이 30% 증가한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:791:C",
       "kind": "source_row",
       "version": 1,
@@ -12055,20 +11740,6 @@
       "characterId": "791",
       "sourceText": "<전투 스킬> 확산 | 강인성 감소 수치: 20 지정된 단일 적에게 카프카의 공격력의 80% 만큼 번개 속성 피해를 가하고, 인접한 목표에게 카프카 공격력의 30% 만큼 번개 속성 피해를 가한다. 지정된 단일 적이 지속 피해 상태인 경우, 현재 해당 적이 받는 모든 지속 피해는 즉시 기존 피해 60% 만큼의 피해를 생성한다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:791:C",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:791:C:달빛의 어루만짐:supplemental-effect",
-      "characterId": "791",
-      "sourceText": "<전투 스킬> 확산 | 강인성 감소 수치: 20 지정된 단일 적에게 카프카의 공격력의 80% 만큼 번개 속성 피해를 가하고, 인접한 목표에게 카프카 공격력의 30% 만큼 번개 속성 피해를 가한다. 지정된 단일 적이 지속 피해 상태인 경우, 현재 해당 적이 받는 모든 지속 피해는 즉시 기존 피해 60% 만큼의 피해를 생성한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:791:D",
@@ -12084,20 +11755,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:791:D",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:791:D:자비와 무관한 용서:supplemental-effect",
-      "characterId": "791",
-      "sourceText": "<비술> 강인성 감소 수치: 20 일정 범위 내 모든 적을 바로 공격하며, 전투 진입 후 모든 적에게 카프카 공격력 50%만큼 번개 속성 피해를 가하고, 100%의 기본 확률 로 모든 적을 필살기와 동일한 감전 상태에 빠트린다. 지속 시간: 2턴",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:791:E",
       "kind": "source_row",
       "version": 1,
@@ -12111,20 +11768,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:791:E",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:791:E:소란스러운 밤:supplemental-effect",
-      "characterId": "791",
-      "sourceText": "<일반 공격> 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 카프카 공격력의 50% 만큼 번개 속성 피해를 가한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:791:E1",
       "kind": "source_row",
       "version": 1,
@@ -12136,20 +11779,6 @@
       "characterId": "791",
       "sourceText": "<추가 능력> 필살기 발동 시 적은 「현재 받는 감전 상태가 즉시 피해를 생성」에서 「현재 받는 모든 지속 피해류 디버프 상태가 즉시 피해를 생성」으로 변경된다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:791:E1",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:791:E1:고통:supplemental-effect",
-      "characterId": "791",
-      "sourceText": "<추가 능력> 필살기 발동 시 적은 「현재 받는 감전 상태가 즉시 피해를 생성」에서 「현재 받는 모든 지속 피해류 디버프 상태가 즉시 피해를 생성」으로 변경된다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:789:A",
@@ -12438,20 +12067,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:29:A",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:29:A:천둥이 알리는 교룡의 도약:supplemental-effect",
-      "characterId": "29",
-      "sourceText": "<필살기> 회복 | 에너지 소모 100 모든 아군이 백로 HP 최대치 9%+90 만큼의 HP를 회복한다. 백로는 [생명] 효과가 없는 아군에게 [생명] 효과를 부여하며, [생명] 효과를 보유한 아군에게는 [생명] 효과 지속 시간을 1턴 늘려준다 [생명] 지속 시간: 2턴. 해당 효과는 중첩될 수 없다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:29:B",
       "kind": "source_row",
       "version": 1,
@@ -12463,20 +12078,6 @@
       "characterId": "29",
       "sourceText": "<특성> 회복 [생명] 효과를 보유한 아군은 피격 후 백로 HP 최대치의 3.6%+36 만큼 회복한다. 해당 효과는 2회 발동할 수 있다. 백로의 동료는 치명적인 공격을 받아도 전투 불능 상태 에 빠지지 않고, 백로가 즉시 대상에게 치유를 제공해 HP를 백로 HP 최대치의 12.0%+120 만큼 회복한다. 해당 효과는 단일 전투에서 1회 발동할 수 있다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:29:B",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:29:B:발로 뛰는 구원의 의술:supplemental-effect",
-      "characterId": "29",
-      "sourceText": "<특성> 회복 [생명] 효과를 보유한 아군은 피격 후 백로 HP 최대치의 3.6%+36 만큼 회복한다. 해당 효과는 2회 발동할 수 있다. 백로의 동료는 치명적인 공격을 받아도 전투 불능 상태 에 빠지지 않고, 백로가 즉시 대상에게 치유를 제공해 HP를 백로 HP 최대치의 12.0%+120 만큼 회복한다. 해당 효과는 단일 전투에서 1회 발동할 수 있다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:29:C",
@@ -12492,20 +12093,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:29:C",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:29:C:구름의 노래 속 떨어지는 이슬:supplemental-effect",
-      "characterId": "29",
-      "sourceText": "<전투 스킬> 회복 즉시 지정된 단일 아군의 HP를 백로 HP 최대치 7.8%+78 만큼 회복한 다음 백로는 랜덤으로 단일 아군을 2회 치유한다. 1회 치유할 때마다 다음 치유로 회복하는 HP는 15% 감소한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:29:E",
       "kind": "source_row",
       "version": 1,
@@ -12517,20 +12104,6 @@
       "characterId": "29",
       "sourceText": "<일반 공격> 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 백로 공격력 50% 만큼의 번개 속성 피해를 준다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:29:E",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:29:E:보고 듣고 묻고… 아뵤!:supplemental-effect",
-      "characterId": "29",
-      "sourceText": "<일반 공격> 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 백로 공격력 50% 만큼의 번개 속성 피해를 준다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:28:A",
@@ -12897,20 +12470,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:23:A",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:23:A:적진 뒤의 화염의 랜스:supplemental-effect",
-      "characterId": "23",
-      "sourceText": "<필살기> 범위 공격 | 에너지 소모 120 | 강인성 감소 수치: 20 모든 적에게 개척자 공격력 50% +방어력 75% 만큼의 화염 속성 피해를 준다. 다음 일반 공격 발동 시 자동으로 강화를 획득하며 [불타는 의지]를 소모하지 않는다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:23:B",
       "kind": "source_row",
       "version": 1,
@@ -12922,20 +12481,6 @@
       "characterId": "23",
       "sourceText": "<특성> 강화 피격될 때마다 [불타는 의지]를 1스택 중첩한다. 최대 중첩수: 8스택. [불타는 의지]가 4스택 이상일 경우 일반 공격이 강화되며, 지정된 단일 적 및 인접한 목표에게 피해를 준다. 개척자가 일반 공격, 전투 스킬, 필살기 발동 후 모든 아군에게 개척자 방어력 4.0%+20 만큼의 피해를 상쇄할 수 있는 실드를 제공한다. 지속 시간: 2턴",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:23:B",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:23:B:축성가의 유물:supplemental-effect",
-      "characterId": "23",
-      "sourceText": "<특성> 강화 피격될 때마다 [불타는 의지]를 1스택 중첩한다. 최대 중첩수: 8스택. [불타는 의지]가 4스택 이상일 경우 일반 공격이 강화되며, 지정된 단일 적 및 인접한 목표에게 피해를 준다. 개척자가 일반 공격, 전투 스킬, 필살기 발동 후 모든 아군에게 개척자 방어력 4.0%+20 만큼의 피해를 상쇄할 수 있는 실드를 제공한다. 지속 시간: 2턴",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:23:C",
@@ -12951,18 +12496,17 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:23:C",
+      "id": "source:hoyowiki-effect:23:C:0",
       "kind": "source_row",
       "version": 1,
       "createdBy": "hoyowiki-adapter",
       "sourceOrigin": "raw_source",
       "sourceKind": "hoyowiki",
       "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:23:C:타오르는 불멸의 앰버:supplemental-effect",
+      "sourceRecord": "HoyoWiki:23:C:타오르는 불멸의 앰버:supplemental-effect:0",
       "characterId": "23",
-      "sourceText": "<전투 스킬> 방어 전투 스킬 발동 후 개척자가 받는 피해가 40% 감소하고 [불타는 의지]를 1스택 중첩한다. 100%의 기본 확률 로 모든 적이 도발 상태에 빠진다. 지속 시간: 1턴",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "sourceText": "<전투 스킬> 방어 전투 스킬 발동 후 개척자가 받는 피해가 40% 감소하고 [불타는 의지]를 1스택 중첩한다",
+      "calculationStatus": "calculation_ready"
     },
     {
       "id": "source:hoyowiki:23:D2",
@@ -12978,20 +12522,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:23:D2",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:23:D2:죽음 앞의 생:supplemental-effect",
-      "characterId": "23",
-      "sourceText": "<추가 능력> 개척자가 일반 공격 강화를 발동하면 자신 HP 최대치의 5%만큼의 HP를 회복한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:23:D5",
       "kind": "source_row",
       "version": 1,
@@ -13005,18 +12535,17 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:23:D5",
+      "id": "source:hoyowiki-effect:23:D5:0",
       "kind": "source_row",
       "version": 1,
       "createdBy": "hoyowiki-adapter",
       "sourceOrigin": "raw_source",
       "sourceKind": "hoyowiki",
       "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:23:D5:약자를 돕는 강자:supplemental-effect",
+      "sourceRecord": "HoyoWiki:23:D5:약자를 돕는 강자:supplemental-effect:0",
       "characterId": "23",
-      "sourceText": "<추가 능력> 전투 스킬 발동 후 모든 아군이 받는 피해가 15% 감소한다. 지속 시간: 1턴",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "sourceText": "<추가 능력> 전투 스킬 발동 후 모든 아군이 받는 피해가 15% 감소한다",
+      "calculationStatus": "calculation_ready"
     },
     {
       "id": "source:hoyowiki:23:E",
@@ -13030,20 +12559,6 @@
       "characterId": "23",
       "sourceText": "<일반 공격> 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 개척자 공격력 50% 만큼의 화염 속성 피해를 주며, [불타는 의지]를 1스택 중첩한다 확산 | 강인성 감소 수치: 20 [불타는 의지]를 4스택 소모하고 일반 공격을 강화한다. 지정된 단일 적에게 개척자 공격력 90% 만큼의 화염 속성 피해를 주며, 인접한 목표에게도 개척자 공격력 36% 만큼의 화염 속성 피해를 준다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:23:E",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:23:E:얼음을 관통하는 빛:supplemental-effect",
-      "characterId": "23",
-      "sourceText": "<일반 공격> 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 개척자 공격력 50% 만큼의 화염 속성 피해를 주며, [불타는 의지]를 1스택 중첩한다 확산 | 강인성 감소 수치: 20 [불타는 의지]를 4스택 소모하고 일반 공격을 강화한다. 지정된 단일 적에게 개척자 공격력 90% 만큼의 화염 속성 피해를 주며, 인접한 목표에게도 개척자 공격력 36% 만큼의 화염 속성 피해를 준다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:22:A",
@@ -13137,18 +12652,17 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:21:A",
+      "id": "source:hoyowiki-effect:21:A:0",
       "kind": "source_row",
       "version": 1,
       "createdBy": "hoyowiki-adapter",
       "sourceOrigin": "raw_source",
       "sourceKind": "hoyowiki",
       "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:21:A:서프라이즈 선물 상자:supplemental-effect",
+      "sourceRecord": "HoyoWiki:21:A:서프라이즈 선물 상자:supplemental-effect:0",
       "characterId": "21",
-      "sourceText": "<필살기> 범위 공격 | 에너지 소모 120 | 강인성 감소 수치: 20 모든 적에게 삼포 공격력 96% 만큼의 바람 속성 피해 를 주고, 100%의 기본 확률로 피격된 적이 받는 지속 피해가 20% 증가한다. 지속 시간: 2턴",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "sourceText": "강인성 감소 수치: 20 모든 적에게 삼포 공격력 96% 만큼의 바람 속성 피해 를 주고, 100%의 기본 확률로 피격된 적이 받는 지속 피해가 20% 증가한다",
+      "calculationStatus": "calculation_ready"
     },
     {
       "id": "source:hoyowiki:21:B",
@@ -13164,20 +12678,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:21:B",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:21:B:바람을 찢는 비수:supplemental-effect",
-      "characterId": "21",
-      "sourceText": "<특성> 강화 삼포는 적 공격 후 65%의 기본 확률로 적을 풍화 상태에 빠트린다. 지속 시간: 3턴. 풍화 상태의 적은 새로운 턴이 시작될 때 마다 삼포 공격력 24% 만큼의 바람 속성 지속 피해를 받는다. 풍화 상태 최대 중첩수: 5회",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:21:C",
       "kind": "source_row",
       "version": 1,
@@ -13189,20 +12689,6 @@
       "characterId": "21",
       "sourceText": "<전투 스킬> 바운스 | 강인성 감소 수치: 10 지정된 단일 적에게 삼포 공격력 28% 만큼의 바람 속성 피해 를 주고, 추가로 4회 피해를 가한다. 피해마다 임의의 단일 적에게 삼포 공격력 28% 만큼의 바람 속성 피해를 준다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:21:C",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:21:C:변덕스러운 사랑:supplemental-effect",
-      "characterId": "21",
-      "sourceText": "<전투 스킬> 바운스 | 강인성 감소 수치: 10 지정된 단일 적에게 삼포 공격력 28% 만큼의 바람 속성 피해 를 주고, 추가로 4회 피해를 가한다. 피해마다 임의의 단일 적에게 삼포 공격력 28% 만큼의 바람 속성 피해를 준다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:21:C1",
@@ -13218,20 +12704,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:21:C1",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:21:C1:후공:supplemental-effect",
-      "characterId": "21",
-      "sourceText": "<추가 능력> 필살기 발동 시 추가로 에너지를 10pt 회복한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:21:E",
       "kind": "source_row",
       "version": 1,
@@ -13245,20 +12717,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:21:E",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:21:E:화려한 도흔:supplemental-effect",
-      "characterId": "21",
-      "sourceText": "<일반 공격> 강인성 감소 수치: 10 단일 공격 지정된 단일 적에게 삼포 공격력 50% 만큼의 바람 속성 피해 를 준다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:21:E1",
       "kind": "source_row",
       "version": 1,
@@ -13270,20 +12728,6 @@
       "characterId": "21",
       "sourceText": "<추가 능력> 특성으로 적이 풍화 상태에 빠지는 지속 시간이 1턴 증가한다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:21:E1",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:21:E1:올가미:supplemental-effect",
-      "characterId": "21",
-      "sourceText": "<추가 능력> 특성으로 적이 풍화 상태에 빠지는 지속 시간이 1턴 증가한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:20:A",
@@ -13416,20 +12860,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:18:A",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:18:A:신생의 의례:supplemental-effect",
-      "characterId": "18",
-      "sourceText": "<필살기> 회복 | 에너지 소모 80 모든 아군이 나타샤 HP 최대치 9.2%+92 만큼의 HP를 회복한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:18:B",
       "kind": "source_row",
       "version": 1,
@@ -13441,20 +12871,6 @@
       "characterId": "18",
       "sourceText": "<특성> 회복 현재 HP 백분율이 30% 이하인 아군에게 치유 제공 시, 나타샤의 치유량이 25% 증가한다. 해당 효과는 지속 치유 효과에도 적용된다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:18:B",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:18:B:생기발랄:supplemental-effect",
-      "characterId": "18",
-      "sourceText": "<특성> 회복 현재 HP 백분율이 30% 이하인 아군에게 치유 제공 시, 나타샤의 치유량이 25% 증가한다. 해당 효과는 지속 치유 효과에도 적용된다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:18:B1",
@@ -13470,20 +12886,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:18:B1",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:18:B1:회복:supplemental-effect",
-      "characterId": "18",
-      "sourceText": "<추가 능력> 전투 스킬 발동으로 생긴 지속 회복 효과를 1턴 연장한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:18:C",
       "kind": "source_row",
       "version": 1,
@@ -13495,20 +12897,6 @@
       "characterId": "18",
       "sourceText": "<전투 스킬> 회복 지정된 단일 아군의 HP를 즉시 나타샤 HP 최대치의 7.0%+70 만큼 회복하고, 턴이 시작될 때마다 대상의 HP를 나타샤 HP 최대치의 4.8%+48 만큼 회복한다. 지속 시간: 2턴",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:18:C",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:18:C:사랑, 구조와 선택:supplemental-effect",
-      "characterId": "18",
-      "sourceText": "<전투 스킬> 회복 지정된 단일 아군의 HP를 즉시 나타샤 HP 최대치의 7.0%+70 만큼 회복하고, 턴이 시작될 때마다 대상의 HP를 나타샤 HP 최대치의 4.8%+48 만큼 회복한다. 지속 시간: 2턴",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:18:D3",
@@ -13524,20 +12912,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:18:D3",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:18:D3:완화:supplemental-effect",
-      "characterId": "18",
-      "sourceText": "<추가 능력> 전투 스킬 발동 시 지정된 단일 아군의 디버프 효과를 1개 해제한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:18:E",
       "kind": "source_row",
       "version": 1,
@@ -13549,20 +12923,6 @@
       "characterId": "18",
       "sourceText": "<일반 공격> 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 나타샤 공격력 50% 만큼의 물리 속성 피해 를 준다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:18:E",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:18:E:인자함의 이면:supplemental-effect",
-      "characterId": "18",
-      "sourceText": "<일반 공격> 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 나타샤 공격력 50% 만큼의 물리 속성 피해 를 준다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:17:A",
@@ -13578,20 +12938,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:17:A",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:17:A:영원의 벽:supplemental-effect",
-      "characterId": "17",
-      "sourceText": "<필살기> 방어 | 에너지 소모 100 모든 아군에게 게파드 방어력 30%+150 만큼의 피해를 상쇄할 수 있는 실드를 제공한다. 지속 시간: 3턴",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:17:B",
       "kind": "source_row",
       "version": 1,
@@ -13603,20 +12949,6 @@
       "characterId": "17",
       "sourceText": "<특성> 회복 게파드는 치명적인 공격을 받아도 전투 불능 상태 에 빠지지 않으며 자신의 HP 최대치 25% 만큼의 HP를 즉시 회복한다. 해당 효과는 단일 전투에서 1회만 발동한다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:17:B",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:17:B:불굴의 몸:supplemental-effect",
-      "characterId": "17",
-      "sourceText": "<특성> 회복 게파드는 치명적인 공격을 받아도 전투 불능 상태 에 빠지지 않으며 자신의 HP 최대치 25% 만큼의 HP를 즉시 회복한다. 해당 효과는 단일 전투에서 1회만 발동한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:17:C",
@@ -13632,20 +12964,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:17:C",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:17:C:위협의 일격:supplemental-effect",
-      "characterId": "17",
-      "sourceText": "<전투 스킬> 방해 | 강인성 감소 수치: 20 지정된 단일 적에게 게파드 공격력 100% 만큼의 얼음 속성 피해를 주며 피격된 적은 65%의 기본 확률 로 빙결 상태에 빠진다. 지속 시간: 1턴. 빙결 상태의 적은 행동할 수 없으며 턴이 시작될 때마다 게파드 공격력 30% 만큼의 얼음 속성 추가 피해 를 받는다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:17:E",
       "kind": "source_row",
       "version": 1,
@@ -13657,20 +12975,6 @@
       "characterId": "17",
       "sourceText": "<일반 공격> 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 게파드 공격력 50% 만큼의 얼음 속성 피해를 가한다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:17:E",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:17:E:의지의 주먹:supplemental-effect",
-      "characterId": "17",
-      "sourceText": "<일반 공격> 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 게파드 공격력 50% 만큼의 얼음 속성 피해를 가한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:16:A",
@@ -14284,20 +13588,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:7:A",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:7:A:얼음 화살비의 시간:supplemental-effect",
-      "characterId": "7",
-      "sourceText": "<필살기> 범위 공격 | 에너지 소모 120 | 강인성 감소 수치: 20 모든 적에게 Mar. 7th 공격력 90% 만큼의 얼음 속성 피해를 가한다. 피격된 적은 50%의 기본 확률로 빙결 상태에 빠진다. 지속 시간: 1턴. 빙결 상태의 적은 움직임이 제한될 뿐만 아니라 턴이 시작될 때마다 Mar. 7th 공격력 30% 만큼의 얼음 속성 추가 피해 를 받는다.",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:7:B",
       "kind": "source_row",
       "version": 1,
@@ -14309,20 +13599,6 @@
       "characterId": "7",
       "sourceText": "<특성> 단일 공격 | 강인성 감소 수치: 10 실드를 지닌 아군이 적에게 피격되면 Mar. 7th는 즉시 공격자에게 반격 을 발동하여 Mar. 7th 공격력 50% 만큼의 얼음 속성 피해를 가한다. 해당 효과는 턴마다 2회 발동할 수 있다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:7:B",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:7:B:소녀의 특권:supplemental-effect",
-      "characterId": "7",
-      "sourceText": "<특성> 단일 공격 | 강인성 감소 수치: 10 실드를 지닌 아군이 적에게 피격되면 Mar. 7th는 즉시 공격자에게 반격 을 발동하여 Mar. 7th 공격력 50% 만큼의 얼음 속성 피해를 가한다. 해당 효과는 턴마다 2회 발동할 수 있다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:7:B1",
@@ -14338,20 +13614,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:7:B1",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:7:B1:얼음 저주:supplemental-effect",
-      "characterId": "7",
-      "sourceText": "<추가 능력> 필살기 발동 시 적을 빙결하는 기본 확률이 15% 증가한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:7:C",
       "kind": "source_row",
       "version": 1,
@@ -14363,20 +13625,6 @@
       "characterId": "7",
       "sourceText": "<전투 스킬> 방어 지정된 단일 아군에게 Mar. 7th 방어력 38%+190 만큼의 피해를 상쇄할 수 있는 실드를 제공한다. 지속 시간: 3턴. 해당 목표의 현재 HP 백분율이 30% 이상이면, 적에게 피격될 확률이 대폭 증가한다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:7:C",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:7:C:귀여움이 곧 정의:supplemental-effect",
-      "characterId": "7",
-      "sourceText": "<전투 스킬> 방어 지정된 단일 아군에게 Mar. 7th 방어력 38%+190 만큼의 피해를 상쇄할 수 있는 실드를 제공한다. 지속 시간: 3턴. 해당 목표의 현재 HP 백분율이 30% 이상이면, 적에게 피격될 확률이 대폭 증가한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:7:D2",
@@ -14392,20 +13640,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:7:D2",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:7:D2:가호:supplemental-effect",
-      "characterId": "7",
-      "sourceText": "<추가 능력> 전투 스킬이 제공하는 실드의 지속 시간이 1턴 증가한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:7:D5",
       "kind": "source_row",
       "version": 1,
@@ -14419,20 +13653,6 @@
       "calculationStatus": "calculation_ready"
     },
     {
-      "id": "source:hoyowiki-effect:7:D5",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:7:D5:순결:supplemental-effect",
-      "characterId": "7",
-      "sourceText": "<추가 능력> 전투 스킬 발동 시 지정된 단일 아군의 디버프 효과를 1개 해제한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
       "id": "source:hoyowiki:7:E",
       "kind": "source_row",
       "version": 1,
@@ -14444,20 +13664,6 @@
       "characterId": "7",
       "sourceText": "<일반 공격> 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 Mar. 7th 공격력 50% 만큼의 얼음 속성 피해를 가한다",
       "calculationStatus": "calculation_ready"
-    },
-    {
-      "id": "source:hoyowiki-effect:7:E",
-      "kind": "source_row",
-      "version": 1,
-      "createdBy": "hoyowiki-adapter",
-      "sourceOrigin": "raw_source",
-      "sourceKind": "hoyowiki",
-      "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      "sourceRecord": "HoyoWiki:7:E:극저온의 화살:supplemental-effect",
-      "characterId": "7",
-      "sourceText": "<일반 공격> 단일 공격 | 강인성 감소 수치: 10 지정된 단일 적에게 Mar. 7th 공격력 50% 만큼의 얼음 속성 피해를 가한다",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
     },
     {
       "id": "source:hoyowiki:6:A",

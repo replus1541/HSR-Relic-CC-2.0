@@ -1,0 +1,188 @@
+{
+  "app": "hsr-relic-cc-character-state-controls",
+  "version": 1,
+  "updatedAt": "2026-07-06",
+  "controls": [
+    {
+      "key": "blackSwanArcanaStacks",
+      "scope": "partyCharacter",
+      "characterId": "BlackSwan_00",
+      "label": "블랙스완 아르카나",
+      "note": "아르카나 최대 스택",
+      "defaultValue": 70,
+      "optionsByEidolon": [
+        { "minEidolon": 6, "options": [30, 80, 120], "defaultValue": 120, "note": "풀돌 기준 최대치 선택" },
+        { "minEidolon": 0, "options": [30, 50, 70], "defaultValue": 70, "note": "5돌 이하 기준 최대치 선택" }
+      ]
+    },
+    {
+      "key": "elationCertifiedBangerStacks",
+      "scope": "activeFormula",
+      "formulaType": "elation",
+      "label": "Certified Banger",
+      "note": "환락 피해 Punchline 배율에 사용할 수치",
+      "defaultValue": 0,
+      "options": [0, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240]
+    },
+    {
+      "key": "elationMerrymake",
+      "scope": "activeFormula",
+      "formulaType": "elation",
+      "label": "Merrymake",
+      "note": "환락 전용 Merrymake 배율",
+      "defaultValue": 0,
+      "options": [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+      "format": "percent"
+    },
+    {
+      "key": "cipherRecordedDamage",
+      "scope": "activeCharacter",
+      "characterId": "Cipher_00",
+      "label": "사이퍼 기록 피해",
+      "note": "필살기 확정피해 계산에 사용할 기록 수치",
+      "defaultValue": 0,
+      "options": [0, 25000, 50000, 75000, 100000, 150000, 200000],
+      "format": "number"
+    },
+    {
+      "key": "superBreakToughnessMultiplier",
+      "scope": "activeFormula",
+      "formulaType": "super_break",
+      "label": "슈퍼격파 전환 배율",
+      "note": "강인도 감소 수치 기반 전환 배율",
+      "defaultValue": 1,
+      "options": [0.3, 0.5, 0.6, 1, 1.4],
+      "format": "percent"
+    },
+    {
+      "key": "trailblazerDestructionBreakStacks",
+      "scope": "activeCharacter",
+      "characterId": "PlayerBoy_00",
+      "label": "파멸 개척자 격파 스택",
+      "note": "도루 견제 공격력 증가 스택",
+      "defaultValue": 2,
+      "options": [0, 1, 2],
+      "effectRowIds": ["effect:PlayerBoy_00:0"],
+      "valueFormula": { "type": "stackMultiplier", "unitValue": 0.1 }
+    },
+    {
+      "key": "danHengIlPrideStacks",
+      "scope": "activeCharacter",
+      "characterId": "DanHengIL_00",
+      "label": "음월 긍지",
+      "note": "긍지 피해 증가 스택",
+      "defaultValue": 6,
+      "options": [0, 3, 6],
+      "effectRowIds": ["effect:DanHengIL_00:0"],
+      "valueFormula": { "type": "stackMultiplier", "unitValue": 0.05 }
+    },
+    {
+      "key": "lukaFightingWillStacks",
+      "scope": "activeCharacter",
+      "characterId": "Luka_00",
+      "label": "루카 투지",
+      "note": "투지 공격력 증가 스택",
+      "defaultValue": 4,
+      "options": [0, 2, 4],
+      "effectRowIds": ["effect:Luka_00:1"],
+      "valueFormula": { "type": "stackMultiplier", "unitValue": 0.05 }
+    },
+    {
+      "key": "astaChargeStacks",
+      "scope": "partyCharacter",
+      "characterId": "Asta_00",
+      "label": "아스타 충전",
+      "note": "충전 스택별 파티 공격력 증가",
+      "defaultValue": 5,
+      "options": [3, 5],
+      "effectRowIds": ["effect:Asta_00:0"],
+      "valueFormula": { "type": "stackMultiplier", "unitValue": 0.05 }
+    },
+    {
+      "key": "ashveilIndulgenceStacks",
+      "scope": "activeCharacter",
+      "characterId": "Ashveil_00",
+      "label": "애쉬베일 탐닉",
+      "note": "E6 탐닉 피해 증가 스택",
+      "defaultValue": 30,
+      "optionsByEidolon": [
+        { "minEidolon": 6, "options": [10, 20, 30], "defaultValue": 30, "note": "E6 이상 탐닉 스택 선택" }
+      ],
+      "effectRowIds": ["effect:Ashveil_00:6"],
+      "valueFormula": { "type": "stackMultiplier", "unitValue": 0.04 }
+    },
+    {
+      "key": "silverWolf999HiddenScore",
+      "scope": "activeCharacter",
+      "characterId": "SilverWolf999_00",
+      "label": "은랑 LV.999 히든 스코어",
+      "note": "히든 스코어 치확/치피 전환",
+      "defaultValue": 300,
+      "options": [100, 150, 200, 250, 300],
+      "format": "number",
+      "effectRowIds": ["effect:SilverWolf999_00:0", "effect:SilverWolf999_00:1"],
+      "valueFormula": { "type": "hiddenScoreCritConversion", "critRateUnit": 0.0044, "critDamageUnit": 0.0088 }
+    },
+    {
+      "key": "qingqueSkillStacks",
+      "scope": "activeCharacter",
+      "characterId": "Qingque_00",
+      "label": "청작 전투 스킬",
+      "note": "전투 스킬 피해 증가 중첩",
+      "defaultValue": 4,
+      "options": [1, 2, 3, 4],
+      "effectRowIds": ["effect:Qingque_00:1"],
+      "valueFormula": { "type": "stackMultiplier", "unitValue": 0.14 }
+    },
+    {
+      "key": "cerydraNobilityStacks",
+      "scope": "partyCharacter",
+      "characterId": "Cerydra_00",
+      "label": "케리드라 작위",
+      "note": "6충전 작위 상태일 때 속저관 적용",
+      "defaultValue": 6,
+      "options": [4, 6],
+      "effectRowIds": ["effect:Cerydra_00:10"],
+      "valueFormula": { "type": "thresholdValue", "threshold": 6, "value": 0.08 }
+    },
+    {
+      "key": "cyreneDemiurgeBuffCount",
+      "scope": "partyCharacter",
+      "characterId": "Cyrene_00",
+      "label": "키레네 데미우르고스",
+      "note": "E2 확정피해 배율 증가 대상 수",
+      "defaultValue": 4,
+      "optionsByEidolon": [
+        { "minEidolon": 2, "options": [2, 3, 4], "defaultValue": 4, "note": "E2 이상 버프 획득 아군 수" }
+      ],
+      "format": "count",
+      "effectRowIds": ["effect:Cyrene_00:18"],
+      "valueFormula": { "type": "stackMultiplier", "unitValue": 0.06 }
+    },
+    {
+      "key": "phainonTransformedStacks",
+      "scope": "activeCharacter",
+      "characterId": "Phainon_00",
+      "label": "파이논 변신",
+      "note": "카오스라나 변신 공격력 증가 단계",
+      "defaultValue": 1,
+      "options": [1, 2],
+      "effectRowIds": ["effect:Phainon_00:1"],
+      "valueFormula": { "type": "stackMultiplier", "unitValue": 0.4 }
+    },
+    {
+      "key": "drRatioDeductionStacks",
+      "scope": "activeCharacter",
+      "characterId": "Dr_Ratio_00",
+      "label": "Dr. 레이시오 귀납",
+      "note": "귀납 치확/치피 스택",
+      "defaultValue": 6,
+      "optionsByEidolon": [
+        { "minEidolon": 2, "options": [3, 6, 10], "defaultValue": 10, "note": "E2 이상 최대 10스택" },
+        { "minEidolon": 0, "options": [3, 6], "defaultValue": 6, "note": "E1 이하 최대 6스택" }
+      ],
+      "effectRowIds": ["effect:Dr_Ratio_00:0", "effect:Dr_Ratio_00:1"],
+      "valueFormula": { "type": "statStackMultiplier", "unitValues": { "critRate": 0.025, "critDamage": 0.05 } }
+    }
+  ]
+}

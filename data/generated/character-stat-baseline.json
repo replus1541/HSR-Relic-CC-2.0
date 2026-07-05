@@ -1,0 +1,4468 @@
+{
+  "app": "hsr-relic-cc-character-stat-baseline-v2",
+  "version": 1,
+  "generatedAt": "2026-07-05T17:31:04.136Z",
+  "source": {
+    "legacyCharacterStatBaseline": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\character-stat-baseline.json",
+    "identity": "data/generated/character-identity.json"
+  },
+  "policy": {
+    "level": 80,
+    "critDefaultsIncluded": true,
+    "traceAdditionalStatsIncluded": true,
+    "combatBuffsExcluded": true
+  },
+  "summary": {
+    "characters": 90,
+    "matchedIdentity": 90,
+    "unmatchedIdentity": 0,
+    "traceEntries": 257
+  },
+  "unmatchedSourceCharacters": [],
+  "rows": [
+    {
+      "characterId": "PlayerBoy_20",
+      "avatarId": "8005",
+      "displayName": "개척자 • 기억",
+      "sourceCharacter": "개척자 • 기억",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1047,
+        "atk": 543,
+        "def": 630,
+        "speed": 103,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "critDamage",
+          "value": 0.373,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "개척자 • 기억:critDamage:37.3%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.14,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "개척자 • 기억:hp:14%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.14,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "개척자 • 기억:atk:14%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "PlayerBoy_10",
+      "avatarId": "8003",
+      "displayName": "개척자 • 보존",
+      "sourceCharacter": "개척자 • 보존",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1241,
+        "atk": 601,
+        "def": 606,
+        "speed": 95,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "개척자 • 보존:hp:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "defRatio",
+          "value": 0.35,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "개척자 • 보존:def:35%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "개척자 • 보존:atk:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "PlayerBoy_00",
+      "avatarId": "8001",
+      "displayName": "개척자 • 파멸",
+      "sourceCharacter": "개척자 • 파멸",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1203,
+        "atk": 620,
+        "def": 460,
+        "speed": 100,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "defRatio",
+          "value": 0.125,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "개척자 • 파멸:def:12.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.27999999999999997,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "개척자 • 파멸:atk:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "개척자 • 파멸:hp:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "PlayerBoy_30",
+      "avatarId": "8007",
+      "displayName": "개척자 • 화합",
+      "sourceCharacter": "개척자 • 화합",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1086,
+        "atk": 446,
+        "def": 679,
+        "speed": 105,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "effectRes",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "개척자 • 화합:effectRes:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.373,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "격파 강화",
+          "label": "격파 특수효과",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "개척자 • 화합:breakEffect:37.3%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.14400000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•허수",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "개척자 • 화합:elementDamage:14.4%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "PlayerBoy_40",
+      "avatarId": "8009",
+      "displayName": "개척자 • 환락",
+      "sourceCharacter": "개척자 • 환락",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1086,
+        "atk": 465,
+        "def": 630,
+        "speed": 106,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "atkRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "개척자 • 환락:atk:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critRate",
+          "value": 0.12,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "개척자 • 환락:critRate:12%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critDamage",
+          "value": 0.133,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "개척자 • 환락:critDamage:13.3%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Gallagher_00",
+      "avatarId": "1301",
+      "displayName": "갤러거",
+      "sourceCharacter": "갤러거",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1305,
+        "atk": 529,
+        "def": 441,
+        "speed": 98,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "hpRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "갤러거:hp:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectRes",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "갤러거:effectRes:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.133,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "격파 강화",
+          "label": "격파 특수효과",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "갤러거:breakEffect:13.3%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Gepard_00",
+      "avatarId": "1104",
+      "displayName": "게파드",
+      "sourceCharacter": "게파드",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1397,
+        "atk": 543,
+        "def": 654,
+        "speed": 92,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "defRatio",
+          "value": 0.125,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "게파드:def:12.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•얼음",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "게파드:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectRes",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "게파드:effectRes:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Jingliu_00",
+      "avatarId": "1212",
+      "displayName": "경류",
+      "sourceCharacter": "경류",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1435,
+        "atk": 679,
+        "def": 485,
+        "speed": 96,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "경류:hp:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critDamage",
+          "value": 0.373,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "경류:critDamage:37.3%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "speed",
+          "value": 9,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "경류:speed:9",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "JingYuan_00",
+      "avatarId": "1204",
+      "displayName": "경원",
+      "sourceCharacter": "경원",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1164,
+        "atk": 698,
+        "def": 485,
+        "speed": 99,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "critRate",
+          "value": 0.12,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "경원:critRate:12%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "defRatio",
+          "value": 0.125,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "경원:def:12.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "경원:atk:28%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Guinaifen_00",
+      "avatarId": "1210",
+      "displayName": "계네빈",
+      "sourceCharacter": "계네빈",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 882,
+        "atk": 582,
+        "def": 441,
+        "speed": 106,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "breakEffect",
+          "value": 0.24,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "격파 강화",
+          "label": "격파 특수효과",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "계네빈:breakEffect:24%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectHitRate",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 명중 강화",
+          "label": "효과 명중",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "계네빈:effectHitRate:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•화염",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "계네빈:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Huohuo_00",
+      "avatarId": "1217",
+      "displayName": "곽향",
+      "sourceCharacter": "곽향",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1358,
+        "atk": 601,
+        "def": 509,
+        "speed": 98,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "speed",
+          "value": 5,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "곽향:speed:5",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectRes",
+          "value": 0.18,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "곽향:effectRes:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "곽향:hp:28%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Gilgamesh_00",
+      "avatarId": "1509",
+      "displayName": "길가메시",
+      "sourceCharacter": "길가메시",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "speed": 100,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [],
+      "traceStatus": "missing-hoyowiki-trace-stat-bonuses"
+    },
+    {
+      "characterId": "Luocha_00",
+      "avatarId": "1203",
+      "displayName": "나찰",
+      "sourceCharacter": "나찰",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1280,
+        "atk": 756,
+        "def": 363,
+        "speed": 101,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "defRatio",
+          "value": 0.125,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "나찰:def:12.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.18,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "나찰:hp:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "나찰:atk:28%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Natasha_00",
+      "avatarId": "1105",
+      "displayName": "나타샤",
+      "sourceCharacter": "나타샤",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1164,
+        "atk": 476,
+        "def": 507,
+        "speed": 98,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "defRatio",
+          "value": 0.125,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "나타샤:def:12.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectRes",
+          "value": 0.18,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "나타샤:effectRes:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "나타샤:hp:28%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "DanHeng_00",
+      "avatarId": "1002",
+      "displayName": "단항",
+      "sourceCharacter": "단항",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 882,
+        "atk": 546,
+        "def": 396,
+        "speed": 110,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "defRatio",
+          "value": 0.125,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "단항:def:12.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•바람",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "단항:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "단항:atk:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "DanHengPT_00",
+      "avatarId": "1414",
+      "displayName": "단항 • 등황",
+      "sourceCharacter": "단항 • 등황",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1048,
+        "atk": 582,
+        "def": 776,
+        "speed": 97,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "speed",
+          "value": 5,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "단항 • 등황:speed:5",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "단항 • 등황:atk:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "defRatio",
+          "value": 0.22499999999999998,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "단항 • 등황:def:22.5%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "DanHengIL_00",
+      "avatarId": "1213",
+      "displayName": "단항•음월",
+      "sourceCharacter": "단항•음월 ",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1241,
+        "atk": 698,
+        "def": 363,
+        "speed": 102,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "단항•음월 :hp:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•허수",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "단항•음월 :elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critRate",
+          "value": 0.12,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "단항•음월 :critRate:12%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Constance_00",
+      "avatarId": "1321",
+      "displayName": "달리아",
+      "sourceCharacter": "달리아",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1086,
+        "atk": 679,
+        "def": 606,
+        "speed": 96,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "effectRes",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "달리아:effectRes:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "speed",
+          "value": 5,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "달리아:speed:5",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.373,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "격파 강화",
+          "label": "격파 특수효과",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "달리아:breakEffect:37.3%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "TheHerta_00",
+      "avatarId": "1401",
+      "displayName": "더 헤르타",
+      "sourceCharacter": "더 헤르타",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1164,
+        "atk": 679,
+        "def": 485,
+        "speed": 99,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "atkRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "더 헤르타:atk:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "speed",
+          "value": 5,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "더 헤르타:speed:5",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화 • 얼음",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "더 헤르타:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Rappa_00",
+      "avatarId": "1317",
+      "displayName": "라파",
+      "sourceCharacter": "라파",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1086,
+        "atk": 717,
+        "def": 460,
+        "speed": 96,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "speed",
+          "value": 9,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "라파:speed:9",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.133,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "격파 강화",
+          "label": "격파 특수효과",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "라파:breakEffect:13.3%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "라파:atk:28%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Robin_00",
+      "avatarId": "1309",
+      "displayName": "로빈",
+      "sourceCharacter": "로빈",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1280,
+        "atk": 640,
+        "def": 485,
+        "speed": 102,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "speed",
+          "value": 5,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "로빈:speed:5",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "로빈:atk:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "로빈:hp:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Luka_00",
+      "avatarId": "1111",
+      "displayName": "루카",
+      "sourceCharacter": "루카",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 917,
+        "atk": 582,
+        "def": 485,
+        "speed": 103,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "effectHitRate",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 명중 강화",
+          "label": "효과 명중",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "루카:effectHitRate:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "defRatio",
+          "value": 0.125,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "루카:def:12.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.27999999999999997,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "루카:atk:28%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Lynx_00",
+      "avatarId": "1110",
+      "displayName": "링스",
+      "sourceCharacter": "링스",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1058,
+        "atk": 493,
+        "def": 551,
+        "speed": 100,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "effectRes",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "링스:effectRes:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "defRatio",
+          "value": 0.22500000000000003,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "링스:def:22.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "링스:hp:28%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Mydeimos_00",
+      "avatarId": "1404",
+      "displayName": "마이데이",
+      "sourceCharacter": "마이데이",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1552,
+        "atk": 426,
+        "def": 194,
+        "speed": 95,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "speed",
+          "value": 5,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "마이데이:speed:5",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critDamage",
+          "value": 0.373,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "마이데이:critDamage:37.3%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "마이데이:hp:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Fugue_00",
+      "avatarId": "1225",
+      "displayName": "망귀인",
+      "sourceCharacter": "망귀인",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1125,
+        "atk": 582,
+        "def": 557,
+        "speed": 102,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "breakEffect",
+          "value": 0.7170000000000001,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "격파 강화",
+          "label": "격파 특수효과",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "망귀인:breakEffect:71.7%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "망귀인:hp:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "speed",
+          "value": 14,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "망귀인:speed:14",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Moze_00",
+      "avatarId": "1223",
+      "displayName": "맥택",
+      "sourceCharacter": "맥택",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 811,
+        "atk": 599,
+        "def": 352,
+        "speed": 111,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "맥택:hp:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critDamage",
+          "value": 0.373,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "맥택:critDamage:37.3%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "맥택:atk:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Misha_00",
+      "avatarId": "1312",
+      "displayName": "미샤",
+      "sourceCharacter": "미샤",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1270,
+        "atk": 599,
+        "def": 396,
+        "speed": 96,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "critRate",
+          "value": 0.067,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "미샤:critRate:6.7%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•얼음",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "미샤:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "defRatio",
+          "value": 0.22499999999999998,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "미샤:def:22.5%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Sam_00",
+      "avatarId": "1310",
+      "displayName": "반디",
+      "sourceCharacter": "반디",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 814,
+        "atk": 523,
+        "def": 776,
+        "speed": 104,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "speed",
+          "value": 5,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "반디:speed:5",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.373,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "격파 강화",
+          "label": "격파 특수효과",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "반디:breakEffect:37.3%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectRes",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "반디:effectRes:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Bailu_00",
+      "avatarId": "1211",
+      "displayName": "백로",
+      "sourceCharacter": "백로",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1319,
+        "atk": 562,
+        "def": 485,
+        "speed": 98,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "effectRes",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "백로:effectRes:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "defRatio",
+          "value": 0.22500000000000003,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "백로:def:22.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "백로:hp:28%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Boothill_00",
+      "avatarId": "1315",
+      "displayName": "부트힐",
+      "sourceCharacter": "부트힐",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1203,
+        "atk": 620,
+        "def": 436,
+        "speed": 107,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "부트힐:hp:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.373,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "격파 강화",
+          "label": "격파 특수효과",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "부트힐:breakEffect:37.3%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "부트힐:atk:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "FuXuan_00",
+      "avatarId": "1208",
+      "displayName": "부현",
+      "sourceCharacter": "부현",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1474,
+        "atk": 465,
+        "def": 606,
+        "speed": 100,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "effectRes",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "부현:effectRes:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critRate",
+          "value": 0.187,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "부현:critRate:18.7%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "부현:hp:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Bronya_00",
+      "avatarId": "1101",
+      "displayName": "브로냐",
+      "sourceCharacter": "브로냐",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1241,
+        "atk": 582,
+        "def": 533,
+        "speed": 99,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "effectRes",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "브로냐:effectRes:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•바람",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "브로냐:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critDamage",
+          "value": 0.24,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "브로냐:critDamage:24%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "BlackSwan_00",
+      "avatarId": "1307",
+      "displayName": "블랙 스완",
+      "sourceCharacter": "블랙 스완",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1086,
+        "atk": 659,
+        "def": 485,
+        "speed": 102,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "elementDamage",
+          "value": 0.14400000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•바람",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "블랙 스완:elementDamage:14.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectHitRate",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 명중 강화",
+          "label": "효과 명중",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "블랙 스완:effectHitRate:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.27999999999999997,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "블랙 스완:atk:28%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Ren_00",
+      "avatarId": "1205",
+      "displayName": "블레이드",
+      "sourceCharacter": "블레이드",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1358,
+        "atk": 543,
+        "def": 485,
+        "speed": 97,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "effectRes",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "블레이드:effectRes:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.27999999999999997,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "블레이드:hp:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critRate",
+          "value": 0.12,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "블레이드:critRate:12%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Feixiao_00",
+      "avatarId": "1220",
+      "displayName": "비소",
+      "sourceCharacter": "비소",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1047,
+        "atk": 601,
+        "def": 388,
+        "speed": 112,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "defRatio",
+          "value": 0.125,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "비소:def:12.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "비소:atk:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critRate",
+          "value": 0.12,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "비소:critRate:12%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Cipher_00",
+      "avatarId": "1406",
+      "displayName": "사이퍼",
+      "sourceCharacter": "사이퍼",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 931,
+        "atk": 640,
+        "def": 509,
+        "speed": 106,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "elementDamage",
+          "value": 0.14400000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•양자",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "사이퍼:elementDamage:14.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectHitRate",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 명중 강화",
+          "label": "효과 명중",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "사이퍼:effectHitRate:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "speed",
+          "value": 14,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "사이퍼:speed:14",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Sampo_00",
+      "avatarId": "1108",
+      "displayName": "삼포",
+      "sourceCharacter": "삼포",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1023,
+        "atk": 617,
+        "def": 396,
+        "speed": 102,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "effectHitRate",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 명중 강화",
+          "label": "효과 명중",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "삼포:effectHitRate:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectRes",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "삼포:effectRes:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.16,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "삼포:atk:16%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Serval_00",
+      "avatarId": "1103",
+      "displayName": "서벌",
+      "sourceCharacter": "서벌",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 917,
+        "atk": 652,
+        "def": 374,
+        "speed": 104,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "effectHitRate",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 명중 강화",
+          "label": "효과 명중",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "서벌:effectHitRate:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectRes",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "서벌:effectRes:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critRate",
+          "value": 0.187,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "서벌:critRate:18.7%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Sunday_10",
+      "avatarId": "1313",
+      "displayName": "선데이",
+      "sourceCharacter": "선데이",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1241,
+        "atk": 640,
+        "def": 533,
+        "speed": 96,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "defRatio",
+          "value": 0.125,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "선데이:def:12.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critDamage",
+          "value": 0.373,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "선데이:critDamage:37.3%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectRes",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "선데이:effectRes:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Xueyi_00",
+      "avatarId": "1214",
+      "displayName": "설의",
+      "sourceCharacter": "설의",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1058,
+        "atk": 599,
+        "def": 396,
+        "speed": 103,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "elementDamage",
+          "value": 0.08,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•양자",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "설의:elementDamage:8%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.373,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "격파 강화",
+          "label": "격파 특수효과",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "설의:breakEffect:37.3%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "설의:hp:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Saber_00",
+      "avatarId": "1014",
+      "displayName": "세이버",
+      "sourceCharacter": "세이버",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1241,
+        "atk": 601,
+        "def": 654,
+        "speed": 101,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "세이버:hp:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해강화ㆍ바람",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "세이버:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critRate",
+          "value": 0.12,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "세이버:critRate:12%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Sushang_00",
+      "avatarId": "1206",
+      "displayName": "소상",
+      "sourceCharacter": "소상",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 917,
+        "atk": 564,
+        "def": 418,
+        "speed": 107,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "defRatio",
+          "value": 0.125,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "소상:def:12.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "소상:atk:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "소상:hp:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Sparkle_00",
+      "avatarId": "1306",
+      "displayName": "스파클",
+      "sourceCharacter": "스파클",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1397,
+        "atk": 523,
+        "def": 485,
+        "speed": 101,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "effectRes",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "스파클:effectRes:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "스파클:hp:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critDamage",
+          "value": 0.24,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "스파클:critDamage:24%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Sparxie_00",
+      "avatarId": "1501",
+      "displayName": "스파키",
+      "sourceCharacter": "스파키",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1047,
+        "atk": 640,
+        "def": 429,
+        "speed": 107,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "critRate",
+          "value": 0.12,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "스파키:critRate:12%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critDamage",
+          "value": 0.133,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "스파키:critDamage:13.3%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Aglaea_00",
+      "avatarId": "1402",
+      "displayName": "아글라이아",
+      "sourceCharacter": "아글라이아",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1241,
+        "atk": 698,
+        "def": 485,
+        "speed": 102,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "elementDamage",
+          "value": 0.22399999999999998,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•번개",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아글라이아:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critRate",
+          "value": 0.093,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아글라이아:critRate:9.3%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "defRatio",
+          "value": 0.15200000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아글라이아:def:15.2%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Anaxa_00",
+      "avatarId": "1405",
+      "displayName": "아낙사",
+      "sourceCharacter": "아낙사",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 970,
+        "atk": 756,
+        "def": 557,
+        "speed": 97,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "critRate",
+          "value": 0.12,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아낙사:critRate:12%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아낙사:hp:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•바람",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아낙사:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Arlan_00",
+      "avatarId": "1008",
+      "displayName": "아를란",
+      "sourceCharacter": "아를란",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1199,
+        "atk": 599,
+        "def": 330,
+        "speed": 102,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "hpRatio",
+          "value": 0.6000000000000001,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 저항",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아를란:hp:60%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.27999999999999997,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아를란:atk:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectRes",
+          "value": 0.6799999999999999,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아를란:effectRes:68%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Asta_00",
+      "avatarId": "1009",
+      "displayName": "아스타",
+      "sourceCharacter": "아스타",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1023,
+        "atk": 511,
+        "def": 463,
+        "speed": 106,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "critRate",
+          "value": 0.067,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아스타:critRate:6.7%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•화염",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아스타:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "defRatio",
+          "value": 0.22499999999999998,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아스타:def:22.5%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Argenti_00",
+      "avatarId": "1302",
+      "displayName": "아젠티",
+      "sourceCharacter": "아젠티",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1047,
+        "atk": 737,
+        "def": 363,
+        "speed": 103,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "elementDamage",
+          "value": 0.14400000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화 • 물리",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아젠티:elementDamage:14.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아젠티:hp:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아젠티:atk:28%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Archer_00",
+      "avatarId": "1015",
+      "displayName": "아처",
+      "sourceCharacter": "아처",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1164,
+        "atk": 620,
+        "def": 485,
+        "speed": 105,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "critRate",
+          "value": 0.067,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아처:critRate:6.7%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해강화ㆍ양자",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아처:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격력 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아처:atk:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Acheron_00",
+      "avatarId": "1308",
+      "displayName": "아케론",
+      "sourceCharacter": "아케론 ",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1125,
+        "atk": 698,
+        "def": 436,
+        "speed": 101,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "critDamage",
+          "value": 0.24,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아케론 :critDamage:24%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.08,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•번개",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아케론 :elementDamage:8%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.27999999999999997,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "아케론 :atk:28%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Ashveil_00",
+      "avatarId": "1504",
+      "displayName": "애쉬베일",
+      "sourceCharacter": "애쉬베일",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 853,
+        "atk": 776,
+        "def": 388,
+        "speed": 106,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "atkRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "애쉬베일:atk:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critDamage",
+          "value": 0.373,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "애쉬베일:critDamage:37.3%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.14400000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화 • 번개",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "애쉬베일:elementDamage:14.4%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Yukong_00",
+      "avatarId": "1207",
+      "displayName": "어공",
+      "sourceCharacter": "어공",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 917,
+        "atk": 599,
+        "def": 374,
+        "speed": 107,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "atkRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "어공:atk:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•허수",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "어공:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "생명 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "어공:hp:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Aventurine_00",
+      "avatarId": "1304",
+      "displayName": "어벤츄린",
+      "sourceCharacter": "어벤츄린",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1203,
+        "atk": 446,
+        "def": 654,
+        "speed": 106,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "effectRes",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "어벤츄린:effectRes:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "defRatio",
+          "value": 0.35,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "어벤츄린:def:35%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.14400000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•허수",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "어벤츄린:elementDamage:14.4%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Evanescia_00",
+      "avatarId": "1505",
+      "displayName": "에바네시아",
+      "sourceCharacter": "에바네시아",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1047,
+        "atk": 737,
+        "def": 460,
+        "speed": 104,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "critRate",
+          "value": 0.187,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "에바네시아:critRate:18.7%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "speed",
+          "value": 5,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "에바네시아:speed:5",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Evernight_00",
+      "avatarId": "1413",
+      "displayName": "에버나이트",
+      "sourceCharacter": "에버나이트",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1319,
+        "atk": 543,
+        "def": 582,
+        "speed": 99,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "critRate",
+          "value": 0.187,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "에버나이트:critRate:18.7%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.18,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "에버나이트:hp:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critDamage",
+          "value": 0.133,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "에버나이트:critDamage:13.3%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Yanqing_00",
+      "avatarId": "1209",
+      "displayName": "연경",
+      "sourceCharacter": "연경",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 892,
+        "atk": 679,
+        "def": 412,
+        "speed": 109,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "연경:hp:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "연경:atk:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.14400000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•얼음",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "연경:elementDamage:14.4%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Lingsha_00",
+      "avatarId": "1222",
+      "displayName": "영사",
+      "sourceCharacter": "영사",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1358,
+        "atk": 679,
+        "def": 436,
+        "speed": 98,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "atkRatio",
+          "value": 10.35,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "영사:atk:1035%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.18,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "영사:hp:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.373,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "격파 강화",
+          "label": "격파 특수효과",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "영사:breakEffect:37.3%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "RuanMei_00",
+      "avatarId": "1303",
+      "displayName": "완•매",
+      "sourceCharacter": "완•매",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1086,
+        "atk": 659,
+        "def": 485,
+        "speed": 104,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "speed",
+          "value": 5,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "완•매:speed:5",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "breakEffect",
+          "value": 0.373,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "격파 강화",
+          "label": "격파 특수효과",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "완•매:breakEffect:37.3%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "defRatio",
+          "value": 0.22499999999999998,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "완•매:def:22.5%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Yunli_00",
+      "avatarId": "1221",
+      "displayName": "운리",
+      "sourceCharacter": "운리",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1358,
+        "atk": 679,
+        "def": 461,
+        "speed": 94,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "critRate",
+          "value": 0.067,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "운리:critRate:6.7%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.27999999999999997,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "운리:atk:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "운리:hp:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Welt_00",
+      "avatarId": "1004",
+      "displayName": "웰트",
+      "sourceCharacter": "웰트",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1125,
+        "atk": 620,
+        "def": 509,
+        "speed": 102,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "elementDamage",
+          "value": 0.14400000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•허수",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "웰트:elementDamage:14.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectRes",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "웰트:effectRes:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.27999999999999997,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "웰트:atk:28%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Silwolf_00",
+      "avatarId": "1006",
+      "displayName": "은랑",
+      "sourceCharacter": "은랑",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1047,
+        "atk": 640,
+        "def": 460,
+        "speed": 107,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "effectHitRate",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 명중 강화",
+          "label": "효과 명중",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "은랑:effectHitRate:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.08,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•양자",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "은랑:elementDamage:8%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.27999999999999997,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "은랑:atk:28%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "SilverWolf999_00",
+      "avatarId": "1506",
+      "displayName": "은랑 LV.999",
+      "sourceCharacter": "은랑 LV.999",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1047,
+        "atk": 388,
+        "def": 654,
+        "speed": 110,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "critRate",
+          "value": 0.187,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "은랑 LV.999:critRate:18.7%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "speed",
+          "value": 9,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "은랑 LV.999:speed:9",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Tingyun_00",
+      "avatarId": "1202",
+      "displayName": "정운",
+      "sourceCharacter": "정운",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 846,
+        "atk": 529,
+        "def": 396,
+        "speed": 112,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "elementDamage",
+          "value": 0.08,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•번개",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "정운:elementDamage:8%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "정운:atk:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "defRatio",
+          "value": 0.22499999999999998,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "정운:def:22.5%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Seele_00",
+      "avatarId": "1102",
+      "displayName": "제레",
+      "sourceCharacter": "제레",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 931,
+        "atk": 640,
+        "def": 363,
+        "speed": 115,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "defRatio",
+          "value": 0.125,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "제레:def:12.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "제레:atk:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critDamage",
+          "value": 0.24,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "제레:critDamage:24%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Jade_00",
+      "avatarId": "1314",
+      "displayName": "제이드",
+      "sourceCharacter": "제이드",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1086,
+        "atk": 659,
+        "def": 509,
+        "speed": 103,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "atkRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "제이드:atk:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectRes",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "제이드:effectRes:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•양자",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "제이드:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "MortenaxBlade_00",
+      "avatarId": "1507",
+      "displayName": "천야 • 블레이드",
+      "sourceCharacter": "천야 • 블레이드",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1358,
+        "atk": 543,
+        "def": 485,
+        "speed": 107,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "critRate",
+          "value": 0.12,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "천야 • 블레이드:critRate:12%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "천야 • 블레이드:hp:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화 • 화염",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "천야 • 블레이드:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Qingque_00",
+      "avatarId": "1201",
+      "displayName": "청작",
+      "sourceCharacter": "청작",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1023,
+        "atk": 652,
+        "def": 441,
+        "speed": 98,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "elementDamage",
+          "value": 0.112,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•양자",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "청작:elementDamage:11.2%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "defRatio",
+          "value": 0.125,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "청작:def:12.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "청작:atk:28%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Jiaoqiu_00",
+      "avatarId": "1218",
+      "displayName": "초구",
+      "sourceCharacter": "초구",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1358,
+        "atk": 601,
+        "def": 509,
+        "speed": 98,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "elementDamage",
+          "value": 0.14400000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•화염",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "초구:elementDamage:14.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "speed",
+          "value": 5,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "초구:speed:5",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectHitRate",
+          "value": 0.27999999999999997,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 명중 강화",
+          "label": "효과 명중",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "초구:effectHitRate:28%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Castorice_00",
+      "avatarId": "1407",
+      "displayName": "카스토리스",
+      "sourceCharacter": "카스토리스",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1629,
+        "atk": 523,
+        "def": 485,
+        "speed": 95,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "critRate",
+          "value": 0.187,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "카스토리스:critRate:18.7%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.14400000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•양자",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "카스토리스:elementDamage:14.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critDamage",
+          "value": 0.133,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "카스토리스:critDamage:13.3%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Kafka_00",
+      "avatarId": "1005",
+      "displayName": "카프카",
+      "sourceCharacter": "카프카",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1086,
+        "atk": 679,
+        "def": 485,
+        "speed": 100,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "effectHitRate",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 명중 강화",
+          "label": "효과 명중",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "카프카:effectHitRate:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "카프카:hp:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.27999999999999997,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "카프카:atk:28%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Cerydra_00",
+      "avatarId": "1412",
+      "displayName": "케리드라",
+      "sourceCharacter": "케리드라",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1358,
+        "atk": 620,
+        "def": 485,
+        "speed": 99,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "케리드라:hp:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•바람",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "케리드라:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "케리드라:atk:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Klara_00",
+      "avatarId": "1107",
+      "displayName": "클라라",
+      "sourceCharacter": "클라라",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1319,
+        "atk": 737,
+        "def": 485,
+        "speed": 90,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "클라라:hp:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.27999999999999997,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "클라라:atk:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.14400000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•물리",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "클라라:elementDamage:14.4%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Cyrene_00",
+      "avatarId": "1415",
+      "displayName": "키레네",
+      "sourceCharacter": "키레네",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1397,
+        "atk": 446,
+        "def": 582,
+        "speed": 101,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "critDamage",
+          "value": 0.373,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "키레네:critDamage:37.3%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "speed",
+          "value": 9,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "키레네:speed:9",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "키레네:hp:10%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "TohsakaRin_00",
+      "avatarId": "1508",
+      "displayName": "토오사카 린",
+      "sourceCharacter": "토오사카 린",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "speed": 102,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [],
+      "traceStatus": "missing-hoyowiki-trace-stat-bonuses"
+    },
+    {
+      "characterId": "Topaz_00",
+      "avatarId": "1112",
+      "displayName": "토파즈&복순이",
+      "sourceCharacter": "토파즈&복순이",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1474,
+        "atk": 465,
+        "def": 606,
+        "speed": 100,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "토파즈&복순이:hp:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•불",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "토파즈&복순이:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critRate",
+          "value": 0.12,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "토파즈&복순이:critRate:12%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Tribbie_00",
+      "avatarId": "1403",
+      "displayName": "트리비",
+      "sourceCharacter": "트리비",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1047,
+        "atk": 523,
+        "def": 727,
+        "speed": 96,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "트리비:hp:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critDamage",
+          "value": 0.373,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "트리비:critDamage:37.3%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critRate",
+          "value": 0.12,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "트리비:critRate:12%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Phainon_00",
+      "avatarId": "1408",
+      "displayName": "파이논",
+      "sourceCharacter": "파이논",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1435,
+        "atk": 582,
+        "def": 703,
+        "speed": 94,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "speed",
+          "value": 5,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "파이논:speed:5",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critDamage",
+          "value": 0.373,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "파이논:critDamage:37.3%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critRate",
+          "value": 0.12,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "파이논:critRate:12%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Pela_00",
+      "avatarId": "1106",
+      "displayName": "페라",
+      "sourceCharacter": "페라",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 987,
+        "atk": 546,
+        "def": 463,
+        "speed": 105,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "atkRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "페라:atk:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectHitRate",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 명중 강화",
+          "label": "효과 명중",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "페라:effectHitRate:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•얼음",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "페라:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Hanya_00",
+      "avatarId": "1215",
+      "displayName": "한아",
+      "sourceCharacter": "한아",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 917,
+        "atk": 564,
+        "def": 352,
+        "speed": 110,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "한아:hp:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.30000000000000004,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "한아:atk:30%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "speed",
+          "value": 9,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "한아:speed:9",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Herta_00",
+      "avatarId": "1013",
+      "displayName": "헤르타",
+      "sourceCharacter": "헤르타",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 952,
+        "atk": 582,
+        "def": 396,
+        "speed": 100,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "defRatio",
+          "value": 0.22499999999999998,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "헤르타:def:22.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critRate",
+          "value": 0.067,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "헤르타:critRate:6.7%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•얼음",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "헤르타:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "YaoGuang_00",
+      "avatarId": "1502",
+      "displayName": "효광",
+      "sourceCharacter": "효광",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1242,
+        "atk": 466,
+        "def": 655,
+        "speed": 101,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "critRate",
+          "value": 0.187,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "효광:critRate:18.7%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "speed",
+          "value": 9,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "효광:speed:9",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Hook_00",
+      "avatarId": "1109",
+      "displayName": "후크",
+      "sourceCharacter": "후크",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1340,
+        "atk": 617,
+        "def": 352,
+        "speed": 94,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "critDamage",
+          "value": 0.133,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "후크:critDamage:13.3%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.27999999999999997,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "후크:atk:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "후크:hp:18%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Himeko_00",
+      "avatarId": "1003",
+      "displayName": "히메코",
+      "sourceCharacter": "히메코",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1047,
+        "atk": 756,
+        "def": 436,
+        "speed": 96,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "atkRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "히메코:atk:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectRes",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "히메코:effectRes:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•화염",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "히메코:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "HimekoNova_00",
+      "avatarId": "1510",
+      "displayName": "히메코 • 노바",
+      "sourceCharacter": "히메코 • 노바",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 0,
+        "atk": 0,
+        "def": 0,
+        "speed": 100,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [],
+      "traceStatus": "missing-hoyowiki-trace-stat-bonuses"
+    },
+    {
+      "characterId": "Harscyline_00",
+      "avatarId": "1410",
+      "displayName": "히실렌스",
+      "sourceCharacter": "히실렌스",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1203,
+        "atk": 602,
+        "def": 485,
+        "speed": 102,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "atkRatio",
+          "value": 0.18000000000000002,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "히실렌스:atk:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectHitRate",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 명중 강화",
+          "label": "효과 명중",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "히실렌스:effectHitRate:10%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "speed",
+          "value": 14,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "히실렌스:speed:14",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Hyacine_00",
+      "avatarId": "1409",
+      "displayName": "히아킨",
+      "sourceCharacter": "히아킨",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1086,
+        "atk": 388,
+        "def": 630,
+        "speed": 110,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "speed",
+          "value": 14,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "속도 강화",
+          "label": "속도",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "히아킨:speed:14",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectRes",
+          "value": 0.18,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "히아킨:effectRes:18%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "hpRatio",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "HP 강화",
+          "label": "HP",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "히아킨:hp:10%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Dr_Ratio_00",
+      "avatarId": "1305",
+      "displayName": "Dr. 레이시오",
+      "sourceCharacter": "Dr. 레이시오",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1047,
+        "atk": 776,
+        "def": 460,
+        "speed": 103,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "defRatio",
+          "value": 0.125,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "Dr. 레이시오:def:12.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "Dr. 레이시오:atk:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critRate",
+          "value": 0.12,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 확률 강화",
+          "label": "치명타 확률",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "Dr. 레이시오:critRate:12%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Mar_7th_00",
+      "avatarId": "1001",
+      "displayName": "Mar. 7th",
+      "sourceCharacter": "Mar. 7th",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1058,
+        "atk": 511,
+        "def": 573,
+        "speed": 101,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "elementDamage",
+          "value": 0.224,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "피해 강화•얼음",
+          "label": "속성 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "Mar. 7th:elementDamage:22.4%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "defRatio",
+          "value": 0.22499999999999998,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "Mar. 7th:def:22.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "effectRes",
+          "value": 0.1,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "효과 저항 강화",
+          "label": "효과 저항",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "Mar. 7th:effectRes:10%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    },
+    {
+      "characterId": "Mar_7th_10",
+      "avatarId": "1224",
+      "displayName": "Mar. 7th•수렵",
+      "sourceCharacter": "Mar. 7th•수렵",
+      "sourceStatus": "matched_identity",
+      "baseStats": {
+        "hp": 1058,
+        "atk": 564,
+        "def": 441,
+        "speed": 102,
+        "critRate": 0.05,
+        "critDamage": 0.5
+      },
+      "traceEntries": [
+        {
+          "stat": "defRatio",
+          "value": 0.125,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "방어 강화",
+          "label": "방어력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "Mar. 7th•수렵:def:12.5%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "atkRatio",
+          "value": 0.28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "공격 강화",
+          "label": "공격력",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "Mar. 7th•수렵:atk:28%",
+          "conditionStatus": "always-on"
+        },
+        {
+          "stat": "critDamage",
+          "value": 0.24,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "치명타 피해 강화",
+          "label": "치명타 피해",
+          "sourceOrigin": "hoyowiki-trace-stats",
+          "sourceRecord": "Mar. 7th•수렵:critDamage:24%",
+          "conditionStatus": "always-on"
+        }
+      ],
+      "traceStatus": "complete"
+    }
+  ]
+}

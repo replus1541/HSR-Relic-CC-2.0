@@ -1,7 +1,7 @@
 import fs from "node:fs";
 
 const checks = [
-  { id: "dist-index", path: "dist/index.html", pattern: /<div id="root"><\/div>/ },
+  { id: "dist-index", path: "dist/index.html", pattern: /<div\s+id="root"\s*><\/div>/ },
   { id: "route-home", path: "src/app/route-config.js", pattern: /path: "\/"/ },
   { id: "route-extraction", path: "src/app/route-config.js", pattern: /path: "\/extraction"/ },
   { id: "route-extraction-detail", path: "src/app/route-config.js", pattern: /\/extraction\/:characterId/ },

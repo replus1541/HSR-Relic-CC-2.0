@@ -22,6 +22,8 @@ export function ExtractionOverview() {
           { label: "Blocked rows", value: summary.blockedRows ?? 0 },
           { label: "Effect rows 0", value: summary.effectRowsZero ?? 0 },
           { label: "Dynamic formula", value: summary.dynamicFormulaCharacters ?? 0 },
+          { label: "Reviewed dynamic", value: summary.dynamicFormulaReviewedCharacters ?? 0 },
+          { label: "Unreviewed dynamic", value: summary.dynamicFormulaUnreviewedCharacters ?? 0 },
         ]}
       />
       {rows.length ? (

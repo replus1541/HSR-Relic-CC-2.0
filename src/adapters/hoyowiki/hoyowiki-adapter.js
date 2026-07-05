@@ -2,7 +2,6 @@ import fs from "node:fs";
 import path from "node:path";
 import {
   AttackType,
-  BlockedReason,
   CalculationStatus,
   EffectType,
   ReviewStatus,
@@ -130,6 +129,97 @@ function targetPolicyFromScope(targetScope) {
   return "unknown";
 }
 
+function percentToValue(value) {
+  return Number(value) / 100;
+}
+
+function compactText(value) {
+  return String(value ?? "").replace(/\s+/g, " ").trim();
+}
+
+function isDecimalPoint(text, index) {
+  return /\d/.test(text[index - 1] ?? "") && /\d/.test(text[index + 1] ?? "");
+}
+
+function isSentenceDelimiter(text, index) {
+  const char = text[index];
+  return char === "|" || (char === "." && !isDecimalPoint(text, index));
+}
+
+function sentenceForMatch(text, matchIndex) {
+  const normalized = compactText(text);
+  let start = -1;
+  for (let index = matchIndex - 1; index >= 0; index -= 1) {
+    if (isSentenceDelimiter(normalized, index)) {
+      start = index;
+      break;
+    }
+  }
+  let end = normalized.length;
+  for (let index = matchIndex; index < normalized.length; index += 1) {
+    if (isSentenceDelimiter(normalized, index)) {
+      end = index;
+      break;
+    }
+  }
+  return normalized.slice(start + 1, end).trim();
+}
+
+function scopeForMatchedText(fullText, matchedText) {
+  const scope = inferTargetScope(matchedText);
+  if (scope !== TargetScope.FIELD) return scope;
+  if (/피격된\s*적|받는\s*(?:지속\s*)?(?:격파\s*)?피해|적이|적에게|모든\s*적|단일\s*적/.test(matchedText)) {
+    return /모든\s*적/.test(matchedText) ? TargetScope.ENEMY_ALL : TargetScope.ENEMY_SINGLE;
+  }
+  if (/모든\s*아군/.test(matchedText)) return TargetScope.ALL_ALLIES;
+  if (/자신/.test(matchedText)) return TargetScope.SELF;
+  return inferTargetScope(fullText);
+}
+
+function effectTypeForSupplement({ stat, targetScope, explicitEffectType }) {
+  if (explicitEffectType) return explicitEffectType;
+  if (targetScope === TargetScope.ENEMY_ALL || targetScope === TargetScope.ENEMY_SINGLE) return EffectType.DEBUFF;
+  if (["vulnerability", "dotVulnerability", "breakVulnerability", "defenseDown", "resistancePen"].includes(stat)) {
+    return EffectType.DEBUFF;
+  }
+  return EffectType.BUFF;
+}
+
+const supplementalModifierPatterns = Object.freeze([
+  { stat: "breakEffect", regex: /격파\s*특수효과(?:가|이|를|을)?\s*(\d+(?:\.\d+)?)%\s*증가/g },
+  { stat: "toughnessDamageRatio", regex: /(?:약점\s*)?격파\s*효율(?:가|이|를|을)?\s*(\d+(?:\.\d+)?)%\s*증가/g },
+  { stat: "breakVulnerability", regex: /받는\s*격파\s*피해(?:가|이|를|을)?\s*(\d+(?:\.\d+)?)%\s*증가/g, effectType: EffectType.DEBUFF },
+  { stat: "dotVulnerability", regex: /받는\s*지속\s*피해(?:가|이|를|을)?\s*(\d+(?:\.\d+)?)%\s*증가/g, effectType: EffectType.DEBUFF },
+  { stat: "vulnerability", regex: /받는\s*피해(?:가|이|를|을)?\s*(\d+(?:\.\d+)?)%\s*증가/g, effectType: EffectType.DEBUFF },
+  { stat: "damageReduction", regex: /받는\s*피해(?:가|이|를|을)?\s*(\d+(?:\.\d+)?)%\s*감소/g },
+  { stat: "allDamage", regex: /가하는\s*피해(?:가|이|를|을)?\s*(\d+(?:\.\d+)?)%\s*증가/g },
+  { stat: "atkRatio", regex: /공격력(?:가|이|를|을)?\s*(\d+(?:\.\d+)?)%\s*증가/g },
+  { stat: "atkRatio", regex: /공격력(?:가|이|를|을)?\s*(\d+(?:\.\d+)?)%\s*감소/g, effectType: EffectType.DEBUFF },
+  { stat: "defenseDown", regex: /방어력(?:가|이|를|을)?\s*(\d+(?:\.\d+)?)%\s*감소/g, effectType: EffectType.DEBUFF },
+  { stat: "critRate", regex: /치명타\s*확률(?:가|이|를|을)?\s*(\d+(?:\.\d+)?)%\s*증가/g },
+  { stat: "critDamage", regex: /치명타\s*피해(?:가|이|를|을)?\s*(\d+(?:\.\d+)?)%\s*증가/g },
+  { stat: "hpRatio", regex: /HP\s*최대치(?:가|이|를|을)?\s*(\d+(?:\.\d+)?)%\s*증가/g },
+  { stat: "speed", regex: /속도(?:가|이|를|을)?\s*(\d+(?:\.\d+)?)\s*pt\s*증가/g, valueType: "flat" },
+]);
+
+function extractSupplementalModifiers(sourceText) {
+  const text = compactText(sourceText);
+  const modifiers = [];
+  for (const pattern of supplementalModifierPatterns) {
+    for (const match of text.matchAll(pattern.regex)) {
+      const matchedText = sentenceForMatch(text, match.index ?? 0);
+      modifiers.push({
+        stat: pattern.stat,
+        rawValue: pattern.valueType === "flat" ? Number(match[1]) : percentToValue(match[1]),
+        matchedText,
+        targetScope: scopeForMatchedText(text, matchedText),
+        explicitEffectType: pattern.effectType,
+      });
+    }
+  }
+  return modifiers;
+}
+
 function inferStat(text) {
   if (/방어력\s*감소|방어력/i.test(text)) return "defenseDown";
   if (/받는\s*피해\s*증가|취약/i.test(text)) return "vulnerability";
@@ -145,50 +235,49 @@ function inferStat(text) {
 }
 
 function makeSupplementalEffectRows({ entry, character, skill, skillIndex }) {
-  if (!supplementalEffectEntryPageIds.has(String(character.entryPageId))) return null;
+  if (!supplementalEffectEntryPageIds.has(String(character.entryPageId))) return [];
   const sourceText = skill.description ?? null;
-  if (!sourceText) return null;
-  const sourceRecord = `HoyoWiki:${character.entryPageId}:${skill.pointKey ?? skillIndex}:${skill.title ?? "skill"}:supplemental-effect`;
-  const sourceRow = {
-    id: `source:hoyowiki-effect:${character.entryPageId}:${skill.pointKey ?? skillIndex}`,
-    kind: "source_row",
-    version: 1,
-    createdBy: "hoyowiki-adapter",
-    sourceOrigin: SourceOrigin.RAW_SOURCE,
-    sourceKind: SourceKind.HOYOWIKI,
-    sourcePath: entry.snapshotPath,
-    sourceRecord,
-    characterId: character.entryPageId,
-    sourceText,
-    calculationStatus: CalculationStatus.BLOCKED,
-    blockedReason: BlockedReason.VALUE_MODE_UNKNOWN,
-  };
-  const targetScope = inferTargetScope(sourceText);
-  const targetPolicy = targetPolicyFromScope(targetScope);
-  const effectRow = {
-    id: `effect:hoyowiki-effect:${character.entryPageId}:${skill.pointKey ?? skillIndex}`,
-    sourceId: sourceRow.id,
-    sourceOrigin: sourceRow.sourceOrigin,
-    sourcePath: sourceRow.sourcePath,
-    sourceText,
-    sourceType: sourceRow.sourceKind,
-    effectType: inferEffectType(sourceText, targetScope),
-    stat: inferStat(sourceText),
-    rawValue: null,
-    valueMode: ValueMode.UNKNOWN,
-    dynamicFormulaType: null,
-    effectProviderId: character.entryPageId,
-    characterName: character.nameKo ?? character.name ?? character.entryPageId,
-    minEidolon: null,
-    sourceTrace: sourceRecord,
-    targetScope,
-    effectTargetPolicy: targetPolicy,
-    calculationSubjectPolicy: targetPolicy,
-    reviewStatus: ReviewStatus.SOURCE_CONFIRMED,
-    calculationStatus: CalculationStatus.BLOCKED,
-    blockedReason: BlockedReason.VALUE_MODE_UNKNOWN,
-  };
-  return { sourceRow, effectRow };
+  if (!sourceText) return [];
+  return extractSupplementalModifiers(sourceText).map((modifier, modifierIndex) => {
+    const sourceRecord = `HoyoWiki:${character.entryPageId}:${skill.pointKey ?? skillIndex}:${skill.title ?? "skill"}:supplemental-effect:${modifierIndex}`;
+    const sourceRow = {
+      id: `source:hoyowiki-effect:${character.entryPageId}:${skill.pointKey ?? skillIndex}:${modifierIndex}`,
+      kind: "source_row",
+      version: 1,
+      createdBy: "hoyowiki-adapter",
+      sourceOrigin: SourceOrigin.RAW_SOURCE,
+      sourceKind: SourceKind.HOYOWIKI,
+      sourcePath: entry.snapshotPath,
+      sourceRecord,
+      characterId: character.entryPageId,
+      sourceText: modifier.matchedText,
+      calculationStatus: CalculationStatus.CALCULATION_READY,
+    };
+    const targetPolicy = targetPolicyFromScope(modifier.targetScope);
+    const effectRow = {
+      id: `effect:hoyowiki-effect:${character.entryPageId}:${skill.pointKey ?? skillIndex}:${modifierIndex}`,
+      sourceId: sourceRow.id,
+      sourceOrigin: sourceRow.sourceOrigin,
+      sourcePath: sourceRow.sourcePath,
+      sourceText: sourceRow.sourceText,
+      sourceType: sourceRow.sourceKind,
+      effectType: effectTypeForSupplement({ stat: modifier.stat, targetScope: modifier.targetScope, explicitEffectType: modifier.explicitEffectType }),
+      stat: modifier.stat,
+      rawValue: modifier.rawValue,
+      valueMode: ValueMode.FIXED,
+      dynamicFormulaType: null,
+      effectProviderId: character.entryPageId,
+      characterName: character.nameKo ?? character.name ?? character.entryPageId,
+      minEidolon: null,
+      sourceTrace: sourceRecord,
+      targetScope: modifier.targetScope,
+      effectTargetPolicy: targetPolicy,
+      calculationSubjectPolicy: targetPolicy,
+      reviewStatus: ReviewStatus.SOURCE_CONFIRMED,
+      calculationStatus: CalculationStatus.CALCULATION_READY,
+    };
+    return { sourceRow, effectRow };
+  });
 }
 
 export const hoyowikiAdapter = Object.freeze({
@@ -220,11 +309,9 @@ export const hoyowikiAdapter = Object.freeze({
         }
         sourceRows.push(sourceRow);
         coefficientRows.push(...makeCoefficientRows({ sourceRow, character, skill, skillIndex }));
-        const supplemental = makeSupplementalEffectRows({ entry: loaded.skillEntry, character, skill, skillIndex });
-        if (supplemental) {
+        for (const supplemental of makeSupplementalEffectRows({ entry: loaded.skillEntry, character, skill, skillIndex })) {
           sourceRows.push(supplemental.sourceRow);
           effectRows.push(supplemental.effectRow);
-          blockedRows.push(supplemental.sourceRow, supplemental.effectRow);
         }
       }
     }

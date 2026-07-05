@@ -1,0 +1,2974 @@
+{
+  "app": "hsr-relic-cc-character-state-exception-audit",
+  "version": 1,
+  "generatedAt": "2026-07-05T21:23:48.804Z",
+  "summary": {
+    "hoyowikiCharacters": 92,
+    "releasedCharacters": 87,
+    "unreleasedCharacters": 5,
+    "charactersWithStateControls": 13,
+    "uiInputEffectRows": 14,
+    "alwaysOnReviewedRows": 68,
+    "formulaOverrideCharacters": 4,
+    "reviewRows": 87
+  },
+  "rows": [
+    {
+      "characterId": "hoyowiki:6566",
+      "displayName": "어벤츄린 • 웨이브",
+      "entryPageId": "6566",
+      "released": false,
+      "skillCount": 0,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [],
+        "formulaException": []
+      },
+      "damageFormulaTypes": [],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "hoyowiki:6565",
+      "displayName": "로빈 • 서머레토",
+      "entryPageId": "6565",
+      "released": false,
+      "skillCount": 0,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [],
+        "formulaException": []
+      },
+      "damageFormulaTypes": [],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "TohsakaRin_00",
+      "displayName": "토오사카 린",
+      "entryPageId": "5339",
+      "released": false,
+      "skillCount": 0,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [],
+        "formulaException": []
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Gilgamesh_00",
+      "displayName": "길가메시",
+      "entryPageId": "5338",
+      "released": false,
+      "skillCount": 0,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [],
+        "formulaException": []
+      },
+      "damageFormulaTypes": [],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "HimekoNova_00",
+      "displayName": "히메코 • 노바",
+      "entryPageId": "5335",
+      "released": false,
+      "skillCount": 0,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [],
+        "formulaException": []
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "MortenaxBlade_00",
+      "displayName": "천야 • 블레이드",
+      "entryPageId": "5217",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:MortenaxBlade_00:2",
+          "stat": "critRate",
+          "rawValue": 0.2,
+          "minEidolon": null,
+          "decision": "Always ON when Mortenax Blade is the currently selected calculated character. Assume the field/Endless Rage state is active for max-damage calculation."
+        },
+        {
+          "effectRowId": "effect:MortenaxBlade_00:4",
+          "stat": "allDamage",
+          "rawValue": 0.5,
+          "minEidolon": null,
+          "decision": "Always ON while Mortenax Blade's field is active. Apply the baseline ally damage increase for max-damage calculation; handle the additional 75% branch through effect:MortenaxBlade_00:7 or effect:MortenaxBlade_00:8 based on party composition."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "PlayerBoy_40",
+      "displayName": "개척자 • 환락",
+      "entryPageId": "5006",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "환락피해",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Evanescia_00",
+      "displayName": "에바네시아",
+      "entryPageId": "5005",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Evanescia_00:0",
+          "stat": "critRate",
+          "rawValue": 0.3,
+          "minEidolon": null,
+          "decision": "Always ON for max-damage setup when Evanescia support is present."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "환락피해",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal",
+        "elation"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "SilverWolf999_00",
+      "displayName": "은랑 LV.999",
+      "entryPageId": "4997",
+      "released": true,
+      "skillCount": 4,
+      "controlKeys": [
+        "silverWolf999HiddenScore"
+      ],
+      "uiInputEffectRows": [
+        {
+          "effectRowId": "effect:SilverWolf999_00:0",
+          "stat": "critRate",
+          "rawValue": 0.002,
+          "minEidolon": null,
+          "decision": "UI selectable Hidden Score preset. Provide options 100, 150, 200, 250, and 300, and calculate the critRate/critDamage conversion from the selected score for the current Silver Wolf LV.999 calculation."
+        }
+      ],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "확정피해",
+          "슈퍼격파",
+          "환락피해",
+          "분배/랜덤",
+          "현재 DoT 즉시 피해",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal",
+        "elation"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Ashveil_00",
+      "displayName": "애쉬베일",
+      "entryPageId": "4781",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [
+        "ashveilIndulgenceStacks"
+      ],
+      "uiInputEffectRows": [
+        {
+          "effectRowId": "effect:Ashveil_00:6",
+          "stat": "allDamage",
+          "rawValue": 1.2,
+          "minEidolon": 6,
+          "decision": "UI selectable stack preset when Ashveil is E6 or higher. Do not force maximum only. Provide Indulgence stack options 10, 20, and 30, and calculate this self allDamage buff from the selected stack count for the current Ashveil calculation."
+        }
+      ],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Ashveil_00:6",
+          "stat": "allDamage",
+          "rawValue": 1.2,
+          "minEidolon": 6,
+          "decision": "UI selectable stack preset when Ashveil is E6 or higher. Do not force maximum only. Provide Indulgence stack options 10, 20, and 30, and calculate this self allDamage buff from the selected stack count for the current Ashveil calculation."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Sparxie_00",
+      "displayName": "스파키",
+      "entryPageId": "4737",
+      "released": true,
+      "skillCount": 7,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "환락피해",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal",
+        "elation"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "YaoGuang_00",
+      "displayName": "효광",
+      "entryPageId": "4736",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "환락피해",
+          "분배/랜덤",
+          "현재 DoT 즉시 피해",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal",
+        "elation"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Constance_00",
+      "displayName": "달리아",
+      "entryPageId": "4060",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Constance_00:0",
+          "stat": "defenseDown",
+          "rawValue": 0.08,
+          "minEidolon": null,
+          "decision": "Constance/Dahlia Epiphany defense down. target enemySingle -> enemyAll, dynamic_formula -> fixed, always ON, defenseDown +8%."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "break",
+        "super_break"
+      ],
+      "hasFormulaOverride": true
+    },
+    {
+      "characterId": "Cyrene_00",
+      "displayName": "키레네",
+      "entryPageId": "4003",
+      "released": true,
+      "skillCount": 7,
+      "controlKeys": [
+        "cyreneDemiurgeBuffCount"
+      ],
+      "uiInputEffectRows": [
+        {
+          "effectRowId": "effect:Cyrene_00:18",
+          "stat": "specialFinal",
+          "rawValue": 0.24,
+          "minEidolon": 2,
+          "decision": "UI selectable ally-count preset when Cyrene is E2 or higher. Provide options 2, 3, and 4 different allied characters receiving Demiurge memosprite skill buffs, and calculate this specialFinal bonus from the selected count."
+        }
+      ],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Cyrene_00:0",
+          "stat": "critRate",
+          "rawValue": 0.25,
+          "minEidolon": null,
+          "decision": "Always ON when Cyrene is the currently selected calculated character. Assume the ultimate state is active for Cyrene/Demiurge max-damage calculation."
+        },
+        {
+          "effectRowId": "effect:Cyrene_00:1",
+          "stat": "critRate",
+          "rawValue": 0.08,
+          "minEidolon": null,
+          "decision": "Always ON for the relevant Phainon/Chaoslana calculation when Cyrene's corresponding poem effect is available. Treat the required transformed/enhanced state condition as satisfied for max-damage calculation."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "확정피해",
+          "슈퍼격파",
+          "분배/랜덤",
+          "현재 DoT 즉시 피해",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "DanHengPT_00",
+      "displayName": "단항 • 등황",
+      "entryPageId": "3957",
+      "released": true,
+      "skillCount": 7,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:DanHengPT_00:2",
+          "stat": "atkFlat",
+          "rawValue": 0,
+          "minEidolon": null,
+          "decision": "Dan Heng PT ally target is current calculated DPS. Always ON. Keep dynamic_formula source_stat_ratio: atkFlat = DanHengPT_ATK * 15%, singleAlly."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "현재 DoT 즉시 피해",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Evernight_00",
+      "displayName": "에버나이트",
+      "entryPageId": "3956",
+      "released": true,
+      "skillCount": 8,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Evernight_00:2",
+          "stat": "critRate",
+          "rawValue": 0.35,
+          "minEidolon": null,
+          "decision": "Always ON when Evernight is the currently selected calculated character. Assume the combat skill setup state is maintained."
+        },
+        {
+          "effectRowId": "effect:Evernight_00:3",
+          "stat": "critDamage",
+          "rawValue": 0.15,
+          "minEidolon": null,
+          "decision": "Always ON when Evernight is the currently selected calculated character. Assume the combat skill setup state is maintained."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "현재 DoT 즉시 피해",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Cerydra_00",
+      "displayName": "케리드라",
+      "entryPageId": "3886",
+      "released": true,
+      "skillCount": 7,
+      "controlKeys": [
+        "cerydraNobilityStacks"
+      ],
+      "uiInputEffectRows": [
+        {
+          "effectRowId": "effect:Cerydra_00:10",
+          "stat": "resistancePen",
+          "rawValue": 0.08,
+          "minEidolon": null,
+          "decision": "UI selectable Nobility charge state. Provide options \"below 5 stacks\" and \"6 stacks\". Apply the Nobility resistance penetration effect only when the 6-stack option is selected for the currently selected calculated character."
+        }
+      ],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Cerydra_00:1",
+          "stat": "critRate",
+          "rawValue": 1,
+          "minEidolon": null,
+          "decision": "Always ON when Cerydra is the currently selected calculated character. The source says critRate +100%, so apply the full 100% critRate bonus for Cerydra's own damage calculation."
+        },
+        {
+          "effectRowId": "effect:Cerydra_00:6",
+          "stat": "atkFlat",
+          "rawValue": 0,
+          "minEidolon": null,
+          "decision": "Always ON for the currently selected calculated character when Cerydra support is present and the selected character has Military Merit. For source-stat ATK/critDamage-style support buffs that scale from the provider's own stat, follow the Sparkle-like policy: calculate Cerydra's source ATK from her base stats, relics, and light cone, but ignore ally-provided buffs received by Cerydra."
+        },
+        {
+          "effectRowId": "effect:Cerydra_00:7",
+          "stat": "speed",
+          "rawValue": 20,
+          "minEidolon": null,
+          "decision": "Always ON when Cerydra support is present. Apply the self speed bonus to Cerydra as maintained after combat skill setup."
+        },
+        {
+          "effectRowId": "effect:Cerydra_00:8",
+          "stat": "speed",
+          "rawValue": 20,
+          "minEidolon": null,
+          "decision": "Always ON for the currently selected calculated character when Cerydra support is present and the selected character has Military Merit."
+        },
+        {
+          "effectRowId": "effect:Cerydra_00:9",
+          "stat": "critDamage",
+          "rawValue": 0,
+          "minEidolon": null,
+          "decision": "Dynamic calculation from Cerydra's actual ATK for Cerydra's own damage calculation. Calculate the critDamage bonus from the amount above 2000 ATK, capped at the source maximum."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Harscyline_00",
+      "displayName": "히실렌스",
+      "entryPageId": "3885",
+      "released": true,
+      "skillCount": 7,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "현재 DoT 즉시 피해",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "dot"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Phainon_00",
+      "displayName": "파이논",
+      "entryPageId": "3769",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [
+        "phainonTransformedStacks"
+      ],
+      "uiInputEffectRows": [
+        {
+          "effectRowId": "effect:Phainon_00:1",
+          "stat": "atkRatio",
+          "rawValue": 0.4,
+          "minEidolon": null,
+          "decision": "UI selectable stack preset when Phainon/Chaoslana is the currently selected calculated character. Provide 1-stack and 2-stack options, and calculate this transformed-state ATK buff from the selected stack count."
+        }
+      ],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "확정피해",
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Archer_00",
+      "displayName": "아처",
+      "entryPageId": "3768",
+      "released": true,
+      "skillCount": 7,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Archer_00:0",
+          "stat": "critDamage",
+          "rawValue": 1.2,
+          "minEidolon": null,
+          "decision": "Always ON when Archer is the currently selected calculated character. Assume the Skill Point condition is satisfied for max-damage calculation."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Saber_00",
+      "displayName": "세이버",
+      "entryPageId": "3767",
+      "released": true,
+      "skillCount": 7,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Saber_00:1",
+          "stat": "critDamage",
+          "rawValue": 0.5,
+          "minEidolon": null,
+          "decision": "Always ON when Saber is the currently selected calculated character. This row is the combat-skill-triggered critDamage +50%, duration 2 turns. Keep it separate from the Core Resonance stack row handled by effect:Saber_00:2."
+        },
+        {
+          "effectRowId": "effect:Saber_00:2",
+          "stat": "critDamage",
+          "rawValue": 0.32,
+          "minEidolon": null,
+          "decision": "Always ON at max stack when Saber is the currently selected calculated character. Treat Core Resonance as default 8 stacks for max-damage calculation: critDamage = 4% * 8 = +32%. Keep this row separate from the combat-skill-triggered +50% critDamage row."
+        },
+        {
+          "effectRowId": "effect:Saber_00:3",
+          "stat": "critRate",
+          "rawValue": 0.2,
+          "minEidolon": null,
+          "decision": "Always ON when Saber is the currently selected calculated character. self critRate +20%."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Cipher_00",
+      "displayName": "사이퍼",
+      "entryPageId": "3691",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [
+        "cipherRecordedDamage"
+      ],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Cipher_00:0",
+          "stat": "vulnerability",
+          "rawValue": 0.4,
+          "minEidolon": null,
+          "decision": "Always ON. Change dynamic_formula -> fixed. all enemies vulnerability +40% while Cipher is on field; targetScope should be allEnemies, not enemySingle. Apply enhanced-state branch policy if applicable."
+        },
+        {
+          "effectRowId": "effect:Cipher_00:1",
+          "stat": "critDamage",
+          "rawValue": 1,
+          "minEidolon": null,
+          "decision": "Always ON for Cipher talent follow-up damage only. Change dynamic_formula -> fixed. self critDamage +100%; do not apply to Cipher direct basic/skill/ultimate damage. Apply enhanced-state branch policy if applicable."
+        },
+        {
+          "effectRowId": "effect:Cipher_00:3",
+          "stat": "atkRatio",
+          "rawValue": 0.3,
+          "minEidolon": null,
+          "decision": "Always ON for max-damage setup. Assume Cipher combat skill was used before damage. Change dynamic_formula -> fixed. self atkRatio +30%, duration 2 turns. Combat skill hit/debuff coverage is selected target plus adjacent targets, max 3 enemies affected. Ignore enemy damage-down portion for outgoing damage calculation."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "확정피해",
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Hyacine_00",
+      "displayName": "히아킨",
+      "entryPageId": "3688",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Anaxa_00",
+      "displayName": "아낙사",
+      "entryPageId": "3561",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Anaxa_00:4",
+          "stat": "atkRatio",
+          "rawValue": 0.6,
+          "minEidolon": 4,
+          "decision": "Always calculate at maximum stacks when Anaxa is E4 or higher. Treat the E4 ATK buff as maintained at 2 stacks for the currently selected Anaxa damage calculation."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "현재 DoT 즉시 피해",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Castorice_00",
+      "displayName": "카스토리스",
+      "entryPageId": "3560",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Castorice_00:0",
+          "stat": "resistancePen",
+          "rawValue": 0.1,
+          "minEidolon": null,
+          "decision": "Always ON when Castorice is the currently selected calculated character or Castorice support field is present. Treat the Netherworld field resistance reduction as active for all enemies during max-damage calculation."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "현재 DoT 즉시 피해",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Mydeimos_00",
+      "displayName": "마이데이",
+      "entryPageId": "3324",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Tribbie_00",
+      "displayName": "트리비",
+      "entryPageId": "3322",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Tribbie_00:0",
+          "stat": "followDamage",
+          "rawValue": 2.16,
+          "minEidolon": null,
+          "decision": "Always ON at maximum stacks when Tribbie is the currently selected calculated character. Assume the talent follow-up setup is maintained at 3 stacks for max-damage calculation."
+        },
+        {
+          "effectRowId": "effect:Tribbie_00:1",
+          "stat": "allDamage",
+          "rawValue": 2.16,
+          "minEidolon": null,
+          "decision": "Always ON at maximum stacks when Tribbie is the currently selected calculated character. This source text is \"damage dealt increase\", so treat this row as applying to all Tribbie damage, not only follow-up damage."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "확정피해",
+          "슈퍼격파",
+          "현재 DoT 즉시 피해",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "PlayerBoy_20",
+      "displayName": "개척자 • 기억",
+      "entryPageId": "3287",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "확정피해",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Aglaea_00",
+      "displayName": "아글라이아",
+      "entryPageId": "3286",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "TheHerta_00",
+      "displayName": "더 헤르타",
+      "entryPageId": "3285",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:TheHerta_00:0",
+          "stat": "atkRatio",
+          "rawValue": 0.8,
+          "minEidolon": null,
+          "decision": "The Herta ultimate ATK buff always ON. Use existing Lv10 curated value 80%, dynamic_formula -> skill_level_scaled or fixed_level10, self."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Fugue_00",
+      "displayName": "망귀인",
+      "entryPageId": "3151",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Fugue_00:0",
+          "stat": "defenseDown",
+          "rawValue": 0.08,
+          "minEidolon": null,
+          "decision": "Fugue defense down always ON, fixed 8%, but target scope depends on current DPS attack coverage: single/blast/bounce/aoe affected enemies."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "break",
+        "super_break"
+      ],
+      "hasFormulaOverride": true
+    },
+    {
+      "characterId": "Sunday_10",
+      "displayName": "선데이",
+      "entryPageId": "3150",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Sunday_10:2",
+          "stat": "critRate",
+          "rawValue": 0.1,
+          "minEidolon": null,
+          "decision": "Always ON for the currently selected calculated character. This calculator resolves effects from the selected character's damage calculation context, so Sunday's combat skill target is the current selected DPS / singleAlly, not Sunday self. Duration 3 turns. Assume Sunday combat skill was used on the calculated damage dealer."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Rappa_00",
+      "displayName": "라파",
+      "entryPageId": "3057",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "super_break",
+        "break"
+      ],
+      "hasFormulaOverride": true
+    },
+    {
+      "characterId": "Moze_00",
+      "displayName": "맥택",
+      "entryPageId": "2949",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Moze_00:0",
+          "stat": "followDamage",
+          "rawValue": 0.25,
+          "minEidolon": null,
+          "decision": "Moze self-only follow-up handling: user confirmed always ON for self. Treat as always applied for Moze; split metadata ultimate-counts-as-follow-up if needed."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Lingsha_00",
+      "displayName": "영사",
+      "entryPageId": "2948",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "break"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Feixiao_00",
+      "displayName": "비소",
+      "entryPageId": "2947",
+      "released": true,
+      "skillCount": 7,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Feixiao_00:0",
+          "stat": "allDamage",
+          "rawValue": 0.3,
+          "minEidolon": null,
+          "decision": "Always ON for max-damage setup. Assume Feixiao starts after technique-triggered follow-up has already occurred. Change dynamic_formula -> fixed. self allDamage +30%, duration 2 turns. Apply enhanced-state branch policy if a pre-enhanced/enhanced branch exists."
+        },
+        {
+          "effectRowId": "effect:Feixiao_00:1",
+          "stat": "atkRatio",
+          "rawValue": 0.48,
+          "minEidolon": null,
+          "decision": "Always ON for max-damage setup. Assume Feixiao combat skill was used before damage. Change dynamic_formula -> fixed. self atkRatio +48%, duration 3 turns. Apply enhanced-state branch policy if applicable."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "현재 DoT 즉시 피해",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Mar_7th_10",
+      "displayName": "Mar. 7th•수렵",
+      "entryPageId": "2657",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Jiaoqiu_00",
+      "displayName": "초구",
+      "entryPageId": "2643",
+      "released": true,
+      "skillCount": 4,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Jiaoqiu_00:2",
+          "stat": "vulnerability",
+          "rawValue": 0.4,
+          "minEidolon": null,
+          "decision": "Always ON at maximum stacks when Jiaoqiu support is present. Use 5 Ashen Roast stacks normally, and use 9 stacks when Jiaoqiu is E6."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Yunli_00",
+      "displayName": "운리",
+      "entryPageId": "2642",
+      "released": true,
+      "skillCount": 4,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "PlayerBoy_30",
+      "displayName": "개척자 • 화합",
+      "entryPageId": "2511",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "break"
+      ],
+      "hasFormulaOverride": true
+    },
+    {
+      "characterId": "Jade_00",
+      "displayName": "제이드",
+      "entryPageId": "2495",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [
+        {
+          "effectRowId": "effect:Jade_00:1",
+          "stat": "atkRatio",
+          "rawValue": 0.005,
+          "minEidolon": null,
+          "decision": "Always calculate at maximum Pawned Asset stacks when Jade is the currently selected calculated character. Do not expose a stack preset for this row unless later review needs non-max scenarios."
+        }
+      ],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Jade_00:1",
+          "stat": "atkRatio",
+          "rawValue": 0.005,
+          "minEidolon": null,
+          "decision": "Always calculate at maximum Pawned Asset stacks when Jade is the currently selected calculated character. Do not expose a stack preset for this row unless later review needs non-max scenarios."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Sam_00",
+      "displayName": "반디",
+      "entryPageId": "2494",
+      "released": true,
+      "skillCount": 4,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "break"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Boothill_00",
+      "displayName": "부트힐",
+      "entryPageId": "2367",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "현재 DoT 즉시 피해",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "break"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Robin_00",
+      "displayName": "로빈",
+      "entryPageId": "2366",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Robin_00:2",
+          "stat": "atkFlat",
+          "rawValue": 0,
+          "minEidolon": null,
+          "decision": "Robin ultimate ATK buff always ON if Robin in party. source_stat_ratio_plus_flat: Robin_finalCombatATK * 15.2% + 50. Include other ally AoE ATK buffs on Robin, with recursion guard."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Gallagher_00",
+      "displayName": "갤러거",
+      "entryPageId": "1924",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "break"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Aventurine_00",
+      "displayName": "어벤츄린",
+      "entryPageId": "1920",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Acheron_00",
+      "displayName": "아케론",
+      "entryPageId": "1919",
+      "released": true,
+      "skillCount": 7,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Acheron_00:0",
+          "stat": "resistancePen",
+          "rawValue": 0.1,
+          "minEidolon": null,
+          "decision": "Always ON for Acheron ultimate damage calculation when the effect is a debuff applied during the ultimate. Treat the ultimate's all-type resistance reduction as active for affected enemies during the ultimate."
+        },
+        {
+          "effectRowId": "effect:Acheron_00:1",
+          "stat": "allDamage",
+          "rawValue": 0.9,
+          "minEidolon": null,
+          "decision": "Always ON at maximum stacks when Acheron is the currently selected calculated character. Assume Acheron has hit an enemy with Slashed Dream/Azsaka setup and maintain 3 stacks for max-damage calculation."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "현재 DoT 즉시 피해",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Misha_00",
+      "displayName": "미샤",
+      "entryPageId": "1808",
+      "released": true,
+      "skillCount": 7,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Sparkle_00",
+      "displayName": "스파클",
+      "entryPageId": "1807",
+      "released": true,
+      "skillCount": 7,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Sparkle_00:0",
+          "stat": "vulnerability",
+          "rawValue": 0.12,
+          "minEidolon": null,
+          "decision": "Always ON for max-damage setup when Sparkle AS support is present. Treat the Talent vulnerability as maintained at its maximum 3 stacks for the currently selected character's damage calculation. Keep the current enemySingle target policy unless later source review proves the AS debuff is enemy-wide."
+        },
+        {
+          "effectRowId": "effect:Sparkle_00:1",
+          "stat": "vulnerability",
+          "rawValue": 0.18,
+          "minEidolon": null,
+          "decision": "Always ON for max-damage setup when Sparkle AS support is present. Treat the Ultimate enhancement to Sparkle Talent vulnerability as maintained for the currently selected character's damage calculation. Keep paired with effect:Sparkle_00:0."
+        },
+        {
+          "effectRowId": "effect:Sparkle_00:5",
+          "stat": "defenseDown",
+          "rawValue": 0.3,
+          "minEidolon": 2,
+          "decision": "Always ON when Sparkle is E2 or higher and Sparkle AS support is present. Apply this as the E2 extension of Sparkle Talent's maintained maximum-stack effect for the currently selected character's damage calculation."
+        },
+        {
+          "effectRowId": "effect:Sparkle_00:6",
+          "stat": "critDamage",
+          "rawValue": 0,
+          "minEidolon": 6,
+          "decision": "Always ON when Sparkle is E6 or higher and Sparkle AS support is present. Treat the critDamage share as available to the currently selected calculated character through maintained Sparkle skill/ultimate setup."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "BlackSwan_00",
+      "displayName": "블랙 스완",
+      "entryPageId": "1806",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [
+        "blackSwanArcanaStacks"
+      ],
+      "uiInputEffectRows": [
+        {
+          "effectRowId": "effect:BlackSwan_00:1",
+          "stat": "defenseIgnore",
+          "rawValue": 0.2,
+          "minEidolon": null,
+          "decision": "Always ON for Arcana DoT. Change dynamic_formula -> fixed. defenseIgnore +20%; calculator assumes selected Arcana stack preset is always at least 7 stacks. Applies only to Black Swan Arcana DoT damage, not direct skill/ultimate hit damage."
+        }
+      ],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:BlackSwan_00:1",
+          "stat": "defenseIgnore",
+          "rawValue": 0.2,
+          "minEidolon": null,
+          "decision": "Always ON for Arcana DoT. Change dynamic_formula -> fixed. defenseIgnore +20%; calculator assumes selected Arcana stack preset is always at least 7 stacks. Applies only to Black Swan Arcana DoT damage, not direct skill/ultimate hit damage."
+        },
+        {
+          "effectRowId": "effect:BlackSwan_00:2",
+          "stat": "defenseDown",
+          "rawValue": 0.14800000000000002,
+          "minEidolon": null,
+          "decision": "Always ON. Assume Black Swan combat skill was used before damage setup. Change dynamic_formula -> fixed. defenseDown +14.8%; applies to selected target plus adjacent targets, max 3 enemies affected."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "dot"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Xueyi_00",
+      "displayName": "설의",
+      "entryPageId": "1640",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "break"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Dr_Ratio_00",
+      "displayName": "Dr. 레이시오",
+      "entryPageId": "1639",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [
+        "drRatioDeductionStacks"
+      ],
+      "uiInputEffectRows": [
+        {
+          "effectRowId": "effect:Dr_Ratio_00:0",
+          "stat": "critRate",
+          "rawValue": 0,
+          "minEidolon": null,
+          "decision": "UI selectable Deduction stack preset. Provide 3, 6, and 10 stack options; only allow the 10-stack option when Dr. Ratio is E2 or higher."
+        },
+        {
+          "effectRowId": "effect:Dr_Ratio_00:1",
+          "stat": "critDamage",
+          "rawValue": 0,
+          "minEidolon": null,
+          "decision": "UI selectable Deduction stack preset. Provide 3, 6, and 10 stack options; only allow the 10-stack option when Dr. Ratio is E2 or higher. Use the same selected stack count as effect:Dr_Ratio_00:0."
+        }
+      ],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Dr_Ratio_00:4",
+          "stat": "effectResDown",
+          "rawValue": 0.1,
+          "minEidolon": null,
+          "decision": "Always ON. Treat Dr. Ratio's Deduction effectResDown debuff as active on the target enemy for max-damage calculation."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "RuanMei_00",
+      "displayName": "완•매",
+      "entryPageId": "1638",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:RuanMei_00:2",
+          "stat": "toughnessDamageRatio",
+          "rawValue": 0.5,
+          "minEidolon": null,
+          "decision": "Always ON for max-damage setup when Ruan Mei support is present. Treat Overtone as maintained for the currently selected calculated character."
+        },
+        {
+          "effectRowId": "effect:RuanMei_00:3",
+          "stat": "allDamage",
+          "rawValue": 0.36,
+          "minEidolon": null,
+          "decision": "Dynamic calculation from Ruan Mei's actual in-combat Break Effect. Do not force maximum. This calculator uses real relic setup plus ally-wide buffs, so calculate the bonus from Ruan Mei's final combat breakEffect over 120%, capped at the source maximum."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "break"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Hanya_00",
+      "displayName": "한아",
+      "entryPageId": "1537",
+      "released": true,
+      "skillCount": 8,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Hanya_00:0",
+          "stat": "atkRatio",
+          "rawValue": 0.36,
+          "minEidolon": null,
+          "decision": "Always ON for the currently selected calculated character when Hanya support is present. Assume Hanya ultimate is applied to the selected damage dealer."
+        },
+        {
+          "effectRowId": "effect:Hanya_00:2",
+          "stat": "atkRatio",
+          "rawValue": 0.1,
+          "minEidolon": null,
+          "decision": "Always ON for the currently selected calculated character when Hanya support is present. Assume the Burden Skill Point recovery trigger condition is satisfied for the selected damage dealer."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Argenti_00",
+      "displayName": "아젠티",
+      "entryPageId": "1535",
+      "released": true,
+      "skillCount": 4,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Argenti_00:0",
+          "stat": "critRate",
+          "rawValue": 0.1,
+          "minEidolon": null,
+          "decision": "Always ON when Argenti is the currently selected calculated character. Treat Apotheosis as maintained at maximum 10 stacks for max-damage calculation."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Huohuo_00",
+      "displayName": "곽향",
+      "entryPageId": "1533",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Guinaifen_00",
+      "displayName": "계네빈",
+      "entryPageId": "1392",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "현재 DoT 즉시 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "dot"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Topaz_00",
+      "displayName": "토파즈&복순이",
+      "entryPageId": "1389",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Jingliu_00",
+      "displayName": "경류",
+      "entryPageId": "1387",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Jingliu_00:0",
+          "stat": "critRate",
+          "rawValue": 0.4,
+          "minEidolon": null,
+          "decision": "Jingliu calculated in Spectral Transmigration state. target allAllies -> self, dynamic_formula -> fixed, always ON, critRate +40%."
+        },
+        {
+          "effectRowId": "effect:Jingliu_00:1",
+          "stat": "allDamage",
+          "rawValue": 0.2,
+          "minEidolon": null,
+          "decision": "Jingliu ultimate damage bonus. stat allDamage -> ultimateDamage, dynamic_formula -> fixed, always ON, +20%."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Lynx_00",
+      "displayName": "링스",
+      "entryPageId": "1228",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "DanHengIL_00",
+      "displayName": "단항•음월",
+      "entryPageId": "1226",
+      "released": true,
+      "skillCount": 4,
+      "controlKeys": [
+        "danHengIlPrideStacks"
+      ],
+      "uiInputEffectRows": [
+        {
+          "effectRowId": "effect:DanHengIL_00:0",
+          "stat": "allDamage",
+          "rawValue": 0.05,
+          "minEidolon": null,
+          "decision": "Dan Heng IL Pride stacks via UI preset 0/3/6, default 6. allDamage = 5% * stackCount."
+        }
+      ],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "FuXuan_00",
+      "displayName": "부현",
+      "entryPageId": "804",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:FuXuan_00:0",
+          "stat": "critRate",
+          "rawValue": 0.06,
+          "minEidolon": null,
+          "decision": "Always ON. Change dynamic_formula -> fixed. allAllies critRate +6%; calculator assumes Matrix of Prescience/Foreknowledge is maintained when Fu Xuan is in the party."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Luka_00",
+      "displayName": "루카",
+      "entryPageId": "801",
+      "released": true,
+      "skillCount": 7,
+      "controlKeys": [
+        "lukaFightingWillStacks"
+      ],
+      "uiInputEffectRows": [
+        {
+          "effectRowId": "effect:Luka_00:1",
+          "stat": "atkRatio",
+          "rawValue": 0.2,
+          "minEidolon": 4,
+          "decision": "Luka Fighting Will stacks via UI preset 0/2/4, default 4. atkRatio = 5% * stackCount."
+        }
+      ],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "현재 DoT 즉시 피해",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "dot"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Kafka_00",
+      "displayName": "카프카",
+      "entryPageId": "791",
+      "released": true,
+      "skillCount": 7,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "현재 DoT 즉시 피해",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "dot"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Ren_00",
+      "displayName": "블레이드",
+      "entryPageId": "789",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Ren_00:1",
+          "stat": "allDamage",
+          "rawValue": 0.12,
+          "minEidolon": null,
+          "decision": "Always ON, same policy as Jingliu Spectral Transmigration. Assume Blade is in Hellscape from combat skill before damage setup. Change dynamic_formula -> fixed. self allDamage +12%; enhanced basic attack state is active."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Yukong_00",
+      "displayName": "어공",
+      "entryPageId": "712",
+      "released": true,
+      "skillCount": 4,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Yukong_00:1",
+          "stat": "atkRatio",
+          "rawValue": 0.4,
+          "minEidolon": null,
+          "decision": "Always ON for max-damage setup when Yukong support is present. Treat Roaring Bowstrings as maintained for the currently selected calculated character."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Luocha_00",
+      "displayName": "나찰",
+      "entryPageId": "711",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Silwolf_00",
+      "displayName": "은랑",
+      "entryPageId": "710",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Silwolf_00:2",
+          "stat": "resistancePen",
+          "rawValue": 0.2,
+          "minEidolon": null,
+          "decision": "Always ON for max-damage setup when Silver Wolf support is present. Assume Silver Wolf has implanted the currently selected damage dealer's relevant weakness on the target enemy."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Bailu_00",
+      "displayName": "백로",
+      "entryPageId": "29",
+      "released": true,
+      "skillCount": 4,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Yanqing_00",
+      "displayName": "연경",
+      "entryPageId": "28",
+      "released": true,
+      "skillCount": 4,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Yanqing_00:0",
+          "stat": "critRate",
+          "rawValue": 0.6,
+          "minEidolon": null,
+          "decision": "Always ON when Yanqing is the currently selected calculated character. Assume the ultimate buff is active for max-damage calculation."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Sushang_00",
+      "displayName": "소상",
+      "entryPageId": "27",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Sushang_00:0",
+          "stat": "atkRatio",
+          "rawValue": 0.18,
+          "minEidolon": null,
+          "decision": "Always ON when Sushang is the currently selected calculated character. Assume Sushang has used ultimate before the damage setup. Apply self atkRatio +18%, duration 2 turns, and keep the Sword Stance extra trigger handling as separate attack metadata."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "현재 DoT 즉시 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "break"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "JingYuan_00",
+      "displayName": "경원",
+      "entryPageId": "26",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:JingYuan_00:0",
+          "stat": "critRate",
+          "rawValue": 0.1,
+          "minEidolon": null,
+          "decision": "Jing Yuan critRate after skill is always ON. dynamic_formula -> fixed, self, critRate +10%."
+        },
+        {
+          "effectRowId": "effect:JingYuan_00:2",
+          "stat": "vulnerability",
+          "rawValue": 0.36,
+          "minEidolon": 6,
+          "decision": "Jing Yuan E6 vulnerability stack. Use max 3 stacks by default. vulnerability = 12% * 3 = 36%, enemySingle."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Tingyun_00",
+      "displayName": "정운",
+      "entryPageId": "25",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Tingyun_00:0",
+          "stat": "allDamage",
+          "rawValue": 0.2,
+          "minEidolon": null,
+          "decision": "Always ON for the currently selected calculated character when Tingyun support is present. Assume Tingyun ultimate is applied to the selected damage dealer."
+        },
+        {
+          "effectRowId": "effect:Tingyun_00:2",
+          "stat": "atkFlat",
+          "rawValue": 0,
+          "minEidolon": null,
+          "decision": "Always ON for the currently selected calculated character when Tingyun support is present. Because Benediction is capped by a percentage of Tingyun's own ATK, calculate the cap from Tingyun's actual final in-combat ATK after relic stats and ally-wide buffs, then apply the target ATK increase within that cap."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Qingque_00",
+      "displayName": "청작",
+      "entryPageId": "24",
+      "released": true,
+      "skillCount": 7,
+      "controlKeys": [
+        "qingqueSkillStacks"
+      ],
+      "uiInputEffectRows": [
+        {
+          "effectRowId": "effect:Qingque_00:1",
+          "stat": "allDamage",
+          "rawValue": 0.14,
+          "minEidolon": null,
+          "decision": "UI selectable combat-skill stack preset. Provide Qingque combat skill stack options 3, 5, and 7, and calculate this self damage buff from the selected stack count for the current Qingque calculation."
+        }
+      ],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Qingque_00:0",
+          "stat": "atkRatio",
+          "rawValue": 0.36,
+          "minEidolon": null,
+          "decision": "Always ON when Qingque is the currently selected calculated character. Assume the Hidden Hand state is active for max-damage calculation."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "PlayerBoy_10",
+      "displayName": "개척자 • 보존",
+      "entryPageId": "23",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Hook_00",
+      "displayName": "후크",
+      "entryPageId": "22",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Sampo_00",
+      "displayName": "삼포",
+      "entryPageId": "21",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤",
+          "현재 DoT 즉시 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "dot"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Klara_00",
+      "displayName": "클라라",
+      "entryPageId": "20",
+      "released": true,
+      "skillCount": 4,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Pela_00",
+      "displayName": "페라",
+      "entryPageId": "19",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Natasha_00",
+      "displayName": "나타샤",
+      "entryPageId": "18",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Gepard_00",
+      "displayName": "게파드",
+      "entryPageId": "17",
+      "released": true,
+      "skillCount": 4,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Serval_00",
+      "displayName": "서벌",
+      "entryPageId": "16",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파"
+        ]
+      },
+      "damageFormulaTypes": [
+        "dot"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Seele_00",
+      "displayName": "제레",
+      "entryPageId": "15",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Seele_00:0",
+          "stat": "allDamage",
+          "rawValue": 0.4,
+          "minEidolon": null,
+          "decision": "UI toggle. Do not force always ON. Let the user choose whether Seele is calculating damage in the post-kill Resurgence amplified state."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "확정피해",
+          "슈퍼격파"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Bronya_00",
+      "displayName": "브로냐",
+      "entryPageId": "14",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Bronya_00:0",
+          "stat": "atkRatio",
+          "rawValue": 0.33,
+          "minEidolon": null,
+          "decision": "Always ON for the currently selected calculated character when Bronya support is present. Assume Bronya ultimate is active for max-damage calculation."
+        },
+        {
+          "effectRowId": "effect:Bronya_00:1",
+          "stat": "allDamage",
+          "rawValue": 0.33,
+          "minEidolon": null,
+          "decision": "Always ON for the currently selected calculated character when Bronya support is present. Treat the selected damage dealer as Bronya's combat skill target for max-damage calculation."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Herta_00",
+      "displayName": "헤르타",
+      "entryPageId": "13",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:Herta_00:2",
+          "stat": "critRate",
+          "rawValue": 0.15,
+          "minEidolon": 2,
+          "decision": "Always ON at maximum stacks when Herta is E2 or higher. Treat the talent-triggered critRate buff as maintained at 5 stacks for max-damage calculation."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Asta_00",
+      "displayName": "아스타",
+      "entryPageId": "12",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [
+        "astaChargeStacks"
+      ],
+      "uiInputEffectRows": [
+        {
+          "effectRowId": "effect:Asta_00:0",
+          "stat": "atkRatio",
+          "rawValue": 0.25,
+          "minEidolon": null,
+          "decision": "UI selectable stack preset. Do not force always max. Provide Asta charge stack options 3 and 5, and calculate the allAllies ATK buff from the selected stack count for the current calculation."
+        }
+      ],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Arlan_00",
+      "displayName": "아를란",
+      "entryPageId": "11",
+      "released": true,
+      "skillCount": 4,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Welt_00",
+      "displayName": "웰트",
+      "entryPageId": "10",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "분배/랜덤"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Himeko_00",
+      "displayName": "히메코",
+      "entryPageId": "9",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적",
+          "소환/기억정령"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "현재 DoT 즉시 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "DanHeng_00",
+      "displayName": "단항",
+      "entryPageId": "8",
+      "released": true,
+      "skillCount": 5,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:DanHeng_00:0",
+          "stat": "allDamage",
+          "rawValue": 0.4,
+          "minEidolon": null,
+          "decision": "Dan Heng slow-condition basic attack bonus always ON because he can apply slow himself. stat allDamage -> basicDamage, dynamic_formula -> fixed, +40%."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "Mar_7th_00",
+      "displayName": "Mar. 7th",
+      "entryPageId": "7",
+      "released": true,
+      "skillCount": 7,
+      "controlKeys": [],
+      "uiInputEffectRows": [],
+      "alwaysOnEffectRows": [],
+      "textSignals": {
+        "state": [
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파",
+          "실드/치유 기반 피해"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    },
+    {
+      "characterId": "PlayerBoy_00",
+      "displayName": "개척자 • 파멸",
+      "entryPageId": "6",
+      "released": true,
+      "skillCount": 6,
+      "controlKeys": [
+        "trailblazerDestructionBreakStacks"
+      ],
+      "uiInputEffectRows": [
+        {
+          "effectRowId": "effect:PlayerBoy_00:0",
+          "stat": "atkRatio",
+          "rawValue": 0.2,
+          "minEidolon": null,
+          "decision": "UI input stackCount 0-2. stack_count, atkRatio = 10% * stackCount. No implicit ready without stack input."
+        }
+      ],
+      "alwaysOnEffectRows": [
+        {
+          "effectRowId": "effect:PlayerBoy_00:1",
+          "stat": "allDamage",
+          "rawValue": 0.25,
+          "minEidolon": null,
+          "decision": "Always ON. Change dynamic_formula -> fixed. allDamage +25%. Applies to combat skill / specific ultimate damage condition metadata."
+        }
+      ],
+      "textSignals": {
+        "state": [
+          "스택",
+          "강화상태",
+          "기록/누적"
+        ],
+        "formulaException": [
+          "슈퍼격파"
+        ]
+      },
+      "damageFormulaTypes": [
+        "normal"
+      ],
+      "hasFormulaOverride": false
+    }
+  ]
+}

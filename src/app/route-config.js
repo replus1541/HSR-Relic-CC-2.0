@@ -2,12 +2,20 @@ import { ExtractionRoute } from "./routes/ExtractionRoute.jsx";
 import { HomeRoute } from "./routes/HomeRoute.jsx";
 import { LedgerRoute } from "./routes/LedgerRoute.jsx";
 import { LegacyDiffRoute } from "./routes/LegacyDiffRoute.jsx";
+import { CalculatorRoute } from "./routes/CalculatorRoute.jsx";
 import { ExtractionDetail } from "../extraction/ExtractionDetail.jsx";
 
 export const routes = [
   {
     path: "/",
-    label: "홈",
+    label: "계산기",
+    title: "HSR Relic CC",
+    component: CalculatorRoute,
+    chrome: "calculator",
+  },
+  {
+    path: "/dashboard",
+    label: "Dashboard",
     title: "v2 작업 대시보드",
     component: HomeRoute,
   },

@@ -1,0 +1,35 @@
+{
+  "app": "hsr-relic-cc-skill-damage-formula-overrides",
+  "version": 1,
+  "updatedAt": "2026-07-06",
+  "policy": {
+    "defaultRule": "Use source skill text first. Do not classify ordinary follow-up attackers as Elation DMG unless the row text explicitly says 환락 피해 or Elation DMG.",
+    "manualRules": "Rules below are reserved for cases where source text is ambiguous or row-level formula differs from the character build template."
+  },
+  "rules": [
+    {
+      "characterId": "PlayerBoy_30",
+      "damageFormulaType": "super_break",
+      "matchText": "슈퍼 격파",
+      "reason": "화합 개척자는 스킬 설명의 슈퍼 격파 전환 row만 super_break로 취급한다."
+    },
+    {
+      "characterId": "Fugue_00",
+      "damageFormulaType": "super_break",
+      "matchText": "슈퍼 격파",
+      "reason": "망귀인은 아군 공격 강인성 감소 수치 기반 슈퍼 격파 전환 row만 super_break로 취급한다."
+    },
+    {
+      "characterId": "Constance_00",
+      "damageFormulaType": "super_break",
+      "matchText": "슈퍼 격파",
+      "reason": "달리아는 춤 파트너/결계의 슈퍼 격파 전환 row만 super_break로 취급한다."
+    },
+    {
+      "characterId": "Rappa_00",
+      "damageFormulaType": "super_break",
+      "matchText": "슈퍼 격파",
+      "reason": "라파는 강화 일반 공격 중 강인성 감소 수치 전환 row만 super_break로 취급한다."
+    }
+  ]
+}

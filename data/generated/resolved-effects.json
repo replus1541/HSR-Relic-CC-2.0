@@ -9,8 +9,28 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "파트너! 함께!",
+        "coefficientLabel": "치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "미래의 영창자"
+          },
+          {
+            "minEidolon": 3,
+            "levelBonus": 1,
+            "levelCap": 10,
+            "sourceTitle": "미래의 영창자"
+          }
+        ],
+        "effectiveLevel": 7,
+        "tableIndex": 6
       },
       "dedupeKey": "pending_dedupe:PlayerBoy_20:source:PlayerBoy_20:0:critDamage:buff:all_allies",
       "calculationStatus": "calculation_ready",
@@ -51,12 +71,16 @@
       "stat": "atkRatio",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:PlayerBoy_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 1,
+        "reviewDecision": "UI input stackCount 0-2. stack_count, atkRatio = 10% * stackCount. No implicit ready without stack input.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:PlayerBoy_00:0",
+        "resolution": "ui_context_required"
       },
       "dedupeKey": "pending_dedupe:PlayerBoy_00:source:PlayerBoy_00:0:atkRatio:buff:self",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:PlayerBoy_00:1",
@@ -65,12 +89,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:PlayerBoy_00:1"
+        "source": "user_review_decision",
+        "reviewIndex": 2,
+        "reviewDecision": "Always ON. Change dynamic_formula -> fixed. allDamage +25%. Applies to combat skill / specific ultimate damage condition metadata.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:PlayerBoy_00:1",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:PlayerBoy_00:source:PlayerBoy_00:1:allDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.25
     },
     {
       "id": "resolved:effect:PlayerBoy_00:2",
@@ -92,13 +120,27 @@
       "sourceId": "source:PlayerBoy_40:0",
       "stat": "critDamage",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:PlayerBoy_40:0"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "마음껏 날아, 개척이 함께할 테니!",
+        "coefficientLabel": "아군의 치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "사랑과 용기는 결코 유행을 타지 않아"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:PlayerBoy_40:source:PlayerBoy_40:0:critDamage:buff:single_ally",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.54
     },
     {
       "id": "resolved:effect:PlayerBoy_40:1",
@@ -147,13 +189,27 @@
       "sourceId": "source:Jingliu_00:0",
       "stat": "critRate",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Jingliu_00:0"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "담월전백",
+        "coefficientLabel": "치명타 확률",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "차오르는 달"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Jingliu_00:source:Jingliu_00:0:critRate:buff:all_allies",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.52
     },
     {
       "id": "resolved:effect:Jingliu_00:1",
@@ -162,12 +218,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Jingliu_00:1"
+        "source": "user_review_decision",
+        "reviewIndex": 5,
+        "reviewDecision": "Jingliu ultimate damage bonus. stat allDamage -> ultimateDamage, dynamic_formula -> fixed, always ON, +20%.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Jingliu_00:1",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Jingliu_00:source:Jingliu_00:1:allDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
     },
     {
       "id": "resolved:effect:JingYuan_00:0",
@@ -176,12 +236,16 @@
       "stat": "critRate",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:JingYuan_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 6,
+        "reviewDecision": "Jing Yuan critRate after skill is always ON. dynamic_formula -> fixed, self, critRate +10%.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:JingYuan_00:0",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:JingYuan_00:source:JingYuan_00:0:critRate:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1
     },
     {
       "id": "resolved:effect:JingYuan_00:1",
@@ -204,12 +268,16 @@
       "stat": "vulnerability",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:JingYuan_00:2"
+        "source": "user_review_decision",
+        "reviewIndex": 7,
+        "reviewDecision": "Jing Yuan E6 vulnerability stack. Use max 3 stacks by default. vulnerability = 12% * 3 = 36%, enemySingle.",
+        "dynamicFormulaType": "eidolon_condition",
+        "effectRowId": "effect:JingYuan_00:2",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:JingYuan_00:source:JingYuan_00:2:vulnerability:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.36
     },
     {
       "id": "resolved:effect:Guinaifen_00:0",
@@ -218,12 +286,26 @@
       "stat": "vulnerability",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "관중 없이는 예술가도 없는 법",
+        "coefficientLabel": "[불쇼] 상태 적 받는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "허리까지 검 삼키기"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Guinaifen_00:source:Guinaifen_00:0:vulnerability:debuff:enemy_single",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.07
+      "resolvedValue": 0.076
     },
     {
       "id": "resolved:effect:Huohuo_00:0",
@@ -246,12 +328,26 @@
       "stat": "atkRatio",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "꼬리 • 신귀 사역",
+        "coefficientLabel": "공격력 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "불운의 체질, 반딧불이를 부르는 촛불"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Huohuo_00:source:Huohuo_00:1:atkRatio:buff:all_allies",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.24
+      "resolvedValue": 0.43200000000000005
     },
     {
       "id": "resolved:effect:Luocha_00:0",
@@ -288,12 +384,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:DanHeng_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 8,
+        "reviewDecision": "Dan Heng slow-condition basic attack bonus always ON because he can apply slow himself. stat allDamage -> basicDamage, dynamic_formula -> fixed, +40%.",
+        "dynamicFormulaType": "attack_type_condition",
+        "effectRowId": "effect:DanHeng_00:0",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:DanHeng_00:source:DanHeng_00:0:allDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
     },
     {
       "id": "resolved:effect:DanHeng_00:1",
@@ -344,12 +444,16 @@
       "stat": "atkFlat",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:DanHengPT_00:2"
+        "source": "user_review_decision",
+        "reviewIndex": 9,
+        "reviewDecision": "Dan Heng PT ally target is current calculated DPS. Always ON. Keep dynamic_formula source_stat_ratio: atkFlat = DanHengPT_ATK * 15%, singleAlly.",
+        "dynamicFormulaType": "source_stat_ratio",
+        "effectRowId": "effect:DanHengPT_00:2",
+        "resolution": "source_stat_context_required"
       },
       "dedupeKey": "pending_dedupe:DanHengPT_00:source:DanHengPT_00:2:atkFlat:buff:single_ally",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "missing_resolved_value"
     },
     {
       "id": "resolved:effect:DanHengIL_00:0",
@@ -358,12 +462,17 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:DanHengIL_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 10,
+        "reviewDecision": "Dan Heng IL Pride stacks via UI preset 0/3/6, default 6. allDamage = 5% * stackCount.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:DanHengIL_00:0",
+        "resolution": "review_default_stack",
+        "stackCount": 6
       },
       "dedupeKey": "pending_dedupe:DanHengIL_00:source:DanHengIL_00:0:allDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.30000000000000004
     },
     {
       "id": "resolved:effect:DanHengIL_00:1",
@@ -372,12 +481,26 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "combatSkill",
+        "skillTitle": "자유로운 용의 힘",
+        "coefficientLabel": "치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "구름 깃발"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:DanHengIL_00:source:DanHengIL_00:1:critDamage:buff:self",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.12
+      "resolvedValue": 0.132
     },
     {
       "id": "resolved:effect:Constance_00:0",
@@ -386,12 +509,16 @@
       "stat": "defenseDown",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Constance_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 11,
+        "reviewDecision": "Constance/Dahlia Epiphany defense down. target enemySingle -> enemyAll, dynamic_formula -> fixed, always ON, defenseDown +8%.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Constance_00:0",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Constance_00:source:Constance_00:0:defenseDown:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.08
     },
     {
       "id": "resolved:effect:Constance_00:1",
@@ -427,13 +554,27 @@
       "sourceId": "source:TheHerta_00:0",
       "stat": "atkRatio",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:TheHerta_00:0"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "마법이라고 했잖아",
+        "coefficientLabel": "공격력 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "쓴 약 같은 진리"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:TheHerta_00:source:TheHerta_00:0:atkRatio:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.88
     },
     {
       "id": "resolved:effect:TheHerta_00:1",
@@ -442,12 +583,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:TheHerta_00:1"
+        "source": "user_review_decision",
+        "reviewIndex": 13,
+        "reviewDecision": "The Herta enhanced skill uses enemy count and Interpretation stacks. enemy<=1 choose 42 or 20 stacks; enemy>=3 choose center42_adjacent20 or all42. +50% only on 42-stack target.",
+        "dynamicFormulaType": "attack_type_condition",
+        "effectRowId": "effect:TheHerta_00:1",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:TheHerta_00:source:TheHerta_00:1:allDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.5
     },
     {
       "id": "resolved:effect:Rappa_00:0",
@@ -470,12 +615,26 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "조성의 합창",
+        "coefficientLabel": "치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "고독한 별의 눈물"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Robin_00:source:Robin_00:0:critDamage:buff:all_allies",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.2
+      "resolvedValue": 0.23
     },
     {
       "id": "resolved:effect:Robin_00:1",
@@ -484,12 +643,26 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "combatSkill",
+        "skillTitle": "깃털의 아리아",
+        "coefficientLabel": "가하는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "뒤집힌 현의 궁전"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Robin_00:source:Robin_00:1:allDamage:buff:all_allies",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.5
+      "resolvedValue": 0.55
     },
     {
       "id": "resolved:effect:Robin_00:2",
@@ -498,12 +671,16 @@
       "stat": "atkFlat",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Robin_00:2"
+        "source": "user_review_decision",
+        "reviewIndex": 14,
+        "reviewDecision": "Robin ultimate ATK buff always ON if Robin in party. source_stat_ratio_plus_flat: Robin_finalCombatATK * 15.2% + 50. Include other ally AoE ATK buffs on Robin, with recursion guard.",
+        "dynamicFormulaType": "source_stat_ratio",
+        "effectRowId": "effect:Robin_00:2",
+        "resolution": "source_stat_context_required"
       },
       "dedupeKey": "pending_dedupe:Robin_00:source:Robin_00:2:atkFlat:buff:all_allies",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "missing_resolved_value"
     },
     {
       "id": "resolved:effect:Luka_00:0",
@@ -512,12 +689,26 @@
       "stat": "vulnerability",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "승리의 일격",
+        "coefficientLabel": "받는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "와일드 파이어 스피릿"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Luka_00:source:Luka_00:0:vulnerability:debuff:enemy_single",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.2
+      "resolvedValue": 0.21600000000000003
     },
     {
       "id": "resolved:effect:Luka_00:1",
@@ -526,12 +717,17 @@
       "stat": "atkRatio",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Luka_00:1"
+        "source": "user_review_decision",
+        "reviewIndex": 15,
+        "reviewDecision": "Luka Fighting Will stacks via UI preset 0/2/4, default 4. atkRatio = 5% * stackCount.",
+        "dynamicFormulaType": "eidolon_condition",
+        "effectRowId": "effect:Luka_00:1",
+        "resolution": "review_default_stack",
+        "stackCount": 4
       },
       "dedupeKey": "pending_dedupe:Luka_00:source:Luka_00:1:atkRatio:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
     },
     {
       "id": "resolved:effect:Mydeimos_00:0",
@@ -567,13 +763,27 @@
       "sourceId": "source:Fugue_00:0",
       "stat": "defenseDown",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Fugue_00:0"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "combatSkill",
+        "skillTitle": "현인의 길조, 천명의 부채",
+        "coefficientLabel": "방어력 감소",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "가려진 실체, 드러낸 진상"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Fugue_00:source:Fugue_00:0:defenseDown:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
     },
     {
       "id": "resolved:effect:Moze_00:0",
@@ -582,12 +792,16 @@
       "stat": "followDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Moze_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 17,
+        "reviewDecision": "Moze self-only follow-up handling: user confirmed always ON for self. Treat as always applied for Moze; split metadata ultimate-counts-as-follow-up if needed.",
+        "dynamicFormulaType": "attack_type_condition",
+        "effectRowId": "effect:Moze_00:0",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Moze_00:source:Moze_00:0:followDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.25
     },
     {
       "id": "resolved:effect:Moze_00:1",
@@ -638,12 +852,26 @@
       "stat": "vulnerability",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "combatSkill",
+        "skillTitle": "뜨거운 자갈 위 탱고",
+        "coefficientLabel": "해당 목표의 받는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "그루터기 연설가"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Boothill_00:source:Boothill_00:0:vulnerability:debuff:enemy_single",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.3
+      "resolvedValue": 0.33
     },
     {
       "id": "resolved:effect:Boothill_00:1",
@@ -665,13 +893,27 @@
       "sourceId": "source:FuXuan_00:0",
       "stat": "critRate",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:FuXuan_00:0"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "combatSkill",
+        "skillTitle": "별의 움직임, 미래의 그림자",
+        "coefficientLabel": "치명타 확률 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "직부(直符)"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:FuXuan_00:source:FuXuan_00:0:critRate:buff:all_allies",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.132
     },
     {
       "id": "resolved:effect:FuXuan_00:1",
@@ -693,13 +935,27 @@
       "sourceId": "source:Bronya_00:0",
       "stat": "atkRatio",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Bronya_00:0"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "벨로보그 행진곡",
+        "coefficientLabel": "공격력 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "포격 개시"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Bronya_00:source:Bronya_00:0:atkRatio:buff:all_allies",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.59
     },
     {
       "id": "resolved:effect:Bronya_00:1",
@@ -707,13 +963,27 @@
       "sourceId": "source:Bronya_00:1",
       "stat": "allDamage",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Bronya_00:1"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "combatSkill",
+        "skillTitle": "작전 재배치",
+        "coefficientLabel": "피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "승승장구"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Bronya_00:source:Bronya_00:1:allDamage:buff:single_ally",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.72
     },
     {
       "id": "resolved:effect:Bronya_00:2",
@@ -722,12 +992,26 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "벨로보그 행진곡",
+        "coefficientLabel": "치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "포격 개시"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Bronya_00:source:Bronya_00:2:critDamage:buff:all_allies",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.16
+      "resolvedValue": 0.168
     },
     {
       "id": "resolved:effect:BlackSwan_00:0",
@@ -735,13 +1019,27 @@
       "sourceId": "source:BlackSwan_00:0",
       "stat": "vulnerability",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:BlackSwan_00:0"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "저편의 품에 취해",
+        "coefficientLabel": "받는 피해",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "움직이는 별"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:BlackSwan_00:source:BlackSwan_00:0:vulnerability:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.27
     },
     {
       "id": "resolved:effect:BlackSwan_00:1",
@@ -750,12 +1048,16 @@
       "stat": "defenseIgnore",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:BlackSwan_00:1"
+        "source": "user_review_decision",
+        "reviewIndex": 22,
+        "reviewDecision": "Always ON for Arcana DoT. Change dynamic_formula -> fixed. defenseIgnore +20%; calculator assumes selected Arcana stack preset is always at least 7 stacks. Applies only to Black Swan Arcana DoT damage, not direct skill/ultimate hit damage.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:BlackSwan_00:1",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:BlackSwan_00:source:BlackSwan_00:1:defenseIgnore:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
     },
     {
       "id": "resolved:effect:BlackSwan_00:2",
@@ -763,13 +1065,27 @@
       "sourceId": "source:BlackSwan_00:2",
       "stat": "defenseDown",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:BlackSwan_00:2"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "combatSkill",
+        "skillTitle": "실추, 거짓된 신의 황혼",
+        "coefficientLabel": "방어력 감소",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "위에서도 그러하듯 아래서도 그러하다"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:BlackSwan_00:source:BlackSwan_00:2:defenseDown:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.22
     },
     {
       "id": "resolved:effect:Ren_00:0",
@@ -790,13 +1106,27 @@
       "sourceId": "source:Ren_00:1",
       "stat": "allDamage",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Ren_00:1"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "combatSkill",
+        "skillTitle": "지옥변",
+        "coefficientLabel": "피해량 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "시왕의 사형 선고, 마주한 업경"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Ren_00:source:Ren_00:1:allDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.45
     },
     {
       "id": "resolved:effect:Ren_00:2",
@@ -818,13 +1148,27 @@
       "sourceId": "source:Feixiao_00:0",
       "stat": "allDamage",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Feixiao_00:0"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "뇌정의 수렵",
+        "coefficientLabel": "피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "드높은 하늘에 올라"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Feixiao_00:source:Feixiao_00:0:allDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.66
     },
     {
       "id": "resolved:effect:Feixiao_00:1",
@@ -833,12 +1177,16 @@
       "stat": "atkRatio",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Feixiao_00:1"
+        "source": "user_review_decision",
+        "reviewIndex": 26,
+        "reviewDecision": "Always ON for max-damage setup. Assume Feixiao combat skill was used before damage. Change dynamic_formula -> fixed. self atkRatio +48%, duration 3 turns. Apply enhanced-state branch policy if applicable.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Feixiao_00:1",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Feixiao_00:source:Feixiao_00:1:atkRatio:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.48
     },
     {
       "id": "resolved:effect:Feixiao_00:2",
@@ -873,12 +1221,16 @@
       "stat": "vulnerability",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cipher_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 27,
+        "reviewDecision": "Always ON. Change dynamic_formula -> fixed. all enemies vulnerability +40% while Cipher is on field; targetScope should be allEnemies, not enemySingle. Apply enhanced-state branch policy if applicable.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Cipher_00:0",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Cipher_00:source:Cipher_00:0:vulnerability:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
     },
     {
       "id": "resolved:effect:Cipher_00:1",
@@ -887,12 +1239,16 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cipher_00:1"
+        "source": "user_review_decision",
+        "reviewIndex": 28,
+        "reviewDecision": "Always ON for Cipher talent follow-up damage only. Change dynamic_formula -> fixed. self critDamage +100%; do not apply to Cipher direct basic/skill/ultimate damage. Apply enhanced-state branch policy if applicable.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Cipher_00:1",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Cipher_00:source:Cipher_00:1:critDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 1
     },
     {
       "id": "resolved:effect:Cipher_00:2",
@@ -901,12 +1257,16 @@
       "stat": "followDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cipher_00:2"
+        "source": "user_review_decision",
+        "reviewIndex": 29,
+        "reviewDecision": "Exclude as duplicate/misclassified row. Source text describes critDamage +100% for Cipher talent follow-up, already handled by effect:Cipher_00:1. Do not apply a separate followDamage bonus.",
+        "dynamicFormulaType": "attack_type_condition",
+        "effectRowId": "effect:Cipher_00:2",
+        "resolution": "excluded_or_deferred_by_review"
       },
       "dedupeKey": "pending_dedupe:Cipher_00:source:Cipher_00:2:followDamage:buff:self",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_not_met"
     },
     {
       "id": "resolved:effect:Cipher_00:3",
@@ -915,12 +1275,16 @@
       "stat": "atkRatio",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cipher_00:3"
+        "source": "user_review_decision",
+        "reviewIndex": 30,
+        "reviewDecision": "Always ON for max-damage setup. Assume Cipher combat skill was used before damage. Change dynamic_formula -> fixed. self atkRatio +30%, duration 2 turns. Combat skill hit/debuff coverage is selected target plus adjacent targets, max 3 enemies affected. Ignore enemy damage-down portion for outgoing damage calculation.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Cipher_00:3",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Cipher_00:source:Cipher_00:3:atkRatio:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
     },
     {
       "id": "resolved:effect:Cipher_00:4",
@@ -999,12 +1363,26 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "깃과 상흔의 찬송",
+        "coefficientLabel": "치명타 피해 증가(선데이 치명타 피해 기준)",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "가시의 은둔처"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Sunday_10:source:Sunday_10:0:critDamage:buff:single_ally",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.3
+      "resolvedValue": 0.336
     },
     {
       "id": "resolved:effect:Sunday_10:1",
@@ -1013,12 +1391,26 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "깃과 상흔의 찬송",
+        "coefficientLabel": "치명타 피해 증가(추가 증가)",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "가시의 은둔처"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Sunday_10:source:Sunday_10:1:critDamage:buff:single_ally",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.12
+      "resolvedValue": 0.128
     },
     {
       "id": "resolved:effect:Sunday_10:2",
@@ -1026,13 +1418,27 @@
       "sourceId": "source:Sunday_10:2",
       "stat": "critRate",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Sunday_10:2"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "고해의 육신",
+        "coefficientLabel": "치명타 확률 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "은하를 표류하는 종이배"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Sunday_10:source:Sunday_10:2:critRate:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.22
     },
     {
       "id": "resolved:effect:Sunday_10:3",
@@ -1041,12 +1447,26 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "combatSkill",
+        "skillTitle": "종이와 의전의 은혜",
+        "coefficientLabel": "가하는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "은하를 표류하는 종이배"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Sunday_10:source:Sunday_10:3:allDamage:buff:single_ally",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.3
+      "resolvedValue": 0.33
     },
     {
       "id": "resolved:effect:Sunday_10:4",
@@ -1111,12 +1531,26 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "관통하는 천벌",
+        "coefficientLabel": "필살기가 가하는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "영신(靈神) 인도"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Xueyi_00:source:Xueyi_00:0:allDamage:buff:self",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.6
+      "resolvedValue": 0.648
     },
     {
       "id": "resolved:effect:Xueyi_00:1",
@@ -1166,12 +1600,26 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "용의 노심",
+        "coefficientLabel": "가하는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "이상에 도달한 새벽 아래"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Saber_00:source:Saber_00:0:allDamage:buff:all_allies",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.6
+      "resolvedValue": 0.66
     },
     {
       "id": "resolved:effect:Saber_00:1",
@@ -1180,12 +1628,16 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Saber_00:1"
+        "source": "user_review_decision",
+        "reviewIndex": 32,
+        "reviewDecision": "Always ON when Saber is the currently selected calculated character. This row is the combat-skill-triggered critDamage +50%, duration 2 turns. Keep it separate from the Core Resonance stack row handled by effect:Saber_00:2.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Saber_00:1",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Saber_00:source:Saber_00:1:critDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.5
     },
     {
       "id": "resolved:effect:Saber_00:2",
@@ -1194,12 +1646,16 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Saber_00:2"
+        "source": "user_review_decision",
+        "reviewIndex": 33,
+        "reviewDecision": "Always ON at max stack when Saber is the currently selected calculated character. Treat Core Resonance as default 8 stacks for max-damage calculation: critDamage = 4% * 8 = +32%. Keep this row separate from the combat-skill-triggered +50% critDamage row.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Saber_00:2",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Saber_00:source:Saber_00:2:critDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.32
     },
     {
       "id": "resolved:effect:Saber_00:3",
@@ -1208,12 +1664,16 @@
       "stat": "critRate",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Saber_00:3"
+        "source": "user_review_decision",
+        "reviewIndex": 34,
+        "reviewDecision": "Always ON when Saber is the currently selected calculated character. self critRate +20%.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Saber_00:3",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Saber_00:source:Saber_00:3:critRate:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
     },
     {
       "id": "resolved:effect:Saber_00:4",
@@ -1235,13 +1695,27 @@
       "sourceId": "source:Sushang_00:0",
       "stat": "atkRatio",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Sushang_00:0"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "태허형온 • 촉야",
+        "coefficientLabel": "공격력 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "전설의 검류"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Sushang_00:source:Sushang_00:0:atkRatio:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.32
     },
     {
       "id": "resolved:effect:Sparkle_00:0",
@@ -1250,12 +1724,16 @@
       "stat": "vulnerability",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Sparkle_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 36,
+        "reviewDecision": "Always ON for max-damage setup when Sparkle AS support is present. Treat the Talent vulnerability as maintained at its maximum 3 stacks for the currently selected character's damage calculation. Keep the current enemySingle target policy unless later source review proves the AS debuff is enemy-wide.",
+        "dynamicFormulaType": "stack_condition",
+        "effectRowId": "effect:Sparkle_00:0",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Sparkle_00:source:Sparkle_00:0:vulnerability:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.12
     },
     {
       "id": "resolved:effect:Sparkle_00:1",
@@ -1264,12 +1742,16 @@
       "stat": "vulnerability",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Sparkle_00:1"
+        "source": "user_review_decision",
+        "reviewIndex": 37,
+        "reviewDecision": "Always ON for max-damage setup when Sparkle AS support is present. Treat the Ultimate enhancement to Sparkle Talent vulnerability as maintained for the currently selected character's damage calculation. Keep paired with effect:Sparkle_00:0.",
+        "dynamicFormulaType": "stack_condition",
+        "effectRowId": "effect:Sparkle_00:1",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Sparkle_00:source:Sparkle_00:1:vulnerability:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.18
     },
     {
       "id": "resolved:effect:Sparkle_00:2",
@@ -1318,12 +1800,16 @@
       "stat": "defenseDown",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Sparkle_00:5"
+        "source": "user_review_decision",
+        "reviewIndex": 38,
+        "reviewDecision": "Always ON when Sparkle is E2 or higher and Sparkle AS support is present. Apply this as the E2 extension of Sparkle Talent's maintained maximum-stack effect for the currently selected character's damage calculation.",
+        "dynamicFormulaType": "eidolon_condition",
+        "effectRowId": "effect:Sparkle_00:5",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Sparkle_00:source:Sparkle_00:5:defenseDown:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
     },
     {
       "id": "resolved:effect:Sparkle_00:6",
@@ -1332,12 +1818,16 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Sparkle_00:6"
+        "source": "user_review_decision",
+        "reviewIndex": 39,
+        "reviewDecision": "Always ON when Sparkle is E6 or higher and Sparkle AS support is present. Treat the critDamage share as available to the currently selected calculated character through maintained Sparkle skill/ultimate setup.",
+        "dynamicFormulaType": "eidolon_condition",
+        "effectRowId": "effect:Sparkle_00:6",
+        "resolution": "source_stat_context_required"
       },
       "dedupeKey": "pending_dedupe:Sparkle_00:source:Sparkle_00:6:critDamage:buff:all_allies",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "missing_resolved_value"
     },
     {
       "id": "resolved:effect:Sparkle_00:7",
@@ -1346,12 +1836,26 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "combatSkill",
+        "skillTitle": "꿈을 헤엄치는 물고기",
+        "coefficientLabel": "치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "몽환의 포영"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Sparkle_00:source:Sparkle_00:7:critDamage:buff:single_ally",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.24
+      "resolvedValue": 0.264
     },
     {
       "id": "resolved:effect:Sparxie_00:0",
@@ -1402,8 +1906,22 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "네 가지 명철함, 세 번의 위대함",
+        "coefficientLabel": "가하는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "소용돌이의 원심을 벗어난 씨앗"
+          }
+        ],
+        "effectiveLevel": 10,
+        "tableIndex": 9
       },
       "dedupeKey": "pending_dedupe:Anaxa_00:source:Anaxa_00:0:allDamage:buff:self",
       "calculationStatus": "calculation_ready",
@@ -1416,12 +1934,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Anaxa_00:1"
+        "source": "user_review_decision",
+        "reviewIndex": 40,
+        "reviewDecision": "Do not force max enemy count. This calculator already has an enemy count setting from 1 to 5, so resolve this effect directly from the configured enemyCount for the current calculation. Applies when Anaxa's combat skill damage is being calculated.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Anaxa_00:1",
+        "resolution": "ui_context_required"
       },
       "dedupeKey": "pending_dedupe:Anaxa_00:source:Anaxa_00:1:allDamage:buff:self",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:Anaxa_00:2",
@@ -1458,12 +1980,16 @@
       "stat": "atkRatio",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Anaxa_00:4"
+        "source": "user_review_decision",
+        "reviewIndex": 41,
+        "reviewDecision": "Always calculate at maximum stacks when Anaxa is E4 or higher. Treat the E4 ATK buff as maintained at 2 stacks for the currently selected Anaxa damage calculation.",
+        "dynamicFormulaType": "eidolon_condition",
+        "effectRowId": "effect:Anaxa_00:4",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Anaxa_00:source:Anaxa_00:4:atkRatio:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.6
     },
     {
       "id": "resolved:effect:Arlan_00:0",
@@ -1500,12 +2026,16 @@
       "stat": "atkRatio",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Asta_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 42,
+        "reviewDecision": "UI selectable stack preset. Do not force always max. Provide Asta charge stack options 3 and 5, and calculate the allAllies ATK buff from the selected stack count for the current calculation.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Asta_00:0",
+        "resolution": "ui_context_required"
       },
       "dedupeKey": "pending_dedupe:Asta_00:source:Asta_00:0:atkRatio:buff:all_allies",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:Argenti_00:0",
@@ -1514,12 +2044,16 @@
       "stat": "critRate",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Argenti_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 43,
+        "reviewDecision": "Always ON when Argenti is the currently selected calculated character. Treat Apotheosis as maintained at maximum 10 stacks for max-damage calculation.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Argenti_00:0",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Argenti_00:source:Argenti_00:0:critRate:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1
     },
     {
       "id": "resolved:effect:Argenti_00:1",
@@ -1570,12 +2104,16 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Archer_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 44,
+        "reviewDecision": "Always ON when Archer is the currently selected calculated character. Assume the Skill Point condition is satisfied for max-damage calculation.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Archer_00:0",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Archer_00:source:Archer_00:0:critDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 1.2
     },
     {
       "id": "resolved:effect:Archer_00:1",
@@ -1612,12 +2150,26 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "combatSkill",
+        "skillTitle": "거짓ㆍ나선검(칼라드볼그 II)",
+        "coefficientLabel": "가하는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "평범함을 거부하는 기개"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Archer_00:source:Archer_00:3:allDamage:buff:self",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 1
+      "resolvedValue": 1.08
     },
     {
       "id": "resolved:effect:Acheron_00:0",
@@ -1625,13 +2177,27 @@
       "sourceId": "source:Acheron_00:0",
       "stat": "resistancePen",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Acheron_00:0"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "비에 젖은 단풍, 끝없는 하늘",
+        "coefficientLabel": "모든 속성 저항 감소",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "부서진 땅, 떠도는 영혼"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Acheron_00:source:Acheron_00:0:resistancePen:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.22
     },
     {
       "id": "resolved:effect:Acheron_00:1",
@@ -1640,12 +2206,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Acheron_00:1"
+        "source": "user_review_decision",
+        "reviewIndex": 46,
+        "reviewDecision": "Always ON at maximum stacks when Acheron is the currently selected calculated character. Assume Acheron has hit an enemy with Slashed Dream/Azsaka setup and maintain 3 stacks for max-damage calculation.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Acheron_00:1",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Acheron_00:source:Acheron_00:1:allDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.9
     },
     {
       "id": "resolved:effect:Acheron_00:2",
@@ -1750,12 +2320,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Ashveil_00:6"
+        "source": "user_review_decision",
+        "reviewIndex": 47,
+        "reviewDecision": "UI selectable stack preset when Ashveil is E6 or higher. Do not force maximum only. Provide Indulgence stack options 10, 20, and 30, and calculate this self allDamage buff from the selected stack count for the current Ashveil calculation.",
+        "dynamicFormulaType": "eidolon_condition",
+        "effectRowId": "effect:Ashveil_00:6",
+        "resolution": "ui_context_required"
       },
       "dedupeKey": "pending_dedupe:Ashveil_00:source:Ashveil_00:6:allDamage:buff:self",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:Yukong_00:0",
@@ -1764,12 +2338,26 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "창공 꿰뚫기",
+        "coefficientLabel": "치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "관록의 명사수"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Yukong_00:source:Yukong_00:0:critDamage:buff:all_allies",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.65
+      "resolvedValue": 0.7
     },
     {
       "id": "resolved:effect:Yukong_00:1",
@@ -1778,12 +2366,16 @@
       "stat": "atkRatio",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Yukong_00:1"
+        "source": "user_review_decision",
+        "reviewIndex": 48,
+        "reviewDecision": "Always ON for max-damage setup when Yukong support is present. Treat Roaring Bowstrings as maintained for the currently selected calculated character.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Yukong_00:1",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Yukong_00:source:Yukong_00:1:atkRatio:buff:all_allies",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
     },
     {
       "id": "resolved:effect:Yukong_00:2",
@@ -1806,12 +2398,26 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "룰렛 샤크",
+        "coefficientLabel": "치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "최고 배당"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Aventurine_00:source:Aventurine_00:0:critDamage:buff:all_allies",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.15
+      "resolvedValue": 0.162
     },
     {
       "id": "resolved:effect:Aventurine_00:1",
@@ -1862,12 +2468,16 @@
       "stat": "critRate",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Evanescia_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 49,
+        "reviewDecision": "Always ON for max-damage setup when Evanescia support is present.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Evanescia_00:0",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Evanescia_00:source:Evanescia_00:0:critRate:buff:all_allies",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
     },
     {
       "id": "resolved:effect:Evanescia_00:1",
@@ -1904,8 +2514,22 @@
       "stat": "vulnerability",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "잘 자, 깨어있는 세상",
+        "coefficientLabel": "받는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "잊어, 기억 속의 「나」를"
+          }
+        ],
+        "effectiveLevel": 10,
+        "tableIndex": 9
       },
       "dedupeKey": "pending_dedupe:Evernight_00:source:Evernight_00:0:vulnerability:debuff:enemy_single",
       "calculationStatus": "calculation_ready",
@@ -1918,8 +2542,22 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "잘 자, 깨어있는 세상",
+        "coefficientLabel": "가하는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "잊어, 기억 속의 「나」를"
+          }
+        ],
+        "effectiveLevel": 10,
+        "tableIndex": 9
       },
       "dedupeKey": "pending_dedupe:Evernight_00:source:Evernight_00:1:allDamage:buff:self",
       "calculationStatus": "calculation_ready",
@@ -1932,12 +2570,16 @@
       "stat": "critRate",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Evernight_00:2"
+        "source": "user_review_decision",
+        "reviewIndex": 50,
+        "reviewDecision": "Always ON when Evernight is the currently selected calculated character. Assume the combat skill setup state is maintained.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Evernight_00:2",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Evernight_00:source:Evernight_00:2:critRate:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.35
     },
     {
       "id": "resolved:effect:Evernight_00:3",
@@ -1946,12 +2588,16 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Evernight_00:3"
+        "source": "user_review_decision",
+        "reviewIndex": 51,
+        "reviewDecision": "Always ON when Evernight is the currently selected calculated character. Assume the combat skill setup state is maintained.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Evernight_00:3",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Evernight_00:source:Evernight_00:3:critDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.15
     },
     {
       "id": "resolved:effect:Evernight_00:4",
@@ -1960,8 +2606,34 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "칠흑 속을 부유하는 고독",
+        "coefficientLabel": "가하는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 1,
+            "levelCap": 10,
+            "sourceTitle": "두려워 마, 악몽은 지나갔으니"
+          },
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "잊어, 기억 속의 「나」를"
+          },
+          {
+            "minEidolon": 5,
+            "levelBonus": 1,
+            "levelCap": 10,
+            "sourceTitle": "잊어, 기억 속의 「나」를"
+          }
+        ],
+        "effectiveLevel": 6,
+        "tableIndex": 5
       },
       "dedupeKey": "pending_dedupe:Evernight_00:source:Evernight_00:4:allDamage:buff:self",
       "calculationStatus": "calculation_ready",
@@ -1988,8 +2660,22 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "combatSkill",
+        "skillTitle": "조용히 떠나간 낮",
+        "coefficientLabel": "치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "두려워 마, 악몽은 지나갔으니"
+          }
+        ],
+        "effectiveLevel": 10,
+        "tableIndex": 9
       },
       "dedupeKey": "pending_dedupe:Evernight_00:source:Evernight_00:6:critDamage:buff:all_allies",
       "calculationStatus": "calculation_ready",
@@ -2002,8 +2688,34 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "오늘 밤, 나와 함께",
+        "coefficientLabel": "치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 1,
+            "levelCap": 10,
+            "sourceTitle": "두려워 마, 악몽은 지나갔으니"
+          },
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "잊어, 기억 속의 「나」를"
+          },
+          {
+            "minEidolon": 5,
+            "levelBonus": 1,
+            "levelCap": 10,
+            "sourceTitle": "잊어, 기억 속의 「나」를"
+          }
+        ],
+        "effectiveLevel": 10,
+        "tableIndex": 9
       },
       "dedupeKey": "pending_dedupe:Evernight_00:source:Evernight_00:7:critDamage:buff:self",
       "calculationStatus": "calculation_ready",
@@ -2016,12 +2728,16 @@
       "stat": "critRate",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Yanqing_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 52,
+        "reviewDecision": "Always ON when Yanqing is the currently selected calculated character. Assume the ultimate buff is active for max-damage calculation.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Yanqing_00:0",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Yanqing_00:source:Yanqing_00:0:critRate:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.6
     },
     {
       "id": "resolved:effect:Yanqing_00:1",
@@ -2030,12 +2746,26 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "호검여영(呼劍如影)",
+        "coefficientLabel": "치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "무골"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Yanqing_00:source:Yanqing_00:1:critDamage:buff:self",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.3
+      "resolvedValue": 0.33
     },
     {
       "id": "resolved:effect:Yanqing_00:2",
@@ -2044,12 +2774,26 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "비바람을 가르는 제비",
+        "coefficientLabel": "치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "무골"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Yanqing_00:source:Yanqing_00:2:critDamage:buff:self",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.5
+      "resolvedValue": 0.54
     },
     {
       "id": "resolved:effect:Lingsha_00:0",
@@ -2114,12 +2858,16 @@
       "stat": "toughnessDamageRatio",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:RuanMei_00:2"
+        "source": "user_review_decision",
+        "reviewIndex": 53,
+        "reviewDecision": "Always ON for max-damage setup when Ruan Mei support is present. Treat Overtone as maintained for the currently selected calculated character.",
+        "dynamicFormulaType": "level_scaled_value",
+        "effectRowId": "effect:RuanMei_00:2",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:RuanMei_00:source:RuanMei_00:2:toughnessDamageRatio:buff:all_allies",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.5
     },
     {
       "id": "resolved:effect:RuanMei_00:3",
@@ -2128,12 +2876,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:RuanMei_00:3"
+        "source": "user_review_decision",
+        "reviewIndex": 54,
+        "reviewDecision": "Dynamic calculation from Ruan Mei's actual in-combat Break Effect. Do not force maximum. This calculator uses real relic setup plus ally-wide buffs, so calculate the bonus from Ruan Mei's final combat breakEffect over 120%, capped at the source maximum.",
+        "dynamicFormulaType": "stack_condition",
+        "effectRowId": "effect:RuanMei_00:3",
+        "resolution": "source_stat_context_required"
       },
       "dedupeKey": "pending_dedupe:RuanMei_00:source:RuanMei_00:3:allDamage:buff:all_allies",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "missing_resolved_value"
     },
     {
       "id": "resolved:effect:RuanMei_00:4",
@@ -2142,12 +2894,26 @@
       "stat": "resistancePen",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "꽃잎에 인 물결, 옷을 물들인 꽃",
+        "coefficientLabel": "속성 저항 관통 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "아른대는 담록빛"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:RuanMei_00:source:RuanMei_00:4:resistancePen:buff:all_allies",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.25
+      "resolvedValue": 0.27
     },
     {
       "id": "resolved:effect:RuanMei_00:5",
@@ -2156,12 +2922,26 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "combatSkill",
+        "skillTitle": "우아한 연주",
+        "coefficientLabel": "피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "비녀로 단정히 다듬은 머리"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:RuanMei_00:source:RuanMei_00:5:allDamage:buff:all_allies",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.32
+      "resolvedValue": 0.35200000000000004
     },
     {
       "id": "resolved:effect:Yunli_00:0",
@@ -2170,12 +2950,26 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "대지의 검신, 천궁을 베는 검날",
+        "coefficientLabel": "반격 치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "구척검을 휘두르는 기예"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Yunli_00:source:Yunli_00:0:critDamage:buff:self",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 1
+      "resolvedValue": 1.08
     },
     {
       "id": "resolved:effect:Yunli_00:1",
@@ -2226,12 +3020,16 @@
       "stat": "vulnerability",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Welt_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 55,
+        "reviewDecision": "Do not decide this as a separate base-kit Welt effect in the AS review pass. Welt should be handled from the AS kit baseline only; apply this row only if later AS source mapping confirms the same vulnerability remains valid in the AS kit.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Welt_00:0",
+        "resolution": "excluded_or_deferred_by_review"
       },
       "dedupeKey": "pending_dedupe:Welt_00:source:Welt_00:0:vulnerability:debuff:enemy_single",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_not_met"
     },
     {
       "id": "resolved:effect:Welt_00:1",
@@ -2282,12 +3080,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Welt_00:4"
+        "source": "user_review_decision",
+        "reviewIndex": 56,
+        "reviewDecision": "Welt is evaluated from the AS kit baseline. For Zero Gravity, provide per-DPS UI stack options 4, 6, 8, and 10; calculate the damage increase from the selected stack count for the currently selected character.",
+        "dynamicFormulaType": "stack_condition",
+        "effectRowId": "effect:Welt_00:4",
+        "resolution": "ui_context_required"
       },
       "dedupeKey": "pending_dedupe:Welt_00:source:Welt_00:4:allDamage:buff:all_allies",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:Silwolf_00:0",
@@ -2310,12 +3112,26 @@
       "stat": "defenseDown",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "|계정 정지|",
+        "coefficientLabel": "방어력 감소",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "무차별 대입 공격"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Silwolf_00:source:Silwolf_00:1:defenseDown:debuff:enemy_single",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.45
+      "resolvedValue": 0.46799999999999997
     },
     {
       "id": "resolved:effect:Silwolf_00:2",
@@ -2324,12 +3140,16 @@
       "stat": "resistancePen",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Silwolf_00:2"
+        "source": "user_review_decision",
+        "reviewIndex": 57,
+        "reviewDecision": "Always ON for max-damage setup when Silver Wolf support is present. Assume Silver Wolf has implanted the currently selected damage dealer's relevant weakness on the target enemy.",
+        "dynamicFormulaType": "level_scaled_value",
+        "effectRowId": "effect:Silwolf_00:2",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Silwolf_00:source:Silwolf_00:2:resistancePen:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
     },
     {
       "id": "resolved:effect:Silwolf_00:3",
@@ -2338,12 +3158,26 @@
       "stat": "resistancePen",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "combatSkill",
+        "skillTitle": "수정하시겠습니까?",
+        "coefficientLabel": "모든 속성 저항 추가 감소",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "페이로드"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Silwolf_00:source:Silwolf_00:3:resistancePen:debuff:enemy_single",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.13
+      "resolvedValue": 0.105
     },
     {
       "id": "resolved:effect:Silwolf_00:4",
@@ -2352,12 +3186,26 @@
       "stat": "defenseDown",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "프로그램 응답 대기 중…",
+        "coefficientLabel": "[결함] 방어력 감소",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "페이로드"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Silwolf_00:source:Silwolf_00:4:defenseDown:debuff:enemy_single",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.1
+      "resolvedValue": 0.08800000000000001
     },
     {
       "id": "resolved:effect:SilverWolf999_00:0",
@@ -2365,13 +3213,27 @@
       "sourceId": "source:SilverWolf999_00:0",
       "stat": "critRate",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:SilverWolf999_00:0"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "나만 믿어, 버스 태워줄게",
+        "coefficientLabel": "치명타 확률 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "평타가 곧 필살기"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:SilverWolf999_00:source:SilverWolf999_00:0:critRate:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.0044
     },
     {
       "id": "resolved:effect:SilverWolf999_00:1",
@@ -2380,12 +3242,26 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "나만 믿어, 버스 태워줄게",
+        "coefficientLabel": "치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "평타가 곧 필살기"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:SilverWolf999_00:source:SilverWolf999_00:1:critDamage:buff:self",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.008
+      "resolvedValue": 0.0088
     },
     {
       "id": "resolved:effect:SilverWolf999_00:2",
@@ -2421,13 +3297,27 @@
       "sourceId": "source:Tingyun_00:0",
       "stat": "allDamage",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Tingyun_00:0"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "상서로운 구름의 기원",
+        "coefficientLabel": "피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "푸른 언덕의 유산"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Tingyun_00:source:Tingyun_00:0:allDamage:buff:single_ally",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.56
     },
     {
       "id": "resolved:effect:Tingyun_00:1",
@@ -2449,12 +3339,16 @@
       "stat": "atkFlat",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Tingyun_00:2"
+        "source": "user_review_decision",
+        "reviewIndex": 60,
+        "reviewDecision": "Always ON for the currently selected calculated character when Tingyun support is present. Because Benediction is capped by a percentage of Tingyun's own ATK, calculate the cap from Tingyun's actual final in-combat ATK after relic stats and ally-wide buffs, then apply the target ATK increase within that cap.",
+        "dynamicFormulaType": "source_stat_ratio",
+        "effectRowId": "effect:Tingyun_00:2",
+        "resolution": "source_stat_context_required"
       },
       "dedupeKey": "pending_dedupe:Tingyun_00:source:Tingyun_00:2:atkFlat:buff:single_ally",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "missing_resolved_value"
     },
     {
       "id": "resolved:effect:Seele_00:0",
@@ -2462,13 +3356,27 @@
       "sourceId": "source:Seele_00:0",
       "stat": "allDamage",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Seele_00:0"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "재현",
+        "coefficientLabel": "가하는 피해",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "요란"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Seele_00:source:Seele_00:0:allDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.88
     },
     {
       "id": "resolved:effect:Seele_00:1",
@@ -2505,12 +3413,26 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "보석을 골라내는 이빨",
+        "coefficientLabel": "치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "솔직? 저당 대상이 될 뿐"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Jade_00:source:Jade_00:0:critDamage:buff:self",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.024
+      "resolvedValue": 0.026000000000000002
     },
     {
       "id": "resolved:effect:Jade_00:1",
@@ -2519,12 +3441,16 @@
       "stat": "atkRatio",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Jade_00:1"
+        "source": "user_review_decision",
+        "reviewIndex": 62,
+        "reviewDecision": "Always calculate at maximum Pawned Asset stacks when Jade is the currently selected calculated character. Do not expose a stack preset for this row unless later review needs non-max scenarios.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Jade_00:1",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Jade_00:source:Jade_00:1:atkRatio:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.005
     },
     {
       "id": "resolved:effect:Jade_00:2",
@@ -2588,12 +3514,26 @@
       "stat": "vulnerability",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "뼈는 화로요, 피와 살은 땔감이니",
+        "coefficientLabel": "받는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "피안을 건너 드러난 분노의 본상"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:MortenaxBlade_00:source:MortenaxBlade_00:1:vulnerability:debuff:enemy_single",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.5
+      "resolvedValue": 0.54
     },
     {
       "id": "resolved:effect:MortenaxBlade_00:2",
@@ -2602,12 +3542,16 @@
       "stat": "critRate",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:MortenaxBlade_00:2"
+        "source": "user_review_decision",
+        "reviewIndex": 63,
+        "reviewDecision": "Always ON when Mortenax Blade is the currently selected calculated character. Assume the field/Endless Rage state is active for max-damage calculation.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:MortenaxBlade_00:2",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:MortenaxBlade_00:source:MortenaxBlade_00:2:critRate:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
     },
     {
       "id": "resolved:effect:MortenaxBlade_00:3",
@@ -2616,12 +3560,26 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "뼈는 화로요, 피와 살은 땔감이니",
+        "coefficientLabel": "치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "피안을 건너 드러난 분노의 본상"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:MortenaxBlade_00:source:MortenaxBlade_00:3:critDamage:buff:self",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.6
+      "resolvedValue": 0.66
     },
     {
       "id": "resolved:effect:MortenaxBlade_00:4",
@@ -2630,12 +3588,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:MortenaxBlade_00:4"
+        "source": "user_review_decision",
+        "reviewIndex": 64,
+        "reviewDecision": "Always ON while Mortenax Blade's field is active. Apply the baseline ally damage increase for max-damage calculation; handle the additional 75% branch through effect:MortenaxBlade_00:7 or effect:MortenaxBlade_00:8 based on party composition.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:MortenaxBlade_00:4",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:MortenaxBlade_00:source:MortenaxBlade_00:4:allDamage:buff:all_allies",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.5
     },
     {
       "id": "resolved:effect:MortenaxBlade_00:5",
@@ -2672,12 +3634,16 @@
       "stat": "ultimateDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:MortenaxBlade_00:7"
+        "source": "user_review_decision",
+        "reviewIndex": 65,
+        "reviewDecision": "Party-composition conditional. Apply this branch only when the party contains a Nihility character other than Mortenax Blade. This is mutually exclusive with effect:MortenaxBlade_00:8.",
+        "dynamicFormulaType": "attack_type_condition",
+        "effectRowId": "effect:MortenaxBlade_00:7",
+        "resolution": "party_context_required"
       },
       "dedupeKey": "pending_dedupe:MortenaxBlade_00:source:MortenaxBlade_00:7:ultimateDamage:buff:all_allies",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:MortenaxBlade_00:8",
@@ -2686,12 +3652,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:MortenaxBlade_00:8"
+        "source": "user_review_decision",
+        "reviewIndex": 66,
+        "reviewDecision": "Party-composition conditional. Apply this branch only when the party does not contain a Nihility character other than Mortenax Blade. This is the complementary branch to effect:MortenaxBlade_00:7, not a separate stackable effect.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:MortenaxBlade_00:8",
+        "resolution": "party_context_required"
       },
       "dedupeKey": "pending_dedupe:MortenaxBlade_00:source:MortenaxBlade_00:8:allDamage:buff:self",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:MortenaxBlade_00:9",
@@ -2713,13 +3683,27 @@
       "sourceId": "source:Qingque_00:0",
       "stat": "atkRatio",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Qingque_00:0"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "제원 경옥",
+        "coefficientLabel": "공격력 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "무아지경 판쓸이"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Qingque_00:source:Qingque_00:0:atkRatio:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.79
     },
     {
       "id": "resolved:effect:Qingque_00:1",
@@ -2728,12 +3712,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Qingque_00:1"
+        "source": "user_review_decision",
+        "reviewIndex": 68,
+        "reviewDecision": "UI selectable combat-skill stack preset. Provide Qingque combat skill stack options 3, 5, and 7, and calculate this self damage buff from the selected stack count for the current Qingque calculation.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Qingque_00:1",
+        "resolution": "ui_context_required"
       },
       "dedupeKey": "pending_dedupe:Qingque_00:source:Qingque_00:1:allDamage:buff:self",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:Qingque_00:2",
@@ -2784,12 +3772,16 @@
       "stat": "vulnerability",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Jiaoqiu_00:2"
+        "source": "user_review_decision",
+        "reviewIndex": 69,
+        "reviewDecision": "Always ON at maximum stacks when Jiaoqiu support is present. Use 5 Ashen Roast stacks normally, and use 9 stacks when Jiaoqiu is E6.",
+        "dynamicFormulaType": "stack_condition",
+        "effectRowId": "effect:Jiaoqiu_00:2",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Jiaoqiu_00:source:Jiaoqiu_00:2:vulnerability:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
     },
     {
       "id": "resolved:effect:Jiaoqiu_00:3",
@@ -2798,12 +3790,26 @@
       "stat": "ultimateDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "솥의 진법, 기정상생",
+        "coefficientLabel": "적이 받는 필살기 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "대낮의 전투, 심야의 암투"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Jiaoqiu_00:source:Jiaoqiu_00:3:ultimateDamage:debuff:enemy_single",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.15
+      "resolvedValue": 0.162
     },
     {
       "id": "resolved:effect:Castorice_00:0",
@@ -2811,13 +3817,27 @@
       "sourceId": "source:Castorice_00:0",
       "stat": "resistancePen",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Castorice_00:0"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "포효하는 망자, 소생의 종",
+        "coefficientLabel": "모든 속성 저항 감소",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "사경에서 춤추는 경건한 나그네"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Castorice_00:source:Castorice_00:0:resistancePen:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.22
     },
     {
       "id": "resolved:effect:Castorice_00:1",
@@ -2826,12 +3846,33 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "손바닥에 흐르는 황무",
+        "coefficientLabel": "가하는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 1,
+            "levelCap": 10,
+            "sourceTitle": "사경에서 춤추는 경건한 나그네"
+          },
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "예언으로 장식한 순백의 새로운 장"
+          }
+        ],
+        "effectiveLevel": 10,
+        "tableIndex": 9,
+        "aggregateMultiplier": 3
       },
       "dedupeKey": "pending_dedupe:Castorice_00:source:Castorice_00:1:allDamage:buff:self",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.6
+      "resolvedValue": 0.6000000000000001
     },
     {
       "id": "resolved:effect:Cerydra_00:0",
@@ -2840,12 +3881,26 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "combatSkill",
+        "skillTitle": "프로모션, 지휘관의 자질",
+        "coefficientLabel": "치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "낡은 율법을 불태워"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:0:critDamage:buff:single_ally",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.72
+      "resolvedValue": 0.79
     },
     {
       "id": "resolved:effect:Cerydra_00:1",
@@ -2854,12 +3909,16 @@
       "stat": "critRate",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cerydra_00:1"
+        "source": "user_review_decision",
+        "reviewIndex": 71,
+        "reviewDecision": "Always ON when Cerydra is the currently selected calculated character. The source says critRate +100%, so apply the full 100% critRate bonus for Cerydra's own damage calculation.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Cerydra_00:1",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:1:critRate:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 1
     },
     {
       "id": "resolved:effect:Cerydra_00:2",
@@ -2924,12 +3983,16 @@
       "stat": "atkFlat",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cerydra_00:6"
+        "source": "user_review_decision",
+        "reviewIndex": 72,
+        "reviewDecision": "Always ON for the currently selected calculated character when Cerydra support is present and the selected character has Military Merit. For source-stat ATK/critDamage-style support buffs that scale from the provider's own stat, follow the Sparkle-like policy: calculate Cerydra's source ATK from her base stats, relics, and light cone, but ignore ally-provided buffs received by Cerydra.",
+        "dynamicFormulaType": "source_stat_ratio",
+        "effectRowId": "effect:Cerydra_00:6",
+        "resolution": "source_stat_context_required"
       },
       "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:6:atkFlat:buff:single_ally",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "missing_resolved_value"
     },
     {
       "id": "resolved:effect:Cerydra_00:7",
@@ -2938,12 +4001,16 @@
       "stat": "speed",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cerydra_00:7"
+        "source": "user_review_decision",
+        "reviewIndex": 73,
+        "reviewDecision": "Always ON when Cerydra support is present. Apply the self speed bonus to Cerydra as maintained after combat skill setup.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Cerydra_00:7",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:7:speed:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 20
     },
     {
       "id": "resolved:effect:Cerydra_00:8",
@@ -2952,12 +4019,16 @@
       "stat": "speed",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cerydra_00:8"
+        "source": "user_review_decision",
+        "reviewIndex": 74,
+        "reviewDecision": "Always ON for the currently selected calculated character when Cerydra support is present and the selected character has Military Merit.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Cerydra_00:8",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:8:speed:buff:single_ally",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 20
     },
     {
       "id": "resolved:effect:Cerydra_00:9",
@@ -2966,12 +4037,16 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cerydra_00:9"
+        "source": "user_review_decision",
+        "reviewIndex": 75,
+        "reviewDecision": "Dynamic calculation from Cerydra's actual ATK for Cerydra's own damage calculation. Calculate the critDamage bonus from the amount above 2000 ATK, capped at the source maximum.",
+        "dynamicFormulaType": "source_stat_ratio",
+        "effectRowId": "effect:Cerydra_00:9",
+        "resolution": "source_stat_context_required"
       },
       "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:9:critDamage:buff:self",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "missing_resolved_value"
     },
     {
       "id": "resolved:effect:Cerydra_00:10",
@@ -2980,12 +4055,16 @@
       "stat": "resistancePen",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cerydra_00:10"
+        "source": "user_review_decision",
+        "reviewIndex": 76,
+        "reviewDecision": "UI selectable Nobility charge state. Provide options \"below 5 stacks\" and \"6 stacks\". Apply the Nobility resistance penetration effect only when the 6-stack option is selected for the currently selected calculated character.",
+        "dynamicFormulaType": "stack_condition",
+        "effectRowId": "effect:Cerydra_00:10",
+        "resolution": "ui_context_required"
       },
       "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:10:resistancePen:buff:single_ally",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:Klara_00:0",
@@ -3007,13 +4086,27 @@
       "sourceId": "source:Cyrene_00:0",
       "stat": "critRate",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cyrene_00:0"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "시의 「◦」, 서약의 「∞」",
+        "coefficientLabel": "치명타 확률 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "너로 인해, 내가 쓰는 대로"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:0:critRate:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.55
     },
     {
       "id": "resolved:effect:Cyrene_00:1",
@@ -3021,13 +4114,27 @@
       "sourceId": "source:Cyrene_00:1",
       "stat": "critRate",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cyrene_00:1"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "꽃과 화살의 무곡",
+        "coefficientLabel": "치명타 확률 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "너로 인해, 내가 쓰는 대로"
+          }
+        ],
+        "effectiveLevel": 6,
+        "tableIndex": 5
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:1:critRate:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.16
     },
     {
       "id": "resolved:effect:Cyrene_00:2",
@@ -3036,8 +4143,34 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "노래처럼 모인 모두의 염원",
+        "coefficientLabel": "가하는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "너로 인해, 내가 쓰는 대로"
+          },
+          {
+            "minEidolon": 5,
+            "levelBonus": 1,
+            "levelCap": 10,
+            "sourceTitle": "어제의 화원이 가득 담긴 눈빛"
+          },
+          {
+            "minEidolon": 5,
+            "levelBonus": 1,
+            "levelCap": 10,
+            "sourceTitle": "어제의 화원이 가득 담긴 눈빛"
+          }
+        ],
+        "effectiveLevel": 10,
+        "tableIndex": 9
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:2:allDamage:buff:all_allies",
       "calculationStatus": "calculation_ready",
@@ -3050,12 +4183,16 @@
       "stat": "defenseDown",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cyrene_00:3"
+        "source": "user_review_decision",
+        "reviewIndex": 79,
+        "reviewDecision": "Party-composition conditional. When Cyrene and Cipher are both in the party and Cyrene's Strategy poem is applied to Cipher, calculate this defenseDown from that poem effect. This row applies to Cipher's Regular Customer target.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Cyrene_00:3",
+        "resolution": "party_context_required"
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:3:defenseDown:debuff:enemy_single",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:Cyrene_00:4",
@@ -3064,12 +4201,16 @@
       "stat": "defenseDown",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cyrene_00:4"
+        "source": "user_review_decision",
+        "reviewIndex": 80,
+        "reviewDecision": "Party-composition and enemy-count conditional. When Cyrene and Cipher are both in the party and Cyrene's Strategy poem is applied to Cipher, apply this defenseDown to enemies other than Cipher's Regular Customer. If enemyCount is 1, there is no non-Regular-Customer enemy to receive this row; if enemyCount is 3 or higher, this row can apply to the other enemies.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Cyrene_00:4",
+        "resolution": "party_context_required"
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:4:defenseDown:debuff:enemy_single",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:Cyrene_00:5",
@@ -3078,12 +4219,16 @@
       "stat": "defenseIgnore",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cyrene_00:5"
+        "source": "user_review_decision",
+        "reviewIndex": 81,
+        "reviewDecision": "Apply when Cyrene is in party and the relevant Aglaea/Garmentmaker poem effect is active. Because Aglaea has a summon, include this defenseIgnore in both Aglaea's own damage calculation and the summon/Garmentmaker damage calculation.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Cyrene_00:5",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:5:defenseIgnore:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.18
     },
     {
       "id": "resolved:effect:Cyrene_00:6",
@@ -3092,12 +4237,16 @@
       "stat": "defenseIgnore",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cyrene_00:6"
+        "source": "user_review_decision",
+        "reviewIndex": 82,
+        "reviewDecision": "Apply under the shared Cyrene poem rule: Cyrene is in party, and the specific character receiving this poem effect is present/relevant to the current calculation. For this row, apply when the receiver is Tribbie.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Cyrene_00:6",
+        "resolution": "party_context_required"
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:6:defenseIgnore:buff:self",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:Cyrene_00:7",
@@ -3106,8 +4255,22 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "꽃과 화살의 무곡",
+        "coefficientLabel": "치명타 피해 증가 최대치",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "너로 인해, 내가 쓰는 대로"
+          }
+        ],
+        "effectiveLevel": 6,
+        "tableIndex": 5
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:7:critDamage:buff:self",
       "calculationStatus": "calculation_ready",
@@ -3120,8 +4283,22 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "꽃과 화살의 무곡",
+        "coefficientLabel": "전투 스킬 치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "너로 인해, 내가 쓰는 대로"
+          }
+        ],
+        "effectiveLevel": 6,
+        "tableIndex": 5
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:8:critDamage:buff:self",
       "calculationStatus": "calculation_ready",
@@ -3133,13 +4310,27 @@
       "sourceId": "source:Cyrene_00:9",
       "stat": "atkRatio",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cyrene_00:9"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "꽃과 화살의 무곡",
+        "coefficientLabel": "공격력 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "너로 인해, 내가 쓰는 대로"
+          }
+        ],
+        "effectiveLevel": 6,
+        "tableIndex": 5
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:9:atkRatio:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.6
     },
     {
       "id": "resolved:effect:Cyrene_00:10",
@@ -3148,12 +4339,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cyrene_00:10"
+        "source": "user_review_decision",
+        "reviewIndex": 84,
+        "reviewDecision": "Apply under the shared Cyrene poem rule: Cyrene is in party, and the specific character receiving this poem effect is present/relevant to the current calculation. For this row, apply to the non-Chrysos-Heir receiver and its memosprite when applicable.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Cyrene_00:10",
+        "resolution": "party_context_required"
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:10:allDamage:buff:self",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:Cyrene_00:11",
@@ -3162,12 +4357,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cyrene_00:11"
+        "source": "user_review_decision",
+        "reviewIndex": 85,
+        "reviewDecision": "Apply under the shared Cyrene poem rule: Cyrene is in party, and the specific character receiving this poem effect is present/relevant to the current calculation. For this row, apply to Aglaea's own damage and summon/Garmentmaker damage, same receiver scope as effect:Cyrene_00:5.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Cyrene_00:11",
+        "resolution": "party_context_required"
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:11:allDamage:buff:self",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:Cyrene_00:12",
@@ -3176,12 +4375,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cyrene_00:12"
+        "source": "user_review_decision",
+        "reviewIndex": 86,
+        "reviewDecision": "Apply under the shared Cyrene poem rule: Cyrene is in party, and the specific character receiving this poem effect is present/relevant to the current calculation. For this row, apply when the receiver is Cipher.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Cyrene_00:12",
+        "resolution": "party_context_required"
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:12:allDamage:buff:self",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:Cyrene_00:13",
@@ -3189,13 +4392,27 @@
       "sourceId": "source:Cyrene_00:13",
       "stat": "allDamage",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cyrene_00:13"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "꽃과 화살의 무곡",
+        "coefficientLabel": "가하는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "너로 인해, 내가 쓰는 대로"
+          }
+        ],
+        "effectiveLevel": 6,
+        "tableIndex": 5
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:13:allDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 1.2
     },
     {
       "id": "resolved:effect:Cyrene_00:14",
@@ -3203,13 +4420,27 @@
       "sourceId": "source:Cyrene_00:14",
       "stat": "allDamage",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cyrene_00:14"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "꽃과 화살의 무곡",
+        "coefficientLabel": "가하는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "너로 인해, 내가 쓰는 대로"
+          }
+        ],
+        "effectiveLevel": 6,
+        "tableIndex": 5
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:14:allDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.18
     },
     {
       "id": "resolved:effect:Cyrene_00:15",
@@ -3218,12 +4449,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cyrene_00:15"
+        "source": "user_review_decision",
+        "reviewIndex": 89,
+        "reviewDecision": "Apply under the shared Cyrene poem rule: Cyrene is in party, and the specific character receiving this poem effect is present/relevant to the current calculation. For this row, apply when the receiver is Dan Heng PT and the affected calculated damage is the Buddy/ally damage granted by Dan Heng PT.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Cyrene_00:15",
+        "resolution": "party_context_required"
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:15:allDamage:buff:self",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:Cyrene_00:16",
@@ -3232,12 +4467,26 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "꽃과 화살의 무곡",
+        "coefficientLabel": "가하는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "너로 인해, 내가 쓰는 대로"
+          }
+        ],
+        "effectiveLevel": 6,
+        "tableIndex": 5
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:16:allDamage:buff:single_ally",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.24
+      "resolvedValue": 0.4
     },
     {
       "id": "resolved:effect:Cyrene_00:17",
@@ -3260,12 +4509,16 @@
       "stat": "specialFinal",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Cyrene_00:18"
+        "source": "user_review_decision",
+        "reviewIndex": 90,
+        "reviewDecision": "UI selectable ally-count preset when Cyrene is E2 or higher. Provide options 2, 3, and 4 different allied characters receiving Demiurge memosprite skill buffs, and calculate this specialFinal bonus from the selected count.",
+        "dynamicFormulaType": "eidolon_condition",
+        "effectRowId": "effect:Cyrene_00:18",
+        "resolution": "ui_context_required"
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:18:specialFinal:buff:all_allies",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:Cyrene_00:19",
@@ -3274,12 +4527,32 @@
       "stat": "specialFinal",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "combatSkill",
+        "skillTitle": "피어나라, 내세의 낙원이여",
+        "coefficientLabel": "확정 피해",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "어제의 화원이 가득 담긴 눈빛"
+          },
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "어제의 화원이 가득 담긴 눈빛"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:19:specialFinal:buff:all_allies",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.24
+      "resolvedValue": 0.26
     },
     {
       "id": "resolved:effect:Tribbie_00:0",
@@ -3288,12 +4561,16 @@
       "stat": "followDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Tribbie_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 91,
+        "reviewDecision": "Always ON at maximum stacks when Tribbie is the currently selected calculated character. Assume the talent follow-up setup is maintained at 3 stacks for max-damage calculation.",
+        "dynamicFormulaType": "attack_type_condition",
+        "effectRowId": "effect:Tribbie_00:0",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Tribbie_00:source:Tribbie_00:0:followDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 2.16
     },
     {
       "id": "resolved:effect:Tribbie_00:1",
@@ -3302,12 +4579,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Tribbie_00:1"
+        "source": "user_review_decision",
+        "reviewIndex": 92,
+        "reviewDecision": "Always ON at maximum stacks when Tribbie is the currently selected calculated character. This source text is \"damage dealt increase\", so treat this row as applying to all Tribbie damage, not only follow-up damage.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Tribbie_00:1",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Tribbie_00:source:Tribbie_00:1:allDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 2.16
     },
     {
       "id": "resolved:effect:Tribbie_00:2",
@@ -3358,12 +4639,26 @@
       "stat": "vulnerability",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "여기에 누가 살고 있게?",
+        "coefficientLabel": "결계 지속 시간 동 받는 피해",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "아침 햇살이 가득한 보물"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Tribbie_00:source:Tribbie_00:5:vulnerability:debuff:enemy_single",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.3
+      "resolvedValue": 0.33
     },
     {
       "id": "resolved:effect:Phainon_00:0",
@@ -3372,8 +4667,23 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "이 몸을 횃불 삼아",
+        "coefficientLabel": "[이 몸을 횃불 삼아] 치명타 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "영겁의 시곗바늘, 삼천만 번의 회전"
+          }
+        ],
+        "effectiveLevel": 1,
+        "tableIndex": 0,
+        "aggregateMultiplier": 2
       },
       "dedupeKey": "pending_dedupe:Phainon_00:source:Phainon_00:0:critDamage:buff:all_allies",
       "calculationStatus": "calculation_ready",
@@ -3385,13 +4695,27 @@
       "sourceId": "source:Phainon_00:1",
       "stat": "atkRatio",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Phainon_00:1"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "이 몸을 횃불 삼아",
+        "coefficientLabel": "[운명•이 몸이 곧 신이로다] 공격력 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "영겁의 시곗바늘, 삼천만 번의 회전"
+          }
+        ],
+        "effectiveLevel": 1,
+        "tableIndex": 0
       },
       "dedupeKey": "pending_dedupe:Phainon_00:source:Phainon_00:1:atkRatio:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
     },
     {
       "id": "resolved:effect:Phainon_00:2",
@@ -3414,12 +4738,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Pela_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 94,
+        "reviewDecision": "Always OFF for this calculator. Do not apply Pela's post-dispel next-attack damage bonus by default.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Pela_00:0",
+        "resolution": "excluded_or_deferred_by_review"
       },
       "dedupeKey": "pending_dedupe:Pela_00:source:Pela_00:0:allDamage:buff:self",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_not_met"
     },
     {
       "id": "resolved:effect:Pela_00:1",
@@ -3442,12 +4770,26 @@
       "stat": "defenseDown",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "영역 제압",
+        "coefficientLabel": "방어력 감소",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "빙점 방해"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Pela_00:source:Pela_00:2:defenseDown:debuff:enemy_all",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.4
+      "resolvedValue": 0.42
     },
     {
       "id": "resolved:effect:Hanya_00:0",
@@ -3455,13 +4797,27 @@
       "sourceId": "source:Hanya_00:0",
       "stat": "atkRatio",
       "valueTrace": {
-        "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Hanya_00:0"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "시왕의 칙령, 모두 복종하라",
+        "coefficientLabel": "공격력 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "오음(五陰)"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Hanya_00:source:Hanya_00:0:atkRatio:buff:single_ally",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.64
     },
     {
       "id": "resolved:effect:Hanya_00:1",
@@ -3470,12 +4826,26 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "벌악",
+        "coefficientLabel": "가하는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "오음(五陰)"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Hanya_00:source:Hanya_00:1:allDamage:buff:all_allies",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.3
+      "resolvedValue": 0.33
     },
     {
       "id": "resolved:effect:Hanya_00:2",
@@ -3484,12 +4854,16 @@
       "stat": "atkRatio",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Hanya_00:2"
+        "source": "user_review_decision",
+        "reviewIndex": 96,
+        "reviewDecision": "Always ON for the currently selected calculated character when Hanya support is present. Assume the Burden Skill Point recovery trigger condition is satisfied for the selected damage dealer.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Hanya_00:2",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Hanya_00:source:Hanya_00:2:atkRatio:buff:all_allies",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1
     },
     {
       "id": "resolved:effect:Herta_00:0",
@@ -3498,12 +4872,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Herta_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 97,
+        "reviewDecision": "Always OFF for this calculator. Do not apply Herta's frozen-enemy ultimate damage bonus by default because it is hard to maintain in practical max-damage setups.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Herta_00:0",
+        "resolution": "excluded_or_deferred_by_review"
       },
       "dedupeKey": "pending_dedupe:Herta_00:source:Herta_00:0:allDamage:buff:self",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_not_met"
     },
     {
       "id": "resolved:effect:Herta_00:1",
@@ -3525,12 +4903,16 @@
       "stat": "critRate",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Herta_00:2"
+        "source": "user_review_decision",
+        "reviewIndex": 98,
+        "reviewDecision": "Always ON at maximum stacks when Herta is E2 or higher. Treat the talent-triggered critRate buff as maintained at 5 stacks for max-damage calculation.",
+        "dynamicFormulaType": "eidolon_condition",
+        "effectRowId": "effect:Herta_00:2",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Herta_00:source:Herta_00:2:critRate:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.15
     },
     {
       "id": "resolved:effect:Herta_00:3",
@@ -3622,12 +5004,16 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Himeko_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 99,
+        "reviewDecision": "UI toggle. Let the user choose whether Himeko's burn-target combat skill damage bonus is applied.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Himeko_00:0",
+        "resolution": "ui_context_required"
       },
       "dedupeKey": "pending_dedupe:Himeko_00:source:Himeko_00:0:allDamage:buff:self",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:Himeko_00:1",
@@ -3649,12 +5035,27 @@
       "sourceId": "source:Harscyline_00:0",
       "stat": "defenseDown",
       "valueTrace": {
-        "resolver": "fixed",
-        "source": "rawValue"
+        "resolver": "skill_level_scaled",
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "ultimate",
+        "skillTitle": "질해의 파도, 영혼을 삼키는 무곡",
+        "coefficientLabel": "방어력 감소",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 3,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "등불이 잊힌 이유를 아는가"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Harscyline_00:source:Harscyline_00:0:defenseDown:debuff:enemy_single",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.15
+      "resolvedValue": 0.27
     },
     {
       "id": "resolved:effect:Harscyline_00:1",
@@ -3663,12 +5064,26 @@
       "stat": "vulnerability",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "combatSkill",
+        "skillTitle": "암류 뒤에서 울려 퍼지는 배음",
+        "coefficientLabel": "받는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "씻으며 나는 흥얼거리네"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Harscyline_00:source:Harscyline_00:1:vulnerability:debuff:enemy_single",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.2
+      "resolvedValue": 0.22
     },
     {
       "id": "resolved:effect:Harscyline_00:2",
@@ -3691,12 +5106,33 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "세상을 치유하는 아침햇살",
+        "coefficientLabel": "이카가 가하는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "바다의 뒷면에 비치는 붉은 노을"
+          },
+          {
+            "minEidolon": 5,
+            "levelBonus": 1,
+            "levelCap": 10,
+            "sourceTitle": "바다의 뒷면에 비치는 붉은 노을"
+          }
+        ],
+        "effectiveLevel": 10,
+        "tableIndex": 9,
+        "aggregateMultiplier": 3
       },
       "dedupeKey": "pending_dedupe:Hyacine_00:source:Hyacine_00:0:allDamage:buff:self",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 2.4
+      "resolvedValue": 2.4000000000000004
     },
     {
       "id": "resolved:effect:Dr_Ratio_00:0",
@@ -3705,12 +5141,17 @@
       "stat": "critRate",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Dr_Ratio_00:0"
+        "source": "user_review_decision",
+        "reviewIndex": 100,
+        "reviewDecision": "UI selectable Deduction stack preset. Provide 3, 6, and 10 stack options; only allow the 10-stack option when Dr. Ratio is E2 or higher.",
+        "dynamicFormulaType": "enemy_debuff_count",
+        "effectRowId": "effect:Dr_Ratio_00:0",
+        "resolution": "review_default_stack",
+        "stackCount": 10
       },
       "dedupeKey": "pending_dedupe:Dr_Ratio_00:source:Dr_Ratio_00:0:critRate:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.25
     },
     {
       "id": "resolved:effect:Dr_Ratio_00:1",
@@ -3719,12 +5160,17 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Dr_Ratio_00:1"
+        "source": "user_review_decision",
+        "reviewIndex": 101,
+        "reviewDecision": "UI selectable Deduction stack preset. Provide 3, 6, and 10 stack options; only allow the 10-stack option when Dr. Ratio is E2 or higher. Use the same selected stack count as effect:Dr_Ratio_00:0.",
+        "dynamicFormulaType": "enemy_debuff_count",
+        "effectRowId": "effect:Dr_Ratio_00:1",
+        "resolution": "review_default_stack",
+        "stackCount": 10
       },
       "dedupeKey": "pending_dedupe:Dr_Ratio_00:source:Dr_Ratio_00:1:critDamage:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.5
     },
     {
       "id": "resolved:effect:Dr_Ratio_00:2",
@@ -3761,12 +5207,16 @@
       "stat": "effectResDown",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Dr_Ratio_00:4"
+        "source": "user_review_decision",
+        "reviewIndex": 102,
+        "reviewDecision": "Always ON. Treat Dr. Ratio's Deduction effectResDown debuff as active on the target enemy for max-damage calculation.",
+        "dynamicFormulaType": "parser_type_unresolved",
+        "effectRowId": "effect:Dr_Ratio_00:4",
+        "resolution": "reviewed_raw_value"
       },
       "dedupeKey": "pending_dedupe:Dr_Ratio_00:source:Dr_Ratio_00:4:effectResDown:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1
     },
     {
       "id": "resolved:effect:Mar_7th_10:0",
@@ -3775,12 +5225,26 @@
       "stat": "allDamage",
       "valueTrace": {
         "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "source": "hoyowiki-character-skills.coefficientRows",
+        "skillCategory": "talent",
+        "skillTitle": "사부, 나 깨달았어!",
+        "coefficientLabel": "가하는 피해 증가",
+        "baseLevel": 10,
+        "eidolon": 6,
+        "eidolonLevelBonuses": [
+          {
+            "minEidolon": 5,
+            "levelBonus": 2,
+            "levelCap": 15,
+            "sourceTitle": "훈련은 많이, 단것은 조금"
+          }
+        ],
+        "effectiveLevel": 12,
+        "tableIndex": 11
       },
       "dedupeKey": "pending_dedupe:Mar_7th_10:source:Mar_7th_10:0:allDamage:buff:self",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.8
+      "resolvedValue": 0.88
     },
     {
       "id": "resolved:effect:Mar_7th_10:1",
@@ -3789,12 +5253,16 @@
       "stat": "critDamage",
       "valueTrace": {
         "resolver": "dynamic_formula",
-        "reason": "dynamic formula resolver not implemented in Phase 9-B",
-        "effectRowId": "effect:Mar_7th_10:1"
+        "source": "user_review_decision",
+        "reviewIndex": 103,
+        "reviewDecision": "Apply to the currently selected calculated character when Hunt March 7th support is present and the selected character is not Hunt March 7th herself. Treat the selected character as the Shifu target receiving the enhanced basic attack follow-up buff.",
+        "dynamicFormulaType": "attack_type_condition",
+        "effectRowId": "effect:Mar_7th_10:1",
+        "resolution": "party_context_required"
       },
       "dedupeKey": "pending_dedupe:Mar_7th_10:source:Mar_7th_10:1:critDamage:buff:self",
       "calculationStatus": "blocked",
-      "blockedReason": "unsupported_dynamic_formula"
+      "blockedReason": "condition_policy_missing"
     },
     {
       "id": "resolved:effect:Mar_7th_10:2",
@@ -3811,862 +5279,134 @@
       "resolvedValue": 0.5
     },
     {
-      "id": "resolved:effect:hoyowiki-effect:2511:A",
-      "effectRowId": "effect:hoyowiki-effect:2511:A",
-      "sourceId": "source:hoyowiki-effect:2511:A",
-      "stat": "breakDamage",
+      "id": "resolved:effect:hoyowiki-effect:2511:A:0",
+      "effectRowId": "effect:hoyowiki-effect:2511:A:0",
+      "sourceId": "source:hoyowiki-effect:2511:A:0",
+      "stat": "breakEffect",
       "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
+        "resolver": "fixed",
+        "source": "rawValue"
       },
-      "dedupeKey": "pending_dedupe:2511:source:hoyowiki-effect:2511:A:breakDamage:buff:all_allies",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "dedupeKey": "pending_dedupe:2511:source:hoyowiki-effect:2511:A:0:breakEffect:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.15
     },
     {
-      "id": "resolved:effect:hoyowiki-effect:2511:B",
-      "effectRowId": "effect:hoyowiki-effect:2511:B",
-      "sourceId": "source:hoyowiki-effect:2511:B",
-      "stat": "unclassified_source_effect",
+      "id": "resolved:effect:hoyowiki-effect:2494:A:0",
+      "effectRowId": "effect:hoyowiki-effect:2494:A:0",
+      "sourceId": "source:hoyowiki-effect:2494:A:0",
+      "stat": "toughnessDamageRatio",
       "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
+        "resolver": "fixed",
+        "source": "rawValue"
       },
-      "dedupeKey": "pending_dedupe:2511:source:hoyowiki-effect:2511:B:unclassified_source_effect:buff:field",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "dedupeKey": "pending_dedupe:2494:source:hoyowiki-effect:2494:A:0:toughnessDamageRatio:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.5
     },
     {
-      "id": "resolved:effect:hoyowiki-effect:2511:C",
-      "effectRowId": "effect:hoyowiki-effect:2511:C",
-      "sourceId": "source:hoyowiki-effect:2511:C",
-      "stat": "atkRatio",
+      "id": "resolved:effect:hoyowiki-effect:2494:A:1",
+      "effectRowId": "effect:hoyowiki-effect:2494:A:1",
+      "sourceId": "source:hoyowiki-effect:2494:A:1",
+      "stat": "breakVulnerability",
       "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
+        "resolver": "fixed",
+        "source": "rawValue"
       },
-      "dedupeKey": "pending_dedupe:2511:source:hoyowiki-effect:2511:C:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "dedupeKey": "pending_dedupe:2494:source:hoyowiki-effect:2494:A:1:breakVulnerability:debuff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1
     },
     {
-      "id": "resolved:effect:hoyowiki-effect:2511:C1",
-      "effectRowId": "effect:hoyowiki-effect:2511:C1",
-      "sourceId": "source:hoyowiki-effect:2511:C1",
-      "stat": "unclassified_source_effect",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:2511:source:hoyowiki-effect:2511:C1:unclassified_source_effect:buff:field",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:2511:E",
-      "effectRowId": "effect:hoyowiki-effect:2511:E",
-      "sourceId": "source:hoyowiki-effect:2511:E",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:2511:source:hoyowiki-effect:2511:E:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:2494:A",
-      "effectRowId": "effect:hoyowiki-effect:2494:A",
-      "sourceId": "source:hoyowiki-effect:2494:A",
+      "id": "resolved:effect:hoyowiki-effect:2494:A:2",
+      "effectRowId": "effect:hoyowiki-effect:2494:A:2",
+      "sourceId": "source:hoyowiki-effect:2494:A:2",
       "stat": "speed",
       "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
+        "resolver": "fixed",
+        "source": "rawValue"
       },
-      "dedupeKey": "pending_dedupe:2494:source:hoyowiki-effect:2494:A:speed:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "dedupeKey": "pending_dedupe:2494:source:hoyowiki-effect:2494:A:2:speed:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 30
     },
     {
-      "id": "resolved:effect:hoyowiki-effect:2494:B",
-      "effectRowId": "effect:hoyowiki-effect:2494:B",
-      "sourceId": "source:hoyowiki-effect:2494:B",
-      "stat": "damageReduction",
+      "id": "resolved:effect:hoyowiki-effect:1924:B:0",
+      "effectRowId": "effect:hoyowiki-effect:1924:B:0",
+      "sourceId": "source:hoyowiki-effect:1924:B:0",
+      "stat": "breakVulnerability",
       "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
+        "resolver": "fixed",
+        "source": "rawValue"
       },
-      "dedupeKey": "pending_dedupe:2494:source:hoyowiki-effect:2494:B:damageReduction:debuff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "dedupeKey": "pending_dedupe:1924:source:hoyowiki-effect:1924:B:0:breakVulnerability:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.06
     },
     {
-      "id": "resolved:effect:hoyowiki-effect:2494:C",
-      "effectRowId": "effect:hoyowiki-effect:2494:C",
-      "sourceId": "source:hoyowiki-effect:2494:C",
+      "id": "resolved:effect:hoyowiki-effect:1924:E:0",
+      "effectRowId": "effect:hoyowiki-effect:1924:E:0",
+      "sourceId": "source:hoyowiki-effect:1924:E:0",
       "stat": "atkRatio",
       "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
+        "resolver": "fixed",
+        "source": "rawValue"
       },
-      "dedupeKey": "pending_dedupe:2494:source:hoyowiki-effect:2494:C:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "dedupeKey": "pending_dedupe:1924:source:hoyowiki-effect:1924:E:0:atkRatio:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1
     },
     {
-      "id": "resolved:effect:hoyowiki-effect:2494:E",
-      "effectRowId": "effect:hoyowiki-effect:2494:E",
-      "sourceId": "source:hoyowiki-effect:2494:E",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:2494:source:hoyowiki-effect:2494:E:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:1924:A",
-      "effectRowId": "effect:hoyowiki-effect:1924:A",
-      "sourceId": "source:hoyowiki-effect:1924:A",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:1924:source:hoyowiki-effect:1924:A:atkRatio:debuff:enemy_all",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:1924:B",
-      "effectRowId": "effect:hoyowiki-effect:1924:B",
-      "sourceId": "source:hoyowiki-effect:1924:B",
-      "stat": "breakDamage",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:1924:source:hoyowiki-effect:1924:B:breakDamage:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:1924:B1",
-      "effectRowId": "effect:hoyowiki-effect:1924:B1",
-      "sourceId": "source:hoyowiki-effect:1924:B1",
-      "stat": "hpRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:1924:source:hoyowiki-effect:1924:B1:hpRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:1924:C",
-      "effectRowId": "effect:hoyowiki-effect:1924:C",
-      "sourceId": "source:hoyowiki-effect:1924:C",
-      "stat": "hpRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:1924:source:hoyowiki-effect:1924:C:hpRatio:buff:single_ally",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:1924:D7",
-      "effectRowId": "effect:hoyowiki-effect:1924:D7",
-      "sourceId": "source:hoyowiki-effect:1924:D7",
-      "stat": "unclassified_source_effect",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:1924:source:hoyowiki-effect:1924:D7:unclassified_source_effect:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:1924:E",
-      "effectRowId": "effect:hoyowiki-effect:1924:E",
-      "sourceId": "source:hoyowiki-effect:1924:E",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:1924:source:hoyowiki-effect:1924:E:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:1389:A",
-      "effectRowId": "effect:hoyowiki-effect:1389:A",
-      "sourceId": "source:hoyowiki-effect:1389:A",
+      "id": "resolved:effect:hoyowiki-effect:1389:A:0",
+      "effectRowId": "effect:hoyowiki-effect:1389:A:0",
+      "sourceId": "source:hoyowiki-effect:1389:A:0",
       "stat": "critDamage",
       "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
+        "resolver": "fixed",
+        "source": "rawValue"
       },
-      "dedupeKey": "pending_dedupe:1389:source:hoyowiki-effect:1389:A:critDamage:buff:field",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "dedupeKey": "pending_dedupe:1389:source:hoyowiki-effect:1389:A:0:critDamage:buff:field",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.125
     },
     {
-      "id": "resolved:effect:hoyowiki-effect:1389:B",
-      "effectRowId": "effect:hoyowiki-effect:1389:B",
-      "sourceId": "source:hoyowiki-effect:1389:B",
-      "stat": "atkRatio",
+      "id": "resolved:effect:hoyowiki-effect:23:C:0",
+      "effectRowId": "effect:hoyowiki-effect:23:C:0",
+      "sourceId": "source:hoyowiki-effect:23:C:0",
+      "stat": "damageReduction",
       "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
+        "resolver": "fixed",
+        "source": "rawValue"
       },
-      "dedupeKey": "pending_dedupe:1389:source:hoyowiki-effect:1389:B:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "dedupeKey": "pending_dedupe:23:source:hoyowiki-effect:23:C:0:damageReduction:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
     },
     {
-      "id": "resolved:effect:hoyowiki-effect:1389:C",
-      "effectRowId": "effect:hoyowiki-effect:1389:C",
-      "sourceId": "source:hoyowiki-effect:1389:C",
-      "stat": "atkRatio",
+      "id": "resolved:effect:hoyowiki-effect:23:D5:0",
+      "effectRowId": "effect:hoyowiki-effect:23:D5:0",
+      "sourceId": "source:hoyowiki-effect:23:D5:0",
+      "stat": "damageReduction",
       "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
+        "resolver": "fixed",
+        "source": "rawValue"
       },
-      "dedupeKey": "pending_dedupe:1389:source:hoyowiki-effect:1389:C:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "dedupeKey": "pending_dedupe:23:source:hoyowiki-effect:23:D5:0:damageReduction:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.15
     },
     {
-      "id": "resolved:effect:hoyowiki-effect:1389:D5",
-      "effectRowId": "effect:hoyowiki-effect:1389:D5",
-      "sourceId": "source:hoyowiki-effect:1389:D5",
-      "stat": "unclassified_source_effect",
+      "id": "resolved:effect:hoyowiki-effect:21:A:0",
+      "effectRowId": "effect:hoyowiki-effect:21:A:0",
+      "sourceId": "source:hoyowiki-effect:21:A:0",
+      "stat": "dotVulnerability",
       "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
+        "resolver": "fixed",
+        "source": "rawValue"
       },
-      "dedupeKey": "pending_dedupe:1389:source:hoyowiki-effect:1389:D5:unclassified_source_effect:buff:field",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:1389:E",
-      "effectRowId": "effect:hoyowiki-effect:1389:E",
-      "sourceId": "source:hoyowiki-effect:1389:E",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:1389:source:hoyowiki-effect:1389:E:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:1228:A",
-      "effectRowId": "effect:hoyowiki-effect:1228:A",
-      "sourceId": "source:hoyowiki-effect:1228:A",
-      "stat": "hpRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:1228:source:hoyowiki-effect:1228:A:hpRatio:debuff:all_allies",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:1228:B",
-      "effectRowId": "effect:hoyowiki-effect:1228:B",
-      "sourceId": "source:hoyowiki-effect:1228:B",
-      "stat": "hpRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:1228:source:hoyowiki-effect:1228:B:hpRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:1228:B1",
-      "effectRowId": "effect:hoyowiki-effect:1228:B1",
-      "sourceId": "source:hoyowiki-effect:1228:B1",
-      "stat": "unclassified_source_effect",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:1228:source:hoyowiki-effect:1228:B1:unclassified_source_effect:buff:field",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:1228:C",
-      "effectRowId": "effect:hoyowiki-effect:1228:C",
-      "sourceId": "source:hoyowiki-effect:1228:C",
-      "stat": "hpRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:1228:source:hoyowiki-effect:1228:C:hpRatio:buff:single_ally",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:1228:D",
-      "effectRowId": "effect:hoyowiki-effect:1228:D",
-      "sourceId": "source:hoyowiki-effect:1228:D",
-      "stat": "unclassified_source_effect",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:1228:source:hoyowiki-effect:1228:D:unclassified_source_effect:buff:all_allies",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:1228:E",
-      "effectRowId": "effect:hoyowiki-effect:1228:E",
-      "sourceId": "source:hoyowiki-effect:1228:E",
-      "stat": "allDamage",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:1228:source:hoyowiki-effect:1228:E:allDamage:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:791:A",
-      "effectRowId": "effect:hoyowiki-effect:791:A",
-      "sourceId": "source:hoyowiki-effect:791:A",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:791:source:hoyowiki-effect:791:A:atkRatio:debuff:enemy_all",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:791:B",
-      "effectRowId": "effect:hoyowiki-effect:791:B",
-      "sourceId": "source:hoyowiki-effect:791:B",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:791:source:hoyowiki-effect:791:B:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:791:B1",
-      "effectRowId": "effect:hoyowiki-effect:791:B1",
-      "sourceId": "source:hoyowiki-effect:791:B1",
-      "stat": "unclassified_source_effect",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:791:source:hoyowiki-effect:791:B1:unclassified_source_effect:buff:field",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:791:C",
-      "effectRowId": "effect:hoyowiki-effect:791:C",
-      "sourceId": "source:hoyowiki-effect:791:C",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:791:source:hoyowiki-effect:791:C:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:791:D",
-      "effectRowId": "effect:hoyowiki-effect:791:D",
-      "sourceId": "source:hoyowiki-effect:791:D",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:791:source:hoyowiki-effect:791:D:atkRatio:debuff:enemy_all",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:791:E",
-      "effectRowId": "effect:hoyowiki-effect:791:E",
-      "sourceId": "source:hoyowiki-effect:791:E",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:791:source:hoyowiki-effect:791:E:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:791:E1",
-      "effectRowId": "effect:hoyowiki-effect:791:E1",
-      "sourceId": "source:hoyowiki-effect:791:E1",
-      "stat": "unclassified_source_effect",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:791:source:hoyowiki-effect:791:E1:unclassified_source_effect:debuff:field",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:29:A",
-      "effectRowId": "effect:hoyowiki-effect:29:A",
-      "sourceId": "source:hoyowiki-effect:29:A",
-      "stat": "hpRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:29:source:hoyowiki-effect:29:A:hpRatio:buff:all_allies",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:29:B",
-      "effectRowId": "effect:hoyowiki-effect:29:B",
-      "sourceId": "source:hoyowiki-effect:29:B",
-      "stat": "hpRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:29:source:hoyowiki-effect:29:B:hpRatio:buff:field",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:29:C",
-      "effectRowId": "effect:hoyowiki-effect:29:C",
-      "sourceId": "source:hoyowiki-effect:29:C",
-      "stat": "hpRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:29:source:hoyowiki-effect:29:C:hpRatio:buff:single_ally",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:29:E",
-      "effectRowId": "effect:hoyowiki-effect:29:E",
-      "sourceId": "source:hoyowiki-effect:29:E",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:29:source:hoyowiki-effect:29:E:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:23:A",
-      "effectRowId": "effect:hoyowiki-effect:23:A",
-      "sourceId": "source:hoyowiki-effect:23:A",
-      "stat": "defenseDown",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:23:source:hoyowiki-effect:23:A:defenseDown:debuff:enemy_all",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:23:B",
-      "effectRowId": "effect:hoyowiki-effect:23:B",
-      "sourceId": "source:hoyowiki-effect:23:B",
-      "stat": "defenseDown",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:23:source:hoyowiki-effect:23:B:defenseDown:buff:all_allies",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:23:C",
-      "effectRowId": "effect:hoyowiki-effect:23:C",
-      "sourceId": "source:hoyowiki-effect:23:C",
-      "stat": "unclassified_source_effect",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:23:source:hoyowiki-effect:23:C:unclassified_source_effect:debuff:enemy_all",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:23:D2",
-      "effectRowId": "effect:hoyowiki-effect:23:D2",
-      "sourceId": "source:hoyowiki-effect:23:D2",
-      "stat": "hpRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:23:source:hoyowiki-effect:23:D2:hpRatio:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:23:D5",
-      "effectRowId": "effect:hoyowiki-effect:23:D5",
-      "sourceId": "source:hoyowiki-effect:23:D5",
-      "stat": "unclassified_source_effect",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:23:source:hoyowiki-effect:23:D5:unclassified_source_effect:buff:all_allies",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:23:E",
-      "effectRowId": "effect:hoyowiki-effect:23:E",
-      "sourceId": "source:hoyowiki-effect:23:E",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:23:source:hoyowiki-effect:23:E:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:21:A",
-      "effectRowId": "effect:hoyowiki-effect:21:A",
-      "sourceId": "source:hoyowiki-effect:21:A",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:21:source:hoyowiki-effect:21:A:atkRatio:debuff:enemy_all",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:21:B",
-      "effectRowId": "effect:hoyowiki-effect:21:B",
-      "sourceId": "source:hoyowiki-effect:21:B",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:21:source:hoyowiki-effect:21:B:atkRatio:buff:field",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:21:C",
-      "effectRowId": "effect:hoyowiki-effect:21:C",
-      "sourceId": "source:hoyowiki-effect:21:C",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:21:source:hoyowiki-effect:21:C:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:21:C1",
-      "effectRowId": "effect:hoyowiki-effect:21:C1",
-      "sourceId": "source:hoyowiki-effect:21:C1",
-      "stat": "unclassified_source_effect",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:21:source:hoyowiki-effect:21:C1:unclassified_source_effect:buff:field",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:21:E",
-      "effectRowId": "effect:hoyowiki-effect:21:E",
-      "sourceId": "source:hoyowiki-effect:21:E",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:21:source:hoyowiki-effect:21:E:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:21:E1",
-      "effectRowId": "effect:hoyowiki-effect:21:E1",
-      "sourceId": "source:hoyowiki-effect:21:E1",
-      "stat": "unclassified_source_effect",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:21:source:hoyowiki-effect:21:E1:unclassified_source_effect:buff:field",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:18:A",
-      "effectRowId": "effect:hoyowiki-effect:18:A",
-      "sourceId": "source:hoyowiki-effect:18:A",
-      "stat": "hpRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:18:source:hoyowiki-effect:18:A:hpRatio:buff:all_allies",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:18:B",
-      "effectRowId": "effect:hoyowiki-effect:18:B",
-      "sourceId": "source:hoyowiki-effect:18:B",
-      "stat": "hpRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:18:source:hoyowiki-effect:18:B:hpRatio:buff:field",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:18:B1",
-      "effectRowId": "effect:hoyowiki-effect:18:B1",
-      "sourceId": "source:hoyowiki-effect:18:B1",
-      "stat": "unclassified_source_effect",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:18:source:hoyowiki-effect:18:B1:unclassified_source_effect:buff:field",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:18:C",
-      "effectRowId": "effect:hoyowiki-effect:18:C",
-      "sourceId": "source:hoyowiki-effect:18:C",
-      "stat": "hpRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:18:source:hoyowiki-effect:18:C:hpRatio:buff:single_ally",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:18:D3",
-      "effectRowId": "effect:hoyowiki-effect:18:D3",
-      "sourceId": "source:hoyowiki-effect:18:D3",
-      "stat": "unclassified_source_effect",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:18:source:hoyowiki-effect:18:D3:unclassified_source_effect:debuff:single_ally",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:18:E",
-      "effectRowId": "effect:hoyowiki-effect:18:E",
-      "sourceId": "source:hoyowiki-effect:18:E",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:18:source:hoyowiki-effect:18:E:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:17:A",
-      "effectRowId": "effect:hoyowiki-effect:17:A",
-      "sourceId": "source:hoyowiki-effect:17:A",
-      "stat": "defenseDown",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:17:source:hoyowiki-effect:17:A:defenseDown:buff:all_allies",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:17:B",
-      "effectRowId": "effect:hoyowiki-effect:17:B",
-      "sourceId": "source:hoyowiki-effect:17:B",
-      "stat": "hpRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:17:source:hoyowiki-effect:17:B:hpRatio:buff:self",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:17:C",
-      "effectRowId": "effect:hoyowiki-effect:17:C",
-      "sourceId": "source:hoyowiki-effect:17:C",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:17:source:hoyowiki-effect:17:C:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:17:E",
-      "effectRowId": "effect:hoyowiki-effect:17:E",
-      "sourceId": "source:hoyowiki-effect:17:E",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:17:source:hoyowiki-effect:17:E:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:7:A",
-      "effectRowId": "effect:hoyowiki-effect:7:A",
-      "sourceId": "source:hoyowiki-effect:7:A",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:7:source:hoyowiki-effect:7:A:atkRatio:debuff:enemy_all",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:7:B",
-      "effectRowId": "effect:hoyowiki-effect:7:B",
-      "sourceId": "source:hoyowiki-effect:7:B",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:7:source:hoyowiki-effect:7:B:atkRatio:buff:field",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:7:B1",
-      "effectRowId": "effect:hoyowiki-effect:7:B1",
-      "sourceId": "source:hoyowiki-effect:7:B1",
-      "stat": "unclassified_source_effect",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:7:source:hoyowiki-effect:7:B1:unclassified_source_effect:buff:field",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:7:C",
-      "effectRowId": "effect:hoyowiki-effect:7:C",
-      "sourceId": "source:hoyowiki-effect:7:C",
-      "stat": "defenseDown",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:7:source:hoyowiki-effect:7:C:defenseDown:buff:single_ally",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:7:D2",
-      "effectRowId": "effect:hoyowiki-effect:7:D2",
-      "sourceId": "source:hoyowiki-effect:7:D2",
-      "stat": "unclassified_source_effect",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:7:source:hoyowiki-effect:7:D2:unclassified_source_effect:buff:field",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:7:D5",
-      "effectRowId": "effect:hoyowiki-effect:7:D5",
-      "sourceId": "source:hoyowiki-effect:7:D5",
-      "stat": "unclassified_source_effect",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:7:source:hoyowiki-effect:7:D5:unclassified_source_effect:debuff:single_ally",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
-    },
-    {
-      "id": "resolved:effect:hoyowiki-effect:7:E",
-      "effectRowId": "effect:hoyowiki-effect:7:E",
-      "sourceId": "source:hoyowiki-effect:7:E",
-      "stat": "atkRatio",
-      "valueTrace": {
-        "resolver": "preblocked",
-        "reason": "value_mode_unknown"
-      },
-      "dedupeKey": "pending_dedupe:7:source:hoyowiki-effect:7:E:atkRatio:debuff:enemy_single",
-      "calculationStatus": "blocked",
-      "blockedReason": "value_mode_unknown"
+      "dedupeKey": "pending_dedupe:21:source:hoyowiki-effect:21:A:0:dotVulnerability:debuff:enemy_all",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
     }
   ]
 }

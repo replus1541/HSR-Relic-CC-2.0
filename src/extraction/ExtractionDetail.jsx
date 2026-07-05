@@ -63,6 +63,8 @@ export function ExtractionDetail({ params = {} }) {
   const effectRows = canonicalDataset.rows.effectRows.filter((row) => rowMatchesStatus(row, statusRow, characterId));
   const coefficientRows = canonicalDataset.rows.coefficientRows.filter((row) => rowMatchesStatus(row, statusRow, characterId));
   const blockedSourceRows = sourceRows.filter((row) => !row.calculationReady || row.policyBlockedReason);
+  const blockedEffectRows = effectRows.filter((row) => row.calculationStatus !== "calculation_ready");
+  const reviewedEffectRows = effectRows.filter((row) => row.userReview);
   const hasRows = sourceRows.length + effectRows.length + coefficientRows.length > 0;
   const statusTone = statusRow?.readinessStatus === "ready" ? "ready" : statusRow?.readinessStatus === "partial" ? "warning" : "blocked";
   const missingDiagnostics = statusRow?.missingDiagnostics ?? [];
@@ -79,6 +81,8 @@ export function ExtractionDetail({ params = {} }) {
                 { label: "Required", value: statusRow?.requiredMissingCount ?? 0 },
                 { label: "Optional", value: statusRow?.optionalMissingCount ?? 0 },
                 { label: "Dynamic formula", value: statusRow?.valueMode?.dynamicFormula ?? 0 },
+                { label: "Reviewed dynamic", value: statusRow?.valueMode?.dynamicFormulaReviewed ?? 0 },
+                { label: "Unreviewed dynamic", value: statusRow?.valueMode?.dynamicFormulaUnreviewed ?? 0 },
                 { label: "Unknown value", value: statusRow?.valueMode?.unknown ?? 0 },
               ]}
             />
@@ -122,10 +126,29 @@ export function ExtractionDetail({ params = {} }) {
           </Card>
           <Card>
             <h3>Effects</h3>
-            <MetricList items={[{ label: "Rows", value: effectRows.length }, { label: "Ready", value: effectRows.filter((row) => row.calculationStatus === "calculation_ready").length }]} />
-            {effectRows.slice(0, 4).map((row) => (
-              <TraceRow key={row.id} label={row.stat} value={row.valueMode} meta={row.sourceTrace ?? row.sourceId} />
+            <MetricList
+              items={[
+                { label: "Rows", value: effectRows.length },
+                { label: "Ready", value: effectRows.filter((row) => row.calculationStatus === "calculation_ready").length },
+                { label: "Blocked", value: blockedEffectRows.length },
+                { label: "User reviewed", value: reviewedEffectRows.length },
+              ]}
+            />
+            {effectRows.map((row) => (
+              <TraceRow
+                key={row.id}
+                label={row.stat}
+                value={`${row.valueMode}${row.blockedReason ? ` / ${row.blockedReason}` : ""}`}
+                meta={row.userReview?.decision ?? row.sourceTrace ?? row.sourceId}
+              />
             ))}
+            {reviewedEffectRows.some((row) => row.userReview?.relatedModelingNotes?.length) && (
+              <div className="trace-stack">
+                {reviewedEffectRows.flatMap((row) => (row.userReview?.relatedModelingNotes ?? []).map((note) => (
+                  <TraceRow key={`${row.id}:${note}`} label={`${row.stat} note`} value="modeling" meta={note} />
+                )))}
+              </div>
+            )}
           </Card>
           <Card>
             <h3>Coefficients</h3>

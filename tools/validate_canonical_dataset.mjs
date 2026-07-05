@@ -110,16 +110,32 @@ function classifyMissingExtraction(row) {
   return [...row.requiredMissingItems, ...row.optionalMissingItems];
 }
 
+function hasEffectExtractionCandidate(row) {
+  return Boolean(
+    row.sourceAvailability.effectTrace
+    || (row.sourceCounts?.effectCandidates ?? 0) > 0
+    || row.counts.effectRows > 0
+  );
+}
+
+function hasMissingPrimaryHoyoWikiSkillSource(row) {
+  return Boolean(
+    row.identifiers?.hoyowikiEntryPageId
+    && !row.sourceAvailability.skillText
+    && (row.sourceCounts?.skillRows ?? 0) === 0
+  );
+}
+
 function classifyOptionalMissing(row) {
   const missing = [];
   if (!row.sourceAvailability.skillText) missing.push("missing_skill_text");
-  if (!row.sourceAvailability.effectTrace && row.counts.effectRows === 0) missing.push("missing_effect_trace");
+  if (!row.sourceAvailability.effectTrace && row.counts.effectRows === 0 && hasEffectExtractionCandidate(row)) missing.push("missing_effect_trace");
   if (!row.sourceAvailability.coefficient) missing.push("missing_coefficient");
   if (!row.sourceAvailability.eidolon) missing.push("missing_eidolon_trace");
-  if (row.counts.effectRows === 0) missing.push("effect_rows_zero");
+  if (row.counts.effectRows === 0 && hasEffectExtractionCandidate(row)) missing.push("effect_rows_zero");
   if (row.counts.coefficientRows === 0) missing.push("coefficient_rows_zero");
   if (row.valueMode.unknown > 0) missing.push("value_mode_unknown");
-  if (row.valueMode.dynamicFormula > 0) missing.push("dynamic_formula_blocked");
+  if ((row.valueMode.dynamicFormulaUnreviewed ?? row.valueMode.dynamicFormula) > 0) missing.push("dynamic_formula_blocked");
   return missing;
 }
 
@@ -151,6 +167,8 @@ function classifyRequiredMissing(row) {
   const missing = [];
   if (!row.isDisplayNameSourceBacked) missing.push("display_name_source_missing");
   if (!row.isCharacterIdentitySourceBacked) missing.push("character_identity_source_missing");
+  if (hasMissingPrimaryHoyoWikiSkillSource(row)) missing.push("missing_skill_text");
+  if (hasMissingPrimaryHoyoWikiSkillSource(row) && !row.sourceAvailability.eidolon) missing.push("missing_eidolon_trace");
   if (row.sourceTraceMissingRows > 0) missing.push("calculation_ready_source_trace_missing");
   if (row.blockedRows > 0) missing.push("blocked_rows_present");
   if (row.readyRows === 0) missing.push("no_calculation_ready_rows");
@@ -213,7 +231,8 @@ function diagnosticForMissing(missingType, row, rowSets) {
     needsCuratedSource: false,
     nextAction: "Inspect source availability and adapter mapping.",
   };
-  const dynamicRows = (rowSets.effectRows ?? []).filter((effect) => effect.valueMode === ValueMode.DYNAMIC_FORMULA);
+  const dynamicRows = (rowSets.effectRows ?? []).filter((effect) => effect.valueMode === ValueMode.DYNAMIC_FORMULA && !effect.userReview);
+  const reviewedDynamicRows = (rowSets.effectRows ?? []).filter((effect) => effect.valueMode === ValueMode.DYNAMIC_FORMULA && effect.userReview);
   const unknownRows = (rowSets.effectRows ?? []).filter((effect) => effect.valueMode === ValueMode.UNKNOWN);
   const blockedRows = [
     ...(rowSets.sourceRows ?? []).filter((source) => !source.calculationReady || source.policyBlockedReason),
@@ -276,13 +295,15 @@ function diagnosticForMissing(missingType, row, rowSets) {
   if (missingType === "dynamic_formula_blocked") {
     return {
       ...base,
-      attemptedSources: ["data/generated/effect-rows.json", "src/effect-engine/value-resolvers/dynamic-formula.js"],
-      matchedCandidateCount: dynamicRows.length || row.valueMode?.dynamicFormula || 0,
+      attemptedSources: ["data/generated/effect-rows.json", "src/effect-engine/value-resolvers/dynamic-formula.js", "reports/extraction/dynamic-formula-user-review-progress.md"],
+      matchedCandidateCount: dynamicRows.length || row.valueMode?.dynamicFormulaUnreviewed || 0,
       closestCandidates: closestCandidates(row, { ...rowSets, effectRows: dynamicRows }),
-      failureReason: "valueMode_dynamic_formula_unresolved",
+      failureReason: reviewedDynamicRows.length ? "valueMode_dynamic_formula_partially_reviewed" : "valueMode_dynamic_formula_unresolved",
       autoMatchPossible: false,
       needsCuratedSource: false,
-      nextAction: "Implement a source-backed dynamic formula resolver or keep these rows blocked.",
+      nextAction: reviewedDynamicRows.length
+        ? "Apply remaining user review decisions or implement the source-backed dynamic formula resolver for unreviewed rows."
+        : "Add a user review decision or implement a source-backed dynamic formula resolver.",
     };
   }
   if (missingType === "value_mode_unknown") {
@@ -416,7 +437,10 @@ export function buildExtractionCoverage(dataset) {
     const valueMode = {
       unknown: effectRows.filter((row) => row.valueMode === ValueMode.UNKNOWN).length,
       dynamicFormula: effectRows.filter((row) => row.valueMode === ValueMode.DYNAMIC_FORMULA).length,
+      dynamicFormulaReviewed: effectRows.filter((row) => row.valueMode === ValueMode.DYNAMIC_FORMULA && row.userReview).length,
+      dynamicFormulaUnreviewed: effectRows.filter((row) => row.valueMode === ValueMode.DYNAMIC_FORMULA && !row.userReview).length,
     };
+    const userReviewedEffectRows = effectRows.filter((row) => row.userReview).length;
     const calculationReadyRows = [
       ...sourceRows.filter((row) => row.calculationReady === true),
       ...effectRows.filter((row) => row.calculationStatus === CalculationStatus.CALCULATION_READY),
@@ -445,6 +469,7 @@ export function buildExtractionCoverage(dataset) {
       calculationReadyCoefficientRows: status.calculationReadyCoefficientRows,
       blockedCoefficientRows: status.blockedCoefficientRows,
       valueMode,
+      userReviewedEffectRows,
       sourceTraceMissingRows,
     };
     const statusMetadata = {
@@ -452,11 +477,11 @@ export function buildExtractionCoverage(dataset) {
       isDisplayNameSourceBacked: isDisplayNameSourceBacked(enriched),
       isCharacterIdentitySourceBacked: isCharacterIdentitySourceBacked(enriched),
     };
-    const optionalMissingItems = classifyOptionalMissing(statusMetadata);
     const requiredMissingItems = classifyRequiredMissing({
       ...statusMetadata,
-      optionalMissingItems,
     });
+    const optionalMissingItems = classifyOptionalMissing(statusMetadata)
+      .filter((missingItem) => !requiredMissingItems.includes(missingItem));
     const missingItems = [...requiredMissingItems, ...optionalMissingItems];
     const missingDiagnostics = createMissingDiagnostics(missingItems, statusMetadata, { sourceRows, effectRows, coefficientRows });
     const readinessStatus = calculateReadinessStatus({
@@ -498,7 +523,10 @@ export function buildExtractionCoverage(dataset) {
       effectRowsZero: rows.filter((row) => row.effectRows === 0).length,
       valueModeUnknownCharacters: rows.filter((row) => row.valueMode.unknown > 0).length,
       dynamicFormulaCharacters: rows.filter((row) => row.valueMode.dynamicFormula > 0).length,
-      legacyReadyWithMissing: rows.filter((row) => row.readyRows > 0 && row.blockedRows === 0 && row.missingCount > 0).length,
+      dynamicFormulaReviewedCharacters: rows.filter((row) => row.valueMode.dynamicFormulaReviewed > 0).length,
+      dynamicFormulaUnreviewedCharacters: rows.filter((row) => row.valueMode.dynamicFormulaUnreviewed > 0).length,
+      userReviewedEffectRows: rows.reduce((sum, row) => sum + (row.userReviewedEffectRows ?? 0), 0),
+      legacyReadyWithMissing: rows.filter((row) => row.readinessStatus === "ready" && row.missingCount > 0).length,
       displayNameSourceMissing: rows.filter((row) => !row.isDisplayNameSourceBacked).length,
       characterIdentitySourceMissing: rows.filter((row) => !row.isCharacterIdentitySourceBacked).length,
       autoMatchPossible: rows.reduce((sum, row) => sum + (row.missingDiagnostics ?? []).filter((item) => item.autoMatchPossible).length, 0),

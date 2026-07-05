@@ -1,5 +1,73 @@
 import { BlockedReason, CalculationStatus } from "../../data-model/schemas/index.js";
 
+function resolveEffectiveSkillLevel(effect, context) {
+  const scaling = effect.skillScaling;
+  if (!scaling || !Array.isArray(scaling.coefficientValues) || scaling.coefficientValues.length === 0) return null;
+
+  const eidolon = Number.isFinite(context.eidolon) ? context.eidolon : 0;
+  let level = Number.isFinite(scaling.baseLevel) ? scaling.baseLevel : null;
+  if (level == null) return null;
+
+  let hardCap = Number.isFinite(scaling.hardCap) ? scaling.hardCap : scaling.coefficientValues.length;
+  for (const bonus of scaling.eidolonLevelBonuses ?? []) {
+    if (!Number.isFinite(bonus?.minEidolon) || !Number.isFinite(bonus?.levelBonus)) continue;
+    if (eidolon < bonus.minEidolon) continue;
+    level += bonus.levelBonus;
+    if (Number.isFinite(bonus.levelCap)) hardCap = Math.min(hardCap, bonus.levelCap);
+  }
+
+  level = Math.min(level, hardCap);
+  return {
+    effectiveLevel: level,
+    tableIndex: level - 1,
+  };
+}
+
+function resolveCoefficientTable(effect, context) {
+  const scaling = effect.skillScaling;
+  const levelInfo = resolveEffectiveSkillLevel(effect, context);
+  if (!levelInfo) {
+    return {
+      calculationStatus: CalculationStatus.BLOCKED,
+      blockedReason: BlockedReason.MISSING_RESOLVED_VALUE,
+      valueTrace: { resolver: "skill_level_scaled", reason: "skillScaling coefficient table missing" },
+    };
+  }
+
+  const resolvedValue = scaling.coefficientValues[levelInfo.tableIndex];
+  const aggregateMultiplier = Number.isFinite(scaling.aggregateMultiplier) ? scaling.aggregateMultiplier : 1;
+  if (typeof resolvedValue !== "number" || !Number.isFinite(resolvedValue)) {
+    return {
+      calculationStatus: CalculationStatus.BLOCKED,
+      blockedReason: BlockedReason.MISSING_RESOLVED_VALUE,
+      valueTrace: {
+        resolver: "skill_level_scaled",
+        reason: "effective level is outside coefficient table",
+        effectiveLevel: levelInfo.effectiveLevel,
+        tableLength: scaling.coefficientValues.length,
+      },
+    };
+  }
+
+  return {
+    resolvedValue: resolvedValue * aggregateMultiplier,
+    calculationStatus: CalculationStatus.CALCULATION_READY,
+    valueTrace: {
+      resolver: "skill_level_scaled",
+      source: scaling.source,
+      skillCategory: scaling.skillCategory,
+      skillTitle: scaling.skillTitle,
+      coefficientLabel: scaling.coefficientLabel,
+      baseLevel: scaling.baseLevel,
+      eidolon: context.eidolon,
+      eidolonLevelBonuses: scaling.eidolonLevelBonuses ?? [],
+      effectiveLevel: levelInfo.effectiveLevel,
+      tableIndex: levelInfo.tableIndex,
+      ...(aggregateMultiplier !== 1 ? { aggregateMultiplier } : {}),
+    },
+  };
+}
+
 function resolveRawScalar(effect, resolver, contextKey, contextValue) {
   if (contextValue == null) {
     return {
@@ -25,6 +93,7 @@ function resolveRawScalar(effect, resolver, contextKey, contextValue) {
 }
 
 export function resolveSkillLevelScaled(effect, context) {
+  if (effect.skillScaling) return resolveCoefficientTable(effect, context);
   return resolveRawScalar(effect, "skill_level_scaled", "skillLevel", context.skillLevel);
 }
 

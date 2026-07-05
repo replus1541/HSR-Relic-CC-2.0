@@ -20,7 +20,7 @@
       "sourceKind": "hoyowiki",
       "prohibitedRuntimeImport": true,
       "calculationUse": "adapter_must_validate_source_rows",
-      "bytes": 946687,
+      "bytes": 1006142,
       "notes": "Official skill text/table candidate. Phase 6 adapter must preserve source path and source record."
     },
     {
@@ -85,4 +85,3 @@
     }
   ]
 }
-

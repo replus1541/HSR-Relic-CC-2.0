@@ -1,0 +1,952 @@
+{
+  "app": "hsr-relic-cc-equipment-stat-model",
+  "version": 1,
+  "generatedAt": "2026-07-05T17:31:04.138Z",
+  "source": {
+    "legacyGeneratedRelics": "C:\\CODEX\\HSR RELIC CC\\src\\generated-relics.json",
+    "legacyModelLogic": "C:\\CODEX\\HSR RELIC CC\\src\\sample-data.js"
+  },
+  "policy": {
+    "relicLevel": 15,
+    "subStatValueMode": "average_roll_assumption_for_default_recommendations",
+    "combatConditionalSetEffectsExcluded": true,
+    "teamSetEffectsExcluded": true
+  },
+  "relicMainStatOptions": {
+    "hpFlat": {
+      "label": "HP",
+      "value": 705,
+      "percent": false
+    },
+    "atkFlat": {
+      "label": "공격력",
+      "value": 352,
+      "percent": false
+    },
+    "atkRatio": {
+      "label": "공격력",
+      "value": 0.432,
+      "percent": true
+    },
+    "hpRatio": {
+      "label": "HP",
+      "value": 0.432,
+      "percent": true
+    },
+    "defRatio": {
+      "label": "방어력",
+      "value": 0.54,
+      "percent": true
+    },
+    "critRate": {
+      "label": "치확",
+      "value": 0.324,
+      "percent": true
+    },
+    "critDamage": {
+      "label": "치피",
+      "value": 0.648,
+      "percent": true
+    },
+    "outgoingHealingBoost": {
+      "label": "치유량",
+      "value": 0.345,
+      "percent": true
+    },
+    "elementDamage": {
+      "label": "속성피해",
+      "value": 0.388,
+      "percent": true
+    },
+    "breakEffect": {
+      "label": "격특",
+      "value": 0.648,
+      "percent": true
+    },
+    "effectHitRate": {
+      "label": "효과명중",
+      "value": 0.432,
+      "percent": true
+    },
+    "energyRegen": {
+      "label": "에너지",
+      "value": 0.194,
+      "percent": true
+    },
+    "speed": {
+      "label": "속도",
+      "value": 25,
+      "percent": false
+    }
+  },
+  "relicSubStatRollValues": {
+    "hpFlat": 38.103755,
+    "atkFlat": 19.051877,
+    "defFlat": 19.051877,
+    "hpRatio": 0.03888,
+    "atkRatio": 0.03888,
+    "defRatio": 0.0486,
+    "speed": 2.3,
+    "critRate": 0.02916,
+    "critDamage": 0.05832,
+    "effectHitRate": 0.03888,
+    "effectResistance": 0.03888,
+    "breakEffect": 0.05832
+  },
+  "relicSets": [
+    {
+      "id": "wiki-relic-5012",
+      "entryPageId": "5012",
+      "name": "0호 스테이지 펑크 로드",
+      "category": "ornament",
+      "stats": {
+        "critDamage": 0.2
+      },
+      "twoPieceStats": {
+        "critDamage": 0.2
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-1237",
+      "entryPageId": "1237",
+      "name": "가상공간을 누비는 메신저",
+      "category": "tunnel",
+      "stats": {
+        "speedRatio": 0.06
+      },
+      "twoPieceStats": {
+        "speedRatio": 0.06
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-3342",
+      "entryPageId": "3342",
+      "name": "개선가를 울리는 영웅",
+      "category": "tunnel",
+      "stats": {
+        "speedRatio": 0.06,
+        "atkRatio": 0.12,
+        "critDamage": 0.3
+      },
+      "twoPieceStats": {
+        "atkRatio": 0.12
+      },
+      "fourPieceStats": {
+        "speedRatio": 0.06,
+        "critDamage": 0.3
+      }
+    },
+    {
+      "id": "wiki-relic-3782",
+      "entryPageId": "3782",
+      "name": "거친 파도를 헤치는 선장",
+      "category": "tunnel",
+      "stats": {
+        "atkRatio": 0.48,
+        "critDamage": 0.16
+      },
+      "twoPieceStats": {
+        "critDamage": 0.16
+      },
+      "fourPieceStats": {
+        "atkRatio": 0.48
+      }
+    },
+    {
+      "id": "wiki-relic-2651",
+      "entryPageId": "2651",
+      "name": "겁화 연등의 연마궁",
+      "category": "ornament",
+      "stats": {
+        "speedRatio": 0.06,
+        "breakEffect": 0.4
+      },
+      "twoPieceStats": {
+        "speedRatio": 0.06,
+        "breakEffect": 0.4
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-3566",
+      "entryPageId": "3566",
+      "name": "고요한 습골지",
+      "category": "ornament",
+      "stats": {
+        "hpRatio": 0.12,
+        "critDamage": 0.28
+      },
+      "twoPieceStats": {
+        "hpRatio": 0.12,
+        "critDamage": 0.28
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-3162",
+      "entryPageId": "3162",
+      "name": "고행의 길에 다시 오른 사제",
+      "category": "tunnel",
+      "stats": {
+        "speedRatio": 0.06
+      },
+      "twoPieceStats": {
+        "speedRatio": 0.06
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-2649",
+      "entryPageId": "2649",
+      "name": "곤충 재앙을 잠재우는 철기군",
+      "category": "tunnel",
+      "stats": {
+        "breakEffect": 0.16,
+        "breakDamage": 0.1,
+        "defenseDown": 0.1
+      },
+      "twoPieceStats": {
+        "breakEffect": 0.16
+      },
+      "fourPieceStats": {
+        "breakEffect": 1.5,
+        "breakDamage": 0.1,
+        "defenseDown": 0.1
+      }
+    },
+    {
+      "id": "wiki-relic-3059",
+      "entryPageId": "3059",
+      "name": "기묘한 나나 낙원",
+      "category": "ornament",
+      "stats": {
+        "critDamage": 0.16
+      },
+      "twoPieceStats": {
+        "critDamage": 0.16
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-1600",
+      "entryPageId": "1600",
+      "name": "깊은 감옥에 수감된 죄수",
+      "category": "tunnel",
+      "stats": {
+        "atkRatio": 0.12,
+        "dotDamage": 0.06,
+        "defenseDown": 0.06
+      },
+      "twoPieceStats": {
+        "atkRatio": 0.12
+      },
+      "fourPieceStats": {
+        "dotDamage": 0.06,
+        "defenseDown": 0.06
+      }
+    },
+    {
+      "id": "wiki-relic-3903",
+      "entryPageId": "3903",
+      "name": "꿈을 엮는 요정의 낙원",
+      "category": "ornament",
+      "stats": {
+        "allDamage": 0.09
+      },
+      "twoPieceStats": {
+        "allDamage": 0.09
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-1926",
+      "entryPageId": "1926",
+      "name": "꿈을 조작하는 시계공",
+      "category": "tunnel",
+      "stats": {
+        "breakEffect": 0.16
+      },
+      "twoPieceStats": {
+        "breakEffect": 0.16
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-1598",
+      "entryPageId": "1598",
+      "name": "꿈의 땅 페나코니",
+      "category": "ornament",
+      "stats": {
+        "energyRegen": 0.05
+      },
+      "twoPieceStats": {
+        "energyRegen": 0.05
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-136",
+      "entryPageId": "136",
+      "name": "뇌전을 울리는 밴드",
+      "category": "tunnel",
+      "stats": {
+        "atkRatio": 0.2,
+        "elementDamage": 0.1
+      },
+      "twoPieceStats": {
+        "elementDamage": 0.1
+      },
+      "fourPieceStats": {
+        "atkRatio": 0.2
+      }
+    },
+    {
+      "id": "wiki-relic-133",
+      "entryPageId": "133",
+      "name": "눈보라에 맞서는 철위대",
+      "category": "tunnel",
+      "stats": {
+        "hpRatio": 0.08,
+        "vulnerability": 0.08
+      },
+      "twoPieceStats": {
+        "vulnerability": 0.08
+      },
+      "fourPieceStats": {
+        "hpRatio": 0.08
+      }
+    },
+    {
+      "id": "wiki-relic-143",
+      "entryPageId": "143",
+      "name": "도적국 탈리아",
+      "category": "ornament",
+      "stats": {
+        "speedRatio": 0.2,
+        "breakEffect": 0.16
+      },
+      "twoPieceStats": {
+        "speedRatio": 0.2,
+        "breakEffect": 0.16
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-139",
+      "entryPageId": "139",
+      "name": "들이삭과 동행하는 거너",
+      "category": "tunnel",
+      "stats": {
+        "speedRatio": 0.06,
+        "atkRatio": 0.12,
+        "allDamage": 0.1
+      },
+      "twoPieceStats": {
+        "atkRatio": 0.12
+      },
+      "fourPieceStats": {
+        "speedRatio": 0.06,
+        "allDamage": 0.1
+      }
+    },
+    {
+      "id": "wiki-relic-3343",
+      "entryPageId": "3343",
+      "name": "망국을 애도하는 시인",
+      "category": "tunnel",
+      "stats": {
+        "elementDamage": 0.1
+      },
+      "twoPieceStats": {
+        "elementDamage": 0.1
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-1238",
+      "entryPageId": "1238",
+      "name": "뭇별 경기장",
+      "category": "ornament",
+      "stats": {
+        "critRate": 0.08,
+        "basicDamage": 0.2,
+        "skillDamage": 0.2
+      },
+      "twoPieceStats": {
+        "critRate": 0.08,
+        "basicDamage": 0.2,
+        "skillDamage": 0.2
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-3064",
+      "entryPageId": "3064",
+      "name": "바다에 잠긴 루샤카",
+      "category": "ornament",
+      "stats": {
+        "energyRegen": 0.05
+      },
+      "twoPieceStats": {
+        "energyRegen": 0.05
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-2655",
+      "entryPageId": "2655",
+      "name": "바람과 구름을 가르는 용맹함",
+      "category": "tunnel",
+      "stats": {
+        "atkRatio": 0.12,
+        "critRate": 0.06,
+        "allDamage": 0.36
+      },
+      "twoPieceStats": {
+        "atkRatio": 0.12
+      },
+      "fourPieceStats": {
+        "critRate": 0.06,
+        "allDamage": 0.36
+      }
+    },
+    {
+      "id": "wiki-relic-135",
+      "entryPageId": "135",
+      "name": "밤낮의 경계를 나는 매",
+      "category": "tunnel",
+      "stats": {
+        "elementDamage": 0.1
+      },
+      "twoPieceStats": {
+        "elementDamage": 0.1
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-146",
+      "entryPageId": "146",
+      "name": "범은하 상사",
+      "category": "ornament",
+      "stats": {
+        "atkRatio": 0.25
+      },
+      "twoPieceStats": {
+        "atkRatio": 0.25
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-4013",
+      "entryPageId": "4013",
+      "name": "별빛에 숨은 은둔자",
+      "category": "tunnel",
+      "stats": {},
+      "twoPieceStats": {},
+      "fourPieceStats": {}
+    },
+    {
+      "id": "manual-navigator-ajip",
+      "entryPageId": "honeyhunter-as-navigator-isee-sees-it",
+      "name": "별을 갈망하는 항법사 아집",
+      "category": "tunnel",
+      "stats": {
+        "atkRatio": 0.12,
+        "skillDamage": 0.18,
+        "ultimateDamage": 0.18
+      },
+      "twoPieceStats": {
+        "atkRatio": 0.12
+      },
+      "fourPieceStats": {
+        "skillDamage": 0.18,
+        "ultimateDamage": 0.18
+      }
+    },
+    {
+      "id": "wiki-relic-145",
+      "entryPageId": "145",
+      "name": "별처럼 빛나는 천재",
+      "category": "tunnel",
+      "stats": {
+        "defenseDown": 0.1,
+        "elementDamage": 0.1
+      },
+      "twoPieceStats": {
+        "elementDamage": 0.1
+      },
+      "fourPieceStats": {
+        "defenseDown": 0.1
+      }
+    },
+    {
+      "id": "wiki-relic-1235",
+      "entryPageId": "1235",
+      "name": "부러진 용골",
+      "category": "ornament",
+      "stats": {
+        "effectResistance": 0.1
+      },
+      "twoPieceStats": {
+        "effectResistance": 0.1
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-144",
+      "entryPageId": "144",
+      "name": "불로인의 선주",
+      "category": "ornament",
+      "stats": {
+        "hpRatio": 0.12
+      },
+      "twoPieceStats": {
+        "hpRatio": 0.12
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-4770",
+      "entryPageId": "4770",
+      "name": "빛나는 공훈의 마법 소녀",
+      "category": "tunnel",
+      "stats": {
+        "critDamage": 0.16,
+        "defenseDown": 0.1
+      },
+      "twoPieceStats": {
+        "critDamage": 0.16
+      },
+      "fourPieceStats": {
+        "defenseDown": 0.1
+      }
+    },
+    {
+      "id": "wiki-relic-3565",
+      "entryPageId": "3565",
+      "name": "사색하는 거목",
+      "category": "ornament",
+      "stats": {
+        "speedRatio": 0.06
+      },
+      "twoPieceStats": {
+        "speedRatio": 0.06
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-1925",
+      "entryPageId": "1925",
+      "name": "사수에 잠수한 선구자",
+      "category": "tunnel",
+      "stats": {
+        "allDamage": 0.12,
+        "critRate": 0.04
+      },
+      "twoPieceStats": {
+        "allDamage": 0.12
+      },
+      "fourPieceStats": {
+        "critRate": 0.04
+      }
+    },
+    {
+      "id": "wiki-relic-137",
+      "entryPageId": "137",
+      "name": "생명의 바커 공",
+      "category": "ornament",
+      "stats": {
+        "speedRatio": 0.4
+      },
+      "twoPieceStats": {
+        "speedRatio": 0.4
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-134",
+      "entryPageId": "134",
+      "name": "스트리트 격투왕",
+      "category": "tunnel",
+      "stats": {
+        "atkRatio": 0.05,
+        "elementDamage": 0.1
+      },
+      "twoPieceStats": {
+        "elementDamage": 0.1
+      },
+      "fourPieceStats": {
+        "atkRatio": 0.05
+      }
+    },
+    {
+      "id": "manual-myeongjang",
+      "entryPageId": "honeyhunter-divine-querying-master-smith",
+      "name": "신공을 탐구하는 명장",
+      "category": "tunnel",
+      "stats": {
+        "hpRatio": 0.12,
+        "critDamage": 0.28
+      },
+      "twoPieceStats": {
+        "hpRatio": 0.12
+      },
+      "fourPieceStats": {
+        "critDamage": 0.28
+      }
+    },
+    {
+      "id": "wiki-relic-4068",
+      "entryPageId": "4068",
+      "name": "영원의 땅 앰포리어스",
+      "category": "ornament",
+      "stats": {
+        "critRate": 0.08
+      },
+      "twoPieceStats": {
+        "critRate": 0.08
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-150",
+      "entryPageId": "150",
+      "name": "용암 단조의 화장(火匠)",
+      "category": "tunnel",
+      "stats": {
+        "elementDamage": 0.1,
+        "allDamage": 0.12
+      },
+      "twoPieceStats": {
+        "elementDamage": 0.1
+      },
+      "fourPieceStats": {
+        "elementDamage": 0.12,
+        "allDamage": 0.12
+      }
+    },
+    {
+      "id": "wiki-relic-147",
+      "entryPageId": "147",
+      "name": "우주 봉인 정거장",
+      "category": "ornament",
+      "stats": {
+        "speedRatio": 0.12,
+        "atkRatio": 0.12
+      },
+      "twoPieceStats": {
+        "speedRatio": 0.12,
+        "atkRatio": 0.12
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-138",
+      "entryPageId": "138",
+      "name": "유성을 쫓는 괴도",
+      "category": "tunnel",
+      "stats": {
+        "breakEffect": 0.16
+      },
+      "twoPieceStats": {
+        "breakEffect": 0.16
+      },
+      "fourPieceStats": {
+        "breakEffect": 0.16
+      }
+    },
+    {
+      "id": "wiki-relic-2372",
+      "entryPageId": "2372",
+      "name": "이즈모 현세와 타카마 신국",
+      "category": "ornament",
+      "stats": {
+        "atkRatio": 0.12,
+        "critRate": 0.12
+      },
+      "twoPieceStats": {
+        "atkRatio": 0.12,
+        "critRate": 0.12
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-1236",
+      "entryPageId": "1236",
+      "name": "장수를 원하는 제자",
+      "category": "tunnel",
+      "stats": {
+        "hpRatio": 0.12,
+        "critRate": 0.08
+      },
+      "twoPieceStats": {
+        "hpRatio": 0.12
+      },
+      "fourPieceStats": {
+        "hpRatio": 0.08,
+        "critRate": 0.08
+      }
+    },
+    {
+      "id": "wiki-relic-1601",
+      "entryPageId": "1601",
+      "name": "재와 뼈마저 불사르는 대공",
+      "category": "tunnel",
+      "stats": {
+        "atkRatio": 0.06,
+        "allDamage": 0.2
+      },
+      "twoPieceStats": {
+        "allDamage": 0.2
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-142",
+      "entryPageId": "142",
+      "name": "정토 교황의 팔라딘",
+      "category": "tunnel",
+      "stats": {},
+      "twoPieceStats": {},
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-2373",
+      "entryPageId": "2373",
+      "name": "주인 없는 황폐한 별 츠가냐",
+      "category": "ornament",
+      "stats": {
+        "critRate": 0.04,
+        "critDamage": 0.04
+      },
+      "twoPieceStats": {
+        "critRate": 0.04,
+        "critDamage": 0.04
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-3904",
+      "entryPageId": "3904",
+      "name": "즐거움에 취한 바다의 일각",
+      "category": "ornament",
+      "stats": {
+        "atkRatio": 0.12,
+        "dotDamage": 0.12
+      },
+      "twoPieceStats": {
+        "atkRatio": 0.12,
+        "dotDamage": 0.12
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-3161",
+      "entryPageId": "3161",
+      "name": "지식의 바다에 빠진 학자",
+      "category": "tunnel",
+      "stats": {
+        "critRate": 0.08,
+        "allDamage": 0.2
+      },
+      "twoPieceStats": {
+        "critRate": 0.08
+      },
+      "fourPieceStats": {
+        "allDamage": 0.2
+      }
+    },
+    {
+      "id": "wiki-relic-2650",
+      "entryPageId": "2650",
+      "name": "질주하는 늑대의 도람 왕조",
+      "category": "ornament",
+      "stats": {
+        "critDamage": 0.25
+      },
+      "twoPieceStats": {
+        "critDamage": 0.25
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-1599",
+      "entryPageId": "1599",
+      "name": "창공 전선 그라모스",
+      "category": "ornament",
+      "stats": {
+        "speedRatio": 0.12,
+        "atkRatio": 0.12,
+        "allDamage": 0.12
+      },
+      "twoPieceStats": {
+        "speedRatio": 0.12,
+        "atkRatio": 0.12,
+        "allDamage": 0.12
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-5009",
+      "entryPageId": "5009",
+      "name": "천 개의 별이 모인 도시",
+      "category": "ornament",
+      "stats": {
+        "atkRatio": 0.24
+      },
+      "twoPieceStats": {
+        "atkRatio": 0.24
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-4769",
+      "entryPageId": "4769",
+      "name": "천명에 응해 먼 길을 떠난 점술가",
+      "category": "tunnel",
+      "stats": {
+        "speedRatio": 0.06,
+        "critRate": 0.1
+      },
+      "twoPieceStats": {
+        "speedRatio": 0.06
+      },
+      "fourPieceStats": {
+        "speedRatio": 0.1,
+        "critRate": 0.1
+      }
+    },
+    {
+      "id": "wiki-relic-4012",
+      "entryPageId": "4012",
+      "name": "천지를 재창조한 구세주",
+      "category": "tunnel",
+      "stats": {
+        "critRate": 0.08,
+        "hpRatio": 0.24
+      },
+      "twoPieceStats": {
+        "critRate": 0.08
+      },
+      "fourPieceStats": {
+        "hpRatio": 0.24
+      }
+    },
+    {
+      "id": "wiki-relic-149",
+      "entryPageId": "149",
+      "name": "천체 차분기관",
+      "category": "ornament",
+      "stats": {
+        "critRate": 0.6,
+        "critDamage": 0.16
+      },
+      "twoPieceStats": {
+        "critRate": 0.6,
+        "critDamage": 0.16
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-151",
+      "entryPageId": "151",
+      "name": "축성가의 벨로보그",
+      "category": "ornament",
+      "stats": {
+        "defRatio": 0.15
+      },
+      "twoPieceStats": {
+        "defRatio": 0.15
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-3783",
+      "entryPageId": "3783",
+      "name": "태양과 번개의 여전사",
+      "category": "tunnel",
+      "stats": {
+        "speedRatio": 0.12
+      },
+      "twoPieceStats": {
+        "speedRatio": 0.06
+      },
+      "fourPieceStats": {
+        "speedRatio": 0.06
+      }
+    },
+    {
+      "id": "wiki-relic-4069",
+      "entryPageId": "4069",
+      "name": "텐고쿠@라이브스트리밍",
+      "category": "ornament",
+      "stats": {
+        "critDamage": 0.16
+      },
+      "twoPieceStats": {
+        "critDamage": 0.16
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-141",
+      "entryPageId": "141",
+      "name": "혹한 밀림의 사냥꾼",
+      "category": "tunnel",
+      "stats": {
+        "critDamage": 0.25,
+        "elementDamage": 0.1
+      },
+      "twoPieceStats": {
+        "elementDamage": 0.1
+      },
+      "fourPieceStats": {
+        "critDamage": 0.25
+      }
+    },
+    {
+      "id": "wiki-relic-148",
+      "entryPageId": "148",
+      "name": "황무지의 도적, 황야인",
+      "category": "tunnel",
+      "stats": {
+        "critRate": 0.1,
+        "critDamage": 0.2,
+        "elementDamage": 0.1
+      },
+      "twoPieceStats": {
+        "elementDamage": 0.1
+      },
+      "fourPieceStats": {
+        "critRate": 0.1,
+        "critDamage": 0.2
+      }
+    },
+    {
+      "id": "wiki-relic-152",
+      "entryPageId": "152",
+      "name": "회전을 멈춘 살소토",
+      "category": "ornament",
+      "stats": {
+        "critRate": 0.08,
+        "allDamage": 0.15
+      },
+      "twoPieceStats": {
+        "critRate": 0.08,
+        "allDamage": 0.15
+      },
+      "fourPieceStats": {}
+    },
+    {
+      "id": "wiki-relic-140",
+      "entryPageId": "140",
+      "name": "흔적을 남기지 않은 과객",
+      "category": "tunnel",
+      "stats": {},
+      "twoPieceStats": {},
+      "fourPieceStats": {}
+    }
+  ]
+}
