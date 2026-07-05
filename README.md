@@ -39,9 +39,16 @@ source adapter
 
 ## Phase 기반 개발 방식
 
-작업은 `HSR_RELIC_CC_v2_refactoring_step_plan.md`의 Phase 단위로 진행합니다. 각 Phase는 시작/진행/완료 내용을 `HSR_RELIC_CC_v2_phase_log.md`에 기록하고, 완료 가능한 작업 단위마다 git commit을 남깁니다.
+작업은 `HSR_RELIC_CC_v2_refactoring_step_plan.md`의 Phase 순서를 따르되, 실제 실행과 커밋은 더 작은 Task 단위로 진행합니다. 각 Phase는 시작/진행/완료 내용을 `HSR_RELIC_CC_v2_phase_log.md`에 기록하고, 완료 가능한 Task가 끝날 때마다 git commit을 남깁니다.
 
 Phase 1은 프로젝트 골격과 문서 기준을 고정하는 단계입니다. 계산, adapter, schema, effect-engine 구현은 후속 Phase에서만 진행합니다.
+
+Task 기준:
+
+- 한 Task는 검증하거나 설명할 수 있는 최소 작업 단위입니다.
+- 한 커밋에는 하나의 Task만 담습니다.
+- Phase Log에는 Phase 상태와 Task 결과를 함께 기록합니다.
+- Phase 전체가 끝나지 않았더라도 완료된 Task는 커밋합니다.
 
 ## 계산 데이터 원칙
 

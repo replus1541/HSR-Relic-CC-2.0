@@ -11,3 +11,4 @@ Phase 1-A에서는 route shell을 위한 최소 CSS만 둡니다. 기존 HSR REL
 - 기존 앱의 톤과 흐름은 참고하되, v2에서는 작은 presentational component와 route-level composition을 선호합니다.
 - 경량 dependency를 유지하며, 아이콘/차트/상태관리 라이브러리는 필요가 확인된 Phase에서만 추가합니다.
 - 텍스트와 카드 밀도는 모바일 기준으로 먼저 검토합니다.
+- UI Task는 표시 컴포넌트, route composition, styling을 가능한 한 분리해 커밋합니다.

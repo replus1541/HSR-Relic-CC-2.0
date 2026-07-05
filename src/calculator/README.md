@@ -11,3 +11,4 @@ Phase 1-A에서는 데미지 계산, 스탯 합산, modifier 합산을 구현하
 - UI 표시용 값을 따로 재계산하지 않고 aggregation result를 반환합니다.
 - 방어, 저항, 취약, 방무, 방깎, 추가 피해는 별도 aggregation 단계로 분리합니다.
 - `valueMode: unknown` 또는 `usedForCalculation=false` row는 계산에 포함하지 않습니다.
+- 계산 layer 변경은 aggregation 단위 Task로 쪼개고, UI 변경과 같은 커밋에 섞지 않습니다.

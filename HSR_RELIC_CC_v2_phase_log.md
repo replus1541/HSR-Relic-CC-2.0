@@ -6,7 +6,8 @@
 
 - Phase를 시작하면 해당 Phase의 `시작` 항목을 먼저 남깁니다.
 - 작업 중 의미 있는 설계 결정, 파일 생성, 검증 결과, 막힌 점을 즉시 기록합니다.
-- 작업 진행 시마다 완료 가능한 단계 단위로 git commit을 남깁니다.
+- 작업 진행 시마다 완료 가능한 Task 단위로 git commit을 남깁니다.
+- 한 커밋에는 하나의 Task만 담고, Phase 전체가 끝나기 전이라도 완료된 Task는 커밋합니다.
 - Phase가 끝나면 `완료 기준`, `검증 결과`, `다음 Phase로 넘길 항목`을 정리합니다.
 - 실패하거나 되돌린 작업도 삭제하지 않고 기록합니다.
 - 기존 `HSR RELIC CC` 프로젝트를 참조하거나 복사한 경우 원본 경로를 남깁니다.
@@ -80,6 +81,7 @@
 - 2026-07-05: Phase 1-B 시작. 코드 기능 추가 없이 Phase Log, root README, report README, domain README의 진행 기준을 보강합니다.
 - 2026-07-05: Phase 1-B 완료. 기존 프로젝트와의 관계, Phase 기반 개발 방식, source-backed 계산 원칙, manual_hint 계산 금지, ledger/aggregation UI 표시 원칙, 모던 React/경량 dependency/layer 분리 원칙을 문서에 반영했습니다.
 - 2026-07-05: Phase 1-B 검증으로 `npm.cmd run build` 성공. Vite 7.3.6 기준 34 modules transformed.
+- 2026-07-05: Phase 단위가 아니라 완료 가능한 Task 단위로 작업/커밋한다는 원칙을 root README와 Phase Log에 명시했습니다.
 
 ### 생성/수정 파일
 
