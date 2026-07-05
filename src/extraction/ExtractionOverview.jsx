@@ -16,7 +16,7 @@ export function ExtractionOverview() {
           { label: "Characters", value: summary.characters ?? 0 },
           { label: "Ready", value: summary.extractionReady ?? 0 },
           { label: "Blocked", value: summary.blocked ?? 0 },
-          { label: "Rows", value: summary.readyRows ?? 0 },
+          { label: "Blocked rows", value: summary.blockedRows ?? 0 },
         ]}
       />
       {rows.length ? (
@@ -29,7 +29,7 @@ export function ExtractionOverview() {
                 items={[
                   { label: "Sources", value: row.sourceRows },
                   { label: "Effects", value: row.effectRows },
-                  { label: "Coefficients", value: row.coefficientRows },
+                  { label: "Blocked", value: row.blockedRows },
                 ]}
               />
             </Card>

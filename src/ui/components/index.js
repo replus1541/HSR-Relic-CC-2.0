@@ -5,3 +5,4 @@ export * from "./MetricList.jsx";
 export * from "./Panel.jsx";
 export * from "./Tabs.jsx";
 export * from "./TraceRow.jsx";
+export * from "./SourceStatusBadge.jsx";

@@ -1,5 +1,5 @@
 import canonicalDataset from "../../data/generated/extraction-canonical-dataset.json";
-import { Badge, Card, EmptyState, MetricList, Panel } from "../ui/components/index.js";
+import { Badge, Card, EmptyState, MetricList, Panel, SourceStatusBadge, TraceRow } from "../ui/components/index.js";
 
 function ownerFromSourceId(sourceId) {
   const parts = String(sourceId ?? "").split(":");
@@ -17,6 +17,7 @@ export function ExtractionDetail({ params = {} }) {
   const sourceRows = canonicalDataset.rows.sourceRows.filter((row) => rowOwner(row) === characterId);
   const effectRows = canonicalDataset.rows.effectRows.filter((row) => rowOwner(row) === characterId);
   const coefficientRows = canonicalDataset.rows.coefficientRows.filter((row) => rowOwner(row) === characterId);
+  const blockedSourceRows = sourceRows.filter((row) => !row.calculationReady || row.policyBlockedReason);
   const hasRows = sourceRows.length + effectRows.length + coefficientRows.length > 0;
 
   return (
@@ -25,7 +26,15 @@ export function ExtractionDetail({ params = {} }) {
         <div className="route-grid">
           <Card>
             <h3>Sources</h3>
-            <MetricList items={[{ label: "Rows", value: sourceRows.length }, { label: "Ready", value: sourceRows.filter((row) => row.calculationReady).length }]} />
+            <MetricList items={[{ label: "Rows", value: sourceRows.length }, { label: "Ready", value: sourceRows.filter((row) => row.calculationReady).length }, { label: "Blocked", value: blockedSourceRows.length }]} />
+            {sourceRows.slice(0, 4).map((row) => (
+              <TraceRow
+                key={row.id}
+                label={row.sourceKind}
+                value={<SourceStatusBadge sourceOrigin={row.sourceOrigin} calculationReady={row.calculationReady} blockedReason={row.policyBlockedReason} />}
+                meta={row.sourceRecord}
+              />
+            ))}
           </Card>
           <Card>
             <h3>Effects</h3>

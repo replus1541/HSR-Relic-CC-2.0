@@ -801,6 +801,18 @@
 - `src/extraction/ExtractionDetail.jsx`는 generated canonical dataset에서 characterId별 source/effect/coefficient section count를 표시합니다.
 - `src/app/route-config.js`와 `src/app/App.jsx`에 동적 route match와 nav active 처리를 추가했습니다.
 - 계산 로직, adapter 구현, manual guide 계산 유입은 수행하지 않았습니다.
+- Task 14-C 시작: source-backed ready row와 blocked row 표시를 UI에서 분리했습니다.
+- `SourceStatusBadge`를 추가해 manual_hint/manual_guide는 항상 blocked tone으로 표시되도록 했습니다.
+- `reports/extraction/ui-route-report.md`에 extraction route 표시 연결과 guardrail을 기록했습니다.
+- Phase 14 완료: extraction overview, detail route shell, calculation-ready/blocked 표시가 준비됐습니다.
+
+### 검증
+
+- `npm.cmd run build`: 성공. Vite 7.3.6 기준 47 modules transformed, production build 완료.
+
+### 다음 Task로 넘길 항목
+
+- Phase 15-A에서 SRTools/FreeSR import 결과가 들어갈 canonical loadout state를 정의합니다.
 
 ---
 
