@@ -831,6 +831,10 @@
 - `src/data-model/schemas/loadout-state.js`에 LoadoutSourceKind, empty loadout state factory, required field list를 추가했습니다.
 - `reports/import/import-state-contract.md`에 roster/party/equipment/hints/warnings/failedRows contract와 guardrail을 기록했습니다.
 - parser 구현, 계산 로직, legacy state 재사용, manual guide 계산 유입은 수행하지 않았습니다.
+- Task 15-B 시작: `src/adapters/srtools/srtools-import-adapter.js`를 추가해 SRTools-like sample input을 canonical loadout state로 변환합니다.
+- adapter는 roster, partySlots, lightcone/relic equipment, eidolon/skill/superimposition hints를 생성합니다.
+- `reports/import/srtools-import-report.md`에 adapter output shape와 guardrail을 기록했습니다.
+- legacy app-state patch, manual mapping 계산 유입, 계산 실행은 구현하지 않았습니다.
 
 ---
 
