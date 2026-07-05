@@ -2,7 +2,7 @@
 
 Canonical schema와 runtime assertion을 두는 영역입니다.
 
-Phase 1-A에서는 구현하지 않습니다. Phase 3에서 `SourceRow`, `EffectRow`, `ResolvedEffect`, `CombatLedgerRow` schema를 정의합니다.
+Phase 3에서 `SourceRow`, `EffectRow`, `ResolvedEffect`, `CombatLedgerRow` schema를 정의합니다.
 
 이 폴더는 React UI 컴포넌트나 계산 로직을 포함하지 않습니다.
 
@@ -17,3 +17,11 @@ Phase 1-A에서는 구현하지 않습니다. Phase 3에서 `SourceRow`, `Effect
 ## React 구조 기준
 
 이 폴더는 React에 의존하지 않습니다. UI와 domain model이 결합되지 않도록 순수 데이터 정의와 validation만 둡니다.
+
+## 현재 구현 범위
+
+- `schemas/schema-enums.js`: schema kind, source, value, target, attack, condition, stack, blocked reason enum skeleton입니다.
+- `schemas/schema-types.js`: JSDoc typedef skeleton입니다.
+- `schemas/index.js`: schema skeleton re-export 진입점입니다.
+
+아직 runtime validator, adapter, effect normalizer, value resolver, 계산 로직은 없습니다.
