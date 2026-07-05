@@ -835,6 +835,10 @@
 - adapter는 roster, partySlots, lightcone/relic equipment, eidolon/skill/superimposition hints를 생성합니다.
 - `reports/import/srtools-import-report.md`에 adapter output shape와 guardrail을 기록했습니다.
 - legacy app-state patch, manual mapping 계산 유입, 계산 실행은 구현하지 않았습니다.
+- Task 15-C 시작: `src/adapters/freesr/freesr-import-adapter.js`, `tools/validate_imports.mjs`, `validate:imports` script를 추가했습니다.
+- FreeSR sample input을 canonical loadout state로 변환하고, validator가 SRTools/FreeSR sample state required fields를 함께 검증합니다.
+- `reports/import/freesr-import-report.md`에 FreeSR adapter output shape와 validation 기준을 기록했습니다.
+- legacy state 재사용, 계산 로직, manual guide 계산 유입은 구현하지 않았습니다.
 
 ---
 

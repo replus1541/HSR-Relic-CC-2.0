@@ -18,7 +18,8 @@
     "validate:value-resolution": "node tools/validate_value_resolution.mjs",
     "validate:dedupe": "node tools/validate_dedupe.mjs",
     "validate:combat-ledger": "node tools/validate_combat_ledger.mjs",
-    "validate:aggregation": "node tools/validate_aggregation.mjs"
+    "validate:aggregation": "node tools/validate_aggregation.mjs",
+    "validate:imports": "node tools/validate_imports.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.0.0",
