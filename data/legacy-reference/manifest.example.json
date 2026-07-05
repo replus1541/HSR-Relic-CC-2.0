@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "createdBy": "phase-4A-manifest-design",
+  "sourceProjectRoot": "C:/CODEX/HSR RELIC CC",
+  "snapshotRoot": "data/legacy-reference",
+  "policy": {
+    "prohibitedRuntimeImport": true,
+    "allowCalculationSourcePromotion": false,
+    "requiresSourceProvenance": true,
+    "manualGuideCalculationBlocked": true
+  },
+  "entries": [
+    {
+      "id": "legacy:hoyowiki-character-skills",
+      "sourceProjectPath": "data/game-db/hoyowiki-character-skills.json",
+      "snapshotPath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+      "purpose": "adapter_input_candidate",
+      "sourceOrigin": "raw_source",
+      "sourceKind": "hoyowiki",
+      "prohibitedRuntimeImport": true,
+      "calculationUse": "adapter_must_validate_source_rows",
+      "notes": "Official skill text/table candidate. Phase 6 adapter must preserve source path and source record."
+    },
+    {
+      "id": "legacy:character-effect-candidates",
+      "sourceProjectPath": "data/game-db/character-effect-candidates.json",
+      "snapshotPath": "data/legacy-reference/game-db/character-effect-candidates.json",
+      "purpose": "adapter_input_candidate",
+      "sourceOrigin": "raw_source",
+      "sourceKind": "game_db_generated",
+      "prohibitedRuntimeImport": true,
+      "calculationUse": "adapter_must_validate_source_rows",
+      "notes": "Effect candidate rows require source guard before conversion to EffectRow."
+    },
+    {
+      "id": "legacy:curated-source-effects",
+      "sourceProjectPath": "data/character-effects/curated-source-effects.json",
+      "snapshotPath": "data/legacy-reference/character-effects/curated-source-effects.json",
+      "purpose": "adapter_input_candidate",
+      "sourceOrigin": "curated_source",
+      "sourceKind": "curated_source",
+      "prohibitedRuntimeImport": true,
+      "calculationUse": "adapter_must_validate_curated_source_trace",
+      "notes": "Curated rows may become calculation candidates only when original source text/path is preserved."
+    },
+    {
+      "id": "legacy:manual-guide-fallbacks",
+      "sourceProjectPath": "data/audit/manual-guide-effect-fallbacks.json",
+      "snapshotPath": "data/legacy-reference/audit/manual-guide-effect-fallbacks.json",
+      "purpose": "reference_only",
+      "sourceOrigin": "audit_reference",
+      "sourceKind": "audit_reference",
+      "prohibitedRuntimeImport": true,
+      "calculationUse": "blocked_reference_only",
+      "blockedReason": "audit_reference_only",
+      "notes": "Reference for blocked/manual fallback design. Must not become calculation source."
+    },
+    {
+      "id": "legacy:character-guides",
+      "sourceProjectPath": "data/character-effects/character-guides.json",
+      "snapshotPath": "data/legacy-reference/blocked/character-guides.json",
+      "purpose": "blocked_calculation_reference",
+      "sourceOrigin": "manual_guide",
+      "sourceKind": "legacy_snapshot",
+      "prohibitedRuntimeImport": true,
+      "calculationUse": "blocked_reference_only",
+      "blockedReason": "manual_source_blocked",
+      "notes": "Guide/default effect values are not source-backed calculation inputs."
+    }
+  ]
+}
+

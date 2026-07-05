@@ -324,14 +324,42 @@
 
 ### 상태
 
-- 상태: not_started
-- 시작일:
+- 상태: in_progress
+- 시작일: 2026-07-05
 - 완료일:
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
 
--
+- 2026-07-05: Task 4-A 시작. 대량 데이터 복사 없이 legacy snapshot manifest schema와 snapshot 정책만 문서화합니다.
+- 2026-07-05: `data/legacy-reference/manifest.example.json`을 작성했습니다. adapter input candidate, reference only, blocked calculation reference entry 형식을 정의했습니다.
+- 2026-07-05: `reports/legacy/legacy-fixtures.md`를 작성했습니다. Phase 4-B 최소 복사 후보와 runtime direct import 금지 정책을 정리했습니다.
+- 2026-07-05: Task 4-A complete. 다음 Task 4-B에는 실제 복사할 최소 legacy reference 후보 6개를 넘깁니다.
+
+### 생성/수정 파일
+
+- `data/legacy-reference/manifest.example.json`
+- `reports/legacy/legacy-fixtures.md`
+- `HSR_RELIC_CC_v2_phase_log.md`
+
+### 설계 결정
+
+- legacy snapshot은 v2 runtime 계산기가 직접 import하지 않습니다.
+- manifest entry는 `purpose`, `sourceOrigin`, `sourceKind`, `prohibitedRuntimeImport`, `calculationUse`, `blockedReason`을 분리해서 기록합니다.
+- Phase 4-B 복사는 최소 adapter input 후보부터 시작하고, guide/default/manual mapping 자료는 blocked/reference로만 둡니다.
+
+### 검증
+
+- `npm.cmd run build`: Task 4-A 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+
+### 막힌 점 / 리스크
+
+- 없음.
+
+### 다음 Task로 넘길 항목
+
+- Phase 4-B에서 최소 legacy reference 후보를 `data/legacy-reference`로 복사하고 `manifest.json`을 작성합니다.
+- 최소 후보: `hoyowiki-character-skills.json`, `character-effect-candidates.json`, `attack-coefficient-candidates.json`, `lightcone-effect-candidates.json`, `curated-source-effects.json`, `source-effect-mappings.json`.
 
 ---
 
