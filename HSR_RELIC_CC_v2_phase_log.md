@@ -201,10 +201,16 @@
 - 2026-07-05: `src/components`, `src/calculator`, `src/conditions`, `src/active-effects`, `src/styles.css`를 UI 관점으로 검토했습니다.
 - 2026-07-05: `reports/ui-reuse/ui-source-map.md`를 작성했습니다. 계산 호출, guide 기반 판단, source grouping, damage recompute가 섞인 UI/analysis 파일은 금지 또는 재작성 대상으로 분류했습니다.
 - 2026-07-05: Task 2-A complete. 다음 Task 2-B에는 legacy data/logic source map과 adapter input 후보 분리를 넘깁니다.
+- 2026-07-05: Task 2-B 시작. 기존 `data`, `sample-data.js`, `model/damage.js`, `src/srtools`, `src/freesr`, `tools` 구조를 검토했습니다.
+- 2026-07-05: `reports/legacy/legacy-source-map.md`와 `reports/legacy/adapter-input-map.md`를 작성했습니다.
+- 2026-07-05: `game-db`와 source-backed curated effect 파일은 adapter input 후보로, `character-guides.json`, `default-builds.json`, `sample-data.js`, `model/damage.js`는 계산 입력 또는 복사 금지 대상으로 분리했습니다.
+- 2026-07-05: Task 2-B complete. 다음 Task 2-C에는 legacy guide fallback, UI 계산 재구성, damage.js 직접 합산, manual mapping 계산 적용 금지 항목을 넘깁니다.
 
 ### 생성/수정 파일
 
 - `reports/ui-reuse/ui-source-map.md`
+- `reports/legacy/legacy-source-map.md`
+- `reports/legacy/adapter-input-map.md`
 - `HSR_RELIC_CC_v2_phase_log.md`
 
 ### 설계 결정
@@ -213,10 +219,13 @@
 - `CalculatorRoute.jsx`처럼 route, state, import, calculation orchestration이 섞인 파일은 v2에서 직접 재사용하지 않습니다.
 - `DamageResultPanel.jsx`의 ledger 표시 방향은 참고하되 legacy `skillRows`와 formatter dependency는 가져오지 않습니다.
 - `character-role.jsx`, `condition-policy.js`, `calculator/analysis/*`, `active-effects` grouping 유틸은 계산/guide/source grouping이 섞여 Task 2-B/2-C에서 금지 대상으로 재확인합니다.
+- Phase 4 snapshot 후보는 source-backed `game-db`와 curated source effect 파일로 제한하고, guide/default build/audit 파일은 reference 또는 blocked 설계 참고로 분리합니다.
+- SRTools/FreeSR parser shape는 adapter 요구사항으로 참고하지만, legacy app state patch와 manual mapping 적용 흐름은 직접 재사용하지 않습니다.
 
 ### 검증
 
 - `npm.cmd run build`: 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+- `npm.cmd run build`: Task 2-B 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
 
 ### 막힌 점 / 리스크
 
@@ -226,6 +235,7 @@
 
 - `sample-data.js`, `model/damage.js`, `calculator/analysis/*`, `conditions/condition-policy.js`, `active-effects/*`를 Task 2-B에서 legacy data/logic source map으로 분류합니다.
 - Task 2-C에서 UI 내부 계산 조립, guide fallback, damage recompute, source grouping 금지 목록을 확정합니다.
+- Task 2-C에서 `src/model/damage.js`, `src/sample-data.js`, `src/calculator/analysis/*`, `src/conditions/condition-policy.js`, `src/srtools/import/*app*`, manual mapping 흐름을 rewrite 금지 목록으로 확정합니다.
 
 ---
 
