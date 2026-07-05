@@ -733,6 +733,19 @@
 - `data/generated/calculation-result-sample.json`를 생성했습니다. 현재 statTotals는 critDamage/critRate/specialFinal/vulnerability, skippedRows는 3개입니다.
 - 같은 ledger input은 같은 aggregation result를 반환하는 smoke를 확인했습니다.
 - runCalculationV2 wrapper, validator, UI, legacy 비교는 구현하지 않았습니다.
+- Task 12-C 시작: `runCalculationV2`와 `tools/validate_aggregation.mjs`, `validate:aggregation` script를 추가했습니다.
+- validator는 ledger input order와 ledgerRows 기반 deterministic output을 검증하고 `calculation-result-sample.json`를 재생성합니다.
+- `reports/calculation/aggregation-report.md`를 aggregation validator report로 갱신했습니다.
+- Phase 12 완료: aggregation contract, stat/damage aggregation, runCalculationV2 wrapper, validator/report가 준비됐습니다.
+
+### 검증
+
+- `npm.cmd run validate:aggregation`: 성공. ledgerRows 9개, statTotals 4개, skippedRows 3개, deterministic=true.
+- `npm.cmd run build`: 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+
+### 다음 Task로 넘길 항목
+
+- Phase 13-A에서 UI shell 연결을 위한 presentational component inventory를 작성합니다.
 
 ---
 

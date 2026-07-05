@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "generatedBy": "src/calculator/aggregate-stats.js",
+  "generatedBy": "tools/validate_aggregation.mjs",
   "result": {
     "id": "aggregation:sample:sample",
     "scenarioId": "sample",
     "subjectId": "sample",
-    "inputHash": "[\"ledger:resolved:effect:PlayerBoy_20:0\",\"ledger:resolved:effect:PlayerBoy_20:1\",\"ledger:resolved:effect:PlayerBoy_20:2\",\"ledger:resolved:effect:PlayerBoy_00:0\",\"ledger:resolved:effect:PlayerBoy_00:1\",\"ledger:resolved:effect:PlayerBoy_00:2\",\"ledger:resolved:effect:PlayerBoy_40:0\",\"ledger:resolved:effect:PlayerBoy_40:1\",\"ledger:resolved:effect:PlayerBoy_40:2\"]",
+    "inputHash": "b3e7827b",
     "ledgerRowIds": [
       "ledger:resolved:effect:PlayerBoy_20:0",
       "ledger:resolved:effect:PlayerBoy_20:1",
