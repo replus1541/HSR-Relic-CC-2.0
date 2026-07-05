@@ -392,9 +392,9 @@
 
 ### 상태
 
-- 상태: in_progress
+- 상태: complete
 - 시작일: 2026-07-05
-- 완료일:
+- 완료일: 2026-07-05
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
@@ -408,6 +408,10 @@
 - 2026-07-05: placeholder adapter README 3개를 추가했습니다. 각 README에는 현재 파싱/계산 로직이 없고 이후 Phase에서 구현한다는 제한을 기록했습니다.
 - 2026-07-05: adapter registry import smoke를 실행해 `local-json,hoyowiki,curated-source`가 side-effect 없이 import되는 것을 확인했습니다.
 - 2026-07-05: Task 5-B complete. 다음 Task 5-C에는 adapter output validator 입력 shape와 placeholder output 검증을 넘깁니다.
+- 2026-07-05: Task 5-C 시작. 실제 adapter 구현 없이 adapter output shape validator와 검증 명령을 추가합니다.
+- 2026-07-05: `src/adapters/adapter-validator.js`와 `tools/validate_adapters.mjs`를 추가했습니다. SourceRow는 schema validator와 연결하고 EffectRow/CoefficientRow는 필수 필드와 enum을 최소 검증합니다.
+- 2026-07-05: `package.json`에 `validate:adapters`를 추가했습니다. placeholder adapter 3개 output과 invalid `manual_hint` fixture 실패 guard를 검증합니다.
+- 2026-07-05: Task 5-C complete. Phase 5-A/B/C 기준 Phase 5는 완료 처리합니다.
 
 ### 생성/수정 파일
 
@@ -417,6 +421,9 @@
 - `src/adapters/local-json/README.md`
 - `src/adapters/hoyowiki/README.md`
 - `src/adapters/curated-source/README.md`
+- `src/adapters/adapter-validator.js`
+- `tools/validate_adapters.mjs`
+- `package.json`
 - `src/adapters/README.md`
 - `HSR_RELIC_CC_v2_phase_log.md`
 
@@ -427,12 +434,15 @@
 - manifest entry의 `prohibitedRuntimeImport`, `allowCalculationSourcePromotion`, source provenance 정책을 adapter contract에 반영합니다.
 - registry skeleton은 import 가능하고 side effect가 없어야 합니다.
 - placeholder adapters는 empty output/report만 반환하며 source 파일을 읽지 않습니다.
+- adapter output validator는 placeholder adapter output을 허용하되, `manual_hint`가 calculation-ready로 들어오는 경우를 차단합니다.
 
 ### 검증
 
 - `npm.cmd run build`: Task 5-A 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
 - adapter registry import smoke: 성공. `local-json,hoyowiki,curated-source`.
 - `npm.cmd run build`: Task 5-B 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+- `npm.cmd run validate:adapters`: Task 5-C 성공. adapters=3, invalid_manual_hint_guard=blocked.
+- `npm.cmd run build`: Task 5-C 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
 
 ### 막힌 점 / 리스크
 
@@ -442,6 +452,7 @@
 
 - Phase 5-B에서 `src/adapters/adapter-contract.js`, `src/adapters/adapter-registry.js`, placeholder adapter README를 작성합니다.
 - Phase 5-C에서 adapter output validator를 추가하고 placeholder adapter output이 canonical 최소 shape를 만족하는지 검사합니다.
+- Phase 6-A에서 local JSON adapter가 `data/legacy-reference/manifest.json`의 최소 snapshot subset을 읽어 SourceRow/EffectRow 후보를 생성합니다.
 
 ---
 
