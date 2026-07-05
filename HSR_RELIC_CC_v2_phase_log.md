@@ -460,14 +460,50 @@
 
 ### 상태
 
-- 상태: not_started
-- 시작일:
+- 상태: in_progress
+- 시작일: 2026-07-05
 - 완료일:
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
 
--
+- 2026-07-05: Task 6-A 시작. 기존 프로젝트 수정 없이 v2 legacy reference snapshot 일부를 읽는 local JSON adapter 최소 구현을 추가합니다.
+- 2026-07-05: `src/adapters/local-json/local-json-adapter.js`를 추가하고 registry의 `local-json` placeholder를 실제 최소 adapter로 교체했습니다.
+- 2026-07-05: adapter는 `data/legacy-reference/manifest.json`에서 `character-effect-candidates`, `hoyowiki-character-skills`, `attack-coefficient-candidates` snapshot을 읽고, active effect가 있는 최소 3명 캐릭터에서 SourceRow/EffectRow 후보를 생성합니다.
+- 2026-07-05: `tools/validate_adapters.mjs`가 local-json report를 생성하도록 확장했습니다. 첫 실행은 report write EPERM으로 실패했고, 같은 Task 범위에서 권한 상승 재실행해 성공했습니다.
+- 2026-07-05: `reports/adapter/local-json-report.md`를 생성했습니다. sourceRows 9개, effectRows 9개, sampledCharacters 3명, skillCharactersAvailable 90, coefficientCharactersAvailable 95를 기록했습니다.
+- 2026-07-05: character baseline snapshot은 Phase 4-B manifest에 없어 adapter report warning으로 남겼습니다.
+- 2026-07-05: Task 6-A complete. 다음 Task 6-B에는 HoyoWiki row 결합 기준과 sourceText/sourcePath guard를 넘깁니다.
+
+### 생성/수정 파일
+
+- `src/adapters/local-json/local-json-adapter.js`
+- `src/adapters/adapter-registry.js`
+- `src/adapters/local-json/README.md`
+- `tools/validate_adapters.mjs`
+- `reports/adapter/local-json-report.md`
+- `HSR_RELIC_CC_v2_phase_log.md`
+
+### 설계 결정
+
+- local-json adapter는 runtime UI wiring 없이 manifest snapshot을 직접 읽는 adapter layer로만 동작합니다.
+- Task 6-A에서는 EffectRow 후보만 만들고 CoefficientRow 변환은 아직 하지 않습니다.
+- baseline snapshot 부재는 계산 누락으로 처리하지 않고 adapter report warning으로 남깁니다.
+- `manual_hint`나 guide fallback은 adapter output으로 승격하지 않습니다.
+
+### 검증
+
+- `npm.cmd run validate:adapters`: 첫 실행은 report write EPERM으로 실패, 권한 상승 재실행 성공. adapters=3, invalid_manual_hint_guard=blocked.
+- local-json output smoke: sampledCharacters 3명, sourceRows 9개, effectRows 9개.
+- `npm.cmd run build`: Task 6-A 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+
+### 막힌 점 / 리스크
+
+- Phase 4-B snapshot에 character baseline 파일이 없어 baseline row 변환은 아직 수행하지 않습니다.
+
+### 다음 Task로 넘길 항목
+
+- Phase 6-B에서 HoyoWiki adapter가 skill text/source path를 SourceRow로 변환하고 sourceText/sourcePath 없는 calculation-ready row를 차단합니다.
 
 ---
 

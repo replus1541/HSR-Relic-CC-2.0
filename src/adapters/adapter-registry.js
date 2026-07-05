@@ -1,11 +1,9 @@
 import { SourceKind } from "../data-model/schemas/index.js";
 import { createPlaceholderAdapter } from "./adapter-contract.js";
+import { localJsonAdapter } from "./local-json/local-json-adapter.js";
 
 export const adapterRegistry = Object.freeze([
-  createPlaceholderAdapter({
-    adapterId: "local-json",
-    sourceKind: SourceKind.LEGACY_SNAPSHOT,
-  }),
+  localJsonAdapter,
   createPlaceholderAdapter({
     adapterId: "hoyowiki",
     sourceKind: SourceKind.HOYOWIKI,
@@ -23,4 +21,3 @@ export function listAdapters() {
 export function getAdapter(adapterId) {
   return adapterRegistry.find((adapter) => adapter.adapterId === adapterId) ?? null;
 }
-
