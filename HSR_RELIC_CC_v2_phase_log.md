@@ -892,14 +892,17 @@
 
 ### 상태
 
-- 상태: not_started
-- 시작일:
+- 상태: in_progress
+- 시작일: 2026-07-05
 - 완료일:
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
 
--
+- Task 17-A 시작: schema/legacy/adapters/canonical/effect/value/dedupe/ledger/aggregation/import 검증을 `validate` 명령으로 통합했습니다.
+- `tools/validate_all.mjs`는 기존 하위 npm script 10개를 순서대로 실행하고 실패 시 중단합니다.
+- `package.json`에 `validate` script를 추가했습니다.
+- 새 기능 구현, 기존 프로젝트 수정, 계산 로직 변경, manual guide 계산 유입은 수행하지 않았습니다.
 
 ---
 

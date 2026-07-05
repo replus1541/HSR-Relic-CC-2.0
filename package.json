@@ -20,7 +20,8 @@
     "validate:combat-ledger": "node tools/validate_combat_ledger.mjs",
     "validate:aggregation": "node tools/validate_aggregation.mjs",
     "validate:imports": "node tools/validate_imports.mjs",
-    "diff:legacy": "node tools/compare_legacy_and_v2.mjs"
+    "diff:legacy": "node tools/compare_legacy_and_v2.mjs",
+    "validate": "node tools/validate_all.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.0.0",
