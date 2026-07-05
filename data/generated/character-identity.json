@@ -1,10 +1,8 @@
 {
   "version": 1,
-  "generatedBy": "tools/validate_canonical_dataset.mjs",
-  "datasetMode": "full",
+  "generatedBy": "src/identity/character-identity.js",
   "rows": [
     {
-      "characterKey": "PlayerBoy_20",
       "characterId": "PlayerBoy_20",
       "internalId": "8005",
       "internalName": "PlayerBoy_20",
@@ -90,42 +88,9 @@
           "internalId": null,
           "internalName": null
         }
-      ],
-      "counts": {
-        "sourceRows": 9,
-        "effectRows": 3,
-        "coefficientRows": 6,
-        "readyRows": 18,
-        "blockedRows": 0
-      },
-      "sourceRows": 9,
-      "effectRows": 3,
-      "coefficientRows": 6,
-      "readyRows": 18,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 9,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 6,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "PlayerBoy_10",
       "characterId": "PlayerBoy_10",
       "internalId": "8003",
       "internalName": "PlayerBoy_10",
@@ -211,51 +176,9 @@
           "internalId": null,
           "internalName": null
         }
-      ],
-      "counts": {
-        "sourceRows": 6,
-        "effectRows": 0,
-        "coefficientRows": 9,
-        "readyRows": 15,
-        "blockedRows": 0
-      },
-      "sourceRows": 6,
-      "effectRows": 0,
-      "coefficientRows": 9,
-      "readyRows": 15,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 6,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 0,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 9,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingExtraction": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 2,
-      "missingCount": 2,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "PlayerBoy_00",
       "characterId": "PlayerBoy_00",
       "internalId": "8001",
       "internalName": "PlayerBoy_00",
@@ -341,48 +264,9 @@
           "internalId": null,
           "internalName": null
         }
-      ],
-      "counts": {
-        "sourceRows": 9,
-        "effectRows": 3,
-        "coefficientRows": 8,
-        "readyRows": 20,
-        "blockedRows": 0
-      },
-      "sourceRows": 9,
-      "effectRows": 3,
-      "coefficientRows": 8,
-      "readyRows": 20,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 9,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 8,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 2
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "PlayerBoy_30",
       "characterId": "PlayerBoy_30",
       "internalId": "8007",
       "internalName": "PlayerBoy_30",
@@ -468,51 +352,9 @@
           "internalId": null,
           "internalName": null
         }
-      ],
-      "counts": {
-        "sourceRows": 5,
-        "effectRows": 0,
-        "coefficientRows": 4,
-        "readyRows": 9,
-        "blockedRows": 0
-      },
-      "sourceRows": 5,
-      "effectRows": 0,
-      "coefficientRows": 4,
-      "readyRows": 9,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 5,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 0,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 4,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingExtraction": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 2,
-      "missingCount": 2,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "PlayerBoy_40",
       "characterId": "PlayerBoy_40",
       "internalId": "8009",
       "internalName": "PlayerBoy_40",
@@ -598,51 +440,9 @@
           "internalId": null,
           "internalName": null
         }
-      ],
-      "counts": {
-        "sourceRows": 10,
-        "effectRows": 4,
-        "coefficientRows": 0,
-        "readyRows": 14,
-        "blockedRows": 0
-      },
-      "sourceRows": 10,
-      "effectRows": 4,
-      "coefficientRows": 0,
-      "readyRows": 14,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 10,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 4,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 0,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "coefficient_rows_zero",
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "coefficient_rows_zero",
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "coefficient_rows_zero",
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 2,
-      "missingCount": 2,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Gallagher_00",
       "characterId": "Gallagher_00",
       "internalId": "1301",
       "internalName": "Gallagher_00",
@@ -709,51 +509,9 @@
           "internalId": "1301",
           "internalName": "Gallagher_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 6,
-        "effectRows": 0,
-        "coefficientRows": 7,
-        "readyRows": 13,
-        "blockedRows": 0
-      },
-      "sourceRows": 6,
-      "effectRows": 0,
-      "coefficientRows": 7,
-      "readyRows": 13,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 6,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 0,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 7,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingExtraction": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 2,
-      "missingCount": 2,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Gepard_00",
       "characterId": "Gepard_00",
       "internalId": "1104",
       "internalName": "Gepard_00",
@@ -820,51 +578,9 @@
           "internalId": "1104",
           "internalName": "Gepard_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 4,
-        "effectRows": 0,
-        "coefficientRows": 6,
-        "readyRows": 10,
-        "blockedRows": 0
-      },
-      "sourceRows": 4,
-      "effectRows": 0,
-      "coefficientRows": 6,
-      "readyRows": 10,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 4,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 0,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 6,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingExtraction": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 2,
-      "missingCount": 2,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Jingliu_00",
       "characterId": "Jingliu_00",
       "internalId": "1212",
       "internalName": "Jingliu_00",
@@ -931,48 +647,9 @@
           "internalId": "1212",
           "internalName": "Jingliu_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 7,
-        "effectRows": 2,
-        "coefficientRows": 9,
-        "readyRows": 18,
-        "blockedRows": 0
-      },
-      "sourceRows": 7,
-      "effectRows": 2,
-      "coefficientRows": 9,
-      "readyRows": 18,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 7,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 2,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 9,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 2
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "JingYuan_00",
       "characterId": "JingYuan_00",
       "internalId": "1204",
       "internalName": "JingYuan_00",
@@ -1039,48 +716,9 @@
           "internalId": "1204",
           "internalName": "JingYuan_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 3,
-        "coefficientRows": 8,
-        "readyRows": 19,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 3,
-      "coefficientRows": 8,
-      "readyRows": 19,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 8,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 2
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Guinaifen_00",
       "characterId": "Guinaifen_00",
       "internalId": "1210",
       "internalName": "Guinaifen_00",
@@ -1147,42 +785,9 @@
           "internalId": "1210",
           "internalName": "Guinaifen_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 6,
-        "effectRows": 1,
-        "coefficientRows": 11,
-        "readyRows": 18,
-        "blockedRows": 0
-      },
-      "sourceRows": 6,
-      "effectRows": 1,
-      "coefficientRows": 11,
-      "readyRows": 18,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 6,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 1,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 11,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Huohuo_00",
       "characterId": "Huohuo_00",
       "internalId": "1217",
       "internalName": "Huohuo_00",
@@ -1249,42 +854,9 @@
           "internalId": "1217",
           "internalName": "Huohuo_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 7,
-        "effectRows": 2,
-        "coefficientRows": 4,
-        "readyRows": 13,
-        "blockedRows": 0
-      },
-      "sourceRows": 7,
-      "effectRows": 2,
-      "coefficientRows": 4,
-      "readyRows": 13,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 7,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 2,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 4,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Gilgamesh_00",
       "characterId": "Gilgamesh_00",
       "internalId": "1509",
       "internalName": "Gilgamesh_00",
@@ -1362,67 +934,9 @@
           "internalId": null,
           "internalName": null
         }
-      ],
-      "counts": {
-        "sourceRows": 0,
-        "effectRows": 0,
-        "coefficientRows": 0,
-        "readyRows": 0,
-        "blockedRows": 0
-      },
-      "sourceRows": 0,
-      "effectRows": 0,
-      "coefficientRows": 0,
-      "readyRows": 0,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 0,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 0,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 0,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [
-        "no_calculation_ready_rows"
-      ],
-      "optionalMissingItems": [
-        "missing_skill_text",
-        "missing_effect_trace",
-        "missing_coefficient",
-        "missing_eidolon_trace",
-        "effect_rows_zero",
-        "coefficient_rows_zero"
-      ],
-      "missingItems": [
-        "no_calculation_ready_rows",
-        "missing_skill_text",
-        "missing_effect_trace",
-        "missing_coefficient",
-        "missing_eidolon_trace",
-        "effect_rows_zero",
-        "coefficient_rows_zero"
-      ],
-      "missingExtraction": [
-        "no_calculation_ready_rows",
-        "missing_skill_text",
-        "missing_effect_trace",
-        "missing_coefficient",
-        "missing_eidolon_trace",
-        "effect_rows_zero",
-        "coefficient_rows_zero"
-      ],
-      "requiredMissingCount": 1,
-      "optionalMissingCount": 6,
-      "missingCount": 7,
-      "readinessStatus": "blocked",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Luocha_00",
       "characterId": "Luocha_00",
       "internalId": "1203",
       "internalName": "Luocha_00",
@@ -1489,42 +1003,9 @@
           "internalId": "1203",
           "internalName": "Luocha_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 2,
-        "coefficientRows": 5,
-        "readyRows": 15,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 2,
-      "coefficientRows": 5,
-      "readyRows": 15,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 2,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 5,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Natasha_00",
       "characterId": "Natasha_00",
       "internalId": "1105",
       "internalName": "Natasha_00",
@@ -1591,51 +1072,9 @@
           "internalId": "1105",
           "internalName": "Natasha_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 6,
-        "effectRows": 0,
-        "coefficientRows": 2,
-        "readyRows": 8,
-        "blockedRows": 0
-      },
-      "sourceRows": 6,
-      "effectRows": 0,
-      "coefficientRows": 2,
-      "readyRows": 8,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 6,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 0,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 2,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingExtraction": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 2,
-      "missingCount": 2,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "DanHeng_00",
       "characterId": "DanHeng_00",
       "internalId": "1002",
       "internalName": "DanHeng_00",
@@ -1702,48 +1141,9 @@
           "internalId": "1002",
           "internalName": "DanHeng_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 7,
-        "effectRows": 2,
-        "coefficientRows": 7,
-        "readyRows": 16,
-        "blockedRows": 0
-      },
-      "sourceRows": 7,
-      "effectRows": 2,
-      "coefficientRows": 7,
-      "readyRows": 16,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 7,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 2,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 7,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "DanHengPT_00",
       "characterId": "DanHengPT_00",
       "internalId": "1414",
       "internalName": "DanHengPT_00",
@@ -1821,48 +1221,9 @@
           "internalId": null,
           "internalName": null
         }
-      ],
-      "counts": {
-        "sourceRows": 10,
-        "effectRows": 3,
-        "coefficientRows": 5,
-        "readyRows": 18,
-        "blockedRows": 0
-      },
-      "sourceRows": 10,
-      "effectRows": 3,
-      "coefficientRows": 5,
-      "readyRows": 18,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 10,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 5,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "DanHengIL_00",
       "characterId": "DanHengIL_00",
       "internalId": "1213",
       "internalName": "DanHengIL_00",
@@ -1940,48 +1301,9 @@
           "internalId": null,
           "internalName": null
         }
-      ],
-      "counts": {
-        "sourceRows": 6,
-        "effectRows": 2,
-        "coefficientRows": 14,
-        "readyRows": 22,
-        "blockedRows": 0
-      },
-      "sourceRows": 6,
-      "effectRows": 2,
-      "coefficientRows": 14,
-      "readyRows": 22,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 6,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 2,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 14,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Constance_00",
       "characterId": "Constance_00",
       "internalId": "1321",
       "internalName": "Constance_00",
@@ -2048,48 +1370,9 @@
           "internalId": "1321",
           "internalName": "Constance_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 9,
-        "effectRows": 3,
-        "coefficientRows": 10,
-        "readyRows": 22,
-        "blockedRows": 0
-      },
-      "sourceRows": 9,
-      "effectRows": 3,
-      "coefficientRows": 10,
-      "readyRows": 22,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 9,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 10,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "TheHerta_00",
       "characterId": "TheHerta_00",
       "internalId": "1401",
       "internalName": "TheHerta_00",
@@ -2156,48 +1439,9 @@
           "internalId": "1401",
           "internalName": "TheHerta_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 2,
-        "coefficientRows": 12,
-        "readyRows": 22,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 2,
-      "coefficientRows": 12,
-      "readyRows": 22,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 2,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 12,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 2
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Rappa_00",
       "characterId": "Rappa_00",
       "internalId": "1317",
       "internalName": "Rappa_00",
@@ -2264,42 +1508,9 @@
           "internalId": "1317",
           "internalName": "Rappa_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 6,
-        "effectRows": 1,
-        "coefficientRows": 10,
-        "readyRows": 17,
-        "blockedRows": 0
-      },
-      "sourceRows": 6,
-      "effectRows": 1,
-      "coefficientRows": 10,
-      "readyRows": 17,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 6,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 1,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 10,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Robin_00",
       "characterId": "Robin_00",
       "internalId": "1309",
       "internalName": "Robin_00",
@@ -2366,48 +1577,9 @@
           "internalId": "1309",
           "internalName": "Robin_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 3,
-        "coefficientRows": 8,
-        "readyRows": 19,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 3,
-      "coefficientRows": 8,
-      "readyRows": 19,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 8,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Luka_00",
       "characterId": "Luka_00",
       "internalId": "1111",
       "internalName": "Luka_00",
@@ -2474,48 +1646,9 @@
           "internalId": "1111",
           "internalName": "Luka_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 9,
-        "effectRows": 2,
-        "coefficientRows": 13,
-        "readyRows": 24,
-        "blockedRows": 0
-      },
-      "sourceRows": 9,
-      "effectRows": 2,
-      "coefficientRows": 13,
-      "readyRows": 24,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 9,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 2,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 13,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Lynx_00",
       "characterId": "Lynx_00",
       "internalId": "1110",
       "internalName": "Lynx_00",
@@ -2582,51 +1715,9 @@
           "internalId": "1110",
           "internalName": "Lynx_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 6,
-        "effectRows": 0,
-        "coefficientRows": 2,
-        "readyRows": 8,
-        "blockedRows": 0
-      },
-      "sourceRows": 6,
-      "effectRows": 0,
-      "coefficientRows": 2,
-      "readyRows": 8,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 6,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 0,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 2,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingExtraction": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 2,
-      "missingCount": 2,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Mydeimos_00",
       "characterId": "Mydeimos_00",
       "internalId": "1404",
       "internalName": "Mydeimos_00",
@@ -2693,42 +1784,9 @@
           "internalId": "1404",
           "internalName": "Mydeimos_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 7,
-        "effectRows": 2,
-        "coefficientRows": 12,
-        "readyRows": 21,
-        "blockedRows": 0
-      },
-      "sourceRows": 7,
-      "effectRows": 2,
-      "coefficientRows": 12,
-      "readyRows": 21,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 7,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 2,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 12,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Fugue_00",
       "characterId": "Fugue_00",
       "internalId": "1225",
       "internalName": "Fugue_00",
@@ -2795,48 +1853,9 @@
           "internalId": "1225",
           "internalName": "Fugue_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 7,
-        "effectRows": 1,
-        "coefficientRows": 7,
-        "readyRows": 15,
-        "blockedRows": 0
-      },
-      "sourceRows": 7,
-      "effectRows": 1,
-      "coefficientRows": 7,
-      "readyRows": 15,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 7,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 1,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 7,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Moze_00",
       "characterId": "Moze_00",
       "internalId": "1223",
       "internalName": "Moze_00",
@@ -2903,48 +1922,9 @@
           "internalId": "1223",
           "internalName": "Moze_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 9,
-        "effectRows": 3,
-        "coefficientRows": 9,
-        "readyRows": 21,
-        "blockedRows": 0
-      },
-      "sourceRows": 9,
-      "effectRows": 3,
-      "coefficientRows": 9,
-      "readyRows": 21,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 9,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 9,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Misha_00",
       "characterId": "Misha_00",
       "internalId": "1312",
       "internalName": "Misha_00",
@@ -3011,42 +1991,9 @@
           "internalId": "1312",
           "internalName": "Misha_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 1,
-        "coefficientRows": 8,
-        "readyRows": 17,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 1,
-      "coefficientRows": 8,
-      "readyRows": 17,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 1,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 8,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Sam_00",
       "characterId": "Sam_00",
       "internalId": "1310",
       "internalName": "Sam_00",
@@ -3113,51 +2060,9 @@
           "internalId": "1310",
           "internalName": "Sam_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 4,
-        "effectRows": 0,
-        "coefficientRows": 9,
-        "readyRows": 13,
-        "blockedRows": 0
-      },
-      "sourceRows": 4,
-      "effectRows": 0,
-      "coefficientRows": 9,
-      "readyRows": 13,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 4,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 0,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 9,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingExtraction": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 2,
-      "missingCount": 2,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Bailu_00",
       "characterId": "Bailu_00",
       "internalId": "1211",
       "internalName": "Bailu_00",
@@ -3224,51 +2129,9 @@
           "internalId": "1211",
           "internalName": "Bailu_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 4,
-        "effectRows": 0,
-        "coefficientRows": 2,
-        "readyRows": 6,
-        "blockedRows": 0
-      },
-      "sourceRows": 4,
-      "effectRows": 0,
-      "coefficientRows": 2,
-      "readyRows": 6,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 4,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 0,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 2,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingExtraction": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 2,
-      "missingCount": 2,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Boothill_00",
       "characterId": "Boothill_00",
       "internalId": "1315",
       "internalName": "Boothill_00",
@@ -3335,42 +2198,9 @@
           "internalId": "1315",
           "internalName": "Boothill_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 7,
-        "effectRows": 2,
-        "coefficientRows": 7,
-        "readyRows": 16,
-        "blockedRows": 0
-      },
-      "sourceRows": 7,
-      "effectRows": 2,
-      "coefficientRows": 7,
-      "readyRows": 16,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 7,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 2,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 7,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "FuXuan_00",
       "characterId": "FuXuan_00",
       "internalId": "1208",
       "internalName": "FuXuan_00",
@@ -3437,48 +2267,9 @@
           "internalId": "1208",
           "internalName": "FuXuan_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 2,
-        "coefficientRows": 6,
-        "readyRows": 16,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 2,
-      "coefficientRows": 6,
-      "readyRows": 16,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 2,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 6,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Bronya_00",
       "characterId": "Bronya_00",
       "internalId": "1101",
       "internalName": "Bronya_00",
@@ -3545,48 +2336,9 @@
           "internalId": "1101",
           "internalName": "Bronya_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 3,
-        "coefficientRows": 6,
-        "readyRows": 17,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 3,
-      "coefficientRows": 6,
-      "readyRows": 17,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 6,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 2
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "BlackSwan_00",
       "characterId": "BlackSwan_00",
       "internalId": "1307",
       "internalName": "BlackSwan_00",
@@ -3664,48 +2416,9 @@
           "internalId": null,
           "internalName": null
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 3,
-        "coefficientRows": 11,
-        "readyRows": 22,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 3,
-      "coefficientRows": 11,
-      "readyRows": 22,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 11,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 3
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Ren_00",
       "characterId": "Ren_00",
       "internalId": "1205",
       "internalName": "Ren_00",
@@ -3772,48 +2485,9 @@
           "internalId": "1205",
           "internalName": "Ren_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 3,
-        "coefficientRows": 16,
-        "readyRows": 27,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 3,
-      "coefficientRows": 16,
-      "readyRows": 27,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 16,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Feixiao_00",
       "characterId": "Feixiao_00",
       "internalId": "1220",
       "internalName": "Feixiao_00",
@@ -3880,48 +2554,9 @@
           "internalId": "1220",
           "internalName": "Feixiao_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 11,
-        "effectRows": 4,
-        "coefficientRows": 13,
-        "readyRows": 28,
-        "blockedRows": 0
-      },
-      "sourceRows": 11,
-      "effectRows": 4,
-      "coefficientRows": 13,
-      "readyRows": 28,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 11,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 4,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 13,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 2
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Cipher_00",
       "characterId": "Cipher_00",
       "internalId": "1406",
       "internalName": "Cipher_00",
@@ -3988,48 +2623,9 @@
           "internalId": "1406",
           "internalName": "Cipher_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 13,
-        "effectRows": 8,
-        "coefficientRows": 10,
-        "readyRows": 31,
-        "blockedRows": 0
-      },
-      "sourceRows": 13,
-      "effectRows": 8,
-      "coefficientRows": 10,
-      "readyRows": 31,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 13,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 8,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 10,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 4
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Sampo_00",
       "characterId": "Sampo_00",
       "internalId": "1108",
       "internalName": "Sampo_00",
@@ -4096,51 +2692,9 @@
           "internalId": "1108",
           "internalName": "Sampo_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 6,
-        "effectRows": 0,
-        "coefficientRows": 10,
-        "readyRows": 16,
-        "blockedRows": 0
-      },
-      "sourceRows": 6,
-      "effectRows": 0,
-      "coefficientRows": 10,
-      "readyRows": 16,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 6,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 0,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 10,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingExtraction": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 2,
-      "missingCount": 2,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Serval_00",
       "characterId": "Serval_00",
       "internalId": "1103",
       "internalName": "Serval_00",
@@ -4207,42 +2761,9 @@
           "internalId": "1103",
           "internalName": "Serval_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 6,
-        "effectRows": 1,
-        "coefficientRows": 10,
-        "readyRows": 17,
-        "blockedRows": 0
-      },
-      "sourceRows": 6,
-      "effectRows": 1,
-      "coefficientRows": 10,
-      "readyRows": 17,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 6,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 1,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 10,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Sunday_10",
       "characterId": "Sunday_10",
       "internalId": "1313",
       "internalName": "Sunday_10",
@@ -4309,48 +2830,9 @@
           "internalId": "1313",
           "internalName": "Sunday_10"
         }
-      ],
-      "counts": {
-        "sourceRows": 14,
-        "effectRows": 8,
-        "coefficientRows": 8,
-        "readyRows": 30,
-        "blockedRows": 0
-      },
-      "sourceRows": 14,
-      "effectRows": 8,
-      "coefficientRows": 8,
-      "readyRows": 30,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 14,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 8,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 8,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Xueyi_00",
       "characterId": "Xueyi_00",
       "internalId": "1214",
       "internalName": "Xueyi_00",
@@ -4417,42 +2899,9 @@
           "internalId": "1214",
           "internalName": "Xueyi_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 10,
-        "effectRows": 4,
-        "coefficientRows": 9,
-        "readyRows": 23,
-        "blockedRows": 0
-      },
-      "sourceRows": 10,
-      "effectRows": 4,
-      "coefficientRows": 9,
-      "readyRows": 23,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 10,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 4,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 9,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Saber_00",
       "characterId": "Saber_00",
       "internalId": "1014",
       "internalName": "Saber_00",
@@ -4519,48 +2968,9 @@
           "internalId": "1014",
           "internalName": "Saber_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 12,
-        "effectRows": 5,
-        "coefficientRows": 13,
-        "readyRows": 30,
-        "blockedRows": 0
-      },
-      "sourceRows": 12,
-      "effectRows": 5,
-      "coefficientRows": 13,
-      "readyRows": 30,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 12,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 5,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 13,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 3
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Sushang_00",
       "characterId": "Sushang_00",
       "internalId": "1206",
       "internalName": "Sushang_00",
@@ -4627,48 +3037,9 @@
           "internalId": "1206",
           "internalName": "Sushang_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 6,
-        "effectRows": 1,
-        "coefficientRows": 7,
-        "readyRows": 14,
-        "blockedRows": 0
-      },
-      "sourceRows": 6,
-      "effectRows": 1,
-      "coefficientRows": 7,
-      "readyRows": 14,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 6,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 1,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 7,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Sparkle_00",
       "characterId": "Sparkle_00",
       "internalId": "1306",
       "internalName": "Sparkle_00",
@@ -4735,48 +3106,9 @@
           "internalId": "1306",
           "internalName": "Sparkle_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 15,
-        "effectRows": 8,
-        "coefficientRows": 6,
-        "readyRows": 29,
-        "blockedRows": 0
-      },
-      "sourceRows": 15,
-      "effectRows": 8,
-      "coefficientRows": 6,
-      "readyRows": 29,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 15,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 8,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 6,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 4
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Sparxie_00",
       "characterId": "Sparxie_00",
       "internalId": "1501",
       "internalName": "Sparxie_00",
@@ -4843,42 +3175,9 @@
           "internalId": "1501",
           "internalName": "Sparxie_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 1,
-        "coefficientRows": 17,
-        "readyRows": 26,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 1,
-      "coefficientRows": 17,
-      "readyRows": 26,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 1,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 17,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Aglaea_00",
       "characterId": "Aglaea_00",
       "internalId": "1402",
       "internalName": "Aglaea_00",
@@ -4945,42 +3244,9 @@
           "internalId": "1402",
           "internalName": "Aglaea_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 2,
-        "coefficientRows": 6,
-        "readyRows": 16,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 2,
-      "coefficientRows": 6,
-      "readyRows": 16,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 2,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 6,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Anaxa_00",
       "characterId": "Anaxa_00",
       "internalId": "1405",
       "internalName": "Anaxa_00",
@@ -5047,48 +3313,9 @@
           "internalId": "1405",
           "internalName": "Anaxa_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 10,
-        "effectRows": 5,
-        "coefficientRows": 9,
-        "readyRows": 24,
-        "blockedRows": 0
-      },
-      "sourceRows": 10,
-      "effectRows": 5,
-      "coefficientRows": 9,
-      "readyRows": 24,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 10,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 5,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 9,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 2
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Arlan_00",
       "characterId": "Arlan_00",
       "internalId": "1008",
       "internalName": "Arlan_00",
@@ -5155,42 +3382,9 @@
           "internalId": "1008",
           "internalName": "Arlan_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 6,
-        "effectRows": 2,
-        "coefficientRows": 9,
-        "readyRows": 17,
-        "blockedRows": 0
-      },
-      "sourceRows": 6,
-      "effectRows": 2,
-      "coefficientRows": 9,
-      "readyRows": 17,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 6,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 2,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 9,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Asta_00",
       "characterId": "Asta_00",
       "internalId": "1009",
       "internalName": "Asta_00",
@@ -5257,48 +3451,9 @@
           "internalId": "1009",
           "internalName": "Asta_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 6,
-        "effectRows": 1,
-        "coefficientRows": 4,
-        "readyRows": 11,
-        "blockedRows": 0
-      },
-      "sourceRows": 6,
-      "effectRows": 1,
-      "coefficientRows": 4,
-      "readyRows": 11,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 6,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 1,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 4,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Argenti_00",
       "characterId": "Argenti_00",
       "internalId": "1302",
       "internalName": "Argenti_00",
@@ -5365,48 +3520,9 @@
           "internalId": "1302",
           "internalName": "Argenti_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 4,
-        "coefficientRows": 8,
-        "readyRows": 20,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 4,
-      "coefficientRows": 8,
-      "readyRows": 20,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 4,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 8,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Archer_00",
       "characterId": "Archer_00",
       "internalId": "1015",
       "internalName": "Archer_00",
@@ -5473,48 +3589,9 @@
           "internalId": "1015",
           "internalName": "Archer_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 11,
-        "effectRows": 4,
-        "coefficientRows": 9,
-        "readyRows": 24,
-        "blockedRows": 0
-      },
-      "sourceRows": 11,
-      "effectRows": 4,
-      "coefficientRows": 9,
-      "readyRows": 24,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 11,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 4,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 9,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Acheron_00",
       "characterId": "Acheron_00",
       "internalId": "1308",
       "internalName": "Acheron_00",
@@ -5581,48 +3658,9 @@
           "internalId": "1308",
           "internalName": "Acheron_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 10,
-        "effectRows": 3,
-        "coefficientRows": 12,
-        "readyRows": 25,
-        "blockedRows": 0
-      },
-      "sourceRows": 10,
-      "effectRows": 3,
-      "coefficientRows": 12,
-      "readyRows": 25,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 10,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 12,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 2
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Ashveil_00",
       "characterId": "Ashveil_00",
       "internalId": "1504",
       "internalName": "Ashveil_00",
@@ -5689,48 +3727,9 @@
           "internalId": "1504",
           "internalName": "Ashveil_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 12,
-        "effectRows": 7,
-        "coefficientRows": 10,
-        "readyRows": 29,
-        "blockedRows": 0
-      },
-      "sourceRows": 12,
-      "effectRows": 7,
-      "coefficientRows": 10,
-      "readyRows": 29,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 12,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 7,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 10,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Yukong_00",
       "characterId": "Yukong_00",
       "internalId": "1207",
       "internalName": "Yukong_00",
@@ -5797,48 +3796,9 @@
           "internalId": "1207",
           "internalName": "Yukong_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 7,
-        "effectRows": 3,
-        "coefficientRows": 7,
-        "readyRows": 17,
-        "blockedRows": 0
-      },
-      "sourceRows": 7,
-      "effectRows": 3,
-      "coefficientRows": 7,
-      "readyRows": 17,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 7,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 7,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Aventurine_00",
       "characterId": "Aventurine_00",
       "internalId": "1304",
       "internalName": "Aventurine_00",
@@ -5905,42 +3865,9 @@
           "internalId": "1304",
           "internalName": "Aventurine_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 10,
-        "effectRows": 4,
-        "coefficientRows": 7,
-        "readyRows": 21,
-        "blockedRows": 0
-      },
-      "sourceRows": 10,
-      "effectRows": 4,
-      "coefficientRows": 7,
-      "readyRows": 21,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 10,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 4,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 7,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Evanescia_00",
       "characterId": "Evanescia_00",
       "internalId": "1505",
       "internalName": "Evanescia_00",
@@ -6007,48 +3934,9 @@
           "internalId": "1505",
           "internalName": "Evanescia_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 3,
-        "coefficientRows": 14,
-        "readyRows": 25,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 3,
-      "coefficientRows": 14,
-      "readyRows": 25,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 14,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Evernight_00",
       "characterId": "Evernight_00",
       "internalId": "1413",
       "internalName": "Evernight_00",
@@ -6115,48 +4003,9 @@
           "internalId": "1413",
           "internalName": "Evernight_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 16,
-        "effectRows": 8,
-        "coefficientRows": 12,
-        "readyRows": 36,
-        "blockedRows": 0
-      },
-      "sourceRows": 16,
-      "effectRows": 8,
-      "coefficientRows": 12,
-      "readyRows": 36,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 16,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 8,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 12,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 2
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Yanqing_00",
       "characterId": "Yanqing_00",
       "internalId": "1209",
       "internalName": "Yanqing_00",
@@ -6223,48 +4072,9 @@
           "internalId": "1209",
           "internalName": "Yanqing_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 7,
-        "effectRows": 3,
-        "coefficientRows": 11,
-        "readyRows": 21,
-        "blockedRows": 0
-      },
-      "sourceRows": 7,
-      "effectRows": 3,
-      "coefficientRows": 11,
-      "readyRows": 21,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 7,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 11,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Lingsha_00",
       "characterId": "Lingsha_00",
       "internalId": "1222",
       "internalName": "Lingsha_00",
@@ -6331,42 +4141,9 @@
           "internalId": "1222",
           "internalName": "Lingsha_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 2,
-        "coefficientRows": 9,
-        "readyRows": 19,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 2,
-      "coefficientRows": 9,
-      "readyRows": 19,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 2,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 9,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "RuanMei_00",
       "characterId": "RuanMei_00",
       "internalId": "1303",
       "internalName": "RuanMei_00",
@@ -6444,48 +4221,9 @@
           "internalId": null,
           "internalName": null
         }
-      ],
-      "counts": {
-        "sourceRows": 12,
-        "effectRows": 6,
-        "coefficientRows": 8,
-        "readyRows": 26,
-        "blockedRows": 0
-      },
-      "sourceRows": 12,
-      "effectRows": 6,
-      "coefficientRows": 8,
-      "readyRows": 26,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 12,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 6,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 8,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 2
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Yunli_00",
       "characterId": "Yunli_00",
       "internalId": "1221",
       "internalName": "Yunli_00",
@@ -6552,42 +4290,9 @@
           "internalId": "1221",
           "internalName": "Yunli_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 4,
-        "coefficientRows": 15,
-        "readyRows": 27,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 4,
-      "coefficientRows": 15,
-      "readyRows": 27,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 4,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 15,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Welt_00",
       "characterId": "Welt_00",
       "internalId": "1004",
       "internalName": "Welt_00",
@@ -6654,48 +4359,9 @@
           "internalId": "1004",
           "internalName": "Welt_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 11,
-        "effectRows": 5,
-        "coefficientRows": 9,
-        "readyRows": 25,
-        "blockedRows": 0
-      },
-      "sourceRows": 11,
-      "effectRows": 5,
-      "coefficientRows": 9,
-      "readyRows": 25,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 11,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 5,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 9,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 2
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Silwolf_00",
       "characterId": "Silwolf_00",
       "internalId": "1006",
       "internalName": "Silwolf_00",
@@ -6762,48 +4428,9 @@
           "internalId": "1006",
           "internalName": "Silwolf_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 11,
-        "effectRows": 5,
-        "coefficientRows": 7,
-        "readyRows": 23,
-        "blockedRows": 0
-      },
-      "sourceRows": 11,
-      "effectRows": 5,
-      "coefficientRows": 7,
-      "readyRows": 23,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 11,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 5,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 7,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "SilverWolf999_00",
       "characterId": "SilverWolf999_00",
       "internalId": "1506",
       "internalName": "SilverWolf999_00",
@@ -6881,48 +4508,9 @@
           "internalId": null,
           "internalName": null
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 4,
-        "coefficientRows": 11,
-        "readyRows": 23,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 4,
-      "coefficientRows": 11,
-      "readyRows": 23,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 4,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 11,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Tingyun_00",
       "characterId": "Tingyun_00",
       "internalId": "1202",
       "internalName": "Tingyun_00",
@@ -6989,48 +4577,9 @@
           "internalId": "1202",
           "internalName": "Tingyun_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 9,
-        "effectRows": 3,
-        "coefficientRows": 8,
-        "readyRows": 20,
-        "blockedRows": 0
-      },
-      "sourceRows": 9,
-      "effectRows": 3,
-      "coefficientRows": 8,
-      "readyRows": 20,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 9,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 8,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 2
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Seele_00",
       "characterId": "Seele_00",
       "internalId": "1102",
       "internalName": "Seele_00",
@@ -7097,48 +4646,9 @@
           "internalId": "1102",
           "internalName": "Seele_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 3,
-        "coefficientRows": 8,
-        "readyRows": 19,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 3,
-      "coefficientRows": 8,
-      "readyRows": 19,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 8,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Jade_00",
       "characterId": "Jade_00",
       "internalId": "1314",
       "internalName": "Jade_00",
@@ -7205,48 +4715,9 @@
           "internalId": "1314",
           "internalName": "Jade_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 10,
-        "effectRows": 5,
-        "coefficientRows": 11,
-        "readyRows": 26,
-        "blockedRows": 0
-      },
-      "sourceRows": 10,
-      "effectRows": 5,
-      "coefficientRows": 11,
-      "readyRows": 26,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 10,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 5,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 11,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "MortenaxBlade_00",
       "characterId": "MortenaxBlade_00",
       "internalId": "1507",
       "internalName": "MortenaxBlade_00",
@@ -7324,48 +4795,9 @@
           "internalId": null,
           "internalName": null
         }
-      ],
-      "counts": {
-        "sourceRows": 16,
-        "effectRows": 10,
-        "coefficientRows": 10,
-        "readyRows": 36,
-        "blockedRows": 0
-      },
-      "sourceRows": 16,
-      "effectRows": 10,
-      "coefficientRows": 10,
-      "readyRows": 36,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 16,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 10,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 10,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 4
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Qingque_00",
       "characterId": "Qingque_00",
       "internalId": "1201",
       "internalName": "Qingque_00",
@@ -7432,48 +4864,9 @@
           "internalId": "1201",
           "internalName": "Qingque_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 10,
-        "effectRows": 3,
-        "coefficientRows": 8,
-        "readyRows": 21,
-        "blockedRows": 0
-      },
-      "sourceRows": 10,
-      "effectRows": 3,
-      "coefficientRows": 8,
-      "readyRows": 21,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 10,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 8,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 2
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Jiaoqiu_00",
       "characterId": "Jiaoqiu_00",
       "internalId": "1218",
       "internalName": "Jiaoqiu_00",
@@ -7540,48 +4933,9 @@
           "internalId": "1218",
           "internalName": "Jiaoqiu_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 4,
-        "coefficientRows": 11,
-        "readyRows": 23,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 4,
-      "coefficientRows": 11,
-      "readyRows": 23,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 4,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 11,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Castorice_00",
       "characterId": "Castorice_00",
       "internalId": "1407",
       "internalName": "Castorice_00",
@@ -7648,48 +5002,9 @@
           "internalId": "1407",
           "internalName": "Castorice_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 7,
-        "effectRows": 2,
-        "coefficientRows": 11,
-        "readyRows": 20,
-        "blockedRows": 0
-      },
-      "sourceRows": 7,
-      "effectRows": 2,
-      "coefficientRows": 11,
-      "readyRows": 20,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 7,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 2,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 11,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Kafka_00",
       "characterId": "Kafka_00",
       "internalId": "1005",
       "internalName": "Kafka_00",
@@ -7756,51 +5071,9 @@
           "internalId": "1005",
           "internalName": "Kafka_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 7,
-        "effectRows": 0,
-        "coefficientRows": 13,
-        "readyRows": 20,
-        "blockedRows": 0
-      },
-      "sourceRows": 7,
-      "effectRows": 0,
-      "coefficientRows": 13,
-      "readyRows": 20,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 7,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 0,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 13,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingExtraction": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 2,
-      "missingCount": 2,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Cerydra_00",
       "characterId": "Cerydra_00",
       "internalId": "1412",
       "internalName": "Cerydra_00",
@@ -7867,48 +5140,9 @@
           "internalId": "1412",
           "internalName": "Cerydra_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 18,
-        "effectRows": 11,
-        "coefficientRows": 8,
-        "readyRows": 37,
-        "blockedRows": 0
-      },
-      "sourceRows": 18,
-      "effectRows": 11,
-      "coefficientRows": 8,
-      "readyRows": 37,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 18,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 11,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 8,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 6
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Klara_00",
       "characterId": "Klara_00",
       "internalId": "1107",
       "internalName": "Klara_00",
@@ -7975,42 +5209,9 @@
           "internalId": "1107",
           "internalName": "Klara_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 5,
-        "effectRows": 1,
-        "coefficientRows": 10,
-        "readyRows": 16,
-        "blockedRows": 0
-      },
-      "sourceRows": 5,
-      "effectRows": 1,
-      "coefficientRows": 10,
-      "readyRows": 16,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 5,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 1,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 10,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Cyrene_00",
       "characterId": "Cyrene_00",
       "internalId": "1415",
       "internalName": "Cyrene_00",
@@ -8077,48 +5278,9 @@
           "internalId": "1415",
           "internalName": "Cyrene_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 27,
-        "effectRows": 20,
-        "coefficientRows": 15,
-        "readyRows": 62,
-        "blockedRows": 0
-      },
-      "sourceRows": 27,
-      "effectRows": 20,
-      "coefficientRows": 15,
-      "readyRows": 62,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 27,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 20,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 15,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 14
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "TohsakaRin_00",
       "characterId": "TohsakaRin_00",
       "internalId": "1508",
       "internalName": "TohsakaRin_00",
@@ -8185,64 +5347,9 @@
           "internalId": "1508",
           "internalName": "TohsakaRin_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 0,
-        "effectRows": 0,
-        "coefficientRows": 0,
-        "readyRows": 0,
-        "blockedRows": 0
-      },
-      "sourceRows": 0,
-      "effectRows": 0,
-      "coefficientRows": 0,
-      "readyRows": 0,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 0,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 0,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 0,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [
-        "no_calculation_ready_rows"
-      ],
-      "optionalMissingItems": [
-        "missing_skill_text",
-        "missing_effect_trace",
-        "missing_eidolon_trace",
-        "effect_rows_zero",
-        "coefficient_rows_zero"
-      ],
-      "missingItems": [
-        "no_calculation_ready_rows",
-        "missing_skill_text",
-        "missing_effect_trace",
-        "missing_eidolon_trace",
-        "effect_rows_zero",
-        "coefficient_rows_zero"
-      ],
-      "missingExtraction": [
-        "no_calculation_ready_rows",
-        "missing_skill_text",
-        "missing_effect_trace",
-        "missing_eidolon_trace",
-        "effect_rows_zero",
-        "coefficient_rows_zero"
-      ],
-      "requiredMissingCount": 1,
-      "optionalMissingCount": 5,
-      "missingCount": 6,
-      "readinessStatus": "blocked",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Topaz_00",
       "characterId": "Topaz_00",
       "internalId": "1112",
       "internalName": "Topaz_00",
@@ -8320,51 +5427,9 @@
           "internalId": null,
           "internalName": null
         }
-      ],
-      "counts": {
-        "sourceRows": 5,
-        "effectRows": 0,
-        "coefficientRows": 10,
-        "readyRows": 15,
-        "blockedRows": 0
-      },
-      "sourceRows": 5,
-      "effectRows": 0,
-      "coefficientRows": 10,
-      "readyRows": 15,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 5,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 0,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 10,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingExtraction": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 2,
-      "missingCount": 2,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Tribbie_00",
       "characterId": "Tribbie_00",
       "internalId": "1403",
       "internalName": "Tribbie_00",
@@ -8431,48 +5496,9 @@
           "internalId": "1403",
           "internalName": "Tribbie_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 11,
-        "effectRows": 6,
-        "coefficientRows": 9,
-        "readyRows": 26,
-        "blockedRows": 0
-      },
-      "sourceRows": 11,
-      "effectRows": 6,
-      "coefficientRows": 9,
-      "readyRows": 26,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 11,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 6,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 9,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 2
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Phainon_00",
       "characterId": "Phainon_00",
       "internalId": "1408",
       "internalName": "Phainon_00",
@@ -8539,48 +5565,9 @@
           "internalId": "1408",
           "internalName": "Phainon_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 3,
-        "coefficientRows": 16,
-        "readyRows": 27,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 3,
-      "coefficientRows": 16,
-      "readyRows": 27,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 16,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Pela_00",
       "characterId": "Pela_00",
       "internalId": "1106",
       "internalName": "Pela_00",
@@ -8647,48 +5634,9 @@
           "internalId": "1106",
           "internalName": "Pela_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 3,
-        "coefficientRows": 6,
-        "readyRows": 17,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 3,
-      "coefficientRows": 6,
-      "readyRows": 17,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 6,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Hanya_00",
       "characterId": "Hanya_00",
       "internalId": "1215",
       "internalName": "Hanya_00",
@@ -8755,48 +5703,9 @@
           "internalId": "1215",
           "internalName": "Hanya_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 11,
-        "effectRows": 3,
-        "coefficientRows": 6,
-        "readyRows": 20,
-        "blockedRows": 0
-      },
-      "sourceRows": 11,
-      "effectRows": 3,
-      "coefficientRows": 6,
-      "readyRows": 20,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 11,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 6,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 2
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Herta_00",
       "characterId": "Herta_00",
       "internalId": "1013",
       "internalName": "Herta_00",
@@ -8863,48 +5772,9 @@
           "internalId": "1013",
           "internalName": "Herta_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 11,
-        "effectRows": 5,
-        "coefficientRows": 8,
-        "readyRows": 24,
-        "blockedRows": 0
-      },
-      "sourceRows": 11,
-      "effectRows": 5,
-      "coefficientRows": 8,
-      "readyRows": 24,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 11,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 5,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 8,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 2
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "YaoGuang_00",
       "characterId": "YaoGuang_00",
       "internalId": "1502",
       "internalName": "YaoGuang_00",
@@ -8971,42 +5841,9 @@
           "internalId": "1502",
           "internalName": "YaoGuang_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 2,
-        "coefficientRows": 5,
-        "readyRows": 15,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 2,
-      "coefficientRows": 5,
-      "readyRows": 15,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 2,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 5,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Hook_00",
       "characterId": "Hook_00",
       "internalId": "1109",
       "internalName": "Hook_00",
@@ -9073,42 +5910,9 @@
           "internalId": "1109",
           "internalName": "Hook_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 2,
-        "coefficientRows": 12,
-        "readyRows": 22,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 2,
-      "coefficientRows": 12,
-      "readyRows": 22,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 2,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 12,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Himeko_00",
       "characterId": "Himeko_00",
       "internalId": "1003",
       "internalName": "Himeko_00",
@@ -9175,48 +5979,9 @@
           "internalId": "1003",
           "internalName": "Himeko_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 7,
-        "effectRows": 2,
-        "coefficientRows": 9,
-        "readyRows": 18,
-        "blockedRows": 0
-      },
-      "sourceRows": 7,
-      "effectRows": 2,
-      "coefficientRows": 9,
-      "readyRows": 18,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 7,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 2,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 9,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "HimekoNova_00",
       "characterId": "HimekoNova_00",
       "internalId": "1510",
       "internalName": "HimekoNova_00",
@@ -9294,64 +6059,9 @@
           "internalId": null,
           "internalName": null
         }
-      ],
-      "counts": {
-        "sourceRows": 0,
-        "effectRows": 0,
-        "coefficientRows": 0,
-        "readyRows": 0,
-        "blockedRows": 0
-      },
-      "sourceRows": 0,
-      "effectRows": 0,
-      "coefficientRows": 0,
-      "readyRows": 0,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 0,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 0,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 0,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [
-        "no_calculation_ready_rows"
-      ],
-      "optionalMissingItems": [
-        "missing_skill_text",
-        "missing_effect_trace",
-        "missing_eidolon_trace",
-        "effect_rows_zero",
-        "coefficient_rows_zero"
-      ],
-      "missingItems": [
-        "no_calculation_ready_rows",
-        "missing_skill_text",
-        "missing_effect_trace",
-        "missing_eidolon_trace",
-        "effect_rows_zero",
-        "coefficient_rows_zero"
-      ],
-      "missingExtraction": [
-        "no_calculation_ready_rows",
-        "missing_skill_text",
-        "missing_effect_trace",
-        "missing_eidolon_trace",
-        "effect_rows_zero",
-        "coefficient_rows_zero"
-      ],
-      "requiredMissingCount": 1,
-      "optionalMissingCount": 5,
-      "missingCount": 6,
-      "readinessStatus": "blocked",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Harscyline_00",
       "characterId": "Harscyline_00",
       "internalId": "1410",
       "internalName": "Harscyline_00",
@@ -9418,42 +6128,9 @@
           "internalId": "1410",
           "internalName": "Harscyline_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 10,
-        "effectRows": 3,
-        "coefficientRows": 10,
-        "readyRows": 23,
-        "blockedRows": 0
-      },
-      "sourceRows": 10,
-      "effectRows": 3,
-      "coefficientRows": 10,
-      "readyRows": 23,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 10,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 10,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Hyacine_00",
       "characterId": "Hyacine_00",
       "internalId": "1409",
       "internalName": "Hyacine_00",
@@ -9520,42 +6197,9 @@
           "internalId": "1409",
           "internalName": "Hyacine_00"
         }
-      ],
-      "counts": {
-        "sourceRows": 7,
-        "effectRows": 1,
-        "coefficientRows": 4,
-        "readyRows": 12,
-        "blockedRows": 0
-      },
-      "sourceRows": 7,
-      "effectRows": 1,
-      "coefficientRows": 4,
-      "readyRows": 12,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 7,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 1,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 4,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [],
-      "missingItems": [],
-      "missingExtraction": [],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 0,
-      "missingCount": 0,
-      "readinessStatus": "ready",
-      "extractionReady": true
+      ]
     },
     {
-      "characterKey": "Dr_Ratio_00",
       "characterId": "Dr_Ratio_00",
       "internalId": "1305",
       "internalName": "Dr_Ratio_00",
@@ -9633,48 +6277,9 @@
           "internalId": null,
           "internalName": null
         }
-      ],
-      "counts": {
-        "sourceRows": 11,
-        "effectRows": 5,
-        "coefficientRows": 8,
-        "readyRows": 24,
-        "blockedRows": 0
-      },
-      "sourceRows": 11,
-      "effectRows": 5,
-      "coefficientRows": 8,
-      "readyRows": 24,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 11,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 5,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 8,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 3
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Mar_7th_00",
       "characterId": "Mar_7th_00",
       "internalId": "1001",
       "internalName": "Mar_7th_00",
@@ -9752,51 +6357,9 @@
           "internalId": null,
           "internalName": null
         }
-      ],
-      "counts": {
-        "sourceRows": 7,
-        "effectRows": 0,
-        "coefficientRows": 8,
-        "readyRows": 15,
-        "blockedRows": 0
-      },
-      "sourceRows": 7,
-      "effectRows": 0,
-      "coefficientRows": 8,
-      "readyRows": 15,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 7,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 0,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 8,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 0
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingItems": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "missingExtraction": [
-        "missing_effect_trace",
-        "effect_rows_zero"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 2,
-      "missingCount": 2,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     },
     {
-      "characterKey": "Mar_7th_10",
       "characterId": "Mar_7th_10",
       "internalId": "1224",
       "internalName": "Mar_7th_10",
@@ -9874,83 +6437,14 @@
           "internalId": null,
           "internalName": null
         }
-      ],
-      "counts": {
-        "sourceRows": 8,
-        "effectRows": 3,
-        "coefficientRows": 9,
-        "readyRows": 20,
-        "blockedRows": 0
-      },
-      "sourceRows": 8,
-      "effectRows": 3,
-      "coefficientRows": 9,
-      "readyRows": 20,
-      "blockedRows": 0,
-      "calculationReadySourceRows": 8,
-      "blockedSourceRows": 0,
-      "calculationReadyEffectRows": 3,
-      "blockedEffectRows": 0,
-      "calculationReadyCoefficientRows": 9,
-      "blockedCoefficientRows": 0,
-      "valueMode": {
-        "unknown": 0,
-        "dynamicFormula": 1
-      },
-      "sourceTraceMissingRows": 0,
-      "requiredMissingItems": [],
-      "optionalMissingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingItems": [
-        "dynamic_formula_blocked"
-      ],
-      "missingExtraction": [
-        "dynamic_formula_blocked"
-      ],
-      "requiredMissingCount": 0,
-      "optionalMissingCount": 1,
-      "missingCount": 1,
-      "readinessStatus": "partial",
-      "extractionReady": false
+      ]
     }
   ],
   "summary": {
     "characters": 90,
-    "ready": 21,
-    "partial": 66,
-    "blocked": 3,
-    "extractionReady": 21,
-    "sourceRows": 761,
-    "effectRows": 273,
-    "coefficientRows": 766,
-    "readyRows": 1800,
-    "blockedRows": 0,
-    "effectRowsZero": 15,
-    "valueModeUnknownCharacters": 0,
-    "dynamicFormulaCharacters": 54,
-    "legacyReadyWithMissing": 66,
-    "displayNameSourceMissing": 0,
-    "characterIdentitySourceMissing": 0
-  },
-  "requiredMissingCounts": {
-    "no_calculation_ready_rows": 3
-  },
-  "optionalMissingCounts": {
-    "missing_effect_trace": 15,
-    "effect_rows_zero": 15,
-    "dynamic_formula_blocked": 54,
-    "coefficient_rows_zero": 4,
-    "missing_skill_text": 3,
-    "missing_coefficient": 1,
-    "missing_eidolon_trace": 3
-  },
-  "sourceLinkage": {
-    "skillTextCharacters": 87,
-    "effectTraceCharacters": 75,
-    "coefficientCharacters": 89,
-    "eidolonCharacters": 87,
-    "lightconeEffects": 280,
-    "relicSource": "missing_snapshot"
+    "sourceBackedDisplayNames": 90,
+    "sourceBackedIdentities": 90,
+    "aliases": 17,
+    "lightconeEffects": 280
   }
 }

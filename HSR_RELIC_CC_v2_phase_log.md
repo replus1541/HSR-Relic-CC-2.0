@@ -1082,3 +1082,38 @@
 
 - character identity dataset을 별도로 만들면 `displayName` source-backed 판정을 identity contract 기준으로 더 엄격하게 옮겨야 합니다.
 - `partial`로 분류된 66명 중 dynamic_formula, effect trace, coefficient coverage gap을 후속 coverage task로 줄여야 합니다.
+---
+
+## Follow-up Fix. Character Identity Dataset
+
+### Status
+
+- status: completed
+- started: 2026-07-05
+- completed: 2026-07-05
+- request: complete the next step after display-name audit/readiness fixes
+
+### Work Log
+
+- Added `src/identity/character-identity.js` as the source-backed identity builder.
+- Added `tools/validate_character_identity.mjs` and wired `validate:identity` into `npm.cmd run validate` before canonical coverage generation.
+- Generated `data/generated/character-identity.json` with stable `characterId`, official `displayName`, `aliasNames`, source evidence, and review flags.
+- Updated canonical coverage/status generation to use identity rows instead of raw source display strings.
+- Updated `/extraction/:characterId` matching to resolve stable ids, official/localized names, aliases, internal ids, and source names.
+- Updated display-name audit so stable route ids and source-backed alias collisions are not treated as display-name failures.
+- Existing `C:\CODEX\HSR RELIC CC` files were read as evidence only and were not modified.
+
+### Output Summary
+
+- identity characters: 90
+- source-backed display names: 90
+- aliases retained for lookup: 17
+- extraction status characters: 90
+- readiness: ready 21 / partial 66 / blocked 3
+- display-name audit needsReview: 0
+
+### Verification
+
+- `npm.cmd run validate`: passed. 12 sub-scripts passed.
+- `node tools\audit_character_display_names.mjs`: passed. rows=90, needsReview=0, highPriority=0.
+- `npm.cmd run build`: passed. Vite production build completed; generated JSON chunk-size warning remains.

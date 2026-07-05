@@ -19,11 +19,17 @@ function findStatusRow(characterId) {
     const identifiers = [
       row.characterId,
       row.displayName,
+      row.officialName,
+      row.localizedName,
+      row.internalId,
+      row.internalName,
       row.identifiers?.effectAvatar,
       row.identifiers?.effectName,
       row.identifiers?.hoyowikiEntryPageId,
       row.identifiers?.coefficientAvatar,
       row.identifiers?.coefficientAvatarId,
+      ...(row.aliasNames ?? []),
+      ...(row.sourceNames ?? []),
     ].filter(Boolean);
     return identifiers.includes(decoded);
   });
@@ -35,11 +41,17 @@ function rowMatchesStatus(row, statusRow, fallbackCharacterId) {
   return [
     statusRow.characterId,
     statusRow.displayName,
+    statusRow.officialName,
+    statusRow.localizedName,
+    statusRow.internalId,
+    statusRow.internalName,
     statusRow.identifiers?.effectAvatar,
     statusRow.identifiers?.effectName,
     statusRow.identifiers?.hoyowikiEntryPageId,
     statusRow.identifiers?.coefficientAvatar,
     statusRow.identifiers?.coefficientAvatarId,
+    ...(statusRow.aliasNames ?? []),
+    ...(statusRow.sourceNames ?? []),
   ].filter(Boolean).includes(owner);
 }
 

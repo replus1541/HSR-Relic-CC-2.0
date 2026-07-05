@@ -13,6 +13,7 @@
     "validate:legacy": "node tools/validate_legacy_manifest.mjs",
     "validate:adapters": "node tools/validate_adapters.mjs",
     "data:adapters": "node tools/run_adapters.mjs",
+    "validate:identity": "node tools/validate_character_identity.mjs",
     "validate:canonical-dataset": "node tools/validate_canonical_dataset.mjs",
     "validate:effect-normalization": "node tools/validate_effect_normalization.mjs",
     "validate:value-resolution": "node tools/validate_value_resolution.mjs",

@@ -2,28 +2,22 @@
   "version": 1,
   "generatedBy": "tools/audit_character_display_names.mjs",
   "summary": {
-    "auditedRows": 92,
-    "rowsNeedingReview": 10,
-    "issueCounts": {
-      "placeholder_like_character_row": 1,
-      "alias_normalized_collision": 5,
-      "official_source_name_collision": 4,
-      "alias_used_as_displayName": 2,
-      "alias_official_target_mismatch": 2,
-      "mixed_english_korean_displayName": 3,
-      "level_or_placeholder_suffix_in_displayName": 1
-    }
+    "auditedRows": 90,
+    "rowsNeedingReview": 0,
+    "issueCounts": {}
   },
   "rows": [
     {
-      "characterId": "개척자 • 기억",
+      "characterId": "PlayerBoy_20",
       "displayName": "개척자 • 기억",
       "sourceNames": [
         "개척자 • 기억",
         "PlayerBoy_20",
+        "8005",
         "3287",
         "PlayerGirl_20",
-        "8006"
+        "8006",
+        "기억척자"
       ],
       "identifiers": {
         "effectAvatar": "PlayerBoy_20",
@@ -53,14 +47,16 @@
       "issues": []
     },
     {
-      "characterId": "개척자 • 보존",
+      "characterId": "PlayerBoy_10",
       "displayName": "개척자 • 보존",
       "sourceNames": [
         "개척자 • 보존",
         "PlayerBoy_10",
+        "8003",
         "23",
         "PlayerGirl_10",
-        "8004"
+        "8004",
+        "보존척자"
       ],
       "identifiers": {
         "effectAvatar": "PlayerBoy_10",
@@ -90,14 +86,16 @@
       "issues": []
     },
     {
-      "characterId": "개척자 • 파멸",
+      "characterId": "PlayerBoy_00",
       "displayName": "개척자 • 파멸",
       "sourceNames": [
         "개척자 • 파멸",
         "PlayerBoy_00",
+        "8001",
         "6",
         "PlayerGirl_00",
-        "8002"
+        "8002",
+        "파멸척자"
       ],
       "identifiers": {
         "effectAvatar": "PlayerBoy_00",
@@ -127,14 +125,16 @@
       "issues": []
     },
     {
-      "characterId": "개척자 • 화합",
+      "characterId": "PlayerBoy_30",
       "displayName": "개척자 • 화합",
       "sourceNames": [
         "개척자 • 화합",
         "PlayerBoy_30",
+        "8007",
         "2511",
         "PlayerGirl_30",
-        "8008"
+        "8008",
+        "화척자"
       ],
       "identifiers": {
         "effectAvatar": "PlayerBoy_30",
@@ -164,14 +164,16 @@
       "issues": []
     },
     {
-      "characterId": "개척자 • 환락",
+      "characterId": "PlayerBoy_40",
       "displayName": "개척자 • 환락",
       "sourceNames": [
         "개척자 • 환락",
         "PlayerBoy_40",
+        "8009",
         "5006",
         "PlayerGirl_40",
-        "8010"
+        "8010",
+        "환락 척자"
       ],
       "identifiers": {
         "effectAvatar": "PlayerBoy_40",
@@ -201,13 +203,13 @@
       "issues": []
     },
     {
-      "characterId": "갤러거",
+      "characterId": "Gallagher_00",
       "displayName": "갤러거",
       "sourceNames": [
         "갤러거",
         "Gallagher_00",
-        "1924",
-        "1301"
+        "1301",
+        "1924"
       ],
       "identifiers": {
         "effectAvatar": "Gallagher_00",
@@ -236,13 +238,13 @@
       "issues": []
     },
     {
-      "characterId": "게파드",
+      "characterId": "Gepard_00",
       "displayName": "게파드",
       "sourceNames": [
         "게파드",
         "Gepard_00",
-        "17",
-        "1104"
+        "1104",
+        "17"
       ],
       "identifiers": {
         "effectAvatar": "Gepard_00",
@@ -271,13 +273,13 @@
       "issues": []
     },
     {
-      "characterId": "경류",
+      "characterId": "Jingliu_00",
       "displayName": "경류",
       "sourceNames": [
         "경류",
         "Jingliu_00",
-        "1387",
-        "1212"
+        "1212",
+        "1387"
       ],
       "identifiers": {
         "effectAvatar": "Jingliu_00",
@@ -306,13 +308,13 @@
       "issues": []
     },
     {
-      "characterId": "경원",
+      "characterId": "JingYuan_00",
       "displayName": "경원",
       "sourceNames": [
         "경원",
         "JingYuan_00",
-        "26",
-        "1204"
+        "1204",
+        "26"
       ],
       "identifiers": {
         "effectAvatar": "JingYuan_00",
@@ -341,13 +343,13 @@
       "issues": []
     },
     {
-      "characterId": "계네빈",
+      "characterId": "Guinaifen_00",
       "displayName": "계네빈",
       "sourceNames": [
         "계네빈",
         "Guinaifen_00",
-        "1392",
-        "1210"
+        "1210",
+        "1392"
       ],
       "identifiers": {
         "effectAvatar": "Guinaifen_00",
@@ -376,13 +378,13 @@
       "issues": []
     },
     {
-      "characterId": "곽향",
+      "characterId": "Huohuo_00",
       "displayName": "곽향",
       "sourceNames": [
         "곽향",
         "Huohuo_00",
-        "1533",
-        "1217"
+        "1217",
+        "1533"
       ],
       "identifiers": {
         "effectAvatar": "Huohuo_00",
@@ -411,13 +413,14 @@
       "issues": []
     },
     {
-      "characterId": "길가메시",
+      "characterId": "Gilgamesh_00",
       "displayName": "길가메시",
       "sourceNames": [
         "길가메시",
         "Gilgamesh_00",
+        "1509",
         "5338",
-        "1509"
+        "길가메쉬"
       ],
       "identifiers": {
         "effectAvatar": "Gilgamesh_00",
@@ -442,19 +445,17 @@
         "Config/ConfigCharacter/Avatar/Avatar_Gilgamesh_00_Config.json"
       ],
       "isDisplayNameSourceBacked": true,
-      "nameReviewStatus": "needs_review",
-      "issues": [
-        "placeholder_like_character_row"
-      ]
+      "nameReviewStatus": "source_backed",
+      "issues": []
     },
     {
-      "characterId": "나찰",
+      "characterId": "Luocha_00",
       "displayName": "나찰",
       "sourceNames": [
         "나찰",
         "Luocha_00",
-        "711",
-        "1203"
+        "1203",
+        "711"
       ],
       "identifiers": {
         "effectAvatar": "Luocha_00",
@@ -483,13 +484,13 @@
       "issues": []
     },
     {
-      "characterId": "나타샤",
+      "characterId": "Natasha_00",
       "displayName": "나타샤",
       "sourceNames": [
         "나타샤",
         "Natasha_00",
-        "18",
-        "1105"
+        "1105",
+        "18"
       ],
       "identifiers": {
         "effectAvatar": "Natasha_00",
@@ -518,13 +519,13 @@
       "issues": []
     },
     {
-      "characterId": "단항",
+      "characterId": "DanHeng_00",
       "displayName": "단항",
       "sourceNames": [
         "단항",
         "DanHeng_00",
-        "8",
-        "1002"
+        "1002",
+        "8"
       ],
       "identifiers": {
         "effectAvatar": "DanHeng_00",
@@ -553,13 +554,14 @@
       "issues": []
     },
     {
-      "characterId": "단항 • 등황",
+      "characterId": "DanHengPT_00",
       "displayName": "단항 • 등황",
       "sourceNames": [
         "단항 • 등황",
         "DanHengPT_00",
+        "1414",
         "3957",
-        "1414"
+        "등황"
       ],
       "identifiers": {
         "effectAvatar": "DanHengPT_00",
@@ -588,13 +590,14 @@
       "issues": []
     },
     {
-      "characterId": "단항•음월",
+      "characterId": "DanHengIL_00",
       "displayName": "단항•음월",
       "sourceNames": [
         "단항•음월",
         "DanHengIL_00",
+        "1213",
         "1226",
-        "1213"
+        "음월"
       ],
       "identifiers": {
         "effectAvatar": "DanHengIL_00",
@@ -623,13 +626,13 @@
       "issues": []
     },
     {
-      "characterId": "달리아",
+      "characterId": "Constance_00",
       "displayName": "달리아",
       "sourceNames": [
         "달리아",
         "Constance_00",
-        "4060",
-        "1321"
+        "1321",
+        "4060"
       ],
       "identifiers": {
         "effectAvatar": "Constance_00",
@@ -658,13 +661,13 @@
       "issues": []
     },
     {
-      "characterId": "더 헤르타",
+      "characterId": "TheHerta_00",
       "displayName": "더 헤르타",
       "sourceNames": [
         "더 헤르타",
         "TheHerta_00",
-        "3285",
-        "1401"
+        "1401",
+        "3285"
       ],
       "identifiers": {
         "effectAvatar": "TheHerta_00",
@@ -693,13 +696,13 @@
       "issues": []
     },
     {
-      "characterId": "라파",
+      "characterId": "Rappa_00",
       "displayName": "라파",
       "sourceNames": [
         "라파",
         "Rappa_00",
-        "3057",
-        "1317"
+        "1317",
+        "3057"
       ],
       "identifiers": {
         "effectAvatar": "Rappa_00",
@@ -728,13 +731,13 @@
       "issues": []
     },
     {
-      "characterId": "로빈",
+      "characterId": "Robin_00",
       "displayName": "로빈",
       "sourceNames": [
         "로빈",
         "Robin_00",
-        "2366",
-        "1309"
+        "1309",
+        "2366"
       ],
       "identifiers": {
         "effectAvatar": "Robin_00",
@@ -763,13 +766,13 @@
       "issues": []
     },
     {
-      "characterId": "루카",
+      "characterId": "Luka_00",
       "displayName": "루카",
       "sourceNames": [
         "루카",
         "Luka_00",
-        "801",
-        "1111"
+        "1111",
+        "801"
       ],
       "identifiers": {
         "effectAvatar": "Luka_00",
@@ -798,13 +801,13 @@
       "issues": []
     },
     {
-      "characterId": "링스",
+      "characterId": "Lynx_00",
       "displayName": "링스",
       "sourceNames": [
         "링스",
         "Lynx_00",
-        "1228",
-        "1110"
+        "1110",
+        "1228"
       ],
       "identifiers": {
         "effectAvatar": "Lynx_00",
@@ -833,13 +836,13 @@
       "issues": []
     },
     {
-      "characterId": "마이데이",
+      "characterId": "Mydeimos_00",
       "displayName": "마이데이",
       "sourceNames": [
         "마이데이",
         "Mydeimos_00",
-        "3324",
-        "1404"
+        "1404",
+        "3324"
       ],
       "identifiers": {
         "effectAvatar": "Mydeimos_00",
@@ -868,13 +871,13 @@
       "issues": []
     },
     {
-      "characterId": "망귀인",
+      "characterId": "Fugue_00",
       "displayName": "망귀인",
       "sourceNames": [
         "망귀인",
         "Fugue_00",
-        "3151",
-        "1225"
+        "1225",
+        "3151"
       ],
       "identifiers": {
         "effectAvatar": "Fugue_00",
@@ -903,13 +906,13 @@
       "issues": []
     },
     {
-      "characterId": "맥택",
+      "characterId": "Moze_00",
       "displayName": "맥택",
       "sourceNames": [
         "맥택",
         "Moze_00",
-        "2949",
-        "1223"
+        "1223",
+        "2949"
       ],
       "identifiers": {
         "effectAvatar": "Moze_00",
@@ -938,13 +941,13 @@
       "issues": []
     },
     {
-      "characterId": "미샤",
+      "characterId": "Misha_00",
       "displayName": "미샤",
       "sourceNames": [
         "미샤",
         "Misha_00",
-        "1808",
-        "1312"
+        "1312",
+        "1808"
       ],
       "identifiers": {
         "effectAvatar": "Misha_00",
@@ -973,13 +976,13 @@
       "issues": []
     },
     {
-      "characterId": "반디",
+      "characterId": "Sam_00",
       "displayName": "반디",
       "sourceNames": [
         "반디",
         "Sam_00",
-        "2494",
-        "1310"
+        "1310",
+        "2494"
       ],
       "identifiers": {
         "effectAvatar": "Sam_00",
@@ -1008,13 +1011,13 @@
       "issues": []
     },
     {
-      "characterId": "백로",
+      "characterId": "Bailu_00",
       "displayName": "백로",
       "sourceNames": [
         "백로",
         "Bailu_00",
-        "29",
-        "1211"
+        "1211",
+        "29"
       ],
       "identifiers": {
         "effectAvatar": "Bailu_00",
@@ -1043,13 +1046,13 @@
       "issues": []
     },
     {
-      "characterId": "부트힐",
+      "characterId": "Boothill_00",
       "displayName": "부트힐",
       "sourceNames": [
         "부트힐",
         "Boothill_00",
-        "2367",
-        "1315"
+        "1315",
+        "2367"
       ],
       "identifiers": {
         "effectAvatar": "Boothill_00",
@@ -1078,13 +1081,13 @@
       "issues": []
     },
     {
-      "characterId": "부현",
+      "characterId": "FuXuan_00",
       "displayName": "부현",
       "sourceNames": [
         "부현",
         "FuXuan_00",
-        "804",
-        "1208"
+        "1208",
+        "804"
       ],
       "identifiers": {
         "effectAvatar": "FuXuan_00",
@@ -1113,13 +1116,13 @@
       "issues": []
     },
     {
-      "characterId": "브로냐",
+      "characterId": "Bronya_00",
       "displayName": "브로냐",
       "sourceNames": [
         "브로냐",
         "Bronya_00",
-        "14",
-        "1101"
+        "1101",
+        "14"
       ],
       "identifiers": {
         "effectAvatar": "Bronya_00",
@@ -1148,13 +1151,14 @@
       "issues": []
     },
     {
-      "characterId": "블랙 스완",
+      "characterId": "BlackSwan_00",
       "displayName": "블랙 스완",
       "sourceNames": [
         "블랙 스완",
         "BlackSwan_00",
+        "1307",
         "1806",
-        "1307"
+        "블랙스완"
       ],
       "identifiers": {
         "effectAvatar": "BlackSwan_00",
@@ -1179,21 +1183,18 @@
         "data/legacy-reference/game-db/attack-coefficient-candidates.json",
         "Config/ConfigCharacter/Avatar/Avatar_BlackSwan_00_Config.json"
       ],
-      "isDisplayNameSourceBacked": false,
-      "nameReviewStatus": "needs_review",
-      "issues": [
-        "alias_normalized_collision",
-        "official_source_name_collision"
-      ]
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "source_backed",
+      "issues": []
     },
     {
-      "characterId": "블레이드",
+      "characterId": "Ren_00",
       "displayName": "블레이드",
       "sourceNames": [
         "블레이드",
         "Ren_00",
-        "789",
-        "1205"
+        "1205",
+        "789"
       ],
       "identifiers": {
         "effectAvatar": "Ren_00",
@@ -1222,13 +1223,13 @@
       "issues": []
     },
     {
-      "characterId": "비소",
+      "characterId": "Feixiao_00",
       "displayName": "비소",
       "sourceNames": [
         "비소",
         "Feixiao_00",
-        "2947",
-        "1220"
+        "1220",
+        "2947"
       ],
       "identifiers": {
         "effectAvatar": "Feixiao_00",
@@ -1257,13 +1258,13 @@
       "issues": []
     },
     {
-      "characterId": "사이퍼",
+      "characterId": "Cipher_00",
       "displayName": "사이퍼",
       "sourceNames": [
         "사이퍼",
         "Cipher_00",
-        "3691",
-        "1406"
+        "1406",
+        "3691"
       ],
       "identifiers": {
         "effectAvatar": "Cipher_00",
@@ -1292,50 +1293,13 @@
       "issues": []
     },
     {
-      "characterId": "삼칠이",
-      "displayName": "삼칠이",
-      "sourceNames": [
-        "삼칠이",
-        "Mar_7th_00",
-        "1001"
-      ],
-      "identifiers": {
-        "effectAvatar": "Mar_7th_00",
-        "effectName": "삼칠이",
-        "hoyowikiEntryPageId": null,
-        "coefficientAvatar": "Mar_7th_00",
-        "coefficientAvatarId": "1001"
-      },
-      "officialNames": [
-        "삼칠이"
-      ],
-      "aliasTargets": [
-        "Mar. 7th"
-      ],
-      "sourceOrigins": [
-        "game_db_generated",
-        "design_data_extracted_catalog"
-      ],
-      "localizationSources": [
-        "data/legacy-reference/game-db/character-effect-candidates.json",
-        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
-        "Config/ConfigCharacter/Avatar/Avatar_Mar_7th_00_Config.json"
-      ],
-      "isDisplayNameSourceBacked": false,
-      "nameReviewStatus": "needs_review",
-      "issues": [
-        "alias_used_as_displayName",
-        "alias_official_target_mismatch"
-      ]
-    },
-    {
-      "characterId": "삼포",
+      "characterId": "Sampo_00",
       "displayName": "삼포",
       "sourceNames": [
         "삼포",
         "Sampo_00",
-        "21",
-        "1108"
+        "1108",
+        "21"
       ],
       "identifiers": {
         "effectAvatar": "Sampo_00",
@@ -1364,13 +1328,13 @@
       "issues": []
     },
     {
-      "characterId": "서벌",
+      "characterId": "Serval_00",
       "displayName": "서벌",
       "sourceNames": [
         "서벌",
         "Serval_00",
-        "16",
-        "1103"
+        "1103",
+        "16"
       ],
       "identifiers": {
         "effectAvatar": "Serval_00",
@@ -1399,13 +1363,13 @@
       "issues": []
     },
     {
-      "characterId": "선데이",
+      "characterId": "Sunday_10",
       "displayName": "선데이",
       "sourceNames": [
         "선데이",
         "Sunday_10",
-        "3150",
-        "1313"
+        "1313",
+        "3150"
       ],
       "identifiers": {
         "effectAvatar": "Sunday_10",
@@ -1434,13 +1398,13 @@
       "issues": []
     },
     {
-      "characterId": "설의",
+      "characterId": "Xueyi_00",
       "displayName": "설의",
       "sourceNames": [
         "설의",
         "Xueyi_00",
-        "1640",
-        "1214"
+        "1214",
+        "1640"
       ],
       "identifiers": {
         "effectAvatar": "Xueyi_00",
@@ -1469,13 +1433,13 @@
       "issues": []
     },
     {
-      "characterId": "세이버",
+      "characterId": "Saber_00",
       "displayName": "세이버",
       "sourceNames": [
         "세이버",
         "Saber_00",
-        "3767",
-        "1014"
+        "1014",
+        "3767"
       ],
       "identifiers": {
         "effectAvatar": "Saber_00",
@@ -1504,13 +1468,13 @@
       "issues": []
     },
     {
-      "characterId": "소상",
+      "characterId": "Sushang_00",
       "displayName": "소상",
       "sourceNames": [
         "소상",
         "Sushang_00",
-        "27",
-        "1206"
+        "1206",
+        "27"
       ],
       "identifiers": {
         "effectAvatar": "Sushang_00",
@@ -1539,13 +1503,13 @@
       "issues": []
     },
     {
-      "characterId": "스파클",
+      "characterId": "Sparkle_00",
       "displayName": "스파클",
       "sourceNames": [
         "스파클",
         "Sparkle_00",
-        "1807",
-        "1306"
+        "1306",
+        "1807"
       ],
       "identifiers": {
         "effectAvatar": "Sparkle_00",
@@ -1574,13 +1538,13 @@
       "issues": []
     },
     {
-      "characterId": "스파키",
+      "characterId": "Sparxie_00",
       "displayName": "스파키",
       "sourceNames": [
         "스파키",
         "Sparxie_00",
-        "4737",
-        "1501"
+        "1501",
+        "4737"
       ],
       "identifiers": {
         "effectAvatar": "Sparxie_00",
@@ -1609,13 +1573,13 @@
       "issues": []
     },
     {
-      "characterId": "아글라이아",
+      "characterId": "Aglaea_00",
       "displayName": "아글라이아",
       "sourceNames": [
         "아글라이아",
         "Aglaea_00",
-        "3286",
-        "1402"
+        "1402",
+        "3286"
       ],
       "identifiers": {
         "effectAvatar": "Aglaea_00",
@@ -1644,13 +1608,13 @@
       "issues": []
     },
     {
-      "characterId": "아낙사",
+      "characterId": "Anaxa_00",
       "displayName": "아낙사",
       "sourceNames": [
         "아낙사",
         "Anaxa_00",
-        "3561",
-        "1405"
+        "1405",
+        "3561"
       ],
       "identifiers": {
         "effectAvatar": "Anaxa_00",
@@ -1679,13 +1643,13 @@
       "issues": []
     },
     {
-      "characterId": "아를란",
+      "characterId": "Arlan_00",
       "displayName": "아를란",
       "sourceNames": [
         "아를란",
         "Arlan_00",
-        "11",
-        "1008"
+        "1008",
+        "11"
       ],
       "identifiers": {
         "effectAvatar": "Arlan_00",
@@ -1714,13 +1678,13 @@
       "issues": []
     },
     {
-      "characterId": "아스타",
+      "characterId": "Asta_00",
       "displayName": "아스타",
       "sourceNames": [
         "아스타",
         "Asta_00",
-        "12",
-        "1009"
+        "1009",
+        "12"
       ],
       "identifiers": {
         "effectAvatar": "Asta_00",
@@ -1749,13 +1713,13 @@
       "issues": []
     },
     {
-      "characterId": "아젠티",
+      "characterId": "Argenti_00",
       "displayName": "아젠티",
       "sourceNames": [
         "아젠티",
         "Argenti_00",
-        "1535",
-        "1302"
+        "1302",
+        "1535"
       ],
       "identifiers": {
         "effectAvatar": "Argenti_00",
@@ -1784,13 +1748,13 @@
       "issues": []
     },
     {
-      "characterId": "아처",
+      "characterId": "Archer_00",
       "displayName": "아처",
       "sourceNames": [
         "아처",
         "Archer_00",
-        "3768",
-        "1015"
+        "1015",
+        "3768"
       ],
       "identifiers": {
         "effectAvatar": "Archer_00",
@@ -1819,13 +1783,13 @@
       "issues": []
     },
     {
-      "characterId": "아케론",
+      "characterId": "Acheron_00",
       "displayName": "아케론",
       "sourceNames": [
         "아케론",
         "Acheron_00",
-        "1919",
-        "1308"
+        "1308",
+        "1919"
       ],
       "identifiers": {
         "effectAvatar": "Acheron_00",
@@ -1854,13 +1818,13 @@
       "issues": []
     },
     {
-      "characterId": "애쉬베일",
+      "characterId": "Ashveil_00",
       "displayName": "애쉬베일",
       "sourceNames": [
         "애쉬베일",
         "Ashveil_00",
-        "4781",
-        "1504"
+        "1504",
+        "4781"
       ],
       "identifiers": {
         "effectAvatar": "Ashveil_00",
@@ -1889,13 +1853,13 @@
       "issues": []
     },
     {
-      "characterId": "어공",
+      "characterId": "Yukong_00",
       "displayName": "어공",
       "sourceNames": [
         "어공",
         "Yukong_00",
-        "712",
-        "1207"
+        "1207",
+        "712"
       ],
       "identifiers": {
         "effectAvatar": "Yukong_00",
@@ -1924,13 +1888,13 @@
       "issues": []
     },
     {
-      "characterId": "어벤츄린",
+      "characterId": "Aventurine_00",
       "displayName": "어벤츄린",
       "sourceNames": [
         "어벤츄린",
         "Aventurine_00",
-        "1920",
-        "1304"
+        "1304",
+        "1920"
       ],
       "identifiers": {
         "effectAvatar": "Aventurine_00",
@@ -1959,13 +1923,13 @@
       "issues": []
     },
     {
-      "characterId": "에바네시아",
+      "characterId": "Evanescia_00",
       "displayName": "에바네시아",
       "sourceNames": [
         "에바네시아",
         "Evanescia_00",
-        "5005",
-        "1505"
+        "1505",
+        "5005"
       ],
       "identifiers": {
         "effectAvatar": "Evanescia_00",
@@ -1994,13 +1958,13 @@
       "issues": []
     },
     {
-      "characterId": "에버나이트",
+      "characterId": "Evernight_00",
       "displayName": "에버나이트",
       "sourceNames": [
         "에버나이트",
         "Evernight_00",
-        "3956",
-        "1413"
+        "1413",
+        "3956"
       ],
       "identifiers": {
         "effectAvatar": "Evernight_00",
@@ -2029,13 +1993,13 @@
       "issues": []
     },
     {
-      "characterId": "연경",
+      "characterId": "Yanqing_00",
       "displayName": "연경",
       "sourceNames": [
         "연경",
         "Yanqing_00",
-        "28",
-        "1209"
+        "1209",
+        "28"
       ],
       "identifiers": {
         "effectAvatar": "Yanqing_00",
@@ -2064,13 +2028,13 @@
       "issues": []
     },
     {
-      "characterId": "영사",
+      "characterId": "Lingsha_00",
       "displayName": "영사",
       "sourceNames": [
         "영사",
         "Lingsha_00",
-        "2948",
-        "1222"
+        "1222",
+        "2948"
       ],
       "identifiers": {
         "effectAvatar": "Lingsha_00",
@@ -2099,13 +2063,14 @@
       "issues": []
     },
     {
-      "characterId": "완•매",
+      "characterId": "RuanMei_00",
       "displayName": "완•매",
       "sourceNames": [
         "완•매",
         "RuanMei_00",
+        "1303",
         "1638",
-        "1303"
+        "완매"
       ],
       "identifiers": {
         "effectAvatar": "RuanMei_00",
@@ -2130,21 +2095,18 @@
         "data/legacy-reference/game-db/attack-coefficient-candidates.json",
         "Config/ConfigCharacter/Avatar/Avatar_RuanMei_00_Config.json"
       ],
-      "isDisplayNameSourceBacked": false,
-      "nameReviewStatus": "needs_review",
-      "issues": [
-        "alias_normalized_collision",
-        "official_source_name_collision"
-      ]
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "source_backed",
+      "issues": []
     },
     {
-      "characterId": "운리",
+      "characterId": "Yunli_00",
       "displayName": "운리",
       "sourceNames": [
         "운리",
         "Yunli_00",
-        "2642",
-        "1221"
+        "1221",
+        "2642"
       ],
       "identifiers": {
         "effectAvatar": "Yunli_00",
@@ -2173,13 +2135,13 @@
       "issues": []
     },
     {
-      "characterId": "웰트",
+      "characterId": "Welt_00",
       "displayName": "웰트",
       "sourceNames": [
         "웰트",
         "Welt_00",
-        "10",
-        "1004"
+        "1004",
+        "10"
       ],
       "identifiers": {
         "effectAvatar": "Welt_00",
@@ -2208,13 +2170,13 @@
       "issues": []
     },
     {
-      "characterId": "은랑",
+      "characterId": "Silwolf_00",
       "displayName": "은랑",
       "sourceNames": [
         "은랑",
         "Silwolf_00",
-        "710",
-        "1006"
+        "1006",
+        "710"
       ],
       "identifiers": {
         "effectAvatar": "Silwolf_00",
@@ -2243,13 +2205,14 @@
       "issues": []
     },
     {
-      "characterId": "은랑 LV.999",
+      "characterId": "SilverWolf999_00",
       "displayName": "은랑 LV.999",
       "sourceNames": [
         "은랑 LV.999",
         "SilverWolf999_00",
+        "1506",
         "4997",
-        "1506"
+        "은랑 LV 999"
       ],
       "identifiers": {
         "effectAvatar": "SilverWolf999_00",
@@ -2274,23 +2237,18 @@
         "data/legacy-reference/game-db/attack-coefficient-candidates.json",
         "Config/ConfigCharacter/Avatar/Avatar_SilverWolf999_00_Config.json"
       ],
-      "isDisplayNameSourceBacked": false,
-      "nameReviewStatus": "needs_review",
-      "issues": [
-        "alias_normalized_collision",
-        "mixed_english_korean_displayName",
-        "level_or_placeholder_suffix_in_displayName",
-        "official_source_name_collision"
-      ]
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "source_backed",
+      "issues": []
     },
     {
-      "characterId": "정운",
+      "characterId": "Tingyun_00",
       "displayName": "정운",
       "sourceNames": [
         "정운",
         "Tingyun_00",
-        "25",
-        "1202"
+        "1202",
+        "25"
       ],
       "identifiers": {
         "effectAvatar": "Tingyun_00",
@@ -2319,13 +2277,13 @@
       "issues": []
     },
     {
-      "characterId": "제레",
+      "characterId": "Seele_00",
       "displayName": "제레",
       "sourceNames": [
         "제레",
         "Seele_00",
-        "15",
-        "1102"
+        "1102",
+        "15"
       ],
       "identifiers": {
         "effectAvatar": "Seele_00",
@@ -2354,13 +2312,13 @@
       "issues": []
     },
     {
-      "characterId": "제이드",
+      "characterId": "Jade_00",
       "displayName": "제이드",
       "sourceNames": [
         "제이드",
         "Jade_00",
-        "2495",
-        "1314"
+        "1314",
+        "2495"
       ],
       "identifiers": {
         "effectAvatar": "Jade_00",
@@ -2389,13 +2347,14 @@
       "issues": []
     },
     {
-      "characterId": "천야 • 블레이드",
+      "characterId": "MortenaxBlade_00",
       "displayName": "천야 • 블레이드",
       "sourceNames": [
         "천야 • 블레이드",
         "MortenaxBlade_00",
+        "1507",
         "5217",
-        "1507"
+        "천야 블레이드"
       ],
       "identifiers": {
         "effectAvatar": "MortenaxBlade_00",
@@ -2420,21 +2379,18 @@
         "data/legacy-reference/game-db/attack-coefficient-candidates.json",
         "Config/ConfigCharacter/Avatar/Avatar_MortenaxBlade_00_Config.json"
       ],
-      "isDisplayNameSourceBacked": false,
-      "nameReviewStatus": "needs_review",
-      "issues": [
-        "alias_normalized_collision",
-        "official_source_name_collision"
-      ]
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "source_backed",
+      "issues": []
     },
     {
-      "characterId": "청작",
+      "characterId": "Qingque_00",
       "displayName": "청작",
       "sourceNames": [
         "청작",
         "Qingque_00",
-        "24",
-        "1201"
+        "1201",
+        "24"
       ],
       "identifiers": {
         "effectAvatar": "Qingque_00",
@@ -2463,13 +2419,13 @@
       "issues": []
     },
     {
-      "characterId": "초구",
+      "characterId": "Jiaoqiu_00",
       "displayName": "초구",
       "sourceNames": [
         "초구",
         "Jiaoqiu_00",
-        "2643",
-        "1218"
+        "1218",
+        "2643"
       ],
       "identifiers": {
         "effectAvatar": "Jiaoqiu_00",
@@ -2498,13 +2454,13 @@
       "issues": []
     },
     {
-      "characterId": "카스토리스",
+      "characterId": "Castorice_00",
       "displayName": "카스토리스",
       "sourceNames": [
         "카스토리스",
         "Castorice_00",
-        "3560",
-        "1407"
+        "1407",
+        "3560"
       ],
       "identifiers": {
         "effectAvatar": "Castorice_00",
@@ -2533,13 +2489,13 @@
       "issues": []
     },
     {
-      "characterId": "카프카",
+      "characterId": "Kafka_00",
       "displayName": "카프카",
       "sourceNames": [
         "카프카",
         "Kafka_00",
-        "791",
-        "1005"
+        "1005",
+        "791"
       ],
       "identifiers": {
         "effectAvatar": "Kafka_00",
@@ -2568,13 +2524,13 @@
       "issues": []
     },
     {
-      "characterId": "케리드라",
+      "characterId": "Cerydra_00",
       "displayName": "케리드라",
       "sourceNames": [
         "케리드라",
         "Cerydra_00",
-        "3886",
-        "1412"
+        "1412",
+        "3886"
       ],
       "identifiers": {
         "effectAvatar": "Cerydra_00",
@@ -2603,13 +2559,13 @@
       "issues": []
     },
     {
-      "characterId": "클라라",
+      "characterId": "Klara_00",
       "displayName": "클라라",
       "sourceNames": [
         "클라라",
         "Klara_00",
-        "20",
-        "1107"
+        "1107",
+        "20"
       ],
       "identifiers": {
         "effectAvatar": "Klara_00",
@@ -2638,13 +2594,13 @@
       "issues": []
     },
     {
-      "characterId": "키레네",
+      "characterId": "Cyrene_00",
       "displayName": "키레네",
       "sourceNames": [
         "키레네",
         "Cyrene_00",
-        "4003",
-        "1415"
+        "1415",
+        "4003"
       ],
       "identifiers": {
         "effectAvatar": "Cyrene_00",
@@ -2673,13 +2629,13 @@
       "issues": []
     },
     {
-      "characterId": "토오사카 린",
+      "characterId": "TohsakaRin_00",
       "displayName": "토오사카 린",
       "sourceNames": [
         "토오사카 린",
         "TohsakaRin_00",
-        "5339",
-        "1508"
+        "1508",
+        "5339"
       ],
       "identifiers": {
         "effectAvatar": "TohsakaRin_00",
@@ -2708,55 +2664,21 @@
       "issues": []
     },
     {
-      "characterId": "토파즈",
-      "displayName": "토파즈",
+      "characterId": "Topaz_00",
+      "displayName": "토파즈&복순이",
       "sourceNames": [
         "토파즈",
+        "토파즈&복순이",
         "Topaz_00",
-        "1112"
+        "1112",
+        "1389"
       ],
       "identifiers": {
         "effectAvatar": "Topaz_00",
         "effectName": "토파즈",
-        "hoyowikiEntryPageId": null,
+        "hoyowikiEntryPageId": "1389",
         "coefficientAvatar": "Topaz_00",
         "coefficientAvatarId": "1112"
-      },
-      "officialNames": [
-        "토파즈"
-      ],
-      "aliasTargets": [
-        "토파즈&복순이"
-      ],
-      "sourceOrigins": [
-        "game_db_generated",
-        "design_data_extracted_catalog"
-      ],
-      "localizationSources": [
-        "data/legacy-reference/game-db/character-effect-candidates.json",
-        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
-        "Config/ConfigCharacter/Avatar/Avatar_Topaz_00_Config.json"
-      ],
-      "isDisplayNameSourceBacked": false,
-      "nameReviewStatus": "needs_review",
-      "issues": [
-        "alias_used_as_displayName",
-        "alias_official_target_mismatch"
-      ]
-    },
-    {
-      "characterId": "토파즈&복순이",
-      "displayName": "토파즈&복순이",
-      "sourceNames": [
-        "토파즈&복순이",
-        "1389"
-      ],
-      "identifiers": {
-        "effectAvatar": null,
-        "effectName": null,
-        "hoyowikiEntryPageId": "1389",
-        "coefficientAvatar": null,
-        "coefficientAvatarId": null
       },
       "officialNames": [
         "토파즈&복순이"
@@ -2773,13 +2695,13 @@
       "issues": []
     },
     {
-      "characterId": "트리비",
+      "characterId": "Tribbie_00",
       "displayName": "트리비",
       "sourceNames": [
         "트리비",
         "Tribbie_00",
-        "3322",
-        "1403"
+        "1403",
+        "3322"
       ],
       "identifiers": {
         "effectAvatar": "Tribbie_00",
@@ -2808,13 +2730,13 @@
       "issues": []
     },
     {
-      "characterId": "파이논",
+      "characterId": "Phainon_00",
       "displayName": "파이논",
       "sourceNames": [
         "파이논",
         "Phainon_00",
-        "3769",
-        "1408"
+        "1408",
+        "3769"
       ],
       "identifiers": {
         "effectAvatar": "Phainon_00",
@@ -2843,13 +2765,13 @@
       "issues": []
     },
     {
-      "characterId": "페라",
+      "characterId": "Pela_00",
       "displayName": "페라",
       "sourceNames": [
         "페라",
         "Pela_00",
-        "19",
-        "1106"
+        "1106",
+        "19"
       ],
       "identifiers": {
         "effectAvatar": "Pela_00",
@@ -2878,13 +2800,13 @@
       "issues": []
     },
     {
-      "characterId": "한아",
+      "characterId": "Hanya_00",
       "displayName": "한아",
       "sourceNames": [
         "한아",
         "Hanya_00",
-        "1537",
-        "1215"
+        "1215",
+        "1537"
       ],
       "identifiers": {
         "effectAvatar": "Hanya_00",
@@ -2913,13 +2835,13 @@
       "issues": []
     },
     {
-      "characterId": "헤르타",
+      "characterId": "Herta_00",
       "displayName": "헤르타",
       "sourceNames": [
         "헤르타",
         "Herta_00",
-        "13",
-        "1013"
+        "1013",
+        "13"
       ],
       "identifiers": {
         "effectAvatar": "Herta_00",
@@ -2948,13 +2870,13 @@
       "issues": []
     },
     {
-      "characterId": "효광",
+      "characterId": "YaoGuang_00",
       "displayName": "효광",
       "sourceNames": [
         "효광",
         "YaoGuang_00",
-        "4736",
-        "1502"
+        "1502",
+        "4736"
       ],
       "identifiers": {
         "effectAvatar": "YaoGuang_00",
@@ -2983,13 +2905,13 @@
       "issues": []
     },
     {
-      "characterId": "후크",
+      "characterId": "Hook_00",
       "displayName": "후크",
       "sourceNames": [
         "후크",
         "Hook_00",
-        "22",
-        "1109"
+        "1109",
+        "22"
       ],
       "identifiers": {
         "effectAvatar": "Hook_00",
@@ -3018,13 +2940,13 @@
       "issues": []
     },
     {
-      "characterId": "히메코",
+      "characterId": "Himeko_00",
       "displayName": "히메코",
       "sourceNames": [
         "히메코",
         "Himeko_00",
-        "9",
-        "1003"
+        "1003",
+        "9"
       ],
       "identifiers": {
         "effectAvatar": "Himeko_00",
@@ -3053,13 +2975,14 @@
       "issues": []
     },
     {
-      "characterId": "히메코 • 노바",
+      "characterId": "HimekoNova_00",
       "displayName": "히메코 • 노바",
       "sourceNames": [
         "히메코 • 노바",
         "HimekoNova_00",
+        "1510",
         "5335",
-        "1510"
+        "히메코 노바"
       ],
       "identifiers": {
         "effectAvatar": "HimekoNova_00",
@@ -3083,20 +3006,18 @@
         "data/legacy-reference/game-db/attack-coefficient-candidates.json",
         "Config/ConfigCharacter/Avatar/Avatar_HimekoNova_00_Config.json"
       ],
-      "isDisplayNameSourceBacked": false,
-      "nameReviewStatus": "needs_review",
-      "issues": [
-        "alias_normalized_collision"
-      ]
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "source_backed",
+      "issues": []
     },
     {
-      "characterId": "히실렌스",
+      "characterId": "Harscyline_00",
       "displayName": "히실렌스",
       "sourceNames": [
         "히실렌스",
         "Harscyline_00",
-        "3885",
-        "1410"
+        "1410",
+        "3885"
       ],
       "identifiers": {
         "effectAvatar": "Harscyline_00",
@@ -3125,13 +3046,13 @@
       "issues": []
     },
     {
-      "characterId": "히아킨",
+      "characterId": "Hyacine_00",
       "displayName": "히아킨",
       "sourceNames": [
         "히아킨",
         "Hyacine_00",
-        "3688",
-        "1409"
+        "1409",
+        "3688"
       ],
       "identifiers": {
         "effectAvatar": "Hyacine_00",
@@ -3160,13 +3081,14 @@
       "issues": []
     },
     {
-      "characterId": "Dr. 레이시오",
+      "characterId": "Dr_Ratio_00",
       "displayName": "Dr. 레이시오",
       "sourceNames": [
         "Dr. 레이시오",
         "Dr_Ratio_00",
+        "1305",
         "1639",
-        "1305"
+        "레이시오"
       ],
       "identifiers": {
         "effectAvatar": "Dr_Ratio_00",
@@ -3191,24 +3113,25 @@
         "Config/ConfigCharacter/Avatar/Avatar_Dr_Ratio_00_Config.json"
       ],
       "isDisplayNameSourceBacked": true,
-      "nameReviewStatus": "needs_review",
-      "issues": [
-        "mixed_english_korean_displayName"
-      ]
+      "nameReviewStatus": "source_backed",
+      "issues": []
     },
     {
-      "characterId": "Mar. 7th",
+      "characterId": "Mar_7th_00",
       "displayName": "Mar. 7th",
       "sourceNames": [
+        "삼칠이",
         "Mar. 7th",
+        "Mar_7th_00",
+        "1001",
         "7"
       ],
       "identifiers": {
-        "effectAvatar": null,
-        "effectName": null,
+        "effectAvatar": "Mar_7th_00",
+        "effectName": "삼칠이",
         "hoyowikiEntryPageId": "7",
-        "coefficientAvatar": null,
-        "coefficientAvatarId": null
+        "coefficientAvatar": "Mar_7th_00",
+        "coefficientAvatarId": "1001"
       },
       "officialNames": [
         "Mar. 7th"
@@ -3225,13 +3148,14 @@
       "issues": []
     },
     {
-      "characterId": "Mar. 7th•수렵",
+      "characterId": "Mar_7th_10",
       "displayName": "Mar. 7th•수렵",
       "sourceNames": [
         "Mar. 7th•수렵",
         "Mar_7th_10",
+        "1224",
         "2657",
-        "1224"
+        "검칠이"
       ],
       "identifiers": {
         "effectAvatar": "Mar_7th_10",
@@ -3256,10 +3180,8 @@
         "Config/ConfigCharacter/Avatar/Avatar_Mar_7th_10_Config.json"
       ],
       "isDisplayNameSourceBacked": true,
-      "nameReviewStatus": "needs_review",
-      "issues": [
-        "mixed_english_korean_displayName"
-      ]
+      "nameReviewStatus": "source_backed",
+      "issues": []
     }
   ]
 }

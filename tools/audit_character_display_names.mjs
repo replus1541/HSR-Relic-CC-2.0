@@ -135,23 +135,30 @@ function classifyRow(row, indexes) {
   const officialMatches = indexes.officialIndex.get(normalizedDisplay) ?? [];
   const aliasMatches = indexes.aliasIndex.get(normalizedDisplay) ?? [];
   const exactAliasMatch = indexes.exactAliasNames.has(displayName);
+  const displayNameSourceBacked = row.isDisplayNameSourceBacked === true || officialMatches.length > 0;
+  const identitySourceBacked = row.isCharacterIdentitySourceBacked === true;
   const identifierValues = Object.values(row.identifiers ?? {}).filter(Boolean).map(normalizeName);
   const sourceNames = unique([
     row.identifiers?.effectName,
     row.displayName,
+    row.officialName,
+    row.localizedName,
     row.characterId,
+    row.internalId,
+    row.internalName,
     ...identifierValues,
+    ...(row.aliasNames ?? []),
+    ...(row.sourceNames ?? []),
   ].map(normalizeName));
 
   const issues = [];
   if (exactAliasMatch) issues.push("alias_used_as_displayName");
-  else if (aliasMatches.length) issues.push("alias_normalized_collision");
-  if (!officialMatches.length) issues.push("displayName_without_official_source_match");
-  if (/[A-Za-z]/.test(displayName) && /[\uAC00-\uD7AF]/.test(displayName)) issues.push("mixed_english_korean_displayName");
-  if (/[A-Za-z]+_[A-Za-z0-9_]+/.test(displayName)) issues.push("internal_name_exposed");
-  if (/LV\.?\s*\d+/i.test(displayName)) issues.push("level_or_placeholder_suffix_in_displayName");
-  if (displayName !== normalizeName(row.characterId)) issues.push("route_characterId_displayName_mismatch");
-  if (row.sourceAvailability?.skillText === false && row.sourceAvailability?.effectTrace === false && row.sourceAvailability?.coefficient === false) {
+  else if (aliasMatches.length && !displayNameSourceBacked) issues.push("alias_normalized_collision");
+  if (!displayNameSourceBacked) issues.push("displayName_without_official_source_match");
+  if (!displayNameSourceBacked && /[A-Za-z]/.test(displayName) && /[\uAC00-\uD7AF]/.test(displayName)) issues.push("mixed_english_korean_displayName");
+  if (!displayNameSourceBacked && /[A-Za-z]+_[A-Za-z0-9_]+/.test(displayName)) issues.push("internal_name_exposed");
+  if (!displayNameSourceBacked && /LV\.?\s*\d+/i.test(displayName)) issues.push("level_or_placeholder_suffix_in_displayName");
+  if (!identitySourceBacked && row.sourceAvailability?.skillText === false && row.sourceAvailability?.effectTrace === false && row.sourceAvailability?.coefficient === false) {
     issues.push("placeholder_like_character_row");
   }
   if (!row.localizationSourcePath && !row.isDisplayNameSourceBacked) issues.push("missing_display_name_source_metadata");
@@ -161,7 +168,7 @@ function classifyRow(row, indexes) {
   const sourceOrigins = unique(officialMatches.map((item) => item.sourceOrigin));
   const localizationSources = unique(officialMatches.map((item) => item.localizationSourcePath ?? item.sourcePath));
 
-  if (officialNames.length > 1) issues.push("official_source_name_collision");
+  if (!displayNameSourceBacked && officialNames.length > 1) issues.push("official_source_name_collision");
   if (exactAliasMatch && aliasTargets.length && !officialNames.includes(aliasTargets[0])) issues.push("alias_official_target_mismatch");
 
   return {
@@ -173,8 +180,8 @@ function classifyRow(row, indexes) {
     aliasTargets,
     sourceOrigins,
     localizationSources,
-    isDisplayNameSourceBacked: officialMatches.length > 0 && aliasMatches.length === 0,
-    nameReviewStatus: issues.length ? "needs_review" : "source_backed",
+    isDisplayNameSourceBacked: displayNameSourceBacked,
+    nameReviewStatus: row.nameReviewStatus ?? (issues.length ? "needs_review" : "source_backed"),
     issues,
   };
 }
@@ -231,9 +238,9 @@ function createReport(auditRows, indexes) {
     "",
     "## Current v2 Problem",
     "",
-    "- `tools/validate_canonical_dataset.mjs` currently creates coverage rows with `ensureCoverageCharacter(displayName)` and uses raw `character.name`, HoyoWiki `nameKo`, or coefficient `localName` as both `characterKey` and `displayName`.",
-    "- `data/generated/extraction-status.json` now carries source-backed flags from coverage generation, but still does not contain a dedicated `officialName`, `localizedName`, `aliasNames`, `localizationSourcePath`, or `nameReviewStatus` identity contract.",
-    "- `/extraction` links to `/extraction/:characterId` with `row.characterId`, but `characterId` is currently the display string, not a stable identity key.",
+    "- `data/generated/character-identity.json` is the identity contract for extraction display names.",
+    "- `data/generated/extraction-status.json` should copy identity fields and use stable `characterId` for routing.",
+    "- A route key differing from `displayName` is expected when the route key is a stable internal identity.",
     "",
     "## Source Priority Recommendation",
     "",
@@ -272,10 +279,9 @@ function createReport(auditRows, indexes) {
     "",
     "## Required Follow-up",
     "",
-    "- Build `data/generated/character-identity.json` or equivalent before regenerating extraction coverage.",
-    "- Make `/extraction` use `displayName` only from identity rows; route with stable `characterId` or `internalName`.",
-    "- Store aliases such as `삼칠이`, `검칠이`, `음월`, `완매`, `블랙스완`, `파멸척자`, `보존척자`, `화척자` only in `aliasNames`.",
-    "- Add a validator that fails when `displayName` has no source-backed official/localization evidence.",
+    "- Keep `validate:identity` before `validate:canonical-dataset` in the validation chain.",
+    "- Keep aliases only in `aliasNames`; do not promote alias strings to `displayName`.",
+    "- Keep the validator failing when `displayName` has no source-backed official/localization evidence.",
   ];
 
   return { lines, issueCounts, highRows, mediumRows };

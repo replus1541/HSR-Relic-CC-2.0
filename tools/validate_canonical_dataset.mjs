@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import { BlockedReason, CalculationStatus, SourceKind, SourceOrigin, ValueMode } from "../src/data-model/schemas/index.js";
 import { buildCanonicalDataset } from "../src/extraction/build-canonical-dataset.js";
+import { normalizeIdentityKey } from "../src/identity/character-identity.js";
 
 const generatedDir = "data/generated";
 const datasetPath = `${generatedDir}/extraction-canonical-dataset.json`;
@@ -38,132 +39,43 @@ function normalizeName(value) {
   return String(value ?? "").trim().replace(/\s+/g, " ");
 }
 
-function countCoefficientSlots(character) {
-  return (character?.slots ?? []).reduce((sum, slot) => {
-    const confirmed = slot?.confirmedCoefficient;
-    if (Array.isArray(confirmed?.rows)) return sum + confirmed.rows.length;
-    if (Array.isArray(confirmed?.values)) return sum + 1;
-    return sum;
-  }, 0);
-}
-
-function findManifestEntry(manifest, id) {
-  return manifest.entries.find((entry) => entry.id === id) ?? null;
-}
-
-function loadCoverageSources() {
-  const manifest = readJson("data/legacy-reference/manifest.json");
-  const effectEntry = findManifestEntry(manifest, "legacy:character-effect-candidates");
-  const skillEntry = findManifestEntry(manifest, "legacy:hoyowiki-character-skills");
-  const coefficientEntry = findManifestEntry(manifest, "legacy:attack-coefficient-candidates");
-  const lightconeEntry = findManifestEntry(manifest, "legacy:lightcone-effect-candidates");
-  return {
-    manifest,
-    effectPayload: effectEntry ? readJson(effectEntry.snapshotPath) : { characters: [] },
-    skillPayload: skillEntry ? readJson(skillEntry.snapshotPath) : { characters: [] },
-    coefficientPayload: coefficientEntry ? readJson(coefficientEntry.snapshotPath) : { characters: [] },
-    lightconePayload: lightconeEntry ? readJson(lightconeEntry.snapshotPath) : { lightCones: [], summary: {} },
-  };
-}
-
-function ensureCoverageCharacter(map, displayName) {
-  const key = normalizeName(displayName || "unknown");
-  const current = map.get(key) ?? {
-    characterKey: key,
-    displayName: key,
-    identifiers: {
-      effectAvatar: null,
-      effectName: null,
-      hoyowikiEntryPageId: null,
-      coefficientAvatar: null,
-      coefficientAvatarId: null,
-    },
-    sourceAvailability: {
-      skillText: false,
-      effectTrace: false,
-      coefficient: false,
-      eidolon: false,
-      lightcone: "global_snapshot",
-      relic: "missing_snapshot",
-    },
-    sourceCounts: {
-      skillRows: 0,
-      effectCandidates: 0,
-      coefficientSlots: 0,
-      eidolons: 0,
-    },
-    nameSources: [],
-  };
-  map.set(key, current);
-  return current;
-}
-
-function addNameSource(row, source) {
-  row.nameSources.push({
-    sourceName: normalizeName(source.sourceName),
-    sourceOrigin: source.sourceOrigin,
-    sourcePath: source.sourcePath,
-    internalId: source.internalId ?? null,
-    internalName: source.internalName ?? null,
-  });
-}
-
 function buildCoverageIndex() {
-  const { effectPayload, skillPayload, coefficientPayload, lightconePayload } = loadCoverageSources();
-  const byName = new Map();
-
-  for (const character of effectPayload.characters ?? []) {
-    const row = ensureCoverageCharacter(byName, character.name ?? character.avatar);
-    row.identifiers.effectAvatar = character.avatar ?? row.identifiers.effectAvatar;
-    row.identifiers.effectName = character.name ?? row.identifiers.effectName;
-    row.sourceCounts.effectCandidates = character.activeEffects?.length ?? 0;
-    row.sourceAvailability.effectTrace = row.sourceCounts.effectCandidates > 0;
-    addNameSource(row, {
-      sourceName: character.name ?? character.avatar,
-      sourceOrigin: "game_db_generated",
-      sourcePath: "data/legacy-reference/game-db/character-effect-candidates.json",
-      internalName: character.avatar ?? null,
-    });
-  }
-
-  for (const character of skillPayload.characters ?? []) {
-    const row = ensureCoverageCharacter(byName, character.nameKo ?? character.entryPageId);
-    row.identifiers.hoyowikiEntryPageId = character.entryPageId ?? row.identifiers.hoyowikiEntryPageId;
-    row.sourceCounts.skillRows = character.skills?.length ?? 0;
-    row.sourceCounts.eidolons = character.eidolons?.length ?? 0;
-    row.sourceAvailability.skillText = row.sourceCounts.skillRows > 0;
-    row.sourceAvailability.eidolon = row.sourceCounts.eidolons > 0;
-    addNameSource(row, {
-      sourceName: character.nameKo ?? character.entryPageId,
-      sourceOrigin: "hoyowiki",
-      sourcePath: "data/legacy-reference/game-db/hoyowiki-character-skills.json",
-      internalId: character.entryPageId ?? null,
-    });
-  }
-
-  for (const character of coefficientPayload.characters ?? []) {
-    const row = ensureCoverageCharacter(byName, character.localName ?? character.nameKo ?? character.avatar);
-    row.identifiers.coefficientAvatar = character.avatar ?? row.identifiers.coefficientAvatar;
-    row.identifiers.coefficientAvatarId = character.avatarId ?? row.identifiers.coefficientAvatarId;
-    row.sourceCounts.coefficientSlots = countCoefficientSlots(character);
-    row.sourceAvailability.coefficient = row.sourceCounts.coefficientSlots > 0;
-    addNameSource(row, {
-      sourceName: character.localName ?? character.nameKo ?? character.avatar,
-      sourceOrigin: "game_db_generated",
-      sourcePath: "data/legacy-reference/game-db/attack-coefficient-candidates.json",
-      internalId: character.avatarId ?? null,
-      internalName: character.avatar ?? null,
-    });
-  }
+  const identityDataset = readJson("data/generated/character-identity.json");
+  if (!Array.isArray(identityDataset.rows)) throw new Error("character identity rows must be generated before canonical coverage");
+  const rows = identityDataset.rows.map((row) => ({
+    characterKey: row.characterId,
+    characterId: row.characterId,
+    internalId: row.internalId,
+    internalName: row.internalName,
+    officialName: row.officialName,
+    localizedName: row.localizedName,
+    displayName: row.displayName,
+    aliasNames: row.aliasNames ?? [],
+    element: row.element ?? null,
+    path: row.path ?? null,
+    iconPath: row.iconPath ?? null,
+    sourceOrigin: row.sourceOrigin ?? null,
+    sourcePath: row.sourcePath ?? null,
+    sourceText: row.sourceText ?? row.displayName,
+    localizationSourcePath: row.localizationSourcePath ?? row.sourcePath ?? null,
+    nameReviewStatus: row.nameReviewStatus,
+    isDisplayNameSourceBacked: row.isDisplayNameSourceBacked,
+    isCharacterIdentitySourceBacked: row.isCharacterIdentitySourceBacked,
+    identifiers: row.identifiers ?? {},
+    sourceAvailability: row.sourceAvailability ?? {},
+    sourceCounts: row.sourceCounts ?? {},
+    sourceNames: row.sourceNames ?? [],
+    nameSources: row.nameSources ?? [],
+  }));
 
   return {
-    rows: [...byName.values()].sort((left, right) => left.displayName.localeCompare(right.displayName)),
+    rows: rows.sort((left, right) => left.displayName.localeCompare(right.displayName)),
     sourceLinkage: {
-      skillTextCharacters: (skillPayload.characters ?? []).filter((character) => (character.skills ?? []).length > 0).length,
-      effectTraceCharacters: (effectPayload.characters ?? []).filter((character) => (character.activeEffects ?? []).length > 0).length,
-      coefficientCharacters: (coefficientPayload.characters ?? []).filter((character) => countCoefficientSlots(character) > 0).length,
-      eidolonCharacters: (skillPayload.characters ?? []).filter((character) => (character.eidolons ?? []).length > 0).length,
-      lightconeEffects: lightconePayload.summary?.effectRows ?? 0,
+      skillTextCharacters: rows.filter((row) => row.sourceAvailability.skillText).length,
+      effectTraceCharacters: rows.filter((row) => row.sourceAvailability.effectTrace).length,
+      coefficientCharacters: rows.filter((row) => row.sourceAvailability.coefficient).length,
+      eidolonCharacters: rows.filter((row) => row.sourceAvailability.eidolon).length,
+      lightconeEffects: identityDataset.summary?.lightconeEffects ?? 0,
       relicSource: "missing_snapshot",
     },
   };
@@ -171,15 +83,25 @@ function buildCoverageIndex() {
 
 function rowMatchesCoverage(row, coverageRow) {
   const owner = getRowOwnerId(row);
-  return [
+  const candidates = [
+    coverageRow.characterId,
+    coverageRow.internalId,
+    coverageRow.internalName,
+    coverageRow.officialName,
+    coverageRow.localizedName,
+    coverageRow.displayName,
     coverageRow.identifiers.effectAvatar,
     coverageRow.identifiers.effectName,
     coverageRow.identifiers.hoyowikiEntryPageId,
     coverageRow.identifiers.coefficientAvatar,
     coverageRow.identifiers.coefficientAvatarId,
     coverageRow.characterKey,
-    coverageRow.displayName,
-  ].filter(Boolean).includes(owner);
+    ...(coverageRow.aliasNames ?? []),
+    ...(coverageRow.sourceNames ?? []),
+    ...(coverageRow.nameSources ?? []).map((source) => source.sourceName),
+  ].filter(Boolean);
+  const normalizedOwner = normalizeIdentityKey(owner);
+  return candidates.some((candidate) => String(candidate) === String(owner) || normalizeIdentityKey(candidate) === normalizedOwner);
 }
 
 function classifyMissingExtraction(row) {
@@ -204,6 +126,7 @@ function hasSourceTrace(row) {
 }
 
 function isDisplayNameSourceBacked(row) {
+  if (typeof row.isDisplayNameSourceBacked === "boolean") return row.isDisplayNameSourceBacked;
   return (row.nameSources ?? []).some((source) => (
     normalizeName(source.sourceName) === row.displayName
     && source.sourcePath
@@ -213,6 +136,7 @@ function isDisplayNameSourceBacked(row) {
 }
 
 function isCharacterIdentitySourceBacked(row) {
+  if (typeof row.isCharacterIdentitySourceBacked === "boolean") return row.isCharacterIdentitySourceBacked;
   return Boolean(
     row.identifiers?.effectAvatar
     || row.identifiers?.hoyowikiEntryPageId
