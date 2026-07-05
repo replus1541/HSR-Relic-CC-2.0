@@ -544,14 +544,17 @@
 
 ### 상태
 
-- 상태: not_started
-- 시작일:
+- 상태: in_progress
+- 시작일: 2026-07-05
 - 완료일:
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
 
--
+- Task 7-A 시작: adapter output을 canonical dataset envelope로 묶는 skeleton을 작성합니다.
+- `src/extraction/build-canonical-dataset.js`를 추가해 source/effect/coefficient rows 입력, manifest counts, source/effect/coefficient 분포, policy marker를 반환하도록 했습니다.
+- `reports/extraction/canonical-dataset-report.md`에 Task 7-A 범위와 7-B로 넘길 source priority/readiness 정책을 기록했습니다.
+- priority 병합, 계산 가능 여부 판정, effect normalization, 계산 로직은 구현하지 않았습니다.
 
 ---
 
