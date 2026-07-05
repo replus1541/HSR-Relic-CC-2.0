@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "generatedBy": "src/effect-engine/resolve-values.js",
+  "rows": [
+    {
+      "id": "resolved:effect:PlayerBoy_20:0",
+      "effectRowId": "effect:PlayerBoy_20:0",
+      "sourceId": "source:PlayerBoy_20:0",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:PlayerBoy_20:source:PlayerBoy_20:0:critDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.132
+    },
+    {
+      "id": "resolved:effect:PlayerBoy_20:1",
+      "effectRowId": "effect:PlayerBoy_20:1",
+      "sourceId": "source:PlayerBoy_20:1",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:PlayerBoy_20:source:PlayerBoy_20:1:critRate:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1
+    },
+    {
+      "id": "resolved:effect:PlayerBoy_20:2",
+      "effectRowId": "effect:PlayerBoy_20:2",
+      "sourceId": "source:PlayerBoy_20:2",
+      "stat": "specialFinal",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:PlayerBoy_20:source:PlayerBoy_20:2:specialFinal:buff:single_ally",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.06
+    },
+    {
+      "id": "resolved:effect:PlayerBoy_00:0",
+      "effectRowId": "effect:PlayerBoy_00:0",
+      "sourceId": "source:PlayerBoy_00:0",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:PlayerBoy_00:0"
+      },
+      "dedupeKey": "pending_dedupe:PlayerBoy_00:source:PlayerBoy_00:0:atkRatio:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:PlayerBoy_00:1",
+      "effectRowId": "effect:PlayerBoy_00:1",
+      "sourceId": "source:PlayerBoy_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:PlayerBoy_00:1"
+      },
+      "dedupeKey": "pending_dedupe:PlayerBoy_00:source:PlayerBoy_00:1:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:PlayerBoy_00:2",
+      "effectRowId": "effect:PlayerBoy_00:2",
+      "sourceId": "source:PlayerBoy_00:2",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:PlayerBoy_00:source:PlayerBoy_00:2:critRate:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.25
+    },
+    {
+      "id": "resolved:effect:PlayerBoy_40:0",
+      "effectRowId": "effect:PlayerBoy_40:0",
+      "sourceId": "source:PlayerBoy_40:0",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:PlayerBoy_40:0"
+      },
+      "dedupeKey": "pending_dedupe:PlayerBoy_40:source:PlayerBoy_40:0:critDamage:buff:single_ally",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:PlayerBoy_40:1",
+      "effectRowId": "effect:PlayerBoy_40:1",
+      "sourceId": "source:PlayerBoy_40:1",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "fixed",
+        "source": "rawValue"
+      },
+      "dedupeKey": "pending_dedupe:PlayerBoy_40:source:PlayerBoy_40:1:critRate:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.15
+    },
+    {
+      "id": "resolved:effect:PlayerBoy_40:2",
+      "effectRowId": "effect:PlayerBoy_40:2",
+      "sourceId": "source:PlayerBoy_40:2",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:PlayerBoy_40:source:PlayerBoy_40:2:vulnerability:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1
+    }
+  ]
+}

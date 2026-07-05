@@ -624,6 +624,10 @@
 - `src/effect-engine/value-resolvers/README.md`에 ValueResolutionContext와 valueMode별 required context를 정의했습니다.
 - `reports/effect-engine/value-resolution-report.md`에 resolver contract와 9-C fixture 계획을 기록했습니다.
 - 실제 resolver 구현, dedupe, aggregation, 계산 로직은 구현하지 않았습니다.
+- Task 9-B 시작: `src/effect-engine/resolve-values.js`와 value-resolver modules를 추가했습니다.
+- fixed/skill_level_scaled/eidolon_adjusted/superimposition_scaled는 rawValue 전달값을 만들고, dynamic_formula와 unknown valueMode는 blocked candidate로 둡니다.
+- `data/generated/resolved-effects.json`를 생성했습니다. 현재 normalized rows 9개 중 resolvedValue 6개, unsupported_dynamic_formula blocked 3개입니다.
+- dedupe, aggregation, UI trace, manual guide 계산 유입은 구현하지 않았습니다.
 
 ---
 
