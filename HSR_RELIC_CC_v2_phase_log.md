@@ -558,6 +558,19 @@
 - Task 7-B 시작: `src/extraction/source-policy.js`를 추가해 sourceOrigin 기반 priority와 calculationReady 정책을 정의했습니다.
 - canonical dataset builder가 source policy marker를 적용하도록 갱신했습니다. manual_hint/manual_guide/fallback/audit_reference는 계산 가능 row로 승격하지 않습니다.
 - `tools/validate_canonical_dataset.mjs`와 `validate:canonical-dataset` script를 추가해 manual_hint 계산 가능 우회가 검증 실패하도록 했습니다.
+- Task 7-C 시작: validator를 generated output writer로 확장해 `data/generated/extraction-canonical-dataset.json`와 `data/generated/extraction-status.json`를 생성했습니다.
+- extraction status는 owner 6개 기준으로 sourceRows 26개, effectRows 9개, coefficientRows 24개를 집계합니다. 현재 generated input 기준 blockedRows는 0개입니다.
+- `reports/extraction/canonical-dataset-report.md`를 dataset/status 집계 report로 갱신했습니다.
+- Phase 7 완료: canonical dataset shape, source policy, extraction readiness/status output까지 생성했습니다.
+
+### 검증
+
+- `npm.cmd run validate:canonical-dataset`: 성공. sourceRows=26, ready=26, blocked=0, statusCharacters=6, manual_hint_guard=blocked.
+- `npm.cmd run build`: 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+
+### 다음 Task로 넘길 항목
+
+- Phase 8-A에서 effect taxonomy constants와 unknown 처리 정책을 정의합니다.
 
 ---
 
