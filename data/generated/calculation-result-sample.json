@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "generatedBy": "src/calculator/aggregate-stats.js",
+  "result": {
+    "id": "aggregation:sample:sample",
+    "scenarioId": "sample",
+    "subjectId": "sample",
+    "inputHash": "[\"ledger:resolved:effect:PlayerBoy_20:0\",\"ledger:resolved:effect:PlayerBoy_20:1\",\"ledger:resolved:effect:PlayerBoy_20:2\",\"ledger:resolved:effect:PlayerBoy_00:0\",\"ledger:resolved:effect:PlayerBoy_00:1\",\"ledger:resolved:effect:PlayerBoy_00:2\",\"ledger:resolved:effect:PlayerBoy_40:0\",\"ledger:resolved:effect:PlayerBoy_40:1\",\"ledger:resolved:effect:PlayerBoy_40:2\"]",
+    "ledgerRowIds": [
+      "ledger:resolved:effect:PlayerBoy_20:0",
+      "ledger:resolved:effect:PlayerBoy_20:1",
+      "ledger:resolved:effect:PlayerBoy_20:2",
+      "ledger:resolved:effect:PlayerBoy_00:0",
+      "ledger:resolved:effect:PlayerBoy_00:1",
+      "ledger:resolved:effect:PlayerBoy_00:2",
+      "ledger:resolved:effect:PlayerBoy_40:0",
+      "ledger:resolved:effect:PlayerBoy_40:1",
+      "ledger:resolved:effect:PlayerBoy_40:2"
+    ],
+    "statTotals": {
+      "critDamage": 0.132,
+      "critRate": 0.5,
+      "specialFinal": 0.06,
+      "vulnerability": 0.1
+    },
+    "damageModifiers": {
+      "specialFinal": 0.06
+    },
+    "enemyDebuffs": {
+      "vulnerability": 0.1
+    },
+    "partyEffects": {},
+    "additionalDamage": {},
+    "sourceTrace": {
+      "ledgerRows": 9,
+      "usedRows": 6,
+      "blockedRows": 3
+    },
+    "skippedRows": [
+      {
+        "ledgerId": "ledger:resolved:effect:PlayerBoy_00:0",
+        "blockedReason": "unsupported_dynamic_formula"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:PlayerBoy_00:1",
+        "blockedReason": "unsupported_dynamic_formula"
+      },
+      {
+        "ledgerId": "ledger:resolved:effect:PlayerBoy_40:0",
+        "blockedReason": "unsupported_dynamic_formula"
+      }
+    ]
+  }
+}

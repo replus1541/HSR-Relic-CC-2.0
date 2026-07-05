@@ -729,6 +729,10 @@
 - `src/calculator/aggregation-contract.js`에 AggregationBuckets, AggregationResultFields, empty result factory를 추가했습니다.
 - `reports/calculation/aggregation-report.md`에 stat/damage/enemy/party/additionalDamage bucket과 guardrail을 기록했습니다.
 - 실제 aggregation, runCalculationV2, UI, legacy 비교는 구현하지 않았습니다.
+- Task 12-B 시작: `aggregateStats`, `aggregateDamageModifiers`, `aggregateEnemyDebuffs`를 ledger input 기반으로 구현했습니다.
+- `data/generated/calculation-result-sample.json`를 생성했습니다. 현재 statTotals는 critDamage/critRate/specialFinal/vulnerability, skippedRows는 3개입니다.
+- 같은 ledger input은 같은 aggregation result를 반환하는 smoke를 확인했습니다.
+- runCalculationV2 wrapper, validator, UI, legacy 비교는 구현하지 않았습니다.
 
 ---
 
