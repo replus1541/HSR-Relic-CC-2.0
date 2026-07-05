@@ -797,6 +797,10 @@
 - `src/extraction/ExtractionOverview.jsx`는 `data/generated/extraction-status.json` shape를 읽고 character별 source/effect/coefficient count와 ready badge를 표시합니다.
 - `src/app/routes/ExtractionRoute.jsx`를 overview component composition으로 교체했습니다.
 - adapter 구현, 계산 로직, manual_hint 계산 허용은 수행하지 않았습니다.
+- Task 14-B 시작: `/extraction/:characterId` 상세 shell을 추가했습니다.
+- `src/extraction/ExtractionDetail.jsx`는 generated canonical dataset에서 characterId별 source/effect/coefficient section count를 표시합니다.
+- `src/app/route-config.js`와 `src/app/App.jsx`에 동적 route match와 nav active 처리를 추가했습니다.
+- 계산 로직, adapter 구현, manual guide 계산 유입은 수행하지 않았습니다.
 
 ---
 

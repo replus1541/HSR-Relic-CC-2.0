@@ -2,6 +2,7 @@ import { ExtractionRoute } from "./routes/ExtractionRoute.jsx";
 import { HomeRoute } from "./routes/HomeRoute.jsx";
 import { LedgerRoute } from "./routes/LedgerRoute.jsx";
 import { LegacyDiffRoute } from "./routes/LegacyDiffRoute.jsx";
+import { ExtractionDetail } from "../extraction/ExtractionDetail.jsx";
 
 export const routes = [
   {
@@ -15,6 +16,13 @@ export const routes = [
     label: "Extraction",
     title: "Canonical Dataset 검토",
     component: ExtractionRoute,
+  },
+  {
+    path: "/extraction/:characterId",
+    label: "Extraction Detail",
+    title: "Extraction 상세",
+    component: ExtractionDetail,
+    hideFromNav: true,
   },
   {
     path: "/ledger",
