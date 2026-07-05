@@ -1,0 +1,93 @@
+{
+  "천야 • 블레이드": {
+    "effects": [
+      {
+        "stat": "defenseDown",
+        "value": 0.4,
+        "source": "필살기 - 전신해화",
+        "sourceKind": "필살기",
+        "target": "enemy",
+        "label": "방어력 감소",
+        "sourceOrigin": "curated_source",
+        "sourceRecord": "MortenaxBlade_00:Skill03:전신해화:defenseDown:curated-2026-06-21",
+        "sourceText": "필살기 전신해화 원문/추출현황에서 확인한 적 방어력 감소 효과.",
+        "sourcePath": "data/game-db/character-skill-db.json#MortenaxBlade_00.Skill03",
+        "reviewStatus": "approved",
+        "conditionStatus": "curated-source",
+        "verificationNote": "manual_guide 값이 아니라 원문/추출현황 근거를 갖는 curated_source row로 계산에 사용한다."
+      }
+    ]
+  },
+  "스파클": {
+    "effects": [
+      {
+        "stat": "vulnerability",
+        "value": 0.12,
+        "stackValue": 0.04,
+        "maxStacks": 3,
+        "defaultStacks": 3,
+        "dynamicStackSource": "sp_consumer_party_count",
+        "source": "특성 - 서술 트릭 AS",
+        "sourceKind": "특성",
+        "target": "enemy",
+        "label": "받는 피해 증가",
+        "sourceOrigin": "curated_source",
+        "sourceRecord": "Sparkle_00:Talent:RedHerring:vulnerability:curated-2026-06-21",
+        "sourceText": "Prydwen Sparkle AS kit: Talent applies enemy vulnerability when allies consume Skill Points, stacking up to 3.",
+        "sourcePath": "https://www.prydwen.gg/star-rail/characters/sparkle#kit",
+        "reviewStatus": "approved",
+        "conditionStatus": "as-talent-vulnerability-3-stacks",
+        "verificationNote": "AS 이후 스파클 특성은 피해증가가 아니라 적 받는 피해 증가 스택 효과로 계산한다."
+      },
+      {
+        "stat": "vulnerability",
+        "value": 0.18,
+        "stackValue": 0.06,
+        "maxStacks": 3,
+        "defaultStacks": 3,
+        "dynamicStackSource": "sp_consumer_party_count",
+        "source": "필살기 - 천의 얼굴 AS",
+        "sourceKind": "필살기",
+        "target": "enemy",
+        "label": "받는 피해 증가",
+        "sourceOrigin": "curated_source",
+        "sourceRecord": "Sparkle_00:Ultimate:HeroWithAThousandFaces:vulnerability:curated-2026-06-21",
+        "sourceText": "Prydwen Sparkle AS kit: Cipher increases Sparkle Talent's enemy vulnerability benefit per stack.",
+        "sourcePath": "https://www.prydwen.gg/star-rail/characters/sparkle#kit",
+        "reviewStatus": "approved",
+        "conditionStatus": "as-cipher-talent-vulnerability-bonus",
+        "verificationNote": "AS 이후 스파클 필살기는 특성 받피증 스택 효과를 추가 증가시키는 source-backed row로 계산한다."
+      },
+      {
+        "stat": "atkRatio",
+        "value": 0.45,
+        "source": "추가 능력 - 야상곡 AS",
+        "sourceKind": "추가 능력",
+        "target": "allAllies",
+        "label": "공격력 증가",
+        "sourceOrigin": "curated_source",
+        "sourceRecord": "Sparkle_00:Trace:Nocturne:atkRatio:curated-2026-06-21",
+        "sourceText": "Prydwen Sparkle AS kit: Nocturne increases all allies' ATK by 45%.",
+        "sourcePath": "https://www.prydwen.gg/star-rail/characters/sparkle#kit",
+        "reviewStatus": "approved",
+        "conditionStatus": "as-nocturne-all-allies-atk",
+        "verificationNote": "AS 이후 야상곡 공격력 45%는 레벨 스케일이 없는 고정 아군 버프로 계산한다."
+      },
+      {
+        "stat": "resistancePen",
+        "value": 0.1,
+        "source": "추가 능력 - 야상곡 AS",
+        "sourceKind": "추가 능력",
+        "target": "singleAlly",
+        "label": "속성 저항 관통",
+        "sourceOrigin": "curated_source",
+        "sourceRecord": "Sparkle_00:Trace:Nocturne:resistancePen:curated-2026-06-21",
+        "sourceText": "Prydwen Sparkle AS kit: Nocturne grants All-Type RES PEN to allies holding Sparkle's Skill CRIT DMG Boost.",
+        "sourcePath": "https://www.prydwen.gg/star-rail/characters/sparkle#kit",
+        "reviewStatus": "approved",
+        "conditionStatus": "as-nocturne-skill-crit-damage-boost-holder",
+        "verificationNote": "AS 이후 야상곡 속성저항 관통은 스파클 전투 스킬 치피 버프를 보유한 아군 대상 조건부 버프로 계산한다."
+      }
+    ]
+  }
+}

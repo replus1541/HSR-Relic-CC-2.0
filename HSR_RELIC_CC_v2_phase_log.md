@@ -335,10 +335,21 @@
 - 2026-07-05: `data/legacy-reference/manifest.example.json`을 작성했습니다. adapter input candidate, reference only, blocked calculation reference entry 형식을 정의했습니다.
 - 2026-07-05: `reports/legacy/legacy-fixtures.md`를 작성했습니다. Phase 4-B 최소 복사 후보와 runtime direct import 금지 정책을 정리했습니다.
 - 2026-07-05: Task 4-A complete. 다음 Task 4-B에는 실제 복사할 최소 legacy reference 후보 6개를 넘깁니다.
+- 2026-07-05: Task 4-B 시작. 기존 프로젝트는 읽기만 하고, Phase 6~7 adapter 개발에 필요한 최소 legacy reference JSON 6개만 v2 `data/legacy-reference`로 복사합니다.
+- 2026-07-05: `game-db` snapshot 4개와 `character-effects` snapshot 2개를 복사했습니다. 복사 대상은 `hoyowiki-character-skills`, `character-effect-candidates`, `attack-coefficient-candidates`, `lightcone-effect-candidates`, `curated-source-effects`, `source-effect-mappings`입니다.
+- 2026-07-05: `data/legacy-reference/manifest.json`을 작성했습니다. 각 entry에 source path, snapshot path, source origin/kind, runtime import 금지, calculation use, bytes를 기록했습니다.
+- 2026-07-05: Task 4-B complete. 다음 Task 4-C에는 manifest 파일 존재, path, purpose, prohibitedRuntimeImport flag 검증을 넘깁니다.
 
 ### 생성/수정 파일
 
 - `data/legacy-reference/manifest.example.json`
+- `data/legacy-reference/manifest.json`
+- `data/legacy-reference/game-db/hoyowiki-character-skills.json`
+- `data/legacy-reference/game-db/character-effect-candidates.json`
+- `data/legacy-reference/game-db/attack-coefficient-candidates.json`
+- `data/legacy-reference/game-db/lightcone-effect-candidates.json`
+- `data/legacy-reference/character-effects/curated-source-effects.json`
+- `data/legacy-reference/character-effects/source-effect-mappings.json`
 - `reports/legacy/legacy-fixtures.md`
 - `HSR_RELIC_CC_v2_phase_log.md`
 
@@ -347,10 +358,12 @@
 - legacy snapshot은 v2 runtime 계산기가 직접 import하지 않습니다.
 - manifest entry는 `purpose`, `sourceOrigin`, `sourceKind`, `prohibitedRuntimeImport`, `calculationUse`, `blockedReason`을 분리해서 기록합니다.
 - Phase 4-B 복사는 최소 adapter input 후보부터 시작하고, guide/default/manual mapping 자료는 blocked/reference로만 둡니다.
+- Phase 4-B snapshot은 runtime import 연결 없이 파일 보관과 manifest 기록까지만 수행합니다.
 
 ### 검증
 
 - `npm.cmd run build`: Task 4-A 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+- `npm.cmd run build`: Task 4-B 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
 
 ### 막힌 점 / 리스크
 
@@ -359,7 +372,7 @@
 ### 다음 Task로 넘길 항목
 
 - Phase 4-B에서 최소 legacy reference 후보를 `data/legacy-reference`로 복사하고 `manifest.json`을 작성합니다.
-- 최소 후보: `hoyowiki-character-skills.json`, `character-effect-candidates.json`, `attack-coefficient-candidates.json`, `lightcone-effect-candidates.json`, `curated-source-effects.json`, `source-effect-mappings.json`.
+- Phase 4-C에서 `manifest.json`의 entry path 존재, purpose, `prohibitedRuntimeImport: true`를 검증합니다.
 
 ---
 

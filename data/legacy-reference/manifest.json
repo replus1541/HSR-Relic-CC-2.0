@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "createdBy": "phase-4B-minimal-legacy-reference-snapshot",
+  "createdAt": "2026-07-05",
+  "sourceProjectRoot": "C:/CODEX/HSR RELIC CC",
+  "snapshotRoot": "data/legacy-reference",
+  "policy": {
+    "prohibitedRuntimeImport": true,
+    "allowCalculationSourcePromotion": false,
+    "requiresSourceProvenance": true,
+    "manualGuideCalculationBlocked": true
+  },
+  "entries": [
+    {
+      "id": "legacy:hoyowiki-character-skills",
+      "sourceProjectPath": "data/game-db/hoyowiki-character-skills.json",
+      "snapshotPath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+      "purpose": "adapter_input_candidate",
+      "sourceOrigin": "raw_source",
+      "sourceKind": "hoyowiki",
+      "prohibitedRuntimeImport": true,
+      "calculationUse": "adapter_must_validate_source_rows",
+      "bytes": 946687,
+      "notes": "Official skill text/table candidate. Phase 6 adapter must preserve source path and source record."
+    },
+    {
+      "id": "legacy:character-effect-candidates",
+      "sourceProjectPath": "data/game-db/character-effect-candidates.json",
+      "snapshotPath": "data/legacy-reference/game-db/character-effect-candidates.json",
+      "purpose": "adapter_input_candidate",
+      "sourceOrigin": "raw_source",
+      "sourceKind": "game_db_generated",
+      "prohibitedRuntimeImport": true,
+      "calculationUse": "adapter_must_validate_source_rows",
+      "bytes": 2412815,
+      "notes": "Effect candidate rows require source guard before conversion to EffectRow."
+    },
+    {
+      "id": "legacy:attack-coefficient-candidates",
+      "sourceProjectPath": "data/game-db/attack-coefficient-candidates.json",
+      "snapshotPath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+      "purpose": "adapter_input_candidate",
+      "sourceOrigin": "raw_source",
+      "sourceKind": "game_db_generated",
+      "prohibitedRuntimeImport": true,
+      "calculationUse": "adapter_must_validate_source_rows",
+      "bytes": 1132298,
+      "notes": "Coefficient candidates require source confidence validation before conversion to CoefficientRow."
+    },
+    {
+      "id": "legacy:lightcone-effect-candidates",
+      "sourceProjectPath": "data/game-db/lightcone-effect-candidates.json",
+      "snapshotPath": "data/legacy-reference/game-db/lightcone-effect-candidates.json",
+      "purpose": "adapter_input_candidate",
+      "sourceOrigin": "raw_source",
+      "sourceKind": "game_db_generated",
+      "prohibitedRuntimeImport": true,
+      "calculationUse": "adapter_must_validate_source_rows",
+      "bytes": 539489,
+      "notes": "Light cone effect candidates require rank and source trace preservation."
+    },
+    {
+      "id": "legacy:curated-source-effects",
+      "sourceProjectPath": "data/character-effects/curated-source-effects.json",
+      "snapshotPath": "data/legacy-reference/character-effects/curated-source-effects.json",
+      "purpose": "adapter_input_candidate",
+      "sourceOrigin": "curated_source",
+      "sourceKind": "curated_source",
+      "prohibitedRuntimeImport": true,
+      "calculationUse": "adapter_must_validate_curated_source_trace",
+      "bytes": 4399,
+      "notes": "Curated rows may become calculation candidates only when original source text/path is preserved."
+    },
+    {
+      "id": "legacy:source-effect-mappings",
+      "sourceProjectPath": "data/character-effects/source-effect-mappings.json",
+      "snapshotPath": "data/legacy-reference/character-effects/source-effect-mappings.json",
+      "purpose": "adapter_input_candidate",
+      "sourceOrigin": "curated_source",
+      "sourceKind": "curated_source",
+      "prohibitedRuntimeImport": true,
+      "calculationUse": "source_linkage_metadata_only",
+      "bytes": 605,
+      "notes": "Source mapping metadata helps link curated rows but is not itself a calculation row."
+    }
+  ]
+}
+
