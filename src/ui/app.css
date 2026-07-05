@@ -1283,13 +1283,20 @@ p {
 .calc-party-settings-panel {
   border-radius: 8px;
   background: var(--calc-surface);
-  padding: 8px;
+  padding: 10px;
   box-shadow: 0 10px 24px var(--calc-shadow);
+}
+
+.calc-party-settings-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
 }
 
 .calc-party-settings-head strong {
   color: var(--calc-text);
-  font-size: 0.86rem;
+  font-size: 14px;
   font-weight: 900;
 }
 
@@ -1298,27 +1305,61 @@ p {
   gap: 6px;
 }
 
-.calc-party-settings-controls label {
+.calc-party-settings-controls label,
+.calc-party-settings-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 120px;
+  grid-template-columns: minmax(0, 1fr) 118px;
   align-items: center;
   gap: 7px;
   min-width: 0;
   border-radius: 8px;
   background: var(--calc-surface-2);
-  padding: 7px;
+  padding: 8px;
 }
 
-.calc-party-settings-controls span {
+.calc-party-settings-owner {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.calc-party-settings-owner .calc-party-face {
+  width: 30px;
+  height: 30px;
+}
+
+.calc-party-settings-owner > span:last-child {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+
+.calc-party-settings-owner b,
+.calc-party-settings-owner em {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-style: normal;
+}
+
+.calc-party-settings-owner b {
   color: var(--calc-text);
-  font-size: 0.8rem;
-  font-weight: 850;
+  font-size: 13.5px;
+  font-weight: 820;
+}
+
+.calc-party-settings-owner em {
+  color: var(--calc-muted);
+  font-size: 12.5px;
+  font-weight: 680;
 }
 
 .calc-party-settings-controls small {
   grid-column: 1 / -1;
   color: var(--calc-muted);
-  font-size: 0.72rem;
+  font-size: 12.5px;
   font-weight: 720;
 }
 
@@ -1331,7 +1372,7 @@ p {
   color: var(--calc-text);
   padding: 0 28px 0 8px;
   font: inherit;
-  font-size: 0.78rem;
+  font-size: 13.5px;
   font-weight: 850;
 }
 
@@ -4151,8 +4192,73 @@ p {
   }
 
   .calc-contribution-row em {
-    font-size: 0.82rem;
+    font-size: 14px;
     font-weight: 700;
+  }
+
+  .calc-party-settings-panel {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .calc-party-settings-head strong {
+    font-size: 15px;
+  }
+
+  .calc-party-settings-controls {
+    gap: 8px;
+  }
+
+  .calc-party-settings-controls label,
+  .calc-party-settings-card {
+    grid-template-columns: minmax(0, 1fr) 112px;
+    gap: 8px;
+    min-height: 58px;
+    padding: 9px;
+  }
+
+  .calc-party-settings-owner {
+    grid-template-columns: 34px minmax(0, 1fr);
+  }
+
+  .calc-party-settings-owner .calc-party-face {
+    width: 34px;
+    height: 34px;
+  }
+
+  .calc-party-settings-owner b,
+  .calc-contribution-label strong,
+  .calc-contribution-unit,
+  .calc-evaluation-row b,
+  .calc-contribution-row-card b,
+  .calc-damage-skill-head b {
+    font-size: 14px;
+  }
+
+  .calc-party-settings-owner em,
+  .calc-party-settings-controls small,
+  .calc-evaluation-row small,
+  .calc-evaluation-row em,
+  .calc-contribution-row-card small,
+  .calc-contribution-label > small,
+  .calc-contribution-detail-list div b,
+  .calc-contribution-detail-list > li > span,
+  .calc-evaluation-source-stat,
+  .calc-evaluation-source-amount {
+    font-size: 13px;
+  }
+
+  .calc-party-settings-controls select {
+    min-height: 40px;
+    font-size: 14px;
+  }
+
+  .calc-contribution-eidolon,
+  .calc-contribution-rank,
+  .calc-evaluation-source-label small,
+  .calc-contribution-detail-list div small,
+  .calc-contribution-detail-list .calc-evaluation-source-label small {
+    font-size: 12px;
   }
 
   .calc-contribution-detail-list {

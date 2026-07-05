@@ -1497,8 +1497,11 @@ function buildStateControl(control, slot) {
   if (Number.isFinite(Number(control.minEidolon)) && Number(slot?.eidolon ?? 0) < Number(control.minEidolon)) return null;
   const resolved = resolveStateControlOptions(control, slot);
   if (!resolved.options.length) return null;
+  const character = getCharacter(control.characterId ?? slot?.characterId);
   return {
     key: control.key,
+    characterId: character?.characterId ?? control.characterId ?? slot?.characterId ?? null,
+    characterLabel: character?.displayName ?? character?.localizedName ?? control.characterId ?? null,
     label: control.label,
     note: resolved.note ?? control.note,
     defaultValue: resolved.defaultValue,
@@ -1530,7 +1533,7 @@ function formatStateControlOptionLabel(value, control) {
   return formatNumber(value);
 }
 
-function PartySpecificSettingPanel({ controls, values, onChange, title = "현재 파티 별도 설정" }) {
+function PartySpecificSettingPanel({ controls, values, onChange, title = "캐릭터 스택 / 상태 설정" }) {
   if (!controls.length) return null;
   return (
     <section className="calc-party-settings-panel" aria-label={title}>
@@ -1538,15 +1541,26 @@ function PartySpecificSettingPanel({ controls, values, onChange, title = "현재
         <strong>{title}</strong>
       </div>
       <div className="calc-party-settings-controls">
-        {controls.map((control) => (
-          <label key={control.key}>
-            <span>{control.label}</span>
+        {controls.map((control) => {
+          const character = getCharacter(control.characterId);
+          return (
+          <label key={control.key} className="calc-party-settings-card">
+            <span className="calc-party-settings-owner">
+              <span className="calc-party-face">
+                <CharacterAvatar character={character} />
+              </span>
+              <span>
+                <b>{control.characterLabel ?? "전투 조건"}</b>
+                <em>{control.label}</em>
+              </span>
+            </span>
             <select value={values[control.key] ?? control.defaultValue} onChange={(event) => onChange(control.key, Number(event.target.value))}>
               {control.options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
             </select>
             <small>{control.note}</small>
           </label>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

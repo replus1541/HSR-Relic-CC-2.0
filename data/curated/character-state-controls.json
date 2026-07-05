@@ -55,6 +55,17 @@
       "format": "percent"
     },
     {
+      "key": "theHertaInterpretationStacks",
+      "scope": "activeCharacter",
+      "characterId": "TheHerta_00",
+      "label": "더 헤르타 해독",
+      "note": "강화 전투 스킬 주목표 [해독] 42스택 도달 여부",
+      "defaultValue": 42,
+      "options": [0, 21, 42],
+      "effectRowIds": ["effect:TheHerta_00:1"],
+      "valueFormula": { "type": "thresholdValue", "threshold": 42, "value": 0.5 }
+    },
+    {
       "key": "trailblazerDestructionBreakStacks",
       "scope": "activeCharacter",
       "characterId": "PlayerBoy_00",

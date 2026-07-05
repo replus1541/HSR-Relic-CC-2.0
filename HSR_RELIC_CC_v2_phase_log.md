@@ -1704,6 +1704,32 @@
 - `npm.cmd run verify:damage-formulas`: passed; checks=10.
 - `npm.cmd run validate:imports`: passed.
 - `npm.cmd run verify:app`: passed.
+
+---
+
+## Character State Card UI Pass
+
+### Status
+
+- status: completed
+- started: 2026-07-06
+- completed: 2026-07-06
+- request: show character-specific stack/state UI cards under enemy settings in the stat/damage tab, starting with The Herta stacks
+
+### Work Log
+
+- Added `theHertaInterpretationStacks` as an active-character state control for The Herta.
+- Connected The Herta [해독] stacks to `effect:TheHerta_00:1`, so 42 stacks applies the 50% all-damage bonus and lower presets remove it.
+- Renamed the party-specific settings panel to `캐릭터 스택 / 상태 설정`.
+- Updated the panel rows into character state cards with avatar, character name, state label, dropdown, and note.
+- Increased mobile font sizes for the state cards and key stat/damage contribution text so controls remain readable on narrow screens.
+
+### Verification
+
+- `npm.cmd run build -- --emptyOutDir=false`: passed. Vite chunk-size warning remains.
+- `npm.cmd run verify:damage-formulas`: passed; checks=10.
+- `npm.cmd run validate:imports`: passed.
+- `npm.cmd run verify:app`: passed.
 - `node tools\verify_elation_settings_ui.mjs`: passed with escalated browser launch; screenshots `v2-elation-settings-mobile-390.png` and `v2-condition-elation-settings-mobile-390.png`.
 - `node tools\inspect_stats_damage_v1_v2.mjs`: passed; screenshots regenerated under `artifacts/stats-damage-v1-v2`.
 
