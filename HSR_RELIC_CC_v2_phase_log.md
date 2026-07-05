@@ -1008,3 +1008,34 @@
 - relic source snapshot/adapter 추가: coverage에서는 relic source가 `missing_snapshot`으로 남아 있습니다.
 - lightcone effect source는 global snapshot까지 확인됐고, 캐릭터 loadout 적용/계산 연결은 별도 후속 작업입니다.
 - full dataset UI bundle size 개선: `/extraction`이 generated JSON을 직접 import해 build chunk warning이 발생합니다.
+
+---
+
+## Follow-up Audit. Character Display Name Mapping
+
+### 상태
+
+- 상태: completed
+- 시작일: 2026-07-05
+- 완료일: 2026-07-05
+- 관련 요청: `/extraction` character identity / localization / displayName 매핑 감사
+
+### 진행 기록
+
+- 기존 프로젝트는 읽기만 하고 수정하지 않았습니다.
+- v2 `extraction-status`의 `displayName`이 공식 localization/source-backed identity row 없이 생성되는 문제를 감사했습니다.
+- `tools/audit_character_display_names.mjs`를 추가해 v2 generated status와 legacy HoyoWiki, DesignData extracted catalog, legacy alias map을 비교합니다.
+- `reports/extraction/character-display-name-audit.md`와 JSON audit 결과를 생성했습니다.
+- high priority displayName 문제로 `삼칠이`, `토파즈`, `길가메시`를 분류했습니다.
+- 전체 92개 row 모두 `officialName`, `localizedName`, `aliasNames`, `localizationSourcePath`, `isDisplayNameSourceBacked`, `nameReviewStatus`가 generated status에 없어서 review 필요로 분류했습니다.
+
+### 검증
+
+- `node tools\audit_character_display_names.mjs`: 성공. rows=92, needsReview=92, highPriority=3.
+- `git diff --check`: 성공.
+
+### 다음 Task로 넘길 항목
+
+- `data/generated/character-identity.json` 또는 동등한 identity dataset을 먼저 만들고, `/extraction`은 그 identity row의 `displayName`만 사용해야 합니다.
+- route parameter는 표시 문자열이 아니라 stable `characterId` 또는 `internalName`으로 전환해야 합니다.
+- alias는 `aliasNames`에 보관하고 displayName으로 승격하지 않는 validator가 필요합니다.

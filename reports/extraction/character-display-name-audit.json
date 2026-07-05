@@ -1,0 +1,3440 @@
+{
+  "version": 1,
+  "generatedBy": "tools/audit_character_display_names.mjs",
+  "summary": {
+    "auditedRows": 92,
+    "rowsNeedingReview": 92,
+    "issueCounts": {
+      "missing_display_name_source_metadata": 92,
+      "placeholder_like_character_row": 1,
+      "alias_normalized_collision": 5,
+      "official_source_name_collision": 4,
+      "alias_used_as_displayName": 2,
+      "alias_official_target_mismatch": 2,
+      "mixed_english_korean_displayName": 3,
+      "level_or_placeholder_suffix_in_displayName": 1
+    }
+  },
+  "rows": [
+    {
+      "characterId": "개척자 • 기억",
+      "displayName": "개척자 • 기억",
+      "sourceNames": [
+        "개척자 • 기억",
+        "PlayerBoy_20",
+        "3287",
+        "PlayerGirl_20",
+        "8006"
+      ],
+      "identifiers": {
+        "effectAvatar": "PlayerBoy_20",
+        "effectName": "개척자 • 기억",
+        "hoyowikiEntryPageId": "3287",
+        "coefficientAvatar": "PlayerGirl_20",
+        "coefficientAvatarId": "8006"
+      },
+      "officialNames": [
+        "개척자 • 기억"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_PlayerBoy_20_Config.json",
+        "Config/ConfigCharacter/Avatar/Avatar_PlayerGirl_20_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "개척자 • 보존",
+      "displayName": "개척자 • 보존",
+      "sourceNames": [
+        "개척자 • 보존",
+        "PlayerBoy_10",
+        "23",
+        "PlayerGirl_10",
+        "8004"
+      ],
+      "identifiers": {
+        "effectAvatar": "PlayerBoy_10",
+        "effectName": "개척자 • 보존",
+        "hoyowikiEntryPageId": "23",
+        "coefficientAvatar": "PlayerGirl_10",
+        "coefficientAvatarId": "8004"
+      },
+      "officialNames": [
+        "개척자 • 보존"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_PlayerBoy_10_Config.json",
+        "Config/ConfigCharacter/Avatar/Avatar_PlayerGirl_10_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "개척자 • 파멸",
+      "displayName": "개척자 • 파멸",
+      "sourceNames": [
+        "개척자 • 파멸",
+        "PlayerBoy_00",
+        "6",
+        "PlayerGirl_00",
+        "8002"
+      ],
+      "identifiers": {
+        "effectAvatar": "PlayerBoy_00",
+        "effectName": "개척자 • 파멸",
+        "hoyowikiEntryPageId": "6",
+        "coefficientAvatar": "PlayerGirl_00",
+        "coefficientAvatarId": "8002"
+      },
+      "officialNames": [
+        "개척자 • 파멸"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_PlayerBoy_00_Config.json",
+        "Config/ConfigCharacter/Avatar/Avatar_PlayerGirl_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "개척자 • 화합",
+      "displayName": "개척자 • 화합",
+      "sourceNames": [
+        "개척자 • 화합",
+        "PlayerBoy_30",
+        "2511",
+        "PlayerGirl_30",
+        "8008"
+      ],
+      "identifiers": {
+        "effectAvatar": "PlayerBoy_30",
+        "effectName": "개척자 • 화합",
+        "hoyowikiEntryPageId": "2511",
+        "coefficientAvatar": "PlayerGirl_30",
+        "coefficientAvatarId": "8008"
+      },
+      "officialNames": [
+        "개척자 • 화합"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_PlayerBoy_30_Config.json",
+        "Config/ConfigCharacter/Avatar/Avatar_PlayerGirl_30_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "개척자 • 환락",
+      "displayName": "개척자 • 환락",
+      "sourceNames": [
+        "개척자 • 환락",
+        "PlayerBoy_40",
+        "5006",
+        "PlayerGirl_40",
+        "8010"
+      ],
+      "identifiers": {
+        "effectAvatar": "PlayerBoy_40",
+        "effectName": "개척자 • 환락",
+        "hoyowikiEntryPageId": "5006",
+        "coefficientAvatar": "PlayerGirl_40",
+        "coefficientAvatarId": "8010"
+      },
+      "officialNames": [
+        "개척자 • 환락"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_PlayerBoy_40_Config.json",
+        "Config/ConfigCharacter/Avatar/Avatar_PlayerGirl_40_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "갤러거",
+      "displayName": "갤러거",
+      "sourceNames": [
+        "갤러거",
+        "Gallagher_00",
+        "1924",
+        "1301"
+      ],
+      "identifiers": {
+        "effectAvatar": "Gallagher_00",
+        "effectName": "갤러거",
+        "hoyowikiEntryPageId": "1924",
+        "coefficientAvatar": "Gallagher_00",
+        "coefficientAvatarId": "1301"
+      },
+      "officialNames": [
+        "갤러거"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Gallagher_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "게파드",
+      "displayName": "게파드",
+      "sourceNames": [
+        "게파드",
+        "Gepard_00",
+        "17",
+        "1104"
+      ],
+      "identifiers": {
+        "effectAvatar": "Gepard_00",
+        "effectName": "게파드",
+        "hoyowikiEntryPageId": "17",
+        "coefficientAvatar": "Gepard_00",
+        "coefficientAvatarId": "1104"
+      },
+      "officialNames": [
+        "게파드"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Gepard_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "경류",
+      "displayName": "경류",
+      "sourceNames": [
+        "경류",
+        "Jingliu_00",
+        "1387",
+        "1212"
+      ],
+      "identifiers": {
+        "effectAvatar": "Jingliu_00",
+        "effectName": "경류",
+        "hoyowikiEntryPageId": "1387",
+        "coefficientAvatar": "Jingliu_00",
+        "coefficientAvatarId": "1212"
+      },
+      "officialNames": [
+        "경류"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Jingliu_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "경원",
+      "displayName": "경원",
+      "sourceNames": [
+        "경원",
+        "JingYuan_00",
+        "26",
+        "1204"
+      ],
+      "identifiers": {
+        "effectAvatar": "JingYuan_00",
+        "effectName": "경원",
+        "hoyowikiEntryPageId": "26",
+        "coefficientAvatar": "JingYuan_00",
+        "coefficientAvatarId": "1204"
+      },
+      "officialNames": [
+        "경원"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_JingYuan_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "계네빈",
+      "displayName": "계네빈",
+      "sourceNames": [
+        "계네빈",
+        "Guinaifen_00",
+        "1392",
+        "1210"
+      ],
+      "identifiers": {
+        "effectAvatar": "Guinaifen_00",
+        "effectName": "계네빈",
+        "hoyowikiEntryPageId": "1392",
+        "coefficientAvatar": "Guinaifen_00",
+        "coefficientAvatarId": "1210"
+      },
+      "officialNames": [
+        "계네빈"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Guinaifen_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "곽향",
+      "displayName": "곽향",
+      "sourceNames": [
+        "곽향",
+        "Huohuo_00",
+        "1533",
+        "1217"
+      ],
+      "identifiers": {
+        "effectAvatar": "Huohuo_00",
+        "effectName": "곽향",
+        "hoyowikiEntryPageId": "1533",
+        "coefficientAvatar": "Huohuo_00",
+        "coefficientAvatarId": "1217"
+      },
+      "officialNames": [
+        "곽향"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Huohuo_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "길가메시",
+      "displayName": "길가메시",
+      "sourceNames": [
+        "길가메시",
+        "Gilgamesh_00",
+        "5338",
+        "1509"
+      ],
+      "identifiers": {
+        "effectAvatar": "Gilgamesh_00",
+        "effectName": "길가메시",
+        "hoyowikiEntryPageId": "5338",
+        "coefficientAvatar": "Gilgamesh_00",
+        "coefficientAvatarId": "1509"
+      },
+      "officialNames": [
+        "길가메시"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Gilgamesh_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "placeholder_like_character_row",
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "나찰",
+      "displayName": "나찰",
+      "sourceNames": [
+        "나찰",
+        "Luocha_00",
+        "711",
+        "1203"
+      ],
+      "identifiers": {
+        "effectAvatar": "Luocha_00",
+        "effectName": "나찰",
+        "hoyowikiEntryPageId": "711",
+        "coefficientAvatar": "Luocha_00",
+        "coefficientAvatarId": "1203"
+      },
+      "officialNames": [
+        "나찰"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Luocha_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "나타샤",
+      "displayName": "나타샤",
+      "sourceNames": [
+        "나타샤",
+        "Natasha_00",
+        "18",
+        "1105"
+      ],
+      "identifiers": {
+        "effectAvatar": "Natasha_00",
+        "effectName": "나타샤",
+        "hoyowikiEntryPageId": "18",
+        "coefficientAvatar": "Natasha_00",
+        "coefficientAvatarId": "1105"
+      },
+      "officialNames": [
+        "나타샤"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Natasha_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "단항",
+      "displayName": "단항",
+      "sourceNames": [
+        "단항",
+        "DanHeng_00",
+        "8",
+        "1002"
+      ],
+      "identifiers": {
+        "effectAvatar": "DanHeng_00",
+        "effectName": "단항",
+        "hoyowikiEntryPageId": "8",
+        "coefficientAvatar": "DanHeng_00",
+        "coefficientAvatarId": "1002"
+      },
+      "officialNames": [
+        "단항"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_DanHeng_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "단항 • 등황",
+      "displayName": "단항 • 등황",
+      "sourceNames": [
+        "단항 • 등황",
+        "DanHengPT_00",
+        "3957",
+        "1414"
+      ],
+      "identifiers": {
+        "effectAvatar": "DanHengPT_00",
+        "effectName": "단항 • 등황",
+        "hoyowikiEntryPageId": "3957",
+        "coefficientAvatar": "DanHengPT_00",
+        "coefficientAvatarId": "1414"
+      },
+      "officialNames": [
+        "단항 • 등황"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_DanHengPT_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "단항•음월",
+      "displayName": "단항•음월",
+      "sourceNames": [
+        "단항•음월",
+        "DanHengIL_00",
+        "1226",
+        "1213"
+      ],
+      "identifiers": {
+        "effectAvatar": "DanHengIL_00",
+        "effectName": "단항•음월",
+        "hoyowikiEntryPageId": "1226",
+        "coefficientAvatar": "DanHengIL_00",
+        "coefficientAvatarId": "1213"
+      },
+      "officialNames": [
+        "단항•음월"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_DanHengIL_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "달리아",
+      "displayName": "달리아",
+      "sourceNames": [
+        "달리아",
+        "Constance_00",
+        "4060",
+        "1321"
+      ],
+      "identifiers": {
+        "effectAvatar": "Constance_00",
+        "effectName": "달리아",
+        "hoyowikiEntryPageId": "4060",
+        "coefficientAvatar": "Constance_00",
+        "coefficientAvatarId": "1321"
+      },
+      "officialNames": [
+        "달리아"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Constance_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "더 헤르타",
+      "displayName": "더 헤르타",
+      "sourceNames": [
+        "더 헤르타",
+        "TheHerta_00",
+        "3285",
+        "1401"
+      ],
+      "identifiers": {
+        "effectAvatar": "TheHerta_00",
+        "effectName": "더 헤르타",
+        "hoyowikiEntryPageId": "3285",
+        "coefficientAvatar": "TheHerta_00",
+        "coefficientAvatarId": "1401"
+      },
+      "officialNames": [
+        "더 헤르타"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_TheHerta_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "라파",
+      "displayName": "라파",
+      "sourceNames": [
+        "라파",
+        "Rappa_00",
+        "3057",
+        "1317"
+      ],
+      "identifiers": {
+        "effectAvatar": "Rappa_00",
+        "effectName": "라파",
+        "hoyowikiEntryPageId": "3057",
+        "coefficientAvatar": "Rappa_00",
+        "coefficientAvatarId": "1317"
+      },
+      "officialNames": [
+        "라파"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Rappa_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "로빈",
+      "displayName": "로빈",
+      "sourceNames": [
+        "로빈",
+        "Robin_00",
+        "2366",
+        "1309"
+      ],
+      "identifiers": {
+        "effectAvatar": "Robin_00",
+        "effectName": "로빈",
+        "hoyowikiEntryPageId": "2366",
+        "coefficientAvatar": "Robin_00",
+        "coefficientAvatarId": "1309"
+      },
+      "officialNames": [
+        "로빈"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Robin_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "루카",
+      "displayName": "루카",
+      "sourceNames": [
+        "루카",
+        "Luka_00",
+        "801",
+        "1111"
+      ],
+      "identifiers": {
+        "effectAvatar": "Luka_00",
+        "effectName": "루카",
+        "hoyowikiEntryPageId": "801",
+        "coefficientAvatar": "Luka_00",
+        "coefficientAvatarId": "1111"
+      },
+      "officialNames": [
+        "루카"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Luka_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "링스",
+      "displayName": "링스",
+      "sourceNames": [
+        "링스",
+        "Lynx_00",
+        "1228",
+        "1110"
+      ],
+      "identifiers": {
+        "effectAvatar": "Lynx_00",
+        "effectName": "링스",
+        "hoyowikiEntryPageId": "1228",
+        "coefficientAvatar": "Lynx_00",
+        "coefficientAvatarId": "1110"
+      },
+      "officialNames": [
+        "링스"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Lynx_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "마이데이",
+      "displayName": "마이데이",
+      "sourceNames": [
+        "마이데이",
+        "Mydeimos_00",
+        "3324",
+        "1404"
+      ],
+      "identifiers": {
+        "effectAvatar": "Mydeimos_00",
+        "effectName": "마이데이",
+        "hoyowikiEntryPageId": "3324",
+        "coefficientAvatar": "Mydeimos_00",
+        "coefficientAvatarId": "1404"
+      },
+      "officialNames": [
+        "마이데이"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Mydeimos_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "망귀인",
+      "displayName": "망귀인",
+      "sourceNames": [
+        "망귀인",
+        "Fugue_00",
+        "3151",
+        "1225"
+      ],
+      "identifiers": {
+        "effectAvatar": "Fugue_00",
+        "effectName": "망귀인",
+        "hoyowikiEntryPageId": "3151",
+        "coefficientAvatar": "Fugue_00",
+        "coefficientAvatarId": "1225"
+      },
+      "officialNames": [
+        "망귀인"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Fugue_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "맥택",
+      "displayName": "맥택",
+      "sourceNames": [
+        "맥택",
+        "Moze_00",
+        "2949",
+        "1223"
+      ],
+      "identifiers": {
+        "effectAvatar": "Moze_00",
+        "effectName": "맥택",
+        "hoyowikiEntryPageId": "2949",
+        "coefficientAvatar": "Moze_00",
+        "coefficientAvatarId": "1223"
+      },
+      "officialNames": [
+        "맥택"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Moze_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "미샤",
+      "displayName": "미샤",
+      "sourceNames": [
+        "미샤",
+        "Misha_00",
+        "1808",
+        "1312"
+      ],
+      "identifiers": {
+        "effectAvatar": "Misha_00",
+        "effectName": "미샤",
+        "hoyowikiEntryPageId": "1808",
+        "coefficientAvatar": "Misha_00",
+        "coefficientAvatarId": "1312"
+      },
+      "officialNames": [
+        "미샤"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Misha_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "반디",
+      "displayName": "반디",
+      "sourceNames": [
+        "반디",
+        "Sam_00",
+        "2494",
+        "1310"
+      ],
+      "identifiers": {
+        "effectAvatar": "Sam_00",
+        "effectName": "반디",
+        "hoyowikiEntryPageId": "2494",
+        "coefficientAvatar": "Sam_00",
+        "coefficientAvatarId": "1310"
+      },
+      "officialNames": [
+        "반디"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Sam_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "백로",
+      "displayName": "백로",
+      "sourceNames": [
+        "백로",
+        "Bailu_00",
+        "29",
+        "1211"
+      ],
+      "identifiers": {
+        "effectAvatar": "Bailu_00",
+        "effectName": "백로",
+        "hoyowikiEntryPageId": "29",
+        "coefficientAvatar": "Bailu_00",
+        "coefficientAvatarId": "1211"
+      },
+      "officialNames": [
+        "백로"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Bailu_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "부트힐",
+      "displayName": "부트힐",
+      "sourceNames": [
+        "부트힐",
+        "Boothill_00",
+        "2367",
+        "1315"
+      ],
+      "identifiers": {
+        "effectAvatar": "Boothill_00",
+        "effectName": "부트힐",
+        "hoyowikiEntryPageId": "2367",
+        "coefficientAvatar": "Boothill_00",
+        "coefficientAvatarId": "1315"
+      },
+      "officialNames": [
+        "부트힐"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Boothill_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "부현",
+      "displayName": "부현",
+      "sourceNames": [
+        "부현",
+        "FuXuan_00",
+        "804",
+        "1208"
+      ],
+      "identifiers": {
+        "effectAvatar": "FuXuan_00",
+        "effectName": "부현",
+        "hoyowikiEntryPageId": "804",
+        "coefficientAvatar": "FuXuan_00",
+        "coefficientAvatarId": "1208"
+      },
+      "officialNames": [
+        "부현"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_FuXuan_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "브로냐",
+      "displayName": "브로냐",
+      "sourceNames": [
+        "브로냐",
+        "Bronya_00",
+        "14",
+        "1101"
+      ],
+      "identifiers": {
+        "effectAvatar": "Bronya_00",
+        "effectName": "브로냐",
+        "hoyowikiEntryPageId": "14",
+        "coefficientAvatar": "Bronya_00",
+        "coefficientAvatarId": "1101"
+      },
+      "officialNames": [
+        "브로냐"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Bronya_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "블랙 스완",
+      "displayName": "블랙 스완",
+      "sourceNames": [
+        "블랙 스완",
+        "BlackSwan_00",
+        "1806",
+        "1307"
+      ],
+      "identifiers": {
+        "effectAvatar": "BlackSwan_00",
+        "effectName": "블랙 스완",
+        "hoyowikiEntryPageId": "1806",
+        "coefficientAvatar": "BlackSwan_00",
+        "coefficientAvatarId": "1307"
+      },
+      "officialNames": [
+        "블랙 스완",
+        "블랙스완"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_BlackSwan_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": false,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "alias_normalized_collision",
+        "missing_display_name_source_metadata",
+        "official_source_name_collision"
+      ]
+    },
+    {
+      "characterId": "블레이드",
+      "displayName": "블레이드",
+      "sourceNames": [
+        "블레이드",
+        "Ren_00",
+        "789",
+        "1205"
+      ],
+      "identifiers": {
+        "effectAvatar": "Ren_00",
+        "effectName": "블레이드",
+        "hoyowikiEntryPageId": "789",
+        "coefficientAvatar": "Ren_00",
+        "coefficientAvatarId": "1205"
+      },
+      "officialNames": [
+        "블레이드"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Ren_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "비소",
+      "displayName": "비소",
+      "sourceNames": [
+        "비소",
+        "Feixiao_00",
+        "2947",
+        "1220"
+      ],
+      "identifiers": {
+        "effectAvatar": "Feixiao_00",
+        "effectName": "비소",
+        "hoyowikiEntryPageId": "2947",
+        "coefficientAvatar": "Feixiao_00",
+        "coefficientAvatarId": "1220"
+      },
+      "officialNames": [
+        "비소"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Feixiao_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "사이퍼",
+      "displayName": "사이퍼",
+      "sourceNames": [
+        "사이퍼",
+        "Cipher_00",
+        "3691",
+        "1406"
+      ],
+      "identifiers": {
+        "effectAvatar": "Cipher_00",
+        "effectName": "사이퍼",
+        "hoyowikiEntryPageId": "3691",
+        "coefficientAvatar": "Cipher_00",
+        "coefficientAvatarId": "1406"
+      },
+      "officialNames": [
+        "사이퍼"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Cipher_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "삼칠이",
+      "displayName": "삼칠이",
+      "sourceNames": [
+        "삼칠이",
+        "Mar_7th_00",
+        "1001"
+      ],
+      "identifiers": {
+        "effectAvatar": "Mar_7th_00",
+        "effectName": "삼칠이",
+        "hoyowikiEntryPageId": null,
+        "coefficientAvatar": "Mar_7th_00",
+        "coefficientAvatarId": "1001"
+      },
+      "officialNames": [
+        "삼칠이"
+      ],
+      "aliasTargets": [
+        "Mar. 7th"
+      ],
+      "sourceOrigins": [
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Mar_7th_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": false,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "alias_used_as_displayName",
+        "missing_display_name_source_metadata",
+        "alias_official_target_mismatch"
+      ]
+    },
+    {
+      "characterId": "삼포",
+      "displayName": "삼포",
+      "sourceNames": [
+        "삼포",
+        "Sampo_00",
+        "21",
+        "1108"
+      ],
+      "identifiers": {
+        "effectAvatar": "Sampo_00",
+        "effectName": "삼포",
+        "hoyowikiEntryPageId": "21",
+        "coefficientAvatar": "Sampo_00",
+        "coefficientAvatarId": "1108"
+      },
+      "officialNames": [
+        "삼포"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Sampo_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "서벌",
+      "displayName": "서벌",
+      "sourceNames": [
+        "서벌",
+        "Serval_00",
+        "16",
+        "1103"
+      ],
+      "identifiers": {
+        "effectAvatar": "Serval_00",
+        "effectName": "서벌",
+        "hoyowikiEntryPageId": "16",
+        "coefficientAvatar": "Serval_00",
+        "coefficientAvatarId": "1103"
+      },
+      "officialNames": [
+        "서벌"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Serval_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "선데이",
+      "displayName": "선데이",
+      "sourceNames": [
+        "선데이",
+        "Sunday_10",
+        "3150",
+        "1313"
+      ],
+      "identifiers": {
+        "effectAvatar": "Sunday_10",
+        "effectName": "선데이",
+        "hoyowikiEntryPageId": "3150",
+        "coefficientAvatar": "Sunday_10",
+        "coefficientAvatarId": "1313"
+      },
+      "officialNames": [
+        "선데이"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Sunday_10_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "설의",
+      "displayName": "설의",
+      "sourceNames": [
+        "설의",
+        "Xueyi_00",
+        "1640",
+        "1214"
+      ],
+      "identifiers": {
+        "effectAvatar": "Xueyi_00",
+        "effectName": "설의",
+        "hoyowikiEntryPageId": "1640",
+        "coefficientAvatar": "Xueyi_00",
+        "coefficientAvatarId": "1214"
+      },
+      "officialNames": [
+        "설의"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Xueyi_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "세이버",
+      "displayName": "세이버",
+      "sourceNames": [
+        "세이버",
+        "Saber_00",
+        "3767",
+        "1014"
+      ],
+      "identifiers": {
+        "effectAvatar": "Saber_00",
+        "effectName": "세이버",
+        "hoyowikiEntryPageId": "3767",
+        "coefficientAvatar": "Saber_00",
+        "coefficientAvatarId": "1014"
+      },
+      "officialNames": [
+        "세이버"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Saber_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "소상",
+      "displayName": "소상",
+      "sourceNames": [
+        "소상",
+        "Sushang_00",
+        "27",
+        "1206"
+      ],
+      "identifiers": {
+        "effectAvatar": "Sushang_00",
+        "effectName": "소상",
+        "hoyowikiEntryPageId": "27",
+        "coefficientAvatar": "Sushang_00",
+        "coefficientAvatarId": "1206"
+      },
+      "officialNames": [
+        "소상"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Sushang_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "스파클",
+      "displayName": "스파클",
+      "sourceNames": [
+        "스파클",
+        "Sparkle_00",
+        "1807",
+        "1306"
+      ],
+      "identifiers": {
+        "effectAvatar": "Sparkle_00",
+        "effectName": "스파클",
+        "hoyowikiEntryPageId": "1807",
+        "coefficientAvatar": "Sparkle_00",
+        "coefficientAvatarId": "1306"
+      },
+      "officialNames": [
+        "스파클"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Sparkle_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "스파키",
+      "displayName": "스파키",
+      "sourceNames": [
+        "스파키",
+        "Sparxie_00",
+        "4737",
+        "1501"
+      ],
+      "identifiers": {
+        "effectAvatar": "Sparxie_00",
+        "effectName": "스파키",
+        "hoyowikiEntryPageId": "4737",
+        "coefficientAvatar": "Sparxie_00",
+        "coefficientAvatarId": "1501"
+      },
+      "officialNames": [
+        "스파키"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Sparxie_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "아글라이아",
+      "displayName": "아글라이아",
+      "sourceNames": [
+        "아글라이아",
+        "Aglaea_00",
+        "3286",
+        "1402"
+      ],
+      "identifiers": {
+        "effectAvatar": "Aglaea_00",
+        "effectName": "아글라이아",
+        "hoyowikiEntryPageId": "3286",
+        "coefficientAvatar": "Aglaea_00",
+        "coefficientAvatarId": "1402"
+      },
+      "officialNames": [
+        "아글라이아"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Aglaea_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "아낙사",
+      "displayName": "아낙사",
+      "sourceNames": [
+        "아낙사",
+        "Anaxa_00",
+        "3561",
+        "1405"
+      ],
+      "identifiers": {
+        "effectAvatar": "Anaxa_00",
+        "effectName": "아낙사",
+        "hoyowikiEntryPageId": "3561",
+        "coefficientAvatar": "Anaxa_00",
+        "coefficientAvatarId": "1405"
+      },
+      "officialNames": [
+        "아낙사"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Anaxa_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "아를란",
+      "displayName": "아를란",
+      "sourceNames": [
+        "아를란",
+        "Arlan_00",
+        "11",
+        "1008"
+      ],
+      "identifiers": {
+        "effectAvatar": "Arlan_00",
+        "effectName": "아를란",
+        "hoyowikiEntryPageId": "11",
+        "coefficientAvatar": "Arlan_00",
+        "coefficientAvatarId": "1008"
+      },
+      "officialNames": [
+        "아를란"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Arlan_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "아스타",
+      "displayName": "아스타",
+      "sourceNames": [
+        "아스타",
+        "Asta_00",
+        "12",
+        "1009"
+      ],
+      "identifiers": {
+        "effectAvatar": "Asta_00",
+        "effectName": "아스타",
+        "hoyowikiEntryPageId": "12",
+        "coefficientAvatar": "Asta_00",
+        "coefficientAvatarId": "1009"
+      },
+      "officialNames": [
+        "아스타"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Asta_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "아젠티",
+      "displayName": "아젠티",
+      "sourceNames": [
+        "아젠티",
+        "Argenti_00",
+        "1535",
+        "1302"
+      ],
+      "identifiers": {
+        "effectAvatar": "Argenti_00",
+        "effectName": "아젠티",
+        "hoyowikiEntryPageId": "1535",
+        "coefficientAvatar": "Argenti_00",
+        "coefficientAvatarId": "1302"
+      },
+      "officialNames": [
+        "아젠티"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Argenti_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "아처",
+      "displayName": "아처",
+      "sourceNames": [
+        "아처",
+        "Archer_00",
+        "3768",
+        "1015"
+      ],
+      "identifiers": {
+        "effectAvatar": "Archer_00",
+        "effectName": "아처",
+        "hoyowikiEntryPageId": "3768",
+        "coefficientAvatar": "Archer_00",
+        "coefficientAvatarId": "1015"
+      },
+      "officialNames": [
+        "아처"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Archer_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "아케론",
+      "displayName": "아케론",
+      "sourceNames": [
+        "아케론",
+        "Acheron_00",
+        "1919",
+        "1308"
+      ],
+      "identifiers": {
+        "effectAvatar": "Acheron_00",
+        "effectName": "아케론",
+        "hoyowikiEntryPageId": "1919",
+        "coefficientAvatar": "Acheron_00",
+        "coefficientAvatarId": "1308"
+      },
+      "officialNames": [
+        "아케론"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Acheron_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "애쉬베일",
+      "displayName": "애쉬베일",
+      "sourceNames": [
+        "애쉬베일",
+        "Ashveil_00",
+        "4781",
+        "1504"
+      ],
+      "identifiers": {
+        "effectAvatar": "Ashveil_00",
+        "effectName": "애쉬베일",
+        "hoyowikiEntryPageId": "4781",
+        "coefficientAvatar": "Ashveil_00",
+        "coefficientAvatarId": "1504"
+      },
+      "officialNames": [
+        "애쉬베일"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Ashveil_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "어공",
+      "displayName": "어공",
+      "sourceNames": [
+        "어공",
+        "Yukong_00",
+        "712",
+        "1207"
+      ],
+      "identifiers": {
+        "effectAvatar": "Yukong_00",
+        "effectName": "어공",
+        "hoyowikiEntryPageId": "712",
+        "coefficientAvatar": "Yukong_00",
+        "coefficientAvatarId": "1207"
+      },
+      "officialNames": [
+        "어공"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Yukong_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "어벤츄린",
+      "displayName": "어벤츄린",
+      "sourceNames": [
+        "어벤츄린",
+        "Aventurine_00",
+        "1920",
+        "1304"
+      ],
+      "identifiers": {
+        "effectAvatar": "Aventurine_00",
+        "effectName": "어벤츄린",
+        "hoyowikiEntryPageId": "1920",
+        "coefficientAvatar": "Aventurine_00",
+        "coefficientAvatarId": "1304"
+      },
+      "officialNames": [
+        "어벤츄린"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Aventurine_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "에바네시아",
+      "displayName": "에바네시아",
+      "sourceNames": [
+        "에바네시아",
+        "Evanescia_00",
+        "5005",
+        "1505"
+      ],
+      "identifiers": {
+        "effectAvatar": "Evanescia_00",
+        "effectName": "에바네시아",
+        "hoyowikiEntryPageId": "5005",
+        "coefficientAvatar": "Evanescia_00",
+        "coefficientAvatarId": "1505"
+      },
+      "officialNames": [
+        "에바네시아"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Evanescia_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "에버나이트",
+      "displayName": "에버나이트",
+      "sourceNames": [
+        "에버나이트",
+        "Evernight_00",
+        "3956",
+        "1413"
+      ],
+      "identifiers": {
+        "effectAvatar": "Evernight_00",
+        "effectName": "에버나이트",
+        "hoyowikiEntryPageId": "3956",
+        "coefficientAvatar": "Evernight_00",
+        "coefficientAvatarId": "1413"
+      },
+      "officialNames": [
+        "에버나이트"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Evernight_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "연경",
+      "displayName": "연경",
+      "sourceNames": [
+        "연경",
+        "Yanqing_00",
+        "28",
+        "1209"
+      ],
+      "identifiers": {
+        "effectAvatar": "Yanqing_00",
+        "effectName": "연경",
+        "hoyowikiEntryPageId": "28",
+        "coefficientAvatar": "Yanqing_00",
+        "coefficientAvatarId": "1209"
+      },
+      "officialNames": [
+        "연경"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Yanqing_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "영사",
+      "displayName": "영사",
+      "sourceNames": [
+        "영사",
+        "Lingsha_00",
+        "2948",
+        "1222"
+      ],
+      "identifiers": {
+        "effectAvatar": "Lingsha_00",
+        "effectName": "영사",
+        "hoyowikiEntryPageId": "2948",
+        "coefficientAvatar": "Lingsha_00",
+        "coefficientAvatarId": "1222"
+      },
+      "officialNames": [
+        "영사"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Lingsha_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "완•매",
+      "displayName": "완•매",
+      "sourceNames": [
+        "완•매",
+        "RuanMei_00",
+        "1638",
+        "1303"
+      ],
+      "identifiers": {
+        "effectAvatar": "RuanMei_00",
+        "effectName": "완•매",
+        "hoyowikiEntryPageId": "1638",
+        "coefficientAvatar": "RuanMei_00",
+        "coefficientAvatarId": "1303"
+      },
+      "officialNames": [
+        "완•매",
+        "완매"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_RuanMei_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": false,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "alias_normalized_collision",
+        "missing_display_name_source_metadata",
+        "official_source_name_collision"
+      ]
+    },
+    {
+      "characterId": "운리",
+      "displayName": "운리",
+      "sourceNames": [
+        "운리",
+        "Yunli_00",
+        "2642",
+        "1221"
+      ],
+      "identifiers": {
+        "effectAvatar": "Yunli_00",
+        "effectName": "운리",
+        "hoyowikiEntryPageId": "2642",
+        "coefficientAvatar": "Yunli_00",
+        "coefficientAvatarId": "1221"
+      },
+      "officialNames": [
+        "운리"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Yunli_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "웰트",
+      "displayName": "웰트",
+      "sourceNames": [
+        "웰트",
+        "Welt_00",
+        "10",
+        "1004"
+      ],
+      "identifiers": {
+        "effectAvatar": "Welt_00",
+        "effectName": "웰트",
+        "hoyowikiEntryPageId": "10",
+        "coefficientAvatar": "Welt_00",
+        "coefficientAvatarId": "1004"
+      },
+      "officialNames": [
+        "웰트"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Welt_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "은랑",
+      "displayName": "은랑",
+      "sourceNames": [
+        "은랑",
+        "Silwolf_00",
+        "710",
+        "1006"
+      ],
+      "identifiers": {
+        "effectAvatar": "Silwolf_00",
+        "effectName": "은랑",
+        "hoyowikiEntryPageId": "710",
+        "coefficientAvatar": "Silwolf_00",
+        "coefficientAvatarId": "1006"
+      },
+      "officialNames": [
+        "은랑"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Silwolf_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "은랑 LV.999",
+      "displayName": "은랑 LV.999",
+      "sourceNames": [
+        "은랑 LV.999",
+        "SilverWolf999_00",
+        "4997",
+        "1506"
+      ],
+      "identifiers": {
+        "effectAvatar": "SilverWolf999_00",
+        "effectName": "은랑 LV.999",
+        "hoyowikiEntryPageId": "4997",
+        "coefficientAvatar": "SilverWolf999_00",
+        "coefficientAvatarId": "1506"
+      },
+      "officialNames": [
+        "은랑 LV.999",
+        "은랑 LV 999"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_SilverWolf999_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": false,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "alias_normalized_collision",
+        "mixed_english_korean_displayName",
+        "level_or_placeholder_suffix_in_displayName",
+        "missing_display_name_source_metadata",
+        "official_source_name_collision"
+      ]
+    },
+    {
+      "characterId": "정운",
+      "displayName": "정운",
+      "sourceNames": [
+        "정운",
+        "Tingyun_00",
+        "25",
+        "1202"
+      ],
+      "identifiers": {
+        "effectAvatar": "Tingyun_00",
+        "effectName": "정운",
+        "hoyowikiEntryPageId": "25",
+        "coefficientAvatar": "Tingyun_00",
+        "coefficientAvatarId": "1202"
+      },
+      "officialNames": [
+        "정운"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Tingyun_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "제레",
+      "displayName": "제레",
+      "sourceNames": [
+        "제레",
+        "Seele_00",
+        "15",
+        "1102"
+      ],
+      "identifiers": {
+        "effectAvatar": "Seele_00",
+        "effectName": "제레",
+        "hoyowikiEntryPageId": "15",
+        "coefficientAvatar": "Seele_00",
+        "coefficientAvatarId": "1102"
+      },
+      "officialNames": [
+        "제레"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Seele_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "제이드",
+      "displayName": "제이드",
+      "sourceNames": [
+        "제이드",
+        "Jade_00",
+        "2495",
+        "1314"
+      ],
+      "identifiers": {
+        "effectAvatar": "Jade_00",
+        "effectName": "제이드",
+        "hoyowikiEntryPageId": "2495",
+        "coefficientAvatar": "Jade_00",
+        "coefficientAvatarId": "1314"
+      },
+      "officialNames": [
+        "제이드"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Jade_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "천야 • 블레이드",
+      "displayName": "천야 • 블레이드",
+      "sourceNames": [
+        "천야 • 블레이드",
+        "MortenaxBlade_00",
+        "5217",
+        "1507"
+      ],
+      "identifiers": {
+        "effectAvatar": "MortenaxBlade_00",
+        "effectName": "천야 • 블레이드",
+        "hoyowikiEntryPageId": "5217",
+        "coefficientAvatar": "MortenaxBlade_00",
+        "coefficientAvatarId": "1507"
+      },
+      "officialNames": [
+        "천야 • 블레이드",
+        "천야 블레이드"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_MortenaxBlade_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": false,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "alias_normalized_collision",
+        "missing_display_name_source_metadata",
+        "official_source_name_collision"
+      ]
+    },
+    {
+      "characterId": "청작",
+      "displayName": "청작",
+      "sourceNames": [
+        "청작",
+        "Qingque_00",
+        "24",
+        "1201"
+      ],
+      "identifiers": {
+        "effectAvatar": "Qingque_00",
+        "effectName": "청작",
+        "hoyowikiEntryPageId": "24",
+        "coefficientAvatar": "Qingque_00",
+        "coefficientAvatarId": "1201"
+      },
+      "officialNames": [
+        "청작"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Qingque_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "초구",
+      "displayName": "초구",
+      "sourceNames": [
+        "초구",
+        "Jiaoqiu_00",
+        "2643",
+        "1218"
+      ],
+      "identifiers": {
+        "effectAvatar": "Jiaoqiu_00",
+        "effectName": "초구",
+        "hoyowikiEntryPageId": "2643",
+        "coefficientAvatar": "Jiaoqiu_00",
+        "coefficientAvatarId": "1218"
+      },
+      "officialNames": [
+        "초구"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Jiaoqiu_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "카스토리스",
+      "displayName": "카스토리스",
+      "sourceNames": [
+        "카스토리스",
+        "Castorice_00",
+        "3560",
+        "1407"
+      ],
+      "identifiers": {
+        "effectAvatar": "Castorice_00",
+        "effectName": "카스토리스",
+        "hoyowikiEntryPageId": "3560",
+        "coefficientAvatar": "Castorice_00",
+        "coefficientAvatarId": "1407"
+      },
+      "officialNames": [
+        "카스토리스"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Castorice_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "카프카",
+      "displayName": "카프카",
+      "sourceNames": [
+        "카프카",
+        "Kafka_00",
+        "791",
+        "1005"
+      ],
+      "identifiers": {
+        "effectAvatar": "Kafka_00",
+        "effectName": "카프카",
+        "hoyowikiEntryPageId": "791",
+        "coefficientAvatar": "Kafka_00",
+        "coefficientAvatarId": "1005"
+      },
+      "officialNames": [
+        "카프카"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Kafka_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "케리드라",
+      "displayName": "케리드라",
+      "sourceNames": [
+        "케리드라",
+        "Cerydra_00",
+        "3886",
+        "1412"
+      ],
+      "identifiers": {
+        "effectAvatar": "Cerydra_00",
+        "effectName": "케리드라",
+        "hoyowikiEntryPageId": "3886",
+        "coefficientAvatar": "Cerydra_00",
+        "coefficientAvatarId": "1412"
+      },
+      "officialNames": [
+        "케리드라"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Cerydra_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "클라라",
+      "displayName": "클라라",
+      "sourceNames": [
+        "클라라",
+        "Klara_00",
+        "20",
+        "1107"
+      ],
+      "identifiers": {
+        "effectAvatar": "Klara_00",
+        "effectName": "클라라",
+        "hoyowikiEntryPageId": "20",
+        "coefficientAvatar": "Klara_00",
+        "coefficientAvatarId": "1107"
+      },
+      "officialNames": [
+        "클라라"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Klara_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "키레네",
+      "displayName": "키레네",
+      "sourceNames": [
+        "키레네",
+        "Cyrene_00",
+        "4003",
+        "1415"
+      ],
+      "identifiers": {
+        "effectAvatar": "Cyrene_00",
+        "effectName": "키레네",
+        "hoyowikiEntryPageId": "4003",
+        "coefficientAvatar": "Cyrene_00",
+        "coefficientAvatarId": "1415"
+      },
+      "officialNames": [
+        "키레네"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Cyrene_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "토오사카 린",
+      "displayName": "토오사카 린",
+      "sourceNames": [
+        "토오사카 린",
+        "TohsakaRin_00",
+        "5339",
+        "1508"
+      ],
+      "identifiers": {
+        "effectAvatar": "TohsakaRin_00",
+        "effectName": "토오사카 린",
+        "hoyowikiEntryPageId": "5339",
+        "coefficientAvatar": "TohsakaRin_00",
+        "coefficientAvatarId": "1508"
+      },
+      "officialNames": [
+        "토오사카 린"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_TohsakaRin_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "토파즈",
+      "displayName": "토파즈",
+      "sourceNames": [
+        "토파즈",
+        "Topaz_00",
+        "1112"
+      ],
+      "identifiers": {
+        "effectAvatar": "Topaz_00",
+        "effectName": "토파즈",
+        "hoyowikiEntryPageId": null,
+        "coefficientAvatar": "Topaz_00",
+        "coefficientAvatarId": "1112"
+      },
+      "officialNames": [
+        "토파즈"
+      ],
+      "aliasTargets": [
+        "토파즈&복순이"
+      ],
+      "sourceOrigins": [
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Topaz_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": false,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "alias_used_as_displayName",
+        "missing_display_name_source_metadata",
+        "alias_official_target_mismatch"
+      ]
+    },
+    {
+      "characterId": "토파즈&복순이",
+      "displayName": "토파즈&복순이",
+      "sourceNames": [
+        "토파즈&복순이",
+        "1389"
+      ],
+      "identifiers": {
+        "effectAvatar": null,
+        "effectName": null,
+        "hoyowikiEntryPageId": "1389",
+        "coefficientAvatar": null,
+        "coefficientAvatarId": null
+      },
+      "officialNames": [
+        "토파즈&복순이"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "트리비",
+      "displayName": "트리비",
+      "sourceNames": [
+        "트리비",
+        "Tribbie_00",
+        "3322",
+        "1403"
+      ],
+      "identifiers": {
+        "effectAvatar": "Tribbie_00",
+        "effectName": "트리비",
+        "hoyowikiEntryPageId": "3322",
+        "coefficientAvatar": "Tribbie_00",
+        "coefficientAvatarId": "1403"
+      },
+      "officialNames": [
+        "트리비"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Tribbie_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "파이논",
+      "displayName": "파이논",
+      "sourceNames": [
+        "파이논",
+        "Phainon_00",
+        "3769",
+        "1408"
+      ],
+      "identifiers": {
+        "effectAvatar": "Phainon_00",
+        "effectName": "파이논",
+        "hoyowikiEntryPageId": "3769",
+        "coefficientAvatar": "Phainon_00",
+        "coefficientAvatarId": "1408"
+      },
+      "officialNames": [
+        "파이논"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Phainon_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "페라",
+      "displayName": "페라",
+      "sourceNames": [
+        "페라",
+        "Pela_00",
+        "19",
+        "1106"
+      ],
+      "identifiers": {
+        "effectAvatar": "Pela_00",
+        "effectName": "페라",
+        "hoyowikiEntryPageId": "19",
+        "coefficientAvatar": "Pela_00",
+        "coefficientAvatarId": "1106"
+      },
+      "officialNames": [
+        "페라"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Pela_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "한아",
+      "displayName": "한아",
+      "sourceNames": [
+        "한아",
+        "Hanya_00",
+        "1537",
+        "1215"
+      ],
+      "identifiers": {
+        "effectAvatar": "Hanya_00",
+        "effectName": "한아",
+        "hoyowikiEntryPageId": "1537",
+        "coefficientAvatar": "Hanya_00",
+        "coefficientAvatarId": "1215"
+      },
+      "officialNames": [
+        "한아"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Hanya_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "헤르타",
+      "displayName": "헤르타",
+      "sourceNames": [
+        "헤르타",
+        "Herta_00",
+        "13",
+        "1013"
+      ],
+      "identifiers": {
+        "effectAvatar": "Herta_00",
+        "effectName": "헤르타",
+        "hoyowikiEntryPageId": "13",
+        "coefficientAvatar": "Herta_00",
+        "coefficientAvatarId": "1013"
+      },
+      "officialNames": [
+        "헤르타"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Herta_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "효광",
+      "displayName": "효광",
+      "sourceNames": [
+        "효광",
+        "YaoGuang_00",
+        "4736",
+        "1502"
+      ],
+      "identifiers": {
+        "effectAvatar": "YaoGuang_00",
+        "effectName": "효광",
+        "hoyowikiEntryPageId": "4736",
+        "coefficientAvatar": "YaoGuang_00",
+        "coefficientAvatarId": "1502"
+      },
+      "officialNames": [
+        "효광"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_YaoGuang_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "후크",
+      "displayName": "후크",
+      "sourceNames": [
+        "후크",
+        "Hook_00",
+        "22",
+        "1109"
+      ],
+      "identifiers": {
+        "effectAvatar": "Hook_00",
+        "effectName": "후크",
+        "hoyowikiEntryPageId": "22",
+        "coefficientAvatar": "Hook_00",
+        "coefficientAvatarId": "1109"
+      },
+      "officialNames": [
+        "후크"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Hook_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "히메코",
+      "displayName": "히메코",
+      "sourceNames": [
+        "히메코",
+        "Himeko_00",
+        "9",
+        "1003"
+      ],
+      "identifiers": {
+        "effectAvatar": "Himeko_00",
+        "effectName": "히메코",
+        "hoyowikiEntryPageId": "9",
+        "coefficientAvatar": "Himeko_00",
+        "coefficientAvatarId": "1003"
+      },
+      "officialNames": [
+        "히메코"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Himeko_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "히메코 • 노바",
+      "displayName": "히메코 • 노바",
+      "sourceNames": [
+        "히메코 • 노바",
+        "HimekoNova_00",
+        "5335",
+        "1510"
+      ],
+      "identifiers": {
+        "effectAvatar": "HimekoNova_00",
+        "effectName": "히메코 • 노바",
+        "hoyowikiEntryPageId": "5335",
+        "coefficientAvatar": "HimekoNova_00",
+        "coefficientAvatarId": "1510"
+      },
+      "officialNames": [
+        "히메코 • 노바"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_HimekoNova_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": false,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "alias_normalized_collision",
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "히실렌스",
+      "displayName": "히실렌스",
+      "sourceNames": [
+        "히실렌스",
+        "Harscyline_00",
+        "3885",
+        "1410"
+      ],
+      "identifiers": {
+        "effectAvatar": "Harscyline_00",
+        "effectName": "히실렌스",
+        "hoyowikiEntryPageId": "3885",
+        "coefficientAvatar": "Harscyline_00",
+        "coefficientAvatarId": "1410"
+      },
+      "officialNames": [
+        "히실렌스"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Harscyline_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "히아킨",
+      "displayName": "히아킨",
+      "sourceNames": [
+        "히아킨",
+        "Hyacine_00",
+        "3688",
+        "1409"
+      ],
+      "identifiers": {
+        "effectAvatar": "Hyacine_00",
+        "effectName": "히아킨",
+        "hoyowikiEntryPageId": "3688",
+        "coefficientAvatar": "Hyacine_00",
+        "coefficientAvatarId": "1409"
+      },
+      "officialNames": [
+        "히아킨"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Hyacine_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "Dr. 레이시오",
+      "displayName": "Dr. 레이시오",
+      "sourceNames": [
+        "Dr. 레이시오",
+        "Dr_Ratio_00",
+        "1639",
+        "1305"
+      ],
+      "identifiers": {
+        "effectAvatar": "Dr_Ratio_00",
+        "effectName": "Dr. 레이시오",
+        "hoyowikiEntryPageId": "1639",
+        "coefficientAvatar": "Dr_Ratio_00",
+        "coefficientAvatarId": "1305"
+      },
+      "officialNames": [
+        "Dr. 레이시오"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Dr_Ratio_00_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "mixed_english_korean_displayName",
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "Mar. 7th",
+      "displayName": "Mar. 7th",
+      "sourceNames": [
+        "Mar. 7th",
+        "7"
+      ],
+      "identifiers": {
+        "effectAvatar": null,
+        "effectName": null,
+        "hoyowikiEntryPageId": "7",
+        "coefficientAvatar": null,
+        "coefficientAvatarId": null
+      },
+      "officialNames": [
+        "Mar. 7th"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "missing_display_name_source_metadata"
+      ]
+    },
+    {
+      "characterId": "Mar. 7th•수렵",
+      "displayName": "Mar. 7th•수렵",
+      "sourceNames": [
+        "Mar. 7th•수렵",
+        "Mar_7th_10",
+        "2657",
+        "1224"
+      ],
+      "identifiers": {
+        "effectAvatar": "Mar_7th_10",
+        "effectName": "Mar. 7th•수렵",
+        "hoyowikiEntryPageId": "2657",
+        "coefficientAvatar": "Mar_7th_10",
+        "coefficientAvatarId": "1224"
+      },
+      "officialNames": [
+        "Mar. 7th•수렵"
+      ],
+      "aliasTargets": [],
+      "sourceOrigins": [
+        "hoyowiki",
+        "game_db_generated",
+        "design_data_extracted_catalog"
+      ],
+      "localizationSources": [
+        "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+        "data/legacy-reference/game-db/character-effect-candidates.json",
+        "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+        "Config/ConfigCharacter/Avatar/Avatar_Mar_7th_10_Config.json"
+      ],
+      "isDisplayNameSourceBacked": true,
+      "nameReviewStatus": "needs_review",
+      "issues": [
+        "mixed_english_korean_displayName",
+        "missing_display_name_source_metadata"
+      ]
+    }
+  ]
+}
