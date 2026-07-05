@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedBy": "src/effect-engine/normalize-effects.js",
+  "generatedBy": "tools/validate_effect_normalization.mjs",
   "rows": [
     {
       "id": "normalized:effect:PlayerBoy_20:0",

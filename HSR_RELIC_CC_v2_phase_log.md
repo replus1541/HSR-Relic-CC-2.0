@@ -593,6 +593,19 @@
 - adapter `effectTargetPolicy` 값은 canonical targetScope로 매핑하고, attackType 미지정 buff/debuff row는 support attackType으로 둡니다.
 - `data/generated/normalized-effect-rows.json`를 생성했습니다. 현재 canonical effectRows 9개는 모두 calculation_ready candidate이며, unknown effectType/valueMode fixture는 blocked candidate로 확인했습니다.
 - resolvedValue 산출, dedupe, value resolver, 계산 로직은 구현하지 않았습니다.
+- Task 8-C 시작: `tools/validate_effect_normalization.mjs`와 `validate:effect-normalization` script를 추가했습니다.
+- validator는 normalized-effect rows를 재생성하고 missing targetScope, unknown effectType/valueMode, normalization 단계의 resolvedValue 생성을 차단합니다.
+- `reports/effect-engine/normalization-report.md`를 validator 산출 report로 갱신합니다.
+- Phase 8 완료: taxonomy, normalized effect candidate, normalization validator/report가 준비됐습니다.
+
+### 검증
+
+- `npm.cmd run validate:effect-normalization`: 성공. normalized rows 9개, ready 9개, blocked 0개, unknown_value_guard=blocked.
+- `npm.cmd run build`: 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+
+### 다음 Task로 넘길 항목
+
+- Phase 9-A에서 valueMode별 resolver contract와 blockedReason 정책을 정의합니다.
 
 ---
 

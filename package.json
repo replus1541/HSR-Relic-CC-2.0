@@ -13,7 +13,8 @@
     "validate:legacy": "node tools/validate_legacy_manifest.mjs",
     "validate:adapters": "node tools/validate_adapters.mjs",
     "data:adapters": "node tools/run_adapters.mjs",
-    "validate:canonical-dataset": "node tools/validate_canonical_dataset.mjs"
+    "validate:canonical-dataset": "node tools/validate_canonical_dataset.mjs",
+    "validate:effect-normalization": "node tools/validate_effect_normalization.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.0.0",
