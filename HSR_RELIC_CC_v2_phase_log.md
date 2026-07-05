@@ -392,14 +392,42 @@
 
 ### 상태
 
-- 상태: not_started
-- 시작일:
+- 상태: in_progress
+- 시작일: 2026-07-05
 - 완료일:
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
 
--
+- 2026-07-05: Task 5-A 시작. 실제 source adapter 구현 없이 adapter interface와 output contract를 문서화합니다.
+- 2026-07-05: `reports/adapter/adapter-contract.md`를 작성했습니다. `adapterId`, `sourceKind`, `load`, `normalize`, `report`, output shape, validation flow, source guard, manifest integration을 정의했습니다.
+- 2026-07-05: `src/adapters/README.md`에 contract 위치와 adapter report/count 원칙을 반영했습니다.
+- 2026-07-05: Task 5-A complete. 다음 Task 5-B에는 side-effect 없는 adapter registry skeleton과 placeholder adapter 폴더를 넘깁니다.
+
+### 생성/수정 파일
+
+- `reports/adapter/adapter-contract.md`
+- `src/adapters/README.md`
+- `HSR_RELIC_CC_v2_phase_log.md`
+
+### 설계 결정
+
+- adapter는 source/snapshot을 canonical row 후보로 변환하는 경계이며 damage calculation을 수행하지 않습니다.
+- output은 `sourceRows`, `effectRows`, `coefficientRows`, `blockedRows`, report counts를 포함해야 합니다.
+- manifest entry의 `prohibitedRuntimeImport`, `allowCalculationSourcePromotion`, source provenance 정책을 adapter contract에 반영합니다.
+
+### 검증
+
+- `npm.cmd run build`: Task 5-A 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+
+### 막힌 점 / 리스크
+
+- 없음.
+
+### 다음 Task로 넘길 항목
+
+- Phase 5-B에서 `src/adapters/adapter-contract.js`, `src/adapters/adapter-registry.js`, placeholder adapter README를 작성합니다.
+- registry skeleton은 import 가능하고 side effect가 없어야 하며 legacy JSON parsing은 아직 하지 않습니다.
 
 ---
 
