@@ -60,9 +60,9 @@
 
 ### 상태
 
-- 상태: Phase 1-A complete
+- 상태: complete
 - 시작일: 2026-07-05
-- 완료일: Phase 1-A 2026-07-05
+- 완료일: 2026-07-05
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 목표
@@ -82,6 +82,13 @@
 - 2026-07-05: Phase 1-B 완료. 기존 프로젝트와의 관계, Phase 기반 개발 방식, source-backed 계산 원칙, manual_hint 계산 금지, ledger/aggregation UI 표시 원칙, 모던 React/경량 dependency/layer 분리 원칙을 문서에 반영했습니다.
 - 2026-07-05: Phase 1-B 검증으로 `npm.cmd run build` 성공. Vite 7.3.6 기준 34 modules transformed.
 - 2026-07-05: Phase 단위가 아니라 완료 가능한 Task 단위로 작업/커밋한다는 원칙을 root README와 Phase Log에 명시했습니다.
+- 2026-07-05: Phase 1-C 시작. v2 repo top-level, 기존 repo top-level, 기존 프로젝트 변경 여부, build, route shell을 확인했습니다.
+- 2026-07-05: `git -C "C:\CODEX\HSR RELIC CC 2.0" rev-parse --show-toplevel` 결과는 `C:/CODEX/HSR RELIC CC 2.0`입니다.
+- 2026-07-05: `git -C "C:\CODEX\HSR RELIC CC" rev-parse --show-toplevel` 결과는 `C:/CODEX/HSR RELIC CC`입니다.
+- 2026-07-05: 기존 `C:\CODEX\HSR RELIC CC`에는 이번 작업으로 수정된 tracked file이 없고, 기존 reference untracked 파일 2개만 남아 있음을 확인했습니다.
+- 2026-07-05: `npm.cmd run build` 성공. Vite 7.3.6 기준 34 modules transformed.
+- 2026-07-05: `npm.cmd run dev:local -- --port 5174`로 dev server를 실행해 `/`, `/extraction`, `/ledger`, `/legacy-diff`가 모두 HTTP 200과 React root shell을 반환함을 확인하고 서버를 종료했습니다.
+- 2026-07-05: Phase 1-C 완료. Phase 1-A/B/C 기준 Phase 1은 완료 처리합니다.
 
 ### 생성/수정 파일
 
@@ -109,12 +116,18 @@
 - 기존 프로젝트 CSS 전체 복사는 하지 않고 최소 app shell CSS만 작성했습니다.
 - Phase 1-B에서 기능 코드는 추가하지 않고 README와 Phase Log만 정리했습니다.
 - 이후 UI는 ledger/aggregation result만 표시하고, 계산값 재구성은 금지합니다.
+- Phase 1-C에서 route 확인은 dev server를 임시 포트 5174로 띄워 HTTP 응답과 React root shell 존재 여부만 검증했습니다.
 
 ### 검증
 
 - `npm.cmd install`: 성공, 취약점 0건.
 - `npm.cmd run build`: 성공.
 - Phase 1-B `npm.cmd run build`: 성공.
+- Phase 1-C `npm.cmd run build`: 성공.
+- Phase 1-C route shell 확인: `/`, `/extraction`, `/ledger`, `/legacy-diff` 모두 HTTP 200.
+- v2 repo top-level: `C:/CODEX/HSR RELIC CC 2.0`.
+- 기존 repo top-level: `C:/CODEX/HSR RELIC CC`.
+- 기존 프로젝트 tracked 변경: 없음.
 
 ### 막힌 점 / 리스크
 
@@ -123,8 +136,7 @@
 ### 다음 Phase로 넘길 항목
 
 - Phase 2에서 기존 `HSR RELIC CC`의 UI/데이터/로직 재사용 가능 범위를 파일 단위로 분류해야 합니다.
-- Phase 1-A는 route shell만 만들었으므로 실제 데이터, adapter, schema, effect-engine 구현은 후속 Phase에서 진행합니다.
-- Phase 1-A와 Phase 1-B 기준으로는 Phase 1 완료 처리 가능 상태입니다. 추가로 로컬 route 육안 확인이나 dev server smoke가 필요하면 별도 Phase 1-C로 진행합니다.
+- 실제 데이터, adapter, schema, effect-engine 구현은 후속 Phase에서 진행합니다.
 
 ---
 
