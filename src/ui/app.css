@@ -4373,7 +4373,7 @@ p {
 
   .calc-party-evaluation,
   .calc-condition-compare {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .calc-party-evaluation button,
@@ -4382,7 +4382,7 @@ p {
   .calc-condition-compare button,
   .calc-condition-compare select,
   .calc-condition-compare input {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .calc-party-evaluation small,
@@ -4393,31 +4393,35 @@ p {
   .calc-party-evaluation .calc-contribution-detail-list div small,
   .calc-condition-compare .calc-condition-row-main small,
   .calc-condition-compare .calc-condition-delta-strip small {
-    font-size: 14px;
+    font-size: 13.5px;
   }
 
   .calc-party-evaluation h2,
   .calc-party-evaluation h3,
   .calc-condition-compare h2,
   .calc-condition-compare h3,
+  .calc-party-settings-head strong,
+  .calc-condition-editor-head h3,
+  .calc-damage-analysis-head h3 {
+    font-size: 16px;
+  }
+
+  .calc-evaluation-row b,
+  .calc-contribution-row-card b,
+  .calc-damage-skill-head b,
+  .calc-condition-delta-strip b {
+    font-size: 16.5px;
+  }
+
   .calc-main-dealer-option strong,
   .calc-current-party-summary-copy strong,
-  .calc-party-settings-head strong,
   .calc-condition-row-main strong,
   .calc-damage-skill-head strong,
   .calc-contribution-label strong,
   .calc-contribution-row-card strong,
-  .calc-damage-skill-title-line span {
-    font-size: 17px;
-  }
-
-  .calc-evaluation-row b,
-  .calc-contribution-row em,
-  .calc-contribution-row-card b,
-  .calc-damage-skill-head b,
-  .calc-condition-delta-strip b,
+  .calc-damage-skill-title-line span,
   .calc-party-settings-owner b {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .calc-contribution-tabs button,
@@ -4432,7 +4436,29 @@ p {
   .calc-evaluation-source-stat,
   .calc-evaluation-source-amount,
   .calc-text-action-button {
-    font-size: 15px;
+    font-size: 13.5px;
+  }
+
+  .calc-main-dealer-option small,
+  .calc-current-party-summary-copy small,
+  .calc-enemy-card label,
+  .calc-damage-analysis-head p,
+  .calc-damage-skill-head small,
+  .calc-evaluation-group h3,
+  .calc-condition-row-main small,
+  .calc-condition-delta-strip small,
+  .calc-condition-empty-note,
+  .calc-contribution-row em.is-damage-gain small,
+  .calc-contribution-detail-list div small,
+  .calc-evaluation-source-label small,
+  .calc-contribution-detail-list .calc-evaluation-source-label small,
+  .calc-evaluation-source-meta small {
+    font-size: 13px;
+  }
+
+  .calc-contribution-row em,
+  .calc-contribution-unit {
+    font-size: 15.5px;
   }
 
   .calc-main-dealer-eidolon,
@@ -4440,6 +4466,6 @@ p {
   .calc-contribution-rank,
   .calc-auto-recommend-keep-badge,
   .calc-condition-row-main > span {
-    font-size: 13px;
+    font-size: 12.5px;
   }
 }

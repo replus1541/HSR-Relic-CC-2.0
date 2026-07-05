@@ -1760,6 +1760,13 @@
 - Set tab 2/3 mobile base controls to 16px, headings to 17px, primary values/damage to 18px, and secondary text to 14-15px.
 - Bumped visible settings version from `v2.001` to `v2.002`.
 - Verification: `npm.cmd run build -- --emptyOutDir=false` passed; `npm.cmd run verify:app` passed.
+
+### Follow-up 2
+
+- Rebalanced the mobile typography hierarchy after the 2.002 pass made parent and child rows feel too similar.
+- Set tab 2/3 mobile base controls to 15px, section titles to 16px, major values to 16.5px, primary row labels to 15px, detail rows to 13.5px, and secondary/source text to 13px.
+- Bumped visible settings version from `v2.002` to `v2.003`.
+- Verification: `npm.cmd run build -- --emptyOutDir=false` passed; `npm.cmd run verify:app` passed.
 - `node tools\verify_elation_settings_ui.mjs`: passed with escalated browser launch; screenshots `v2-elation-settings-mobile-390.png` and `v2-condition-elation-settings-mobile-390.png`.
 - `node tools\inspect_stats_damage_v1_v2.mjs`: passed; screenshots regenerated under `artifacts/stats-damage-v1-v2`.
 
