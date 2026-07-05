@@ -659,6 +659,10 @@
 - `src/effect-engine/canonical-effect-key.js`는 providerId/sourceType/sourceId/sourcePath/effectType/targetScope/attackType/conditionKey/stackGroup/scalingSourcePath 순서로 deterministic key를 생성합니다.
 - `reports/effect-engine/dedupe-report.md`에 이름 문자열 dedupe 금지와 winner policy deferred 원칙을 기록했습니다.
 - winner/loser 결정, aggregation, UI trace, manual guide 계산 유입은 구현하지 않았습니다.
+- Task 10-B 시작: `src/effect-engine/dedupe-effects.js`를 추가해 resolvedEffect마다 canonicalEffectKey와 dedupeResult를 부여했습니다.
+- 기본 winner 정책은 calculation_ready row 우선, sourceOrigin priority, deterministic id 순서입니다. blocked input은 winner로 승격하지 않습니다.
+- `data/generated/deduped-effects.json`를 생성했습니다. 현재 rows 9개 기준 winner 6개, blocked 3개입니다.
+- aggregation, UI trace, manual guide 계산 유입은 구현하지 않았습니다.
 
 ---
 
