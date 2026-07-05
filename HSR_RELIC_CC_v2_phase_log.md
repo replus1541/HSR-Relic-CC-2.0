@@ -190,9 +190,9 @@
 
 ### 상태
 
-- 상태: in_progress
+- 상태: complete
 - 시작일: 2026-07-05
-- 완료일:
+- 완료일: 2026-07-05
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
@@ -205,12 +205,17 @@
 - 2026-07-05: `reports/legacy/legacy-source-map.md`와 `reports/legacy/adapter-input-map.md`를 작성했습니다.
 - 2026-07-05: `game-db`와 source-backed curated effect 파일은 adapter input 후보로, `character-guides.json`, `default-builds.json`, `sample-data.js`, `model/damage.js`는 계산 입력 또는 복사 금지 대상으로 분리했습니다.
 - 2026-07-05: Task 2-B complete. 다음 Task 2-C에는 legacy guide fallback, UI 계산 재구성, damage.js 직접 합산, manual mapping 계산 적용 금지 항목을 넘깁니다.
+- 2026-07-05: PC 종료 이후 Task 2-B 산출물, 마지막 커밋 `f7c1099`, clean working tree, `npm.cmd run build` 성공을 재확인해 Task 2-B 완료 상태를 확정했습니다.
+- 2026-07-05: Task 2-C 시작. 기존 guide fallback, activeEffects 생성, UI 계산 재구성, 이름 문자열 dedupe, `damage.js` 직접 합산, SRTools/FreeSR app-state patch 흐름을 rewrite 금지 대상으로 정리했습니다.
+- 2026-07-05: `reports/legacy/rewrite-ban-list.md`를 작성했습니다. Phase 3 canonical schema에 넘길 source provenance, calculation eligibility, value resolution trace, identity separation, effect axes, dedupe trace, UI traceability, manual/reference isolation 요구사항을 정리했습니다.
+- 2026-07-05: Task 2-C complete. Phase 2-A/B/C 기준 Phase 2는 완료 처리합니다.
 
 ### 생성/수정 파일
 
 - `reports/ui-reuse/ui-source-map.md`
 - `reports/legacy/legacy-source-map.md`
 - `reports/legacy/adapter-input-map.md`
+- `reports/legacy/rewrite-ban-list.md`
 - `HSR_RELIC_CC_v2_phase_log.md`
 
 ### 설계 결정
@@ -221,21 +226,26 @@
 - `character-role.jsx`, `condition-policy.js`, `calculator/analysis/*`, `active-effects` grouping 유틸은 계산/guide/source grouping이 섞여 Task 2-B/2-C에서 금지 대상으로 재확인합니다.
 - Phase 4 snapshot 후보는 source-backed `game-db`와 curated source effect 파일로 제한하고, guide/default build/audit 파일은 reference 또는 blocked 설계 참고로 분리합니다.
 - SRTools/FreeSR parser shape는 adapter 요구사항으로 참고하지만, legacy app state patch와 manual mapping 적용 흐름은 직접 재사용하지 않습니다.
+- Phase 3 schema는 source guard를 먼저 표현할 수 있어야 하며, source provenance와 calculation eligibility를 분리해야 합니다.
+- UI는 ledger/aggregation result를 표시만 해야 하며, legacy UI처럼 source grouping이나 damage recompute를 수행하지 않습니다.
 
 ### 검증
 
 - `npm.cmd run build`: 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
 - `npm.cmd run build`: Task 2-B 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+- `npm.cmd run build`: Task 2-B 재확인 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+- `npm.cmd run build`: Task 2-C 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
 
 ### 막힌 점 / 리스크
 
 - 기존 `CustomSelect.jsx`는 keyboard UX 참고 가치가 있지만 `lucide-react` 의존성이 있어 v2 Phase 1 dependency 원칙상 직접 재사용하지 않습니다.
+- 금지 목록은 이후 구현 중 우회 복사를 막기 위한 기준이며, 필요한 동작은 schema/adapter/effect-engine Phase에서 새 구조로 다시 작성해야 합니다.
 
-### 다음 Task로 넘길 항목
+### 다음 Phase로 넘길 항목
 
-- `sample-data.js`, `model/damage.js`, `calculator/analysis/*`, `conditions/condition-policy.js`, `active-effects/*`를 Task 2-B에서 legacy data/logic source map으로 분류합니다.
-- Task 2-C에서 UI 내부 계산 조립, guide fallback, damage recompute, source grouping 금지 목록을 확정합니다.
-- Task 2-C에서 `src/model/damage.js`, `src/sample-data.js`, `src/calculator/analysis/*`, `src/conditions/condition-policy.js`, `src/srtools/import/*app*`, manual mapping 흐름을 rewrite 금지 목록으로 확정합니다.
+- Phase 3에서 `SourceRow`, `EffectRow`, `ResolvedEffect`, `CombatLedgerRow`, `AggregationResult` schema에 source provenance와 blocked reason을 필수 필드로 반영합니다.
+- `manual_hint`, `manual_guide`, fallback, audit report, manual mapping은 계산 가능 row가 아니라 reference/blocked metadata로 표현해야 합니다.
+- provider, target, calculation subject, enemy target policy를 문자열 하나로 축약하지 않고 별도 schema 축으로 분리합니다.
 
 ---
 
