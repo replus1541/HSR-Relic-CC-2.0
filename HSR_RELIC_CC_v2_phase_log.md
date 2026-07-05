@@ -648,14 +648,17 @@
 
 ### 상태
 
-- 상태: not_started
-- 시작일:
+- 상태: in_progress
+- 시작일: 2026-07-05
 - 완료일:
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
 
--
+- Task 10-A 시작: canonicalEffectKey 구성요소를 코드와 문서로 고정했습니다.
+- `src/effect-engine/canonical-effect-key.js`는 providerId/sourceType/sourceId/sourcePath/effectType/targetScope/attackType/conditionKey/stackGroup/scalingSourcePath 순서로 deterministic key를 생성합니다.
+- `reports/effect-engine/dedupe-report.md`에 이름 문자열 dedupe 금지와 winner policy deferred 원칙을 기록했습니다.
+- winner/loser 결정, aggregation, UI trace, manual guide 계산 유입은 구현하지 않았습니다.
 
 ---
 
