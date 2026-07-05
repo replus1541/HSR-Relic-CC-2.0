@@ -103,3 +103,19 @@ npm.cmd run build
 ## 작업 기록
 
 Phase 진행 기록은 `HSR_RELIC_CC_v2_phase_log.md`에 남깁니다.
+## 검증
+
+Phase 완료 또는 release checkpoint 전 기본 검증은 다음 두 명령입니다.
+
+```powershell
+npm.cmd run validate
+npm.cmd run build
+```
+
+상황별 추가 검증:
+
+- legacy 비교 작업: `npm.cmd run diff:legacy`
+- import 작업: `npm.cmd run validate:imports`
+- route/generated data smoke: `npm.cmd run verify:app`
+
+검증 정책 상세는 `reports/validation/validation-policy.md`를 기준으로 합니다.

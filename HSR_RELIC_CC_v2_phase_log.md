@@ -906,6 +906,18 @@
 - Task 17-B 시작: `tools/verify_app_smoke.mjs`와 `verify:app` script를 추가했습니다.
 - smoke는 built `dist/index.html`, 주요 route config, generated extraction/ledger/calculation data 존재와 expected shell pattern을 확인합니다.
 - Playwright 도입, 기존 프로젝트 수정, 계산 로직 변경은 수행하지 않았습니다.
+- Task 17-C 시작: `reports/validation/validation-policy.md`와 README 검증 섹션을 작성했습니다.
+- Phase 완료 전 기본 검증은 `npm.cmd run validate`와 `npm.cmd run build`로 고정하고, diff/import/app smoke는 관련 작업에서 추가 실행하도록 문서화했습니다.
+- Phase 17 완료: 통합 validate, app smoke, validation policy가 준비됐습니다.
+
+### 검증
+
+- `npm.cmd run validate`: 성공. 하위 검증 10개 통과.
+- `npm.cmd run build`: 성공. Vite 7.3.6 기준 production build 완료.
+
+### 다음 Task로 넘길 항목
+
+- Phase 18-A에서 Phase 1~17 산출물과 known gap/release blocker를 감사합니다.
 
 ---
 
