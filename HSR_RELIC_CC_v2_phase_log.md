@@ -683,14 +683,17 @@
 
 ### 상태
 
-- 상태: not_started
-- 시작일:
+- 상태: in_progress
+- 시작일: 2026-07-05
 - 완료일:
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
 
--
+- Task 11-A 시작: deduped effect를 CombatLedger row로 옮길 필수 field mapping을 정의했습니다.
+- `src/effect-engine/build-combat-ledger.js`에 CombatLedgerFieldMapping, RequiredCombatLedgerFields, contract row 생성 skeleton을 추가했습니다.
+- `reports/calculation/combat-ledger-report.md`에 ledger field source와 guardrail을 기록했습니다.
+- aggregation, UI, sample ledger 생성, manual guide 계산 유입은 구현하지 않았습니다.
 
 ---
 
