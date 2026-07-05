@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedBy": "src/effect-engine/dedupe-effects.js",
+  "generatedBy": "tools/validate_dedupe.mjs",
   "rows": [
     {
       "id": "resolved:effect:PlayerBoy_20:0",

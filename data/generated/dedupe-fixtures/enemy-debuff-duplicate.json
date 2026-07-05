@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "generatedBy": "tools/validate_dedupe.mjs",
+  "input": {
+    "fileName": "enemy-debuff-duplicate.json",
+    "resolvedEffects": [
+      {
+        "id": "resolved:debuff-a",
+        "effectRowId": "effect:debuff-a",
+        "sourceId": "source:debuff",
+        "stat": "defDown",
+        "valueTrace": {
+          "resolver": "fixed"
+        },
+        "dedupeKey": "pending:resolved:debuff-a",
+        "calculationStatus": "calculation_ready",
+        "resolvedValue": 0.1
+      },
+      {
+        "id": "resolved:debuff-b",
+        "effectRowId": "effect:debuff-b",
+        "sourceId": "source:debuff",
+        "stat": "defDown",
+        "valueTrace": {
+          "resolver": "fixed"
+        },
+        "dedupeKey": "pending:resolved:debuff-b",
+        "calculationStatus": "calculation_ready",
+        "resolvedValue": 0.1
+      }
+    ],
+    "normalizedEffects": [
+      {
+        "effectRowId": "effect:debuff-a",
+        "sourceId": "source:debuff",
+        "sourceOrigin": "raw_source",
+        "effectProviderId": "fixture-provider",
+        "effectType": "debuff",
+        "targetScope": "enemy_single",
+        "attackType": "support",
+        "condition": {
+          "conditionKey": null
+        },
+        "stackRule": {
+          "stackKey": null
+        }
+      },
+      {
+        "effectRowId": "effect:debuff-b",
+        "sourceId": "source:debuff",
+        "sourceOrigin": "raw_source",
+        "effectProviderId": "fixture-provider",
+        "effectType": "debuff",
+        "targetScope": "enemy_single",
+        "attackType": "support",
+        "condition": {
+          "conditionKey": null
+        },
+        "stackRule": {
+          "stackKey": null
+        }
+      }
+    ],
+    "sourceRows": [
+      {
+        "id": "source:debuff",
+        "sourceOrigin": "raw_source",
+        "sourcePath": "fixture/source.json"
+      }
+    ]
+  },
+  "output": [
+    {
+      "id": "resolved:debuff-a",
+      "effectRowId": "effect:debuff-a",
+      "sourceId": "source:debuff",
+      "stat": "defDown",
+      "valueTrace": {
+        "resolver": "fixed"
+      },
+      "dedupeKey": "pending:resolved:debuff-a",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1,
+      "canonicalEffectKey": "effect|fixture-provider|raw_source|source:debuff|fixture_source.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "winner",
+        "groupSize": 2,
+        "winnerId": "resolved:debuff-a",
+        "reason": "selected_by_source_priority"
+      }
+    },
+    {
+      "id": "resolved:debuff-b",
+      "effectRowId": "effect:debuff-b",
+      "sourceId": "source:debuff",
+      "stat": "defDown",
+      "valueTrace": {
+        "resolver": "fixed"
+      },
+      "dedupeKey": "pending:resolved:debuff-b",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1,
+      "canonicalEffectKey": "effect|fixture-provider|raw_source|source:debuff|fixture_source.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "loser",
+        "groupSize": 2,
+        "winnerId": "resolved:debuff-a",
+        "reason": "duplicate_key_lower_priority"
+      }
+    }
+  ]
+}

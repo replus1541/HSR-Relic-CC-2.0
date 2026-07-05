@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "generatedBy": "tools/validate_dedupe.mjs",
+  "input": {
+    "fileName": "duplicate-source.json",
+    "resolvedEffects": [
+      {
+        "id": "resolved:dup-a",
+        "effectRowId": "effect:dup-a",
+        "sourceId": "source:dup",
+        "stat": "atkRatio",
+        "valueTrace": {
+          "resolver": "fixed"
+        },
+        "dedupeKey": "pending:resolved:dup-a",
+        "calculationStatus": "calculation_ready",
+        "resolvedValue": 0.1
+      },
+      {
+        "id": "resolved:dup-b",
+        "effectRowId": "effect:dup-b",
+        "sourceId": "source:dup",
+        "stat": "atkRatio",
+        "valueTrace": {
+          "resolver": "fixed"
+        },
+        "dedupeKey": "pending:resolved:dup-b",
+        "calculationStatus": "calculation_ready",
+        "resolvedValue": 0.1
+      }
+    ],
+    "normalizedEffects": [
+      {
+        "effectRowId": "effect:dup-a",
+        "sourceId": "source:dup",
+        "sourceOrigin": "raw_source",
+        "effectProviderId": "fixture-provider",
+        "effectType": "buff",
+        "targetScope": "self",
+        "attackType": "support",
+        "condition": {
+          "conditionKey": null
+        },
+        "stackRule": {
+          "stackKey": null
+        }
+      },
+      {
+        "effectRowId": "effect:dup-b",
+        "sourceId": "source:dup",
+        "sourceOrigin": "raw_source",
+        "effectProviderId": "fixture-provider",
+        "effectType": "buff",
+        "targetScope": "self",
+        "attackType": "support",
+        "condition": {
+          "conditionKey": null
+        },
+        "stackRule": {
+          "stackKey": null
+        }
+      }
+    ],
+    "sourceRows": [
+      {
+        "id": "source:dup",
+        "sourceOrigin": "raw_source",
+        "sourcePath": "fixture/source.json"
+      }
+    ]
+  },
+  "output": [
+    {
+      "id": "resolved:dup-a",
+      "effectRowId": "effect:dup-a",
+      "sourceId": "source:dup",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "fixed"
+      },
+      "dedupeKey": "pending:resolved:dup-a",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1,
+      "canonicalEffectKey": "effect|fixture-provider|raw_source|source:dup|fixture_source.json|buff|self|support|none|none|none",
+      "dedupeResult": {
+        "role": "winner",
+        "groupSize": 2,
+        "winnerId": "resolved:dup-a",
+        "reason": "selected_by_source_priority"
+      }
+    },
+    {
+      "id": "resolved:dup-b",
+      "effectRowId": "effect:dup-b",
+      "sourceId": "source:dup",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "fixed"
+      },
+      "dedupeKey": "pending:resolved:dup-b",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1,
+      "canonicalEffectKey": "effect|fixture-provider|raw_source|source:dup|fixture_source.json|buff|self|support|none|none|none",
+      "dedupeResult": {
+        "role": "loser",
+        "groupSize": 2,
+        "winnerId": "resolved:dup-a",
+        "reason": "duplicate_key_lower_priority"
+      }
+    }
+  ]
+}

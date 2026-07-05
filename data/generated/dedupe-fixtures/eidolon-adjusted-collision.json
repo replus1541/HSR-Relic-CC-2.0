@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "generatedBy": "tools/validate_dedupe.mjs",
+  "input": {
+    "fileName": "eidolon-adjusted-collision.json",
+    "resolvedEffects": [
+      {
+        "id": "resolved:eidolon-a",
+        "effectRowId": "effect:eidolon-a",
+        "sourceId": "source:eidolon",
+        "stat": "atkRatio",
+        "valueTrace": {
+          "resolver": "fixed"
+        },
+        "dedupeKey": "pending:resolved:eidolon-a",
+        "calculationStatus": "calculation_ready",
+        "resolvedValue": 0.1
+      },
+      {
+        "id": "resolved:eidolon-b",
+        "effectRowId": "effect:eidolon-b",
+        "sourceId": "source:eidolon",
+        "stat": "atkRatio",
+        "valueTrace": {
+          "resolver": "fixed"
+        },
+        "dedupeKey": "pending:resolved:eidolon-b",
+        "calculationStatus": "calculation_ready",
+        "resolvedValue": 0.1
+      }
+    ],
+    "normalizedEffects": [
+      {
+        "effectRowId": "effect:eidolon-a",
+        "sourceId": "source:eidolon",
+        "sourceOrigin": "raw_source",
+        "effectProviderId": "fixture-provider",
+        "effectType": "buff",
+        "targetScope": "self",
+        "attackType": "support",
+        "condition": {
+          "conditionKey": "eidolon:6"
+        },
+        "stackRule": {
+          "stackKey": null
+        }
+      },
+      {
+        "effectRowId": "effect:eidolon-b",
+        "sourceId": "source:eidolon",
+        "sourceOrigin": "raw_source",
+        "effectProviderId": "fixture-provider",
+        "effectType": "buff",
+        "targetScope": "self",
+        "attackType": "support",
+        "condition": {
+          "conditionKey": "eidolon:6"
+        },
+        "stackRule": {
+          "stackKey": null
+        }
+      }
+    ],
+    "sourceRows": [
+      {
+        "id": "source:eidolon",
+        "sourceOrigin": "raw_source",
+        "sourcePath": "fixture/source.json"
+      }
+    ]
+  },
+  "output": [
+    {
+      "id": "resolved:eidolon-a",
+      "effectRowId": "effect:eidolon-a",
+      "sourceId": "source:eidolon",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "fixed"
+      },
+      "dedupeKey": "pending:resolved:eidolon-a",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1,
+      "canonicalEffectKey": "effect|fixture-provider|raw_source|source:eidolon|fixture_source.json|buff|self|support|eidolon:6|none|none",
+      "dedupeResult": {
+        "role": "winner",
+        "groupSize": 2,
+        "winnerId": "resolved:eidolon-a",
+        "reason": "selected_by_source_priority"
+      }
+    },
+    {
+      "id": "resolved:eidolon-b",
+      "effectRowId": "effect:eidolon-b",
+      "sourceId": "source:eidolon",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "fixed"
+      },
+      "dedupeKey": "pending:resolved:eidolon-b",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1,
+      "canonicalEffectKey": "effect|fixture-provider|raw_source|source:eidolon|fixture_source.json|buff|self|support|eidolon:6|none|none",
+      "dedupeResult": {
+        "role": "loser",
+        "groupSize": 2,
+        "winnerId": "resolved:eidolon-a",
+        "reason": "duplicate_key_lower_priority"
+      }
+    }
+  ]
+}

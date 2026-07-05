@@ -663,6 +663,19 @@
 - 기본 winner 정책은 calculation_ready row 우선, sourceOrigin priority, deterministic id 순서입니다. blocked input은 winner로 승격하지 않습니다.
 - `data/generated/deduped-effects.json`를 생성했습니다. 현재 rows 9개 기준 winner 6개, blocked 3개입니다.
 - aggregation, UI trace, manual guide 계산 유입은 구현하지 않았습니다.
+- Task 10-C 시작: `tools/validate_dedupe.mjs`, `validate:dedupe`, dedupe fixtures를 추가했습니다.
+- validator는 generated deduped effects를 재생성하고 blocked row winner 금지, canonicalEffectKey별 단일 winner를 검증합니다.
+- duplicate-source/eidolon-adjusted/enemy-debuff fixture를 `data/generated/dedupe-fixtures/`에 생성합니다.
+- Phase 10 완료: canonical key, dedupe result, validator/fixtures가 준비됐습니다.
+
+### 검증
+
+- `npm.cmd run validate:dedupe`: 성공. rows 9개, winners 6개, losers 0개, blocked 3개, fixtures 3개.
+- `npm.cmd run build`: 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+
+### 다음 Task로 넘길 항목
+
+- Phase 11-A에서 deduped effect를 CombatLedger row로 옮길 mapping을 정의합니다.
 
 ---
 
