@@ -1152,3 +1152,42 @@
 
 - `npm.cmd run validate`: passed. 12 sub-scripts passed.
 - `npm.cmd run build`: passed. Vite production build completed; generated JSON chunk-size warning remains.
+
+---
+
+## Follow-up Analysis. Missing Priority Breakdown
+
+### Status
+
+- status: completed
+- started: 2026-07-05
+- completed: 2026-07-05
+- request: break down missing-match-analysis before implementing resolvers or curated sources
+
+### Work Log
+
+- Added `tools/analyze_missing_priority.mjs` to generate report-only priority breakdowns.
+- Listed 6 `autoMatchPossible` candidates without applying any match.
+- Deduplicated 30 raw `effect_trace_not_found` diagnostics into 15 character-level root causes.
+- Split `valueMode_dynamic_formula_unresolved` away from missing extraction and classified it as resolver-blocked work.
+- Explained why `failureReason=curated_source_required`, `needsCuratedSource`, and `nextAction` counts differ.
+- No automatic matching, dynamic formula resolver, curated_source, or existing project modification was performed.
+
+### Output Files
+
+- `reports/extraction/auto-match-candidates.md`
+- `reports/extraction/effect-trace-root-cause.md`
+- `reports/extraction/dynamic-formula-type-breakdown.md`
+- `reports/extraction/curated-source-required-breakdown.md`
+
+### Output Summary
+
+- autoMatchPossible: 6
+- effect trace root causes: curated_source_required 15
+- dynamic formula character-level types: debuff count 1, stack count 3, speed condition 1, attack type condition 5, eidolon condition 6, party condition 0, unknown 38
+- curated source basis counts: failureReason 3, needsCuratedSource 35, nextAction 89
+
+### Verification
+
+- `npm.cmd run validate`: passed. 12 sub-scripts passed.
+- `npm.cmd run build`: passed. Vite production build completed; generated JSON chunk-size warning remains.
