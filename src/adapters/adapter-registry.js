@@ -1,13 +1,11 @@
 import { SourceKind } from "../data-model/schemas/index.js";
 import { createPlaceholderAdapter } from "./adapter-contract.js";
+import { hoyowikiAdapter } from "./hoyowiki/hoyowiki-adapter.js";
 import { localJsonAdapter } from "./local-json/local-json-adapter.js";
 
 export const adapterRegistry = Object.freeze([
   localJsonAdapter,
-  createPlaceholderAdapter({
-    adapterId: "hoyowiki",
-    sourceKind: SourceKind.HOYOWIKI,
-  }),
+  hoyowikiAdapter,
   createPlaceholderAdapter({
     adapterId: "curated-source",
     sourceKind: SourceKind.CURATED_SOURCE,

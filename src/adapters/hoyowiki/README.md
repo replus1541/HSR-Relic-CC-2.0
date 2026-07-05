@@ -1,12 +1,12 @@
 # hoyowiki adapter
 
-Placeholder for the Phase 6 HoyoWiki source adapter.
+Phase 6 HoyoWiki source adapter.
 
 Current scope:
 
 - registry-visible adapter id: `hoyowiki`
 - source kind: `hoyowiki`
 - no remote fetch
-- no source parsing yet
+- reads the Phase 4-B HoyoWiki skill snapshot
+- emits SourceRow and CoefficientRow candidates for a small character subset
 - no calculation logic
-
