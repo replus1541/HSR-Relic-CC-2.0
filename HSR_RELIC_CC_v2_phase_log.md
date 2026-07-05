@@ -72,14 +72,32 @@
 
 - 2026-07-05: Phase 1-A 시작. 독립 npm/Vite/React 프로젝트 골격 생성 범위로 진행하며, 계산/adapter/schema/effect-engine 구현은 제외합니다.
 - 2026-07-05: `C:\CODEX\HSR RELIC CC 2.0`에서 git repo를 초기화하고 기본 branch를 `main`으로 설정했습니다.
+- 2026-07-05: Vite/React app shell과 route placeholder를 생성했습니다. 의존성은 `react`, `react-dom`, `vite`, `@vitejs/plugin-react`만 사용했습니다.
+- 2026-07-05: v2 도메인 폴더와 README placeholder를 생성했습니다. 계산/adapter/schema/effect-engine 구현은 추가하지 않았습니다.
+- 2026-07-05: `npm.cmd install` 성공. 65 packages 설치, 취약점 0건.
 
 ### 생성/수정 파일
 
--
+- `package.json`
+- `package-lock.json`
+- `vite.config.js`
+- `index.html`
+- `src/main.jsx`
+- `src/app/App.jsx`
+- `src/app/route-config.js`
+- `src/app/routes/*`
+- `src/ui/app.css`
+- `README.md`
+- `src/*/README.md`
+- `data/*/README.md`
+- `reports/*/README.md`
+- `tools/README.md`
 
 ### 설계 결정
 
--
+- Phase 1-A에서는 React Router를 추가하지 않고 `window.location.pathname` 기반 route shell만 사용합니다.
+- `lucide-react` 등 추가 UI 라이브러리는 넣지 않았습니다.
+- 기존 프로젝트 CSS 전체 복사는 하지 않고 최소 app shell CSS만 작성했습니다.
 
 ### 검증
 
