@@ -52,9 +52,10 @@ export function ExtractionDetail({ params = {} }) {
   const coefficientRows = canonicalDataset.rows.coefficientRows.filter((row) => rowMatchesStatus(row, statusRow, characterId));
   const blockedSourceRows = sourceRows.filter((row) => !row.calculationReady || row.policyBlockedReason);
   const hasRows = sourceRows.length + effectRows.length + coefficientRows.length > 0;
+  const statusTone = statusRow?.readinessStatus === "ready" ? "ready" : statusRow?.readinessStatus === "partial" ? "warning" : "blocked";
 
   return (
-    <Panel eyebrow="Extraction Detail" title={title} toolbar={<Badge tone={hasRows ? "ready" : "blocked"}>{hasRows ? "found" : "missing"}</Badge>}>
+    <Panel eyebrow="Extraction Detail" title={title} toolbar={<Badge tone={statusTone}>{statusRow?.readinessStatus ?? (hasRows ? "partial" : "blocked")}</Badge>}>
       {hasRows ? (
         <div className="route-grid">
           <Card>
@@ -62,6 +63,8 @@ export function ExtractionDetail({ params = {} }) {
             <MetricList
               items={[
                 { label: "Missing", value: statusRow?.missingExtraction?.length ?? 0 },
+                { label: "Required", value: statusRow?.requiredMissingCount ?? 0 },
+                { label: "Optional", value: statusRow?.optionalMissingCount ?? 0 },
                 { label: "Dynamic formula", value: statusRow?.valueMode?.dynamicFormula ?? 0 },
                 { label: "Unknown value", value: statusRow?.valueMode?.unknown ?? 0 },
               ]}
@@ -70,7 +73,7 @@ export function ExtractionDetail({ params = {} }) {
             <TraceRow label="Effect trace" value={statusRow?.sourceAvailability?.effectTrace ? "linked" : "missing"} meta={statusRow?.identifiers?.effectAvatar} />
             <TraceRow label="Coefficient" value={statusRow?.sourceAvailability?.coefficient ? "linked" : "missing"} meta={statusRow?.identifiers?.coefficientAvatar} />
             <TraceRow label="Relic source" value={statusRow?.sourceAvailability?.relic ?? "missing_snapshot"} />
-            {(statusRow?.missingExtraction?.length ?? 0) > 0 && <p>{statusRow.missingExtraction.join(", ")}</p>}
+            {(statusRow?.missingCount ?? 0) > 0 && <p>{[...(statusRow.requiredMissingItems ?? []), ...(statusRow.optionalMissingItems ?? [])].join(", ")}</p>}
           </Card>
           <Card>
             <h3>Sources</h3>

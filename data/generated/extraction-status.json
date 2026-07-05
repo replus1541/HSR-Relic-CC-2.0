@@ -27,6 +27,36 @@
         "coefficientSlots": 2,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "개척자 • 기억",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "PlayerBoy_20"
+        },
+        {
+          "sourceName": "개척자 • 기억",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3287",
+          "internalName": null
+        },
+        {
+          "sourceName": "개척자 • 기억",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "8005",
+          "internalName": "PlayerBoy_20"
+        },
+        {
+          "sourceName": "개척자 • 기억",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "8006",
+          "internalName": "PlayerGirl_20"
+        }
+      ],
       "characterId": "개척자 • 기억",
       "counts": {
         "sourceRows": 9,
@@ -50,8 +80,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "개척자 • 보존",
@@ -77,6 +117,36 @@
         "coefficientSlots": 4,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "개척자 • 보존",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "PlayerBoy_10"
+        },
+        {
+          "sourceName": "개척자 • 보존",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "23",
+          "internalName": null
+        },
+        {
+          "sourceName": "개척자 • 보존",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "8003",
+          "internalName": "PlayerBoy_10"
+        },
+        {
+          "sourceName": "개척자 • 보존",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "8004",
+          "internalName": "PlayerGirl_10"
+        }
+      ],
       "characterId": "개척자 • 보존",
       "counts": {
         "sourceRows": 6,
@@ -100,11 +170,27 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
       "missingExtraction": [
         "missing_effect_trace",
         "effect_rows_zero"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 2,
+      "missingCount": 2,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "개척자 • 파멸",
@@ -130,6 +216,36 @@
         "coefficientSlots": 5,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "개척자 • 파멸",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "PlayerBoy_00"
+        },
+        {
+          "sourceName": "개척자 • 파멸",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "6",
+          "internalName": null
+        },
+        {
+          "sourceName": "개척자 • 파멸",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "8001",
+          "internalName": "PlayerBoy_00"
+        },
+        {
+          "sourceName": "개척자 • 파멸",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "8002",
+          "internalName": "PlayerGirl_00"
+        }
+      ],
       "characterId": "개척자 • 파멸",
       "counts": {
         "sourceRows": 9,
@@ -153,10 +269,24 @@
         "unknown": 0,
         "dynamicFormula": 2
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "개척자 • 화합",
@@ -182,6 +312,36 @@
         "coefficientSlots": 2,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "개척자 • 화합",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "PlayerBoy_30"
+        },
+        {
+          "sourceName": "개척자 • 화합",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "2511",
+          "internalName": null
+        },
+        {
+          "sourceName": "개척자 • 화합",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "8007",
+          "internalName": "PlayerBoy_30"
+        },
+        {
+          "sourceName": "개척자 • 화합",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "8008",
+          "internalName": "PlayerGirl_30"
+        }
+      ],
       "characterId": "개척자 • 화합",
       "counts": {
         "sourceRows": 5,
@@ -205,11 +365,27 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
       "missingExtraction": [
         "missing_effect_trace",
         "effect_rows_zero"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 2,
+      "missingCount": 2,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "개척자 • 환락",
@@ -235,6 +411,36 @@
         "coefficientSlots": 2,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "개척자 • 환락",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "PlayerBoy_40"
+        },
+        {
+          "sourceName": "개척자 • 환락",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "5006",
+          "internalName": null
+        },
+        {
+          "sourceName": "개척자 • 환락",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "8009",
+          "internalName": "PlayerBoy_40"
+        },
+        {
+          "sourceName": "개척자 • 환락",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "8010",
+          "internalName": "PlayerGirl_40"
+        }
+      ],
       "characterId": "개척자 • 환락",
       "counts": {
         "sourceRows": 10,
@@ -258,11 +464,27 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "coefficient_rows_zero",
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "coefficient_rows_zero",
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "coefficient_rows_zero",
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 2,
+      "missingCount": 2,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "갤러거",
@@ -288,6 +510,29 @@
         "coefficientSlots": 3,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "갤러거",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Gallagher_00"
+        },
+        {
+          "sourceName": "갤러거",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "1924",
+          "internalName": null
+        },
+        {
+          "sourceName": "갤러거",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1301",
+          "internalName": "Gallagher_00"
+        }
+      ],
       "characterId": "갤러거",
       "counts": {
         "sourceRows": 6,
@@ -311,11 +556,27 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
       "missingExtraction": [
         "missing_effect_trace",
         "effect_rows_zero"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 2,
+      "missingCount": 2,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "게파드",
@@ -341,6 +602,29 @@
         "coefficientSlots": 3,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "게파드",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Gepard_00"
+        },
+        {
+          "sourceName": "게파드",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "17",
+          "internalName": null
+        },
+        {
+          "sourceName": "게파드",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1104",
+          "internalName": "Gepard_00"
+        }
+      ],
       "characterId": "게파드",
       "counts": {
         "sourceRows": 4,
@@ -364,11 +648,27 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
       "missingExtraction": [
         "missing_effect_trace",
         "effect_rows_zero"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 2,
+      "missingCount": 2,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "경류",
@@ -394,6 +694,29 @@
         "coefficientSlots": 6,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "경류",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Jingliu_00"
+        },
+        {
+          "sourceName": "경류",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "1387",
+          "internalName": null
+        },
+        {
+          "sourceName": "경류",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1212",
+          "internalName": "Jingliu_00"
+        }
+      ],
       "characterId": "경류",
       "counts": {
         "sourceRows": 7,
@@ -417,10 +740,24 @@
         "unknown": 0,
         "dynamicFormula": 2
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "경원",
@@ -446,6 +783,29 @@
         "coefficientSlots": 4,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "경원",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "JingYuan_00"
+        },
+        {
+          "sourceName": "경원",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "26",
+          "internalName": null
+        },
+        {
+          "sourceName": "경원",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1204",
+          "internalName": "JingYuan_00"
+        }
+      ],
       "characterId": "경원",
       "counts": {
         "sourceRows": 8,
@@ -469,10 +829,24 @@
         "unknown": 0,
         "dynamicFormula": 2
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "계네빈",
@@ -498,6 +872,29 @@
         "coefficientSlots": 6,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "계네빈",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Guinaifen_00"
+        },
+        {
+          "sourceName": "계네빈",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "1392",
+          "internalName": null
+        },
+        {
+          "sourceName": "계네빈",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1210",
+          "internalName": "Guinaifen_00"
+        }
+      ],
       "characterId": "계네빈",
       "counts": {
         "sourceRows": 6,
@@ -521,8 +918,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "곽향",
@@ -548,6 +955,29 @@
         "coefficientSlots": 1,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "곽향",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Huohuo_00"
+        },
+        {
+          "sourceName": "곽향",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "1533",
+          "internalName": null
+        },
+        {
+          "sourceName": "곽향",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1217",
+          "internalName": "Huohuo_00"
+        }
+      ],
       "characterId": "곽향",
       "counts": {
         "sourceRows": 7,
@@ -571,8 +1001,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "길가메시",
@@ -598,6 +1038,29 @@
         "coefficientSlots": 0,
         "eidolons": 0
       },
+      "nameSources": [
+        {
+          "sourceName": "길가메시",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Gilgamesh_00"
+        },
+        {
+          "sourceName": "길가메시",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "5338",
+          "internalName": null
+        },
+        {
+          "sourceName": "길가메시",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1509",
+          "internalName": "Gilgamesh_00"
+        }
+      ],
       "characterId": "길가메시",
       "counts": {
         "sourceRows": 0,
@@ -621,15 +1084,43 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": false,
-      "missingExtraction": [
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [
+        "no_calculation_ready_rows"
+      ],
+      "optionalMissingItems": [
         "missing_skill_text",
         "missing_effect_trace",
         "missing_coefficient",
         "missing_eidolon_trace",
         "effect_rows_zero",
         "coefficient_rows_zero"
-      ]
+      ],
+      "missingItems": [
+        "no_calculation_ready_rows",
+        "missing_skill_text",
+        "missing_effect_trace",
+        "missing_coefficient",
+        "missing_eidolon_trace",
+        "effect_rows_zero",
+        "coefficient_rows_zero"
+      ],
+      "missingExtraction": [
+        "no_calculation_ready_rows",
+        "missing_skill_text",
+        "missing_effect_trace",
+        "missing_coefficient",
+        "missing_eidolon_trace",
+        "effect_rows_zero",
+        "coefficient_rows_zero"
+      ],
+      "requiredMissingCount": 1,
+      "optionalMissingCount": 6,
+      "missingCount": 7,
+      "readinessStatus": "blocked",
+      "extractionReady": false
     },
     {
       "characterKey": "나찰",
@@ -655,6 +1146,29 @@
         "coefficientSlots": 2,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "나찰",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Luocha_00"
+        },
+        {
+          "sourceName": "나찰",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "711",
+          "internalName": null
+        },
+        {
+          "sourceName": "나찰",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1203",
+          "internalName": "Luocha_00"
+        }
+      ],
       "characterId": "나찰",
       "counts": {
         "sourceRows": 8,
@@ -678,8 +1192,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "나타샤",
@@ -705,6 +1229,29 @@
         "coefficientSlots": 1,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "나타샤",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Natasha_00"
+        },
+        {
+          "sourceName": "나타샤",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "18",
+          "internalName": null
+        },
+        {
+          "sourceName": "나타샤",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1105",
+          "internalName": "Natasha_00"
+        }
+      ],
       "characterId": "나타샤",
       "counts": {
         "sourceRows": 6,
@@ -728,11 +1275,27 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
       "missingExtraction": [
         "missing_effect_trace",
         "effect_rows_zero"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 2,
+      "missingCount": 2,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "단항",
@@ -758,6 +1321,29 @@
         "coefficientSlots": 4,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "단항",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "DanHeng_00"
+        },
+        {
+          "sourceName": "단항",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "8",
+          "internalName": null
+        },
+        {
+          "sourceName": "단항",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1002",
+          "internalName": "DanHeng_00"
+        }
+      ],
       "characterId": "단항",
       "counts": {
         "sourceRows": 7,
@@ -781,10 +1367,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "단항 • 등황",
@@ -810,6 +1410,29 @@
         "coefficientSlots": 3,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "단항 • 등황",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "DanHengPT_00"
+        },
+        {
+          "sourceName": "단항 • 등황",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3957",
+          "internalName": null
+        },
+        {
+          "sourceName": "단항 • 등황",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1414",
+          "internalName": "DanHengPT_00"
+        }
+      ],
       "characterId": "단항 • 등황",
       "counts": {
         "sourceRows": 10,
@@ -833,10 +1456,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "단항•음월",
@@ -862,6 +1499,29 @@
         "coefficientSlots": 14,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "단항•음월",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "DanHengIL_00"
+        },
+        {
+          "sourceName": "단항•음월",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "1226",
+          "internalName": null
+        },
+        {
+          "sourceName": "단항•음월",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1213",
+          "internalName": "DanHengIL_00"
+        }
+      ],
       "characterId": "단항•음월",
       "counts": {
         "sourceRows": 6,
@@ -885,10 +1545,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "달리아",
@@ -914,6 +1588,29 @@
         "coefficientSlots": 7,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "달리아",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Constance_00"
+        },
+        {
+          "sourceName": "달리아",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "4060",
+          "internalName": null
+        },
+        {
+          "sourceName": "달리아",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1321",
+          "internalName": "Constance_00"
+        }
+      ],
       "characterId": "달리아",
       "counts": {
         "sourceRows": 9,
@@ -937,10 +1634,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "더 헤르타",
@@ -966,6 +1677,29 @@
         "coefficientSlots": 6,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "더 헤르타",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "TheHerta_00"
+        },
+        {
+          "sourceName": "더 헤르타",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3285",
+          "internalName": null
+        },
+        {
+          "sourceName": "더 헤르타",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1401",
+          "internalName": "TheHerta_00"
+        }
+      ],
       "characterId": "더 헤르타",
       "counts": {
         "sourceRows": 8,
@@ -989,10 +1723,24 @@
         "unknown": 0,
         "dynamicFormula": 2
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "라파",
@@ -1018,6 +1766,29 @@
         "coefficientSlots": 11,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "라파",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Rappa_00"
+        },
+        {
+          "sourceName": "라파",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3057",
+          "internalName": null
+        },
+        {
+          "sourceName": "라파",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1317",
+          "internalName": "Rappa_00"
+        }
+      ],
       "characterId": "라파",
       "counts": {
         "sourceRows": 6,
@@ -1041,8 +1812,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "로빈",
@@ -1068,6 +1849,29 @@
         "coefficientSlots": 1,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "로빈",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Robin_00"
+        },
+        {
+          "sourceName": "로빈",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "2366",
+          "internalName": null
+        },
+        {
+          "sourceName": "로빈",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1309",
+          "internalName": "Robin_00"
+        }
+      ],
       "characterId": "로빈",
       "counts": {
         "sourceRows": 8,
@@ -1091,10 +1895,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "루카",
@@ -1120,6 +1938,29 @@
         "coefficientSlots": 8,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "루카",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Luka_00"
+        },
+        {
+          "sourceName": "루카",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "801",
+          "internalName": null
+        },
+        {
+          "sourceName": "루카",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1111",
+          "internalName": "Luka_00"
+        }
+      ],
       "characterId": "루카",
       "counts": {
         "sourceRows": 9,
@@ -1143,10 +1984,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "링스",
@@ -1172,6 +2027,29 @@
         "coefficientSlots": 1,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "링스",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Lynx_00"
+        },
+        {
+          "sourceName": "링스",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "1228",
+          "internalName": null
+        },
+        {
+          "sourceName": "링스",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1110",
+          "internalName": "Lynx_00"
+        }
+      ],
       "characterId": "링스",
       "counts": {
         "sourceRows": 6,
@@ -1195,11 +2073,27 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
       "missingExtraction": [
         "missing_effect_trace",
         "effect_rows_zero"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 2,
+      "missingCount": 2,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "마이데이",
@@ -1225,6 +2119,29 @@
         "coefficientSlots": 9,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "마이데이",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Mydeimos_00"
+        },
+        {
+          "sourceName": "마이데이",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3324",
+          "internalName": null
+        },
+        {
+          "sourceName": "마이데이",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1404",
+          "internalName": "Mydeimos_00"
+        }
+      ],
       "characterId": "마이데이",
       "counts": {
         "sourceRows": 7,
@@ -1248,8 +2165,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "망귀인",
@@ -1275,6 +2202,29 @@
         "coefficientSlots": 4,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "망귀인",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Fugue_00"
+        },
+        {
+          "sourceName": "망귀인",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3151",
+          "internalName": null
+        },
+        {
+          "sourceName": "망귀인",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1225",
+          "internalName": "Fugue_00"
+        }
+      ],
       "characterId": "망귀인",
       "counts": {
         "sourceRows": 7,
@@ -1298,10 +2248,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "맥택",
@@ -1327,6 +2291,29 @@
         "coefficientSlots": 9,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "맥택",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Moze_00"
+        },
+        {
+          "sourceName": "맥택",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "2949",
+          "internalName": null
+        },
+        {
+          "sourceName": "맥택",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1223",
+          "internalName": "Moze_00"
+        }
+      ],
       "characterId": "맥택",
       "counts": {
         "sourceRows": 9,
@@ -1350,10 +2337,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "미샤",
@@ -1379,6 +2380,29 @@
         "coefficientSlots": 3,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "미샤",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Misha_00"
+        },
+        {
+          "sourceName": "미샤",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "1808",
+          "internalName": null
+        },
+        {
+          "sourceName": "미샤",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1312",
+          "internalName": "Misha_00"
+        }
+      ],
       "characterId": "미샤",
       "counts": {
         "sourceRows": 8,
@@ -1402,8 +2426,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "반디",
@@ -1429,6 +2463,29 @@
         "coefficientSlots": 6,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "반디",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Sam_00"
+        },
+        {
+          "sourceName": "반디",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "2494",
+          "internalName": null
+        },
+        {
+          "sourceName": "반디",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1310",
+          "internalName": "Sam_00"
+        }
+      ],
       "characterId": "반디",
       "counts": {
         "sourceRows": 4,
@@ -1452,11 +2509,27 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
       "missingExtraction": [
         "missing_effect_trace",
         "effect_rows_zero"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 2,
+      "missingCount": 2,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "백로",
@@ -1482,6 +2555,29 @@
         "coefficientSlots": 1,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "백로",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Bailu_00"
+        },
+        {
+          "sourceName": "백로",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "29",
+          "internalName": null
+        },
+        {
+          "sourceName": "백로",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1211",
+          "internalName": "Bailu_00"
+        }
+      ],
       "characterId": "백로",
       "counts": {
         "sourceRows": 4,
@@ -1505,11 +2601,27 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
       "missingExtraction": [
         "missing_effect_trace",
         "effect_rows_zero"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 2,
+      "missingCount": 2,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "부트힐",
@@ -1535,6 +2647,29 @@
         "coefficientSlots": 3,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "부트힐",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Boothill_00"
+        },
+        {
+          "sourceName": "부트힐",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "2367",
+          "internalName": null
+        },
+        {
+          "sourceName": "부트힐",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1315",
+          "internalName": "Boothill_00"
+        }
+      ],
       "characterId": "부트힐",
       "counts": {
         "sourceRows": 7,
@@ -1558,8 +2693,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "부현",
@@ -1585,6 +2730,29 @@
         "coefficientSlots": 2,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "부현",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "FuXuan_00"
+        },
+        {
+          "sourceName": "부현",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "804",
+          "internalName": null
+        },
+        {
+          "sourceName": "부현",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1208",
+          "internalName": "FuXuan_00"
+        }
+      ],
       "characterId": "부현",
       "counts": {
         "sourceRows": 8,
@@ -1608,10 +2776,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "브로냐",
@@ -1637,6 +2819,29 @@
         "coefficientSlots": 1,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "브로냐",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Bronya_00"
+        },
+        {
+          "sourceName": "브로냐",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "14",
+          "internalName": null
+        },
+        {
+          "sourceName": "브로냐",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1101",
+          "internalName": "Bronya_00"
+        }
+      ],
       "characterId": "브로냐",
       "counts": {
         "sourceRows": 8,
@@ -1660,10 +2865,24 @@
         "unknown": 0,
         "dynamicFormula": 2
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "블랙 스완",
@@ -1689,6 +2908,29 @@
         "coefficientSlots": 7,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "블랙 스완",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "BlackSwan_00"
+        },
+        {
+          "sourceName": "블랙 스완",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "1806",
+          "internalName": null
+        },
+        {
+          "sourceName": "블랙 스완",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1307",
+          "internalName": "BlackSwan_00"
+        }
+      ],
       "characterId": "블랙 스완",
       "counts": {
         "sourceRows": 8,
@@ -1712,10 +2954,24 @@
         "unknown": 0,
         "dynamicFormula": 3
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "블레이드",
@@ -1741,6 +2997,29 @@
         "coefficientSlots": 11,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "블레이드",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Ren_00"
+        },
+        {
+          "sourceName": "블레이드",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "789",
+          "internalName": null
+        },
+        {
+          "sourceName": "블레이드",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1205",
+          "internalName": "Ren_00"
+        }
+      ],
       "characterId": "블레이드",
       "counts": {
         "sourceRows": 8,
@@ -1764,10 +3043,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "비소",
@@ -1793,6 +3086,29 @@
         "coefficientSlots": 9,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "비소",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Feixiao_00"
+        },
+        {
+          "sourceName": "비소",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "2947",
+          "internalName": null
+        },
+        {
+          "sourceName": "비소",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1220",
+          "internalName": "Feixiao_00"
+        }
+      ],
       "characterId": "비소",
       "counts": {
         "sourceRows": 11,
@@ -1816,10 +3132,24 @@
         "unknown": 0,
         "dynamicFormula": 2
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "사이퍼",
@@ -1845,6 +3175,29 @@
         "coefficientSlots": 5,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "사이퍼",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Cipher_00"
+        },
+        {
+          "sourceName": "사이퍼",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3691",
+          "internalName": null
+        },
+        {
+          "sourceName": "사이퍼",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1406",
+          "internalName": "Cipher_00"
+        }
+      ],
       "characterId": "사이퍼",
       "counts": {
         "sourceRows": 13,
@@ -1868,10 +3221,24 @@
         "unknown": 0,
         "dynamicFormula": 4
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "삼칠이",
@@ -1897,6 +3264,22 @@
         "coefficientSlots": 3,
         "eidolons": 0
       },
+      "nameSources": [
+        {
+          "sourceName": "삼칠이",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Mar_7th_00"
+        },
+        {
+          "sourceName": "삼칠이",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1001",
+          "internalName": "Mar_7th_00"
+        }
+      ],
       "characterId": "삼칠이",
       "counts": {
         "sourceRows": 0,
@@ -1920,14 +3303,40 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": false,
-      "missingExtraction": [
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [
+        "no_calculation_ready_rows"
+      ],
+      "optionalMissingItems": [
         "missing_skill_text",
         "missing_effect_trace",
         "missing_eidolon_trace",
         "effect_rows_zero",
         "coefficient_rows_zero"
-      ]
+      ],
+      "missingItems": [
+        "no_calculation_ready_rows",
+        "missing_skill_text",
+        "missing_effect_trace",
+        "missing_eidolon_trace",
+        "effect_rows_zero",
+        "coefficient_rows_zero"
+      ],
+      "missingExtraction": [
+        "no_calculation_ready_rows",
+        "missing_skill_text",
+        "missing_effect_trace",
+        "missing_eidolon_trace",
+        "effect_rows_zero",
+        "coefficient_rows_zero"
+      ],
+      "requiredMissingCount": 1,
+      "optionalMissingCount": 5,
+      "missingCount": 6,
+      "readinessStatus": "blocked",
+      "extractionReady": false
     },
     {
       "characterKey": "삼포",
@@ -1953,6 +3362,29 @@
         "coefficientSlots": 6,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "삼포",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Sampo_00"
+        },
+        {
+          "sourceName": "삼포",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "21",
+          "internalName": null
+        },
+        {
+          "sourceName": "삼포",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1108",
+          "internalName": "Sampo_00"
+        }
+      ],
       "characterId": "삼포",
       "counts": {
         "sourceRows": 6,
@@ -1976,11 +3408,27 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
       "missingExtraction": [
         "missing_effect_trace",
         "effect_rows_zero"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 2,
+      "missingCount": 2,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "서벌",
@@ -2006,6 +3454,29 @@
         "coefficientSlots": 5,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "서벌",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Serval_00"
+        },
+        {
+          "sourceName": "서벌",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "16",
+          "internalName": null
+        },
+        {
+          "sourceName": "서벌",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1103",
+          "internalName": "Serval_00"
+        }
+      ],
       "characterId": "서벌",
       "counts": {
         "sourceRows": 6,
@@ -2029,8 +3500,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "선데이",
@@ -2056,6 +3537,29 @@
         "coefficientSlots": 1,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "선데이",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Sunday_10"
+        },
+        {
+          "sourceName": "선데이",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3150",
+          "internalName": null
+        },
+        {
+          "sourceName": "선데이",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1313",
+          "internalName": "Sunday_10"
+        }
+      ],
       "characterId": "선데이",
       "counts": {
         "sourceRows": 14,
@@ -2079,10 +3583,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "설의",
@@ -2108,6 +3626,29 @@
         "coefficientSlots": 5,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "설의",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Xueyi_00"
+        },
+        {
+          "sourceName": "설의",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "1640",
+          "internalName": null
+        },
+        {
+          "sourceName": "설의",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1214",
+          "internalName": "Xueyi_00"
+        }
+      ],
       "characterId": "설의",
       "counts": {
         "sourceRows": 10,
@@ -2131,8 +3672,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "세이버",
@@ -2158,6 +3709,29 @@
         "coefficientSlots": 12,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "세이버",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Saber_00"
+        },
+        {
+          "sourceName": "세이버",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3767",
+          "internalName": null
+        },
+        {
+          "sourceName": "세이버",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1014",
+          "internalName": "Saber_00"
+        }
+      ],
       "characterId": "세이버",
       "counts": {
         "sourceRows": 12,
@@ -2181,10 +3755,24 @@
         "unknown": 0,
         "dynamicFormula": 3
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "소상",
@@ -2210,6 +3798,29 @@
         "coefficientSlots": 4,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "소상",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Sushang_00"
+        },
+        {
+          "sourceName": "소상",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "27",
+          "internalName": null
+        },
+        {
+          "sourceName": "소상",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1206",
+          "internalName": "Sushang_00"
+        }
+      ],
       "characterId": "소상",
       "counts": {
         "sourceRows": 6,
@@ -2233,10 +3844,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "스파클",
@@ -2262,6 +3887,29 @@
         "coefficientSlots": 1,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "스파클",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Sparkle_00"
+        },
+        {
+          "sourceName": "스파클",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "1807",
+          "internalName": null
+        },
+        {
+          "sourceName": "스파클",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1306",
+          "internalName": "Sparkle_00"
+        }
+      ],
       "characterId": "스파클",
       "counts": {
         "sourceRows": 15,
@@ -2285,10 +3933,24 @@
         "unknown": 0,
         "dynamicFormula": 4
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "스파키",
@@ -2314,6 +3976,29 @@
         "coefficientSlots": 18,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "스파키",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Sparxie_00"
+        },
+        {
+          "sourceName": "스파키",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "4737",
+          "internalName": null
+        },
+        {
+          "sourceName": "스파키",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1501",
+          "internalName": "Sparxie_00"
+        }
+      ],
       "characterId": "스파키",
       "counts": {
         "sourceRows": 8,
@@ -2337,8 +4022,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "아글라이아",
@@ -2364,6 +4059,29 @@
         "coefficientSlots": 3,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "아글라이아",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Aglaea_00"
+        },
+        {
+          "sourceName": "아글라이아",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3286",
+          "internalName": null
+        },
+        {
+          "sourceName": "아글라이아",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1402",
+          "internalName": "Aglaea_00"
+        }
+      ],
       "characterId": "아글라이아",
       "counts": {
         "sourceRows": 8,
@@ -2387,8 +4105,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "아낙사",
@@ -2414,6 +4142,29 @@
         "coefficientSlots": 2,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "아낙사",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Anaxa_00"
+        },
+        {
+          "sourceName": "아낙사",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3561",
+          "internalName": null
+        },
+        {
+          "sourceName": "아낙사",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1405",
+          "internalName": "Anaxa_00"
+        }
+      ],
       "characterId": "아낙사",
       "counts": {
         "sourceRows": 10,
@@ -2437,10 +4188,24 @@
         "unknown": 0,
         "dynamicFormula": 2
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "아를란",
@@ -2466,6 +4231,29 @@
         "coefficientSlots": 4,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "아를란",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Arlan_00"
+        },
+        {
+          "sourceName": "아를란",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "11",
+          "internalName": null
+        },
+        {
+          "sourceName": "아를란",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1008",
+          "internalName": "Arlan_00"
+        }
+      ],
       "characterId": "아를란",
       "counts": {
         "sourceRows": 6,
@@ -2489,8 +4277,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "아스타",
@@ -2516,6 +4314,29 @@
         "coefficientSlots": 2,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "아스타",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Asta_00"
+        },
+        {
+          "sourceName": "아스타",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "12",
+          "internalName": null
+        },
+        {
+          "sourceName": "아스타",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1009",
+          "internalName": "Asta_00"
+        }
+      ],
       "characterId": "아스타",
       "counts": {
         "sourceRows": 6,
@@ -2539,10 +4360,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "아젠티",
@@ -2568,6 +4403,29 @@
         "coefficientSlots": 8,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "아젠티",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Argenti_00"
+        },
+        {
+          "sourceName": "아젠티",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "1535",
+          "internalName": null
+        },
+        {
+          "sourceName": "아젠티",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1302",
+          "internalName": "Argenti_00"
+        }
+      ],
       "characterId": "아젠티",
       "counts": {
         "sourceRows": 8,
@@ -2591,10 +4449,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "아처",
@@ -2620,6 +4492,29 @@
         "coefficientSlots": 6,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "아처",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Archer_00"
+        },
+        {
+          "sourceName": "아처",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3768",
+          "internalName": null
+        },
+        {
+          "sourceName": "아처",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1015",
+          "internalName": "Archer_00"
+        }
+      ],
       "characterId": "아처",
       "counts": {
         "sourceRows": 11,
@@ -2643,10 +4538,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "아케론",
@@ -2672,6 +4581,29 @@
         "coefficientSlots": 9,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "아케론",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Acheron_00"
+        },
+        {
+          "sourceName": "아케론",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "1919",
+          "internalName": null
+        },
+        {
+          "sourceName": "아케론",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1308",
+          "internalName": "Acheron_00"
+        }
+      ],
       "characterId": "아케론",
       "counts": {
         "sourceRows": 10,
@@ -2695,10 +4627,24 @@
         "unknown": 0,
         "dynamicFormula": 2
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "애쉬베일",
@@ -2724,6 +4670,29 @@
         "coefficientSlots": 7,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "애쉬베일",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Ashveil_00"
+        },
+        {
+          "sourceName": "애쉬베일",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "4781",
+          "internalName": null
+        },
+        {
+          "sourceName": "애쉬베일",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1504",
+          "internalName": "Ashveil_00"
+        }
+      ],
       "characterId": "애쉬베일",
       "counts": {
         "sourceRows": 12,
@@ -2747,10 +4716,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "어공",
@@ -2776,6 +4759,29 @@
         "coefficientSlots": 3,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "어공",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Yukong_00"
+        },
+        {
+          "sourceName": "어공",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "712",
+          "internalName": null
+        },
+        {
+          "sourceName": "어공",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1207",
+          "internalName": "Yukong_00"
+        }
+      ],
       "characterId": "어공",
       "counts": {
         "sourceRows": 7,
@@ -2799,10 +4805,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "어벤츄린",
@@ -2828,6 +4848,29 @@
         "coefficientSlots": 4,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "어벤츄린",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Aventurine_00"
+        },
+        {
+          "sourceName": "어벤츄린",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "1920",
+          "internalName": null
+        },
+        {
+          "sourceName": "어벤츄린",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1304",
+          "internalName": "Aventurine_00"
+        }
+      ],
       "characterId": "어벤츄린",
       "counts": {
         "sourceRows": 10,
@@ -2851,8 +4894,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "에바네시아",
@@ -2878,6 +4931,29 @@
         "coefficientSlots": 14,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "에바네시아",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Evanescia_00"
+        },
+        {
+          "sourceName": "에바네시아",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "5005",
+          "internalName": null
+        },
+        {
+          "sourceName": "에바네시아",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1505",
+          "internalName": "Evanescia_00"
+        }
+      ],
       "characterId": "에바네시아",
       "counts": {
         "sourceRows": 8,
@@ -2901,10 +4977,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "에버나이트",
@@ -2930,6 +5020,29 @@
         "coefficientSlots": 7,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "에버나이트",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Evernight_00"
+        },
+        {
+          "sourceName": "에버나이트",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3956",
+          "internalName": null
+        },
+        {
+          "sourceName": "에버나이트",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1413",
+          "internalName": "Evernight_00"
+        }
+      ],
       "characterId": "에버나이트",
       "counts": {
         "sourceRows": 16,
@@ -2953,10 +5066,24 @@
         "unknown": 0,
         "dynamicFormula": 2
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "연경",
@@ -2982,6 +5109,29 @@
         "coefficientSlots": 7,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "연경",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Yanqing_00"
+        },
+        {
+          "sourceName": "연경",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "28",
+          "internalName": null
+        },
+        {
+          "sourceName": "연경",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1209",
+          "internalName": "Yanqing_00"
+        }
+      ],
       "characterId": "연경",
       "counts": {
         "sourceRows": 7,
@@ -3005,10 +5155,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "영사",
@@ -3034,6 +5198,29 @@
         "coefficientSlots": 6,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "영사",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Lingsha_00"
+        },
+        {
+          "sourceName": "영사",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "2948",
+          "internalName": null
+        },
+        {
+          "sourceName": "영사",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1222",
+          "internalName": "Lingsha_00"
+        }
+      ],
       "characterId": "영사",
       "counts": {
         "sourceRows": 8,
@@ -3057,8 +5244,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "완•매",
@@ -3084,6 +5281,29 @@
         "coefficientSlots": 3,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "완•매",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "RuanMei_00"
+        },
+        {
+          "sourceName": "완•매",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "1638",
+          "internalName": null
+        },
+        {
+          "sourceName": "완•매",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1303",
+          "internalName": "RuanMei_00"
+        }
+      ],
       "characterId": "완•매",
       "counts": {
         "sourceRows": 12,
@@ -3107,10 +5327,24 @@
         "unknown": 0,
         "dynamicFormula": 2
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "운리",
@@ -3136,6 +5370,29 @@
         "coefficientSlots": 36,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "운리",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Yunli_00"
+        },
+        {
+          "sourceName": "운리",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "2642",
+          "internalName": null
+        },
+        {
+          "sourceName": "운리",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1221",
+          "internalName": "Yunli_00"
+        }
+      ],
       "characterId": "운리",
       "counts": {
         "sourceRows": 8,
@@ -3159,8 +5416,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "웰트",
@@ -3186,6 +5453,29 @@
         "coefficientSlots": 4,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "웰트",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Welt_00"
+        },
+        {
+          "sourceName": "웰트",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "10",
+          "internalName": null
+        },
+        {
+          "sourceName": "웰트",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1004",
+          "internalName": "Welt_00"
+        }
+      ],
       "characterId": "웰트",
       "counts": {
         "sourceRows": 11,
@@ -3209,10 +5499,24 @@
         "unknown": 0,
         "dynamicFormula": 2
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "은랑",
@@ -3238,6 +5542,29 @@
         "coefficientSlots": 3,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "은랑",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Silwolf_00"
+        },
+        {
+          "sourceName": "은랑",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "710",
+          "internalName": null
+        },
+        {
+          "sourceName": "은랑",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1006",
+          "internalName": "Silwolf_00"
+        }
+      ],
       "characterId": "은랑",
       "counts": {
         "sourceRows": 11,
@@ -3261,10 +5588,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "은랑 LV.999",
@@ -3290,6 +5631,29 @@
         "coefficientSlots": 10,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "은랑 LV.999",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "SilverWolf999_00"
+        },
+        {
+          "sourceName": "은랑 LV.999",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "4997",
+          "internalName": null
+        },
+        {
+          "sourceName": "은랑 LV.999",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1506",
+          "internalName": "SilverWolf999_00"
+        }
+      ],
       "characterId": "은랑 LV.999",
       "counts": {
         "sourceRows": 8,
@@ -3313,10 +5677,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "정운",
@@ -3342,6 +5720,29 @@
         "coefficientSlots": 1,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "정운",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Tingyun_00"
+        },
+        {
+          "sourceName": "정운",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "25",
+          "internalName": null
+        },
+        {
+          "sourceName": "정운",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1202",
+          "internalName": "Tingyun_00"
+        }
+      ],
       "characterId": "정운",
       "counts": {
         "sourceRows": 9,
@@ -3365,10 +5766,24 @@
         "unknown": 0,
         "dynamicFormula": 2
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "제레",
@@ -3394,6 +5809,29 @@
         "coefficientSlots": 3,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "제레",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Seele_00"
+        },
+        {
+          "sourceName": "제레",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "15",
+          "internalName": null
+        },
+        {
+          "sourceName": "제레",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1102",
+          "internalName": "Seele_00"
+        }
+      ],
       "characterId": "제레",
       "counts": {
         "sourceRows": 8,
@@ -3417,10 +5855,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "제이드",
@@ -3446,6 +5898,29 @@
         "coefficientSlots": 6,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "제이드",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Jade_00"
+        },
+        {
+          "sourceName": "제이드",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "2495",
+          "internalName": null
+        },
+        {
+          "sourceName": "제이드",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1314",
+          "internalName": "Jade_00"
+        }
+      ],
       "characterId": "제이드",
       "counts": {
         "sourceRows": 10,
@@ -3469,10 +5944,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "천야 • 블레이드",
@@ -3498,6 +5987,29 @@
         "coefficientSlots": 10,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "천야 • 블레이드",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "MortenaxBlade_00"
+        },
+        {
+          "sourceName": "천야 • 블레이드",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "5217",
+          "internalName": null
+        },
+        {
+          "sourceName": "천야 • 블레이드",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1507",
+          "internalName": "MortenaxBlade_00"
+        }
+      ],
       "characterId": "천야 • 블레이드",
       "counts": {
         "sourceRows": 16,
@@ -3521,10 +6033,24 @@
         "unknown": 0,
         "dynamicFormula": 4
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "청작",
@@ -3550,6 +6076,29 @@
         "coefficientSlots": 8,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "청작",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Qingque_00"
+        },
+        {
+          "sourceName": "청작",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "24",
+          "internalName": null
+        },
+        {
+          "sourceName": "청작",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1201",
+          "internalName": "Qingque_00"
+        }
+      ],
       "characterId": "청작",
       "counts": {
         "sourceRows": 10,
@@ -3573,10 +6122,24 @@
         "unknown": 0,
         "dynamicFormula": 2
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "초구",
@@ -3602,6 +6165,29 @@
         "coefficientSlots": 7,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "초구",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Jiaoqiu_00"
+        },
+        {
+          "sourceName": "초구",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "2643",
+          "internalName": null
+        },
+        {
+          "sourceName": "초구",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1218",
+          "internalName": "Jiaoqiu_00"
+        }
+      ],
       "characterId": "초구",
       "counts": {
         "sourceRows": 8,
@@ -3625,10 +6211,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "카스토리스",
@@ -3654,6 +6254,29 @@
         "coefficientSlots": 6,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "카스토리스",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Castorice_00"
+        },
+        {
+          "sourceName": "카스토리스",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3560",
+          "internalName": null
+        },
+        {
+          "sourceName": "카스토리스",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1407",
+          "internalName": "Castorice_00"
+        }
+      ],
       "characterId": "카스토리스",
       "counts": {
         "sourceRows": 7,
@@ -3677,10 +6300,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "카프카",
@@ -3706,6 +6343,29 @@
         "coefficientSlots": 6,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "카프카",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Kafka_00"
+        },
+        {
+          "sourceName": "카프카",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "791",
+          "internalName": null
+        },
+        {
+          "sourceName": "카프카",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1005",
+          "internalName": "Kafka_00"
+        }
+      ],
       "characterId": "카프카",
       "counts": {
         "sourceRows": 7,
@@ -3729,11 +6389,27 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
+      "missingItems": [
+        "missing_effect_trace",
+        "effect_rows_zero"
+      ],
       "missingExtraction": [
         "missing_effect_trace",
         "effect_rows_zero"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 2,
+      "missingCount": 2,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "케리드라",
@@ -3759,6 +6435,29 @@
         "coefficientSlots": 2,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "케리드라",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Cerydra_00"
+        },
+        {
+          "sourceName": "케리드라",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3886",
+          "internalName": null
+        },
+        {
+          "sourceName": "케리드라",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1412",
+          "internalName": "Cerydra_00"
+        }
+      ],
       "characterId": "케리드라",
       "counts": {
         "sourceRows": 18,
@@ -3782,10 +6481,24 @@
         "unknown": 0,
         "dynamicFormula": 6
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "클라라",
@@ -3811,6 +6524,29 @@
         "coefficientSlots": 3,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "클라라",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Klara_00"
+        },
+        {
+          "sourceName": "클라라",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "20",
+          "internalName": null
+        },
+        {
+          "sourceName": "클라라",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1107",
+          "internalName": "Klara_00"
+        }
+      ],
       "characterId": "클라라",
       "counts": {
         "sourceRows": 5,
@@ -3834,8 +6570,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "키레네",
@@ -3861,6 +6607,29 @@
         "coefficientSlots": 2,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "키레네",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Cyrene_00"
+        },
+        {
+          "sourceName": "키레네",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "4003",
+          "internalName": null
+        },
+        {
+          "sourceName": "키레네",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1415",
+          "internalName": "Cyrene_00"
+        }
+      ],
       "characterId": "키레네",
       "counts": {
         "sourceRows": 27,
@@ -3884,10 +6653,24 @@
         "unknown": 0,
         "dynamicFormula": 14
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "토오사카 린",
@@ -3913,6 +6696,29 @@
         "coefficientSlots": 1,
         "eidolons": 0
       },
+      "nameSources": [
+        {
+          "sourceName": "토오사카 린",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "TohsakaRin_00"
+        },
+        {
+          "sourceName": "토오사카 린",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "5339",
+          "internalName": null
+        },
+        {
+          "sourceName": "토오사카 린",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1508",
+          "internalName": "TohsakaRin_00"
+        }
+      ],
       "characterId": "토오사카 린",
       "counts": {
         "sourceRows": 0,
@@ -3936,14 +6742,40 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": false,
-      "missingExtraction": [
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [
+        "no_calculation_ready_rows"
+      ],
+      "optionalMissingItems": [
         "missing_skill_text",
         "missing_effect_trace",
         "missing_eidolon_trace",
         "effect_rows_zero",
         "coefficient_rows_zero"
-      ]
+      ],
+      "missingItems": [
+        "no_calculation_ready_rows",
+        "missing_skill_text",
+        "missing_effect_trace",
+        "missing_eidolon_trace",
+        "effect_rows_zero",
+        "coefficient_rows_zero"
+      ],
+      "missingExtraction": [
+        "no_calculation_ready_rows",
+        "missing_skill_text",
+        "missing_effect_trace",
+        "missing_eidolon_trace",
+        "effect_rows_zero",
+        "coefficient_rows_zero"
+      ],
+      "requiredMissingCount": 1,
+      "optionalMissingCount": 5,
+      "missingCount": 6,
+      "readinessStatus": "blocked",
+      "extractionReady": false
     },
     {
       "characterKey": "토파즈",
@@ -3969,6 +6801,22 @@
         "coefficientSlots": 4,
         "eidolons": 0
       },
+      "nameSources": [
+        {
+          "sourceName": "토파즈",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Topaz_00"
+        },
+        {
+          "sourceName": "토파즈",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1112",
+          "internalName": "Topaz_00"
+        }
+      ],
       "characterId": "토파즈",
       "counts": {
         "sourceRows": 0,
@@ -3992,14 +6840,40 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": false,
-      "missingExtraction": [
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [
+        "no_calculation_ready_rows"
+      ],
+      "optionalMissingItems": [
         "missing_skill_text",
         "missing_effect_trace",
         "missing_eidolon_trace",
         "effect_rows_zero",
         "coefficient_rows_zero"
-      ]
+      ],
+      "missingItems": [
+        "no_calculation_ready_rows",
+        "missing_skill_text",
+        "missing_effect_trace",
+        "missing_eidolon_trace",
+        "effect_rows_zero",
+        "coefficient_rows_zero"
+      ],
+      "missingExtraction": [
+        "no_calculation_ready_rows",
+        "missing_skill_text",
+        "missing_effect_trace",
+        "missing_eidolon_trace",
+        "effect_rows_zero",
+        "coefficient_rows_zero"
+      ],
+      "requiredMissingCount": 1,
+      "optionalMissingCount": 5,
+      "missingCount": 6,
+      "readinessStatus": "blocked",
+      "extractionReady": false
     },
     {
       "characterKey": "토파즈&복순이",
@@ -4025,6 +6899,15 @@
         "coefficientSlots": 0,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "토파즈&복순이",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "1389",
+          "internalName": null
+        }
+      ],
       "characterId": "토파즈&복순이",
       "counts": {
         "sourceRows": 5,
@@ -4048,12 +6931,30 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "missing_coefficient",
+        "effect_rows_zero"
+      ],
+      "missingItems": [
+        "missing_effect_trace",
+        "missing_coefficient",
+        "effect_rows_zero"
+      ],
       "missingExtraction": [
         "missing_effect_trace",
         "missing_coefficient",
         "effect_rows_zero"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 3,
+      "missingCount": 3,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "트리비",
@@ -4079,6 +6980,29 @@
         "coefficientSlots": 3,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "트리비",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Tribbie_00"
+        },
+        {
+          "sourceName": "트리비",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3322",
+          "internalName": null
+        },
+        {
+          "sourceName": "트리비",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1403",
+          "internalName": "Tribbie_00"
+        }
+      ],
       "characterId": "트리비",
       "counts": {
         "sourceRows": 11,
@@ -4102,10 +7026,24 @@
         "unknown": 0,
         "dynamicFormula": 2
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "파이논",
@@ -4131,6 +7069,29 @@
         "coefficientSlots": 14,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "파이논",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Phainon_00"
+        },
+        {
+          "sourceName": "파이논",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3769",
+          "internalName": null
+        },
+        {
+          "sourceName": "파이논",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1408",
+          "internalName": "Phainon_00"
+        }
+      ],
       "characterId": "파이논",
       "counts": {
         "sourceRows": 8,
@@ -4154,10 +7115,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "페라",
@@ -4183,6 +7158,29 @@
         "coefficientSlots": 4,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "페라",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Pela_00"
+        },
+        {
+          "sourceName": "페라",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "19",
+          "internalName": null
+        },
+        {
+          "sourceName": "페라",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1106",
+          "internalName": "Pela_00"
+        }
+      ],
       "characterId": "페라",
       "counts": {
         "sourceRows": 8,
@@ -4206,10 +7204,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "한아",
@@ -4235,6 +7247,29 @@
         "coefficientSlots": 1,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "한아",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Hanya_00"
+        },
+        {
+          "sourceName": "한아",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "1537",
+          "internalName": null
+        },
+        {
+          "sourceName": "한아",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1215",
+          "internalName": "Hanya_00"
+        }
+      ],
       "characterId": "한아",
       "counts": {
         "sourceRows": 11,
@@ -4258,10 +7293,24 @@
         "unknown": 0,
         "dynamicFormula": 2
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "헤르타",
@@ -4287,6 +7336,29 @@
         "coefficientSlots": 4,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "헤르타",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Herta_00"
+        },
+        {
+          "sourceName": "헤르타",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "13",
+          "internalName": null
+        },
+        {
+          "sourceName": "헤르타",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1013",
+          "internalName": "Herta_00"
+        }
+      ],
       "characterId": "헤르타",
       "counts": {
         "sourceRows": 11,
@@ -4310,10 +7382,24 @@
         "unknown": 0,
         "dynamicFormula": 2
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "효광",
@@ -4339,6 +7425,29 @@
         "coefficientSlots": 4,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "효광",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "YaoGuang_00"
+        },
+        {
+          "sourceName": "효광",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "4736",
+          "internalName": null
+        },
+        {
+          "sourceName": "효광",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1502",
+          "internalName": "YaoGuang_00"
+        }
+      ],
       "characterId": "효광",
       "counts": {
         "sourceRows": 8,
@@ -4362,8 +7471,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "후크",
@@ -4389,6 +7508,29 @@
         "coefficientSlots": 8,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "후크",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Hook_00"
+        },
+        {
+          "sourceName": "후크",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "22",
+          "internalName": null
+        },
+        {
+          "sourceName": "후크",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1109",
+          "internalName": "Hook_00"
+        }
+      ],
       "characterId": "후크",
       "counts": {
         "sourceRows": 8,
@@ -4412,8 +7554,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "히메코",
@@ -4439,6 +7591,29 @@
         "coefficientSlots": 6,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "히메코",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Himeko_00"
+        },
+        {
+          "sourceName": "히메코",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "9",
+          "internalName": null
+        },
+        {
+          "sourceName": "히메코",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1003",
+          "internalName": "Himeko_00"
+        }
+      ],
       "characterId": "히메코",
       "counts": {
         "sourceRows": 7,
@@ -4462,10 +7637,24 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "히메코 • 노바",
@@ -4491,6 +7680,29 @@
         "coefficientSlots": 1,
         "eidolons": 0
       },
+      "nameSources": [
+        {
+          "sourceName": "히메코 • 노바",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "HimekoNova_00"
+        },
+        {
+          "sourceName": "히메코 • 노바",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "5335",
+          "internalName": null
+        },
+        {
+          "sourceName": "히메코 • 노바",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1510",
+          "internalName": "HimekoNova_00"
+        }
+      ],
       "characterId": "히메코 • 노바",
       "counts": {
         "sourceRows": 0,
@@ -4514,14 +7726,40 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": false,
-      "missingExtraction": [
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [
+        "no_calculation_ready_rows"
+      ],
+      "optionalMissingItems": [
         "missing_skill_text",
         "missing_effect_trace",
         "missing_eidolon_trace",
         "effect_rows_zero",
         "coefficient_rows_zero"
-      ]
+      ],
+      "missingItems": [
+        "no_calculation_ready_rows",
+        "missing_skill_text",
+        "missing_effect_trace",
+        "missing_eidolon_trace",
+        "effect_rows_zero",
+        "coefficient_rows_zero"
+      ],
+      "missingExtraction": [
+        "no_calculation_ready_rows",
+        "missing_skill_text",
+        "missing_effect_trace",
+        "missing_eidolon_trace",
+        "effect_rows_zero",
+        "coefficient_rows_zero"
+      ],
+      "requiredMissingCount": 1,
+      "optionalMissingCount": 5,
+      "missingCount": 6,
+      "readinessStatus": "blocked",
+      "extractionReady": false
     },
     {
       "characterKey": "히실렌스",
@@ -4547,6 +7785,29 @@
         "coefficientSlots": 6,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "히실렌스",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Harscyline_00"
+        },
+        {
+          "sourceName": "히실렌스",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3885",
+          "internalName": null
+        },
+        {
+          "sourceName": "히실렌스",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1410",
+          "internalName": "Harscyline_00"
+        }
+      ],
       "characterId": "히실렌스",
       "counts": {
         "sourceRows": 10,
@@ -4570,8 +7831,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "히아킨",
@@ -4597,6 +7868,29 @@
         "coefficientSlots": 1,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "히아킨",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Hyacine_00"
+        },
+        {
+          "sourceName": "히아킨",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "3688",
+          "internalName": null
+        },
+        {
+          "sourceName": "히아킨",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1409",
+          "internalName": "Hyacine_00"
+        }
+      ],
       "characterId": "히아킨",
       "counts": {
         "sourceRows": 7,
@@ -4620,8 +7914,18 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
-      "missingExtraction": []
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [],
+      "missingItems": [],
+      "missingExtraction": [],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 0,
+      "missingCount": 0,
+      "readinessStatus": "ready",
+      "extractionReady": true
     },
     {
       "characterKey": "Dr. 레이시오",
@@ -4647,6 +7951,29 @@
         "coefficientSlots": 5,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "Dr. 레이시오",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Dr_Ratio_00"
+        },
+        {
+          "sourceName": "Dr. 레이시오",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "1639",
+          "internalName": null
+        },
+        {
+          "sourceName": "Dr. 레이시오",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1305",
+          "internalName": "Dr_Ratio_00"
+        }
+      ],
       "characterId": "Dr. 레이시오",
       "counts": {
         "sourceRows": 11,
@@ -4670,10 +7997,24 @@
         "unknown": 0,
         "dynamicFormula": 3
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "Mar. 7th",
@@ -4699,6 +8040,15 @@
         "coefficientSlots": 0,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "Mar. 7th",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "7",
+          "internalName": null
+        }
+      ],
       "characterId": "Mar. 7th",
       "counts": {
         "sourceRows": 7,
@@ -4722,12 +8072,30 @@
         "unknown": 0,
         "dynamicFormula": 0
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "missing_effect_trace",
+        "missing_coefficient",
+        "effect_rows_zero"
+      ],
+      "missingItems": [
+        "missing_effect_trace",
+        "missing_coefficient",
+        "effect_rows_zero"
+      ],
       "missingExtraction": [
         "missing_effect_trace",
         "missing_coefficient",
         "effect_rows_zero"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 3,
+      "missingCount": 3,
+      "readinessStatus": "partial",
+      "extractionReady": false
     },
     {
       "characterKey": "Mar. 7th•수렵",
@@ -4753,6 +8121,29 @@
         "coefficientSlots": 3,
         "eidolons": 6
       },
+      "nameSources": [
+        {
+          "sourceName": "Mar. 7th•수렵",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+          "internalId": null,
+          "internalName": "Mar_7th_10"
+        },
+        {
+          "sourceName": "Mar. 7th•수렵",
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+          "internalId": "2657",
+          "internalName": null
+        },
+        {
+          "sourceName": "Mar. 7th•수렵",
+          "sourceOrigin": "game_db_generated",
+          "sourcePath": "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+          "internalId": "1224",
+          "internalName": "Mar_7th_10"
+        }
+      ],
       "characterId": "Mar. 7th•수렵",
       "counts": {
         "sourceRows": 8,
@@ -4776,16 +8167,32 @@
         "unknown": 0,
         "dynamicFormula": 1
       },
-      "extractionReady": true,
+      "sourceTraceMissingRows": 0,
+      "isDisplayNameSourceBacked": true,
+      "isCharacterIdentitySourceBacked": true,
+      "requiredMissingItems": [],
+      "optionalMissingItems": [
+        "dynamic_formula_blocked"
+      ],
+      "missingItems": [
+        "dynamic_formula_blocked"
+      ],
       "missingExtraction": [
         "dynamic_formula_blocked"
-      ]
+      ],
+      "requiredMissingCount": 0,
+      "optionalMissingCount": 1,
+      "missingCount": 1,
+      "readinessStatus": "partial",
+      "extractionReady": false
     }
   ],
   "summary": {
     "characters": 92,
-    "extractionReady": 87,
+    "ready": 21,
+    "partial": 66,
     "blocked": 5,
+    "extractionReady": 21,
     "sourceRows": 761,
     "effectRows": 273,
     "coefficientRows": 766,
@@ -4793,7 +8200,22 @@
     "blockedRows": 0,
     "effectRowsZero": 17,
     "valueModeUnknownCharacters": 0,
-    "dynamicFormulaCharacters": 54
+    "dynamicFormulaCharacters": 54,
+    "legacyReadyWithMissing": 66,
+    "displayNameSourceMissing": 0,
+    "characterIdentitySourceMissing": 0
+  },
+  "requiredMissingCounts": {
+    "no_calculation_ready_rows": 5
+  },
+  "optionalMissingCounts": {
+    "missing_effect_trace": 17,
+    "effect_rows_zero": 17,
+    "dynamic_formula_blocked": 54,
+    "coefficient_rows_zero": 6,
+    "missing_skill_text": 5,
+    "missing_coefficient": 3,
+    "missing_eidolon_trace": 5
   },
   "sourceLinkage": {
     "skillTextCharacters": 87,

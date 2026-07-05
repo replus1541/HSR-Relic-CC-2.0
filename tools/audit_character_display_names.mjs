@@ -232,7 +232,7 @@ function createReport(auditRows, indexes) {
     "## Current v2 Problem",
     "",
     "- `tools/validate_canonical_dataset.mjs` currently creates coverage rows with `ensureCoverageCharacter(displayName)` and uses raw `character.name`, HoyoWiki `nameKo`, or coefficient `localName` as both `characterKey` and `displayName`.",
-    "- `data/generated/extraction-status.json` does not contain `officialName`, `localizedName`, `aliasNames`, `localizationSourcePath`, `isDisplayNameSourceBacked`, or `nameReviewStatus`.",
+    "- `data/generated/extraction-status.json` now carries source-backed flags from coverage generation, but still does not contain a dedicated `officialName`, `localizedName`, `aliasNames`, `localizationSourcePath`, or `nameReviewStatus` identity contract.",
     "- `/extraction` links to `/extraction/:characterId` with `row.characterId`, but `characterId` is currently the display string, not a stable identity key.",
     "",
     "## Source Priority Recommendation",

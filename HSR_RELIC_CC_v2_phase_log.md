@@ -1039,3 +1039,46 @@
 - `data/generated/character-identity.json` 또는 동등한 identity dataset을 먼저 만들고, `/extraction`은 그 identity row의 `displayName`만 사용해야 합니다.
 - route parameter는 표시 문자열이 아니라 stable `characterId` 또는 `internalName`으로 전환해야 합니다.
 - alias는 `aliasNames`에 보관하고 displayName으로 승격하지 않는 validator가 필요합니다.
+
+---
+
+## Follow-up Fix. Extraction Readiness Status
+
+### 상태
+
+- 상태: completed
+- 시작일: 2026-07-05
+- 완료일: 2026-07-05
+- 관련 요청: `/extraction`에서 ready인데 Missing > 0인 상태 판정 오류 수정
+
+### 진행 기록
+
+- `extraction-status.json` 생성 로직에 `readinessStatus: ready | partial | blocked`를 추가했습니다.
+- missing 항목을 `requiredMissingItems`와 `optionalMissingItems`로 분리하고 `missingCount`, `requiredMissingCount`, `optionalMissingCount`를 생성합니다.
+- required missing은 displayName source, character identity source, calculation-ready source trace, blocked rows, no calculation-ready rows 기준으로 분류합니다.
+- optional missing은 skill/effect/coefficient/eidolon coverage, effectRows 0, coefficientRows 0, unknown/dynamic formula coverage gap으로 분류합니다.
+- validator가 `ready`인데 `missingCount > 0`인 row, displayName/identity source 없는 ready row, source trace 없는 ready row를 실패 처리하도록 했습니다.
+- `/extraction`과 `/extraction/:characterId` badge를 `readinessStatus` 기준으로 표시하도록 바꿨습니다.
+- coverage report에 ready/partial/blocked, 이전 ready-with-missing count, required/optional missing type count, displayName source missing count를 추가했습니다.
+- generated JSON은 수동 수정하지 않고 `npm.cmd run validate`로 재생성했습니다.
+- 기존 프로젝트는 수정하지 않았습니다.
+
+### 산출물 요약
+
+- ready: 21
+- partial: 66
+- blocked: 5
+- previously ready with missing > 0: 66
+- ready with missing after fix: 0
+- displayNameSourceMissing: 0
+- characterIdentitySourceMissing: 0
+
+### 검증
+
+- `npm.cmd run validate`: 성공. `readyWithMissing=0`, 하위 검증 11개 통과.
+- `npm.cmd run build`: 성공. Vite production build 완료. full generated JSON import로 chunk size warning은 유지됩니다.
+
+### 다음 Task로 넘길 항목
+
+- character identity dataset을 별도로 만들면 `displayName` source-backed 판정을 identity contract 기준으로 더 엄격하게 옮겨야 합니다.
+- `partial`로 분류된 66명 중 dynamic_formula, effect trace, coefficient coverage gap을 후속 coverage task로 줄여야 합니다.

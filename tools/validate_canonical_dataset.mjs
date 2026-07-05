@@ -92,9 +92,20 @@ function ensureCoverageCharacter(map, displayName) {
       coefficientSlots: 0,
       eidolons: 0,
     },
+    nameSources: [],
   };
   map.set(key, current);
   return current;
+}
+
+function addNameSource(row, source) {
+  row.nameSources.push({
+    sourceName: normalizeName(source.sourceName),
+    sourceOrigin: source.sourceOrigin,
+    sourcePath: source.sourcePath,
+    internalId: source.internalId ?? null,
+    internalName: source.internalName ?? null,
+  });
 }
 
 function buildCoverageIndex() {
@@ -107,6 +118,12 @@ function buildCoverageIndex() {
     row.identifiers.effectName = character.name ?? row.identifiers.effectName;
     row.sourceCounts.effectCandidates = character.activeEffects?.length ?? 0;
     row.sourceAvailability.effectTrace = row.sourceCounts.effectCandidates > 0;
+    addNameSource(row, {
+      sourceName: character.name ?? character.avatar,
+      sourceOrigin: "game_db_generated",
+      sourcePath: "data/legacy-reference/game-db/character-effect-candidates.json",
+      internalName: character.avatar ?? null,
+    });
   }
 
   for (const character of skillPayload.characters ?? []) {
@@ -116,6 +133,12 @@ function buildCoverageIndex() {
     row.sourceCounts.eidolons = character.eidolons?.length ?? 0;
     row.sourceAvailability.skillText = row.sourceCounts.skillRows > 0;
     row.sourceAvailability.eidolon = row.sourceCounts.eidolons > 0;
+    addNameSource(row, {
+      sourceName: character.nameKo ?? character.entryPageId,
+      sourceOrigin: "hoyowiki",
+      sourcePath: "data/legacy-reference/game-db/hoyowiki-character-skills.json",
+      internalId: character.entryPageId ?? null,
+    });
   }
 
   for (const character of coefficientPayload.characters ?? []) {
@@ -124,6 +147,13 @@ function buildCoverageIndex() {
     row.identifiers.coefficientAvatarId = character.avatarId ?? row.identifiers.coefficientAvatarId;
     row.sourceCounts.coefficientSlots = countCoefficientSlots(character);
     row.sourceAvailability.coefficient = row.sourceCounts.coefficientSlots > 0;
+    addNameSource(row, {
+      sourceName: character.localName ?? character.nameKo ?? character.avatar,
+      sourceOrigin: "game_db_generated",
+      sourcePath: "data/legacy-reference/game-db/attack-coefficient-candidates.json",
+      internalId: character.avatarId ?? null,
+      internalName: character.avatar ?? null,
+    });
   }
 
   return {
@@ -153,6 +183,10 @@ function rowMatchesCoverage(row, coverageRow) {
 }
 
 function classifyMissingExtraction(row) {
+  return [...row.requiredMissingItems, ...row.optionalMissingItems];
+}
+
+function classifyOptionalMissing(row) {
   const missing = [];
   if (!row.sourceAvailability.skillText) missing.push("missing_skill_text");
   if (!row.sourceAvailability.effectTrace) missing.push("missing_effect_trace");
@@ -163,6 +197,51 @@ function classifyMissingExtraction(row) {
   if (row.valueMode.unknown > 0) missing.push("value_mode_unknown");
   if (row.valueMode.dynamicFormula > 0) missing.push("dynamic_formula_blocked");
   return missing;
+}
+
+function hasSourceTrace(row) {
+  return Boolean(row?.sourceId || row?.sourceRecord || row?.sourcePath || row?.sourceTrace || row?.skillId);
+}
+
+function isDisplayNameSourceBacked(row) {
+  return (row.nameSources ?? []).some((source) => (
+    normalizeName(source.sourceName) === row.displayName
+    && source.sourcePath
+    && source.sourceOrigin !== SourceOrigin.MANUAL_HINT
+    && source.sourceOrigin !== SourceOrigin.MANUAL_GUIDE
+  ));
+}
+
+function isCharacterIdentitySourceBacked(row) {
+  return Boolean(
+    row.identifiers?.effectAvatar
+    || row.identifiers?.hoyowikiEntryPageId
+    || row.identifiers?.coefficientAvatar
+    || (row.nameSources ?? []).some((source) => source.internalId || source.internalName),
+  );
+}
+
+function classifyRequiredMissing(row) {
+  const missing = [];
+  if (!row.isDisplayNameSourceBacked) missing.push("display_name_source_missing");
+  if (!row.isCharacterIdentitySourceBacked) missing.push("character_identity_source_missing");
+  if (row.sourceTraceMissingRows > 0) missing.push("calculation_ready_source_trace_missing");
+  if (row.blockedRows > 0) missing.push("blocked_rows_present");
+  if (row.readyRows === 0) missing.push("no_calculation_ready_rows");
+  return missing;
+}
+
+function calculateReadinessStatus(row) {
+  if (row.requiredMissingItems.length > 0) return "blocked";
+  if (row.optionalMissingItems.length > 0) return "partial";
+  return "ready";
+}
+
+function countItems(rows, field) {
+  return rows.reduce((counts, row) => {
+    for (const item of row[field] ?? []) counts[item] = (counts[item] ?? 0) + 1;
+    return counts;
+  }, {});
 }
 
 function createEmptyStatus(characterId) {
@@ -218,6 +297,12 @@ export function buildExtractionCoverage(dataset) {
       unknown: effectRows.filter((row) => row.valueMode === ValueMode.UNKNOWN).length,
       dynamicFormula: effectRows.filter((row) => row.valueMode === ValueMode.DYNAMIC_FORMULA).length,
     };
+    const calculationReadyRows = [
+      ...sourceRows.filter((row) => row.calculationReady === true),
+      ...effectRows.filter((row) => row.calculationStatus === CalculationStatus.CALCULATION_READY),
+      ...coefficientRows.filter((row) => row.calculationStatus === CalculationStatus.CALCULATION_READY),
+    ];
+    const sourceTraceMissingRows = calculationReadyRows.filter((row) => !hasSourceTrace(row)).length;
     const enriched = {
       ...coverageRow,
       characterId: coverageRow.characterKey,
@@ -240,11 +325,35 @@ export function buildExtractionCoverage(dataset) {
       calculationReadyCoefficientRows: status.calculationReadyCoefficientRows,
       blockedCoefficientRows: status.blockedCoefficientRows,
       valueMode,
-      extractionReady: status.readyRows > 0 && status.blockedRows === 0,
+      sourceTraceMissingRows,
     };
-    return {
+    const statusMetadata = {
       ...enriched,
-      missingExtraction: classifyMissingExtraction(enriched),
+      isDisplayNameSourceBacked: isDisplayNameSourceBacked(enriched),
+      isCharacterIdentitySourceBacked: isCharacterIdentitySourceBacked(enriched),
+    };
+    const optionalMissingItems = classifyOptionalMissing(statusMetadata);
+    const requiredMissingItems = classifyRequiredMissing({
+      ...statusMetadata,
+      optionalMissingItems,
+    });
+    const missingItems = [...requiredMissingItems, ...optionalMissingItems];
+    const readinessStatus = calculateReadinessStatus({
+      ...statusMetadata,
+      requiredMissingItems,
+      optionalMissingItems,
+    });
+    return {
+      ...statusMetadata,
+      requiredMissingItems,
+      optionalMissingItems,
+      missingItems,
+      missingExtraction: missingItems,
+      requiredMissingCount: requiredMissingItems.length,
+      optionalMissingCount: optionalMissingItems.length,
+      missingCount: missingItems.length,
+      readinessStatus,
+      extractionReady: readinessStatus === "ready",
     };
   });
 
@@ -255,8 +364,10 @@ export function buildExtractionCoverage(dataset) {
     rows,
     summary: {
       characters: rows.length,
-      extractionReady: rows.filter((row) => row.extractionReady).length,
-      blocked: rows.filter((row) => !row.extractionReady).length,
+      ready: rows.filter((row) => row.readinessStatus === "ready").length,
+      partial: rows.filter((row) => row.readinessStatus === "partial").length,
+      blocked: rows.filter((row) => row.readinessStatus === "blocked").length,
+      extractionReady: rows.filter((row) => row.readinessStatus === "ready").length,
       sourceRows: rows.reduce((sum, row) => sum + row.sourceRows, 0),
       effectRows: rows.reduce((sum, row) => sum + row.effectRows, 0),
       coefficientRows: rows.reduce((sum, row) => sum + row.coefficientRows, 0),
@@ -265,7 +376,12 @@ export function buildExtractionCoverage(dataset) {
       effectRowsZero: rows.filter((row) => row.effectRows === 0).length,
       valueModeUnknownCharacters: rows.filter((row) => row.valueMode.unknown > 0).length,
       dynamicFormulaCharacters: rows.filter((row) => row.valueMode.dynamicFormula > 0).length,
+      legacyReadyWithMissing: rows.filter((row) => row.readyRows > 0 && row.blockedRows === 0 && row.missingCount > 0).length,
+      displayNameSourceMissing: rows.filter((row) => !row.isDisplayNameSourceBacked).length,
+      characterIdentitySourceMissing: rows.filter((row) => !row.isCharacterIdentitySourceBacked).length,
     },
+    requiredMissingCounts: countItems(rows, "requiredMissingItems"),
+    optionalMissingCounts: countItems(rows, "optionalMissingItems"),
     sourceLinkage: coverageIndex.sourceLinkage,
   };
 }
@@ -308,8 +424,38 @@ function validateExtractionStatus(status, dataset) {
   if (status?.datasetMode !== "full") errors.push("status datasetMode must be full");
   for (const row of status?.rows ?? []) {
     if (!row.characterId) errors.push("status row missing characterId");
+    if (!["ready", "partial", "blocked"].includes(row.readinessStatus)) errors.push(`${row.characterId}: invalid readinessStatus`);
+    if (!Array.isArray(row.requiredMissingItems)) errors.push(`${row.characterId}: requiredMissingItems must be an array`);
+    if (!Array.isArray(row.optionalMissingItems)) errors.push(`${row.characterId}: optionalMissingItems must be an array`);
+    if (row.missingCount !== (row.requiredMissingCount ?? 0) + (row.optionalMissingCount ?? 0)) {
+      errors.push(`${row.characterId}: missingCount mismatch`);
+    }
     if (row.readyRows + row.blockedRows !== row.sourceRows + row.effectRows + row.coefficientRows) {
       errors.push(`${row.characterId}: ready/blocked row total mismatch`);
+    }
+    if (row.readinessStatus === "ready" && row.missingCount > 0) {
+      errors.push(`${row.characterId}: ready status must not have missing items`);
+    }
+    if (row.readinessStatus === "ready" && (row.requiredMissingCount > 0 || row.blockedRows > 0)) {
+      errors.push(`${row.characterId}: ready status must not have required missing or blocked rows`);
+    }
+    if (row.readinessStatus === "ready" && !row.isDisplayNameSourceBacked) {
+      errors.push(`${row.characterId}: displayName source missing cannot be ready`);
+    }
+    if (row.readinessStatus === "ready" && !row.isCharacterIdentitySourceBacked) {
+      errors.push(`${row.characterId}: character identity source missing cannot be ready`);
+    }
+    if (row.readinessStatus === "ready" && row.sourceTraceMissingRows > 0) {
+      errors.push(`${row.characterId}: source trace missing cannot be ready`);
+    }
+    if (row.readinessStatus === "partial" && row.requiredMissingCount > 0) {
+      errors.push(`${row.characterId}: partial status must not have required missing items`);
+    }
+    if (row.readinessStatus === "partial" && row.optionalMissingCount === 0) {
+      errors.push(`${row.characterId}: partial status requires optional missing items`);
+    }
+    if (row.readinessStatus === "blocked" && row.requiredMissingCount === 0) {
+      errors.push(`${row.characterId}: blocked status requires required missing items`);
     }
   }
   return { ok: errors.length === 0, errors };
@@ -379,7 +525,9 @@ writeJson(statusPath, extractionStatus);
 writeJson(coveragePath, extractionStatus);
 
 const effectRowsZero = extractionStatus.rows.filter((row) => row.effectRows === 0);
-const missingRows = extractionStatus.rows.filter((row) => row.missingExtraction.length > 0);
+const missingRows = extractionStatus.rows.filter((row) => row.missingCount > 0);
+const requiredMissingRows = extractionStatus.rows.filter((row) => row.requiredMissingCount > 0);
+const optionalMissingRows = extractionStatus.rows.filter((row) => row.optionalMissingCount > 0);
 const unknownRows = extractionStatus.rows.filter((row) => row.valueMode.unknown > 0);
 const dynamicRows = extractionStatus.rows.filter((row) => row.valueMode.dynamicFormula > 0);
 
@@ -406,7 +554,8 @@ const reportLines = [
   "## Extraction Status",
   "",
   `- characters: ${extractionStatus.summary.characters}`,
-  `- extractionReady: ${extractionStatus.summary.extractionReady}`,
+  `- ready: ${extractionStatus.summary.ready}`,
+  `- partial: ${extractionStatus.summary.partial}`,
   `- blocked: ${extractionStatus.summary.blocked}`,
   `- readyRows: ${extractionStatus.summary.readyRows}`,
   `- blockedRows: ${extractionStatus.summary.blockedRows}`,
@@ -428,11 +577,33 @@ const coverageReportLines = [
   "",
   `- datasetMode: ${extractionStatus.datasetMode}`,
   `- characters: ${extractionStatus.summary.characters}`,
-  `- extractionReady: ${extractionStatus.summary.extractionReady}`,
+  `- ready: ${extractionStatus.summary.ready}`,
+  `- partial: ${extractionStatus.summary.partial}`,
+  `- blocked: ${extractionStatus.summary.blocked}`,
+  `- legacyReadyWithMissing: ${extractionStatus.summary.legacyReadyWithMissing}`,
   `- missingExtractionCharacters: ${missingRows.length}`,
+  `- requiredMissingCharacters: ${requiredMissingRows.length}`,
+  `- optionalMissingCharacters: ${optionalMissingRows.length}`,
   `- effectRowsZero: ${effectRowsZero.length}`,
   `- valueModeUnknownCharacters: ${unknownRows.length}`,
   `- dynamicFormulaCharacters: ${dynamicRows.length}`,
+  `- displayNameSourceMissing: ${extractionStatus.summary.displayNameSourceMissing}`,
+  `- characterIdentitySourceMissing: ${extractionStatus.summary.characterIdentitySourceMissing}`,
+  "",
+  "## Readiness Status",
+  "",
+  `- ready: ${extractionStatus.summary.ready}`,
+  `- partial: ${extractionStatus.summary.partial}`,
+  `- blocked: ${extractionStatus.summary.blocked}`,
+  `- previously ready with missing > 0: ${extractionStatus.summary.legacyReadyWithMissing}`,
+  "",
+  "## Required Missing Counts",
+  "",
+  ...(Object.keys(extractionStatus.requiredMissingCounts).length ? Object.entries(extractionStatus.requiredMissingCounts).map(([key, value]) => `- ${key}: ${value}`) : ["- none"]),
+  "",
+  "## Optional Missing Counts",
+  "",
+  ...(Object.keys(extractionStatus.optionalMissingCounts).length ? Object.entries(extractionStatus.optionalMissingCounts).map(([key, value]) => `- ${key}: ${value}`) : ["- none"]),
   "",
   "## Source Linkage",
   "",
@@ -445,7 +616,7 @@ const coverageReportLines = [
   "",
   "## Missing Extraction By Character",
   "",
-  ...(missingRows.length ? missingRows.map((row) => `- ${row.displayName}: ${row.missingExtraction.join(", ")}`) : ["- none"]),
+  ...(missingRows.length ? missingRows.map((row) => `- ${row.displayName}: ${row.readinessStatus}; required=[${row.requiredMissingItems.join(", ") || "none"}]; optional=[${row.optionalMissingItems.join(", ") || "none"}]`) : ["- none"]),
   "",
   "## effectRows 0 Characters",
   "",
@@ -464,4 +635,4 @@ const coverageReportLines = [
 ];
 fs.writeFileSync(coverageReportPath, `${coverageReportLines.join("\n")}\n`, "utf8");
 
-console.log(`canonical dataset validation ok: sourceRows=${dataset.manifest.counts.sourceRows}, ready=${dataset.manifest.sourcePolicy.ready}, blocked=${dataset.manifest.sourcePolicy.blocked}, statusCharacters=${extractionStatus.summary.characters}, datasetMode=${extractionStatus.datasetMode}, effectRowsZero=${extractionStatus.summary.effectRowsZero}, manual_hint_guard=blocked`);
+console.log(`canonical dataset validation ok: sourceRows=${dataset.manifest.counts.sourceRows}, sourceReady=${dataset.manifest.sourcePolicy.ready}, sourceBlocked=${dataset.manifest.sourcePolicy.blocked}, statusCharacters=${extractionStatus.summary.characters}, readiness=ready:${extractionStatus.summary.ready}/partial:${extractionStatus.summary.partial}/blocked:${extractionStatus.summary.blocked}, readyWithMissing=0, datasetMode=${extractionStatus.datasetMode}, effectRowsZero=${extractionStatus.summary.effectRowsZero}, manual_hint_guard=blocked`);
