@@ -1,0 +1,14 @@
+{
+  "id": "source:curated:effect:demo",
+  "kind": "source_row",
+  "version": 1,
+  "createdBy": "schema-fixture",
+  "sourceOrigin": "curated_source",
+  "sourceKind": "curated_source",
+  "sourcePath": "data/character-effects/curated-source-effects.json",
+  "sourceRecord": "curated:demo:effect",
+  "sourceText": "Curated source row with preserved original source text.",
+  "calculationStatus": "calculation_ready",
+  "reviewStatus": "source_confirmed"
+}
+

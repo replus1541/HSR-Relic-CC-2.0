@@ -1,0 +1,13 @@
+{
+  "id": "source:raw:hoyowiki:character-skill:demo",
+  "kind": "source_row",
+  "version": 1,
+  "createdBy": "schema-fixture",
+  "sourceOrigin": "raw_source",
+  "sourceKind": "hoyowiki",
+  "sourcePath": "data/game-db/hoyowiki-character-skills.json",
+  "sourceRecord": "HoyoWiki:demo:skill",
+  "sourceText": "Demo raw source row with official skill text.",
+  "calculationStatus": "calculation_ready"
+}
+

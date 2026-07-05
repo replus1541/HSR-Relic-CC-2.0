@@ -1,0 +1,14 @@
+{
+  "id": "source:manual-hint:demo",
+  "kind": "source_row",
+  "version": 1,
+  "createdBy": "schema-fixture",
+  "sourceOrigin": "manual_hint",
+  "sourceKind": "legacy_snapshot",
+  "sourcePath": "data/character-effects/character-guides.json",
+  "sourceRecord": "guide:demo:effect",
+  "sourceText": "Manual guide hint that must stay blocked.",
+  "calculationStatus": "blocked",
+  "blockedReason": "manual_source_blocked"
+}
+

@@ -253,9 +253,9 @@
 
 ### 상태
 
-- 상태: in_progress
+- 상태: complete
 - 시작일: 2026-07-05
-- 완료일:
+- 완료일: 2026-07-05
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
@@ -268,6 +268,11 @@
 - 2026-07-05: `src/data-model/schemas/schema-enums.js`, `schema-types.js`, `index.js`를 추가했습니다. source, value, target, attack, condition, stack, blocked reason enum과 JSDoc typedef skeleton만 포함합니다.
 - 2026-07-05: `src/data-model/README.md`와 `src/data-model/schemas/README.md`에 현재 구현 범위와 금지 사항을 기록했습니다.
 - 2026-07-05: Task 3-B complete. 다음 Task 3-C에는 schema fixture와 validator에서 검사할 enum 목록, source guard, manual guard, value guard를 넘깁니다.
+- 2026-07-05: Task 3-C 시작. adapter/effect normalization/calculation 구현 없이 source guard를 검사할 최소 validator와 schema fixture를 추가합니다.
+- 2026-07-05: `src/data-model/schema-validator.js`, `tools/validate_schema.mjs`, `data/generated/schema-fixtures/*.json`를 추가했습니다.
+- 2026-07-05: 계산 가능 `raw_source`, 계산 가능 `curated_source`, 계산 불가 `manual_hint` fixture를 만들고, validator가 `manual_hint`를 `calculation_ready`로 바꾼 경우 실패하는지 확인하도록 했습니다.
+- 2026-07-05: `package.json`에 `validate:schema` 스크립트를 추가했습니다.
+- 2026-07-05: Task 3-C complete. Phase 3-A/B/C 기준 Phase 3은 완료 처리합니다.
 
 ### 생성/수정 파일
 
@@ -275,6 +280,12 @@
 - `src/data-model/schemas/schema-enums.js`
 - `src/data-model/schemas/schema-types.js`
 - `src/data-model/schemas/index.js`
+- `src/data-model/schema-validator.js`
+- `data/generated/schema-fixtures/raw-source-ready.json`
+- `data/generated/schema-fixtures/curated-source-ready.json`
+- `data/generated/schema-fixtures/manual-hint-blocked.json`
+- `tools/validate_schema.mjs`
+- `package.json`
 - `src/data-model/README.md`
 - `src/data-model/schemas/README.md`
 - `HSR_RELIC_CC_v2_phase_log.md`
@@ -287,11 +298,15 @@
 - ledger row id와 aggregation row id를 UI trace 기준으로 사용합니다.
 - Task 3-B 코드 skeleton은 import 가능한 상수와 JSDoc typedef만 포함하며, runtime validator와 계산 로직은 포함하지 않습니다.
 - target 관련 enum은 effect 대상 범위인 `TargetScope`와 공격/계수 대상 형태인 `TargetProfile`을 분리합니다.
+- Task 3-C validator는 source row guard만 검사합니다. adapter, effect normalizer, value resolver, damage calculation은 구현하지 않습니다.
+- `manual_hint`, `manual_guide`, fallback, audit reference는 `blocked` 또는 `reference_only` 상태와 `blockedReason`을 요구합니다.
 
 ### 검증
 
 - `npm.cmd run build`: Task 3-A 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
 - `npm.cmd run build`: Task 3-B 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
+- `npm.cmd run validate:schema`: Task 3-C 성공. fixtures=3, manual_hint_guard=blocked.
+- `npm.cmd run build`: Task 3-C 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
 
 ### 막힌 점 / 리스크
 
@@ -300,8 +315,8 @@
 ### 다음 Task로 넘길 항목
 
 - `sourceOrigin`, `calculationStatus`, `blockedReason`, `valueMode`, `effectType`, `attackType`, `targetProfile` enum skeleton을 `src/data-model/schemas`에 작성합니다.
-- Task 3-C validator에서 `SourceOrigin`, `CalculationStatus`, `BlockedReason`, `ValueMode`, `EffectType`, `TargetScope`, `TargetProfile`, `AttackType`를 검사합니다.
-- Task 3-C validator에서 source guard, manual guard, value guard를 최소 검증으로 옮깁니다.
+- Phase 4에서 legacy reference snapshot manifest를 설계합니다.
+- Phase 5 adapter output validator는 Task 3-C의 source guard와 enum 검사를 재사용할 수 있습니다.
 
 ---
 

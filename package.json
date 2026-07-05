@@ -8,7 +8,8 @@
     "dev:local": "vite --host 127.0.0.1",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "verify": "npm.cmd run build"
+    "verify": "npm.cmd run build",
+    "validate:schema": "node tools/validate_schema.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.0.0",

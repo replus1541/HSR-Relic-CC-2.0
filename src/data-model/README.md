@@ -23,5 +23,6 @@ Phase 3에서 `SourceRow`, `EffectRow`, `ResolvedEffect`, `CombatLedgerRow` sche
 - `schemas/schema-enums.js`: schema kind, source, value, target, attack, condition, stack, blocked reason enum skeleton입니다.
 - `schemas/schema-types.js`: JSDoc typedef skeleton입니다.
 - `schemas/index.js`: schema skeleton re-export 진입점입니다.
+- `schema-validator.js`: source guard 중심의 최소 schema validator입니다.
 
-아직 runtime validator, adapter, effect normalizer, value resolver, 계산 로직은 없습니다.
+아직 adapter, effect normalizer, value resolver, 계산 로직은 없습니다.
