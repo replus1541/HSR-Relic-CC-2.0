@@ -753,14 +753,17 @@
 
 ### 상태
 
-- 상태: not_started
-- 시작일:
+- 상태: in_progress
+- 시작일: 2026-07-05
 - 완료일:
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
 
--
+- Task 13-A 시작: v2 UI presentational component inventory를 작성했습니다.
+- `reports/ui-reuse/reused-style-map.md`에 Card/Panel/Badge/Tabs/TraceRow/EmptyState/MetricList/DataTable 범위와 data boundary를 기록했습니다.
+- `src/ui/README.md`를 갱신해 UI component가 adapter/effect/ledger/aggregation/legacy guide fallback을 호출하지 않는 원칙을 명시했습니다.
+- UI 구현, 계산 로직, adapter 구현, 기존 CSS 전체 복사는 수행하지 않았습니다.
 
 ---
 
