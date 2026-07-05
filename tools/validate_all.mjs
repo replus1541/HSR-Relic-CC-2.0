@@ -4,6 +4,7 @@ const scripts = [
   "validate:schema",
   "validate:legacy",
   "validate:adapters",
+  "data:adapters",
   "validate:canonical-dataset",
   "validate:effect-normalization",
   "validate:value-resolution",

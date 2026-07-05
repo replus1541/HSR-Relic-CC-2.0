@@ -126,6 +126,3689 @@
       "dedupeKey": "pending_dedupe:PlayerBoy_40:source:PlayerBoy_40:2:vulnerability:debuff:enemy_single",
       "calculationStatus": "calculation_ready",
       "resolvedValue": 0.1
+    },
+    {
+      "id": "resolved:effect:PlayerBoy_40:3",
+      "effectRowId": "effect:PlayerBoy_40:3",
+      "sourceId": "source:PlayerBoy_40:3",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:PlayerBoy_40:source:PlayerBoy_40:3:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 1
+    },
+    {
+      "id": "resolved:effect:Jingliu_00:0",
+      "effectRowId": "effect:Jingliu_00:0",
+      "sourceId": "source:Jingliu_00:0",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Jingliu_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Jingliu_00:source:Jingliu_00:0:critRate:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Jingliu_00:1",
+      "effectRowId": "effect:Jingliu_00:1",
+      "sourceId": "source:Jingliu_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Jingliu_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Jingliu_00:source:Jingliu_00:1:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:JingYuan_00:0",
+      "effectRowId": "effect:JingYuan_00:0",
+      "sourceId": "source:JingYuan_00:0",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:JingYuan_00:0"
+      },
+      "dedupeKey": "pending_dedupe:JingYuan_00:source:JingYuan_00:0:critRate:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:JingYuan_00:1",
+      "effectRowId": "effect:JingYuan_00:1",
+      "sourceId": "source:JingYuan_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:JingYuan_00:source:JingYuan_00:1:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:JingYuan_00:2",
+      "effectRowId": "effect:JingYuan_00:2",
+      "sourceId": "source:JingYuan_00:2",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:JingYuan_00:2"
+      },
+      "dedupeKey": "pending_dedupe:JingYuan_00:source:JingYuan_00:2:vulnerability:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Guinaifen_00:0",
+      "effectRowId": "effect:Guinaifen_00:0",
+      "sourceId": "source:Guinaifen_00:0",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Guinaifen_00:source:Guinaifen_00:0:vulnerability:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.07
+    },
+    {
+      "id": "resolved:effect:Huohuo_00:0",
+      "effectRowId": "effect:Huohuo_00:0",
+      "sourceId": "source:Huohuo_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Huohuo_00:source:Huohuo_00:0:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.5
+    },
+    {
+      "id": "resolved:effect:Huohuo_00:1",
+      "effectRowId": "effect:Huohuo_00:1",
+      "sourceId": "source:Huohuo_00:1",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Huohuo_00:source:Huohuo_00:1:atkRatio:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.24
+    },
+    {
+      "id": "resolved:effect:Luocha_00:0",
+      "effectRowId": "effect:Luocha_00:0",
+      "sourceId": "source:Luocha_00:0",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Luocha_00:source:Luocha_00:0:atkRatio:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Luocha_00:1",
+      "effectRowId": "effect:Luocha_00:1",
+      "sourceId": "source:Luocha_00:1",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Luocha_00:source:Luocha_00:1:resistancePen:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:DanHeng_00:0",
+      "effectRowId": "effect:DanHeng_00:0",
+      "sourceId": "source:DanHeng_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:DanHeng_00:0"
+      },
+      "dedupeKey": "pending_dedupe:DanHeng_00:source:DanHeng_00:0:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:DanHeng_00:1",
+      "effectRowId": "effect:DanHeng_00:1",
+      "sourceId": "source:DanHeng_00:1",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:DanHeng_00:source:DanHeng_00:1:critRate:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.12
+    },
+    {
+      "id": "resolved:effect:DanHengPT_00:0",
+      "effectRowId": "effect:DanHengPT_00:0",
+      "sourceId": "source:DanHengPT_00:0",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:DanHengPT_00:source:DanHengPT_00:0:vulnerability:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:DanHengPT_00:1",
+      "effectRowId": "effect:DanHengPT_00:1",
+      "sourceId": "source:DanHengPT_00:1",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:DanHengPT_00:source:DanHengPT_00:1:defenseIgnore:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.12
+    },
+    {
+      "id": "resolved:effect:DanHengPT_00:2",
+      "effectRowId": "effect:DanHengPT_00:2",
+      "sourceId": "source:DanHengPT_00:2",
+      "stat": "atkFlat",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:DanHengPT_00:2"
+      },
+      "dedupeKey": "pending_dedupe:DanHengPT_00:source:DanHengPT_00:2:atkFlat:buff:single_ally",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:DanHengIL_00:0",
+      "effectRowId": "effect:DanHengIL_00:0",
+      "sourceId": "source:DanHengIL_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:DanHengIL_00:0"
+      },
+      "dedupeKey": "pending_dedupe:DanHengIL_00:source:DanHengIL_00:0:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:DanHengIL_00:1",
+      "effectRowId": "effect:DanHengIL_00:1",
+      "sourceId": "source:DanHengIL_00:1",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:DanHengIL_00:source:DanHengIL_00:1:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.12
+    },
+    {
+      "id": "resolved:effect:Constance_00:0",
+      "effectRowId": "effect:Constance_00:0",
+      "sourceId": "source:Constance_00:0",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Constance_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Constance_00:source:Constance_00:0:defenseDown:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Constance_00:1",
+      "effectRowId": "effect:Constance_00:1",
+      "sourceId": "source:Constance_00:1",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Constance_00:source:Constance_00:1:resistancePen:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Constance_00:2",
+      "effectRowId": "effect:Constance_00:2",
+      "sourceId": "source:Constance_00:2",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Constance_00:source:Constance_00:2:vulnerability:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.12
+    },
+    {
+      "id": "resolved:effect:TheHerta_00:0",
+      "effectRowId": "effect:TheHerta_00:0",
+      "sourceId": "source:TheHerta_00:0",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:TheHerta_00:0"
+      },
+      "dedupeKey": "pending_dedupe:TheHerta_00:source:TheHerta_00:0:atkRatio:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:TheHerta_00:1",
+      "effectRowId": "effect:TheHerta_00:1",
+      "sourceId": "source:TheHerta_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:TheHerta_00:1"
+      },
+      "dedupeKey": "pending_dedupe:TheHerta_00:source:TheHerta_00:1:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Rappa_00:0",
+      "effectRowId": "effect:Rappa_00:0",
+      "sourceId": "source:Rappa_00:0",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Rappa_00:source:Rappa_00:0:defenseIgnore:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.15
+    },
+    {
+      "id": "resolved:effect:Robin_00:0",
+      "effectRowId": "effect:Robin_00:0",
+      "sourceId": "source:Robin_00:0",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Robin_00:source:Robin_00:0:critDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Robin_00:1",
+      "effectRowId": "effect:Robin_00:1",
+      "sourceId": "source:Robin_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Robin_00:source:Robin_00:1:allDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.5
+    },
+    {
+      "id": "resolved:effect:Robin_00:2",
+      "effectRowId": "effect:Robin_00:2",
+      "sourceId": "source:Robin_00:2",
+      "stat": "atkFlat",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Robin_00:2"
+      },
+      "dedupeKey": "pending_dedupe:Robin_00:source:Robin_00:2:atkFlat:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Luka_00:0",
+      "effectRowId": "effect:Luka_00:0",
+      "sourceId": "source:Luka_00:0",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Luka_00:source:Luka_00:0:vulnerability:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Luka_00:1",
+      "effectRowId": "effect:Luka_00:1",
+      "sourceId": "source:Luka_00:1",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Luka_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Luka_00:source:Luka_00:1:atkRatio:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Mydeimos_00:0",
+      "effectRowId": "effect:Mydeimos_00:0",
+      "sourceId": "source:Mydeimos_00:0",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Mydeimos_00:source:Mydeimos_00:0:defenseIgnore:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.15
+    },
+    {
+      "id": "resolved:effect:Mydeimos_00:1",
+      "effectRowId": "effect:Mydeimos_00:1",
+      "sourceId": "source:Mydeimos_00:1",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Mydeimos_00:source:Mydeimos_00:1:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Fugue_00:0",
+      "effectRowId": "effect:Fugue_00:0",
+      "sourceId": "source:Fugue_00:0",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Fugue_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Fugue_00:source:Fugue_00:0:defenseDown:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Moze_00:0",
+      "effectRowId": "effect:Moze_00:0",
+      "sourceId": "source:Moze_00:0",
+      "stat": "followDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Moze_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Moze_00:source:Moze_00:0:followDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Moze_00:1",
+      "effectRowId": "effect:Moze_00:1",
+      "sourceId": "source:Moze_00:1",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Moze_00:source:Moze_00:1:critDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
+    },
+    {
+      "id": "resolved:effect:Moze_00:2",
+      "effectRowId": "effect:Moze_00:2",
+      "sourceId": "source:Moze_00:2",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Moze_00:source:Moze_00:2:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Misha_00:0",
+      "effectRowId": "effect:Misha_00:0",
+      "sourceId": "source:Misha_00:0",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Misha_00:source:Misha_00:0:defenseDown:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.16
+    },
+    {
+      "id": "resolved:effect:Boothill_00:0",
+      "effectRowId": "effect:Boothill_00:0",
+      "sourceId": "source:Boothill_00:0",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Boothill_00:source:Boothill_00:0:vulnerability:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Boothill_00:1",
+      "effectRowId": "effect:Boothill_00:1",
+      "sourceId": "source:Boothill_00:1",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Boothill_00:source:Boothill_00:1:defenseIgnore:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.16
+    },
+    {
+      "id": "resolved:effect:FuXuan_00:0",
+      "effectRowId": "effect:FuXuan_00:0",
+      "sourceId": "source:FuXuan_00:0",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:FuXuan_00:0"
+      },
+      "dedupeKey": "pending_dedupe:FuXuan_00:source:FuXuan_00:0:critRate:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:FuXuan_00:1",
+      "effectRowId": "effect:FuXuan_00:1",
+      "sourceId": "source:FuXuan_00:1",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:FuXuan_00:source:FuXuan_00:1:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Bronya_00:0",
+      "effectRowId": "effect:Bronya_00:0",
+      "sourceId": "source:Bronya_00:0",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Bronya_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Bronya_00:source:Bronya_00:0:atkRatio:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Bronya_00:1",
+      "effectRowId": "effect:Bronya_00:1",
+      "sourceId": "source:Bronya_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Bronya_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Bronya_00:source:Bronya_00:1:allDamage:buff:single_ally",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Bronya_00:2",
+      "effectRowId": "effect:Bronya_00:2",
+      "sourceId": "source:Bronya_00:2",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Bronya_00:source:Bronya_00:2:critDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.16
+    },
+    {
+      "id": "resolved:effect:BlackSwan_00:0",
+      "effectRowId": "effect:BlackSwan_00:0",
+      "sourceId": "source:BlackSwan_00:0",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:BlackSwan_00:0"
+      },
+      "dedupeKey": "pending_dedupe:BlackSwan_00:source:BlackSwan_00:0:vulnerability:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:BlackSwan_00:1",
+      "effectRowId": "effect:BlackSwan_00:1",
+      "sourceId": "source:BlackSwan_00:1",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:BlackSwan_00:1"
+      },
+      "dedupeKey": "pending_dedupe:BlackSwan_00:source:BlackSwan_00:1:defenseIgnore:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:BlackSwan_00:2",
+      "effectRowId": "effect:BlackSwan_00:2",
+      "sourceId": "source:BlackSwan_00:2",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:BlackSwan_00:2"
+      },
+      "dedupeKey": "pending_dedupe:BlackSwan_00:source:BlackSwan_00:2:defenseDown:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Ren_00:0",
+      "effectRowId": "effect:Ren_00:0",
+      "sourceId": "source:Ren_00:0",
+      "stat": "followDamage",
+      "valueTrace": {
+        "resolver": "fixed",
+        "source": "rawValue"
+      },
+      "dedupeKey": "pending_dedupe:Ren_00:source:Ren_00:0:followDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Ren_00:1",
+      "effectRowId": "effect:Ren_00:1",
+      "sourceId": "source:Ren_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Ren_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Ren_00:source:Ren_00:1:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Ren_00:2",
+      "effectRowId": "effect:Ren_00:2",
+      "sourceId": "source:Ren_00:2",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Ren_00:source:Ren_00:2:critRate:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.15
+    },
+    {
+      "id": "resolved:effect:Feixiao_00:0",
+      "effectRowId": "effect:Feixiao_00:0",
+      "sourceId": "source:Feixiao_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Feixiao_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Feixiao_00:source:Feixiao_00:0:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Feixiao_00:1",
+      "effectRowId": "effect:Feixiao_00:1",
+      "sourceId": "source:Feixiao_00:1",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Feixiao_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Feixiao_00:source:Feixiao_00:1:atkRatio:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Feixiao_00:2",
+      "effectRowId": "effect:Feixiao_00:2",
+      "sourceId": "source:Feixiao_00:2",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "fixed",
+        "source": "rawValue"
+      },
+      "dedupeKey": "pending_dedupe:Feixiao_00:source:Feixiao_00:2:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.36
+    },
+    {
+      "id": "resolved:effect:Feixiao_00:3",
+      "effectRowId": "effect:Feixiao_00:3",
+      "sourceId": "source:Feixiao_00:3",
+      "stat": "followDamage",
+      "valueTrace": {
+        "resolver": "fixed",
+        "source": "rawValue"
+      },
+      "dedupeKey": "pending_dedupe:Feixiao_00:source:Feixiao_00:3:followDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.36
+    },
+    {
+      "id": "resolved:effect:Cipher_00:0",
+      "effectRowId": "effect:Cipher_00:0",
+      "sourceId": "source:Cipher_00:0",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cipher_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Cipher_00:source:Cipher_00:0:vulnerability:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cipher_00:1",
+      "effectRowId": "effect:Cipher_00:1",
+      "sourceId": "source:Cipher_00:1",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cipher_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Cipher_00:source:Cipher_00:1:critDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cipher_00:2",
+      "effectRowId": "effect:Cipher_00:2",
+      "sourceId": "source:Cipher_00:2",
+      "stat": "followDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cipher_00:2"
+      },
+      "dedupeKey": "pending_dedupe:Cipher_00:source:Cipher_00:2:followDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cipher_00:3",
+      "effectRowId": "effect:Cipher_00:3",
+      "sourceId": "source:Cipher_00:3",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cipher_00:3"
+      },
+      "dedupeKey": "pending_dedupe:Cipher_00:source:Cipher_00:3:atkRatio:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cipher_00:4",
+      "effectRowId": "effect:Cipher_00:4",
+      "sourceId": "source:Cipher_00:4",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Cipher_00:source:Cipher_00:4:atkRatio:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.8
+    },
+    {
+      "id": "resolved:effect:Cipher_00:5",
+      "effectRowId": "effect:Cipher_00:5",
+      "sourceId": "source:Cipher_00:5",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Cipher_00:source:Cipher_00:5:vulnerability:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Cipher_00:6",
+      "effectRowId": "effect:Cipher_00:6",
+      "sourceId": "source:Cipher_00:6",
+      "stat": "followDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Cipher_00:source:Cipher_00:6:followDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 3.5
+    },
+    {
+      "id": "resolved:effect:Cipher_00:7",
+      "effectRowId": "effect:Cipher_00:7",
+      "sourceId": "source:Cipher_00:7",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Cipher_00:source:Cipher_00:7:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 3.5
+    },
+    {
+      "id": "resolved:effect:Serval_00:0",
+      "effectRowId": "effect:Serval_00:0",
+      "sourceId": "source:Serval_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Serval_00:source:Serval_00:0:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Sunday_10:0",
+      "effectRowId": "effect:Sunday_10:0",
+      "sourceId": "source:Sunday_10:0",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Sunday_10:source:Sunday_10:0:critDamage:buff:single_ally",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Sunday_10:1",
+      "effectRowId": "effect:Sunday_10:1",
+      "sourceId": "source:Sunday_10:1",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Sunday_10:source:Sunday_10:1:critDamage:buff:single_ally",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.12
+    },
+    {
+      "id": "resolved:effect:Sunday_10:2",
+      "effectRowId": "effect:Sunday_10:2",
+      "sourceId": "source:Sunday_10:2",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Sunday_10:2"
+      },
+      "dedupeKey": "pending_dedupe:Sunday_10:source:Sunday_10:2:critRate:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Sunday_10:3",
+      "effectRowId": "effect:Sunday_10:3",
+      "sourceId": "source:Sunday_10:3",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Sunday_10:source:Sunday_10:3:allDamage:buff:single_ally",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Sunday_10:4",
+      "effectRowId": "effect:Sunday_10:4",
+      "sourceId": "source:Sunday_10:4",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Sunday_10:source:Sunday_10:4:defenseIgnore:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.16
+    },
+    {
+      "id": "resolved:effect:Sunday_10:5",
+      "effectRowId": "effect:Sunday_10:5",
+      "sourceId": "source:Sunday_10:5",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Sunday_10:source:Sunday_10:5:defenseIgnore:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
+    },
+    {
+      "id": "resolved:effect:Sunday_10:6",
+      "effectRowId": "effect:Sunday_10:6",
+      "sourceId": "source:Sunday_10:6",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Sunday_10:source:Sunday_10:6:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Sunday_10:7",
+      "effectRowId": "effect:Sunday_10:7",
+      "sourceId": "source:Sunday_10:7",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Sunday_10:source:Sunday_10:7:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.02
+    },
+    {
+      "id": "resolved:effect:Xueyi_00:0",
+      "effectRowId": "effect:Xueyi_00:0",
+      "sourceId": "source:Xueyi_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Xueyi_00:source:Xueyi_00:0:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.6
+    },
+    {
+      "id": "resolved:effect:Xueyi_00:1",
+      "effectRowId": "effect:Xueyi_00:1",
+      "sourceId": "source:Xueyi_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "fixed",
+        "source": "rawValue"
+      },
+      "dedupeKey": "pending_dedupe:Xueyi_00:source:Xueyi_00:1:allDamage:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1
+    },
+    {
+      "id": "resolved:effect:Xueyi_00:2",
+      "effectRowId": "effect:Xueyi_00:2",
+      "sourceId": "source:Xueyi_00:2",
+      "stat": "followDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Xueyi_00:source:Xueyi_00:2:followDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
+    },
+    {
+      "id": "resolved:effect:Xueyi_00:3",
+      "effectRowId": "effect:Xueyi_00:3",
+      "sourceId": "source:Xueyi_00:3",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Xueyi_00:source:Xueyi_00:3:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
+    },
+    {
+      "id": "resolved:effect:Saber_00:0",
+      "effectRowId": "effect:Saber_00:0",
+      "sourceId": "source:Saber_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Saber_00:source:Saber_00:0:allDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.6
+    },
+    {
+      "id": "resolved:effect:Saber_00:1",
+      "effectRowId": "effect:Saber_00:1",
+      "sourceId": "source:Saber_00:1",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Saber_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Saber_00:source:Saber_00:1:critDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Saber_00:2",
+      "effectRowId": "effect:Saber_00:2",
+      "sourceId": "source:Saber_00:2",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Saber_00:2"
+      },
+      "dedupeKey": "pending_dedupe:Saber_00:source:Saber_00:2:critDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Saber_00:3",
+      "effectRowId": "effect:Saber_00:3",
+      "sourceId": "source:Saber_00:3",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Saber_00:3"
+      },
+      "dedupeKey": "pending_dedupe:Saber_00:source:Saber_00:3:critRate:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Saber_00:4",
+      "effectRowId": "effect:Saber_00:4",
+      "sourceId": "source:Saber_00:4",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Saber_00:source:Saber_00:4:defenseIgnore:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.01
+    },
+    {
+      "id": "resolved:effect:Sushang_00:0",
+      "effectRowId": "effect:Sushang_00:0",
+      "sourceId": "source:Sushang_00:0",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Sushang_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Sushang_00:source:Sushang_00:0:atkRatio:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Sparkle_00:0",
+      "effectRowId": "effect:Sparkle_00:0",
+      "sourceId": "source:Sparkle_00:0",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Sparkle_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Sparkle_00:source:Sparkle_00:0:vulnerability:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Sparkle_00:1",
+      "effectRowId": "effect:Sparkle_00:1",
+      "sourceId": "source:Sparkle_00:1",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Sparkle_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Sparkle_00:source:Sparkle_00:1:vulnerability:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Sparkle_00:2",
+      "effectRowId": "effect:Sparkle_00:2",
+      "sourceId": "source:Sparkle_00:2",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "fixed",
+        "source": "rawValue"
+      },
+      "dedupeKey": "pending_dedupe:Sparkle_00:source:Sparkle_00:2:atkRatio:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.45
+    },
+    {
+      "id": "resolved:effect:Sparkle_00:3",
+      "effectRowId": "effect:Sparkle_00:3",
+      "sourceId": "source:Sparkle_00:3",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "fixed",
+        "source": "rawValue"
+      },
+      "dedupeKey": "pending_dedupe:Sparkle_00:source:Sparkle_00:3:resistancePen:buff:single_ally",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1
+    },
+    {
+      "id": "resolved:effect:Sparkle_00:4",
+      "effectRowId": "effect:Sparkle_00:4",
+      "sourceId": "source:Sparkle_00:4",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Sparkle_00:source:Sparkle_00:4:atkRatio:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
+    },
+    {
+      "id": "resolved:effect:Sparkle_00:5",
+      "effectRowId": "effect:Sparkle_00:5",
+      "sourceId": "source:Sparkle_00:5",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Sparkle_00:5"
+      },
+      "dedupeKey": "pending_dedupe:Sparkle_00:source:Sparkle_00:5:defenseDown:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Sparkle_00:6",
+      "effectRowId": "effect:Sparkle_00:6",
+      "sourceId": "source:Sparkle_00:6",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Sparkle_00:6"
+      },
+      "dedupeKey": "pending_dedupe:Sparkle_00:source:Sparkle_00:6:critDamage:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Sparkle_00:7",
+      "effectRowId": "effect:Sparkle_00:7",
+      "sourceId": "source:Sparkle_00:7",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Sparkle_00:source:Sparkle_00:7:critDamage:buff:single_ally",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.24
+    },
+    {
+      "id": "resolved:effect:Sparxie_00:0",
+      "effectRowId": "effect:Sparxie_00:0",
+      "sourceId": "source:Sparxie_00:0",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Sparxie_00:source:Sparxie_00:0:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1
+    },
+    {
+      "id": "resolved:effect:Aglaea_00:0",
+      "effectRowId": "effect:Aglaea_00:0",
+      "sourceId": "source:Aglaea_00:0",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Aglaea_00:source:Aglaea_00:0:vulnerability:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.15
+    },
+    {
+      "id": "resolved:effect:Aglaea_00:1",
+      "effectRowId": "effect:Aglaea_00:1",
+      "sourceId": "source:Aglaea_00:1",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Aglaea_00:source:Aglaea_00:1:defenseIgnore:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.14
+    },
+    {
+      "id": "resolved:effect:Anaxa_00:0",
+      "effectRowId": "effect:Anaxa_00:0",
+      "sourceId": "source:Anaxa_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Anaxa_00:source:Anaxa_00:0:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Anaxa_00:1",
+      "effectRowId": "effect:Anaxa_00:1",
+      "sourceId": "source:Anaxa_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Anaxa_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Anaxa_00:source:Anaxa_00:1:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Anaxa_00:2",
+      "effectRowId": "effect:Anaxa_00:2",
+      "sourceId": "source:Anaxa_00:2",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Anaxa_00:source:Anaxa_00:2:defenseDown:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.16
+    },
+    {
+      "id": "resolved:effect:Anaxa_00:3",
+      "effectRowId": "effect:Anaxa_00:3",
+      "sourceId": "source:Anaxa_00:3",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Anaxa_00:source:Anaxa_00:3:resistancePen:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Anaxa_00:4",
+      "effectRowId": "effect:Anaxa_00:4",
+      "sourceId": "source:Anaxa_00:4",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Anaxa_00:4"
+      },
+      "dedupeKey": "pending_dedupe:Anaxa_00:source:Anaxa_00:4:atkRatio:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Arlan_00:0",
+      "effectRowId": "effect:Arlan_00:0",
+      "sourceId": "source:Arlan_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Arlan_00:source:Arlan_00:0:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1
+    },
+    {
+      "id": "resolved:effect:Arlan_00:1",
+      "effectRowId": "effect:Arlan_00:1",
+      "sourceId": "source:Arlan_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Arlan_00:source:Arlan_00:1:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Asta_00:0",
+      "effectRowId": "effect:Asta_00:0",
+      "sourceId": "source:Asta_00:0",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Asta_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Asta_00:source:Asta_00:0:atkRatio:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Argenti_00:0",
+      "effectRowId": "effect:Argenti_00:0",
+      "sourceId": "source:Argenti_00:0",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Argenti_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Argenti_00:source:Argenti_00:0:critRate:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Argenti_00:1",
+      "effectRowId": "effect:Argenti_00:1",
+      "sourceId": "source:Argenti_00:1",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Argenti_00:source:Argenti_00:1:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.04
+    },
+    {
+      "id": "resolved:effect:Argenti_00:2",
+      "effectRowId": "effect:Argenti_00:2",
+      "sourceId": "source:Argenti_00:2",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Argenti_00:source:Argenti_00:2:atkRatio:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
+    },
+    {
+      "id": "resolved:effect:Argenti_00:3",
+      "effectRowId": "effect:Argenti_00:3",
+      "sourceId": "source:Argenti_00:3",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Argenti_00:source:Argenti_00:3:defenseIgnore:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Archer_00:0",
+      "effectRowId": "effect:Archer_00:0",
+      "sourceId": "source:Archer_00:0",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Archer_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Archer_00:source:Archer_00:0:critDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Archer_00:1",
+      "effectRowId": "effect:Archer_00:1",
+      "sourceId": "source:Archer_00:1",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Archer_00:source:Archer_00:1:resistancePen:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Archer_00:2",
+      "effectRowId": "effect:Archer_00:2",
+      "sourceId": "source:Archer_00:2",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Archer_00:source:Archer_00:2:defenseIgnore:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Archer_00:3",
+      "effectRowId": "effect:Archer_00:3",
+      "sourceId": "source:Archer_00:3",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Archer_00:source:Archer_00:3:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 1
+    },
+    {
+      "id": "resolved:effect:Acheron_00:0",
+      "effectRowId": "effect:Acheron_00:0",
+      "sourceId": "source:Acheron_00:0",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Acheron_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Acheron_00:source:Acheron_00:0:resistancePen:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Acheron_00:1",
+      "effectRowId": "effect:Acheron_00:1",
+      "sourceId": "source:Acheron_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Acheron_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Acheron_00:source:Acheron_00:1:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Acheron_00:2",
+      "effectRowId": "effect:Acheron_00:2",
+      "sourceId": "source:Acheron_00:2",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Acheron_00:source:Acheron_00:2:critRate:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.18
+    },
+    {
+      "id": "resolved:effect:Ashveil_00:0",
+      "effectRowId": "effect:Ashveil_00:0",
+      "sourceId": "source:Ashveil_00:0",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Ashveil_00:source:Ashveil_00:0:defenseDown:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
+    },
+    {
+      "id": "resolved:effect:Ashveil_00:1",
+      "effectRowId": "effect:Ashveil_00:1",
+      "sourceId": "source:Ashveil_00:1",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "fixed",
+        "source": "rawValue"
+      },
+      "dedupeKey": "pending_dedupe:Ashveil_00:source:Ashveil_00:1:critDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
+    },
+    {
+      "id": "resolved:effect:Ashveil_00:2",
+      "effectRowId": "effect:Ashveil_00:2",
+      "sourceId": "source:Ashveil_00:2",
+      "stat": "followCritDamage",
+      "valueTrace": {
+        "resolver": "fixed",
+        "source": "rawValue"
+      },
+      "dedupeKey": "pending_dedupe:Ashveil_00:source:Ashveil_00:2:followCritDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.8
+    },
+    {
+      "id": "resolved:effect:Ashveil_00:3",
+      "effectRowId": "effect:Ashveil_00:3",
+      "sourceId": "source:Ashveil_00:3",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Ashveil_00:source:Ashveil_00:3:vulnerability:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.24
+    },
+    {
+      "id": "resolved:effect:Ashveil_00:4",
+      "effectRowId": "effect:Ashveil_00:4",
+      "sourceId": "source:Ashveil_00:4",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Ashveil_00:source:Ashveil_00:4:atkRatio:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
+    },
+    {
+      "id": "resolved:effect:Ashveil_00:5",
+      "effectRowId": "effect:Ashveil_00:5",
+      "sourceId": "source:Ashveil_00:5",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Ashveil_00:source:Ashveil_00:5:resistancePen:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Ashveil_00:6",
+      "effectRowId": "effect:Ashveil_00:6",
+      "sourceId": "source:Ashveil_00:6",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Ashveil_00:6"
+      },
+      "dedupeKey": "pending_dedupe:Ashveil_00:source:Ashveil_00:6:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Yukong_00:0",
+      "effectRowId": "effect:Yukong_00:0",
+      "sourceId": "source:Yukong_00:0",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Yukong_00:source:Yukong_00:0:critDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.65
+    },
+    {
+      "id": "resolved:effect:Yukong_00:1",
+      "effectRowId": "effect:Yukong_00:1",
+      "sourceId": "source:Yukong_00:1",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Yukong_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Yukong_00:source:Yukong_00:1:atkRatio:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Yukong_00:2",
+      "effectRowId": "effect:Yukong_00:2",
+      "sourceId": "source:Yukong_00:2",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Yukong_00:source:Yukong_00:2:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Aventurine_00:0",
+      "effectRowId": "effect:Aventurine_00:0",
+      "sourceId": "source:Aventurine_00:0",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Aventurine_00:source:Aventurine_00:0:critDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.15
+    },
+    {
+      "id": "resolved:effect:Aventurine_00:1",
+      "effectRowId": "effect:Aventurine_00:1",
+      "sourceId": "source:Aventurine_00:1",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Aventurine_00:source:Aventurine_00:1:critDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Aventurine_00:2",
+      "effectRowId": "effect:Aventurine_00:2",
+      "sourceId": "source:Aventurine_00:2",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Aventurine_00:source:Aventurine_00:2:resistancePen:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.12
+    },
+    {
+      "id": "resolved:effect:Aventurine_00:3",
+      "effectRowId": "effect:Aventurine_00:3",
+      "sourceId": "source:Aventurine_00:3",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Aventurine_00:source:Aventurine_00:3:allDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.5
+    },
+    {
+      "id": "resolved:effect:Evanescia_00:0",
+      "effectRowId": "effect:Evanescia_00:0",
+      "sourceId": "source:Evanescia_00:0",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Evanescia_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Evanescia_00:source:Evanescia_00:0:critRate:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Evanescia_00:1",
+      "effectRowId": "effect:Evanescia_00:1",
+      "sourceId": "source:Evanescia_00:1",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Evanescia_00:source:Evanescia_00:1:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.36
+    },
+    {
+      "id": "resolved:effect:Evanescia_00:2",
+      "effectRowId": "effect:Evanescia_00:2",
+      "sourceId": "source:Evanescia_00:2",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Evanescia_00:source:Evanescia_00:2:defenseIgnore:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.15
+    },
+    {
+      "id": "resolved:effect:Evernight_00:0",
+      "effectRowId": "effect:Evernight_00:0",
+      "sourceId": "source:Evernight_00:0",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Evernight_00:source:Evernight_00:0:vulnerability:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Evernight_00:1",
+      "effectRowId": "effect:Evernight_00:1",
+      "sourceId": "source:Evernight_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Evernight_00:source:Evernight_00:1:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.6
+    },
+    {
+      "id": "resolved:effect:Evernight_00:2",
+      "effectRowId": "effect:Evernight_00:2",
+      "sourceId": "source:Evernight_00:2",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Evernight_00:2"
+      },
+      "dedupeKey": "pending_dedupe:Evernight_00:source:Evernight_00:2:critRate:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Evernight_00:3",
+      "effectRowId": "effect:Evernight_00:3",
+      "sourceId": "source:Evernight_00:3",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Evernight_00:3"
+      },
+      "dedupeKey": "pending_dedupe:Evernight_00:source:Evernight_00:3:critDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Evernight_00:4",
+      "effectRowId": "effect:Evernight_00:4",
+      "sourceId": "source:Evernight_00:4",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Evernight_00:source:Evernight_00:4:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.5
+    },
+    {
+      "id": "resolved:effect:Evernight_00:5",
+      "effectRowId": "effect:Evernight_00:5",
+      "sourceId": "source:Evernight_00:5",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Evernight_00:source:Evernight_00:5:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
+    },
+    {
+      "id": "resolved:effect:Evernight_00:6",
+      "effectRowId": "effect:Evernight_00:6",
+      "sourceId": "source:Evernight_00:6",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Evernight_00:source:Evernight_00:6:critDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.24
+    },
+    {
+      "id": "resolved:effect:Evernight_00:7",
+      "effectRowId": "effect:Evernight_00:7",
+      "sourceId": "source:Evernight_00:7",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Evernight_00:source:Evernight_00:7:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.6
+    },
+    {
+      "id": "resolved:effect:Yanqing_00:0",
+      "effectRowId": "effect:Yanqing_00:0",
+      "sourceId": "source:Yanqing_00:0",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Yanqing_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Yanqing_00:source:Yanqing_00:0:critRate:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Yanqing_00:1",
+      "effectRowId": "effect:Yanqing_00:1",
+      "sourceId": "source:Yanqing_00:1",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Yanqing_00:source:Yanqing_00:1:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Yanqing_00:2",
+      "effectRowId": "effect:Yanqing_00:2",
+      "sourceId": "source:Yanqing_00:2",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Yanqing_00:source:Yanqing_00:2:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.5
+    },
+    {
+      "id": "resolved:effect:Lingsha_00:0",
+      "effectRowId": "effect:Lingsha_00:0",
+      "sourceId": "source:Lingsha_00:0",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Lingsha_00:source:Lingsha_00:0:defenseDown:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Lingsha_00:1",
+      "effectRowId": "effect:Lingsha_00:1",
+      "sourceId": "source:Lingsha_00:1",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Lingsha_00:source:Lingsha_00:1:resistancePen:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:RuanMei_00:0",
+      "effectRowId": "effect:RuanMei_00:0",
+      "sourceId": "source:RuanMei_00:0",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:RuanMei_00:source:RuanMei_00:0:defenseIgnore:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:RuanMei_00:1",
+      "effectRowId": "effect:RuanMei_00:1",
+      "sourceId": "source:RuanMei_00:1",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:RuanMei_00:source:RuanMei_00:1:atkRatio:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
+    },
+    {
+      "id": "resolved:effect:RuanMei_00:2",
+      "effectRowId": "effect:RuanMei_00:2",
+      "sourceId": "source:RuanMei_00:2",
+      "stat": "toughnessDamageRatio",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:RuanMei_00:2"
+      },
+      "dedupeKey": "pending_dedupe:RuanMei_00:source:RuanMei_00:2:toughnessDamageRatio:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:RuanMei_00:3",
+      "effectRowId": "effect:RuanMei_00:3",
+      "sourceId": "source:RuanMei_00:3",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:RuanMei_00:3"
+      },
+      "dedupeKey": "pending_dedupe:RuanMei_00:source:RuanMei_00:3:allDamage:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:RuanMei_00:4",
+      "effectRowId": "effect:RuanMei_00:4",
+      "sourceId": "source:RuanMei_00:4",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:RuanMei_00:source:RuanMei_00:4:resistancePen:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.25
+    },
+    {
+      "id": "resolved:effect:RuanMei_00:5",
+      "effectRowId": "effect:RuanMei_00:5",
+      "sourceId": "source:RuanMei_00:5",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:RuanMei_00:source:RuanMei_00:5:allDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.32
+    },
+    {
+      "id": "resolved:effect:Yunli_00:0",
+      "effectRowId": "effect:Yunli_00:0",
+      "sourceId": "source:Yunli_00:0",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Yunli_00:source:Yunli_00:0:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 1
+    },
+    {
+      "id": "resolved:effect:Yunli_00:1",
+      "effectRowId": "effect:Yunli_00:1",
+      "sourceId": "source:Yunli_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Yunli_00:source:Yunli_00:1:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Yunli_00:2",
+      "effectRowId": "effect:Yunli_00:2",
+      "sourceId": "source:Yunli_00:2",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Yunli_00:source:Yunli_00:2:defenseIgnore:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Yunli_00:3",
+      "effectRowId": "effect:Yunli_00:3",
+      "sourceId": "source:Yunli_00:3",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Yunli_00:source:Yunli_00:3:critRate:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.15
+    },
+    {
+      "id": "resolved:effect:Welt_00:0",
+      "effectRowId": "effect:Welt_00:0",
+      "sourceId": "source:Welt_00:0",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Welt_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Welt_00:source:Welt_00:0:vulnerability:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Welt_00:1",
+      "effectRowId": "effect:Welt_00:1",
+      "sourceId": "source:Welt_00:1",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Welt_00:source:Welt_00:1:critRate:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Welt_00:2",
+      "effectRowId": "effect:Welt_00:2",
+      "sourceId": "source:Welt_00:2",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Welt_00:source:Welt_00:2:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.6
+    },
+    {
+      "id": "resolved:effect:Welt_00:3",
+      "effectRowId": "effect:Welt_00:3",
+      "sourceId": "source:Welt_00:3",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Welt_00:source:Welt_00:3:defenseDown:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.16
+    },
+    {
+      "id": "resolved:effect:Welt_00:4",
+      "effectRowId": "effect:Welt_00:4",
+      "sourceId": "source:Welt_00:4",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Welt_00:4"
+      },
+      "dedupeKey": "pending_dedupe:Welt_00:source:Welt_00:4:allDamage:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Silwolf_00:0",
+      "effectRowId": "effect:Silwolf_00:0",
+      "sourceId": "source:Silwolf_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Silwolf_00:source:Silwolf_00:0:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Silwolf_00:1",
+      "effectRowId": "effect:Silwolf_00:1",
+      "sourceId": "source:Silwolf_00:1",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Silwolf_00:source:Silwolf_00:1:defenseDown:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.45
+    },
+    {
+      "id": "resolved:effect:Silwolf_00:2",
+      "effectRowId": "effect:Silwolf_00:2",
+      "sourceId": "source:Silwolf_00:2",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Silwolf_00:2"
+      },
+      "dedupeKey": "pending_dedupe:Silwolf_00:source:Silwolf_00:2:resistancePen:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Silwolf_00:3",
+      "effectRowId": "effect:Silwolf_00:3",
+      "sourceId": "source:Silwolf_00:3",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Silwolf_00:source:Silwolf_00:3:resistancePen:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.13
+    },
+    {
+      "id": "resolved:effect:Silwolf_00:4",
+      "effectRowId": "effect:Silwolf_00:4",
+      "sourceId": "source:Silwolf_00:4",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Silwolf_00:source:Silwolf_00:4:defenseDown:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1
+    },
+    {
+      "id": "resolved:effect:SilverWolf999_00:0",
+      "effectRowId": "effect:SilverWolf999_00:0",
+      "sourceId": "source:SilverWolf999_00:0",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:SilverWolf999_00:0"
+      },
+      "dedupeKey": "pending_dedupe:SilverWolf999_00:source:SilverWolf999_00:0:critRate:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:SilverWolf999_00:1",
+      "effectRowId": "effect:SilverWolf999_00:1",
+      "sourceId": "source:SilverWolf999_00:1",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:SilverWolf999_00:source:SilverWolf999_00:1:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.008
+    },
+    {
+      "id": "resolved:effect:SilverWolf999_00:2",
+      "effectRowId": "effect:SilverWolf999_00:2",
+      "sourceId": "source:SilverWolf999_00:2",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:SilverWolf999_00:source:SilverWolf999_00:2:vulnerability:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:SilverWolf999_00:3",
+      "effectRowId": "effect:SilverWolf999_00:3",
+      "sourceId": "source:SilverWolf999_00:3",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:SilverWolf999_00:source:SilverWolf999_00:3:resistancePen:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Tingyun_00:0",
+      "effectRowId": "effect:Tingyun_00:0",
+      "sourceId": "source:Tingyun_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Tingyun_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Tingyun_00:source:Tingyun_00:0:allDamage:buff:single_ally",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Tingyun_00:1",
+      "effectRowId": "effect:Tingyun_00:1",
+      "sourceId": "source:Tingyun_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "fixed",
+        "source": "rawValue"
+      },
+      "dedupeKey": "pending_dedupe:Tingyun_00:source:Tingyun_00:1:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
+    },
+    {
+      "id": "resolved:effect:Tingyun_00:2",
+      "effectRowId": "effect:Tingyun_00:2",
+      "sourceId": "source:Tingyun_00:2",
+      "stat": "atkFlat",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Tingyun_00:2"
+      },
+      "dedupeKey": "pending_dedupe:Tingyun_00:source:Tingyun_00:2:atkFlat:buff:single_ally",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Seele_00:0",
+      "effectRowId": "effect:Seele_00:0",
+      "sourceId": "source:Seele_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Seele_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Seele_00:source:Seele_00:0:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Seele_00:1",
+      "effectRowId": "effect:Seele_00:1",
+      "sourceId": "source:Seele_00:1",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Seele_00:source:Seele_00:1:defenseIgnore:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Seele_00:2",
+      "effectRowId": "effect:Seele_00:2",
+      "sourceId": "source:Seele_00:2",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Seele_00:source:Seele_00:2:critRate:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.15
+    },
+    {
+      "id": "resolved:effect:Jade_00:0",
+      "effectRowId": "effect:Jade_00:0",
+      "sourceId": "source:Jade_00:0",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Jade_00:source:Jade_00:0:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.024
+    },
+    {
+      "id": "resolved:effect:Jade_00:1",
+      "effectRowId": "effect:Jade_00:1",
+      "sourceId": "source:Jade_00:1",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Jade_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Jade_00:source:Jade_00:1:atkRatio:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Jade_00:2",
+      "effectRowId": "effect:Jade_00:2",
+      "sourceId": "source:Jade_00:2",
+      "stat": "followDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Jade_00:source:Jade_00:2:followDamage:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.32
+    },
+    {
+      "id": "resolved:effect:Jade_00:3",
+      "effectRowId": "effect:Jade_00:3",
+      "sourceId": "source:Jade_00:3",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Jade_00:source:Jade_00:3:critRate:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.18
+    },
+    {
+      "id": "resolved:effect:Jade_00:4",
+      "effectRowId": "effect:Jade_00:4",
+      "sourceId": "source:Jade_00:4",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Jade_00:source:Jade_00:4:defenseIgnore:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.12
+    },
+    {
+      "id": "resolved:effect:MortenaxBlade_00:0",
+      "effectRowId": "effect:MortenaxBlade_00:0",
+      "sourceId": "source:MortenaxBlade_00:0",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "fixed",
+        "source": "rawValue"
+      },
+      "dedupeKey": "pending_dedupe:MortenaxBlade_00:source:MortenaxBlade_00:0:defenseDown:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
+    },
+    {
+      "id": "resolved:effect:MortenaxBlade_00:1",
+      "effectRowId": "effect:MortenaxBlade_00:1",
+      "sourceId": "source:MortenaxBlade_00:1",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:MortenaxBlade_00:source:MortenaxBlade_00:1:vulnerability:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.5
+    },
+    {
+      "id": "resolved:effect:MortenaxBlade_00:2",
+      "effectRowId": "effect:MortenaxBlade_00:2",
+      "sourceId": "source:MortenaxBlade_00:2",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:MortenaxBlade_00:2"
+      },
+      "dedupeKey": "pending_dedupe:MortenaxBlade_00:source:MortenaxBlade_00:2:critRate:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:MortenaxBlade_00:3",
+      "effectRowId": "effect:MortenaxBlade_00:3",
+      "sourceId": "source:MortenaxBlade_00:3",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:MortenaxBlade_00:source:MortenaxBlade_00:3:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.6
+    },
+    {
+      "id": "resolved:effect:MortenaxBlade_00:4",
+      "effectRowId": "effect:MortenaxBlade_00:4",
+      "sourceId": "source:MortenaxBlade_00:4",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:MortenaxBlade_00:4"
+      },
+      "dedupeKey": "pending_dedupe:MortenaxBlade_00:source:MortenaxBlade_00:4:allDamage:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:MortenaxBlade_00:5",
+      "effectRowId": "effect:MortenaxBlade_00:5",
+      "sourceId": "source:MortenaxBlade_00:5",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:MortenaxBlade_00:source:MortenaxBlade_00:5:resistancePen:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:MortenaxBlade_00:6",
+      "effectRowId": "effect:MortenaxBlade_00:6",
+      "sourceId": "source:MortenaxBlade_00:6",
+      "stat": "followDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:MortenaxBlade_00:source:MortenaxBlade_00:6:followDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.75
+    },
+    {
+      "id": "resolved:effect:MortenaxBlade_00:7",
+      "effectRowId": "effect:MortenaxBlade_00:7",
+      "sourceId": "source:MortenaxBlade_00:7",
+      "stat": "ultimateDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:MortenaxBlade_00:7"
+      },
+      "dedupeKey": "pending_dedupe:MortenaxBlade_00:source:MortenaxBlade_00:7:ultimateDamage:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:MortenaxBlade_00:8",
+      "effectRowId": "effect:MortenaxBlade_00:8",
+      "sourceId": "source:MortenaxBlade_00:8",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:MortenaxBlade_00:8"
+      },
+      "dedupeKey": "pending_dedupe:MortenaxBlade_00:source:MortenaxBlade_00:8:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:MortenaxBlade_00:9",
+      "effectRowId": "effect:MortenaxBlade_00:9",
+      "sourceId": "source:MortenaxBlade_00:9",
+      "stat": "ultimateAsFollowUp",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:MortenaxBlade_00:source:MortenaxBlade_00:9:ultimateAsFollowUp:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 1
+    },
+    {
+      "id": "resolved:effect:Qingque_00:0",
+      "effectRowId": "effect:Qingque_00:0",
+      "sourceId": "source:Qingque_00:0",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Qingque_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Qingque_00:source:Qingque_00:0:atkRatio:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Qingque_00:1",
+      "effectRowId": "effect:Qingque_00:1",
+      "sourceId": "source:Qingque_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Qingque_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Qingque_00:source:Qingque_00:1:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Qingque_00:2",
+      "effectRowId": "effect:Qingque_00:2",
+      "sourceId": "source:Qingque_00:2",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Qingque_00:source:Qingque_00:2:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1
+    },
+    {
+      "id": "resolved:effect:Jiaoqiu_00:0",
+      "effectRowId": "effect:Jiaoqiu_00:0",
+      "sourceId": "source:Jiaoqiu_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Jiaoqiu_00:source:Jiaoqiu_00:0:allDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
+    },
+    {
+      "id": "resolved:effect:Jiaoqiu_00:1",
+      "effectRowId": "effect:Jiaoqiu_00:1",
+      "sourceId": "source:Jiaoqiu_00:1",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Jiaoqiu_00:source:Jiaoqiu_00:1:resistancePen:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.03
+    },
+    {
+      "id": "resolved:effect:Jiaoqiu_00:2",
+      "effectRowId": "effect:Jiaoqiu_00:2",
+      "sourceId": "source:Jiaoqiu_00:2",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Jiaoqiu_00:2"
+      },
+      "dedupeKey": "pending_dedupe:Jiaoqiu_00:source:Jiaoqiu_00:2:vulnerability:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Jiaoqiu_00:3",
+      "effectRowId": "effect:Jiaoqiu_00:3",
+      "sourceId": "source:Jiaoqiu_00:3",
+      "stat": "ultimateDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Jiaoqiu_00:source:Jiaoqiu_00:3:ultimateDamage:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.15
+    },
+    {
+      "id": "resolved:effect:Castorice_00:0",
+      "effectRowId": "effect:Castorice_00:0",
+      "sourceId": "source:Castorice_00:0",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Castorice_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Castorice_00:source:Castorice_00:0:resistancePen:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Castorice_00:1",
+      "effectRowId": "effect:Castorice_00:1",
+      "sourceId": "source:Castorice_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Castorice_00:source:Castorice_00:1:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.6
+    },
+    {
+      "id": "resolved:effect:Cerydra_00:0",
+      "effectRowId": "effect:Cerydra_00:0",
+      "sourceId": "source:Cerydra_00:0",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:0:critDamage:buff:single_ally",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.72
+    },
+    {
+      "id": "resolved:effect:Cerydra_00:1",
+      "effectRowId": "effect:Cerydra_00:1",
+      "sourceId": "source:Cerydra_00:1",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cerydra_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:1:critRate:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cerydra_00:2",
+      "effectRowId": "effect:Cerydra_00:2",
+      "sourceId": "source:Cerydra_00:2",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:2:defenseIgnore:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.16
+    },
+    {
+      "id": "resolved:effect:Cerydra_00:3",
+      "effectRowId": "effect:Cerydra_00:3",
+      "sourceId": "source:Cerydra_00:3",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:3:defenseIgnore:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Cerydra_00:4",
+      "effectRowId": "effect:Cerydra_00:4",
+      "sourceId": "source:Cerydra_00:4",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:4:allDamage:buff:single_ally",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
+    },
+    {
+      "id": "resolved:effect:Cerydra_00:5",
+      "effectRowId": "effect:Cerydra_00:5",
+      "sourceId": "source:Cerydra_00:5",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:5:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 1.6
+    },
+    {
+      "id": "resolved:effect:Cerydra_00:6",
+      "effectRowId": "effect:Cerydra_00:6",
+      "sourceId": "source:Cerydra_00:6",
+      "stat": "atkFlat",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cerydra_00:6"
+      },
+      "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:6:atkFlat:buff:single_ally",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cerydra_00:7",
+      "effectRowId": "effect:Cerydra_00:7",
+      "sourceId": "source:Cerydra_00:7",
+      "stat": "speed",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cerydra_00:7"
+      },
+      "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:7:speed:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cerydra_00:8",
+      "effectRowId": "effect:Cerydra_00:8",
+      "sourceId": "source:Cerydra_00:8",
+      "stat": "speed",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cerydra_00:8"
+      },
+      "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:8:speed:buff:single_ally",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cerydra_00:9",
+      "effectRowId": "effect:Cerydra_00:9",
+      "sourceId": "source:Cerydra_00:9",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cerydra_00:9"
+      },
+      "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:9:critDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cerydra_00:10",
+      "effectRowId": "effect:Cerydra_00:10",
+      "sourceId": "source:Cerydra_00:10",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cerydra_00:10"
+      },
+      "dedupeKey": "pending_dedupe:Cerydra_00:source:Cerydra_00:10:resistancePen:buff:single_ally",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Klara_00:0",
+      "effectRowId": "effect:Klara_00:0",
+      "sourceId": "source:Klara_00:0",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Klara_00:source:Klara_00:0:atkRatio:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:0",
+      "effectRowId": "effect:Cyrene_00:0",
+      "sourceId": "source:Cyrene_00:0",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cyrene_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:0:critRate:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:1",
+      "effectRowId": "effect:Cyrene_00:1",
+      "sourceId": "source:Cyrene_00:1",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cyrene_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:1:critRate:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:2",
+      "effectRowId": "effect:Cyrene_00:2",
+      "sourceId": "source:Cyrene_00:2",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:2:allDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:3",
+      "effectRowId": "effect:Cyrene_00:3",
+      "sourceId": "source:Cyrene_00:3",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cyrene_00:3"
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:3:defenseDown:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:4",
+      "effectRowId": "effect:Cyrene_00:4",
+      "sourceId": "source:Cyrene_00:4",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cyrene_00:4"
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:4:defenseDown:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:5",
+      "effectRowId": "effect:Cyrene_00:5",
+      "sourceId": "source:Cyrene_00:5",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cyrene_00:5"
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:5:defenseIgnore:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:6",
+      "effectRowId": "effect:Cyrene_00:6",
+      "sourceId": "source:Cyrene_00:6",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cyrene_00:6"
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:6:defenseIgnore:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:7",
+      "effectRowId": "effect:Cyrene_00:7",
+      "sourceId": "source:Cyrene_00:7",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:7:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.72
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:8",
+      "effectRowId": "effect:Cyrene_00:8",
+      "sourceId": "source:Cyrene_00:8",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:8:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.12
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:9",
+      "effectRowId": "effect:Cyrene_00:9",
+      "sourceId": "source:Cyrene_00:9",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cyrene_00:9"
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:9:atkRatio:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:10",
+      "effectRowId": "effect:Cyrene_00:10",
+      "sourceId": "source:Cyrene_00:10",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cyrene_00:10"
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:10:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:11",
+      "effectRowId": "effect:Cyrene_00:11",
+      "sourceId": "source:Cyrene_00:11",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cyrene_00:11"
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:11:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:12",
+      "effectRowId": "effect:Cyrene_00:12",
+      "sourceId": "source:Cyrene_00:12",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cyrene_00:12"
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:12:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:13",
+      "effectRowId": "effect:Cyrene_00:13",
+      "sourceId": "source:Cyrene_00:13",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cyrene_00:13"
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:13:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:14",
+      "effectRowId": "effect:Cyrene_00:14",
+      "sourceId": "source:Cyrene_00:14",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cyrene_00:14"
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:14:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:15",
+      "effectRowId": "effect:Cyrene_00:15",
+      "sourceId": "source:Cyrene_00:15",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cyrene_00:15"
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:15:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:16",
+      "effectRowId": "effect:Cyrene_00:16",
+      "sourceId": "source:Cyrene_00:16",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:16:allDamage:buff:single_ally",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.24
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:17",
+      "effectRowId": "effect:Cyrene_00:17",
+      "sourceId": "source:Cyrene_00:17",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:17:defenseDown:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:18",
+      "effectRowId": "effect:Cyrene_00:18",
+      "sourceId": "source:Cyrene_00:18",
+      "stat": "specialFinal",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Cyrene_00:18"
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:18:specialFinal:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Cyrene_00:19",
+      "effectRowId": "effect:Cyrene_00:19",
+      "sourceId": "source:Cyrene_00:19",
+      "stat": "specialFinal",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Cyrene_00:source:Cyrene_00:19:specialFinal:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.24
+    },
+    {
+      "id": "resolved:effect:Tribbie_00:0",
+      "effectRowId": "effect:Tribbie_00:0",
+      "sourceId": "source:Tribbie_00:0",
+      "stat": "followDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Tribbie_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Tribbie_00:source:Tribbie_00:0:followDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Tribbie_00:1",
+      "effectRowId": "effect:Tribbie_00:1",
+      "sourceId": "source:Tribbie_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Tribbie_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Tribbie_00:source:Tribbie_00:1:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Tribbie_00:2",
+      "effectRowId": "effect:Tribbie_00:2",
+      "sourceId": "source:Tribbie_00:2",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Tribbie_00:source:Tribbie_00:2:defenseIgnore:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.18
+    },
+    {
+      "id": "resolved:effect:Tribbie_00:3",
+      "effectRowId": "effect:Tribbie_00:3",
+      "sourceId": "source:Tribbie_00:3",
+      "stat": "specialFinal",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Tribbie_00:source:Tribbie_00:3:specialFinal:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.24
+    },
+    {
+      "id": "resolved:effect:Tribbie_00:4",
+      "effectRowId": "effect:Tribbie_00:4",
+      "sourceId": "source:Tribbie_00:4",
+      "stat": "followDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Tribbie_00:source:Tribbie_00:4:followDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 7.29
+    },
+    {
+      "id": "resolved:effect:Tribbie_00:5",
+      "effectRowId": "effect:Tribbie_00:5",
+      "sourceId": "source:Tribbie_00:5",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Tribbie_00:source:Tribbie_00:5:vulnerability:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Phainon_00:0",
+      "effectRowId": "effect:Phainon_00:0",
+      "sourceId": "source:Phainon_00:0",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Phainon_00:source:Phainon_00:0:critDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Phainon_00:1",
+      "effectRowId": "effect:Phainon_00:1",
+      "sourceId": "source:Phainon_00:1",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Phainon_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Phainon_00:source:Phainon_00:1:atkRatio:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Phainon_00:2",
+      "effectRowId": "effect:Phainon_00:2",
+      "sourceId": "source:Phainon_00:2",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Phainon_00:source:Phainon_00:2:critDamage:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.5
+    },
+    {
+      "id": "resolved:effect:Pela_00:0",
+      "effectRowId": "effect:Pela_00:0",
+      "sourceId": "source:Pela_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Pela_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Pela_00:source:Pela_00:0:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Pela_00:1",
+      "effectRowId": "effect:Pela_00:1",
+      "sourceId": "source:Pela_00:1",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Pela_00:source:Pela_00:1:resistancePen:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.12
+    },
+    {
+      "id": "resolved:effect:Pela_00:2",
+      "effectRowId": "effect:Pela_00:2",
+      "sourceId": "source:Pela_00:2",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Pela_00:source:Pela_00:2:defenseDown:debuff:enemy_all",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.4
+    },
+    {
+      "id": "resolved:effect:Hanya_00:0",
+      "effectRowId": "effect:Hanya_00:0",
+      "sourceId": "source:Hanya_00:0",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Hanya_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Hanya_00:source:Hanya_00:0:atkRatio:buff:single_ally",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Hanya_00:1",
+      "effectRowId": "effect:Hanya_00:1",
+      "sourceId": "source:Hanya_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Hanya_00:source:Hanya_00:1:allDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.3
+    },
+    {
+      "id": "resolved:effect:Hanya_00:2",
+      "effectRowId": "effect:Hanya_00:2",
+      "sourceId": "source:Hanya_00:2",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Hanya_00:2"
+      },
+      "dedupeKey": "pending_dedupe:Hanya_00:source:Hanya_00:2:atkRatio:buff:all_allies",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Herta_00:0",
+      "effectRowId": "effect:Herta_00:0",
+      "sourceId": "source:Herta_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Herta_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Herta_00:source:Herta_00:0:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Herta_00:1",
+      "effectRowId": "effect:Herta_00:1",
+      "sourceId": "source:Herta_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "fixed",
+        "source": "rawValue"
+      },
+      "dedupeKey": "pending_dedupe:Herta_00:source:Herta_00:1:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Herta_00:2",
+      "effectRowId": "effect:Herta_00:2",
+      "sourceId": "source:Herta_00:2",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Herta_00:2"
+      },
+      "dedupeKey": "pending_dedupe:Herta_00:source:Herta_00:2:critRate:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Herta_00:3",
+      "effectRowId": "effect:Herta_00:3",
+      "sourceId": "source:Herta_00:3",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Herta_00:source:Herta_00:3:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.1
+    },
+    {
+      "id": "resolved:effect:Herta_00:4",
+      "effectRowId": "effect:Herta_00:4",
+      "sourceId": "source:Herta_00:4",
+      "stat": "atkRatio",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Herta_00:source:Herta_00:4:atkRatio:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.25
+    },
+    {
+      "id": "resolved:effect:YaoGuang_00:0",
+      "effectRowId": "effect:YaoGuang_00:0",
+      "sourceId": "source:YaoGuang_00:0",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "fixed",
+        "source": "rawValue"
+      },
+      "dedupeKey": "pending_dedupe:YaoGuang_00:source:YaoGuang_00:0:critDamage:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.6
+    },
+    {
+      "id": "resolved:effect:YaoGuang_00:1",
+      "effectRowId": "effect:YaoGuang_00:1",
+      "sourceId": "source:YaoGuang_00:1",
+      "stat": "defenseIgnore",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:YaoGuang_00:source:YaoGuang_00:1:defenseIgnore:buff:all_allies",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Hook_00:0",
+      "effectRowId": "effect:Hook_00:0",
+      "sourceId": "source:Hook_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Hook_00:source:Hook_00:0:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Hook_00:1",
+      "effectRowId": "effect:Hook_00:1",
+      "sourceId": "source:Hook_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Hook_00:source:Hook_00:1:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Himeko_00:0",
+      "effectRowId": "effect:Himeko_00:0",
+      "sourceId": "source:Himeko_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Himeko_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Himeko_00:source:Himeko_00:0:allDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Himeko_00:1",
+      "effectRowId": "effect:Himeko_00:1",
+      "sourceId": "source:Himeko_00:1",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Himeko_00:source:Himeko_00:1:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.15
+    },
+    {
+      "id": "resolved:effect:Harscyline_00:0",
+      "effectRowId": "effect:Harscyline_00:0",
+      "sourceId": "source:Harscyline_00:0",
+      "stat": "defenseDown",
+      "valueTrace": {
+        "resolver": "fixed",
+        "source": "rawValue"
+      },
+      "dedupeKey": "pending_dedupe:Harscyline_00:source:Harscyline_00:0:defenseDown:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.15
+    },
+    {
+      "id": "resolved:effect:Harscyline_00:1",
+      "effectRowId": "effect:Harscyline_00:1",
+      "sourceId": "source:Harscyline_00:1",
+      "stat": "vulnerability",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Harscyline_00:source:Harscyline_00:1:vulnerability:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Harscyline_00:2",
+      "effectRowId": "effect:Harscyline_00:2",
+      "sourceId": "source:Harscyline_00:2",
+      "stat": "resistancePen",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Harscyline_00:source:Harscyline_00:2:resistancePen:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.2
+    },
+    {
+      "id": "resolved:effect:Hyacine_00:0",
+      "effectRowId": "effect:Hyacine_00:0",
+      "sourceId": "source:Hyacine_00:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Hyacine_00:source:Hyacine_00:0:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 2.4
+    },
+    {
+      "id": "resolved:effect:Dr_Ratio_00:0",
+      "effectRowId": "effect:Dr_Ratio_00:0",
+      "sourceId": "source:Dr_Ratio_00:0",
+      "stat": "critRate",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Dr_Ratio_00:0"
+      },
+      "dedupeKey": "pending_dedupe:Dr_Ratio_00:source:Dr_Ratio_00:0:critRate:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Dr_Ratio_00:1",
+      "effectRowId": "effect:Dr_Ratio_00:1",
+      "sourceId": "source:Dr_Ratio_00:1",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Dr_Ratio_00:1"
+      },
+      "dedupeKey": "pending_dedupe:Dr_Ratio_00:source:Dr_Ratio_00:1:critDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Dr_Ratio_00:2",
+      "effectRowId": "effect:Dr_Ratio_00:2",
+      "sourceId": "source:Dr_Ratio_00:2",
+      "stat": "followDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Dr_Ratio_00:source:Dr_Ratio_00:2:followDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.5
+    },
+    {
+      "id": "resolved:effect:Dr_Ratio_00:3",
+      "effectRowId": "effect:Dr_Ratio_00:3",
+      "sourceId": "source:Dr_Ratio_00:3",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Dr_Ratio_00:source:Dr_Ratio_00:3:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.5
+    },
+    {
+      "id": "resolved:effect:Dr_Ratio_00:4",
+      "effectRowId": "effect:Dr_Ratio_00:4",
+      "sourceId": "source:Dr_Ratio_00:4",
+      "stat": "effectResDown",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Dr_Ratio_00:4"
+      },
+      "dedupeKey": "pending_dedupe:Dr_Ratio_00:source:Dr_Ratio_00:4:effectResDown:debuff:enemy_single",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Mar_7th_10:0",
+      "effectRowId": "effect:Mar_7th_10:0",
+      "sourceId": "source:Mar_7th_10:0",
+      "stat": "allDamage",
+      "valueTrace": {
+        "resolver": "skill_level_scaled",
+        "source": "adapter_rawValue",
+        "skillLevel": 10
+      },
+      "dedupeKey": "pending_dedupe:Mar_7th_10:source:Mar_7th_10:0:allDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.8
+    },
+    {
+      "id": "resolved:effect:Mar_7th_10:1",
+      "effectRowId": "effect:Mar_7th_10:1",
+      "sourceId": "source:Mar_7th_10:1",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "dynamic_formula",
+        "reason": "dynamic formula resolver not implemented in Phase 9-B",
+        "effectRowId": "effect:Mar_7th_10:1"
+      },
+      "dedupeKey": "pending_dedupe:Mar_7th_10:source:Mar_7th_10:1:critDamage:buff:self",
+      "calculationStatus": "blocked",
+      "blockedReason": "unsupported_dynamic_formula"
+    },
+    {
+      "id": "resolved:effect:Mar_7th_10:2",
+      "effectRowId": "effect:Mar_7th_10:2",
+      "sourceId": "source:Mar_7th_10:2",
+      "stat": "critDamage",
+      "valueTrace": {
+        "resolver": "eidolon_adjusted",
+        "source": "adapter_rawValue",
+        "eidolon": 6
+      },
+      "dedupeKey": "pending_dedupe:Mar_7th_10:source:Mar_7th_10:2:critDamage:buff:self",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": 0.5
     }
   ]
 }

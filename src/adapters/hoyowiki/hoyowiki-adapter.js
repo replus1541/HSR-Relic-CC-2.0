@@ -9,7 +9,6 @@ import {
 } from "../../data-model/schemas/index.js";
 
 const manifestPath = "data/legacy-reference/manifest.json";
-const defaultCharacterLimit = 3;
 
 function readJson(root, relativePath) {
   return JSON.parse(fs.readFileSync(path.join(root, relativePath), "utf8"));
@@ -46,6 +45,7 @@ function makeSourceRow({ entry, character, skill, skillIndex }) {
     sourceKind: SourceKind.HOYOWIKI,
     sourcePath: entry.snapshotPath,
     sourceRecord,
+    characterId: character.entryPageId,
     sourceText: skill.description ?? null,
     calculationStatus: skill.description ? CalculationStatus.CALCULATION_READY : CalculationStatus.BLOCKED,
     blockedReason: skill.description ? undefined : "missing_source",
@@ -97,10 +97,9 @@ export const hoyowikiAdapter = Object.freeze({
   },
   normalize(input, context = {}) {
     const loaded = input ?? this.load(context);
-    const characterLimit = context.characterLimit ?? defaultCharacterLimit;
-    const characters = (loaded.skillPayload.characters ?? [])
-      .filter((character) => (character.skills ?? []).length > 0)
-      .slice(0, characterLimit);
+    const characterLimit = Number.isFinite(context.characterLimit) ? context.characterLimit : null;
+    const allCharacters = (loaded.skillPayload.characters ?? []).filter((character) => (character.skills ?? []).length > 0);
+    const characters = characterLimit == null ? allCharacters : allCharacters.slice(0, characterLimit);
     const sourceRows = [];
     const coefficientRows = [];
     const blockedRows = [];
@@ -123,8 +122,9 @@ export const hoyowikiAdapter = Object.freeze({
       coefficientRows,
       blockedRows,
       metadata: {
+        datasetMode: characterLimit == null ? "full" : "sample",
         sampledCharacters: characters.map((character) => character.nameKo),
-        skillCharactersAvailable: (loaded.skillPayload.characters ?? []).filter((character) => (character.skills ?? []).length > 0).length,
+        skillCharactersAvailable: allCharacters.length,
       },
     };
   },

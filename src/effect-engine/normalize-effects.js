@@ -18,6 +18,7 @@ const targetPolicyToScope = Object.freeze({
   allAllies: TargetScope.ALL_ALLIES,
   enemySingle: TargetScope.ENEMY_SINGLE,
   enemyAll: TargetScope.ENEMY_ALL,
+  fieldEnemyAll: TargetScope.ENEMY_ALL,
   field: TargetScope.FIELD,
 });
 

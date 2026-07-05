@@ -8,7 +8,6 @@ import {
   ValueMode,
 } from "../../data-model/schemas/index.js";
 
-const defaultCharacterLimit = 3;
 const manifestPath = "data/legacy-reference/manifest.json";
 
 function readJson(root, relativePath) {
@@ -42,6 +41,7 @@ function makeSourceRow({ entry, character, effect, index }) {
     sourceKind: SourceKind.GAME_DB_GENERATED,
     sourcePath: entry.snapshotPath,
     sourceRecord,
+    characterId: character.avatar ?? character.name,
     sourceText: effect.sourceText ?? effect.text ?? effect.description ?? null,
     calculationStatus: CalculationStatus.CALCULATION_READY,
   };
@@ -57,6 +57,9 @@ function makeEffectRow({ sourceRow, character, effect, index }) {
     rawValue: effect.value ?? null,
     valueMode: normalizeValueMode(effect.valueMode),
     effectProviderId: character.avatar ?? character.name,
+    characterName: character.name ?? character.avatar,
+    minEidolon: effect.minEidolon ?? null,
+    sourceTrace: effect.sourceRecord ?? effect.sourcePath ?? effect.sourceId ?? sourceRow.sourceRecord,
     effectTargetPolicy: effect.targetScope ?? effect.target ?? "unknown",
     calculationSubjectPolicy: effect.targetScope ?? effect.target ?? "unknown",
     calculationStatus: CalculationStatus.CALCULATION_READY,
@@ -80,16 +83,15 @@ export const localJsonAdapter = Object.freeze({
   },
   normalize(input, context = {}) {
     const loaded = input ?? this.load(context);
-    const characterLimit = context.characterLimit ?? defaultCharacterLimit;
-    const characters = (loaded.effectPayload.characters ?? [])
-      .filter((character) => (character.activeEffects ?? []).length > 0)
-      .slice(0, characterLimit);
+    const characterLimit = Number.isFinite(context.characterLimit) ? context.characterLimit : null;
+    const allCharacters = (loaded.effectPayload.characters ?? []).filter((character) => (character.activeEffects ?? []).length > 0);
+    const characters = characterLimit == null ? allCharacters : allCharacters.slice(0, characterLimit);
     const sourceRows = [];
     const effectRows = [];
     const blockedRows = [];
 
     for (const character of characters) {
-      for (const [index, effect] of (character.activeEffects ?? []).slice(0, 3).entries()) {
+      for (const [index, effect] of (character.activeEffects ?? []).entries()) {
         if (!effect.sourceText && !effect.sourcePath && !effect.sourceId) {
           blockedRows.push({
             id: `blocked:${character.avatar ?? character.name}:${index}`,
@@ -110,7 +112,9 @@ export const localJsonAdapter = Object.freeze({
       coefficientRows: [],
       blockedRows,
       metadata: {
+        datasetMode: characterLimit == null ? "full" : "sample",
         sampledCharacters: characters.map((character) => character.avatar ?? character.name),
+        totalCharactersAvailable: allCharacters.length,
         skillCharactersAvailable: loaded.skillPayload?.characters?.length ?? 0,
         coefficientCharactersAvailable: loaded.coefficientPayload?.characters?.length ?? 0,
         baselineSnapshotAvailable: false,

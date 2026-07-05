@@ -962,3 +962,49 @@
 ### 다음 Task로 넘길 항목
 
 - v2 후속 roadmap: dynamic_formula resolver 확장, external import full fixture, legacy parity fixture 확대, UI workflow 확장.
+
+---
+
+## Follow-up Goal. Dataset Coverage Expansion
+
+### 상태
+
+- 상태: completed
+- 시작일: 2026-07-05
+- 완료일: 2026-07-05
+- 관련 요청: 대표 샘플 3~6명 기준 v2 파이프라인을 전체 캐릭터 데이터 coverage로 확장
+
+### 진행 기록
+
+- adapter 기본 출력을 sample 제한이 아니라 full dataset 기준으로 전환했습니다.
+- `data:adapters`를 통합 `validate` 흐름에 포함해 source/effect/coefficient generated rows가 full dataset 기준으로 재생성되도록 했습니다.
+- 캐릭터 이름 기준 coverage index를 생성해 `avatar`, HoyoWiki `entryPageId`, coefficient avatar가 같은 캐릭터로 묶이도록 했습니다.
+- `data/generated/extraction-coverage.json`와 `reports/extraction/dataset-coverage-report.md`를 추가했습니다.
+- `/extraction`은 `full dataset` 표시, 전체 캐릭터 수, effectRows 0, dynamic_formula character count, missingExtraction count를 표시합니다.
+- `/extraction/:characterId`는 source/effect/coefficient row와 skill/effect/coefficient/eidolon/lightcone/relic source linkage, missingExtraction, unknown/dynamic_formula count를 표시합니다.
+- `fieldEnemyAll` target policy를 기존 `enemy_all` taxonomy로 정규화해 전체 데이터 normalization에서 target policy가 누락되지 않도록 했습니다.
+- manual guide fallback은 coverage completion에 사용하지 않았고, source-backed raw_source / curated_source guard를 유지했습니다.
+
+### 산출물 요약
+
+- 전체 coverage characters: 92
+- sourceRows: 761
+- effectRows: 273
+- coefficientRows: 766
+- effectRows 0 characters: 17
+- valueMode unknown characters: 0
+- dynamic_formula characters: 54
+- value resolution blocked rows: 103
+
+### 검증
+
+- `npm.cmd run validate`: 성공. `data:adapters` 포함 하위 검증 11개 통과.
+- `npm.cmd run verify:app`: 성공. app smoke checks=8.
+- `npm.cmd run build`: 성공. Vite 7.3.6 production build 완료. full generated JSON import로 chunk size warning이 발생하지만 exit code는 0.
+
+### 다음 Task로 넘길 항목
+
+- dynamic_formula resolver 확장: 현재 54명 / 103 rows가 unsupported dynamic formula로 value resolution에서 blocked됩니다.
+- relic source snapshot/adapter 추가: coverage에서는 relic source가 `missing_snapshot`으로 남아 있습니다.
+- lightcone effect source는 global snapshot까지 확인됐고, 캐릭터 loadout 적용/계산 연결은 별도 후속 작업입니다.
+- full dataset UI bundle size 개선: `/extraction`이 generated JSON을 직접 import해 build chunk warning이 발생합니다.
