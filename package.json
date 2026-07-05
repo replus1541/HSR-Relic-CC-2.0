@@ -19,7 +19,8 @@
     "validate:dedupe": "node tools/validate_dedupe.mjs",
     "validate:combat-ledger": "node tools/validate_combat_ledger.mjs",
     "validate:aggregation": "node tools/validate_aggregation.mjs",
-    "validate:imports": "node tools/validate_imports.mjs"
+    "validate:imports": "node tools/validate_imports.mjs",
+    "diff:legacy": "node tools/compare_legacy_and_v2.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.0.0",

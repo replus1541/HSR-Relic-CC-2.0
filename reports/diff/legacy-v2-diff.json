@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "generatedBy": "tools/compare_legacy_and_v2.mjs",
+  "counts": {
+    "fixtures": 5,
+    "expected": 5,
+    "unexpected": 0
+  },
+  "expected": [
+    {
+      "id": "hoyowiki-coefficients",
+      "legacyReference": "hoyowiki-character-skills",
+      "v2Reference": "extraction-canonical-dataset",
+      "category": "coefficient_extraction_only",
+      "reason": "v2 extracts coefficient rows before damage calculation."
+    },
+    {
+      "id": "manual-guide-blocked",
+      "legacyReference": "guide-or-manual-hint",
+      "v2Reference": "source-policy",
+      "category": "manual_source_blocked",
+      "reason": "manual_hint/manual_guide must not become calculation-ready."
+    },
+    {
+      "id": "playerboy00-dynamic-formula",
+      "legacyReference": "character-effect-candidates",
+      "v2Reference": "resolved-effects",
+      "category": "unsupported_dynamic_formula",
+      "reason": "v2 blocks dynamic_formula until resolver support is explicit."
+    },
+    {
+      "id": "playerboy20-crit-buff",
+      "legacyReference": "character-effect-candidates",
+      "v2Reference": "calculation-result-sample",
+      "category": "source_guard_or_value_trace",
+      "reason": "v2 keeps source-backed trace and may block unsupported rows instead of fallback."
+    },
+    {
+      "id": "playerboy40-single-ally",
+      "legacyReference": "character-effect-candidates",
+      "v2Reference": "deduped-effects",
+      "category": "target_scope_policy",
+      "reason": "v2 keeps single_ally target scope explicit."
+    }
+  ],
+  "unexpected": []
+}

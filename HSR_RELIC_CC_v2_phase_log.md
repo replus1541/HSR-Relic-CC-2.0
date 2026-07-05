@@ -870,6 +870,9 @@
 - `reports/diff/legacy-v2-fixtures.md`에 최소 5개 fixture 후보를 정리했습니다.
 - `data/legacy-reference/diff-fixtures/*.json`에 fixture id, legacy reference, v2 reference, expected category, reason을 기록했습니다.
 - v2 계산 변경, 기존 프로젝트 수정, legacy runtime import, manual guide 계산 유입은 수행하지 않았습니다.
+- Task 16-B 시작: `tools/compare_legacy_and_v2.mjs`와 `diff:legacy` script를 추가했습니다.
+- diff runner는 v2 내부 fixture manifest를 읽고 expected/unexpected difference를 JSON/MD report로 분리합니다.
+- legacy result를 정답으로 강제하거나 v2 계산 로직을 수정하지 않았습니다.
 
 ---
 
