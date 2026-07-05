@@ -767,6 +767,18 @@
 - Task 13-B 시작: `src/ui/components/*.jsx`에 Card/Panel/Badge/Tabs/TraceRow/EmptyState/MetricList presentational components를 추가했습니다.
 - `src/ui/app.css`에 v2 component class만 소규모로 추가했습니다. 기존 CSS 전체 복사는 수행하지 않았습니다.
 - component는 props 표시만 수행하며 ledger 계산 조립, effect 합산, adapter 호출은 포함하지 않습니다.
+- Task 13-C 시작: Home/Extraction/Ledger/LegacyDiff route shell을 v2 UI components로 재구성했습니다.
+- `src/app/App.jsx` header에 상태 badge를 추가하고, route별 placeholder를 Panel/Card/Badge/TraceRow/EmptyState/MetricList 조합으로 정리했습니다.
+- real data 연결, ledger 계산 조립, effect 합산, 기존 CSS 전체 복사는 수행하지 않았습니다.
+- Phase 13 완료: UI inventory, presentational components, route shell composition이 준비됐습니다.
+
+### 검증
+
+- `npm.cmd run build`: 성공. Vite 7.3.6 기준 42 modules transformed, production build 완료.
+
+### 다음 Task로 넘길 항목
+
+- Phase 14-A에서 generated extraction status를 overview route에 표시하는 contract를 연결합니다.
 
 ---
 

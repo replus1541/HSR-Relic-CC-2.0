@@ -1,3 +1,4 @@
+import { Badge } from "../ui/components/index.js";
 import { routes } from "./route-config.js";
 
 export function App() {
@@ -8,9 +9,10 @@ export function App() {
   return (
     <main className="app-shell">
       <header className="app-header">
-        <div>
+        <div className="app-header__title">
           <p className="app-kicker">HSR Relic CC v2.0</p>
           <h1>{activeRoute.title}</h1>
+          <Badge tone="ready">v2 shell</Badge>
         </div>
         <nav className="app-nav" aria-label="v2 route navigation">
           {routes.map((route) => (

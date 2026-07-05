@@ -1,8 +1,24 @@
+import { Card, MetricList, Panel } from "../../ui/components/index.js";
+
 export function HomeRoute() {
   return (
-    <section className="page-panel">
-      <h2>Phase 1-A Shell</h2>
-      <p>이 화면은 v2 프로젝트 골격 확인용입니다. 계산, adapter, schema, effect engine은 아직 구현하지 않습니다.</p>
-    </section>
+    <Panel eyebrow="Overview" title="v2 Pipeline Shell">
+      <div className="route-grid">
+        <Card>
+          <h3>Data Flow</h3>
+          <MetricList
+            items={[
+              { label: "Extraction", value: "canonical" },
+              { label: "Effects", value: "normalized" },
+              { label: "Calculation", value: "ledger" },
+            ]}
+          />
+        </Card>
+        <Card>
+          <h3>Boundary</h3>
+          <p>Routes display generated outputs only. Adapter, resolver, dedupe, and aggregation work stays outside UI components.</p>
+        </Card>
+      </div>
+    </Panel>
   );
 }

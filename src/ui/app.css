@@ -242,3 +242,30 @@ p {
   color: #ffffff;
   font-weight: 700;
 }
+.app-header__title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+}
+
+.app-header__title .app-kicker,
+.app-header__title h1 {
+  flex-basis: 100%;
+}
+
+.route-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.ui-card h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+@media (min-width: 720px) {
+  .route-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
