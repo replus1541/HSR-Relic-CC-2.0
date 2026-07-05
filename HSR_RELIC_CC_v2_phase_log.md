@@ -59,9 +59,9 @@
 
 ### 상태
 
-- 상태: in_progress
+- 상태: complete
 - 시작일: 2026-07-05
-- 완료일:
+- 완료일: 2026-07-05
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 목표
@@ -75,6 +75,7 @@
 - 2026-07-05: Vite/React app shell과 route placeholder를 생성했습니다. 의존성은 `react`, `react-dom`, `vite`, `@vitejs/plugin-react`만 사용했습니다.
 - 2026-07-05: v2 도메인 폴더와 README placeholder를 생성했습니다. 계산/adapter/schema/effect-engine 구현은 추가하지 않았습니다.
 - 2026-07-05: `npm.cmd install` 성공. 65 packages 설치, 취약점 0건.
+- 2026-07-05: `npm.cmd run build` 성공. Vite 7.3.6 기준 34 modules transformed, production build 완료.
 
 ### 생성/수정 파일
 
@@ -101,15 +102,17 @@
 
 ### 검증
 
--
+- `npm.cmd install`: 성공, 취약점 0건.
+- `npm.cmd run build`: 성공.
 
 ### 막힌 점 / 리스크
 
--
+- 없음.
 
 ### 다음 Phase로 넘길 항목
 
--
+- Phase 2에서 기존 `HSR RELIC CC`의 UI/데이터/로직 재사용 가능 범위를 파일 단위로 분류해야 합니다.
+- Phase 1-A는 route shell만 만들었으므로 실제 데이터, adapter, schema, effect-engine 구현은 후속 Phase에서 진행합니다.
 
 ---
 
