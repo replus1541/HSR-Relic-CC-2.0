@@ -578,14 +578,17 @@
 
 ### 상태
 
-- 상태: not_started
-- 시작일:
+- 상태: in_progress
+- 시작일: 2026-07-05
 - 완료일:
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
 
--
+- Task 8-A 시작: `src/data-model/schemas/schema-enums.js`의 EffectType/TargetScope/AttackType/ValueMode를 effect normalization taxonomy source로 고정했습니다.
+- `src/effect-engine/effect-taxonomy.js`에 taxonomy constants, known-value predicate, unknown taxonomy policy를 추가했습니다.
+- `reports/effect-engine/normalization-report.md`에 unknown taxonomy는 계산 불가 후보로 처리한다는 정책을 기록했습니다.
+- value resolving, dedupe, 계산 로직, adapter target policy mapping은 구현하지 않았습니다.
 
 ---
 
