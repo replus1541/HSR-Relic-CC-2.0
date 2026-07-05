@@ -903,6 +903,9 @@
 - `tools/validate_all.mjs`는 기존 하위 npm script 10개를 순서대로 실행하고 실패 시 중단합니다.
 - `package.json`에 `validate` script를 추가했습니다.
 - 새 기능 구현, 기존 프로젝트 수정, 계산 로직 변경, manual guide 계산 유입은 수행하지 않았습니다.
+- Task 17-B 시작: `tools/verify_app_smoke.mjs`와 `verify:app` script를 추가했습니다.
+- smoke는 built `dist/index.html`, 주요 route config, generated extraction/ledger/calculation data 존재와 expected shell pattern을 확인합니다.
+- Playwright 도입, 기존 프로젝트 수정, 계산 로직 변경은 수행하지 않았습니다.
 
 ---
 

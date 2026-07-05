@@ -21,7 +21,8 @@
     "validate:aggregation": "node tools/validate_aggregation.mjs",
     "validate:imports": "node tools/validate_imports.mjs",
     "diff:legacy": "node tools/compare_legacy_and_v2.mjs",
-    "validate": "node tools/validate_all.mjs"
+    "validate": "node tools/validate_all.mjs",
+    "verify:app": "node tools/verify_app_smoke.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.0.0",
