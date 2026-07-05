@@ -1155,6 +1155,42 @@
 
 ---
 
+## Follow-up Analysis. Auto Match and Dynamic Unknown Breakdown
+
+### Status
+
+- status: completed
+- started: 2026-07-05
+- completed: 2026-07-05
+- request: verify autoMatch candidates and split dynamic unknown rows before resolver implementation
+
+### Work Log
+
+- Added `tools/analyze_auto_dynamic.mjs` as a report-only analyzer.
+- Verified 6 autoMatch candidates against stable `characterId`, `internalId`, HoyoWiki `entryPageId`, and avatar ids.
+- Reclassified 15 effect trace missing characters into parser/source/id/curated action buckets.
+- Split the 78 dynamic formula rows previously classed as unknown into narrower subtypes.
+- No auto match, dynamic formula resolver, curated_source, value correction, or existing project modification was performed.
+
+### Output Files
+
+- `reports/extraction/auto-match-verification.md`
+- `reports/extraction/effect-trace-action-plan.md`
+- `reports/extraction/dynamic-unknown-breakdown.md`
+
+### Output Summary
+
+- autoMatch connected candidates: 6 / 6
+- effect trace action counts: HoyoWiki parser gap 12, source not loaded 3, curated source primary 0, identity/id mismatch 0
+- dynamic unknown row subtypes: level-scaled value 3, source stat ratio 2, stack condition 0, enemy debuff count 0, attack type condition 2, eidolon condition 0, parser type unresolved 71
+
+### Verification
+
+- `npm.cmd run validate`: passed. 12 sub-scripts passed.
+- `npm.cmd run build`: passed. Vite production build completed; generated JSON chunk-size warning remains.
+
+---
+
 ## Follow-up Analysis. Missing Priority Breakdown
 
 ### Status
