@@ -839,6 +839,19 @@
 - FreeSR sample input을 canonical loadout state로 변환하고, validator가 SRTools/FreeSR sample state required fields를 함께 검증합니다.
 - `reports/import/freesr-import-report.md`에 FreeSR adapter output shape와 validation 기준을 기록했습니다.
 - legacy state 재사용, 계산 로직, manual guide 계산 유입은 구현하지 않았습니다.
+- Task 15-D 시작: `src/app/import/ImportPreviewModal.jsx`를 추가하고 Home route에 import preview shell을 연결했습니다.
+- preview는 canonical loadout state shape의 mapped/warnings/failed row count만 표시합니다.
+- 계산 실행 연결, legacy state 저장, manual guide 계산 유입은 구현하지 않았습니다.
+- Phase 15 완료: loadout state contract, SRTools/FreeSR adapters, import validator, import preview shell이 준비됐습니다.
+
+### 검증
+
+- `npm.cmd run validate:imports`: 성공. srtoolsRoster=1, freesrRoster=1.
+- `npm.cmd run build`: 성공. Vite 7.3.6 기준 production build 완료.
+
+### 다음 Task로 넘길 항목
+
+- Phase 16-A에서 legacy diff fixture 후보와 expected difference category를 정의합니다.
 
 ---
 
