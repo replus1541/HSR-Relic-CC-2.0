@@ -948,3 +948,17 @@
 - Task 18-B 시작: `reports/release/v2-phase1-summary.md`, `reports/release/v2-phase1-known-gaps.md`를 작성했습니다.
 - README에 v2 1차 통합 상태와 release 문서 링크를 추가했습니다.
 - 새 기능 구현, 기존 프로젝트 수정, 검증 실패 숨김은 수행하지 않았습니다.
+- Task 18-C 시작: Phase 18과 v2 1차 통합을 Phase Log에서 completed로 전환했습니다.
+- 최종 검증 대상은 `npm.cmd run validate`, `npm.cmd run verify`, `npm.cmd run build`, `git status --short`입니다.
+- 실패한 검증을 성공으로 기록하지 않습니다.
+
+### 최종 검증
+
+- `npm.cmd run validate`: 성공. 하위 검증 10개 통과.
+- `npm.cmd run verify`: 성공. 내부 build 48 modules transformed.
+- `npm.cmd run build`: 성공. Vite 7.3.6 기준 48 modules transformed, production build 완료.
+- `git status --short`: final commit 후 clean이어야 합니다.
+
+### 다음 Task로 넘길 항목
+
+- v2 후속 roadmap: dynamic_formula resolver 확장, external import full fixture, legacy parity fixture 확대, UI workflow 확장.
