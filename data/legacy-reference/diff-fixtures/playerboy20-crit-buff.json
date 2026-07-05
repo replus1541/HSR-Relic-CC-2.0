@@ -1,0 +1,7 @@
+{
+    "legacyReference":  "character-effect-candidates",
+    "reason":  "v2 keeps source-backed trace and may block unsupported rows instead of fallback.",
+    "id":  "playerboy20-crit-buff",
+    "v2Reference":  "calculation-result-sample",
+    "expectedDifferenceCategory":  "source_guard_or_value_trace"
+}

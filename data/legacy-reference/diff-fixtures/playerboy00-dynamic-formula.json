@@ -1,0 +1,7 @@
+{
+    "legacyReference":  "character-effect-candidates",
+    "reason":  "v2 blocks dynamic_formula until resolver support is explicit.",
+    "id":  "playerboy00-dynamic-formula",
+    "v2Reference":  "resolved-effects",
+    "expectedDifferenceCategory":  "unsupported_dynamic_formula"
+}

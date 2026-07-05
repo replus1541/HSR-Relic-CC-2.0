@@ -859,14 +859,17 @@
 
 ### 상태
 
-- 상태: not_started
-- 시작일:
+- 상태: in_progress
+- 시작일: 2026-07-05
 - 완료일:
 - 관련 계획 문서: `HSR_RELIC_CC_v2_refactoring_step_plan.md`
 
 ### 진행 기록
 
--
+- Task 16-A 시작: legacy-v2 비교 fixture 후보와 expected difference category를 정의했습니다.
+- `reports/diff/legacy-v2-fixtures.md`에 최소 5개 fixture 후보를 정리했습니다.
+- `data/legacy-reference/diff-fixtures/*.json`에 fixture id, legacy reference, v2 reference, expected category, reason을 기록했습니다.
+- v2 계산 변경, 기존 프로젝트 수정, legacy runtime import, manual guide 계산 유입은 수행하지 않았습니다.
 
 ---
 

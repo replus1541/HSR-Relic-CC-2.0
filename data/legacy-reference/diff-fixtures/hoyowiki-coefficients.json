@@ -1,0 +1,7 @@
+{
+    "legacyReference":  "hoyowiki-character-skills",
+    "reason":  "v2 extracts coefficient rows before damage calculation.",
+    "id":  "hoyowiki-coefficients",
+    "v2Reference":  "extraction-canonical-dataset",
+    "expectedDifferenceCategory":  "coefficient_extraction_only"
+}

@@ -1,0 +1,7 @@
+{
+    "legacyReference":  "guide-or-manual-hint",
+    "reason":  "manual_hint/manual_guide must not become calculation-ready.",
+    "id":  "manual-guide-blocked",
+    "v2Reference":  "source-policy",
+    "expectedDifferenceCategory":  "manual_source_blocked"
+}
