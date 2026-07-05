@@ -336,6 +336,36 @@ p {
   --calc-damage-yellow: #f5c96f;
   --calc-danger: #de5b55;
   --calc-shadow: rgba(0, 0, 0, 0.3);
+  --text-tab-size: 15px;
+  --text-tab-line: 20px;
+  --text-tab-weight: 700;
+  --text-tab-active-weight: 800;
+  --text-section-title-size: 16px;
+  --text-section-title-line: 22px;
+  --text-section-title-weight: 800;
+  --text-card-title-size: 18px;
+  --text-card-title-line: 24px;
+  --text-card-title-weight: 800;
+  --text-metric-size: 20px;
+  --text-metric-line: 26px;
+  --text-metric-weight: 800;
+  --text-metric-long-size: 17px;
+  --text-metric-long-line: 24px;
+  --text-label-size: 13px;
+  --text-label-line: 18px;
+  --text-label-weight: 700;
+  --text-source-title-size: 14px;
+  --text-source-title-line: 20px;
+  --text-source-title-weight: 800;
+  --text-source-value-size: 15px;
+  --text-source-value-line: 20px;
+  --text-source-value-weight: 800;
+  --text-source-desc-size: 13px;
+  --text-source-desc-line: 20px;
+  --text-source-desc-weight: 700;
+  --text-badge-size: 12.5px;
+  --text-badge-line: 18px;
+  --text-badge-weight: 800;
   width: min(1180px, 100%);
   min-height: 100vh;
   margin: 0 auto;
@@ -604,6 +634,17 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.calc-avatar-fallback {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--calc-muted);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 18px;
 }
 
 .calc-main-grid,
@@ -1840,7 +1881,7 @@ p {
 .calc-contribution-label strong {
   display: flex;
   align-items: baseline;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 7px;
   min-width: 0;
   color: var(--calc-text);
@@ -1851,10 +1892,9 @@ p {
 
 .calc-contribution-label strong > span {
   min-width: 0;
-  overflow: visible;
-  text-overflow: clip;
-  white-space: normal;
-  overflow-wrap: anywhere;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .calc-contribution-label > small {
@@ -3481,7 +3521,7 @@ p {
   }
 
   .calc-top-tabs {
-    gap: 7px;
+    gap: 5px;
     justify-content: flex-start;
     width: 100%;
     height: 38px;
@@ -3492,20 +3532,20 @@ p {
   }
 
   .calc-top-tabs button {
-    flex: 1 1 0;
-    min-width: 0;
+    flex: 0 0 auto;
+    min-width: max-content;
     height: 38px;
     min-height: 38px;
-    padding: 0 5px;
+    padding: 0 6px;
     font-size: var(--m-font-tab);
     font-weight: 900;
   }
 
   .calc-icon-button {
-    width: var(--m-touch-sm);
-    height: var(--m-touch-sm);
-    min-width: var(--m-touch-sm);
-    min-height: var(--m-touch-sm);
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
     border-radius: var(--m-card-radius);
   }
 
@@ -3540,6 +3580,13 @@ p {
     height: auto;
     aspect-ratio: 1;
     border-radius: 7px;
+  }
+
+  .calc-party-slot .calc-avatar-fallback {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 22px;
+    opacity: 0.78;
   }
 
   .calc-party-slot > span:last-child {
@@ -4191,10 +4238,10 @@ p {
   }
 
   .calc-contribution-row {
-    grid-template-columns: 22px minmax(0, 1fr) minmax(58px, auto) 108px auto;
+    grid-template-columns: 22px minmax(112px, 1fr) minmax(58px, auto) minmax(78px, 88px) 16px;
     min-height: 50px;
-    gap: 7px;
-    padding: 6px 10px 6px 6px;
+    gap: 5px;
+    padding: 6px 8px 6px 6px;
   }
 
   .calc-party-recommendation-row {
@@ -4467,5 +4514,247 @@ p {
   .calc-auto-recommend-keep-badge,
   .calc-condition-row-main > span {
     font-size: 12.5px;
+  }
+}
+
+/* Typography role tokens: keep the same text role consistent across all calculator tabs. */
+.calc-top-tabs button {
+  font-size: var(--text-tab-size);
+  font-weight: var(--text-tab-weight);
+  line-height: var(--text-tab-line);
+}
+
+.calc-top-tabs button.is-active {
+  font-size: var(--text-tab-size);
+  font-weight: var(--text-tab-active-weight);
+}
+
+.calc-section-head h2,
+.calc-damage-analysis-head h3,
+.calc-evaluation-group h3,
+.calc-condition-editor-head h3,
+.calc-party-settings-head strong {
+  font-size: var(--text-section-title-size);
+  font-weight: var(--text-section-title-weight);
+  line-height: var(--text-section-title-line);
+}
+
+.calc-status-head strong,
+.calc-main-dealer-option strong,
+.calc-current-party-summary-copy strong,
+.calc-party-settings-owner b,
+.calc-contribution-row-card strong,
+.calc-damage-skill-head strong,
+.calc-damage-skill-title-line span {
+  font-size: var(--text-card-title-size);
+  font-weight: var(--text-card-title-weight);
+  line-height: var(--text-card-title-line);
+}
+
+.calc-condition-row-main strong {
+  font-size: var(--text-section-title-size);
+  font-weight: var(--text-section-title-weight);
+  line-height: var(--text-section-title-line);
+}
+
+.calc-precombat-stat-value,
+.calc-evaluation-row b,
+.calc-contribution-row-card b,
+.calc-damage-skill-head b,
+.calc-condition-delta-strip b {
+  font-size: var(--text-metric-size);
+  font-weight: var(--text-metric-weight);
+  line-height: var(--text-metric-line);
+}
+
+.calc-precombat-stat-cell.is-primary .calc-precombat-stat-value {
+  font-size: var(--text-metric-long-size);
+  font-weight: var(--text-metric-weight);
+  line-height: var(--text-metric-long-line);
+}
+
+.calc-status-head span,
+.calc-status-card small,
+.calc-stat-row-label,
+.calc-enemy-card label,
+.calc-damage-analysis-head p,
+.calc-damage-skill-head small,
+.calc-evaluation-row small,
+.calc-evaluation-row em,
+.calc-contribution-row-card small,
+.calc-contribution-label > small,
+.calc-current-party-summary-copy small,
+.calc-main-dealer-option small,
+.calc-condition-row-main small,
+.calc-condition-delta-strip small,
+.calc-condition-empty-note,
+.calc-party-settings-owner em,
+.calc-party-settings-controls small {
+  color: var(--calc-muted);
+  font-size: var(--text-label-size);
+  font-weight: var(--text-label-weight);
+  line-height: var(--text-label-line);
+}
+
+.calc-evaluation-source-owner strong,
+.calc-contribution-label strong,
+.calc-contribution-detail-list div b {
+  font-size: var(--text-source-title-size);
+  font-weight: var(--text-source-title-weight);
+  line-height: var(--text-source-title-line);
+}
+
+.calc-evaluation-source-amount,
+.calc-contribution-row em,
+.calc-contribution-unit,
+.calc-contribution-detail-list > li > span.calc-evaluation-source-amount {
+  font-size: var(--text-source-value-size);
+  font-weight: var(--text-source-value-weight);
+  line-height: var(--text-source-value-line);
+}
+
+.calc-evaluation-source-stat,
+.calc-evaluation-source-label small,
+.calc-evaluation-source-meta small,
+.calc-contribution-detail-list div small,
+.calc-contribution-detail-list .calc-evaluation-source-label small,
+.calc-contribution-detail-list .calc-evaluation-source-stat {
+  font-size: var(--text-source-desc-size);
+  font-weight: var(--text-source-desc-weight);
+  line-height: var(--text-source-desc-line);
+}
+
+.calc-status-head select,
+.calc-main-dealer-eidolon,
+.calc-contribution-eidolon,
+.calc-contribution-rank,
+.calc-auto-recommend-keep-badge,
+.calc-condition-row-main > span,
+.calc-lightcone-thumb b,
+.calc-party-summary-role-badge {
+  font-size: var(--text-badge-size);
+  font-weight: var(--text-badge-weight);
+  line-height: var(--text-badge-line);
+}
+
+.calc-top-tabs button,
+.calc-top-tabs button.is-active {
+  min-height: 38px;
+}
+
+@media (max-width: 680px) {
+  .calculator-shell {
+    --text-tab-size: 15px;
+    --text-tab-line: 20px;
+    --text-section-title-size: 16px;
+    --text-section-title-line: 22px;
+    --text-card-title-size: 18px;
+    --text-card-title-line: 24px;
+    --text-metric-size: 20px;
+    --text-metric-line: 26px;
+    --text-metric-long-size: 17px;
+    --text-metric-long-line: 24px;
+    --text-label-size: 13px;
+    --text-label-line: 18px;
+    --text-source-title-size: 14px;
+    --text-source-title-line: 20px;
+    --text-source-value-size: 15px;
+    --text-source-value-line: 20px;
+    --text-source-desc-size: 13px;
+    --text-source-desc-line: 20px;
+    --text-badge-size: 12.5px;
+    --text-badge-line: 18px;
+    --m-font-tab: var(--text-tab-size);
+    --m-font-body: 15px;
+    --m-font-value: var(--text-metric-size);
+    --m-font-label: var(--text-label-size);
+  }
+
+  .calc-top-tabs button,
+  .calc-top-tabs button.is-active {
+    flex: 0 0 auto;
+    min-width: max-content;
+    padding: 0 6px;
+    font-size: var(--text-tab-size);
+    line-height: var(--text-tab-line);
+  }
+
+  .calc-top-tabs {
+    gap: 5px;
+    scrollbar-width: none;
+  }
+
+  .calc-top-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .calc-party-slot {
+    grid-template-rows: minmax(0, 1fr) 18px;
+    padding: 4px;
+  }
+
+  .calc-party-slot > span:last-child {
+    min-height: 18px;
+    max-height: 18px;
+    color: var(--calc-muted);
+    font-size: var(--text-badge-size);
+    font-weight: var(--text-badge-weight);
+    line-height: 18px;
+    opacity: 0.86;
+  }
+
+  .calc-party-slot .calc-avatar-fallback {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 22px;
+    opacity: 0.78;
+  }
+
+  .calc-status-head {
+    grid-template-columns: 48px minmax(0, 1fr);
+  }
+
+  .calc-status-title-line {
+    grid-template-columns: minmax(0, 1fr) 58px 44px;
+    gap: 8px;
+  }
+
+  .calc-status-head select {
+    height: 28px;
+    min-height: 28px;
+    color: #c58b55;
+    font-size: var(--text-badge-size);
+    font-weight: var(--text-badge-weight);
+    line-height: var(--text-badge-line);
+  }
+
+  .calc-precombat-stats > .calc-precombat-stat-cell {
+    min-height: 48px;
+  }
+
+  .calc-precombat-stat-value {
+    max-width: 58%;
+    font-size: var(--text-metric-size);
+    line-height: var(--text-metric-line);
+  }
+
+  .calc-precombat-stat-cell.is-primary .calc-precombat-stat-value,
+  .calc-precombat-stat-cell.is-role .calc-precombat-stat-value {
+    font-size: var(--text-metric-long-size);
+    line-height: var(--text-metric-long-line);
+  }
+
+  .calc-evaluation-source-label small,
+  .calc-contribution-detail-list .calc-evaluation-source-label small {
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .calc-evaluation-source-group ul li,
+  .calc-contribution-detail-list li {
+    align-items: start;
   }
 }

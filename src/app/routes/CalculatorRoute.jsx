@@ -23,7 +23,7 @@ const appTabs = [
 ];
 
 const defaultPartyIds = ["PlayerBoy_20", "Sparkle_00", "Sunday_10", "RuanMei_00"];
-const appVersionName = "2.003";
+const appVersionName = "2.005";
 const calculatorStateCookieName = "hsr_relic_cc_v2_calculator_state";
 const calculatorStateVersion = 1;
 const cookieMaxAgeSeconds = 60 * 60 * 24 * 180;
@@ -852,7 +852,7 @@ function CharacterAvatar({ character, variant = "imageOnly" }) {
   if (character?.iconPath) {
     return <img src={character.iconPath} alt="" loading="lazy" />;
   }
-  return <span aria-hidden="true">{normalizeProfileNameKey(character?.displayName).slice(0, 1) || "+"}</span>;
+  return <span className="calc-avatar-fallback" aria-hidden="true">{normalizeProfileNameKey(character?.displayName).slice(0, 1) || "+"}</span>;
 }
 
 function SettingsIcon() {
@@ -890,7 +890,7 @@ function PartySlot({ slot, active, onSelect }) {
   return (
     <button className={`calc-party-slot ${active ? "is-active" : ""} ${character ? "" : "is-empty"}`} type="button" onClick={onSelect}>
       <span className="calc-party-face">
-        <CharacterAvatar character={character} variant="withText" />
+        <CharacterAvatar character={character} />
       </span>
       <strong>{character?.displayName ?? "빈 슬롯"}</strong>
       <span>E{slot.eidolon}</span>

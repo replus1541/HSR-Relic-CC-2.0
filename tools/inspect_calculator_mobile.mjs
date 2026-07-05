@@ -9,6 +9,7 @@ const chromePath = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe";
 const rootDir = path.resolve(import.meta.dirname, "..");
 const outDir = path.join(rootDir, "artifacts", "calculator-mobile");
 const viewports = [
+  { width: 360, height: 800, name: "mobile-360", isMobile: true },
   { width: 390, height: 844, name: "mobile-390", isMobile: true },
   { width: 430, height: 932, name: "mobile-430", isMobile: true },
   { width: 500, height: 900, name: "desktop-narrow-500", isMobile: false },

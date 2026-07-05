@@ -1807,3 +1807,31 @@
 - `npm.cmd run build -- --emptyOutDir=false`: passed. Vite chunk-size warning remains.
 - `npm.cmd run validate:imports`: passed.
 - `npm.cmd run verify:app`: passed.
+
+---
+
+## Mobile Typography Token Pass
+
+### Status
+
+- status: completed
+- started: 2026-07-06
+- completed: 2026-07-06
+- request: unify mobile font sizes and text hierarchy across character setup, stat/damage calculation, and condition compare tabs
+
+### Work Log
+
+- Added calculator typography role tokens for tab labels, section titles, card titles, metrics, long metrics, labels, source titles, source values, source descriptions, and badges.
+- Remapped character setup, stat/damage, and condition compare UI text to the shared role tokens so active tabs no longer change font size.
+- Changed the 4-party slot avatar to use image-only profiles and lowered E0/status text to badge hierarchy.
+- Rebalanced stat/damage contribution rows so character names stay one-line, E0 stays badge-sized, and contribution values use source-value hierarchy.
+- Bumped the visible settings version from `v2.003` to `v2.005`.
+- Extended `tools/inspect_calculator_mobile.mjs` to include a 360px viewport.
+
+### Verification
+
+- `npm.cmd run build -- --emptyOutDir=false`: passed. Vite chunk-size warning remains.
+- `npm.cmd run verify:app`: passed.
+- `git diff --check`: passed with CRLF conversion warnings only.
+- `node tools\inspect_calculator_mobile.mjs`: passed with escalated browser launch.
+- Mobile screenshots generated for 360/390/430px under `artifacts/calculator-mobile`, including character setup, stat/damage calculation, and condition compare tabs.
