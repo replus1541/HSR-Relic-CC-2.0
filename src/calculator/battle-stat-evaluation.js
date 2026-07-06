@@ -27,11 +27,25 @@ const damageBonusRows = [
   { key: "followDamageTotal", label: "추가공격 피해증가", attackStat: "followDamage" },
 ];
 
-function getCritRateEvaluation(critRate) {
+function getCritRateEvaluation(critRate, finalStats = {}) {
   const value = Number(critRate ?? 0);
+  const convertedCritDamage = Number(finalStats.critRateOvercapConvertedCritDamage ?? 0);
+  const conversionBasis = Number(finalStats.critRateOvercapConversionBasis ?? value);
+  if (value > 1 && convertedCritDamage > 0) {
+    const convertedCritRate = Math.max(0, conversionBasis - 1);
+    const message = `전환된 치확 ${formatPercent(convertedCritRate)}가 치피 ${formatPercent(convertedCritDamage)}로 전환`;
+    return { level: "neutral", message, compactMessage: message };
+  }
   if (value > 1) return { level: "warning", message: "치명타 확률이 100%를 초과합니다.", compactMessage: "치확 100% 초과" };
   if (value < 0.95) return { level: "notice", message: "전투 기준 치명타 확률이 95% 미만입니다.", compactMessage: "치확 95% 미만" };
   return { level: "neutral" };
+}
+
+function formatPercent(value) {
+  const numeric = Number(value ?? 0) * 100;
+  if (!Number.isFinite(numeric)) return "0%";
+  const rounded = Math.round(numeric * 10) / 10;
+  return `${Number.isInteger(rounded) ? rounded.toFixed(0) : rounded.toFixed(1)}%`;
 }
 
 function getDefenseEvaluation(defensePen) {
@@ -75,7 +89,7 @@ export function buildBattleStatEvaluation({
   const showCritRows = template.usesCrit || hasRows(["critRate", "critDamage", "dealtCritDamage", "followCritDamage"]);
   const critRows = showCritRows
     ? [
-        row("critRate", "치확", finalStats.critRate, ["critRate"], getCritRateEvaluation(finalStats.critRate)),
+        row("critRate", "치확", finalStats.critRate, ["critRate"], getCritRateEvaluation(finalStats.critRate, finalStats)),
         row("critDamage", "치피", finalStats.critDamage, ["critDamage"]),
         ...(hasRows(["dealtCritDamage"]) ? [row("dealtCritDamage", "가하는 치명타 피해", finalStats.dealtCritDamage, ["dealtCritDamage"])] : []),
         ...(hasRows(["followCritDamage"]) ? [row("followCritDamage", "추가공격 치명타 피해", finalStats.followCritDamage, ["followCritDamage"])] : []),
