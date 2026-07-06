@@ -1115,7 +1115,7 @@ function buildCharacterProfileRows(character, slot, selfStats) {
   const primaryLabel = formatPrimaryStatProfile(profile);
   const rows = [
     { label: "타입", value: typeLabel, kind: "role" },
-    { label: `주요 스탯: ${primaryLabel}`, value: formatCalculatedSelfStat(selfStats?.stats, primaryStat), kind: "primary" },
+    { label: `주요스탯 : ${primaryLabel}`, value: formatCalculatedSelfStat(selfStats?.stats, primaryStat), kind: "primary" },
   ];
   for (const [label, stat] of getProfileStatSpecs(character, profile, slot)) {
     if (stat === primaryStat) continue;
@@ -1326,9 +1326,7 @@ function CharacterStatusCard({ slot, active, onSelect, onEidolonChange, onOpenLi
 
       <div className="calc-precombat-stats">
         {statRows.map(({ label, value, kind }) => {
-          const [groupLabel, detailLabel] = kind === "primary" && label.includes(":")
-            ? label.split(":").map((part) => part.trim())
-            : [label, ""];
+          const [groupLabel, detailLabel] = [label, ""];
           return (
           <span key={label} className={`calc-precombat-stat-cell is-${kind}`}>
             <small className="calc-stat-row-label">
@@ -3115,60 +3113,6 @@ function LegacyConditionComparePanel({ party, activeSlotId, onMainDealerChange, 
   );
 }
 
-function ConditionPartySummary({ party, activeSlotId, onSelectSlot }) {
-  const [open, setOpen] = useState(false);
-  const activeSlot = party.find((slot) => slot.slotId === activeSlotId) ?? party[0];
-  const activeCharacter = getCharacter(activeSlot?.characterId);
-
-  const renderOption = (slot, index) => {
-    return <MainDealerOptionContent slot={slot} fallbackLabel={`빈 슬롯 ${index + 1}`} />;
-  };
-
-  return (
-    <section
-      className="calc-current-party-summary-row calc-party-summary-select calc-condition-party-summary"
-      aria-label="현재 선택 파티"
-      onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
-      }}
-    >
-      <button
-        className="calc-main-dealer-trigger calc-party-summary-trigger"
-        type="button"
-        aria-expanded={open}
-        aria-label={`비교 캐릭터 ${activeCharacter?.displayName ?? "캐릭터 미선택"} 선택`}
-        onClick={() => setOpen((current) => !current)}
-      >
-        {renderOption(activeSlot, party.indexOf(activeSlot))}
-        <span className="calc-main-dealer-chevron" aria-hidden="true" />
-      </button>
-      {open && (
-        <div className="calc-main-dealer-menu calc-party-summary-menu" role="listbox" aria-label="파티 기준 캐릭터 선택">
-          {party.map((slot, index) => {
-            const active = slot.slotId === activeSlotId;
-            return (
-              <button
-                key={slot.slotId}
-                className={active ? "is-active" : ""}
-                type="button"
-                role="option"
-                aria-selected={active}
-                onClick={() => {
-                  onSelectSlot(slot.slotId);
-                  setOpen(false);
-                }}
-              >
-                {renderOption(slot, index)}
-                <span className="calc-party-summary-role-badge">{active ? "메인" : "파티원"}</span>
-              </button>
-            );
-          })}
-        </div>
-      )}
-    </section>
-  );
-}
-
 function calculateConditionDamageSummary({ party, activeSlotId, enemy, scenarioSettings = {}, stateControls = [] }) {
   const battleResult = calculateBattleFinalStats({
     party,
@@ -3196,9 +3140,7 @@ function calculateConditionDamageSummary({ party, activeSlotId, enemy, scenarioS
 function ConditionComparePanel({
   party,
   activeSlotId,
-  onMainDealerChange,
   enemy,
-  onEnemyChange,
   baseScenarioSettings,
   compareConditions,
   compareKeepSlotIds,
@@ -3275,8 +3217,6 @@ function ConditionComparePanel({
 
   return (
     <section className="calc-condition-compare" aria-label="조건부 비교">
-      <ConditionPartySummary party={party} activeSlotId={activeSlotId} onSelectSlot={onMainDealerChange} />
-
       <article className="calc-condition-editor">
         <div className="calc-condition-editor-head">
           <h3>비교 조건</h3>
@@ -3422,8 +3362,6 @@ function ConditionComparePanel({
         {compareFeedback && <p className="calc-condition-feedback">{compareFeedback}</p>}
         <p className="calc-condition-meta-note">자동추천 기준: 보유 캐릭터 E{ownedCharacterEidolon}, 고정 슬롯 제외</p>
       </article>
-
-      <EnemyEditor enemy={enemy} onChange={onEnemyChange} />
     </section>
   );
 }
@@ -3967,26 +3905,28 @@ export function CalculatorRoute() {
       {(activeTab === "buffs" || activeTab === "conditionCompare") && (
         <section className="calc-party-evaluation" aria-label="스탯 / 데미지 계산">
           {activeTab === "conditionCompare" ? (
-            <ConditionComparePanel
-              party={party}
-              activeSlotId={activeSlotId}
-              onMainDealerChange={changeMainDealer}
-              enemy={enemy}
-              onEnemyChange={setEnemy}
-              baseScenarioSettings={partySpecificSettings}
-              compareConditions={compareConditions}
-              compareKeepSlotIds={compareKeepSlotIds}
-              ownedCharacterEidolon={ownedCharacterEidolon}
-              onAddCondition={() => {
-                setCompareFeedback("");
-                setCompareEditorConditionId("__new__");
-              }}
-              onEditCondition={setCompareEditorConditionId}
-              onRemoveCondition={(conditionId) => setCompareConditions((current) => current.filter((condition) => condition.id !== conditionId))}
-              onAutoRecommend={applyAutoCompareRecommendations}
-              onToggleKeepSlot={toggleCompareKeepSlot}
-              compareFeedback={compareFeedback}
-            />
+            <>
+              <MainDealerCard party={party} activeSlotId={activeSlotId} onChange={changeMainDealer} />
+              <EnemyEditor enemy={enemy} onChange={setEnemy} />
+              <ConditionComparePanel
+                party={party}
+                activeSlotId={activeSlotId}
+                enemy={enemy}
+                baseScenarioSettings={partySpecificSettings}
+                compareConditions={compareConditions}
+                compareKeepSlotIds={compareKeepSlotIds}
+                ownedCharacterEidolon={ownedCharacterEidolon}
+                onAddCondition={() => {
+                  setCompareFeedback("");
+                  setCompareEditorConditionId("__new__");
+                }}
+                onEditCondition={setCompareEditorConditionId}
+                onRemoveCondition={(conditionId) => setCompareConditions((current) => current.filter((condition) => condition.id !== conditionId))}
+                onAutoRecommend={applyAutoCompareRecommendations}
+                onToggleKeepSlot={toggleCompareKeepSlot}
+                compareFeedback={compareFeedback}
+              />
+            </>
           ) : (
             <>
               <MainDealerCard party={party} activeSlotId={activeSlotId} onChange={changeMainDealer} />

@@ -1616,13 +1616,13 @@
       ],
       "recommendedRelics": [
         {
-          "id": "wiki-relic-141",
-          "name": "혹한 밀림의 사냥꾼",
+          "id": "wiki-relic-3161",
+          "name": "지식의 바다에 빠진 학자",
           "category": "터널 유물"
         },
         {
-          "id": "wiki-relic-1238",
-          "name": "뭇별 경기장",
+          "id": "wiki-relic-3566",
+          "name": "고요한 습골지",
           "category": "차원 장신구"
         }
       ],
@@ -1633,15 +1633,15 @@
       },
       "selectedRelics": {
         "set4": {
-          "id": "wiki-relic-141",
-          "name": "혹한 밀림의 사냥꾼",
+          "id": "wiki-relic-3161",
+          "name": "지식의 바다에 빠진 학자",
           "category": "터널 유물"
         },
         "set4Alt": null,
         "set4Mode": "4",
         "set2": {
-          "id": "wiki-relic-1238",
-          "name": "뭇별 경기장",
+          "id": "wiki-relic-3566",
+          "name": "고요한 습골지",
           "category": "차원 장신구"
         }
       },
