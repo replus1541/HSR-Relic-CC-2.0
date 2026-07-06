@@ -208,8 +208,9 @@ function buildEvaluationSourceRows(battleResult) {
       value: Number(entry.value ?? 0),
       effectiveValue: getEffectiveStatContribution(entry.stat, Number(entry.value ?? 0), baseStats),
       effectiveStat: getEffectiveStatKey(entry.stat),
-      label: formatUiLabel(sourceLabel),
+      label: isTrace ? `행적 · ${formatRepeatedSourceLabel(sourceLabel)}` : formatUiLabel(sourceLabel),
       sourceType,
+      sourceCategory: entry.sourceCategory ?? null,
       ownerId: battleResult?.activeCharacter?.characterId,
       ownerLabel: battleResult?.activeCharacter?.displayName ?? "메인 딜러",
       groupKey: isTrace ? `self:trace:${sourceLabel}` : null,
@@ -224,6 +225,7 @@ function buildEvaluationSourceRows(battleResult) {
     effectiveStat: getEffectiveStatKey(row.stat),
     label: formatUiLabel(row.metadata?.sourceDisplayLabel ?? row.sourceLabel ?? row.sourceName ?? row.sourceId ?? row.ledgerId),
     sourceType: row.metadata?.effectType ?? row.effectType ?? "효과",
+    sourceCategory: row.metadata?.sourceCategory ?? row.sourceCategory ?? row.sourceTrace?.sourceCategory ?? null,
     sourceId: row.sourceId ?? row.sourceTrace?.sourceId ?? null,
     sourceRowId: row.sourceRowId ?? row.sourceTrace?.sourceRowId ?? null,
     effectRowId: row.effectRowId ?? row.sourceTrace?.effectRowId ?? null,
@@ -238,6 +240,13 @@ function buildEvaluationSourceRows(battleResult) {
 
 function formatUiLabel(value) {
   return String(value ?? "").replace(/필살기/g, "궁극기");
+}
+
+function formatRepeatedSourceLabel(value) {
+  const label = formatUiLabel(value);
+  const parts = label.split(/\s*\/\s*/).filter(Boolean);
+  if (parts.length <= 1) return label;
+  return [...new Set(parts)].join(" / ");
 }
 
 function getEffectiveStatContribution(stat, value, baseStats = {}) {

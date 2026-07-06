@@ -3010,8 +3010,11 @@ function getSourceTypeIconUrl(sourceType, ownerCharacter) {
 
 function getEntryIconUrl(entry, ownerCharacter) {
   const sourceType = String(entry?.sourceType ?? "");
+  const sourceCategory = String(entry?.sourceCategory ?? "").toLowerCase();
   const label = String(entry?.label ?? "");
   const normalizedSourceType = sourceType.toLowerCase();
+  if (sourceCategory === "relic" || sourceCategory === "ornament" || sourceCategory === "equipment") return getRelicSourceIconUrl(label);
+  if (sourceCategory === "lightcone" || sourceCategory === "light_cone") return getLightConeIconUrl(label, ownerCharacter);
   if (normalizedSourceType.includes("relic") || normalizedSourceType.includes("ornament") || sourceType.includes("유물") || isRelicSourceLabel(label)) return getRelicSourceIconUrl(label);
   if (normalizedSourceType.includes("light") || normalizedSourceType.includes("cone") || sourceType.includes("광추")) return getLightConeIconUrl(label, ownerCharacter);
   return getSourceTypeIconUrl(sourceType, ownerCharacter);
