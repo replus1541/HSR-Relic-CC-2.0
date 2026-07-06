@@ -2071,15 +2071,17 @@ function PartySpecificSettingPanel({ controls, values, onChange, title = "캐릭
               <span className="calc-party-face">
                 <CharacterAvatar character={character} />
               </span>
-              <span>
-                <b>{control.characterLabel ?? "전투 조건"}</b>
-                <em>{control.label}</em>
+              <span className="calc-party-settings-copy">
+                <span className="calc-party-settings-title">
+                  <b>{control.characterLabel ?? "전투 조건"}</b>
+                  <span>{control.label}</span>
+                </span>
+                <em>{control.note}</em>
               </span>
             </span>
             <select value={values[control.key] ?? control.defaultValue} onChange={(event) => onChange(control.key, Number(event.target.value))}>
               {control.options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
             </select>
-            <small>{control.note}</small>
           </label>
           );
         })}
@@ -2140,10 +2142,10 @@ function BattleStatEvaluationPanel({ evaluation }) {
                                 return (
                                   <li key={`${rowKey}:${ownerGroup.key}:${entry.id}:${entry.stat}`} className={hideEntryStatLabel ? "is-stat-label-hidden" : ""}>
                                     {!hideEntryStatLabel && <span className="calc-evaluation-source-stat">{parts.label}</span>}
-                                    <span className={`calc-evaluation-source-amount ${parts.toneClass}`}>{parts.sign}{parts.value}{parts.flatText}</span>
                                     <span className="calc-evaluation-source-mark" title={entry.sourceType ?? "출처"}>
                                       <SourceTypeMark entry={entry} ownerCharacter={ownerCharacter} />
                                     </span>
+                                    <EvaluationSourceAmount parts={parts} />
                                     <span className="calc-evaluation-source-label" title={entry.label ?? ""}>
                                       <EvaluationSourceLabel label={entry.label} />
                                     </span>
@@ -2294,6 +2296,15 @@ function EvaluationSourceLabel({ label }) {
   return <small>{stripSourceParentheses(text)}</small>;
 }
 
+function EvaluationSourceAmount({ parts }) {
+  return (
+    <span className={`calc-evaluation-source-amount ${parts.toneClass}`}>
+      <span>{parts.sign}{parts.value}</span>
+      {parts.flatText ? <small>{parts.flatText.trim()}</small> : null}
+    </span>
+  );
+}
+
 function stripSourceParentheses(text) {
   return String(text ?? "").replace(/\s*\([^)]*\)\s*/g, " ").replace(/\s+/g, " ").trim();
 }
@@ -2436,18 +2447,14 @@ function ContributionPanel({
       <section className="calc-contribution-panel" aria-label="파티원 추천">
         <div className="calc-party-recommendation-toolbar" aria-label="추천 후보 성혼 기준">
           <span>추천 기준</span>
-          <div className="calc-party-recommendation-eidolon-tabs">
+          <label className="calc-party-recommendation-eidolon-tabs">
+            <span className="calc-visually-hidden">추천 기준 성혼</span>
+            <select value={partyRecommendationEidolon} onChange={(event) => onPartyRecommendationEidolonChange?.(Number(event.target.value))}>
             {partyRecommendationEidolonOptions.map((option) => (
-              <button
-                key={option.value}
-                className={Number(partyRecommendationEidolon) === option.value ? "is-active" : ""}
-                type="button"
-                onClick={() => onPartyRecommendationEidolonChange?.(option.value)}
-              >
-                {option.label}
-              </button>
+              <option key={option.value} value={option.value}>{option.label}</option>
             ))}
-          </div>
+            </select>
+          </label>
         </div>
         <div className="calc-damage-analysis-list">
           {recommendationGroups.length ? recommendationGroups.map((group) => (
@@ -2494,10 +2501,10 @@ function ContributionPanel({
                             return (
                               <li key={`${rowKey}:${entry.id}:${entry.stat}`}>
                                 <span className="calc-evaluation-source-stat">{parts.label}</span>
-                                <span className={`calc-evaluation-source-amount ${parts.toneClass}`}>{parts.sign}{parts.value}{parts.flatText}</span>
                                 <span className="calc-evaluation-source-mark" title={entry.sourceType ?? "출처"}>
                                   <SourceTypeMark entry={entry} ownerCharacter={getCharacter(entry.ownerId)} />
                                 </span>
+                                <EvaluationSourceAmount parts={parts} />
                                 <span className="calc-evaluation-source-label" title={entry.label ?? ""}>
                                   <EvaluationSourceLabel label={entry.label} />
                                 </span>
@@ -2562,10 +2569,10 @@ function ContributionPanel({
                     return (
                       <li key={`${rowKey}:${entry.id}:${entry.stat}`}>
                         <span className="calc-evaluation-source-stat">{parts.label}</span>
-                        <span className={`calc-evaluation-source-amount ${parts.toneClass}`}>{parts.sign}{parts.value}{parts.flatText}</span>
                         <span className="calc-evaluation-source-mark" title={entry.sourceType ?? "출처"}>
                           <SourceTypeMark entry={entry} ownerCharacter={getCharacter(entry.ownerId)} />
                         </span>
+                        <EvaluationSourceAmount parts={parts} />
                         <span className="calc-evaluation-source-label" title={entry.label ?? ""}>
                           <EvaluationSourceLabel label={entry.label} />
                         </span>
@@ -2934,7 +2941,7 @@ function DamageResultPanel({ battleResult, skillCards = [], contributionViews, v
                   <span>{getDamageSkillDisplayLabel(card)}</span>
                   <b><span>{formatDamageNumber(card.critDamage)}</span><small>DMG</small></b>
                 </strong>
-                <small>계수: {formatNumber(card.coefficientPercent, 1)} % {formatDamageTargetLabel(card)}</small>
+                <small>계수: {formatNumber(card.coefficientPercent, 1)} % · {getSkillScalingStatLabel(card)} · {formatDamageTargetLabel(card)}</small>
               </div>
             </div>
             <div className="calc-contribution-list calc-damage-source-list">
@@ -2971,10 +2978,10 @@ function DamageResultPanel({ battleResult, skillCards = [], contributionViews, v
                           return (
                             <li key={`${rowKey}:${entry.id}:${entry.stat}`}>
                               <span className="calc-evaluation-source-stat">{parts.label}</span>
-                              <span className={`calc-evaluation-source-amount ${parts.toneClass}`}>{parts.sign}{parts.value}{parts.flatText}</span>
                               <span className="calc-evaluation-source-mark" title={entry.sourceType ?? "출처"}>
                                 <SourceTypeMark entry={entry} ownerCharacter={getCharacter(entry.ownerId)} />
                               </span>
+                              <EvaluationSourceAmount parts={parts} />
                               <span className="calc-evaluation-source-label" title={entry.label ?? ""}>
                                 <EvaluationSourceLabel label={entry.label} />
                               </span>
@@ -3007,7 +3014,13 @@ function DamageResultPanel({ battleResult, skillCards = [], contributionViews, v
 }
 
 function getDamageSkillDisplayLabel(card) {
-  return attackTypeLabels[card?.attackType] ?? card?.attackType ?? "피해";
+  const attackType = attackTypeLabels[card?.attackType] ?? card?.attackType ?? "피해";
+  const title = String(card?.title ?? "").trim();
+  return title && title !== attackType ? `${attackType} · ${title}` : attackType;
+}
+
+function getSkillScalingStatLabel(card) {
+  return card?.scalingStatLabel ?? statLabels[card?.scalingStat] ?? card?.scalingStat ?? "계수 스탯";
 }
 
 function formatDamageTargetLabel(card) {
@@ -3219,18 +3232,14 @@ function SettingsSheet({ onClose, ownedCharacterEidolon = 0, onOwnedCharacterEid
               <strong>보유 캐릭터 성혼 기준</strong>
               <small>현재 파티와 파티원 추천 후보를 같은 성혼 기준으로 계산</small>
             </div>
-            <div className="calc-settings-segmented">
+            <label className="calc-settings-segmented">
+              <span className="calc-visually-hidden">보유 캐릭터 성혼 기준</span>
+              <select value={ownedCharacterEidolon} onChange={(event) => onOwnedCharacterEidolonChange?.(Number(event.target.value))}>
               {partyRecommendationEidolonOptions.map((option) => (
-                <button
-                  key={option.value}
-                  className={Number(ownedCharacterEidolon) === option.value ? "is-active" : ""}
-                  type="button"
-                  onClick={() => onOwnedCharacterEidolonChange?.(option.value)}
-                >
-                  {option.label}
-                </button>
+                <option key={option.value} value={option.value}>{option.label}</option>
               ))}
-            </div>
+              </select>
+            </label>
           </section>
           {links.map((link) => (
             <button key={link.href} className="calc-settings-action" type="button" onClick={() => window.location.assign(link.href)}>
@@ -3637,10 +3646,10 @@ function ConditionComparePanel({
                                   return (
                                     <li key={`${rowKey}:${group.key}:${entry.id}:${entry.stat}`}>
                                       <span className="calc-evaluation-source-stat">{parts.label}</span>
-                                      <span className={`calc-evaluation-source-amount ${parts.toneClass}`}>{parts.sign}{parts.value}{parts.flatText}</span>
                                       <span className="calc-evaluation-source-mark" title={entry.sourceType ?? "출처"}>
                                         <SourceTypeMark entry={entry} ownerCharacter={getCharacter(entry.ownerId)} />
                                       </span>
+                                      <EvaluationSourceAmount parts={parts} />
                                       <span className="calc-evaluation-source-label" title={entry.label ?? ""}>
                                         <EvaluationSourceLabel label={entry.label} />
                                       </span>

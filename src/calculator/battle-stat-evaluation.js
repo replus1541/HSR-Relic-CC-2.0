@@ -29,7 +29,7 @@ const damageBonusRows = [
 
 function getCritRateEvaluation(critRate) {
   const value = Number(critRate ?? 0);
-  if (value > 1) return { level: "notice", message: "치명타 확률이 100%를 초과합니다.", compactMessage: "치확 100% 초과" };
+  if (value > 1) return { level: "warning", message: "치명타 확률이 100%를 초과합니다.", compactMessage: "치확 100% 초과" };
   if (value < 0.95) return { level: "notice", message: "전투 기준 치명타 확률이 95% 미만입니다.", compactMessage: "치확 95% 미만" };
   return { level: "neutral" };
 }

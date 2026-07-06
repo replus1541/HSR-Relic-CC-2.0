@@ -96,6 +96,7 @@ function calculateSkillDamageCard(row, battleResult, enemy, scenarioSettings = {
     targetProfile: row.targetProfile,
     targetScope: row.targetScope,
     scalingStat,
+    scalingStatLabel: row.scalingStatLabel ?? null,
     scalingValue,
     effectiveLevel,
     coefficient,

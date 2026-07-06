@@ -1,7 +1,7 @@
 {
   "app": "hsr-relic-cc-skill-damage-metadata",
   "version": 1,
-  "generatedAt": "2026-07-05T20:53:49.753Z",
+  "generatedAt": "2026-07-06T02:46:45.927Z",
   "source": {
     "coefficientRows": "data/generated/coefficient-rows.json",
     "characterIdentity": "data/generated/character-identity.json",
@@ -95,6 +95,7 @@
       "targetProfile": "aoe",
       "targetScope": "aoe",
       "scalingStat": "atk",
+      "scalingStatLabel": "미미 공격력",
       "damageTemplate": "support",
       "baseLevel": 10,
       "maxLevel": 12,

@@ -77,6 +77,7 @@ const rows = [...groups.values()]
       rowSourceText,
     });
     const levelBonuses = buildLevelBonuses(hoyowiki, skillLevelType);
+    const scalingStatLabel = inferScalingStatLabel({ sourceSkill, rowSourceText, scalingStat: primaryStat });
     return {
       id: [group.characterId, group.skillId, group.attackType].join(":"),
       characterId: group.characterId,
@@ -91,6 +92,7 @@ const rows = [...groups.values()]
       targetProfile: group.targetProfile,
       targetScope: group.targetScope,
       scalingStat: primaryStat,
+      ...(scalingStatLabel ? { scalingStatLabel } : {}),
       damageTemplate: profile?.uiTypeProfile?.damageTemplate ?? "crit",
       baseLevel: skillLevelType === "basicAttack" ? 6 : 10,
       maxLevel: Math.max(...parts.flatMap((part) => part.coefficientValues.length)),
@@ -235,6 +237,13 @@ function normalizeScalingStat(stat) {
   if (stat === "hp" || stat === "def") return stat;
   if (stat === "breakEffect") return "breakEffect";
   return "atk";
+}
+
+function inferScalingStatLabel({ sourceSkill, rowSourceText, scalingStat }) {
+  const text = [sourceSkill?.description, rowSourceText].filter(Boolean).join("\n");
+  if (/미미\s*공격력/.test(text)) return "미미 공격력";
+  if (/기억\s*정령[^\n]*공격력/.test(text)) return "기억정령 공격력";
+  return null;
 }
 
 function countBy(rows, getter) {
