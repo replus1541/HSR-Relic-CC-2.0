@@ -575,10 +575,10 @@ p {
   place-items: center;
   min-width: 0;
   border-radius: 999px;
-  background: var(--calc-eidolon-bg);
+  background: transparent;
   color: var(--calc-eidolon-text);
   padding: 0;
-  box-shadow: inset 0 0 0 1px var(--calc-eidolon-border);
+  box-shadow: none;
   font-size: 0.92rem;
   font-weight: 900;
 }
@@ -4250,9 +4250,9 @@ p {
     width: 100%;
     min-height: 22px;
     border-radius: 7px;
-    background: var(--calc-eidolon-bg);
+    background: transparent;
     color: var(--calc-eidolon-text);
-    box-shadow: inset 0 0 0 1px var(--calc-eidolon-border);
+    box-shadow: none;
     padding: 0;
     font-size: 14px;
     font-weight: 900;
@@ -5182,6 +5182,28 @@ p {
   .calc-auto-recommend-keep-badge {
     font-size: 12.5px;
   }
+}
+
+.calc-party-slot > span:last-child,
+.calc-main-dealer-eidolon,
+.calc-contribution-eidolon,
+.calc-party-recommendation-eidolon-tabs button,
+.calc-party-recommendation-eidolon-tabs button.is-active,
+.calc-settings-segmented button,
+.calc-settings-segmented button.is-active,
+.calc-condition-source-head strong small,
+.calc-eidolon-select,
+.calc-status-head select,
+.calc-condition-mini-card .calc-eidolon-select {
+  color: var(--calc-eidolon-text);
+  -webkit-text-fill-color: var(--calc-eidolon-text);
+}
+
+.calc-eidolon-select:disabled,
+.calc-condition-mini-card .calc-eidolon-select:disabled {
+  color: var(--calc-eidolon-text);
+  -webkit-text-fill-color: var(--calc-eidolon-text);
+  opacity: 1;
 }
 
 @media (min-width: 460px) and (max-width: 680px) {
