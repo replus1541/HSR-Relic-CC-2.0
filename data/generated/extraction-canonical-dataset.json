@@ -3,20 +3,20 @@
   "generatedBy": "tools/validate_canonical_dataset.mjs",
   "manifest": {
     "counts": {
-      "sourceRows": 1057,
-      "effectRows": 283,
+      "sourceRows": 1058,
+      "effectRows": 284,
       "coefficientRows": 1771
     },
     "sourceOrigins": {
-      "raw_source": 1057
+      "raw_source": 1058
     },
     "sourceKinds": {
-      "game_db_generated": 559,
+      "game_db_generated": 560,
       "hoyowiki": 498
     },
     "effectTypes": {
       "buff": 206,
-      "debuff": 77
+      "debuff": 78
     },
     "coefficientAttackTypes": {
       "basic": 483,
@@ -209,10 +209,10 @@
       "Yunli_00"
     ],
     "sourcePolicy": {
-      "ready": 1057,
+      "ready": 1058,
       "blocked": 0,
       "byOrigin": {
-        "raw_source": 1057
+        "raw_source": 1058
       },
       "byBlockedReason": {}
     }
@@ -2657,9 +2657,9 @@
         "sourceOrigin": "raw_source",
         "sourceKind": "game_db_generated",
         "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
-        "sourceRecord": "HoyoWiki:10:ultimate:유사 블랙홀:AS-zeroGravity-defenseDown:level10-curated",
+        "sourceRecord": "HoyoWiki:10:B:시공 왜곡:AS-zeroGravity-defenseDown:fixed40",
         "characterId": "Welt_00",
-        "sourceText": "<필살기> [범위 공격] | 에너지 소모: 120 | 강인성 감소 수치: 20 모든 적에게 웰트 공격력 90% 만큼의 허수 속성 피해 를 주고 100%의 기본 확률 로 피격된 적을 속박 상태에 빠트린다. 지속 시간: 1턴. 속박 상태에서 적의 행동 게이지가 32% 감소 하고, 속도가 10% 감소한다 / AS 기준: 필살기 [무중력] 방어력 감소",
+        "sourceText": "시공 왜곡\n[무중력] 상태의 적 방어력이 40% 감소하고, 속도가 5% 감소한다. 웰트가 감속 상태의 적 명중 시 추가로 웰트 공격력의 100%만큼 허수 속성 추가 피해를 1회 가한다",
         "calculationStatus": "calculation_ready",
         "sourcePriority": 100,
         "calculationReady": true
@@ -2675,6 +2675,21 @@
         "sourceRecord": "HoyoWiki:10:ultimate:유사 블랙홀:AS-zeroGravity-allDamage-stacks",
         "characterId": "Welt_00",
         "sourceText": "AS 기준: 아군이 [무중력] 상태의 적을 공격 시 가하는 피해가 10% 증가한다. 최대 10스택.",
+        "calculationStatus": "calculation_ready",
+        "sourcePriority": 100,
+        "calculationReady": true
+      },
+      {
+        "id": "source:Welt_00:5",
+        "kind": "source_row",
+        "version": 1,
+        "createdBy": "local-json-adapter",
+        "sourceOrigin": "raw_source",
+        "sourceKind": "game_db_generated",
+        "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+        "sourceRecord": "HoyoWiki:10:B:시공 왜곡:AS-zeroGravity-speedDown:fixed5",
+        "characterId": "Welt_00",
+        "sourceText": "시공 왜곡\n[무중력] 상태의 적 방어력이 40% 감소하고, 속도가 5% 감소한다. 웰트가 감속 상태의 적 명중 시 추가로 웰트 공격력의 100%만큼 허수 속성 추가 피해를 1회 가한다",
         "calculationStatus": "calculation_ready",
         "sourcePriority": 100,
         "calculationReady": true
@@ -21510,17 +21525,17 @@
         "sourceId": "source:Welt_00:3",
         "sourceOrigin": "raw_source",
         "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
-        "sourceText": "<필살기> [범위 공격] | 에너지 소모: 120 | 강인성 감소 수치: 20 모든 적에게 웰트 공격력 90% 만큼의 허수 속성 피해 를 주고 100%의 기본 확률 로 피격된 적을 속박 상태에 빠트린다. 지속 시간: 1턴. 속박 상태에서 적의 행동 게이지가 32% 감소 하고, 속도가 10% 감소한다 / AS 기준: 필살기 [무중력] 방어력 감소",
+        "sourceText": "시공 왜곡\n[무중력] 상태의 적 방어력이 40% 감소하고, 속도가 5% 감소한다. 웰트가 감속 상태의 적 명중 시 추가로 웰트 공격력의 100%만큼 허수 속성 추가 피해를 1회 가한다",
         "sourceType": "game_db_generated",
         "effectType": "debuff",
         "stat": "defenseDown",
-        "rawValue": 0.16,
-        "valueMode": "skill_level_scaled",
+        "rawValue": 0.4,
+        "valueMode": "fixed",
         "dynamicFormulaType": null,
         "effectProviderId": "Welt_00",
         "characterName": "웰트",
         "minEidolon": null,
-        "sourceTrace": "HoyoWiki:10:ultimate:유사 블랙홀:AS-zeroGravity-defenseDown:level10-curated",
+        "sourceTrace": "HoyoWiki:10:B:시공 왜곡:AS-zeroGravity-defenseDown:fixed40",
         "targetScope": "enemySingle",
         "effectTargetPolicy": "enemySingle",
         "calculationSubjectPolicy": "enemySingle",
@@ -21555,6 +21570,28 @@
           "decision": "Welt is evaluated from the AS kit baseline. For Zero Gravity, provide per-DPS UI stack options 4, 6, 8, and 10; calculate the damage increase from the selected stack count for the currently selected character.",
           "sourcePath": "reports/extraction/dynamic-formula-user-review-progress.md"
         }
+      },
+      {
+        "id": "effect:Welt_00:5",
+        "sourceId": "source:Welt_00:5",
+        "sourceOrigin": "raw_source",
+        "sourcePath": "data/legacy-reference/game-db/character-effect-candidates.json",
+        "sourceText": "시공 왜곡\n[무중력] 상태의 적 방어력이 40% 감소하고, 속도가 5% 감소한다. 웰트가 감속 상태의 적 명중 시 추가로 웰트 공격력의 100%만큼 허수 속성 추가 피해를 1회 가한다",
+        "sourceType": "game_db_generated",
+        "effectType": "debuff",
+        "stat": "speed",
+        "rawValue": -0.05,
+        "valueMode": "fixed",
+        "dynamicFormulaType": null,
+        "effectProviderId": "Welt_00",
+        "characterName": "웰트",
+        "minEidolon": null,
+        "sourceTrace": "HoyoWiki:10:B:시공 왜곡:AS-zeroGravity-speedDown:fixed5",
+        "targetScope": "enemySingle",
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle",
+        "reviewStatus": "source_confirmed",
+        "calculationStatus": "calculation_ready"
       },
       {
         "id": "effect:Silwolf_00:0",

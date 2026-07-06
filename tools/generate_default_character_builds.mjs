@@ -19,6 +19,80 @@ const buildByName = new Map(Object.entries(legacyBuilds).map(([name, build]) => 
 const guideByName = new Map(Object.entries(legacyGuides).map(([name, guide]) => [normalizeIdentityKey(name), { ...guide, sourceCharacter: name }]));
 
 const reviewedBuildOverrides = {
+  "\uC740\uB791 LV 999": {
+    sourceCharacter: "\uC740\uB791 LV 999",
+    sourceReview: "user-reviewed-hoyowiki-default",
+    lightConeIds: ["wiki-5218"],
+    lightConeRank: 1,
+    relicProfile: "elationDps",
+    relicBuild: {
+      set4Id: "wiki-relic-4770",
+      set2Id: "wiki-relic-5012",
+      mainStats: {
+        body: "critRate",
+        feet: "speed",
+        sphere: "hpRatio",
+        rope: "hpRatio",
+      },
+      pieces: makePiecesFromSpec({
+        head: { mainStat: "hpFlat", subStats: [["speed", 3], ["critRate", 1], ["critDamage", 1], ["hpRatio", 1]] },
+        hands: { mainStat: "atkFlat", subStats: [["speed", 3], ["critDamage", 2], ["critRate", 1], ["hpRatio", 1]] },
+        body: { mainStat: "critRate", subStats: [["speed", 2], ["critDamage", 1], ["hpRatio", 1], ["defRatio", 0]] },
+        feet: { mainStat: "speed", subStats: [["critDamage", 2], ["critRate", 1], ["hpRatio", 1], ["defRatio", 0]] },
+        sphere: { mainStat: "hpRatio", subStats: [["speed", 1], ["critRate", 2], ["critDamage", 1], ["defRatio", 0]] },
+        rope: { mainStat: "hpRatio", subStats: [["speed", 2], ["critDamage", 2], ["critRate", 1], ["defRatio", 0]] },
+      }),
+    },
+    missingItems: [],
+  },
+  "\uC2A4\uD30C\uD0A4": {
+    sourceCharacter: "\uC2A4\uD30C\uD0A4",
+    sourceReview: "user-reviewed-hoyowiki-default",
+    lightConeIds: ["wiki-4778"],
+    lightConeRank: 1,
+    relicProfile: "elationDps",
+    relicBuild: {
+      set4Id: "wiki-relic-4770",
+      set2Id: "wiki-relic-5012",
+      mainStats: {
+        body: "critRate",
+        feet: "speed",
+        sphere: "atkRatio",
+        rope: "atkRatio",
+      },
+      pieces: makePiecesFromPriority(
+        { body: "critRate", feet: "speed", sphere: "atkRatio", rope: "atkRatio" },
+        ["critDamage", "atkRatio", "speed", "critRate"],
+      ),
+    },
+    missingItems: [],
+  },
+  "\uD6A8\uAD11": {
+    sourceCharacter: "\uD6A8\uAD11",
+    sourceReview: "user-reviewed-hoyowiki-default",
+    lightConeIds: ["wiki-4779", "wiki-5008"],
+    lightConeRank: 1,
+    relicProfile: "elationSupport",
+    relicBuild: {
+      set4Id: "wiki-relic-4769",
+      set2Id: "wiki-relic-137",
+      mainStats: {
+        body: "hpRatio",
+        feet: "speed",
+        sphere: "hpRatio",
+        rope: "energyRegen",
+      },
+      pieces: makePiecesFromSpec({
+        head: { mainStat: "hpFlat", subStats: [["hpRatio", 2], ["defRatio", 1], ["speed", 0], ["breakEffect", 1]] },
+        hands: { mainStat: "atkFlat", subStats: [["hpRatio", 2], ["defRatio", 1], ["speed", 0], ["breakEffect", 1]] },
+        body: { mainStat: "hpRatio", subStats: [["defRatio", 2], ["critDamage", 1], ["hpFlat", 1], ["breakEffect", 0]] },
+        feet: { mainStat: "speed", subStats: [["hpRatio", 2], ["defRatio", 1], ["critDamage", 1], ["breakEffect", 0]] },
+        sphere: { mainStat: "hpRatio", subStats: [["defRatio", 2], ["critDamage", 1], ["hpFlat", 1], ["breakEffect", 0]] },
+        rope: { mainStat: "energyRegen", subStats: [["hpRatio", 2], ["defRatio", 1], ["critDamage", 1], ["breakEffect", 0]] },
+      }),
+    },
+    missingItems: [],
+  },
   "운리": {
     sourceCharacter: "운리",
     sourceReview: "user-reviewed-hoyowiki-default",
@@ -237,6 +311,16 @@ function makePiecesFromPriority(mainStats, subStats) {
     };
   }
   return pieces;
+}
+
+function makePiecesFromSpec(spec) {
+  return Object.fromEntries(Object.entries(spec).map(([piece, row]) => [
+    piece,
+    {
+      mainStat: row.mainStat,
+      subStats: (row.subStats ?? []).map(([stat, rolls]) => ({ stat, rolls })),
+    },
+  ]));
 }
 
 function resolveRecommendedLightConeId(guide) {

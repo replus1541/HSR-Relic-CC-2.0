@@ -10360,15 +10360,15 @@
       "effectRowId": "effect:Welt_00:3",
       "sourceId": "source:Welt_00:3",
       "sourceOrigin": "raw_source",
-      "sourceText": "<필살기> [범위 공격] | 에너지 소모: 120 | 강인성 감소 수치: 20 모든 적에게 웰트 공격력 90% 만큼의 허수 속성 피해 를 주고 100%의 기본 확률 로 피격된 적을 속박 상태에 빠트린다. 지속 시간: 1턴. 속박 상태에서 적의 행동 게이지가 32% 감소 하고, 속도가 10% 감소한다 / AS 기준: 필살기 [무중력] 방어력 감소",
-      "sourceTrace": "HoyoWiki:10:ultimate:유사 블랙홀:AS-zeroGravity-defenseDown:level10-curated",
+      "sourceText": "시공 왜곡\n[무중력] 상태의 적 방어력이 40% 감소하고, 속도가 5% 감소한다. 웰트가 감속 상태의 적 명중 시 추가로 웰트 공격력의 100%만큼 허수 속성 추가 피해를 1회 가한다",
+      "sourceTrace": "HoyoWiki:10:B:시공 왜곡:AS-zeroGravity-defenseDown:fixed40",
       "effectProviderId": "Welt_00",
       "stat": "defenseDown",
-      "rawValue": 0.16,
+      "rawValue": 0.4,
       "effectType": "debuff",
       "targetScope": "enemy_single",
       "attackType": "support",
-      "valueMode": "skill_level_scaled",
+      "valueMode": "fixed",
       "condition": {
         "conditionKey": null,
         "sourcePolicy": "unresolved_until_value_resolution"
@@ -10442,6 +10442,59 @@
       "sourcePolicies": {
         "effectTargetPolicy": "allAllies",
         "calculationSubjectPolicy": "allAllies"
+      },
+      "taxonomyChecks": [
+        {
+          "field": "effectType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "targetScope",
+          "ok": true,
+          "blockedReason": "target_policy_missing"
+        },
+        {
+          "field": "attackType",
+          "ok": true,
+          "blockedReason": "pending_review"
+        },
+        {
+          "field": "valueMode",
+          "ok": true,
+          "blockedReason": "value_mode_unknown"
+        }
+      ],
+      "calculationStatus": "calculation_ready"
+    },
+    {
+      "id": "normalized:effect:Welt_00:5",
+      "effectRowId": "effect:Welt_00:5",
+      "sourceId": "source:Welt_00:5",
+      "sourceOrigin": "raw_source",
+      "sourceText": "시공 왜곡\n[무중력] 상태의 적 방어력이 40% 감소하고, 속도가 5% 감소한다. 웰트가 감속 상태의 적 명중 시 추가로 웰트 공격력의 100%만큼 허수 속성 추가 피해를 1회 가한다",
+      "sourceTrace": "HoyoWiki:10:B:시공 왜곡:AS-zeroGravity-speedDown:fixed5",
+      "effectProviderId": "Welt_00",
+      "stat": "speed",
+      "rawValue": -0.05,
+      "effectType": "debuff",
+      "targetScope": "enemy_single",
+      "attackType": "support",
+      "valueMode": "fixed",
+      "condition": {
+        "conditionKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "stackRule": {
+        "stackKey": null,
+        "sourcePolicy": "unresolved_until_value_resolution"
+      },
+      "skillScaling": null,
+      "dynamicFormulaType": null,
+      "userReview": null,
+      "sourcePolicies": {
+        "effectTargetPolicy": "enemySingle",
+        "calculationSubjectPolicy": "enemySingle"
       },
       "taxonomyChecks": [
         {

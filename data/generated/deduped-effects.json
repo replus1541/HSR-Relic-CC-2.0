@@ -4199,13 +4199,12 @@
       "sourceId": "source:Welt_00:3",
       "stat": "defenseDown",
       "valueTrace": {
-        "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "resolver": "fixed",
+        "source": "rawValue"
       },
       "dedupeKey": "pending_dedupe:Welt_00:source:Welt_00:3:defenseDown:debuff:enemy_single",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.16,
+      "resolvedValue": 0.4,
       "canonicalEffectKey": "effect|welt_00|raw_source|source:welt_00:3|data_legacy-reference_game-db_character-effect-candidates.json|debuff|enemy_single|support|none|none|none",
       "dedupeResult": {
         "role": "winner",
@@ -4237,6 +4236,26 @@
         "groupSize": 1,
         "winnerId": null,
         "reason": "condition_policy_missing"
+      }
+    },
+    {
+      "id": "resolved:effect:Welt_00:5",
+      "effectRowId": "effect:Welt_00:5",
+      "sourceId": "source:Welt_00:5",
+      "stat": "speed",
+      "valueTrace": {
+        "resolver": "fixed",
+        "source": "rawValue"
+      },
+      "dedupeKey": "pending_dedupe:Welt_00:source:Welt_00:5:speed:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": -0.05,
+      "canonicalEffectKey": "effect|welt_00|raw_source|source:welt_00:5|data_legacy-reference_game-db_character-effect-candidates.json|debuff|enemy_single|support|none|none|none",
+      "dedupeResult": {
+        "role": "winner",
+        "groupSize": 1,
+        "winnerId": "resolved:effect:Welt_00:5",
+        "reason": "selected_by_source_priority"
       }
     },
     {

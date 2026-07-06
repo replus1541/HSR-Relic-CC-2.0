@@ -4219,12 +4219,12 @@
       "sourceId": "source:Welt_00:3",
       "sourceRowId": "source:Welt_00:3",
       "canonicalEffectKey": "effect|welt_00|raw_source|source:welt_00:3|data_legacy-reference_game-db_character-effect-candidates.json|debuff|enemy_single|support|none|none|none",
-      "valueMode": "skill_level_scaled",
+      "valueMode": "fixed",
       "ownerId": "Welt_00",
       "subjectId": "Welt_00",
       "targetPolicy": "enemy_single",
       "stat": "defenseDown",
-      "resolvedValue": 0.16,
+      "resolvedValue": 0.4,
       "blockedReason": null,
       "skippedReason": null,
       "usedForCalculation": true,
@@ -4264,6 +4264,32 @@
         "normalizedEffectId": "normalized:effect:Welt_00:4",
         "canonicalEffectKey": "effect|welt_00|raw_source|source:welt_00:4|data_legacy-reference_game-db_character-effect-candidates.json|buff|all_allies|support|none|none|none",
         "dedupeRole": "blocked"
+      }
+    },
+    {
+      "ledgerId": "ledger:resolved:effect:Welt_00:5",
+      "sourceId": "source:Welt_00:5",
+      "sourceRowId": "source:Welt_00:5",
+      "canonicalEffectKey": "effect|welt_00|raw_source|source:welt_00:5|data_legacy-reference_game-db_character-effect-candidates.json|debuff|enemy_single|support|none|none|none",
+      "valueMode": "fixed",
+      "ownerId": "Welt_00",
+      "subjectId": "Welt_00",
+      "targetPolicy": "enemy_single",
+      "stat": "speed",
+      "resolvedValue": -0.05,
+      "blockedReason": null,
+      "skippedReason": null,
+      "usedForCalculation": true,
+      "category": "effect",
+      "calculationStatus": "calculation_ready",
+      "sourceTrace": {
+        "sourceId": "source:Welt_00:5",
+        "sourceRowId": "source:Welt_00:5",
+        "effectRowId": "effect:Welt_00:5",
+        "resolvedEffectId": "resolved:effect:Welt_00:5",
+        "normalizedEffectId": "normalized:effect:Welt_00:5",
+        "canonicalEffectKey": "effect|welt_00|raw_source|source:welt_00:5|data_legacy-reference_game-db_character-effect-candidates.json|debuff|enemy_single|support|none|none|none",
+        "dedupeRole": "winner"
       }
     },
     {

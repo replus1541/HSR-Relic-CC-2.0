@@ -89,7 +89,7 @@ function classifyTextSignals(text) {
     formulaException: matchSignals(compact, [
       ["확정피해", /확정 피해|최종 피해/],
       ["슈퍼격파", /슈퍼 격파|강인성 감소 수치/],
-      ["환락피해", /환락 피해|웃음 포인트|Certified Banger|Punchline|Merrymake/],
+      ["환락피해", /환락 피해|웃음 포인트|Certified Banger|Punchline|Merrymake|증소/],
       ["분배/랜덤", /균등 분담|분배|랜덤|바운스|피해 횟수/],
       ["현재 DoT 즉시 피해", /현재 받는 모든 지속 피해|지속 피해가 즉시|기존 피해/],
       ["실드/치유 기반 피해", /실드량|치유 수치|HP 최대치|방어력의|공격력의/],

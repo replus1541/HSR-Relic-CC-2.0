@@ -151,13 +151,13 @@ function statLabel(stat) {
     vulnerability: "받피증",
     defenseDown: "방깎",
     defenseIgnore: "방무",
-    resistancePen: "속저관",
+    resistancePen: "속관",
     trueDamageRatio: "확정피해",
     dealtCritDamage: "가하는 치명타 피해",
     followCritDamage: "추가공격 치피",
     specialFinal: "최종 피해",
     elation: "환락도",
-    merrymake: "Merrymake",
+    merrymake: "증소",
   }[stat] ?? stat ?? "-";
 }
 

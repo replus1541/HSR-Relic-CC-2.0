@@ -1,7 +1,7 @@
 {
   "app": "hsr-relic-cc-equipment-stat-model",
   "version": 1,
-  "generatedAt": "2026-07-05T17:31:04.138Z",
+  "generatedAt": "2026-07-06T12:00:11.133Z",
   "source": {
     "legacyGeneratedRelics": "C:\\CODEX\\HSR RELIC CC\\src\\generated-relics.json",
     "legacyModelLogic": "C:\\CODEX\\HSR RELIC CC\\src\\sample-data.js"
@@ -100,10 +100,12 @@
       "name": "0호 스테이지 펑크 로드",
       "category": "ornament",
       "stats": {
-        "critDamage": 0.2
+        "critDamage": 0.2,
+        "elation": 8
       },
       "twoPieceStats": {
-        "critDamage": 0.2
+        "critDamage": 0.2,
+        "elation": 8
       },
       "fourPieceStats": {}
     },
@@ -633,11 +635,9 @@
       "name": "우주 봉인 정거장",
       "category": "ornament",
       "stats": {
-        "speedRatio": 0.12,
         "atkRatio": 0.12
       },
       "twoPieceStats": {
-        "speedRatio": 0.12,
         "atkRatio": 0.12
       },
       "fourPieceStats": {}
@@ -814,7 +814,6 @@
         "speedRatio": 0.06
       },
       "fourPieceStats": {
-        "speedRatio": 0.1,
         "critRate": 0.1
       }
     },

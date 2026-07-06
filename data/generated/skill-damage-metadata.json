@@ -1,7 +1,7 @@
 {
   "app": "hsr-relic-cc-skill-damage-metadata",
   "version": 1,
-  "generatedAt": "2026-07-06T02:46:45.927Z",
+  "generatedAt": "2026-07-06T11:20:41.176Z",
   "source": {
     "coefficientRows": "data/generated/coefficient-rows.json",
     "characterIdentity": "data/generated/character-identity.json",
@@ -24,7 +24,7 @@
   "summary": {
     "rows": 272,
     "characters": 89,
-    "coefficientParts": 475,
+    "coefficientParts": 473,
     "withEidolonLevelBonuses": 270,
     "byDamageFormulaType": {
       "normal": 201,
@@ -88,7 +88,7 @@
       "element": "ice",
       "skillId": "PlayerBoy_20:Skill03",
       "title": "가자, 미미!",
-      "attackType": "ultimate",
+      "attackType": "memosprite",
       "damageFormulaType": "normal",
       "formulaClassificationSource": "template:support",
       "skillLevelType": "ultimate",
@@ -9780,7 +9780,7 @@
       "element": "ice",
       "skillId": "Evernight_00:Skill03",
       "title": "잘 자, 깨어있는 세상",
-      "attackType": "ultimate",
+      "attackType": "memosprite",
       "damageFormulaType": "normal",
       "formulaClassificationSource": "template:crit",
       "skillLevelType": "ultimate",
@@ -9865,7 +9865,7 @@
       "element": "ice",
       "skillId": "Evernight_00:Skill31",
       "title": "잘 자, 깨어있는 세상",
-      "attackType": "ultimate",
+      "attackType": "memosprite",
       "damageFormulaType": "normal",
       "formulaClassificationSource": "template:crit",
       "skillLevelType": "ultimate",
@@ -12182,8 +12182,8 @@
       "damageFormulaType": "normal",
       "formulaClassificationSource": "template:crit",
       "skillLevelType": "basicAttack",
-      "targetProfile": "aoe",
-      "targetScope": "aoe",
+      "targetProfile": "single",
+      "targetScope": "single",
       "scalingStat": "atk",
       "damageTemplate": "crit",
       "baseLevel": 6,
@@ -12198,42 +12198,12 @@
           "sourceTitle": "Lv.15이 끝? 누가 적은 거야?"
         }
       ],
-      "partPolicy": "row_parts_preferred_over_main",
+      "partPolicy": "manual_basic_attack_single_part",
       "parts": [
         {
           "coefficientRowId": "coefficient:game-db:SilverWolf999_00:Skill01:row:0",
           "sourceId": "source:coefficient:SilverWolf999_00:Skill01:0",
           "partIndex": 0,
-          "coefficientValues": [
-            0.5,
-            0.6,
-            0.7,
-            0.8,
-            0.9,
-            1,
-            1.1
-          ],
-          "reviewStatus": "source_confirmed"
-        },
-        {
-          "coefficientRowId": "coefficient:game-db:SilverWolf999_00:Skill01:row:1",
-          "sourceId": "source:coefficient:SilverWolf999_00:Skill01:0",
-          "partIndex": 1,
-          "coefficientValues": [
-            1.2,
-            1.44,
-            1.68,
-            1.92,
-            2.16,
-            2.4,
-            2.64
-          ],
-          "reviewStatus": "source_confirmed"
-        },
-        {
-          "coefficientRowId": "coefficient:game-db:SilverWolf999_00:Skill01:row:2",
-          "sourceId": "source:coefficient:SilverWolf999_00:Skill01:0",
-          "partIndex": 2,
           "coefficientValues": [
             0.5,
             0.6,

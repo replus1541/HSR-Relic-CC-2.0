@@ -56,6 +56,47 @@
 
 ---
 
+## Calculator UI Responsive Follow-up
+
+### 2026-07-06 Text Scale Follow-up
+
+- Re-aligned PC evaluation value typography so primary stats, damage bonus total rows, support stats, and damage skill meta use 15px / 800 / 20px.
+- Verification: `npm.cmd run build` passed; `artifacts/stats-ui-layout/eval-text-report.json` captured primary/support rows and damage meta at 1024px with no horizontal overflow.
+
+### 상태
+
+- 상태: in_progress
+- 시작일: 2026-07-06
+- 관련 화면: `캐릭터 세팅`, `스탯 / 데미지 계산`
+
+### 요청 / TODO
+
+- [x] `캐릭터 세팅` 화면이 PC 최소 폭에서 v1처럼 보이지 않고 카드 내부 컬럼이 옆 카드 영역으로 밀리는 문제를 수정한다.
+- [x] PC 좁은 폭에서 `캐릭터 정보 + 돌파 + 광추`, `유물 6개`, `세부 스탯 2열` 순서로 카드가 반복되도록 반응형을 조정한다.
+- [x] PC 좁은 폭에서 상단 탭 3개와 설정 버튼의 y축 중앙 정렬이 어긋나 보이는 문제를 수정한다.
+- [x] `스탯 / 데미지 계산` 탭의 유물 아이콘, 광추 아이콘, 운명의 길 아이콘 크기를 줄인다.
+- [x] `스탯 / 데미지 계산` 탭의 `주요스탯` 확장 출처 행을 `[캐릭터 프로필] [캐릭터 이름] [아이콘] [수치] [출처]` 한 줄 레이아웃으로 바꾼다.
+- [x] `%`가 flat 수치로 환산되는 표기에서 `%` 값만 초록색으로 유지하고, 괄호 안 flat 값은 bold 없이 흰색으로 표시한다.
+
+### 진행 기록
+
+- 2026-07-06: 820/860/900/1024px 데스크톱 폭에서 `캐릭터 세팅` 카드가 1열로 쌓이고, 1200px에서는 기존 2열 밀도를 유지하도록 `src/ui/app.css` 반응형 규칙을 추가했다.
+- 2026-07-06: 820px 스크린샷과 DOM 측정에서 가로 overflow가 사라진 것을 확인했다.
+- 2026-07-06: `스탯 / 데미지 계산` 탭의 출처 아이콘 크기를 줄이고, `주요스탯` 확장 출처 행을 프로필/이름/아이콘/수치/출처 5컬럼 한 줄 레이아웃으로 바꿨다.
+- 2026-07-06: `% + flat` 샘플에서 `%` 값은 초록색, 괄호 안 flat 값은 흰색/regular weight로 표시되는 것을 확인했다.
+
+### 검증
+
+- `npm.cmd run build`
+- `artifacts/stats-ui-layout/report.json`
+
+### 변경 파일
+
+- `src/ui/app.css`
+- `src/app/routes/CalculatorRoute.jsx`
+
+---
+
 ## Stats/Damage Formula Bucket and Party Recommendation Pass
 
 ### 상태

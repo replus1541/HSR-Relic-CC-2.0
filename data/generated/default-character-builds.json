@@ -9944,7 +9944,7 @@
         "hands": "atkFlat",
         "body": "critRate",
         "feet": "speed",
-        "sphere": "elementDamage",
+        "sphere": "atkRatio",
         "rope": "atkRatio"
       },
       "subStatPriority": [
@@ -10083,7 +10083,7 @@
           ]
         },
         "sphere": {
-          "mainStat": "elementDamage",
+          "mainStat": "atkRatio",
           "subStats": [
             {
               "stat": "atkRatio",
@@ -14317,17 +14317,16 @@
         "hands": "atkFlat",
         "body": "critRate",
         "feet": "speed",
-        "sphere": "elementDamage",
-        "rope": "atkRatio"
+        "sphere": "hpRatio",
+        "rope": "hpRatio"
       },
       "subStatPriority": [
         "speed",
         "critRate",
         "critDamage",
+        "hpRatio",
         "defRatio",
-        "atkRatio",
         "defFlat",
-        "atkFlat",
         "breakEffect",
         "effectHitRate"
       ],
@@ -14337,8 +14336,8 @@
           "subStats": [
             {
               "stat": "speed",
-              "value": 7,
-              "rolls": 2
+              "value": 9.2,
+              "rolls": 3
             },
             {
               "stat": "critRate",
@@ -14347,12 +14346,12 @@
             },
             {
               "stat": "critDamage",
-              "value": 0.0583,
-              "rolls": 0
+              "value": 0.1166,
+              "rolls": 1
             },
             {
-              "stat": "defRatio",
-              "value": 0.0972,
+              "stat": "hpRatio",
+              "value": 0.0778,
               "rolls": 1
             }
           ]
@@ -14361,23 +14360,23 @@
           "mainStat": "atkFlat",
           "subStats": [
             {
+              "stat": "speed",
+              "value": 9.2,
+              "rolls": 3
+            },
+            {
               "stat": "critDamage",
               "value": 0.175,
               "rolls": 2
             },
             {
-              "stat": "atkRatio",
-              "value": 0.0778,
+              "stat": "critRate",
+              "value": 0.0583,
               "rolls": 1
             },
             {
-              "stat": "speed",
-              "value": 2,
-              "rolls": 0
-            },
-            {
-              "stat": "defFlat",
-              "value": 38,
+              "stat": "hpRatio",
+              "value": 0.0778,
               "rolls": 1
             }
           ]
@@ -14386,24 +14385,24 @@
           "mainStat": "critRate",
           "subStats": [
             {
-              "stat": "atkRatio",
-              "value": 0.1166,
+              "stat": "speed",
+              "value": 6.9,
               "rolls": 2
             },
             {
-              "stat": "speed",
-              "value": 5,
-              "rolls": 1
-            },
-            {
               "stat": "critDamage",
-              "value": 0.0583,
-              "rolls": 0
+              "value": 0.1166,
+              "rolls": 1
             },
             {
-              "stat": "atkFlat",
-              "value": 38,
+              "stat": "hpRatio",
+              "value": 0.0778,
               "rolls": 1
+            },
+            {
+              "stat": "defRatio",
+              "value": 0.0486,
+              "rolls": 0
             }
           ]
         },
@@ -14411,8 +14410,8 @@
           "mainStat": "speed",
           "subStats": [
             {
-              "stat": "atkRatio",
-              "value": 0.1166,
+              "stat": "critDamage",
+              "value": 0.175,
               "rolls": 2
             },
             {
@@ -14421,45 +14420,50 @@
               "rolls": 1
             },
             {
-              "stat": "critDamage",
-              "value": 0.0583,
-              "rolls": 0
+              "stat": "hpRatio",
+              "value": 0.0778,
+              "rolls": 1
             },
             {
-              "stat": "breakEffect",
-              "value": 0.1166,
-              "rolls": 1
+              "stat": "defRatio",
+              "value": 0.0486,
+              "rolls": 0
             }
           ]
         },
         "rope": {
-          "mainStat": "atkRatio",
+          "mainStat": "hpRatio",
           "subStats": [
+            {
+              "stat": "speed",
+              "value": 6.9,
+              "rolls": 2
+            },
             {
               "stat": "critDamage",
               "value": 0.175,
               "rolls": 2
             },
             {
-              "stat": "speed",
-              "value": 5,
-              "rolls": 1
-            },
-            {
               "stat": "critRate",
-              "value": 0.0292,
-              "rolls": 0
+              "value": 0.0583,
+              "rolls": 1
             },
             {
-              "stat": "breakEffect",
-              "value": 0.1166,
-              "rolls": 1
+              "stat": "defRatio",
+              "value": 0.0486,
+              "rolls": 0
             }
           ]
         },
         "sphere": {
-          "mainStat": "elementDamage",
+          "mainStat": "hpRatio",
           "subStats": [
+            {
+              "stat": "speed",
+              "value": 4.6,
+              "rolls": 1
+            },
             {
               "stat": "critRate",
               "value": 0.0875,
@@ -14471,14 +14475,9 @@
               "rolls": 1
             },
             {
-              "stat": "atkRatio",
-              "value": 0.0389,
+              "stat": "defRatio",
+              "value": 0.0486,
               "rolls": 0
-            },
-            {
-              "stat": "effectHitRate",
-              "value": 0.0778,
-              "rolls": 1
             }
           ]
         }
@@ -18580,31 +18579,31 @@
         "rope": "energyRegen"
       },
       "subStatPriority": [
+        "hpRatio",
         "defRatio",
-        "atkRatio",
+        "critDamage",
         "speed",
         "breakEffect",
         "hpFlat",
-        "hpRatio",
-        "critDamage"
+        "atkRatio"
       ],
       "pieces": {
         "head": {
           "mainStat": "hpFlat",
           "subStats": [
             {
-              "stat": "defRatio",
-              "value": 0.1458,
+              "stat": "hpRatio",
+              "value": 0.1166,
               "rolls": 2
             },
             {
-              "stat": "atkRatio",
-              "value": 0.0778,
+              "stat": "defRatio",
+              "value": 0.0972,
               "rolls": 1
             },
             {
               "stat": "speed",
-              "value": 2,
+              "value": 2.3,
               "rolls": 0
             },
             {
@@ -18618,18 +18617,18 @@
           "mainStat": "atkFlat",
           "subStats": [
             {
-              "stat": "defRatio",
-              "value": 0.1458,
+              "stat": "hpRatio",
+              "value": 0.1166,
               "rolls": 2
             },
             {
-              "stat": "atkRatio",
-              "value": 0.0778,
+              "stat": "defRatio",
+              "value": 0.0972,
               "rolls": 1
             },
             {
               "stat": "speed",
-              "value": 2,
+              "value": 2.3,
               "rolls": 0
             },
             {
@@ -18643,24 +18642,24 @@
           "mainStat": "hpRatio",
           "subStats": [
             {
-              "stat": "speed",
-              "value": 7,
+              "stat": "defRatio",
+              "value": 0.1458,
               "rolls": 2
             },
             {
-              "stat": "defRatio",
-              "value": 0.0972,
+              "stat": "critDamage",
+              "value": 0.1166,
               "rolls": 1
-            },
-            {
-              "stat": "atkRatio",
-              "value": 0.0389,
-              "rolls": 0
             },
             {
               "stat": "hpFlat",
-              "value": 76,
+              "value": 76.2075,
               "rolls": 1
+            },
+            {
+              "stat": "breakEffect",
+              "value": 0.0583,
+              "rolls": 0
             }
           ]
         },
@@ -18668,58 +18667,8 @@
           "mainStat": "speed",
           "subStats": [
             {
-              "stat": "atkRatio",
-              "value": 0.1166,
-              "rolls": 2
-            },
-            {
               "stat": "hpRatio",
-              "value": 0.0778,
-              "rolls": 1
-            },
-            {
-              "stat": "defRatio",
-              "value": 0.0486,
-              "rolls": 0
-            },
-            {
-              "stat": "breakEffect",
               "value": 0.1166,
-              "rolls": 1
-            }
-          ]
-        },
-        "rope": {
-          "mainStat": "energyRegen",
-          "subStats": [
-            {
-              "stat": "speed",
-              "value": 7,
-              "rolls": 2
-            },
-            {
-              "stat": "hpRatio",
-              "value": 0.0778,
-              "rolls": 1
-            },
-            {
-              "stat": "defRatio",
-              "value": 0.0486,
-              "rolls": 0
-            },
-            {
-              "stat": "critDamage",
-              "value": 0.1166,
-              "rolls": 1
-            }
-          ]
-        },
-        "sphere": {
-          "mainStat": "hpRatio",
-          "subStats": [
-            {
-              "stat": "speed",
-              "value": 7,
               "rolls": 2
             },
             {
@@ -18728,14 +18677,64 @@
               "rolls": 1
             },
             {
-              "stat": "atkRatio",
-              "value": 0.0389,
+              "stat": "critDamage",
+              "value": 0.1166,
+              "rolls": 1
+            },
+            {
+              "stat": "breakEffect",
+              "value": 0.0583,
               "rolls": 0
+            }
+          ]
+        },
+        "sphere": {
+          "mainStat": "hpRatio",
+          "subStats": [
+            {
+              "stat": "defRatio",
+              "value": 0.1458,
+              "rolls": 2
+            },
+            {
+              "stat": "critDamage",
+              "value": 0.1166,
+              "rolls": 1
             },
             {
               "stat": "hpFlat",
-              "value": 76,
+              "value": 76.2075,
               "rolls": 1
+            },
+            {
+              "stat": "breakEffect",
+              "value": 0.0583,
+              "rolls": 0
+            }
+          ]
+        },
+        "rope": {
+          "mainStat": "energyRegen",
+          "subStats": [
+            {
+              "stat": "hpRatio",
+              "value": 0.1166,
+              "rolls": 2
+            },
+            {
+              "stat": "defRatio",
+              "value": 0.0972,
+              "rolls": 1
+            },
+            {
+              "stat": "critDamage",
+              "value": 0.1166,
+              "rolls": 1
+            },
+            {
+              "stat": "breakEffect",
+              "value": 0.0583,
+              "rolls": 0
             }
           ]
         }

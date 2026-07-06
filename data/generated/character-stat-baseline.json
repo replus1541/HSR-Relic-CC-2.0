@@ -1,14 +1,16 @@
 {
   "app": "hsr-relic-cc-character-stat-baseline-v2",
   "version": 1,
-  "generatedAt": "2026-07-05T17:31:04.136Z",
+  "generatedAt": "2026-07-06T12:00:11.131Z",
   "source": {
     "legacyCharacterStatBaseline": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\character-stat-baseline.json",
+    "legacyHoyowikiBaseStats": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
     "identity": "data/generated/character-identity.json"
   },
   "policy": {
     "level": 80,
     "critDefaultsIncluded": true,
+    "elationTraceSupplements": "source-backed HoyoWiki elation trace bonus rows are added when legacy trace extraction missed elation stat tokens",
     "traceAdditionalStatsIncluded": true,
     "combatBuffsExcluded": true
   },
@@ -16,7 +18,8 @@
     "characters": 90,
     "matchedIdentity": 90,
     "unmatchedIdentity": 0,
-    "traceEntries": 257
+    "traceEntries": 261,
+    "hoyowikiElationTraceSupplements": 4
   },
   "unmatchedSourceCharacters": [],
   "rows": [
@@ -24,6 +27,7 @@
       "characterId": "PlayerBoy_20",
       "avatarId": "8005",
       "displayName": "개척자 • 기억",
+      "path": "memory",
       "sourceCharacter": "개척자 • 기억",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -33,6 +37,40 @@
         "speed": 103,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 기억:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 기억:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 기억:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 기억:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -75,6 +113,7 @@
       "characterId": "PlayerBoy_10",
       "avatarId": "8003",
       "displayName": "개척자 • 보존",
+      "path": "preservation",
       "sourceCharacter": "개척자 • 보존",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -84,6 +123,40 @@
         "speed": 95,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 보존:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 보존:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 보존:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 보존:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -126,6 +199,7 @@
       "characterId": "PlayerBoy_00",
       "avatarId": "8001",
       "displayName": "개척자 • 파멸",
+      "path": "destruction",
       "sourceCharacter": "개척자 • 파멸",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -135,6 +209,40 @@
         "speed": 100,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 파멸:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 파멸:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 파멸:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 파멸:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -177,6 +285,7 @@
       "characterId": "PlayerBoy_30",
       "avatarId": "8007",
       "displayName": "개척자 • 화합",
+      "path": "harmony",
       "sourceCharacter": "개척자 • 화합",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -186,6 +295,40 @@
         "speed": 105,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 화합:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 화합:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 화합:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 화합:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -228,6 +371,7 @@
       "characterId": "PlayerBoy_40",
       "avatarId": "8009",
       "displayName": "개척자 • 환락",
+      "path": "elation",
       "sourceCharacter": "개척자 • 환락",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -237,6 +381,40 @@
         "speed": 106,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 환락:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 환락:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 환락:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "개척자 • 환락:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -279,6 +457,7 @@
       "characterId": "Gallagher_00",
       "avatarId": "1301",
       "displayName": "갤러거",
+      "path": "abundance",
       "sourceCharacter": "갤러거",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -288,6 +467,40 @@
         "speed": 98,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "갤러거:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "갤러거:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "갤러거:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "갤러거:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -330,6 +543,7 @@
       "characterId": "Gepard_00",
       "avatarId": "1104",
       "displayName": "게파드",
+      "path": "preservation",
       "sourceCharacter": "게파드",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -339,6 +553,40 @@
         "speed": 92,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "게파드:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "게파드:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "게파드:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "게파드:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -381,6 +629,7 @@
       "characterId": "Jingliu_00",
       "avatarId": "1212",
       "displayName": "경류",
+      "path": "destruction",
       "sourceCharacter": "경류",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -390,6 +639,40 @@
         "speed": 96,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "경류:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "경류:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "경류:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "경류:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -432,6 +715,7 @@
       "characterId": "JingYuan_00",
       "avatarId": "1204",
       "displayName": "경원",
+      "path": "erudition",
       "sourceCharacter": "경원",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -441,6 +725,40 @@
         "speed": 99,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "경원:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "경원:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "경원:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "경원:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -483,6 +801,7 @@
       "characterId": "Guinaifen_00",
       "avatarId": "1210",
       "displayName": "계네빈",
+      "path": "nihility",
       "sourceCharacter": "계네빈",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -492,6 +811,40 @@
         "speed": 106,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "계네빈:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "계네빈:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "계네빈:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "계네빈:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -534,6 +887,7 @@
       "characterId": "Huohuo_00",
       "avatarId": "1217",
       "displayName": "곽향",
+      "path": "abundance",
       "sourceCharacter": "곽향",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -543,6 +897,40 @@
         "speed": 98,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "곽향:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "곽향:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "곽향:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "곽향:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -585,6 +973,7 @@
       "characterId": "Gilgamesh_00",
       "avatarId": "1509",
       "displayName": "길가메시",
+      "path": "destruction",
       "sourceCharacter": "길가메시",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -595,6 +984,40 @@
         "critRate": 0.05,
         "critDamage": 0.5
       },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki-missing",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "길가메시:level80.hp",
+          "gameDataStatus": "missing-hoyowiki-level80-promotion-row"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki-missing",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "길가메시:level80.atk",
+          "gameDataStatus": "missing-hoyowiki-level80-promotion-row"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki-missing",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "길가메시:level80.def",
+          "gameDataStatus": "missing-hoyowiki-level80-promotion-row"
+        },
+        "speed": {
+          "sourceOrigin": "current-app-default",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "길가메시:level80.speed",
+          "gameDataStatus": "missing-hoyowiki-level80-promotion-row"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
+      },
       "traceEntries": [],
       "traceStatus": "missing-hoyowiki-trace-stat-bonuses"
     },
@@ -602,6 +1025,7 @@
       "characterId": "Luocha_00",
       "avatarId": "1203",
       "displayName": "나찰",
+      "path": "abundance",
       "sourceCharacter": "나찰",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -611,6 +1035,40 @@
         "speed": 101,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "나찰:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "나찰:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "나찰:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "나찰:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -653,6 +1111,7 @@
       "characterId": "Natasha_00",
       "avatarId": "1105",
       "displayName": "나타샤",
+      "path": "abundance",
       "sourceCharacter": "나타샤",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -662,6 +1121,40 @@
         "speed": 98,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "나타샤:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "나타샤:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "나타샤:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "나타샤:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -704,6 +1197,7 @@
       "characterId": "DanHeng_00",
       "avatarId": "1002",
       "displayName": "단항",
+      "path": "hunt",
       "sourceCharacter": "단항",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -713,6 +1207,40 @@
         "speed": 110,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "단항:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "단항:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "단항:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "단항:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -755,6 +1283,7 @@
       "characterId": "DanHengPT_00",
       "avatarId": "1414",
       "displayName": "단항 • 등황",
+      "path": "preservation",
       "sourceCharacter": "단항 • 등황",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -764,6 +1293,40 @@
         "speed": 97,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "단항 • 등황:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "단항 • 등황:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "단항 • 등황:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "단항 • 등황:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -806,6 +1369,7 @@
       "characterId": "DanHengIL_00",
       "avatarId": "1213",
       "displayName": "단항•음월",
+      "path": "destruction",
       "sourceCharacter": "단항•음월 ",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -815,6 +1379,40 @@
         "speed": 102,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "단항•음월 :level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "단항•음월 :level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "단항•음월 :level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "단항•음월 :level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -857,6 +1455,7 @@
       "characterId": "Constance_00",
       "avatarId": "1321",
       "displayName": "달리아",
+      "path": "nihility",
       "sourceCharacter": "달리아",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -866,6 +1465,40 @@
         "speed": 96,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "달리아:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "달리아:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "달리아:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "달리아:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -908,6 +1541,7 @@
       "characterId": "TheHerta_00",
       "avatarId": "1401",
       "displayName": "더 헤르타",
+      "path": "erudition",
       "sourceCharacter": "더 헤르타",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -917,6 +1551,40 @@
         "speed": 99,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "더 헤르타:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "더 헤르타:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "더 헤르타:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "더 헤르타:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -959,6 +1627,7 @@
       "characterId": "Rappa_00",
       "avatarId": "1317",
       "displayName": "라파",
+      "path": "erudition",
       "sourceCharacter": "라파",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -968,6 +1637,40 @@
         "speed": 96,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "라파:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "라파:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "라파:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "라파:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1010,6 +1713,7 @@
       "characterId": "Robin_00",
       "avatarId": "1309",
       "displayName": "로빈",
+      "path": "harmony",
       "sourceCharacter": "로빈",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1019,6 +1723,40 @@
         "speed": 102,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "로빈:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "로빈:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "로빈:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "로빈:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1061,6 +1799,7 @@
       "characterId": "Luka_00",
       "avatarId": "1111",
       "displayName": "루카",
+      "path": "nihility",
       "sourceCharacter": "루카",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1070,6 +1809,40 @@
         "speed": 103,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "루카:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "루카:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "루카:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "루카:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1112,6 +1885,7 @@
       "characterId": "Lynx_00",
       "avatarId": "1110",
       "displayName": "링스",
+      "path": "abundance",
       "sourceCharacter": "링스",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1121,6 +1895,40 @@
         "speed": 100,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "링스:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "링스:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "링스:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "링스:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1163,6 +1971,7 @@
       "characterId": "Mydeimos_00",
       "avatarId": "1404",
       "displayName": "마이데이",
+      "path": "destruction",
       "sourceCharacter": "마이데이",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1172,6 +1981,40 @@
         "speed": 95,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "마이데이:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "마이데이:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "마이데이:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "마이데이:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1214,6 +2057,7 @@
       "characterId": "Fugue_00",
       "avatarId": "1225",
       "displayName": "망귀인",
+      "path": "nihility",
       "sourceCharacter": "망귀인",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1223,6 +2067,40 @@
         "speed": 102,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "망귀인:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "망귀인:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "망귀인:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "망귀인:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1265,6 +2143,7 @@
       "characterId": "Moze_00",
       "avatarId": "1223",
       "displayName": "맥택",
+      "path": "hunt",
       "sourceCharacter": "맥택",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1274,6 +2153,40 @@
         "speed": 111,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "맥택:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "맥택:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "맥택:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "맥택:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1316,6 +2229,7 @@
       "characterId": "Misha_00",
       "avatarId": "1312",
       "displayName": "미샤",
+      "path": "destruction",
       "sourceCharacter": "미샤",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1325,6 +2239,40 @@
         "speed": 96,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "미샤:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "미샤:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "미샤:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "미샤:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1367,6 +2315,7 @@
       "characterId": "Sam_00",
       "avatarId": "1310",
       "displayName": "반디",
+      "path": "destruction",
       "sourceCharacter": "반디",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1376,6 +2325,40 @@
         "speed": 104,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "반디:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "반디:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "반디:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "반디:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1418,6 +2401,7 @@
       "characterId": "Bailu_00",
       "avatarId": "1211",
       "displayName": "백로",
+      "path": "abundance",
       "sourceCharacter": "백로",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1427,6 +2411,40 @@
         "speed": 98,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "백로:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "백로:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "백로:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "백로:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1469,6 +2487,7 @@
       "characterId": "Boothill_00",
       "avatarId": "1315",
       "displayName": "부트힐",
+      "path": "hunt",
       "sourceCharacter": "부트힐",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1478,6 +2497,40 @@
         "speed": 107,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "부트힐:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "부트힐:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "부트힐:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "부트힐:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1520,6 +2573,7 @@
       "characterId": "FuXuan_00",
       "avatarId": "1208",
       "displayName": "부현",
+      "path": "preservation",
       "sourceCharacter": "부현",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1529,6 +2583,40 @@
         "speed": 100,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "부현:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "부현:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "부현:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "부현:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1571,6 +2659,7 @@
       "characterId": "Bronya_00",
       "avatarId": "1101",
       "displayName": "브로냐",
+      "path": "harmony",
       "sourceCharacter": "브로냐",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1580,6 +2669,40 @@
         "speed": 99,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "브로냐:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "브로냐:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "브로냐:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "브로냐:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1622,6 +2745,7 @@
       "characterId": "BlackSwan_00",
       "avatarId": "1307",
       "displayName": "블랙 스완",
+      "path": "nihility",
       "sourceCharacter": "블랙 스완",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1631,6 +2755,40 @@
         "speed": 102,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "블랙 스완:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "블랙 스완:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "블랙 스완:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "블랙 스완:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1673,6 +2831,7 @@
       "characterId": "Ren_00",
       "avatarId": "1205",
       "displayName": "블레이드",
+      "path": "destruction",
       "sourceCharacter": "블레이드",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1682,6 +2841,40 @@
         "speed": 97,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "블레이드:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "블레이드:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "블레이드:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "블레이드:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1724,6 +2917,7 @@
       "characterId": "Feixiao_00",
       "avatarId": "1220",
       "displayName": "비소",
+      "path": "hunt",
       "sourceCharacter": "비소",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1733,6 +2927,40 @@
         "speed": 112,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "비소:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "비소:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "비소:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "비소:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1775,6 +3003,7 @@
       "characterId": "Cipher_00",
       "avatarId": "1406",
       "displayName": "사이퍼",
+      "path": "nihility",
       "sourceCharacter": "사이퍼",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1784,6 +3013,40 @@
         "speed": 106,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "사이퍼:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "사이퍼:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "사이퍼:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "사이퍼:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1826,6 +3089,7 @@
       "characterId": "Sampo_00",
       "avatarId": "1108",
       "displayName": "삼포",
+      "path": "nihility",
       "sourceCharacter": "삼포",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1835,6 +3099,40 @@
         "speed": 102,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "삼포:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "삼포:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "삼포:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "삼포:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1877,6 +3175,7 @@
       "characterId": "Serval_00",
       "avatarId": "1103",
       "displayName": "서벌",
+      "path": "erudition",
       "sourceCharacter": "서벌",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1886,6 +3185,40 @@
         "speed": 104,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "서벌:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "서벌:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "서벌:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "서벌:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1928,6 +3261,7 @@
       "characterId": "Sunday_10",
       "avatarId": "1313",
       "displayName": "선데이",
+      "path": "harmony",
       "sourceCharacter": "선데이",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1937,6 +3271,40 @@
         "speed": 96,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "선데이:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "선데이:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "선데이:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "선데이:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -1979,6 +3347,7 @@
       "characterId": "Xueyi_00",
       "avatarId": "1214",
       "displayName": "설의",
+      "path": "destruction",
       "sourceCharacter": "설의",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -1988,6 +3357,40 @@
         "speed": 103,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "설의:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "설의:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "설의:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "설의:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2030,6 +3433,7 @@
       "characterId": "Saber_00",
       "avatarId": "1014",
       "displayName": "세이버",
+      "path": "destruction",
       "sourceCharacter": "세이버",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2039,6 +3443,40 @@
         "speed": 101,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "세이버:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "세이버:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "세이버:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "세이버:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2081,6 +3519,7 @@
       "characterId": "Sushang_00",
       "avatarId": "1206",
       "displayName": "소상",
+      "path": "hunt",
       "sourceCharacter": "소상",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2090,6 +3529,40 @@
         "speed": 107,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "소상:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "소상:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "소상:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "소상:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2132,6 +3605,7 @@
       "characterId": "Sparkle_00",
       "avatarId": "1306",
       "displayName": "스파클",
+      "path": "harmony",
       "sourceCharacter": "스파클",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2141,6 +3615,40 @@
         "speed": 101,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "스파클:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "스파클:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "스파클:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "스파클:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2183,6 +3691,7 @@
       "characterId": "Sparxie_00",
       "avatarId": "1501",
       "displayName": "스파키",
+      "path": "elation",
       "sourceCharacter": "스파키",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2192,6 +3701,40 @@
         "speed": 107,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "스파키:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "스파키:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "스파키:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "스파키:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2215,6 +3758,18 @@
           "sourceOrigin": "hoyowiki-trace-stats",
           "sourceRecord": "스파키:critDamage:13.3%",
           "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elation",
+          "value": 28,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "환락도 강화 / 환락도 강화 / 환락도 강화 / 환락도 강화 / 환락도 강화",
+          "label": "환락도",
+          "sourceOrigin": "hoyowiki-trace-elation-supplement",
+          "sourceRecord": "HoyoWiki:4737:P09+P11+P13+P15+P18:elation:4+4+6+6+8",
+          "sourceText": "환락도 강화 환락도 4.0% 증가 / 4.0% 증가 / 6.0% 증가 / 6.0% 증가 / 8.0% 증가",
+          "conditionStatus": "always-on"
         }
       ],
       "traceStatus": "complete"
@@ -2223,6 +3778,7 @@
       "characterId": "Aglaea_00",
       "avatarId": "1402",
       "displayName": "아글라이아",
+      "path": "memory",
       "sourceCharacter": "아글라이아",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2232,6 +3788,40 @@
         "speed": 102,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아글라이아:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아글라이아:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아글라이아:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아글라이아:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2274,6 +3864,7 @@
       "characterId": "Anaxa_00",
       "avatarId": "1405",
       "displayName": "아낙사",
+      "path": "erudition",
       "sourceCharacter": "아낙사",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2283,6 +3874,40 @@
         "speed": 97,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아낙사:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아낙사:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아낙사:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아낙사:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2325,6 +3950,7 @@
       "characterId": "Arlan_00",
       "avatarId": "1008",
       "displayName": "아를란",
+      "path": "destruction",
       "sourceCharacter": "아를란",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2334,6 +3960,40 @@
         "speed": 102,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아를란:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아를란:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아를란:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아를란:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2376,6 +4036,7 @@
       "characterId": "Asta_00",
       "avatarId": "1009",
       "displayName": "아스타",
+      "path": "harmony",
       "sourceCharacter": "아스타",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2385,6 +4046,40 @@
         "speed": 106,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아스타:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아스타:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아스타:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아스타:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2427,6 +4122,7 @@
       "characterId": "Argenti_00",
       "avatarId": "1302",
       "displayName": "아젠티",
+      "path": "erudition",
       "sourceCharacter": "아젠티",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2436,6 +4132,40 @@
         "speed": 103,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아젠티:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아젠티:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아젠티:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아젠티:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2478,6 +4208,7 @@
       "characterId": "Archer_00",
       "avatarId": "1015",
       "displayName": "아처",
+      "path": "hunt",
       "sourceCharacter": "아처",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2487,6 +4218,40 @@
         "speed": 105,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아처:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아처:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아처:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아처:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2529,6 +4294,7 @@
       "characterId": "Acheron_00",
       "avatarId": "1308",
       "displayName": "아케론",
+      "path": "nihility",
       "sourceCharacter": "아케론 ",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2538,6 +4304,40 @@
         "speed": 101,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아케론 :level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아케론 :level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아케론 :level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "아케론 :level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2580,6 +4380,7 @@
       "characterId": "Ashveil_00",
       "avatarId": "1504",
       "displayName": "애쉬베일",
+      "path": "hunt",
       "sourceCharacter": "애쉬베일",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2589,6 +4390,40 @@
         "speed": 106,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "애쉬베일:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "애쉬베일:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "애쉬베일:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "애쉬베일:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2631,6 +4466,7 @@
       "characterId": "Yukong_00",
       "avatarId": "1207",
       "displayName": "어공",
+      "path": "harmony",
       "sourceCharacter": "어공",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2640,6 +4476,40 @@
         "speed": 107,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "어공:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "어공:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "어공:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "어공:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2682,6 +4552,7 @@
       "characterId": "Aventurine_00",
       "avatarId": "1304",
       "displayName": "어벤츄린",
+      "path": "preservation",
       "sourceCharacter": "어벤츄린",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2691,6 +4562,40 @@
         "speed": 106,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "어벤츄린:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "어벤츄린:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "어벤츄린:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "어벤츄린:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2733,6 +4638,7 @@
       "characterId": "Evanescia_00",
       "avatarId": "1505",
       "displayName": "에바네시아",
+      "path": "elation",
       "sourceCharacter": "에바네시아",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2742,6 +4648,40 @@
         "speed": 104,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "에바네시아:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "에바네시아:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "에바네시아:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "에바네시아:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2765,6 +4705,18 @@
           "sourceOrigin": "hoyowiki-trace-stats",
           "sourceRecord": "에바네시아:speed:5",
           "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elation",
+          "value": 18,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "환락도 강화 / 환락도 강화 / 환락도 강화",
+          "label": "환락도",
+          "sourceOrigin": "hoyowiki-trace-elation-supplement",
+          "sourceRecord": "HoyoWiki:5005:P10+P14+P17:elation:4+6+8",
+          "sourceText": "환락도 강화 환락도 4.0% 증가 / 6.0% 증가 / 8.0% 증가",
+          "conditionStatus": "always-on"
         }
       ],
       "traceStatus": "complete"
@@ -2773,6 +4725,7 @@
       "characterId": "Evernight_00",
       "avatarId": "1413",
       "displayName": "에버나이트",
+      "path": "memory",
       "sourceCharacter": "에버나이트",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2782,6 +4735,40 @@
         "speed": 99,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "에버나이트:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "에버나이트:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "에버나이트:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "에버나이트:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2824,6 +4811,7 @@
       "characterId": "Yanqing_00",
       "avatarId": "1209",
       "displayName": "연경",
+      "path": "hunt",
       "sourceCharacter": "연경",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2833,6 +4821,40 @@
         "speed": 109,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "연경:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "연경:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "연경:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "연경:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2875,6 +4897,7 @@
       "characterId": "Lingsha_00",
       "avatarId": "1222",
       "displayName": "영사",
+      "path": "abundance",
       "sourceCharacter": "영사",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2884,6 +4907,40 @@
         "speed": 98,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "영사:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "영사:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "영사:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "영사:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2926,6 +4983,7 @@
       "characterId": "RuanMei_00",
       "avatarId": "1303",
       "displayName": "완•매",
+      "path": "harmony",
       "sourceCharacter": "완•매",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2935,6 +4993,40 @@
         "speed": 104,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "완•매:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "완•매:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "완•매:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "완•매:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -2977,6 +5069,7 @@
       "characterId": "Yunli_00",
       "avatarId": "1221",
       "displayName": "운리",
+      "path": "destruction",
       "sourceCharacter": "운리",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -2986,6 +5079,40 @@
         "speed": 94,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "운리:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "운리:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "운리:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "운리:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3028,6 +5155,7 @@
       "characterId": "Welt_00",
       "avatarId": "1004",
       "displayName": "웰트",
+      "path": "nihility",
       "sourceCharacter": "웰트",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3037,6 +5165,40 @@
         "speed": 102,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "웰트:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "웰트:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "웰트:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "웰트:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3079,6 +5241,7 @@
       "characterId": "Silwolf_00",
       "avatarId": "1006",
       "displayName": "은랑",
+      "path": "nihility",
       "sourceCharacter": "은랑",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3088,6 +5251,40 @@
         "speed": 107,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "은랑:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "은랑:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "은랑:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "은랑:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3130,6 +5327,7 @@
       "characterId": "SilverWolf999_00",
       "avatarId": "1506",
       "displayName": "은랑 LV.999",
+      "path": "elation",
       "sourceCharacter": "은랑 LV.999",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3139,6 +5337,40 @@
         "speed": 110,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "은랑 LV.999:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "은랑 LV.999:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "은랑 LV.999:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "은랑 LV.999:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3162,6 +5394,18 @@
           "sourceOrigin": "hoyowiki-trace-stats",
           "sourceRecord": "은랑 LV.999:speed:9",
           "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elation",
+          "value": 10,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "환락도 강화 / 환락도 강화",
+          "label": "환락도",
+          "sourceOrigin": "hoyowiki-trace-elation-supplement",
+          "sourceRecord": "HoyoWiki:4997:P12+P16:elation:4+6",
+          "sourceText": "환락도 강화 4.0% 증가 / 환락도 강화 환락도 6.0% 증가",
+          "conditionStatus": "always-on"
         }
       ],
       "traceStatus": "complete"
@@ -3170,6 +5414,7 @@
       "characterId": "Tingyun_00",
       "avatarId": "1202",
       "displayName": "정운",
+      "path": "harmony",
       "sourceCharacter": "정운",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3179,6 +5424,40 @@
         "speed": 112,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "정운:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "정운:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "정운:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "정운:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3221,6 +5500,7 @@
       "characterId": "Seele_00",
       "avatarId": "1102",
       "displayName": "제레",
+      "path": "hunt",
       "sourceCharacter": "제레",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3230,6 +5510,40 @@
         "speed": 115,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "제레:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "제레:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "제레:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "제레:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3272,6 +5586,7 @@
       "characterId": "Jade_00",
       "avatarId": "1314",
       "displayName": "제이드",
+      "path": "erudition",
       "sourceCharacter": "제이드",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3281,6 +5596,40 @@
         "speed": 103,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "제이드:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "제이드:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "제이드:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "제이드:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3323,6 +5672,7 @@
       "characterId": "MortenaxBlade_00",
       "avatarId": "1507",
       "displayName": "천야 • 블레이드",
+      "path": "nihility",
       "sourceCharacter": "천야 • 블레이드",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3332,6 +5682,40 @@
         "speed": 107,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "천야 • 블레이드:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "천야 • 블레이드:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "천야 • 블레이드:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "천야 • 블레이드:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3374,6 +5758,7 @@
       "characterId": "Qingque_00",
       "avatarId": "1201",
       "displayName": "청작",
+      "path": "erudition",
       "sourceCharacter": "청작",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3383,6 +5768,40 @@
         "speed": 98,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "청작:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "청작:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "청작:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "청작:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3425,6 +5844,7 @@
       "characterId": "Jiaoqiu_00",
       "avatarId": "1218",
       "displayName": "초구",
+      "path": "nihility",
       "sourceCharacter": "초구",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3434,6 +5854,40 @@
         "speed": 98,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "초구:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "초구:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "초구:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "초구:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3476,6 +5930,7 @@
       "characterId": "Castorice_00",
       "avatarId": "1407",
       "displayName": "카스토리스",
+      "path": "memory",
       "sourceCharacter": "카스토리스",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3485,6 +5940,40 @@
         "speed": 95,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "카스토리스:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "카스토리스:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "카스토리스:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "카스토리스:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3527,6 +6016,7 @@
       "characterId": "Kafka_00",
       "avatarId": "1005",
       "displayName": "카프카",
+      "path": "nihility",
       "sourceCharacter": "카프카",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3536,6 +6026,40 @@
         "speed": 100,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "카프카:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "카프카:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "카프카:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "카프카:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3578,6 +6102,7 @@
       "characterId": "Cerydra_00",
       "avatarId": "1412",
       "displayName": "케리드라",
+      "path": "harmony",
       "sourceCharacter": "케리드라",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3587,6 +6112,40 @@
         "speed": 99,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "케리드라:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "케리드라:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "케리드라:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "케리드라:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3629,6 +6188,7 @@
       "characterId": "Klara_00",
       "avatarId": "1107",
       "displayName": "클라라",
+      "path": "destruction",
       "sourceCharacter": "클라라",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3638,6 +6198,40 @@
         "speed": 90,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "클라라:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "클라라:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "클라라:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "클라라:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3680,6 +6274,7 @@
       "characterId": "Cyrene_00",
       "avatarId": "1415",
       "displayName": "키레네",
+      "path": "memory",
       "sourceCharacter": "키레네",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3689,6 +6284,40 @@
         "speed": 101,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "키레네:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "키레네:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "키레네:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "키레네:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3731,6 +6360,7 @@
       "characterId": "TohsakaRin_00",
       "avatarId": "1508",
       "displayName": "토오사카 린",
+      "path": "erudition",
       "sourceCharacter": "토오사카 린",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3741,6 +6371,40 @@
         "critRate": 0.05,
         "critDamage": 0.5
       },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki-missing",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "토오사카 린:level80.hp",
+          "gameDataStatus": "missing-hoyowiki-level80-promotion-row"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki-missing",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "토오사카 린:level80.atk",
+          "gameDataStatus": "missing-hoyowiki-level80-promotion-row"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki-missing",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "토오사카 린:level80.def",
+          "gameDataStatus": "missing-hoyowiki-level80-promotion-row"
+        },
+        "speed": {
+          "sourceOrigin": "current-app-override",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "토오사카 린:level80.speed",
+          "gameDataStatus": "missing-hoyowiki-level80-promotion-row"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
+      },
       "traceEntries": [],
       "traceStatus": "missing-hoyowiki-trace-stat-bonuses"
     },
@@ -3748,6 +6412,7 @@
       "characterId": "Topaz_00",
       "avatarId": "1112",
       "displayName": "토파즈&복순이",
+      "path": "hunt",
       "sourceCharacter": "토파즈&복순이",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3757,6 +6422,40 @@
         "speed": 100,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "토파즈&복순이:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "토파즈&복순이:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "토파즈&복순이:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "토파즈&복순이:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3799,6 +6498,7 @@
       "characterId": "Tribbie_00",
       "avatarId": "1403",
       "displayName": "트리비",
+      "path": "harmony",
       "sourceCharacter": "트리비",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3808,6 +6508,40 @@
         "speed": 96,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "트리비:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "트리비:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "트리비:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "트리비:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3850,6 +6584,7 @@
       "characterId": "Phainon_00",
       "avatarId": "1408",
       "displayName": "파이논",
+      "path": "destruction",
       "sourceCharacter": "파이논",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3859,6 +6594,40 @@
         "speed": 94,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "파이논:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "파이논:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "파이논:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "파이논:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3901,6 +6670,7 @@
       "characterId": "Pela_00",
       "avatarId": "1106",
       "displayName": "페라",
+      "path": "nihility",
       "sourceCharacter": "페라",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3910,6 +6680,40 @@
         "speed": 105,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "페라:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "페라:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "페라:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "페라:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -3952,6 +6756,7 @@
       "characterId": "Hanya_00",
       "avatarId": "1215",
       "displayName": "한아",
+      "path": "harmony",
       "sourceCharacter": "한아",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -3961,6 +6766,40 @@
         "speed": 110,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "한아:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "한아:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "한아:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "한아:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -4003,6 +6842,7 @@
       "characterId": "Herta_00",
       "avatarId": "1013",
       "displayName": "헤르타",
+      "path": "erudition",
       "sourceCharacter": "헤르타",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -4012,6 +6852,40 @@
         "speed": 100,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "헤르타:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "헤르타:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "헤르타:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "헤르타:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -4054,6 +6928,7 @@
       "characterId": "YaoGuang_00",
       "avatarId": "1502",
       "displayName": "효광",
+      "path": "elation",
       "sourceCharacter": "효광",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -4063,6 +6938,40 @@
         "speed": 101,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "효광:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "효광:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "효광:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "효광:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -4086,6 +6995,18 @@
           "sourceOrigin": "hoyowiki-trace-stats",
           "sourceRecord": "효광:speed:9",
           "conditionStatus": "always-on"
+        },
+        {
+          "stat": "elation",
+          "value": 10,
+          "sourceType": "행적 추가스탯",
+          "sourceKind": "trace",
+          "source": "환락도 강화 / 환락도 강화",
+          "label": "환락도",
+          "sourceOrigin": "hoyowiki-trace-elation-supplement",
+          "sourceRecord": "HoyoWiki:4736:P12+P16:elation:4+6",
+          "sourceText": "환락도 강화 환락도 4.0% 증가 / 6.0% 증가",
+          "conditionStatus": "always-on"
         }
       ],
       "traceStatus": "complete"
@@ -4094,6 +7015,7 @@
       "characterId": "Hook_00",
       "avatarId": "1109",
       "displayName": "후크",
+      "path": "destruction",
       "sourceCharacter": "후크",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -4103,6 +7025,40 @@
         "speed": 94,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "후크:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "후크:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "후크:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "후크:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -4145,6 +7101,7 @@
       "characterId": "Himeko_00",
       "avatarId": "1003",
       "displayName": "히메코",
+      "path": "erudition",
       "sourceCharacter": "히메코",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -4154,6 +7111,40 @@
         "speed": 96,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "히메코:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "히메코:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "히메코:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "히메코:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -4196,6 +7187,7 @@
       "characterId": "HimekoNova_00",
       "avatarId": "1510",
       "displayName": "히메코 • 노바",
+      "path": "erudition",
       "sourceCharacter": "히메코 • 노바",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -4206,6 +7198,40 @@
         "critRate": 0.05,
         "critDamage": 0.5
       },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki-missing",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "히메코 • 노바:level80.hp",
+          "gameDataStatus": "missing-hoyowiki-level80-promotion-row"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki-missing",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "히메코 • 노바:level80.atk",
+          "gameDataStatus": "missing-hoyowiki-level80-promotion-row"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki-missing",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "히메코 • 노바:level80.def",
+          "gameDataStatus": "missing-hoyowiki-level80-promotion-row"
+        },
+        "speed": {
+          "sourceOrigin": "current-app-default",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "히메코 • 노바:level80.speed",
+          "gameDataStatus": "missing-hoyowiki-level80-promotion-row"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
+      },
       "traceEntries": [],
       "traceStatus": "missing-hoyowiki-trace-stat-bonuses"
     },
@@ -4213,6 +7239,7 @@
       "characterId": "Harscyline_00",
       "avatarId": "1410",
       "displayName": "히실렌스",
+      "path": "nihility",
       "sourceCharacter": "히실렌스",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -4222,6 +7249,40 @@
         "speed": 102,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "히실렌스:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "히실렌스:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "히실렌스:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "히실렌스:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -4264,6 +7325,7 @@
       "characterId": "Hyacine_00",
       "avatarId": "1409",
       "displayName": "히아킨",
+      "path": "memory",
       "sourceCharacter": "히아킨",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -4273,6 +7335,40 @@
         "speed": 110,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "히아킨:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "히아킨:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "히아킨:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "히아킨:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -4315,6 +7411,7 @@
       "characterId": "Dr_Ratio_00",
       "avatarId": "1305",
       "displayName": "Dr. 레이시오",
+      "path": "hunt",
       "sourceCharacter": "Dr. 레이시오",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -4324,6 +7421,40 @@
         "speed": 103,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "Dr. 레이시오:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "Dr. 레이시오:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "Dr. 레이시오:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "Dr. 레이시오:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -4366,6 +7497,7 @@
       "characterId": "Mar_7th_00",
       "avatarId": "1001",
       "displayName": "Mar. 7th",
+      "path": "preservation",
       "sourceCharacter": "Mar. 7th",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -4375,6 +7507,40 @@
         "speed": 101,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "Mar. 7th:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "Mar. 7th:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "Mar. 7th:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "Mar. 7th:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {
@@ -4417,6 +7583,7 @@
       "characterId": "Mar_7th_10",
       "avatarId": "1224",
       "displayName": "Mar. 7th•수렵",
+      "path": "hunt",
       "sourceCharacter": "Mar. 7th•수렵",
       "sourceStatus": "matched_identity",
       "baseStats": {
@@ -4426,6 +7593,40 @@
         "speed": 102,
         "critRate": 0.05,
         "critDamage": 0.5
+      },
+      "baseStatSources": {
+        "hp": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "Mar. 7th•수렵:level80.hp",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "atk": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "Mar. 7th•수렵:level80.atk",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "def": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "Mar. 7th•수렵:level80.def",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "speed": {
+          "sourceOrigin": "hoyowiki",
+          "sourcePath": "C:\\CODEX\\HSR RELIC CC\\data\\game-db\\hoyowiki-character-base-stats.json",
+          "sourceRecord": "Mar. 7th•수렵:level80.speed",
+          "gameDataStatus": "hoyowiki-level80-confirmed"
+        },
+        "critRate": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critRate"
+        },
+        "critDamage": {
+          "sourceOrigin": "global-hsr-default",
+          "sourceRecord": "global-hsr-default:critDamage"
+        }
       },
       "traceEntries": [
         {

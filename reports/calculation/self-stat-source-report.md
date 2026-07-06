@@ -8,5 +8,5 @@
 - characters: 90
 - matchedIdentity: 90
 - unmatchedIdentity: 0
-- traceEntries: 257
+- traceEntries: 261
 - relicSets: 58

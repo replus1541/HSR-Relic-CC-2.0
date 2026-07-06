@@ -5,28 +5,36 @@ import characterIdentity from "../data/generated/character-identity.json" with {
 const root = path.resolve(".");
 const legacyRoot = "C:\\CODEX\\HSR RELIC CC";
 const legacyStatPath = path.join(legacyRoot, "data", "game-db", "character-stat-baseline.json");
+const legacyHoyowikiBaseStatsPath = path.join(legacyRoot, "data", "game-db", "hoyowiki-character-base-stats.json");
 const legacyRelicPath = path.join(legacyRoot, "src", "generated-relics.json");
 const characterOutPath = path.join(root, "data", "generated", "character-stat-baseline.json");
 const equipmentOutPath = path.join(root, "data", "generated", "equipment-stat-model.json");
 const reportPath = path.join(root, "reports", "calculation", "self-stat-source-report.md");
 
 const legacyStats = readJson(legacyStatPath);
+const legacyHoyowikiBaseStats = fs.existsSync(legacyHoyowikiBaseStatsPath)
+  ? readJson(legacyHoyowikiBaseStatsPath)
+  : { characters: [] };
 const legacyRelics = readJson(legacyRelicPath);
 const identityIndex = buildIdentityIndex(characterIdentity.rows ?? []);
+const hoyowikiBaseStatIndex = buildHoyowikiBaseStatIndex(legacyHoyowikiBaseStats.characters ?? []);
 
 const statRows = [];
 const unmatchedStats = [];
 for (const record of legacyStats.characters ?? []) {
   const identity = findIdentity(record);
+  const hoyowikiBaseRecord = findHoyowikiBaseRecord(record, identity);
   if (!identity) unmatchedStats.push(record.nameKo ?? record.officialName ?? record.avatar);
   statRows.push({
     characterId: identity?.characterId ?? record.avatar ?? null,
     avatarId: identity?.internalId ?? record.avatarId ?? null,
     displayName: identity?.displayName ?? record.nameKo ?? record.officialName ?? record.avatar,
+    path: identity?.path ?? record.path ?? hoyowikiBaseRecord?.path ?? null,
     sourceCharacter: record.nameKo ?? record.officialName ?? record.avatar,
     sourceStatus: identity ? "matched_identity" : "unmatched_identity",
-    baseStats: getBaseStats(record),
-    traceEntries: getTraceEntries(record),
+    baseStats: getBaseStats(record, identity, hoyowikiBaseRecord),
+    baseStatSources: getBaseStatSources(record, identity, hoyowikiBaseRecord),
+    traceEntries: getTraceEntries(record).concat(getManualElationTraceEntries(identity)),
     traceStatus: record.traceAdditionalStats?.status ?? "unknown",
   });
 }
@@ -41,11 +49,13 @@ const characterOutput = {
   generatedAt: new Date().toISOString(),
   source: {
     legacyCharacterStatBaseline: legacyStatPath,
+    legacyHoyowikiBaseStats: legacyHoyowikiBaseStatsPath,
     identity: "data/generated/character-identity.json",
   },
   policy: {
     level: 80,
     critDefaultsIncluded: true,
+    elationTraceSupplements: "source-backed HoyoWiki elation trace bonus rows are added when legacy trace extraction missed elation stat tokens",
     traceAdditionalStatsIncluded: true,
     combatBuffsExcluded: true,
   },
@@ -54,6 +64,7 @@ const characterOutput = {
     matchedIdentity: statRows.filter((row) => row.sourceStatus === "matched_identity").length,
     unmatchedIdentity: unmatchedStats.length,
     traceEntries: statRows.reduce((total, row) => total + row.traceEntries.length, 0),
+    hoyowikiElationTraceSupplements: statRows.reduce((total, row) => total + row.traceEntries.filter((entry) => entry.sourceOrigin === "hoyowiki-trace-elation-supplement").length, 0),
   },
   unmatchedSourceCharacters: unmatchedStats,
   rows: statRows,
@@ -107,6 +118,16 @@ function buildIdentityIndex(rows) {
   return index;
 }
 
+function buildHoyowikiBaseStatIndex(rows) {
+  const byEntryPageId = new Map();
+  const byName = new Map();
+  for (const row of rows) {
+    if (row.entryPageId != null) byEntryPageId.set(String(row.entryPageId), row);
+    if (row.nameKo) byName.set(normalizeKey(row.nameKo), row);
+  }
+  return { byEntryPageId, byName };
+}
+
 function findIdentity(record) {
   const aliases = {
     기억척자: "개척자 • 기억",
@@ -126,7 +147,18 @@ function findIdentity(record) {
   return null;
 }
 
-function getBaseStats(record) {
+function findHoyowikiBaseRecord(record, identity = null) {
+  const entryPageId = identity?.identifiers?.hoyowikiEntryPageId ?? record.entryPageId ?? null;
+  if (entryPageId != null) {
+    const byEntry = hoyowikiBaseStatIndex.byEntryPageId.get(String(entryPageId));
+    if (byEntry) return byEntry;
+  }
+  return hoyowikiBaseStatIndex.byName.get(normalizeKey(record.nameKo))
+    ?? hoyowikiBaseStatIndex.byName.get(normalizeKey(record.officialName))
+    ?? null;
+}
+
+function getBaseStats(record, identity = null, hoyowikiBaseRecord = null) {
   const base = record.baseCombatDefaults ?? {};
   return {
     hp: numberOrNull(base.hp?.value),
@@ -136,6 +168,29 @@ function getBaseStats(record) {
     critRate: numberOrDefault(base.critRate?.value, 0.05),
     critDamage: numberOrDefault(base.critDamage?.value, 0.5),
   };
+}
+
+function getBaseStatSources(record, identity = null, hoyowikiBaseRecord = null) {
+  const base = record.baseCombatDefaults ?? {};
+  const entryPageId = identity?.identifiers?.hoyowikiEntryPageId ?? hoyowikiBaseRecord?.entryPageId ?? null;
+  const sources = {};
+  for (const stat of ["hp", "atk", "def", "speed"]) {
+    sources[stat] = {
+      sourceOrigin: base[stat]?.source ?? "hoyowiki",
+      sourcePath: legacyHoyowikiBaseStatsPath,
+      sourceRecord: `${hoyowikiBaseRecord?.nameKo ?? record.nameKo ?? record.avatar}:level80.${stat}`,
+      gameDataStatus: base[stat]?.gameDataStatus ?? hoyowikiBaseRecord?.status ?? null,
+    };
+  }
+  sources.critRate = {
+    sourceOrigin: base.critRate?.source ?? "global-hsr-default",
+    sourceRecord: "global-hsr-default:critRate",
+  };
+  sources.critDamage = {
+    sourceOrigin: base.critDamage?.source ?? "global-hsr-default",
+    sourceRecord: "global-hsr-default:critDamage",
+  };
+  return sources;
 }
 
 function getTraceEntries(record) {
@@ -157,6 +212,52 @@ function getTraceEntries(record) {
       };
     })
     .filter(Boolean);
+}
+
+function getManualElationTraceEntries(identity = null) {
+  const config = getManualElationTraceConfig(identity?.characterId);
+  if (!config || !Number.isFinite(config.value) || config.value <= 0) return [];
+  return [{
+    stat: "elation",
+    value: config.value,
+    sourceType: "행적 추가스탯",
+    sourceKind: "trace",
+    source: config.source,
+    label: "환락도",
+    sourceOrigin: "hoyowiki-trace-elation-supplement",
+    sourceRecord: config.sourceRecord,
+    sourceText: config.sourceText,
+    conditionStatus: "always-on",
+  }];
+}
+
+function getManualElationTraceConfig(characterId) {
+  return {
+    SilverWolf999_00: {
+      value: 10,
+      source: "환락도 강화 / 환락도 강화",
+      sourceRecord: "HoyoWiki:4997:P12+P16:elation:4+6",
+      sourceText: "환락도 강화 4.0% 증가 / 환락도 강화 환락도 6.0% 증가",
+    },
+    Evanescia_00: {
+      value: 18,
+      source: "환락도 강화 / 환락도 강화 / 환락도 강화",
+      sourceRecord: "HoyoWiki:5005:P10+P14+P17:elation:4+6+8",
+      sourceText: "환락도 강화 환락도 4.0% 증가 / 6.0% 증가 / 8.0% 증가",
+    },
+    Sparxie_00: {
+      value: 28,
+      source: "환락도 강화 / 환락도 강화 / 환락도 강화 / 환락도 강화 / 환락도 강화",
+      sourceRecord: "HoyoWiki:4737:P09+P11+P13+P15+P18:elation:4+4+6+6+8",
+      sourceText: "환락도 강화 환락도 4.0% 증가 / 4.0% 증가 / 6.0% 증가 / 6.0% 증가 / 8.0% 증가",
+    },
+    YaoGuang_00: {
+      value: 10,
+      source: "환락도 강화 / 환락도 강화",
+      sourceRecord: "HoyoWiki:4736:P12+P16:elation:4+6",
+      sourceText: "환락도 강화 환락도 4.0% 증가 / 6.0% 증가",
+    },
+  }[characterId] ?? null;
 }
 
 function getRepresentativeTraceSource(bonus) {
@@ -210,6 +311,17 @@ function extractPercentNear(text, keywords) {
   return 0;
 }
 
+function extractNumberNear(text, keywords) {
+  for (const keyword of keywords) {
+    const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const after = new RegExp(`${escaped}[^%]{0,40}?(\\d+(?:\\.\\d+)?)\\s*%?`, "i").exec(text);
+    if (after) return Number(after[1]);
+    const before = new RegExp(`(\\d+(?:\\.\\d+)?)\\s*%?[^%]{0,18}?${escaped}`, "i").exec(text);
+    if (before) return Number(before[1]);
+  }
+  return 0;
+}
+
 function addRelicStat(stats, stat, value) {
   if (Number.isFinite(value) && value > 0) stats[stat] = value;
 }
@@ -224,6 +336,7 @@ function inferRelicStats(relic, effectTypes = null) {
   addRelicStat(stats, "defRatio", extractPercentNear(text, ["방어력이", "방어력 증가", "방어력은"]));
   addRelicStat(stats, "critRate", extractPercentNear(text, ["치명타 확률"]));
   addRelicStat(stats, "critDamage", extractPercentNear(text, ["치명타 피해"]));
+  addRelicStat(stats, "elation", extractNumberNear(text, ["환락도"]));
   addRelicStat(stats, "breakEffect", extractPercentNear(text, ["격파 특수효과", "격파 특수 효과"]));
   addRelicStat(stats, "breakDamage", extractPercentNear(text, ["격파 피해", "슈퍼 격파 피해"]));
   addRelicStat(stats, "dotDamage", extractPercentNear(text, ["지속 피해"]));
@@ -238,6 +351,7 @@ function inferRelicStats(relic, effectTypes = null) {
 function getRelicSetModelOverrides() {
   return {
   "wiki-relic-144": { stats: { hpRatio: 0.12 }, twoPieceStats: { hpRatio: 0.12 } },
+  "wiki-relic-147": { stats: { atkRatio: 0.12 }, twoPieceStats: { atkRatio: 0.12 }, fourPieceStats: {} },
   "wiki-relic-1235": { stats: { effectResistance: 0.1 }, twoPieceStats: { effectResistance: 0.1 } },
   "wiki-relic-1237": { stats: { speedRatio: 0.06 }, twoPieceStats: { speedRatio: 0.06 }, fourPieceStats: {} },
   "wiki-relic-1598": { stats: { energyRegen: 0.05 }, twoPieceStats: { energyRegen: 0.05 } },
@@ -251,6 +365,7 @@ function getRelicSetModelOverrides() {
   "wiki-relic-4012": { stats: { critRate: 0.08, hpRatio: 0.24 }, twoPieceStats: { critRate: 0.08 }, fourPieceStats: { hpRatio: 0.24 } },
   "wiki-relic-4013": { stats: {}, twoPieceStats: {}, fourPieceStats: {} },
   "wiki-relic-4068": { stats: { critRate: 0.08 }, twoPieceStats: { critRate: 0.08 } },
+  "wiki-relic-4769": { stats: { speedRatio: 0.06, critRate: 0.1 }, twoPieceStats: { speedRatio: 0.06 }, fourPieceStats: { critRate: 0.1 } },
   "wiki-relic-5009": { stats: { atkRatio: 0.24 }, twoPieceStats: { atkRatio: 0.24 } },
   };
 }

@@ -3065,13 +3065,12 @@
       "sourceId": "source:Welt_00:3",
       "stat": "defenseDown",
       "valueTrace": {
-        "resolver": "skill_level_scaled",
-        "source": "adapter_rawValue",
-        "skillLevel": 10
+        "resolver": "fixed",
+        "source": "rawValue"
       },
       "dedupeKey": "pending_dedupe:Welt_00:source:Welt_00:3:defenseDown:debuff:enemy_single",
       "calculationStatus": "calculation_ready",
-      "resolvedValue": 0.16
+      "resolvedValue": 0.4
     },
     {
       "id": "resolved:effect:Welt_00:4",
@@ -3090,6 +3089,19 @@
       "dedupeKey": "pending_dedupe:Welt_00:source:Welt_00:4:allDamage:buff:all_allies",
       "calculationStatus": "blocked",
       "blockedReason": "condition_policy_missing"
+    },
+    {
+      "id": "resolved:effect:Welt_00:5",
+      "effectRowId": "effect:Welt_00:5",
+      "sourceId": "source:Welt_00:5",
+      "stat": "speed",
+      "valueTrace": {
+        "resolver": "fixed",
+        "source": "rawValue"
+      },
+      "dedupeKey": "pending_dedupe:Welt_00:source:Welt_00:5:speed:debuff:enemy_single",
+      "calculationStatus": "calculation_ready",
+      "resolvedValue": -0.05
     },
     {
       "id": "resolved:effect:Silwolf_00:0",

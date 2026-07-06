@@ -238,7 +238,7 @@ const statLabels = {
   trueDamageRatio: "확정피해",
   specialFinal: "확정피해",
   elation: "환락도",
-  merrymake: "Merrymake",
+  merrymake: "증소",
   resistancePenetration: "속관",
   resistancePen: "속관",
   defenseIgnore: "방무",
@@ -409,8 +409,11 @@ function serializePartySlot(slot) {
 }
 
 function migratePersistedDefaultEquipment(slot = {}) {
-  if (slot.characterId !== "YaoGuang_00") return slot;
   const next = { ...slot };
+  if (next.characterId === "SilverWolf999_00" && isLegacySilverWolf999LightCone(next.lightconeId)) {
+    next.lightconeId = "wiki-5218";
+  }
+  if (next.characterId !== "YaoGuang_00") return next;
   if (next.lightconeId === "wiki-5219") {
     next.lightconeId = "wiki-4779";
   }
@@ -422,6 +425,10 @@ function migratePersistedDefaultEquipment(slot = {}) {
     next.relicSet4Mode = "4";
   }
   return next;
+}
+
+function isLegacySilverWolf999LightCone(lightconeId) {
+  return new Set(["wiki-5220", "wiki-77", "wiki-54", "wiki-47"]).has(lightconeId);
 }
 
 function restorePersistedParty(persistedParty, fallbackParty) {

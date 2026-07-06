@@ -19,7 +19,7 @@ const payload = {
   version: 1,
   activeSlotId: "slot-1",
   enemy: { count: 3, level: 95, toughness: 90, resistance: 20 },
-  partySpecificSettings: { elationCertifiedBangerStacks: 240, elationMerrymake: 0.2 },
+  partySpecificSettings: { "elationCertifiedBangerStacks:Sparxie_00": 240, "elationCertifiedBangerStacks:PlayerBoy_40": 120, "elationCertifiedBangerStacks:YaoGuang_00": 80 },
   party: [
     { slotId: "slot-1", characterId: "Sparxie_00", eidolon: 0, lightconeRank: 1 },
     { slotId: "slot-2", characterId: "PlayerBoy_40", eidolon: 0, lightconeRank: 1 },
@@ -38,23 +38,24 @@ await page.goto(url);
 await page.getByRole("button", { name: "스탯 / 데미지 계산" }).click();
 await page.waitForSelector(".calc-party-settings-panel", { timeout: 5000 });
 const text = await page.locator(".calc-party-settings-panel").innerText();
-const hasCertifiedBanger = text.includes("Certified Banger");
+const hasCertifiedBanger = text.includes("웃음포인트");
 const hasMerrymake = text.includes("Merrymake");
+const hasMerrymakeKo = text.includes("증소");
 await page.screenshot({ path: path.join(outDir, "v2-elation-settings-mobile-390.png"), fullPage: true });
 await page.getByRole("button", { name: "조건부 비교" }).click();
-await page.waitForSelector(".calc-condition-delta-strip", { timeout: 5000 });
+await page.waitForSelector(".calc-condition-compare", { timeout: 5000 });
 const conditionText = await page.locator(".calc-condition-compare").innerText();
-const hasConditionCertifiedBanger = conditionText.includes("Certified Banger");
+const hasConditionCertifiedBanger = conditionText.includes("웃음포인트");
 const hasConditionMerrymake = conditionText.includes("Merrymake");
-const hasConditionDelta = conditionText.includes("기준 피해") && conditionText.includes("비교 피해") && conditionText.includes("변화량");
+const hasConditionMerrymakeKo = conditionText.includes("증소");
 await page.screenshot({ path: path.join(outDir, "v2-condition-elation-settings-mobile-390.png"), fullPage: true });
 await browser.close();
 
-if (!hasCertifiedBanger || !hasMerrymake) {
-  throw new Error(`elation settings missing: Certified=${hasCertifiedBanger}, Merrymake=${hasMerrymake}`);
+if (!hasCertifiedBanger || hasMerrymake || hasMerrymakeKo) {
+  throw new Error(`elation settings missing: Certified=${hasCertifiedBanger}, Merrymake=${hasMerrymake}, 증소=${hasMerrymakeKo}`);
 }
-if (!hasConditionCertifiedBanger || !hasConditionMerrymake || !hasConditionDelta) {
-  throw new Error(`condition compare settings missing: Certified=${hasConditionCertifiedBanger}, Merrymake=${hasConditionMerrymake}, Delta=${hasConditionDelta}`);
+if (!hasConditionCertifiedBanger || hasConditionMerrymake || hasConditionMerrymakeKo) {
+  throw new Error(`condition compare settings missing: Certified=${hasConditionCertifiedBanger}, Merrymake=${hasConditionMerrymake}, 증소=${hasConditionMerrymakeKo}`);
 }
 
-console.log("elation settings ui ok: Certified Banger and Merrymake controls visible in stats and condition compare");
+console.log("elation settings ui ok: per-character 웃음포인트 visible and manual 증소 hidden");

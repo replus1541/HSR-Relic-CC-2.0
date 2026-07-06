@@ -25,6 +25,7 @@ const statBuffKeys = new Set([
   "followDamage",
   "dotDamage",
   "breakDamage",
+  "elation",
   "dealtCritDamage",
   "followCritDamage",
   "specialFinal",
@@ -42,7 +43,6 @@ const damageModifierKeys = new Set([
   "dealtCritDamage",
   "followCritDamage",
   "specialFinal",
-  "elation",
   "merrymake",
   "defenseIgnore",
   "resistancePen",
@@ -871,6 +871,77 @@ function applyRuntimeSourceStatResolution(row, {
       sourceStat: "speed",
       ratio: 0.15,
       sourceStatPolicy: "ownerSelfAndAllyWideReadyBuffs",
+    });
+  }
+  if (row.ownerId === "SilverWolf999_00" && row.stat === "elation" && effectRowId === "effect:SilverWolf999_00:supplement:P06:elationBySpeed") {
+    const ownerSpeed = Number(runtimeStatsByCharacterId?.get(row.ownerId)?.speed ?? selfByCharacterId?.get(row.ownerId)?.stats?.speed ?? 0);
+    const extraSpeed = Math.floor(Math.max(0, ownerSpeed - 160));
+    const value = ownerSpeed >= 160 ? 50 + Math.min(100, extraSpeed) * 2 : 0;
+    return markRuntimeResolved(row, value, {
+      type: "sourceSpeedThresholdStep",
+      sourceStat: "speed",
+      threshold: 160,
+      baseValue: 50,
+      step: 1,
+      stepValue: 2,
+      capSourceOver: 100,
+      sourceStatPolicy: "ownerSelfAndAllyWideReadyBuffs",
+      sourceStatValue: ownerSpeed,
+    });
+  }
+  if (row.ownerId === "Sparxie_00" && row.stat === "elation" && effectRowId === "effect:Sparxie_00:supplement:P06:elationByAtk") {
+    const ownerAtk = Number(runtimeStatsByCharacterId?.get(row.ownerId)?.atk ?? selfByCharacterId?.get(row.ownerId)?.stats?.atk ?? 0);
+    const value = Math.min(80, Math.max(0, Math.floor((ownerAtk - 2000 + 1e-9) / 100) * 5));
+    return markRuntimeResolved(row, value, {
+      type: "sourceAtkThresholdStep",
+      sourceStat: "atk",
+      threshold: 2000,
+      step: 100,
+      stepValue: 5,
+      cap: 80,
+      sourceStatPolicy: "ownerSelfAndAllyWideReadyBuffs",
+      sourceStatValue: ownerAtk,
+    });
+  }
+  if (row.ownerId === "PlayerBoy_40" && row.stat === "elation" && effectRowId === "effect:PlayerBoy_40:supplement:P06:elationByAtk") {
+    const ownerAtk = Number(runtimeStatsByCharacterId?.get(row.ownerId)?.atk ?? selfByCharacterId?.get(row.ownerId)?.stats?.atk ?? 0);
+    const value = Math.min(60, Math.max(0, Math.floor((ownerAtk - 1000 + 1e-9) / 200) * 10));
+    return markRuntimeResolved(row, value, {
+      type: "sourceAtkThresholdStep",
+      sourceStat: "atk",
+      threshold: 1000,
+      step: 200,
+      stepValue: 10,
+      cap: 60,
+      sourceStatPolicy: "ownerSelfAndAllyWideReadyBuffs",
+      sourceStatValue: ownerAtk,
+    });
+  }
+  if (row.ownerId === "Evanescia_00" && row.stat === "elation" && effectRowId === "effect:Evanescia_00:supplement:P04:elationByCritDamage") {
+    const ownerCritDamage = Number(runtimeStatsByCharacterId?.get(row.ownerId)?.critDamage ?? selfByCharacterId?.get(row.ownerId)?.stats?.critDamage ?? 0);
+    const value = ownerCritDamage * 20;
+    return markRuntimeResolved(row, value, {
+      type: "sourceStatRatio",
+      sourceStat: "critDamage",
+      ratio: 20,
+      sourceStatPolicy: "ownerSelfAndAllyWideReadyBuffs",
+      sourceStatValue: ownerCritDamage,
+    });
+  }
+  if (row.ownerId === "YaoGuang_00" && row.stat === "elation" && effectRowId === "effect:YaoGuang_00:supplement:P06:elationBySpeed") {
+    const ownerSpeed = Number(runtimeStatsByCharacterId?.get(row.ownerId)?.speed ?? selfByCharacterId?.get(row.ownerId)?.stats?.speed ?? 0);
+    const extraSpeed = Math.floor(Math.max(0, ownerSpeed - 120));
+    const value = ownerSpeed >= 120 ? 30 + Math.min(200, extraSpeed) : 0;
+    return markRuntimeResolved(row, value, {
+      type: "sourceSpeedThresholdStep",
+      sourceStat: "speed",
+      threshold: 120,
+      baseValue: 30,
+      step: 1,
+      stepValue: 1,
+      capSourceOver: 200,
+      sourceStatPolicy: "ownerSelfAndAllyWideReadyBuffs",
+      sourceStatValue: ownerSpeed,
     });
   }
   if (row.ownerId === "Cerydra_00" && row.stat === "critDamage" && sourceTrace.includes("source-atk-threshold-crit-damage")) {

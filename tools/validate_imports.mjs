@@ -105,6 +105,13 @@ function validateSelfStatSources(characterPayload, equipmentPayload, identityPay
   for (const requiredSet of ["wiki-relic-2655", "wiki-relic-2650"]) {
     if (!equipmentPayload.relicSets.some((row) => row.id === requiredSet)) errors.push(`equipment model missing ${requiredSet}`);
   }
+  const spaceStation = equipmentPayload.relicSets.find((row) => row.id === "wiki-relic-147");
+  if (!spaceStation) {
+    errors.push("equipment model missing wiki-relic-147");
+  } else {
+    if (Number(spaceStation.twoPieceStats?.atkRatio) !== 0.12) errors.push("space sealing station must grant atkRatio 0.12");
+    if (spaceStation.twoPieceStats?.speedRatio) errors.push("space sealing station must not grant speedRatio");
+  }
   return { ok: errors.length === 0, errors };
 }
 

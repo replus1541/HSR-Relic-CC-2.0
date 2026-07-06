@@ -76,16 +76,22 @@ const rows = [...groups.values()]
       sourceText: formulaSourceText,
       rowSourceText,
     });
+    const attackType = resolveDamageAttackType({
+      baseAttackType: group.attackType,
+      identity,
+      sourceText: formulaSourceText,
+      rowSourceText,
+    });
     const levelBonuses = buildLevelBonuses(hoyowiki, skillLevelType);
     const scalingStatLabel = inferScalingStatLabel({ sourceSkill, rowSourceText, scalingStat: primaryStat });
-    return {
+    return applySkillDamageMetadataOverrides({
       id: [group.characterId, group.skillId, group.attackType].join(":"),
       characterId: group.characterId,
       displayName: identity?.displayName ?? group.characterId,
       element: identity?.element ?? null,
       skillId: group.skillId,
       title: sourceSkill?.title ?? fallbackSkillTitle(group.attackType, group.skillId),
-      attackType: group.attackType,
+      attackType,
       damageFormulaType,
       formulaClassificationSource: classifyFormulaSource(damageFormulaType, formulaSourceText, profile?.uiTypeProfile),
       skillLevelType,
@@ -101,7 +107,7 @@ const rows = [...groups.values()]
       eidolonLevelBonuses: levelBonuses,
       partPolicy: group.partRows.length ? "row_parts_preferred_over_main" : "main_row_fallback",
       parts,
-    };
+    });
   })
   .sort((a, b) => a.displayName.localeCompare(b.displayName, "ko") || a.skillId.localeCompare(b.skillId) || a.attackType.localeCompare(b.attackType));
 
@@ -155,6 +161,19 @@ fs.writeFileSync(reportPath, [
 
 console.log(`skill damage metadata generated: rows=${output.summary.rows}, characters=${output.summary.characters}, parts=${output.summary.coefficientParts}`);
 
+function applySkillDamageMetadataOverrides(row) {
+  if (row.characterId === "SilverWolf999_00" && row.skillId === "SilverWolf999_00:Skill01") {
+    return {
+      ...row,
+      targetProfile: "single",
+      targetScope: "single",
+      partPolicy: "manual_basic_attack_single_part",
+      parts: (row.parts ?? []).slice(0, 1),
+    };
+  }
+  return row;
+}
+
 function readJson(path) {
   return JSON.parse(fs.readFileSync(path, "utf8"));
 }
@@ -191,6 +210,17 @@ function attackTypeToSkillLevelType(attackType) {
   if (attackType === "skill") return "combatSkill";
   if (attackType === "ultimate") return "ultimate";
   return "talent";
+}
+
+function resolveDamageAttackType({ baseAttackType, identity, sourceText, rowSourceText }) {
+  const text = [sourceText, rowSourceText].filter(Boolean).join("\n");
+  const isMemoryCharacter = String(identity?.path ?? "").toLowerCase() === "memory";
+  const hasMemospriteDamage =
+    /기억\s*정령[^\n]*(피해|공격력|HP\s*최대치)/.test(text)
+    || /미미\s*공격력/.test(text)
+    || (isMemoryCharacter && /memosprite/i.test(text));
+  if (hasMemospriteDamage) return "memosprite";
+  return baseAttackType;
 }
 
 function resolveDamageFormulaType({ characterId, attackType, damageTemplate, evaluationTemplateKey, sourceText, rowSourceText }) {

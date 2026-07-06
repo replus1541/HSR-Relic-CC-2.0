@@ -14,6 +14,7 @@ const baseDefaultStats = {
   speed: 100,
   critRate: 0.05,
   critDamage: 0.5,
+  elation: 0,
 };
 
 export function calculateSelfEquipmentStats({
@@ -76,6 +77,7 @@ function buildBaseStats(characterBase = {}, lightConeBase = {}) {
     speed: valueOf(characterBase.speed, baseDefaultStats.speed),
     critRate: valueOf(characterBase.critRate, baseDefaultStats.critRate),
     critDamage: valueOf(characterBase.critDamage, baseDefaultStats.critDamage),
+    elation: valueOf(characterBase.elation, baseDefaultStats.elation),
   };
 }
 
@@ -112,8 +114,8 @@ function resolveRankedBonus(bonusRanks = {}, rank = 1, fallback = {}) {
 function buildRelicEntries(slot, defaultBuild, model) {
   const relicBuild = {
     set4Id: findRelicSetId(model, slot?.relicSet4Name, defaultBuild?.selectedRelics?.set4?.id),
-    set4AltId: defaultBuild?.selectedRelics?.set4Alt?.id ?? null,
-    set4Mode: defaultBuild?.selectedRelics?.set4Mode ?? "4",
+    set4AltId: findRelicSetId(model, slot?.relicSet4AltName, defaultBuild?.selectedRelics?.set4Alt?.id),
+    set4Mode: slot?.relicSet4Mode ?? defaultBuild?.selectedRelics?.set4Mode ?? "4",
     set2Id: findRelicSetId(model, slot?.relicSet2Name, defaultBuild?.selectedRelics?.set2?.id),
     mainStats: slot?.relicMainStats ?? defaultBuild?.mainStats ?? {},
     pieces: slot?.relicPieces ?? defaultBuild?.pieces ?? {},
@@ -217,11 +219,13 @@ function buildFinalStats(base, totals) {
     followDamage: valueOf(totals.followDamage),
     dotDamage: valueOf(totals.dotDamage),
     breakDamage: valueOf(totals.breakDamage),
+    elation: valueOf(base.elation) + valueOf(totals.elation),
+    merrymake: valueOf(totals.merrymake),
   };
 }
 
 function isPercentStat(stat) {
-  return !["hp", "atk", "def", "speed", "hpFlat", "atkFlat", "defFlat"].includes(stat);
+  return !["hp", "atk", "def", "speed", "hpFlat", "atkFlat", "defFlat", "elation"].includes(stat);
 }
 
 function formatNumber(value, digits = 0) {

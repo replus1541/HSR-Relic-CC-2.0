@@ -178,6 +178,7 @@ function parseSourceEffects({ character, characterId, displayName, source, text 
   applyPattern(sourceText, /방어력(?:이|가|을|를)?\s*(\d+(?:\.\d+)?)%\s*증가/g, (match) => add("defRatio", percent(match[1]), match.index));
   applyPattern(sourceText, /속도(?:가|이|을|를)?\s*(\d+(?:\.\d+)?)%\s*증가/g, (match) => add("speedRatio", percent(match[1]), match.index));
   applyPattern(sourceText, /속도(?:가|이|을|를)?\s*(\d+(?:\.\d+)?)\s*pt\s*증가/g, (match) => add("speed", Number(match[1]), match.index));
+  applyPattern(sourceText, /환락도(?:가|이|을|를)?\s*(?:추가로\s*)?(\d+(?:\.\d+)?)%\s*증가/g, (match) => add("elation", Number(match[1]), match.index));
 
   applyPattern(sourceText, /필살기[^.。|]{0,40}?피해(?:가|이|을|를)?\s*(\d+(?:\.\d+)?)%\s*증가/g, (match) => add("ultimateDamage", percent(match[1]), match.index));
   applyPattern(sourceText, /전투\s*스킬[^.。|]{0,40}?피해(?:가|이|을|를)?\s*(\d+(?:\.\d+)?)%\s*증가/g, (match) => add("skillDamage", percent(match[1]), match.index));
@@ -506,6 +507,7 @@ function countBy(rows, keyGetter) {
 
 function formatValue(stat, value) {
   if (stat === "speed") return String(value);
+  if (stat === "elation") return Number.isInteger(Number(value)) ? String(Number(value)) : String(Number(value).toFixed(1));
   return `${(Number(value) * 100).toFixed(1)}%`;
 }
 

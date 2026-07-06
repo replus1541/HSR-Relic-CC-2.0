@@ -8,12 +8,15 @@ const primaryStatKeys = {
   critDamage: ["critDamage"],
   effectHitRate: ["effectHitRate"],
   speed: ["speed", "speedRatio"],
+  elation: ["elation"],
 };
 
 const damageTemplateDefinitions = {
   crit: { usesCrit: true, usesDamageBonus: true },
   "crit-follow": { usesCrit: true, usesDamageBonus: true },
   "crit-summon": { usesCrit: true, usesDamageBonus: true },
+  "elation-crit": { usesCrit: true, usesDamageBonus: false },
+  "elation-support": { usesCrit: true, usesDamageBonus: false },
   dot: { usesCrit: false, usesDamageBonus: true },
   break: { usesCrit: false, usesDamageBonus: false },
   support: { usesCrit: false, usesDamageBonus: false },
@@ -21,7 +24,7 @@ const damageTemplateDefinitions = {
 };
 
 const damageBonusRows = [
-  { key: "basicDamageTotal", label: "일반공격 피해증가", attackStat: "basicDamage" },
+  { key: "basicDamageTotal", label: "일반공격 피증", attackStat: "basicDamage" },
   { key: "skillDamageTotal", label: "전스피증", attackStat: "skillDamage" },
   { key: "ultimateDamageTotal", label: "궁피증", attackStat: "ultimateDamage" },
   { key: "followDamageTotal", label: "추가공격 피해증가", attackStat: "followDamage" },
@@ -67,10 +70,13 @@ export function buildBattleStatEvaluation({
   const finalStats = battleResult.finalStats ?? {};
   const templateKey = customTypeProfile?.uiTypeProfile?.damageTemplate ?? "crit";
   const template = damageTemplateDefinitions[templateKey] ?? damageTemplateDefinitions.crit;
-  const primaryStat = normalizePrimaryStat(customTypeProfile?.uiTypeProfile?.primaryStat, templateKey);
+  const elationProfile = isElationProfile(customTypeProfile);
+  const activeCharacterId = battleResult.activeCharacter?.characterId ?? null;
+  const primaryStat = elationProfile ? "elation" : normalizePrimaryStat(customTypeProfile?.uiTypeProfile?.primaryStat, templateKey);
   const sourceRows = buildEvaluationSourceRows(battleResult);
   const entriesByStat = groupRowsByStat(sourceRows);
   const hasRows = (stats) => stats.some((stat) => (entriesByStat.get(stat) ?? []).length);
+  const elationValue = Number(finalStats.elation ?? 0) + Number(battleResult.damageModifiers?.elation ?? 0);
   const row = (key, label, value, statKeys, evaluationResult = { level: "neutral" }, options = {}) => ({
     key,
     label,
@@ -86,21 +92,28 @@ export function buildBattleStatEvaluation({
     row("primary", primaryLabel(primaryStat), finalStats[primaryStat], primaryStatKeys[primaryStat] ?? [primaryStat], { level: "neutral" }, { valueStat: primaryStat }),
     row("speed", "속도", finalStats.speed, ["speed", "speedRatio"]),
   ];
-  const showCritRows = template.usesCrit || hasRows(["critRate", "critDamage", "dealtCritDamage", "followCritDamage"]);
+  const elationPrimaryRows = [
+    row("elation", "환락도", elationValue, ["elation"]),
+    ...(activeCharacterId === "Sparxie_00"
+      ? [row("atk", primaryLabel("atk"), finalStats.atk, primaryStatKeys.atk, { level: "neutral" }, { valueStat: "atk" })]
+      : []),
+    row("speed", "속도", finalStats.speed, ["speed", "speedRatio"]),
+  ];
+  const showCritRows = template.usesCrit || hasRows(["critRate", "critDamage", "dealtCritDamage", "takenCritDamage", "followCritDamage"]);
   const critRows = showCritRows
     ? [
         row("critRate", "치확", finalStats.critRate, ["critRate"], getCritRateEvaluation(finalStats.critRate, finalStats)),
         row("critDamage", "치피", finalStats.critDamage, ["critDamage"]),
         ...(hasRows(["dealtCritDamage"]) ? [row("dealtCritDamage", "가하는 치명타 피해", finalStats.dealtCritDamage, ["dealtCritDamage"])] : []),
+        ...(hasRows(["takenCritDamage"]) ? [row("takenCritDamage", "받치피증", battleResult.enemyDebuffs?.takenCritDamage ?? 0, ["takenCritDamage"])] : []),
         ...(hasRows(["followCritDamage"]) ? [row("followCritDamage", "추가공격 치명타 피해", finalStats.followCritDamage, ["followCritDamage"])] : []),
       ]
     : [];
   const debuffRows = [
     ...(hasRows(["vulnerability"]) ? [row("vulnerability", "받피증", battleResult.enemyDebuffs?.vulnerability ?? battleResult.damageModifiers?.vulnerability ?? 0, ["vulnerability"])] : []),
     ...(hasRows(["defenseDown", "defenseIgnore"]) ? [row("defensePen", "방깎/방무", (battleResult.enemyDebuffs?.defenseDown ?? 0) + (battleResult.damageModifiers?.defenseIgnore ?? 0), ["defenseDown", "defenseIgnore"], getDefenseEvaluation((battleResult.enemyDebuffs?.defenseDown ?? 0) + (battleResult.damageModifiers?.defenseIgnore ?? 0)))] : []),
-    ...(hasRows(["resistancePen"]) ? [row("resistancePen", "속성 관통/감소", battleResult.damageModifiers?.resistancePen ?? 0, ["resistancePen"], getResistanceEvaluation(battleResult.damageModifiers?.resistancePen ?? 0, Number(enemy.resistance ?? 20) / 100))] : []),
-    ...(hasRows(["specialFinal"]) ? [row("specialFinal", "최종 피해", battleResult.damageModifiers?.specialFinal ?? 0, ["specialFinal"])] : []),
-    ...(hasRows(["takenCritDamage"]) ? [row("takenCritDamage", "받는 치피증", battleResult.enemyDebuffs?.takenCritDamage ?? 0, ["takenCritDamage"])] : []),
+    ...(hasRows(["resistancePen"]) ? [row("resistancePen", "속관/속깎", battleResult.damageModifiers?.resistancePen ?? 0, ["resistancePen"], getResistanceEvaluation(battleResult.damageModifiers?.resistancePen ?? 0, Number(enemy.resistance ?? 20) / 100))] : []),
+    ...(hasRows(["specialFinal"]) ? [row("specialFinal", "확정피해", battleResult.damageModifiers?.specialFinal ?? 0, ["specialFinal"])] : []),
   ];
   const supportRows = [
     ...(hasRows(["debuffCount"]) ? [row("debuffCount", "디버프 카운트", battleResult.damageModifiers?.debuffCount ?? battleResult.enemyDebuffs?.debuffCount ?? 0, ["debuffCount"])] : []),
@@ -108,11 +121,11 @@ export function buildBattleStatEvaluation({
     ...(hasRows(["effectResistance"]) ? [row("effectResistance", "효과 저항", finalStats.effectResistance, ["effectResistance"])] : []),
     ...(hasRows(["energyRegen"]) ? [row("energyRegen", "에너지 회복", finalStats.energyRegen, ["energyRegen"])] : []),
     ...(hasRows(["trueDamageRatio"]) ? [row("trueDamageRatio", "확정피해", battleResult.damageModifiers?.trueDamageRatio ?? 0, ["trueDamageRatio"])] : []),
-    ...(hasRows(["elation"]) ? [row("elation", "환락도", battleResult.damageModifiers?.elation ?? 0, ["elation"])] : []),
-    ...(hasRows(["merrymake"]) ? [row("merrymake", "Merrymake", battleResult.damageModifiers?.merrymake ?? 0, ["merrymake"])] : []),
+    ...(!elationProfile && hasRows(["elation"]) ? [row("elation", "환락도", battleResult.damageModifiers?.elation ?? 0, ["elation"])] : []),
   ];
   const primaryGroupRows = [
-    ...primaryRows,
+    ...(elationProfile ? elationPrimaryRows : primaryRows),
+    ...(hasRows(["merrymake"]) ? [row("merrymake", "증소", battleResult.damageModifiers?.merrymake ?? finalStats.merrymake ?? 0, ["merrymake"])] : []),
     ...(templateKey === "dot" ? [row("dotDamage", "지속피해 증가", finalStats.dotDamage, ["dotDamage"])] : []),
     ...(templateKey === "break" ? [
       row("breakEffect", "격특", finalStats.breakEffect, ["breakEffect"], Number(finalStats.breakEffect) < 1.5 ? { level: "notice", message: "격파 특수효과가 부족합니다.", compactMessage: "격특 낮음" } : { level: "neutral" }),
@@ -124,7 +137,7 @@ export function buildBattleStatEvaluation({
   const groups = [
     { key: "primaryStats", label: "주요 스탯", rows: primaryGroupRows },
   ];
-  if (template.usesDamageBonus) {
+  if (template.usesDamageBonus && !elationProfile) {
     const rows = damageBonusRows.map((item) => row(
       item.key,
       item.label,
@@ -138,6 +151,15 @@ export function buildBattleStatEvaluation({
   }
   if (supportRows.length) groups.push({ key: "supportStats", label: "보조 스탯", rows: supportRows });
   return { groups, sourceRows };
+}
+
+function isElationProfile(customTypeProfile) {
+  const relicProfile = customTypeProfile?.relicTypeProfile?.relicProfile;
+  const template = customTypeProfile?.uiTypeProfile?.damageTemplate;
+  const role = customTypeProfile?.uiTypeProfile?.roleClass ?? customTypeProfile?.uiTypeProfile?.displayTypeLabel;
+  return String(relicProfile ?? "").startsWith("elation")
+    || String(template ?? "").startsWith("elation")
+    || String(role ?? "").includes("환락");
 }
 
 export function buildDamageContributionViews({
@@ -155,14 +177,22 @@ export function buildDamageContributionViews({
       ...row,
       ...calculateContributionDelta(row, { battleResult, skillCards, skillRows, enemy, scenarioSettings }),
     }));
-  const characterRows = aggregateContributionRows(sourceRows, (row) => row.ownerLabel, (row) => row.contributionValue);
-  const statRows = aggregateContributionRows(sourceRows, (row) => row.effectiveStat ?? row.stat, (row) => row.contributionValue);
   const totalDamage = skillCards.reduce((sum, card) => sum + Number(card.critDamage ?? 0), 0);
+  const rowsWithPercents = sourceRows.map((row) => ({
+    ...row,
+    magnitude: Math.abs(Number(row.contributionValue ?? 0)),
+    damagePercent: getFinalDamagePercent(row.contributionValue, totalDamage),
+    percent: 0,
+    impactPercent: getFinalDamagePercent(row.contributionValue, totalDamage),
+  }));
+  const contributionContext = { battleResult, skillCards, skillRows, enemy, scenarioSettings, denominator: totalDamage };
+  const characterRows = aggregateContributionRows(rowsWithPercents, (row) => row.ownerLabel, contributionContext);
+  const statRows = aggregateContributionRows(rowsWithPercents, (row) => row.effectiveStat ?? row.stat, contributionContext);
   return {
     totalDamage,
     characterRows,
     statRows,
-    sourceRows,
+    sourceRows: normalizeContributionPercents(rowsWithPercents),
   };
 }
 
@@ -178,12 +208,12 @@ function buildEvaluationSourceRows(battleResult) {
       value: Number(entry.value ?? 0),
       effectiveValue: getEffectiveStatContribution(entry.stat, Number(entry.value ?? 0), baseStats),
       effectiveStat: getEffectiveStatKey(entry.stat),
-      label: sourceLabel,
+      label: formatUiLabel(sourceLabel),
       sourceType,
       ownerId: battleResult?.activeCharacter?.characterId,
       ownerLabel: battleResult?.activeCharacter?.displayName ?? "메인 딜러",
       groupKey: isTrace ? `self:trace:${sourceLabel}` : null,
-      groupLabel: isTrace ? `행적 · ${sourceLabel}` : null,
+      groupLabel: isTrace ? `행적 · ${formatUiLabel(sourceLabel)}` : null,
     };
   });
   const appliedRows = (battleResult?.appliedRows ?? []).map((row) => ({
@@ -192,13 +222,22 @@ function buildEvaluationSourceRows(battleResult) {
     value: Number(row.resolvedValue ?? 0),
     effectiveValue: getEffectiveStatContribution(row.stat, Number(row.resolvedValue ?? 0), baseStats),
     effectiveStat: getEffectiveStatKey(row.stat),
-    label: row.metadata?.sourceDisplayLabel ?? row.sourceLabel ?? row.sourceName ?? row.sourceId ?? row.ledgerId,
+    label: formatUiLabel(row.metadata?.sourceDisplayLabel ?? row.sourceLabel ?? row.sourceName ?? row.sourceId ?? row.ledgerId),
     sourceType: row.metadata?.effectType ?? row.effectType ?? "효과",
+    sourceId: row.sourceId ?? row.sourceTrace?.sourceId ?? null,
+    sourceRowId: row.sourceRowId ?? row.sourceTrace?.sourceRowId ?? null,
+    effectRowId: row.effectRowId ?? row.sourceTrace?.effectRowId ?? null,
+    sourceTrace: row.metadata?.sourceTrace ?? row.sourceTrace?.sourceTrace ?? null,
+    sourceText: row.metadata?.sourceText ?? row.sourceTrace?.sourceText ?? null,
     ownerId: row.ownerId,
     ownerLabel: row.sourceLabel ?? row.ownerId ?? "출처",
     targetPolicy: row.targetPolicy,
   }));
   return [...selfRows, ...appliedRows].filter((row) => row.stat && Number.isFinite(row.value));
+}
+
+function formatUiLabel(value) {
+  return String(value ?? "").replace(/필살기/g, "궁극기");
 }
 
 function getEffectiveStatContribution(stat, value, baseStats = {}) {
@@ -228,9 +267,9 @@ function groupRowsByStat(rows) {
   return grouped;
 }
 
-function aggregateContributionRows(rows, keyGetter, valueGetter = (row) => row.effectiveValue ?? row.value) {
-  const totalMagnitude = rows.reduce((sum, row) => sum + Math.abs(Number(valueGetter(row) ?? 0)), 0);
-  if (totalMagnitude <= 0) return [];
+function aggregateContributionRows(rows, keyGetter, context = {}) {
+  const denominator = Number(context.denominator ?? 0);
+  if (denominator <= 0) return [];
   const grouped = new Map();
   for (const row of rows) {
     const key = keyGetter(row) ?? "unknown";
@@ -238,21 +277,56 @@ function aggregateContributionRows(rows, keyGetter, valueGetter = (row) => row.e
       grouped.set(key, { key, label: key, value: 0, statValue: 0, percent: 0, rows: [] });
     }
     const group = grouped.get(key);
-    group.value += Math.abs(Number(valueGetter(row) ?? 0));
     group.statValue += Math.abs(Number(row.effectiveValue ?? row.value ?? 0));
     group.rows.push(row);
   }
   return [...grouped.values()]
-    .map((group) => ({ ...group, percent: group.value / totalMagnitude }))
-    .sort((a, b) => b.value - a.value || String(a.label).localeCompare(String(b.label), "ko"));
+    .map((group) => {
+      const delta = calculateContributionDeltaForRows(group.rows, context);
+      const value = Math.abs(Number(delta.contributionValue ?? 0));
+      return {
+        ...group,
+        ...delta,
+        value,
+        magnitude: value,
+        damagePercent: getFinalDamagePercent(value, denominator),
+        percent: 0,
+        impactPercent: getFinalDamagePercent(value, denominator),
+        rows: normalizeContributionPercents(group.rows),
+      };
+    })
+    .map((group, _, groups) => applyNormalizedPercent(group, groups))
+    .sort((a, b) => Number(b.percent ?? 0) - Number(a.percent ?? 0) || String(a.label).localeCompare(String(b.label), "ko"));
+}
+
+function normalizeContributionPercents(rows = []) {
+  return rows.map((row, _, allRows) => applyNormalizedPercent(row, allRows));
+}
+
+function applyNormalizedPercent(row, rows = []) {
+  const total = rows.reduce((sum, item) => sum + getContributionMagnitude(item), 0);
+  const value = getContributionMagnitude(row);
+  return {
+    ...row,
+    percent: total > 0 ? value / total : 0,
+  };
+}
+
+function getContributionMagnitude(row) {
+  return Math.abs(Number(row?.magnitude ?? row?.contributionValue ?? row?.value ?? 0));
 }
 
 function calculateContributionDelta(row, { battleResult, skillCards = [], skillRows = [], enemy = {}, scenarioSettings = {} } = {}) {
+  return calculateContributionDeltaForRows([row], { battleResult, skillCards, skillRows, enemy, scenarioSettings });
+}
+
+function calculateContributionDeltaForRows(rows, { battleResult, skillCards = [], skillRows = [], enemy = {}, scenarioSettings = {} } = {}) {
+  const sourceRows = rows.filter(Boolean);
   if (!battleResult || !skillCards.length || !skillRows.length) {
-    const contributionValue = estimateDamageContributionValue(row, skillCards);
+    const contributionValue = sourceRows.reduce((sum, row) => sum + estimateDamageContributionValue(row, skillCards), 0);
     return { contributionValue, skillContributions: {} };
   }
-  const reducedBattleResult = removeSourceRowFromBattleResult(row, battleResult);
+  const reducedBattleResult = removeSourceRowsFromBattleResult(sourceRows, battleResult);
   const reducedCards = calculateSkillDamageCards({
     battleResult: reducedBattleResult,
     skillRows,
@@ -269,9 +343,19 @@ function calculateContributionDelta(row, { battleResult, skillCards = [], skillR
     contributionValue += delta;
   }
   if (contributionValue <= 0) {
-    contributionValue = estimateDamageContributionValue(row, skillCards);
+    contributionValue = sourceRows.reduce((sum, row) => sum + estimateDamageContributionValue(row, skillCards), 0);
   }
   return { contributionValue, skillContributions };
+}
+
+function removeSourceRowsFromBattleResult(rows, battleResult) {
+  return rows.reduce((current, row) => removeSourceRowFromBattleResult(row, current), battleResult);
+}
+
+function getFinalDamagePercent(value, totalDamage) {
+  const denominator = Number(totalDamage ?? 0);
+  if (denominator <= 0) return 0;
+  return Math.max(0, Math.min(1, Math.abs(Number(value ?? 0)) / denominator));
 }
 
 function removeSourceRowFromBattleResult(row, battleResult) {
@@ -280,6 +364,7 @@ function removeSourceRowFromBattleResult(row, battleResult) {
     finalStats: { ...(battleResult.finalStats ?? {}) },
     damageModifiers: { ...(battleResult.damageModifiers ?? {}) },
     enemyDebuffs: { ...(battleResult.enemyDebuffs ?? {}) },
+    enemyDebuffRows: Array.isArray(battleResult.enemyDebuffRows) ? [...battleResult.enemyDebuffRows] : undefined,
     battleTotals: { ...(battleResult.battleTotals ?? {}) },
     combinedStatTotals: { ...(battleResult.combinedStatTotals ?? {}) },
   };
@@ -296,15 +381,22 @@ function removeSourceRowFromBattleResult(row, battleResult) {
 
   if (isEnemyTargetPolicy(row.targetPolicy)) {
     subtractValue(next.enemyDebuffs, stat, value);
+    if (Array.isArray(next.enemyDebuffRows)) {
+      next.enemyDebuffRows = next.enemyDebuffRows.filter((item) => item !== row && item.id !== row.id);
+    }
   } else {
     subtractFinalStat(next, stat, effectiveStat, value, effectiveValue);
     subtractValue(next.battleTotals, stat, value);
     subtractValue(next.combinedStatTotals, stat, value);
   }
-  if (damageModifierStats.has(stat)) {
+  if (damageModifierStats.has(stat) && !isEnemyOnlyDamageModifierRow(row)) {
     subtractValue(next.damageModifiers, stat, value);
   }
   return next;
+}
+
+function isEnemyOnlyDamageModifierRow(row) {
+  return row?.stat === "vulnerability" && isEnemyTargetPolicy(row.targetPolicy);
 }
 
 const damageModifierStats = new Set([
@@ -361,7 +453,7 @@ function estimateSkillContributionValue({ stat, effectiveStat, value, effectiveV
   if (effectiveStat === card?.scalingStat && scalingValue > 0) {
     return Math.abs(critDamage * (effectiveValue / scalingValue));
   }
-  if (stat === "critDamage" || stat === "dealtCritDamage" || (stat === "followCritDamage" && card?.attackType === "follow_up")) {
+  if (stat === "critDamage" || stat === "dealtCritDamage" || stat === "takenCritDamage" || (stat === "followCritDamage" && card?.attackType === "follow_up")) {
     return Math.abs(nonCritDamage * value);
   }
   if (stat === "critRate") {
@@ -396,7 +488,9 @@ function isDamageBonusStatForCard(stat, card) {
     basic: "basicDamage",
     skill: "skillDamage",
     ultimate: "ultimateDamage",
+    elation_skill: null,
     follow_up: "followDamage",
+    memosprite: null,
     dot: "dotDamage",
   }[card?.attackType] === stat;
 }
@@ -416,7 +510,9 @@ function getRelevantStatsForSkillCard(card) {
     basic: "basicDamage",
     skill: "skillDamage",
     ultimate: "ultimateDamage",
+    elation_skill: null,
     follow_up: "followDamage",
+    memosprite: null,
     dot: "dotDamage",
   }[card?.attackType];
   addScalingStats(relevantStats, card?.scalingStat);
@@ -433,7 +529,7 @@ function getRelevantStatsForSkillCard(card) {
     return relevantStats;
   }
 
-  addStats(relevantStats, ["critRate", "critDamage", "dealtCritDamage"]);
+  addStats(relevantStats, ["critRate", "critDamage", "dealtCritDamage", "takenCritDamage"]);
   if (formulaType === "elation") {
     addStats(relevantStats, ["elation", "merrymake", "takenCritDamage", card?.attackType === "follow_up" ? "followCritDamage" : null]);
     return relevantStats;
@@ -458,6 +554,7 @@ function addStats(target, stats) {
 
 function normalizePrimaryStat(stat, templateKey) {
   if (stat === "hp" || stat === "def" || stat === "critDamage" || stat === "effectHitRate") return stat;
+  if (stat === "elation") return "elation";
   if (templateKey === "break") return "breakEffect";
   return "atk";
 }
@@ -470,5 +567,6 @@ function primaryLabel(stat) {
     breakEffect: "격파 특수효과",
     critDamage: "치명타 피해",
     effectHitRate: "효과 명중",
+    elation: "환락도",
   }[stat] ?? stat;
 }

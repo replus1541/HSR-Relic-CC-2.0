@@ -8,11 +8,19 @@
       "type": "additionalDamage",
       "scalingOwner": "support",
       "scalingStat": "atk",
-      "coefficient": 0.72,
+      "coefficient": 1.2,
+      "coefficientByMinEidolon": [
+        { "minEidolon": 3, "coefficient": 1.29 }
+      ],
       "element": "physical",
       "critMode": "fixed",
       "critMultiplier": 2.5,
-      "sourceEffectRowId": "effect:Robin_00:2"
+      "critMultiplierByMinEidolon": [
+        { "minEidolon": 6, "critMultiplier": 7 }
+      ],
+      "sourceEffectRowId": "effect:Robin_00:2",
+      "sourceTrace": "HoyoWiki:2366:ultimate:천음의 합주, 뭇별의 푸가:coefficientRows[추가 피해]:level10",
+      "sourceText": "<필살기> [협주] 상태 시 아군이 공격을 발동할 때마다 로빈은 추가로 자신의 공격력의 120% 만큼 물리 속성 추가 피해를 1회 가한다. 해당 피해의 치명타 확률은 100%, 치명타 피해는 150%로 고정된다."
     },
     {
       "key": "tingyunBenedictionAdditionalDamage",
@@ -35,7 +43,11 @@
       "type": "additionalDamage",
       "scalingOwner": "support",
       "scalingStat": "atk",
-      "coefficient": 0.3,
+      "coefficient": 0.6,
+      "coefficientByMinEidolon": [
+        { "minEidolon": 5, "coefficient": 0.66 },
+        { "minEidolon": 6, "coefficient": 2.64 }
+      ],
       "element": "wind",
       "critMode": "support",
       "sourceEffectRowId": "effect:Cerydra_00:6"
@@ -46,7 +58,7 @@
       "label": "전투스킬 · 결계 확정피해",
       "triggerAttackTypes": ["basic", "skill", "ultimate", "follow_up", "dot"],
       "type": "trueDamageRatio",
-      "ratio": 0.12,
+      "ratio": 0.26,
       "sourceEffectRowId": "effect:Cyrene_00:19"
     },
     {
@@ -55,6 +67,7 @@
       "label": "특성 · 결계 확정피해",
       "triggerAttackTypes": ["basic", "skill", "ultimate", "follow_up", "dot"],
       "type": "trueDamageRatio",
+      "minEidolon": 1,
       "ratio": 0.24,
       "sourceEffectRowId": "effect:Tribbie_00:3"
     },
@@ -77,6 +90,7 @@
       "label": "필살기 · 전우 추가피해",
       "triggerAttackTypes": ["ultimate"],
       "type": "additionalDamage",
+      "minEidolon": 6,
       "scalingOwner": "support",
       "scalingStat": "atk",
       "coefficient": 3.3,
