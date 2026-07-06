@@ -22,8 +22,8 @@ const damageTemplateDefinitions = {
 
 const damageBonusRows = [
   { key: "basicDamageTotal", label: "일반공격 피해증가", attackStat: "basicDamage" },
-  { key: "skillDamageTotal", label: "전투스킬 피해증가", attackStat: "skillDamage" },
-  { key: "ultimateDamageTotal", label: "필살기 피해증가", attackStat: "ultimateDamage" },
+  { key: "skillDamageTotal", label: "전스피증", attackStat: "skillDamage" },
+  { key: "ultimateDamageTotal", label: "궁피증", attackStat: "ultimateDamage" },
   { key: "followDamageTotal", label: "추가공격 피해증가", attackStat: "followDamage" },
 ];
 
@@ -57,18 +57,19 @@ export function buildBattleStatEvaluation({
   const sourceRows = buildEvaluationSourceRows(battleResult);
   const entriesByStat = groupRowsByStat(sourceRows);
   const hasRows = (stats) => stats.some((stat) => (entriesByStat.get(stat) ?? []).length);
-  const row = (key, label, value, statKeys, evaluationResult = { level: "neutral" }) => ({
+  const row = (key, label, value, statKeys, evaluationResult = { level: "neutral" }, options = {}) => ({
     key,
     label,
     value,
     statKeys,
+    valueStat: options.valueStat ?? null,
     status: evaluationResult.level ?? "neutral",
     message: evaluationResult.message ?? "",
     compactMessage: evaluationResult.compactMessage ?? "",
     entries: statKeys.flatMap((stat) => entriesByStat.get(stat) ?? []),
   });
   const primaryRows = [
-    row("primary", primaryLabel(primaryStat), finalStats[primaryStat], primaryStatKeys[primaryStat] ?? [primaryStat]),
+    row("primary", primaryLabel(primaryStat), finalStats[primaryStat], primaryStatKeys[primaryStat] ?? [primaryStat], { level: "neutral" }, { valueStat: primaryStat }),
     row("speed", "속도", finalStats.speed, ["speed", "speedRatio"]),
   ];
   const critRows = template.usesCrit

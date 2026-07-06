@@ -1648,7 +1648,7 @@
       "mainStats": {
         "head": "hpFlat",
         "hands": "atkFlat",
-        "body": "critRate",
+        "body": "hpRatio",
         "feet": "hpRatio",
         "sphere": "hpRatio",
         "rope": "hpRatio"
@@ -1714,7 +1714,7 @@
           ]
         },
         "body": {
-          "mainStat": "critRate",
+          "mainStat": "hpRatio",
           "subStats": [
             {
               "stat": "critDamage",

@@ -126,9 +126,9 @@ const statLabels = {
   hpFlat: "HP",
   atkFlat: "공격력",
   defFlat: "방어력",
-  hpRatio: "HP %",
-  atkRatio: "공격력 %",
-  defRatio: "방어력 %",
+  hpRatio: "HP",
+  atkRatio: "공격력",
+  defRatio: "방어력",
   speedRatio: "속도",
   elementDamage: "속성 피해",
   energyRegen: "에너지 회복효율",
@@ -145,8 +145,8 @@ const statLabels = {
   damageBoost: "피증",
   allDamage: "피증",
   basicDamage: "일반공격 피증",
-  skillDamage: "전투스킬 피증",
-  ultimateDamage: "필살기 피증",
+  skillDamage: "전스피증",
+  ultimateDamage: "궁피증",
   followDamage: "추가공격 피증",
   dotDamage: "지속피해 피증",
   breakDamage: "격파피해 피증",
@@ -1138,9 +1138,9 @@ function normalizePrimaryStatKey(stat) {
 }
 
 function normalizePrimaryFinalStatKey(stat) {
-  if (stat === "atk") return "atk";
-  if (stat === "hp") return "hp";
-  if (stat === "def") return "def";
+  if (stat === "atk" || stat === "atkRatio" || stat === "atkFlat") return "atk";
+  if (stat === "hp" || stat === "hpRatio" || stat === "hpFlat") return "hp";
+  if (stat === "def" || stat === "defRatio" || stat === "defFlat") return "def";
   if (stat === "break") return "breakEffect";
   if (stat === "critDamage") return "critDamage";
   if (stat === "critRate") return "critRate";
@@ -1155,7 +1155,8 @@ function formatPrimaryStatProfile(profile) {
 
 function formatCalculatedSelfStat(stats, stat) {
   if (!stat) return "-";
-  return formatSelfStatValue(stat, stats?.[stat]);
+  const displayStat = normalizePrimaryFinalStatKey(stat);
+  return formatSelfStatValue(displayStat, stats?.[displayStat]);
 }
 
 function formatFinalStatLabel(stat) {
@@ -2087,6 +2088,7 @@ function BattleStatEvaluationPanel({ evaluation }) {
             {group.rows.map((row) => {
               const rowKey = `${group.key}:${row.key}`;
               const expanded = expandedRows.has(rowKey);
+              const hideEntryStatLabel = shouldHideEvaluationEntryStatLabel(group, row);
               return (
                 <div key={rowKey} className={`calc-evaluation-card is-${row.status ?? "neutral"} ${expanded ? "is-expanded" : ""}`}>
                   <button type="button" className="calc-evaluation-row" aria-expanded={expanded} onClick={() => toggle(rowKey)}>
@@ -2116,8 +2118,8 @@ function BattleStatEvaluationPanel({ evaluation }) {
                               {ownerGroup.entries.slice(0, 8).map((entry) => {
                                 const parts = getNamedEvaluationValueParts(entry);
                                 return (
-                                  <li key={`${rowKey}:${ownerGroup.key}:${entry.id}:${entry.stat}`}>
-                                    <span className="calc-evaluation-source-stat">{parts.label}</span>
+                                  <li key={`${rowKey}:${ownerGroup.key}:${entry.id}:${entry.stat}`} className={hideEntryStatLabel ? "is-stat-label-hidden" : ""}>
+                                    {!hideEntryStatLabel && <span className="calc-evaluation-source-stat">{parts.label}</span>}
                                     <span className={`calc-evaluation-source-amount ${parts.toneClass}`}>{parts.sign}{parts.value}{parts.flatText}</span>
                                     <span className="calc-evaluation-source-mark" title={entry.sourceType ?? "출처"}>
                                       <SourceTypeMark entry={entry} ownerCharacter={ownerCharacter} />
@@ -2173,6 +2175,27 @@ function groupEvaluationEntriesByOwner(entries = []) {
       entries: group.entries.sort((a, b) => Math.abs(Number(b.effectiveValue ?? b.value ?? 0)) - Math.abs(Number(a.effectiveValue ?? a.value ?? 0)) || String(a.label).localeCompare(String(b.label), "ko")),
     }))
     .sort((a, b) => b.totalMagnitude - a.totalMagnitude || String(a.ownerLabel).localeCompare(String(b.ownerLabel), "ko"));
+}
+
+function shouldHideEvaluationEntryStatLabel(group, row) {
+  if (group?.key !== "primaryStats") return false;
+  return new Set([
+    "primary",
+    "speed",
+    "critRate",
+    "critDamage",
+    "dealtCritDamage",
+    "followCritDamage",
+    "breakEffect",
+    "breakDamage",
+    "dotDamage",
+    "effectHitRate",
+    "effectResistance",
+    "energyRegen",
+    "trueDamageRatio",
+    "elation",
+    "merrymake",
+  ]).has(row?.key);
 }
 
 function formatNamedEvaluationValue(entry) {
@@ -2242,14 +2265,11 @@ function SourceTypeMark({ entry, ownerCharacter }) {
 
 function EvaluationSourceLabel({ label }) {
   const text = String(label ?? "");
-  const match = text.match(/^(.*?)(\s*\(.+\))$/);
-  if (!match) return <small>{text}</small>;
-  return (
-    <small>
-      {match[1]}
-      <span className="calc-evaluation-source-set-name">{match[2]}</span>
-    </small>
-  );
+  return <small>{stripSourceParentheses(text)}</small>;
+}
+
+function stripSourceParentheses(text) {
+  return String(text ?? "").replace(/\s*\([^)]*\)\s*/g, " ").replace(/\s+/g, " ").trim();
 }
 
 function getSourceTypeIconUrl(sourceType, ownerCharacter) {
@@ -3107,12 +3127,11 @@ function buildSkillSourceRows(card, sourceRows) {
   if (total <= 0) return [];
   return rows
     .map((row) => ({ ...row, percent: row.magnitude / total }))
-    .sort((a, b) => b.magnitude - a.magnitude)
-    .slice(0, 6);
+    .sort((a, b) => b.magnitude - a.magnitude);
 }
 
 function formatEvaluationValue(row) {
-  const stat = row.statKeys?.[0] ?? row.key;
+  const stat = row.valueStat ?? row.statKeys?.[0] ?? row.key;
   return formatStatValue(stat, row.value);
 }
 

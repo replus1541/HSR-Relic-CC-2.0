@@ -433,6 +433,19 @@ function applyRuntimeSourceStatResolution(row, {
       excludedCharacterId: "MortenaxBlade_00",
     });
   }
+  if (row.ownerId === "Sparkle_00" && row.stat === "critDamage" && sourceTrace.includes("combatSkill") && sourceTrace.includes("critDamage")) {
+    const ownerCritDamage = Number(selfByCharacterId?.get(row.ownerId)?.stats?.critDamage ?? 0);
+    const ratio = Number(row.resolvedValue ?? 0);
+    if (!Number.isFinite(ownerCritDamage) || ownerCritDamage <= 0 || !Number.isFinite(ratio) || ratio <= 0) return row;
+    const flat = ratio * 1.875;
+    return markRuntimeResolved(row, ownerCritDamage * ratio + flat, {
+      type: "sourceStatRatioPlusFlat",
+      sourceStat: "critDamage",
+      ratio,
+      flat,
+      sourceStatPolicy: "ownerSelfStats",
+    });
+  }
   if (row.ownerId === "Sparkle_00" && row.stat === "critDamage" && sourceTrace.includes("critDamageShare")) {
     const ownerCritDamage = Number(selfByCharacterId?.get(row.ownerId)?.stats?.critDamage ?? 0);
     if (!Number.isFinite(ownerCritDamage) || ownerCritDamage <= 0) return row;

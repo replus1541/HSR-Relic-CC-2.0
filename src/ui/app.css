@@ -1673,11 +1673,16 @@ p {
 
 .calc-evaluation-source-group ul li {
   display: grid;
-  grid-template-columns: max-content max-content 24px minmax(0, 1fr);
+  grid-template-columns: 74px 76px 24px minmax(0, 1fr);
   align-items: center;
-  gap: 4px;
+  column-gap: 6px;
+  row-gap: 2px;
   min-width: 0;
   min-height: 24px;
+}
+
+.calc-evaluation-source-group ul li.is-stat-label-hidden {
+  grid-template-columns: 76px 24px minmax(0, 1fr);
 }
 
 .calc-evaluation-source-stat,
@@ -1692,11 +1697,15 @@ p {
 .calc-evaluation-source-stat {
   color: var(--calc-muted);
   font-weight: 480;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .calc-evaluation-source-amount {
   color: #c58b55;
   font-weight: 900;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .calc-evaluation-source-amount.is-positive-stat {
@@ -1721,6 +1730,7 @@ p {
   display: grid;
   place-items: center;
   min-width: 0;
+  justify-self: center;
   align-self: center;
 }
 
@@ -1757,6 +1767,7 @@ p {
 }
 
 .calc-evaluation-source-label small {
+  display: block;
   min-width: 0;
   color: var(--calc-muted);
   font-size: 0.66rem;
@@ -2120,9 +2131,10 @@ p {
 
 .calc-contribution-detail-list li {
   display: grid;
-  grid-template-columns: max-content max-content 24px minmax(0, 1fr);
+  grid-template-columns: minmax(62px, 74px) minmax(58px, 76px) 24px minmax(0, 1fr);
   align-items: center;
-  gap: 4px;
+  column-gap: 6px;
+  row-gap: 2px;
   min-width: 0;
   min-height: 24px;
 }
@@ -2183,11 +2195,15 @@ p {
 .calc-contribution-detail-list .calc-evaluation-source-stat {
   color: var(--calc-muted);
   font-weight: 480;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .calc-contribution-detail-list .calc-evaluation-source-amount {
   color: #d4a05e;
   font-weight: 820;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .calc-contribution-detail-list .calc-evaluation-source-amount.is-positive-stat {
@@ -2201,6 +2217,7 @@ p {
 .calc-contribution-detail-list .calc-evaluation-source-mark {
   display: grid;
   place-items: center;
+  justify-self: center;
 }
 
 .calc-contribution-detail-list .calc-evaluation-source-mark img {
@@ -2219,6 +2236,8 @@ p {
 }
 
 .calc-contribution-detail-list .calc-evaluation-source-label small {
+  display: block;
+  min-width: 0;
   color: var(--calc-muted);
   font-size: 0.66rem;
   font-weight: 520;
@@ -4759,10 +4778,15 @@ p {
   }
 
   .calc-evaluation-source-group ul li {
-    grid-template-columns: max-content max-content 24px minmax(0, 1fr);
+    grid-template-columns: 68px 70px 24px minmax(0, 1fr);
     align-items: center;
     min-height: 24px;
-    gap: 4px;
+    column-gap: 5px;
+    row-gap: 2px;
+  }
+
+  .calc-evaluation-source-group ul li.is-stat-label-hidden {
+    grid-template-columns: 70px 24px minmax(0, 1fr);
   }
 
   .calc-contribution-row-card,
