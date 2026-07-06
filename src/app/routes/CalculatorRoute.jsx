@@ -27,7 +27,7 @@ const appTabs = [
 ];
 
 const defaultPartyIds = ["PlayerBoy_20", "Sparkle_00", "Sunday_10", "RuanMei_00"];
-const appVersionName = "2.006";
+const appVersionName = "2.007";
 const calculatorStateCookieName = "hsr_relic_cc_v2_calculator_state";
 const calculatorStateStorageName = "hsr_relic_cc_v2_calculator_state_v1";
 const calculatorStateVersion = 1;
