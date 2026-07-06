@@ -179,6 +179,7 @@ function calculateNonCritDamage({
       * toughnessDamage
       * conversionMultiplier
       * coefficient
+      * (1 + valueOf(finalStats.toughnessDamageRatio) + valueOf(damageModifiers.toughnessDamageRatio))
       * (1 + valueOf(finalStats.breakEffect))
       * (1 + valueOf(finalStats.breakDamage) + valueOf(damageModifiers.breakDamage))
       * (1 + vulnerability)

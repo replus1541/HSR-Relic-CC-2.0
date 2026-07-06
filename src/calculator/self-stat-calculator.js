@@ -206,6 +206,7 @@ function buildFinalStats(base, totals) {
     elementDamage: valueOf(totals.elementDamage),
     allDamage: valueOf(totals.allDamage),
     breakEffect: valueOf(totals.breakEffect),
+    toughnessDamageRatio: valueOf(totals.toughnessDamageRatio),
     effectHitRate: valueOf(totals.effectHitRate),
     effectResistance: valueOf(totals.effectResistance),
     energyRegen: valueOf(totals.energyRegen),

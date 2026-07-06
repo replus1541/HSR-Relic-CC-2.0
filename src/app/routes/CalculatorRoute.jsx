@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import battleEffectMetadata from "../../../data/generated/battle-effect-metadata.json";
+import battleEffectSupplements from "../../../data/curated/battle-effect-supplements.json";
 import characterStateControls from "../../../data/curated/character-state-controls.json";
 import characterIdentity from "../../../data/generated/character-identity.json";
 import characterStatBaseline from "../../../data/generated/character-stat-baseline.json";
@@ -7,6 +8,7 @@ import combatLedgerSample from "../../../data/generated/combat-ledger-sample.jso
 import customRelicTypeProfiles from "../../../data/curated/custom-relic-type-profiles.json";
 import defaultCharacterBuilds from "../../../data/generated/default-character-builds.json";
 import equipmentStatModel from "../../../data/generated/equipment-stat-model.json";
+import hoyowikiSourceEffectSupplements from "../../../data/generated/hoyowiki-source-effect-supplements.json";
 import skillDamageMetadata from "../../../data/generated/skill-damage-metadata.json";
 import lightconeCandidates from "../../../data/legacy-reference/game-db/lightcone-effect-candidates.json";
 import supportDamageProcs from "../../../data/curated/support-damage-procs.json";
@@ -25,9 +27,25 @@ const appTabs = [
 const defaultPartyIds = ["PlayerBoy_20", "Sparkle_00", "Sunday_10", "RuanMei_00"];
 const appVersionName = "2.006";
 const calculatorStateCookieName = "hsr_relic_cc_v2_calculator_state";
+const calculatorStateStorageName = "hsr_relic_cc_v2_calculator_state_v1";
 const calculatorStateVersion = 1;
 const cookieMaxAgeSeconds = 60 * 60 * 24 * 180;
 const lightCones = lightconeCandidates.lightCones ?? [];
+const supersededGeneratedEffectRowIds = new Set(hoyowikiSourceEffectSupplements.supersedesEffectRowIds ?? []);
+const generatedCombatLedgerRows = (combatLedgerSample.rows ?? combatLedgerSample.ledgerRows ?? [])
+  .filter((row) => !supersededGeneratedEffectRowIds.has(row.sourceTrace?.effectRowId ?? row.effectRowId));
+const generatedBattleEffectMetadataRows = (battleEffectMetadata.rows ?? [])
+  .filter((row) => !supersededGeneratedEffectRowIds.has(row.effectRowId));
+const combatLedgerRows = [
+  ...generatedCombatLedgerRows,
+  ...(hoyowikiSourceEffectSupplements.ledgerRows ?? []),
+  ...(battleEffectSupplements.ledgerRows ?? []),
+];
+const battleEffectMetadataRows = [
+  ...generatedBattleEffectMetadataRows,
+  ...(hoyowikiSourceEffectSupplements.metadataRows ?? []),
+  ...(battleEffectSupplements.metadataRows ?? []),
+];
 const defaultBuildRows = Object.values(defaultCharacterBuilds.builds ?? {});
 const defaultBuildByCharacterId = new Map(defaultBuildRows.map((row) => [row.characterId, row]));
 const customTypeRows = customRelicTypeProfiles.rows ?? [];
@@ -158,11 +176,15 @@ const fallbackCharacters = characterIdentity.rows.slice(0, 4);
 
 function createInitialCalculatorState() {
   const fallback = {
+    activeTab: "characters",
+    calculationView: "stats",
     party: createInitialParty(),
     activeSlotId: "slot-1",
     enemy: { count: 3, level: 95, toughness: 90, resistance: 20 },
     partySpecificSettings: {},
     ownedCharacterEidolon: 0,
+    compareConditions: [],
+    compareKeepSlotIds: [],
   };
   const persisted = readPersistedCalculatorState();
   if (!persisted) return fallback;
@@ -170,12 +192,19 @@ function createInitialCalculatorState() {
   const activeSlotId = party.some((slot) => slot.slotId === persisted.activeSlotId)
     ? persisted.activeSlotId
     : party[0]?.slotId ?? fallback.activeSlotId;
+  const restoredActiveTab = sanitizeActiveTab(persisted.activeTab, fallback.activeTab);
   return {
+    activeTab: restoredActiveTab,
+    calculationView: persisted.activeTab === "conditionCompare"
+      ? "conditionCompare"
+      : sanitizeCalculationView(persisted.calculationView, fallback.calculationView),
     party,
     activeSlotId,
     enemy: sanitizeEnemy(persisted.enemy, fallback.enemy),
     partySpecificSettings: sanitizePartySpecificSettings(persisted.partySpecificSettings),
     ownedCharacterEidolon: sanitizeEidolonPreset(persisted.ownedCharacterEidolon, fallback.ownedCharacterEidolon),
+    compareConditions: sanitizeCompareConditions(persisted.compareConditions, party, activeSlotId),
+    compareKeepSlotIds: sanitizeCompareKeepSlotIds(persisted.compareKeepSlotIds, party),
   };
 }
 
@@ -213,7 +242,7 @@ function createDefaultEquipmentForCharacter(character) {
 }
 
 function readPersistedCalculatorState() {
-  const value = readCookieValue(calculatorStateCookieName);
+  const value = readStorageValue(calculatorStateStorageName) ?? readCookieValue(calculatorStateCookieName);
   if (!value) return null;
   try {
     const payload = JSON.parse(decodeURIComponent(value));
@@ -225,16 +254,46 @@ function readPersistedCalculatorState() {
   }
 }
 
-function writePersistedCalculatorState({ party, activeSlotId, enemy, partySpecificSettings, ownedCharacterEidolon }) {
+function writePersistedCalculatorState({ activeTab, calculationView, party, activeSlotId, enemy, partySpecificSettings, ownedCharacterEidolon, compareConditions, compareKeepSlotIds }) {
   const payload = {
     version: calculatorStateVersion,
+    activeTab: sanitizeActiveTab(activeTab, "characters"),
+    calculationView: sanitizeCalculationView(calculationView, "stats"),
     activeSlotId,
     enemy: sanitizeEnemy(enemy),
     partySpecificSettings: sanitizePartySpecificSettings(partySpecificSettings),
     ownedCharacterEidolon: sanitizeEidolonPreset(ownedCharacterEidolon, 0),
+    compareConditions: sanitizeCompareConditions(compareConditions, party, activeSlotId).map(serializeCompareCondition),
+    compareKeepSlotIds: sanitizeCompareKeepSlotIds(compareKeepSlotIds, party),
     party: party.map(serializePartySlot),
   };
-  writeCookieValue(calculatorStateCookieName, encodeURIComponent(JSON.stringify(payload)), cookieMaxAgeSeconds);
+  const encodedPayload = encodeURIComponent(JSON.stringify(payload));
+  writeStorageValue(calculatorStateStorageName, encodedPayload);
+  writeCookieValue(calculatorStateCookieName, encodeURIComponent(JSON.stringify(createCompactPersistedState(payload))), cookieMaxAgeSeconds);
+}
+
+function createCompactPersistedState(payload) {
+  return {
+    version: payload.version,
+    activeTab: payload.activeTab,
+    calculationView: payload.calculationView,
+    activeSlotId: payload.activeSlotId,
+    enemy: payload.enemy,
+    partySpecificSettings: payload.partySpecificSettings,
+    ownedCharacterEidolon: payload.ownedCharacterEidolon,
+    compareKeepSlotIds: payload.compareKeepSlotIds,
+    party: (payload.party ?? []).map((slot) => ({
+      slotId: slot.slotId,
+      characterId: slot.characterId,
+      eidolon: slot.eidolon,
+      lightconeId: slot.lightconeId,
+      lightconeRank: slot.lightconeRank,
+      relicSet4Name: slot.relicSet4Name,
+      relicSet2Name: slot.relicSet2Name,
+      relicMainStats: slot.relicMainStats,
+      relicSubStatPriority: slot.relicSubStatPriority,
+    })),
+  };
 }
 
 function serializePartySlot(slot) {
@@ -431,6 +490,244 @@ function sanitizePartySpecificSettings(settings = {}) {
   );
 }
 
+function createCompareConditionId() {
+  return `compare-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
+}
+
+function serializeCompareCondition(condition) {
+  return {
+    id: condition.id,
+    type: condition.type,
+    slotId: condition.slotId,
+    baseEidolon: condition.baseEidolon,
+    eidolon: condition.eidolon,
+    characterId: condition.characterId,
+    baseLightconeId: condition.baseLightconeId,
+    baseLightconeRank: condition.baseLightconeRank,
+    lightconeId: condition.lightconeId,
+    lightconeRank: condition.lightconeRank,
+    relicPatch: condition.relicPatch,
+  };
+}
+
+function sanitizeCompareKeepSlotIds(slotIds = [], party = []) {
+  if (!Array.isArray(slotIds)) return [];
+  const validSlotIds = new Set(party.map((slot) => slot.slotId));
+  return [...new Set(slotIds.filter((slotId) => validSlotIds.has(slotId)))];
+}
+
+function sanitizeCompareConditions(conditions = [], party = [], mainDealerSlotId = null) {
+  if (!Array.isArray(conditions)) return [];
+  return conditions
+    .map((condition) => normalizeCompareCondition(condition, party, mainDealerSlotId))
+    .filter(Boolean);
+}
+
+function normalizeCompareCondition(condition, party = [], mainDealerSlotId = null) {
+  if (!condition || typeof condition !== "object") return null;
+  const slot = party.find((item) => item.slotId === condition.slotId);
+  if (!slot?.characterId) return null;
+  const id = typeof condition.id === "string" ? condition.id : createCompareConditionId();
+  const type = condition.type;
+
+  if (type === "character") {
+    return {
+      id,
+      type,
+      slotId: slot.slotId,
+      baseEidolon: clampInteger(condition.baseEidolon ?? slot.eidolon ?? 0, 0, 6),
+      eidolon: clampInteger(condition.eidolon ?? slot.eidolon ?? 0, 0, 6),
+    };
+  }
+
+  if (type === "partyMember") {
+    if (slot.slotId === mainDealerSlotId) return null;
+    const character = getCharacter(condition.characterId);
+    if (!character || unavailableCharacterIds.has(character.characterId)) return null;
+    const defaults = createDefaultEquipmentForCharacter(character);
+    return {
+      id,
+      type,
+      slotId: slot.slotId,
+      characterId: character.characterId,
+      eidolon: clampInteger(condition.eidolon ?? 0, 0, 6),
+      lightconeId: condition.lightconeId ?? defaults.lightconeId,
+      lightconeRank: clampInteger(condition.lightconeRank ?? defaults.lightconeRank ?? 1, 1, 5),
+      relicPatch: sanitizeRelicPatch(condition.relicPatch ?? defaults),
+    };
+  }
+
+  if (type === "lightCone") {
+    const character = getCharacter(slot.characterId);
+    const baseLightcone = lightCones.find((item) => item.id === (condition.baseLightconeId ?? slot.lightconeId));
+    const lightcone = lightCones.find((item) => item.id === condition.lightconeId);
+    if (!baseLightcone || !lightcone) return null;
+    const characterPath = normalizeLightConePathKey(character?.path);
+    if (characterPath && normalizeLightConePathKey(lightcone.path) !== characterPath) return null;
+    return {
+      id,
+      type,
+      slotId: slot.slotId,
+      baseLightconeId: baseLightcone.id,
+      baseLightconeRank: clampInteger(condition.baseLightconeRank ?? slot.lightconeRank ?? 1, 1, 5),
+      lightconeId: lightcone.id,
+      lightconeRank: clampInteger(condition.lightconeRank ?? 1, 1, 5),
+    };
+  }
+
+  if (type === "relic") {
+    return {
+      id,
+      type,
+      slotId: slot.slotId,
+      relicPatch: sanitizeRelicPatch(condition.relicPatch ?? slot),
+    };
+  }
+
+  return null;
+}
+
+function sanitizeRelicPatch(source = {}) {
+  const relicMainStats = sanitizeRelicMainStats(source.relicMainStats);
+  const relicSubStatPriority = sanitizeRelicSubStatPriority(source.relicSubStatPriority);
+  return {
+    relicSet4Id: source.relicSet4Id ?? null,
+    relicSet4Name: source.relicSet4Name ?? "터널 유물",
+    relicSet2Id: source.relicSet2Id ?? null,
+    relicSet2Name: source.relicSet2Name ?? "차원 장신구",
+    relicMainStats,
+    relicSubStatPriority,
+    relicPieces: sanitizeRelicPieces(source.relicPieces, relicMainStats, {}, relicSubStatPriority),
+  };
+}
+
+function createDefaultCompareConditionDraft(party, slotId, type = "character", mainDealerSlotId = null) {
+  const slot = party.find((item) => item.slotId === slotId) ?? party.find((item) => item.characterId) ?? party[0];
+  const targetType = type === "character" && slot?.slotId !== mainDealerSlotId ? "partyMember" : type;
+  const character = getCharacter(slot?.characterId);
+  const defaultLightcone = getDefaultLightCone(character);
+  const base = {
+    id: createCompareConditionId(),
+    type: targetType,
+    slotId: slot?.slotId ?? "slot-1",
+    baseEidolon: clampInteger(slot?.eidolon ?? 0, 0, 6),
+    eidolon: clampInteger(slot?.eidolon ?? 0, 0, 6),
+    baseLightconeId: slot?.lightconeId ?? defaultLightcone?.id ?? null,
+    baseLightconeRank: clampInteger(slot?.lightconeRank ?? 1, 1, 5),
+    lightconeId: slot?.lightconeId ?? defaultLightcone?.id ?? null,
+    lightconeRank: clampInteger(slot?.lightconeRank ?? 1, 1, 5),
+    relicPatch: sanitizeRelicPatch(slot),
+  };
+  if (targetType === "partyMember") {
+    return {
+      ...base,
+      characterId: null,
+      eidolon: 0,
+    };
+  }
+  return base;
+}
+
+function applyCompareBaseConditionsToParty(party = [], conditions = []) {
+  const normalized = sanitizeCompareConditions(conditions, party);
+  return party.map((slot) => {
+    let next = { ...slot };
+    for (const condition of normalized) {
+      if (condition.slotId !== slot.slotId) continue;
+      if (condition.type === "character") {
+        next = { ...next, eidolon: condition.baseEidolon };
+      }
+      if (condition.type === "lightCone") {
+        const lightcone = lightCones.find((item) => item.id === condition.baseLightconeId);
+        next = {
+          ...next,
+          lightconeId: condition.baseLightconeId,
+          lightconeName: lightcone?.name ?? next.lightconeName,
+          lightconeRank: condition.baseLightconeRank,
+          lightconeIconFile: lightcone ? getLightConeIconFile(lightcone, "png") : next.lightconeIconFile,
+        };
+      }
+    }
+    return next;
+  });
+}
+
+function applyCompareConditionsToParty(party = [], conditions = [], mainDealerSlotId = null) {
+  const normalized = sanitizeCompareConditions(conditions, party, mainDealerSlotId);
+  return party.map((slot) => {
+    let next = { ...slot };
+    for (const condition of normalized) {
+      if (condition.slotId !== slot.slotId) continue;
+      if (condition.type === "character") {
+        next = { ...next, eidolon: condition.eidolon };
+      } else if (condition.type === "partyMember") {
+        const character = getCharacter(condition.characterId);
+        if (!character) continue;
+        const defaults = createDefaultEquipmentForCharacter(character);
+        const lightcone = lightCones.find((item) => item.id === condition.lightconeId);
+        next = {
+          ...defaults,
+          ...(condition.relicPatch ?? {}),
+          slotId: slot.slotId,
+          characterId: character.characterId,
+          eidolon: condition.eidolon,
+          lightconeId: condition.lightconeId ?? defaults.lightconeId,
+          lightconeName: lightcone?.name ?? defaults.lightconeName,
+          lightconeRank: condition.lightconeRank ?? defaults.lightconeRank,
+          lightconeIconFile: lightcone ? getLightConeIconFile(lightcone, "png") : defaults.lightconeIconFile,
+        };
+      } else if (condition.type === "lightCone") {
+        const lightcone = lightCones.find((item) => item.id === condition.lightconeId);
+        next = {
+          ...next,
+          lightconeId: condition.lightconeId,
+          lightconeName: lightcone?.name ?? next.lightconeName,
+          lightconeRank: condition.lightconeRank,
+          lightconeIconFile: lightcone ? getLightConeIconFile(lightcone, "png") : next.lightconeIconFile,
+        };
+      } else if (condition.type === "relic") {
+        next = {
+          ...next,
+          ...(condition.relicPatch ?? {}),
+        };
+      }
+    }
+    return next;
+  });
+}
+
+function getCompareConditionTitle(condition, party = []) {
+  const slotIndex = party.findIndex((slot) => slot.slotId === condition.slotId);
+  const slotLabel = slotIndex >= 0 ? `${slotIndex + 1}번` : "파티";
+  if (condition.type === "character") return `${slotLabel} 돌파 변경`;
+  if (condition.type === "partyMember") return `${slotLabel} 파티원 변경`;
+  if (condition.type === "lightCone") return `${slotLabel} 광추 변경`;
+  if (condition.type === "relic") return `${slotLabel} 유물 변경`;
+  return "비교 조건";
+}
+
+function getCompareConditionDetail(condition, party = []) {
+  const slot = party.find((item) => item.slotId === condition.slotId);
+  const baseCharacter = getCharacter(slot?.characterId);
+  if (condition.type === "character") {
+    return `${baseCharacter?.displayName ?? "캐릭터"} E${condition.baseEidolon} -> E${condition.eidolon}`;
+  }
+  if (condition.type === "partyMember") {
+    const nextCharacter = getCharacter(condition.characterId);
+    return `${baseCharacter?.displayName ?? "파티원"} -> ${nextCharacter?.displayName ?? "캐릭터"} E${condition.eidolon}`;
+  }
+  if (condition.type === "lightCone") {
+    const baseLightcone = lightCones.find((item) => item.id === condition.baseLightconeId);
+    const nextLightcone = lightCones.find((item) => item.id === condition.lightconeId);
+    return `${baseLightcone?.name ?? "광추"} S${condition.baseLightconeRank} -> ${nextLightcone?.name ?? "광추"} S${condition.lightconeRank}`;
+  }
+  if (condition.type === "relic") {
+    const relic = condition.relicPatch ?? {};
+    return `4셋 ${relic.relicSet4Name ?? "유물"} / 2셋 ${relic.relicSet2Name ?? "장신구"}`;
+  }
+  return "-";
+}
+
 function readCookieValue(name) {
   if (typeof document === "undefined") return null;
   const prefix = `${name}=`;
@@ -441,6 +738,25 @@ function readCookieValue(name) {
 function writeCookieValue(name, value, maxAge) {
   if (typeof document === "undefined") return;
   document.cookie = `${name}=${value}; Max-Age=${maxAge}; Path=/; SameSite=Lax`;
+}
+
+function readStorageValue(name) {
+  if (typeof window === "undefined" || !window.localStorage) return null;
+  try {
+    return window.localStorage.getItem(name);
+  } catch (error) {
+    console.warn("[calculator-state-storage-read-failed]", error);
+    return null;
+  }
+}
+
+function writeStorageValue(name, value) {
+  if (typeof window === "undefined" || !window.localStorage) return;
+  try {
+    window.localStorage.setItem(name, value);
+  } catch (error) {
+    console.warn("[calculator-state-storage-write-failed]", error);
+  }
 }
 
 function createNumberRange(start, end, step) {
@@ -466,6 +782,14 @@ function clampInteger(value, min, max) {
 function sanitizeEidolonPreset(value, fallback = 0) {
   const number = Number(value);
   return partyRecommendationEidolonOptions.some((option) => option.value === number) ? number : fallback;
+}
+
+function sanitizeActiveTab(value, fallback = "characters") {
+  return appTabs.some((tab) => tab.key === value) ? value : fallback;
+}
+
+function sanitizeCalculationView(value, fallback = "stats") {
+  return value === "conditionCompare" || value === "stats" ? value : fallback;
 }
 
 function getCharacter(characterId) {
@@ -853,6 +1177,40 @@ function CharacterAvatar({ character, variant = "imageOnly" }) {
     return <img src={character.iconPath} alt="" loading="lazy" />;
   }
   return <span className="calc-avatar-fallback" aria-hidden="true">{normalizeProfileNameKey(character?.displayName).slice(0, 1) || "+"}</span>;
+}
+
+function getCharacterTypeLabel(character) {
+  const profile = getCustomTypeProfile(character?.characterId);
+  return profile?.uiTypeProfile?.displayTypeLabel
+    ?? profile?.uiTypeProfile?.roleClass
+    ?? profile?.relicTypeProfile?.presetLabel
+    ?? "타입 미지정";
+}
+
+function getElementIconFile(elementKey) {
+  return elementFilterIcons.find((item) => item.key === elementKey)?.iconFile ?? "Type_Physical_Small 1.png";
+}
+
+function MainDealerOptionContent({ slot, fallbackLabel = "캐릭터 미선택" }) {
+  const character = getCharacter(slot?.characterId);
+  return (
+    <span className="calc-main-dealer-option">
+      <span className="calc-party-face">
+        <CharacterAvatar character={character} />
+      </span>
+      <span className="calc-main-dealer-copy">
+        <strong>
+          <span>{character?.displayName ?? fallbackLabel}</span>
+          <small className="calc-main-dealer-eidolon">E{slot?.eidolon ?? 0}</small>
+        </strong>
+        <small>{character ? getCharacterTypeLabel(character) : "-"}</small>
+      </span>
+      <span className="calc-main-dealer-icons" aria-hidden="true">
+        {character?.element && <img src={filterIconUrl(getElementIconFile(character.element))} alt="" />}
+        {character?.path && <img src={filterIconUrl(getPathIconFile(character.path))} alt="" />}
+      </span>
+    </span>
+  );
 }
 
 function SettingsIcon() {
@@ -1291,19 +1649,7 @@ function MainDealerCard({ party, activeSlotId, onChange }) {
   const activeCharacter = getCharacter(activeSlot?.characterId);
 
   const renderOption = (slot) => {
-    const character = getCharacter(slot.characterId);
-    return (
-      <span className="calc-main-dealer-option">
-        <span className="calc-party-face">
-          <CharacterAvatar character={character} />
-        </span>
-        <span className="calc-main-dealer-copy">
-          <strong>{character?.displayName ?? "캐릭터 미선택"}</strong>
-          <small>{elementLabels[character?.element] ?? "-"} / {pathLabels[character?.path] ?? "-"}</small>
-        </span>
-        <span className="calc-main-dealer-eidolon">E{slot.eidolon ?? 0}</span>
-      </span>
-    );
+    return <MainDealerOptionContent slot={slot} />;
   };
 
   return (
@@ -1535,6 +1881,7 @@ function resolveStateControlOptions(control, slot) {
 }
 
 function formatStateControlOptionLabel(value, control) {
+  if (control.format === "toggle") return Number(value) >= 1 ? "ON" : "OFF";
   if (control.format === "percent") return `${formatNumber(Number(value) * 100)}%`;
   if (control.format === "number") return formatDamageNumber(value);
   if (control.format === "count") return `${formatNumber(value)}명`;
@@ -2117,8 +2464,8 @@ function buildCandidateDamageDelta({ character, party, activeSlotId, replacement
       characterStatBaseline,
       equipmentStatModel,
       lightCones,
-      ledgerRows: combatLedgerSample.rows ?? combatLedgerSample.ledgerRows ?? [],
-      effectMetadataRows: battleEffectMetadata.rows ?? [],
+      ledgerRows: combatLedgerRows,
+      effectMetadataRows: battleEffectMetadataRows,
       scenarioSettings,
       stateControls: candidateStateControls,
     });
@@ -2162,6 +2509,7 @@ function buildCandidateDamageDelta({ character, party, activeSlotId, replacement
         key: `${candidateCard.id}:${character.characterId}`,
         ownerId: character.characterId,
         ownerLabel: character.displayName ?? character.name ?? character.characterId,
+        replacementSlotId: replacementSlot.slotId,
         eidolon: candidateEidolon,
         deltaDamage,
         gainRatio,
@@ -2758,37 +3106,28 @@ function ConditionPartySummary({ party, activeSlotId, onSelectSlot }) {
   const activeSlot = party.find((slot) => slot.slotId === activeSlotId) ?? party[0];
 
   const renderOption = (slot, index) => {
-    const character = getCharacter(slot.characterId);
-    return (
-      <span className="calc-main-dealer-option">
-        <span className="calc-party-face">
-          <CharacterAvatar character={character} />
-        </span>
-        <span className="calc-main-dealer-copy">
-          <strong>{character?.displayName ?? `빈 슬롯 ${index + 1}`}</strong>
-          <small>{elementLabels[character?.element] ?? "-"} / {pathLabels[character?.path] ?? "-"}</small>
-        </span>
-        <span className="calc-main-dealer-eidolon">E{slot.eidolon ?? 0}</span>
-      </span>
-    );
+    return <MainDealerOptionContent slot={slot} fallbackLabel={`빈 슬롯 ${index + 1}`} />;
   };
 
   return (
     <section
-      className="calc-current-party-summary-row calc-party-summary-select"
+      className="calc-current-party-summary-row calc-party-summary-select calc-condition-party-summary"
       aria-label="현재 선택 파티"
       onBlur={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
       }}
     >
+      <div className="calc-main-dealer-trigger calc-party-summary-trigger">
+        {renderOption(activeSlot, party.indexOf(activeSlot))}
+      </div>
       <button
-        className="calc-main-dealer-trigger calc-party-summary-trigger"
+        className="calc-icon-button calc-condition-dealer-settings"
         type="button"
+        aria-label="비교 캐릭터 설정"
         aria-expanded={open}
         onClick={() => setOpen((current) => !current)}
       >
-        {renderOption(activeSlot, party.indexOf(activeSlot))}
-        <span className="calc-main-dealer-chevron" aria-hidden="true" />
+        <SettingsIcon />
       </button>
       {open && (
         <div className="calc-main-dealer-menu calc-party-summary-menu" role="listbox" aria-label="파티 기준 캐릭터 선택">
@@ -2826,8 +3165,8 @@ function calculateConditionDamageSummary({ party, activeSlotId, enemy, scenarioS
     characterStatBaseline,
     equipmentStatModel,
     lightCones,
-    ledgerRows: combatLedgerSample.rows ?? combatLedgerSample.ledgerRows ?? [],
-    effectMetadataRows: battleEffectMetadata.rows ?? [],
+    ledgerRows: combatLedgerRows,
+    effectMetadataRows: battleEffectMetadataRows,
     scenarioSettings,
     stateControls,
   });
@@ -2847,29 +3186,51 @@ function ConditionComparePanel({
   onMainDealerChange,
   enemy,
   onEnemyChange,
-  stateControls,
   baseScenarioSettings,
+  compareConditions,
+  compareKeepSlotIds,
+  ownedCharacterEidolon,
+  onAddCondition,
+  onEditCondition,
+  onRemoveCondition,
+  onAutoRecommend,
+  onToggleKeepSlot,
 }) {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [compareOverrides, setCompareOverrides] = useState({});
+  const [expandedRows, setExpandedRows] = useState(() => new Set());
+  const sanitizedConditions = useMemo(
+    () => sanitizeCompareConditions(compareConditions, party, activeSlotId),
+    [activeSlotId, compareConditions, party],
+  );
+  const baseParty = useMemo(
+    () => applyCompareBaseConditionsToParty(party, sanitizedConditions),
+    [party, sanitizedConditions],
+  );
+  const compareParty = useMemo(
+    () => applyCompareConditionsToParty(party, sanitizedConditions, activeSlotId),
+    [activeSlotId, party, sanitizedConditions],
+  );
+  const baseStateControls = useMemo(() => buildPartySpecificControls(baseParty, activeSlotId), [activeSlotId, baseParty]);
+  const compareStateControls = useMemo(() => buildPartySpecificControls(compareParty, activeSlotId), [activeSlotId, compareParty]);
   const compareScenarioSettings = useMemo(
     () => ({ ...baseScenarioSettings, ...compareOverrides }),
     [baseScenarioSettings, compareOverrides],
   );
   const baseSummary = useMemo(() => calculateConditionDamageSummary({
-    party,
+    party: baseParty,
     activeSlotId,
     enemy,
     scenarioSettings: baseScenarioSettings,
-    stateControls,
-  }), [activeSlotId, baseScenarioSettings, enemy, party, stateControls]);
+    stateControls: baseStateControls,
+  }), [activeSlotId, baseParty, baseScenarioSettings, baseStateControls, enemy]);
   const compareSummary = useMemo(() => calculateConditionDamageSummary({
-    party,
+    party: compareParty,
     activeSlotId,
     enemy,
     scenarioSettings: compareScenarioSettings,
-    stateControls,
-  }), [activeSlotId, compareScenarioSettings, enemy, party, stateControls]);
+    stateControls: compareStateControls,
+  }), [activeSlotId, compareParty, compareScenarioSettings, compareStateControls, enemy]);
   const baseCardById = useMemo(() => new Map(baseSummary.cards.map((card) => [card.id, card])), [baseSummary.cards]);
   const conditionRows = compareSummary.cards.map((compareCard) => {
     const baseCard = baseCardById.get(compareCard.id);
@@ -2879,6 +3240,24 @@ function ConditionComparePanel({
   });
   const totalDelta = compareSummary.totalDamage - baseSummary.totalDamage;
   const totalRatio = baseSummary.totalDamage > 0 ? totalDelta / baseSummary.totalDamage : 0;
+  const keepSet = new Set(sanitizeCompareKeepSlotIds(compareKeepSlotIds, party));
+  const hasConditions = sanitizedConditions.length > 0;
+  const compareContributionViews = useMemo(() => buildDamageContributionViews({
+    battleResult: compareSummary.battleResult,
+    skillCards: compareSummary.cards,
+    skillRows: skillDamageMetadata.rows ?? [],
+    enemy,
+    scenarioSettings: compareScenarioSettings,
+  }), [compareScenarioSettings, compareSummary.battleResult, compareSummary.cards, enemy]);
+  const eidolonsByCharacterId = useMemo(() => buildEidolonMap(compareSummary.battleResult), [compareSummary.battleResult]);
+  const toggleExpandedRow = (key) => {
+    setExpandedRows((current) => {
+      const next = new Set(current);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  };
 
   return (
     <section className="calc-condition-compare" aria-label="조건부 비교">
@@ -2888,8 +3267,8 @@ function ConditionComparePanel({
         <div className="calc-condition-editor-head">
           <h3>비교 조건</h3>
           <div className="calc-condition-actions-row">
-            <button className="calc-text-action-button is-primary" type="button">비교조건 추가</button>
-            <button className="calc-text-action-button" type="button">자동추천</button>
+            <button className="calc-text-action-button is-primary" type="button" onClick={onAddCondition}>비교조건 추가</button>
+            <button className="calc-text-action-button" type="button" onClick={onAutoRecommend}>자동추천</button>
             <button
               className="calc-text-action-button calc-condition-recommend-settings-button"
               type="button"
@@ -2905,17 +3284,19 @@ function ConditionComparePanel({
                   {party.map((slot) => {
                     const character = getCharacter(slot.characterId);
                     const active = slot.slotId === activeSlotId;
+                    const keep = active || keepSet.has(slot.slotId);
                     return (
                       <button
                         key={slot.slotId}
-                        className={`calc-auto-recommend-party-slot ${active ? "is-main-dealer" : ""}`}
+                        className={`calc-auto-recommend-party-slot ${active ? "is-main-dealer" : ""} ${keep ? "is-keep" : "is-replace"}`}
                         type="button"
                         disabled={active}
+                        onClick={() => onToggleKeepSlot(slot.slotId)}
                       >
                         <span className="calc-party-face">
                           <CharacterAvatar character={character} />
                         </span>
-                        <span className="calc-auto-recommend-keep-badge">{active ? "고정" : "교체"}</span>
+                        <span className="calc-auto-recommend-keep-badge">{active ? "고정" : keep ? "유지" : "교체"}</span>
                       </button>
                     );
                   })}
@@ -2924,38 +3305,103 @@ function ConditionComparePanel({
             )}
           </div>
         </div>
+        <div className="calc-condition-list">
+          {hasConditions ? sanitizedConditions.map((condition, index) => (
+            <div className="calc-condition-row-wrap" key={condition.id}>
+              <button className="calc-condition-row-main" type="button" onClick={() => onEditCondition(condition.id)}>
+                <span>{index + 1}</span>
+                <div>
+                  <strong>{getCompareConditionTitle(condition, party)}</strong>
+                  <small>{getCompareConditionDetail(condition, party)}</small>
+                </div>
+              </button>
+              <button className="calc-condition-remove-button" type="button" onClick={() => onRemoveCondition(condition.id)} aria-label="비교 조건 삭제">
+                <span aria-hidden="true" />
+              </button>
+            </div>
+          )) : (
+            <p className="calc-condition-empty-note">비교 조건을 추가하면 현재 파티 대비 데미지 차이를 계산합니다.</p>
+          )}
+        </div>
         <PartySpecificSettingPanel
-          controls={stateControls}
+          controls={compareStateControls}
           values={compareScenarioSettings}
           onChange={(key, value) => setCompareOverrides((current) => ({ ...current, [key]: value }))}
           title="비교 상태값"
         />
-        <div className="calc-condition-delta-strip">
-          <span><small>기준 피해</small><b>{formatDamageNumber(baseSummary.totalDamage)}</b></span>
-          <span><small>비교 피해</small><b>{formatDamageNumber(compareSummary.totalDamage)}</b></span>
-          <span><small>변화량</small><b className={totalDelta >= 0 ? "is-positive" : "is-negative"}>{formatSignedDamageNumber(totalDelta)} <em>({formatSignedPercent(totalRatio)})</em></b></span>
-        </div>
-        <div className="calc-condition-list">
-          {conditionRows.length ? conditionRows.slice(0, 8).map(({ baseCard, compareCard, deltaDamage, gainRatio }, index) => (
-            <div key={compareCard.id} className="calc-condition-row-main is-result">
-              <span>{index + 1}</span>
-              <div>
-                <strong>{getDamageSkillDisplayLabel(compareCard)}</strong>
-                <small>
-                  {formatDamageNumber(baseCard?.critDamage ?? 0)}
-                  {" -> "}
-                  {formatDamageNumber(compareCard.critDamage)}
-                  {" / "}
-                  {formatSignedDamageNumber(deltaDamage)}
-                  {" "}
-                  <em>({formatSignedPercent(gainRatio)})</em>
-                </small>
-              </div>
+        {hasConditions ? (
+          <>
+            <div className="calc-condition-delta-strip">
+              <span><small>기준 피해</small><b>{formatDamageNumber(baseSummary.totalDamage)}</b></span>
+              <span><small>비교 피해</small><b>{formatDamageNumber(compareSummary.totalDamage)}</b></span>
+              <span><small>변화량</small><b className={totalDelta >= 0 ? "is-positive" : "is-negative"}>{formatSignedDamageNumber(totalDelta)} <em>({formatSignedPercent(totalRatio)})</em></b></span>
             </div>
-          )) : (
-            <p className="calc-condition-empty-note">계산 가능한 스킬 피해 데이터가 없습니다.</p>
-          )}
-        </div>
+            <div className="calc-condition-result-list">
+              {conditionRows.length ? conditionRows.slice(0, 10).map(({ baseCard, compareCard, deltaDamage, gainRatio }, index) => {
+                const rowKey = `condition-result:${compareCard.id}`;
+                const expanded = expandedRows.has(rowKey);
+                const sourceGroups = groupSkillSourceRowsByOwner(buildSkillSourceRows(compareCard, compareContributionViews?.sourceRows ?? []));
+                return (
+                  <article key={compareCard.id} className={`calc-condition-result-card ${deltaDamage >= 0 ? "is-up" : "is-down"} ${expanded ? "is-expanded" : ""}`}>
+                    <button className="calc-condition-result-head" type="button" aria-expanded={expanded} onClick={() => toggleExpandedRow(rowKey)}>
+                      <span>{index + 1}</span>
+                      <div>
+                        <strong>{getDamageSkillDisplayLabel(compareCard)}</strong>
+                        <small>{formatDamageTargetLabel(compareCard)}</small>
+                      </div>
+                      <b>{formatDamageNumber(compareCard.critDamage)} <em>DMG</em></b>
+                      <i className="calc-contribution-chevron" aria-hidden="true" />
+                    </button>
+                    <div className="calc-condition-result-detail">
+                      <span><small>기준</small><b>{formatDamageNumber(baseCard?.critDamage ?? 0)}</b></span>
+                      <span><small>차이</small><b className={deltaDamage >= 0 ? "is-positive" : "is-negative"}>{formatSignedDamageNumber(deltaDamage)}</b></span>
+                      <span><small>증감률</small><b className={deltaDamage >= 0 ? "is-positive" : "is-negative"}>{formatSignedPercent(gainRatio)}</b></span>
+                    </div>
+                    {expanded && (
+                      <div className="calc-condition-source-list">
+                        {sourceGroups.length ? sourceGroups.slice(0, 4).map((group, groupIndex) => {
+                          const ownerCharacter = getCharacter(group.ownerId);
+                          return (
+                            <article key={`${rowKey}:${group.key}`} className="calc-condition-source-group">
+                              <div className="calc-condition-source-head">
+                                <span className="calc-contribution-rank">{groupIndex + 1}</span>
+                                <span className="calc-party-face">
+                                  <CharacterAvatar character={ownerCharacter} />
+                                </span>
+                                <strong>{group.ownerLabel}<small>E{getOwnerEidolon(eidolonsByCharacterId, group.ownerId)}</small></strong>
+                                <em>{formatPercent(group.percent)}</em>
+                              </div>
+                              <ul className="calc-contribution-detail-list is-character-detail">
+                                {group.rows.slice(0, 4).map((entry) => {
+                                  const parts = getNamedEvaluationValueParts(entry);
+                                  return (
+                                    <li key={`${rowKey}:${group.key}:${entry.id}:${entry.stat}`}>
+                                      <span className="calc-evaluation-source-stat">{parts.label}</span>
+                                      <span className={`calc-evaluation-source-amount ${parts.toneClass}`}>{parts.sign}{parts.value}{parts.flatText}</span>
+                                      <span className="calc-evaluation-source-mark" title={entry.sourceType ?? "출처"}>
+                                        <SourceTypeMark entry={entry} ownerCharacter={getCharacter(entry.ownerId)} />
+                                      </span>
+                                      <span className="calc-evaluation-source-label" title={entry.label ?? ""}>
+                                        <EvaluationSourceLabel label={entry.label} />
+                                      </span>
+                                    </li>
+                                  );
+                                })}
+                              </ul>
+                            </article>
+                          );
+                        }) : <p className="calc-condition-empty-note">이 스킬에 연결할 수 있는 출처 row가 없습니다.</p>}
+                      </div>
+                    )}
+                  </article>
+                );
+              }) : (
+                <p className="calc-condition-empty-note">계산 가능한 스킬 피해 데이터가 없습니다.</p>
+              )}
+            </div>
+          </>
+        ) : null}
+        <p className="calc-condition-meta-note">자동추천 기준: 보유 캐릭터 E{ownedCharacterEidolon}, 유지 슬롯 제외</p>
       </article>
 
       <EnemyEditor enemy={enemy} onChange={onEnemyChange} />
@@ -2963,21 +3409,290 @@ function ConditionComparePanel({
   );
 }
 
+function CompareConditionEditorModal({
+  party,
+  activeSlotId,
+  condition,
+  ownedCharacterEidolon,
+  onClose,
+  onApply,
+}) {
+  const [draft, setDraft] = useState(() => ({
+    ...createDefaultCompareConditionDraft(party, condition?.slotId ?? activeSlotId, condition?.type ?? "character", activeSlotId),
+    ...(condition ?? {}),
+  }));
+  const [replacementPickerOpen, setReplacementPickerOpen] = useState(false);
+  const [lightconePickerOpen, setLightconePickerOpen] = useState(false);
+  const [relicEditorOpen, setRelicEditorOpen] = useState(false);
+  const targetSlot = party.find((slot) => slot.slotId === draft.slotId) ?? party[0];
+  const targetCharacter = getCharacter(targetSlot?.characterId);
+  const replacementCharacter = getCharacter(draft.characterId);
+  const baseLightcone = lightCones.find((item) => item.id === draft.baseLightconeId);
+  const nextLightcone = lightCones.find((item) => item.id === draft.lightconeId);
+  const isCharacterType = draft.type === "character" || draft.type === "partyMember";
+  const targetIsMainDealer = draft.slotId === activeSlotId;
+  const selectedIds = party
+    .filter((slot) => slot.slotId !== draft.slotId)
+    .map((slot) => slot.characterId)
+    .filter(Boolean);
+  const typeTabs = [
+    { key: "character", label: "캐릭터" },
+    { key: "lightCone", label: "광추" },
+    { key: "relic", label: "유물" },
+  ];
+
+  function patchDraft(patch) {
+    setDraft((current) => ({ ...current, ...patch }));
+  }
+
+  function changeType(type) {
+    setDraft((current) => ({
+      ...createDefaultCompareConditionDraft(party, current.slotId, type, activeSlotId),
+      id: current.id,
+    }));
+  }
+
+  function changeTargetSlot(slotId) {
+    const nextType = isCharacterType && slotId !== activeSlotId ? "partyMember" : isCharacterType ? "character" : draft.type;
+    setDraft((current) => ({
+      ...createDefaultCompareConditionDraft(party, slotId, nextType, activeSlotId),
+      id: current.id,
+      type: nextType,
+    }));
+  }
+
+  function apply() {
+    const normalized = normalizeCompareCondition(draft, party, activeSlotId);
+    if (!normalized) return;
+    onApply(normalized);
+    onClose();
+  }
+
+  return (
+    <div className="calc-modal-backdrop is-condition-editor" role="dialog" aria-modal="true" aria-label="비교조건 편집" onClick={onClose}>
+      <aside className="calc-condition-sheet" onClick={(event) => event.stopPropagation()}>
+        <div className="calc-sheet-head">
+          <strong>{condition ? "비교조건 수정" : "비교조건 추가"}</strong>
+          <button className="calc-icon-button calc-close-button" type="button" onClick={onClose} aria-label="닫기">
+            <span aria-hidden="true" />
+          </button>
+        </div>
+
+        <div className="calc-condition-type-tabs" role="tablist" aria-label="조건 종류">
+          {typeTabs.map((tab) => (
+            <button
+              key={tab.key}
+              className={(tab.key === "character" ? isCharacterType : draft.type === tab.key) ? "is-active" : ""}
+              type="button"
+              role="tab"
+              aria-selected={tab.key === "character" ? isCharacterType : draft.type === tab.key}
+              onClick={() => changeType(tab.key)}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        <label className="calc-condition-target-field">
+          <span>대상</span>
+          <select value={draft.slotId} onChange={(event) => changeTargetSlot(event.target.value)}>
+            {party.map((slot, index) => {
+              const character = getCharacter(slot.characterId);
+              return (
+                <option key={slot.slotId} value={slot.slotId}>
+                  {index + 1}번 · {slot.slotId === activeSlotId ? "메인딜러" : "파티원"} · {character?.displayName ?? "빈 슬롯"}
+                </option>
+              );
+            })}
+          </select>
+        </label>
+
+        {isCharacterType ? (
+          <div className="calc-condition-compare-cards">
+            <CompareCharacterMiniCard
+              character={targetCharacter}
+              label={targetIsMainDealer ? "기준 돌파" : "기준 파티원"}
+              eidolon={targetIsMainDealer ? draft.baseEidolon : targetSlot?.eidolon ?? 0}
+              onEidolonChange={targetIsMainDealer ? (baseEidolon) => patchDraft({ baseEidolon }) : null}
+            />
+            <span className="calc-condition-arrow">-&gt;</span>
+            <CompareCharacterMiniCard
+              character={targetIsMainDealer ? targetCharacter : replacementCharacter}
+              label={targetIsMainDealer ? "비교 돌파" : "교체 파티원"}
+              eidolon={draft.eidolon}
+              onPickCharacter={targetIsMainDealer ? null : () => setReplacementPickerOpen(true)}
+              onEidolonChange={(eidolon) => patchDraft({ eidolon })}
+            />
+          </div>
+        ) : null}
+
+        {draft.type === "lightCone" ? (
+          <div className="calc-condition-compare-cards">
+            <CompareLightConeMiniCard
+              label="기준 광추"
+              lightcone={baseLightcone}
+              rank={draft.baseLightconeRank}
+              onRankChange={(baseLightconeRank) => patchDraft({ baseLightconeRank })}
+            />
+            <span className="calc-condition-arrow">-&gt;</span>
+            <CompareLightConeMiniCard
+              label="비교 광추"
+              lightcone={nextLightcone}
+              rank={draft.lightconeRank}
+              editable
+              onPick={() => setLightconePickerOpen(true)}
+              onRankChange={(lightconeRank) => patchDraft({ lightconeRank })}
+            />
+          </div>
+        ) : null}
+
+        {draft.type === "relic" ? (
+          <div className="calc-condition-relic-edit">
+            <CompareRelicSummaryCard slot={{ ...targetSlot, ...(draft.relicPatch ?? {}) }} />
+            <button className="calc-text-action-button is-primary" type="button" onClick={() => setRelicEditorOpen(true)}>유물 설정</button>
+          </div>
+        ) : null}
+
+        <button className="calc-text-action-button is-primary calc-condition-apply-button" type="button" onClick={apply}>
+          확인
+        </button>
+      </aside>
+
+      {replacementPickerOpen && (
+        <div onClick={(event) => event.stopPropagation()}>
+          <CharacterPickerSheet
+            value={draft.characterId}
+            selectedIds={selectedIds}
+            onSelect={(characterId) => {
+              const character = getCharacter(characterId);
+              const defaults = createDefaultEquipmentForCharacter(character);
+              patchDraft({
+                characterId,
+                eidolon: ownedCharacterEidolon,
+                lightconeId: defaults.lightconeId,
+                lightconeRank: defaults.lightconeRank,
+                relicPatch: sanitizeRelicPatch(defaults),
+              });
+            }}
+            onClose={() => setReplacementPickerOpen(false)}
+          />
+        </div>
+      )}
+      {lightconePickerOpen && (
+        <div onClick={(event) => event.stopPropagation()}>
+          <LightConePickerSheet
+            slot={{
+              ...targetSlot,
+              lightconeId: draft.lightconeId,
+              lightconeRank: draft.lightconeRank,
+            }}
+            onClose={() => setLightconePickerOpen(false)}
+            onApply={(patch) => patchDraft({
+              lightconeId: patch.lightconeId,
+              lightconeRank: patch.lightconeRank,
+            })}
+          />
+        </div>
+      )}
+      {relicEditorOpen && (
+        <div onClick={(event) => event.stopPropagation()}>
+          <RelicEditorSheet
+            slot={{ ...targetSlot, ...(draft.relicPatch ?? {}) }}
+            onClose={() => setRelicEditorOpen(false)}
+            onApply={(patch) => patchDraft({ relicPatch: sanitizeRelicPatch(patch) })}
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function CompareCharacterMiniCard({ character, label, eidolon, onPickCharacter, onEidolonChange }) {
+  return (
+    <article className="calc-condition-mini-card">
+      <button className="calc-condition-mini-profile" type="button" onClick={onPickCharacter} disabled={!onPickCharacter}>
+        <span className="calc-party-face">
+          <CharacterAvatar character={character} />
+        </span>
+        <span>
+          <small>{label}</small>
+          <strong>{character?.displayName ?? "선택"}</strong>
+        </span>
+      </button>
+      <select value={clampInteger(eidolon, 0, 6)} onChange={(event) => onEidolonChange?.(Number(event.target.value))} disabled={!onEidolonChange}>
+        {[0, 1, 2, 3, 4, 5, 6].map((level) => (
+          <option key={level} value={level}>E{level}</option>
+        ))}
+      </select>
+    </article>
+  );
+}
+
+function CompareLightConeMiniCard({ label, lightcone, rank, editable = false, onPick, onRankChange }) {
+  return (
+    <article className="calc-condition-mini-card">
+      <button className="calc-condition-mini-profile" type="button" onClick={onPick} disabled={!editable}>
+        <LightConeThumb lightcone={lightcone} rank={rank} />
+        <span>
+          <small>{label}</small>
+          <strong>{lightcone?.name ?? "선택"}</strong>
+        </span>
+      </button>
+      <select value={clampInteger(rank, 1, 5)} onChange={(event) => onRankChange?.(Number(event.target.value))}>
+        {[1, 2, 3, 4, 5].map((level) => (
+          <option key={level} value={level}>S{level}</option>
+        ))}
+      </select>
+    </article>
+  );
+}
+
+function CompareRelicSummaryCard({ slot }) {
+  const set4 = findRelicSetByName(slot.relicSet4Name, "set4") ?? { name: slot.relicSet4Name };
+  const set2 = findRelicSetByName(slot.relicSet2Name, "set2") ?? { name: slot.relicSet2Name };
+  return (
+    <article className="calc-condition-relic-card">
+      <span>
+        <small>4셋</small>
+        <strong>{slot.relicSet4Name ?? "터널 유물"}</strong>
+      </span>
+      <span>
+        <small>2셋</small>
+        <strong>{slot.relicSet2Name ?? "차원 장신구"}</strong>
+      </span>
+      <div className="calc-condition-relic-pieces">
+        {relicPieces.map((piece) => (
+          <span key={piece.key} title={piece.name}>
+            <RelicPieceIcon piece={piece} set4={set4} set2={set2} />
+          </span>
+        ))}
+      </div>
+    </article>
+  );
+}
+
 export function CalculatorRoute() {
   const [initialState] = useState(createInitialCalculatorState);
-  const [activeTab, setActiveTab] = useState("characters");
+  const [activeTab, setActiveTab] = useState(initialState.activeTab);
+  const [calculationView, setCalculationView] = useState(initialState.calculationView);
   const [contributionViewMode, setContributionViewMode] = useState("character");
   const [party, setParty] = useState(initialState.party);
   const [activeSlotId, setActiveSlotId] = useState(initialState.activeSlotId);
   const [enemy, setEnemy] = useState(initialState.enemy);
   const [partySpecificSettings, setPartySpecificSettings] = useState(initialState.partySpecificSettings);
   const [ownedCharacterEidolon, setOwnedCharacterEidolon] = useState(initialState.ownedCharacterEidolon);
+  const [compareConditions, setCompareConditions] = useState(initialState.compareConditions);
+  const [compareKeepSlotIds, setCompareKeepSlotIds] = useState(initialState.compareKeepSlotIds);
+  const [compareEditorConditionId, setCompareEditorConditionId] = useState(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [pickerOpen, setPickerOpen] = useState(false);
   const [lightconeSlotId, setLightconeSlotId] = useState(null);
   const [relicSlotId, setRelicSlotId] = useState(null);
   const templateInputRef = useRef(null);
   const activeSlot = party.find((slot) => slot.slotId === activeSlotId) ?? party[0];
+  const compareEditorCondition = compareEditorConditionId === "__new__"
+    ? null
+    : compareConditions.find((condition) => condition.id === compareEditorConditionId) ?? null;
   const lightconeSlot = party.find((slot) => slot.slotId === lightconeSlotId) ?? null;
   const relicSlot = party.find((slot) => slot.slotId === relicSlotId) ?? null;
   const selectedIds = party.map((slot) => slot.characterId).filter(Boolean);
@@ -2990,8 +3705,8 @@ export function CalculatorRoute() {
     characterStatBaseline,
     equipmentStatModel,
     lightCones,
-    ledgerRows: combatLedgerSample.rows ?? combatLedgerSample.ledgerRows ?? [],
-    effectMetadataRows: battleEffectMetadata.rows ?? [],
+    ledgerRows: combatLedgerRows,
+    effectMetadataRows: battleEffectMetadataRows,
     scenarioSettings: partySpecificSettings,
     stateControls: partySpecificControls,
   }), [activeSlotId, party, partySpecificControls, partySpecificSettings]);
@@ -3027,8 +3742,8 @@ export function CalculatorRoute() {
   }), [activeSlotId, enemy, ownedCharacterEidolon, party, partySpecificSettings, skillCards]);
 
   useEffect(() => {
-    writePersistedCalculatorState({ party, activeSlotId, enemy, partySpecificSettings, ownedCharacterEidolon });
-  }, [activeSlotId, enemy, ownedCharacterEidolon, party, partySpecificSettings]);
+    writePersistedCalculatorState({ activeTab, calculationView, party, activeSlotId, enemy, partySpecificSettings, ownedCharacterEidolon, compareConditions, compareKeepSlotIds });
+  }, [activeSlotId, activeTab, calculationView, compareConditions, compareKeepSlotIds, enemy, ownedCharacterEidolon, party, partySpecificSettings]);
 
   function patchActiveSlot(patch) {
     setParty((current) => current.map((slot) => (slot.slotId === activeSlotId ? { ...slot, ...patch } : slot)));
@@ -3036,6 +3751,106 @@ export function CalculatorRoute() {
 
   function patchSlot(slotId, patch) {
     setParty((current) => current.map((slot) => (slot.slotId === slotId ? { ...slot, ...patch } : slot)));
+  }
+
+  function changeMainDealer(slotId) {
+    setActiveSlotId((previousSlotId) => {
+      if (previousSlotId && previousSlotId !== slotId) {
+        setCompareConditions((current) => current.filter((condition) => condition.slotId !== previousSlotId));
+      }
+      return slotId;
+    });
+  }
+
+  function changeActiveTab(tabKey) {
+    const nextTab = sanitizeActiveTab(tabKey, activeTab);
+    setActiveTab(nextTab);
+    if (nextTab === "buffs" || nextTab === "conditionCompare") {
+      setCalculationView(nextTab === "conditionCompare" ? "conditionCompare" : "stats");
+      const firstSlotId = party[0]?.slotId;
+      if (firstSlotId) changeMainDealer(firstSlotId);
+    }
+  }
+
+  function changeCalculationView(nextView) {
+    setCalculationView(sanitizeCalculationView(nextView, calculationView));
+  }
+
+  function applyCompareCondition(condition) {
+    setCompareConditions((current) => {
+      const normalized = normalizeCompareCondition(condition, party, activeSlotId);
+      if (!normalized) return current;
+      const exists = current.some((item) => item.id === normalized.id);
+      return exists
+        ? current.map((item) => (item.id === normalized.id ? normalized : item))
+        : [...current, normalized];
+    });
+  }
+
+  function toggleCompareKeepSlot(slotId) {
+    if (slotId === activeSlotId) return;
+    setCompareKeepSlotIds((current) => (
+      current.includes(slotId)
+        ? current.filter((item) => item !== slotId)
+        : [...current, slotId]
+    ));
+  }
+
+  function buildAutoCompareConditions() {
+    const activeCharacter = getCharacter(activeSlot?.characterId);
+    const recommendations = [];
+    const defaultLightcone = getDefaultLightCone(activeCharacter);
+    if (defaultLightcone?.id && activeSlot?.lightconeId && defaultLightcone.id !== activeSlot.lightconeId) {
+      recommendations.push(normalizeCompareCondition({
+        id: createCompareConditionId(),
+        type: "lightCone",
+        slotId: activeSlot.slotId,
+        baseLightconeId: activeSlot.lightconeId,
+        baseLightconeRank: activeSlot.lightconeRank,
+        lightconeId: defaultLightcone.id,
+        lightconeRank: 1,
+      }, party, activeSlotId));
+    }
+
+    const keepSet = new Set(sanitizeCompareKeepSlotIds(compareKeepSlotIds, party));
+    const usedSlots = new Set([activeSlotId]);
+    const usedCharacters = new Set(party.map((slot) => slot.characterId).filter(Boolean));
+    const candidateRows = partyRecommendationGroups
+      .flatMap((group) => group.rows ?? [])
+      .filter((row) => Number(row.deltaDamage ?? 0) > 0)
+      .filter((row) => row.replacementSlotId && !keepSet.has(row.replacementSlotId))
+      .sort((a, b) => Number(b.deltaDamage ?? 0) - Number(a.deltaDamage ?? 0));
+
+    for (const row of candidateRows) {
+      if (recommendations.length >= 4) break;
+      if (usedSlots.has(row.replacementSlotId) || usedCharacters.has(row.ownerId)) continue;
+      const character = getCharacter(row.ownerId);
+      if (!character) continue;
+      const defaults = createDefaultEquipmentForCharacter(character);
+      const condition = normalizeCompareCondition({
+        id: createCompareConditionId(),
+        type: "partyMember",
+        slotId: row.replacementSlotId,
+        characterId: character.characterId,
+        eidolon: ownedCharacterEidolon,
+        lightconeId: defaults.lightconeId,
+        lightconeRank: defaults.lightconeRank,
+        relicPatch: sanitizeRelicPatch(defaults),
+      }, party, activeSlotId);
+      if (!condition) continue;
+      recommendations.push(condition);
+      usedSlots.add(row.replacementSlotId);
+      usedCharacters.add(character.characterId);
+    }
+
+    return recommendations.filter(Boolean);
+  }
+
+  function applyAutoCompareRecommendations() {
+    const recommendations = buildAutoCompareConditions();
+    if (!recommendations.length) return;
+    if (compareConditions.length && !window.confirm("기존 비교 조건을 자동추천 조건으로 교체할까요?")) return;
+    setCompareConditions(recommendations);
   }
 
   function applyOwnedCharacterEidolon(value) {
@@ -3049,7 +3864,7 @@ export function CalculatorRoute() {
       <header className="calc-topbar">
         <nav className="calc-top-tabs" aria-label="계산기 화면 탭">
           {appTabs.map((tab) => (
-            <button key={tab.key} className={activeTab === tab.key ? "is-active" : ""} type="button" onClick={() => setActiveTab(tab.key)}>
+            <button key={tab.key} className={activeTab === tab.key ? "is-active" : ""} type="button" onClick={() => changeActiveTab(tab.key)}>
               {tab.label}
             </button>
           ))}
@@ -3080,7 +3895,7 @@ export function CalculatorRoute() {
                 slot={slot}
                 active={slot.slotId === activeSlotId}
                 onSelect={() => {
-                  setActiveSlotId(slot.slotId);
+                  changeMainDealer(slot.slotId);
                   setPickerOpen(true);
                 }}
               />
@@ -3093,19 +3908,19 @@ export function CalculatorRoute() {
                 slot={slot}
                 active={slot.slotId === activeSlotId}
                 onSelect={() => {
-                  setActiveSlotId(slot.slotId);
+                  changeMainDealer(slot.slotId);
                   setPickerOpen(true);
                 }}
                 onEidolonChange={(eidolon) => {
-                  setActiveSlotId(slot.slotId);
+                  changeMainDealer(slot.slotId);
                   setParty((current) => current.map((item) => (item.slotId === slot.slotId ? { ...item, eidolon } : item)));
                 }}
                 onOpenLightCone={() => {
-                  setActiveSlotId(slot.slotId);
+                  changeMainDealer(slot.slotId);
                   setLightconeSlotId(slot.slotId);
                 }}
                 onOpenRelic={() => {
-                  setActiveSlotId(slot.slotId);
+                  changeMainDealer(slot.slotId);
                   setRelicSlotId(slot.slotId);
                 }}
               />
@@ -3118,45 +3933,64 @@ export function CalculatorRoute() {
         </>
       )}
 
-      {activeTab === "buffs" && (
+      {(activeTab === "buffs" || activeTab === "conditionCompare") && (
         <section className="calc-party-evaluation" aria-label="스탯 / 데미지 계산">
-          <MainDealerCard party={party} activeSlotId={activeSlotId} onChange={setActiveSlotId} />
-          <EnemyEditor enemy={enemy} onChange={setEnemy} />
-          <PartySpecificSettingPanel
-            controls={partySpecificControls}
-            values={partySpecificSettings}
-            onChange={(key, value) => setPartySpecificSettings((current) => ({ ...current, [key]: value }))}
-          />
-          {statEvaluation?.groups?.length ? (
-            <section className="calc-evaluation-shell" aria-label="전투 스탯 평가">
-              <BattleStatEvaluationPanel evaluation={statEvaluation} />
-            </section>
-          ) : null}
-          <ContributionTabs value={contributionViewMode} onChange={setContributionViewMode} />
-          {contributionViewMode === "party" ? (
-            <ContributionPanel
-              viewMode={contributionViewMode}
-              contributionViews={contributionViews}
-              skillCards={skillCards}
-              partyRecommendationGroups={partyRecommendationGroups}
-              partyRecommendationEidolon={ownedCharacterEidolon}
-              onPartyRecommendationEidolonChange={applyOwnedCharacterEidolon}
+          {activeTab === "conditionCompare" ? (
+            <ConditionComparePanel
+              party={party}
+              activeSlotId={activeSlotId}
+              onMainDealerChange={changeMainDealer}
+              enemy={enemy}
+              onEnemyChange={setEnemy}
+              baseScenarioSettings={partySpecificSettings}
+              compareConditions={compareConditions}
+              compareKeepSlotIds={compareKeepSlotIds}
+              ownedCharacterEidolon={ownedCharacterEidolon}
+              onAddCondition={() => setCompareEditorConditionId("__new__")}
+              onEditCondition={setCompareEditorConditionId}
+              onRemoveCondition={(conditionId) => setCompareConditions((current) => current.filter((condition) => condition.id !== conditionId))}
+              onAutoRecommend={applyAutoCompareRecommendations}
+              onToggleKeepSlot={toggleCompareKeepSlot}
             />
           ) : (
-            <DamageResultPanel battleResult={battleResult} skillCards={skillCards} contributionViews={contributionViews} viewMode={contributionViewMode} />
+            <>
+              <MainDealerCard party={party} activeSlotId={activeSlotId} onChange={changeMainDealer} />
+              <EnemyEditor enemy={enemy} onChange={setEnemy} />
+              <PartySpecificSettingPanel
+                controls={partySpecificControls}
+                values={partySpecificSettings}
+                onChange={(key, value) => setPartySpecificSettings((current) => ({ ...current, [key]: value }))}
+              />
+              {statEvaluation?.groups?.length ? (
+                <section className="calc-evaluation-shell" aria-label="전투 스탯 평가">
+                  <BattleStatEvaluationPanel evaluation={statEvaluation} />
+                </section>
+              ) : null}
+              <ContributionTabs value={contributionViewMode} onChange={setContributionViewMode} />
+              {contributionViewMode === "party" ? (
+                <ContributionPanel
+                  viewMode={contributionViewMode}
+                  contributionViews={contributionViews}
+                  skillCards={skillCards}
+                  partyRecommendationGroups={partyRecommendationGroups}
+                  partyRecommendationEidolon={ownedCharacterEidolon}
+                  onPartyRecommendationEidolonChange={applyOwnedCharacterEidolon}
+                />
+              ) : (
+                <DamageResultPanel battleResult={battleResult} skillCards={skillCards} contributionViews={contributionViews} viewMode={contributionViewMode} />
+              )}
+            </>
           )}
         </section>
       )}
-
-      {activeTab === "conditionCompare" && (
-        <ConditionComparePanel
+      {compareEditorConditionId && (
+        <CompareConditionEditorModal
           party={party}
           activeSlotId={activeSlotId}
-          onMainDealerChange={setActiveSlotId}
-          enemy={enemy}
-          onEnemyChange={setEnemy}
-          stateControls={partySpecificControls}
-          baseScenarioSettings={partySpecificSettings}
+          condition={compareEditorCondition}
+          ownedCharacterEidolon={ownedCharacterEidolon}
+          onClose={() => setCompareEditorConditionId(null)}
+          onApply={applyCompareCondition}
         />
       )}
       {settingsOpen && (

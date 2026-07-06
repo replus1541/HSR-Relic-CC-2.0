@@ -1,0 +1,134 @@
+{
+  "app": "hsr-relic-cc-battle-effect-supplements",
+  "version": 1,
+  "updatedAt": "2026-07-06",
+  "policy": {
+    "sourceBackedOnly": true,
+    "manualGuideFallback": false,
+    "purpose": "Curated source-backed effect rows for effects proven present in loaded source text but missed by the generated effect parser."
+  },
+  "metadataRows": [
+    {
+      "effectRowId": "effect:Hyacine_00:supplement:hpRatio:clearSkies",
+      "sourceId": "source:Hyacine_00:supplement:hpRatio:clearSkies",
+      "ownerId": "Hyacine_00",
+      "sourceLabel": "히아킨",
+      "sourceDisplayLabel": "필살기 · 비 온 뒤 맑음",
+      "sourceTrace": "HoyoWiki:3688:ultimate:비 온 뒤 맑음:hpRatio:curated-source-2026-07-06",
+      "sourceCategory": "ultimate",
+      "sourceTitle": "비 온 뒤 맑음",
+      "minEidolon": null,
+      "effectType": "buff",
+      "targetPolicy": "allAllies",
+      "stat": "hpRatio"
+    },
+    {
+      "effectRowId": "effect:Gallagher_00:supplement:E6:breakEffect",
+      "sourceId": "source:Gallagher_00:supplement:E6:breakEffect",
+      "ownerId": "Gallagher_00",
+      "sourceLabel": "갤러거",
+      "sourceDisplayLabel": "성혼 6 · 블러드 앤 샌드",
+      "sourceTrace": "HoyoWiki:1924:E6:블러드 앤 샌드:breakEffect:curated-source-2026-07-06",
+      "sourceCategory": "E6",
+      "sourceTitle": "블러드 앤 샌드",
+      "minEidolon": 6,
+      "effectType": "buff",
+      "targetPolicy": "self",
+      "stat": "breakEffect"
+    },
+    {
+      "effectRowId": "effect:Gallagher_00:supplement:E6:toughnessDamageRatio",
+      "sourceId": "source:Gallagher_00:supplement:E6:toughnessDamageRatio",
+      "ownerId": "Gallagher_00",
+      "sourceLabel": "갤러거",
+      "sourceDisplayLabel": "성혼 6 · 블러드 앤 샌드",
+      "sourceTrace": "HoyoWiki:1924:E6:블러드 앤 샌드:toughnessDamageRatio:curated-source-2026-07-06",
+      "sourceCategory": "E6",
+      "sourceTitle": "블러드 앤 샌드",
+      "minEidolon": 6,
+      "effectType": "buff",
+      "targetPolicy": "self",
+      "stat": "toughnessDamageRatio"
+    }
+  ],
+  "ledgerRows": [
+    {
+      "ledgerId": "ledger:curated:effect:Hyacine_00:supplement:hpRatio:clearSkies",
+      "sourceId": "source:Hyacine_00:supplement:hpRatio:clearSkies",
+      "sourceRowId": "source:Hyacine_00:supplement:hpRatio:clearSkies",
+      "canonicalEffectKey": "effect|hyacine_00|curated_source|source:hyacine_00:supplement:hpratio:clearskies|data_curated_battle-effect-supplements.json|buff|all_allies|support|none|none|none",
+      "valueMode": "fixed",
+      "ownerId": "Hyacine_00",
+      "subjectId": "Hyacine_00",
+      "targetPolicy": "all_allies",
+      "stat": "hpRatio",
+      "resolvedValue": 0.3,
+      "blockedReason": null,
+      "skippedReason": null,
+      "usedForCalculation": true,
+      "category": "effect",
+      "calculationStatus": "calculation_ready",
+      "sourceTrace": {
+        "sourceId": "source:Hyacine_00:supplement:hpRatio:clearSkies",
+        "sourceRowId": "source:Hyacine_00:supplement:hpRatio:clearSkies",
+        "effectRowId": "effect:Hyacine_00:supplement:hpRatio:clearSkies",
+        "resolvedEffectId": "resolved:effect:Hyacine_00:supplement:hpRatio:clearSkies",
+        "normalizedEffectId": "normalized:effect:Hyacine_00:supplement:hpRatio:clearSkies",
+        "canonicalEffectKey": "effect|hyacine_00|curated_source|source:hyacine_00:supplement:hpratio:clearskies|data_curated_battle-effect-supplements.json|buff|all_allies|support|none|none|none",
+        "dedupeRole": "winner"
+      }
+    },
+    {
+      "ledgerId": "ledger:curated:effect:Gallagher_00:supplement:E6:breakEffect",
+      "sourceId": "source:Gallagher_00:supplement:E6:breakEffect",
+      "sourceRowId": "source:Gallagher_00:supplement:E6:breakEffect",
+      "canonicalEffectKey": "effect|gallagher_00|curated_source|source:gallagher_00:supplement:e6:breakeffect|data_curated_battle-effect-supplements.json|buff|self|support|none|none|none",
+      "valueMode": "fixed",
+      "ownerId": "Gallagher_00",
+      "subjectId": "Gallagher_00",
+      "targetPolicy": "self",
+      "stat": "breakEffect",
+      "resolvedValue": 0.2,
+      "blockedReason": null,
+      "skippedReason": null,
+      "usedForCalculation": true,
+      "category": "effect",
+      "calculationStatus": "calculation_ready",
+      "sourceTrace": {
+        "sourceId": "source:Gallagher_00:supplement:E6:breakEffect",
+        "sourceRowId": "source:Gallagher_00:supplement:E6:breakEffect",
+        "effectRowId": "effect:Gallagher_00:supplement:E6:breakEffect",
+        "resolvedEffectId": "resolved:effect:Gallagher_00:supplement:E6:breakEffect",
+        "normalizedEffectId": "normalized:effect:Gallagher_00:supplement:E6:breakEffect",
+        "canonicalEffectKey": "effect|gallagher_00|curated_source|source:gallagher_00:supplement:e6:breakeffect|data_curated_battle-effect-supplements.json|buff|self|support|none|none|none",
+        "dedupeRole": "winner"
+      }
+    },
+    {
+      "ledgerId": "ledger:curated:effect:Gallagher_00:supplement:E6:toughnessDamageRatio",
+      "sourceId": "source:Gallagher_00:supplement:E6:toughnessDamageRatio",
+      "sourceRowId": "source:Gallagher_00:supplement:E6:toughnessDamageRatio",
+      "canonicalEffectKey": "effect|gallagher_00|curated_source|source:gallagher_00:supplement:e6:toughnessdamageratio|data_curated_battle-effect-supplements.json|buff|self|support|none|none|none",
+      "valueMode": "fixed",
+      "ownerId": "Gallagher_00",
+      "subjectId": "Gallagher_00",
+      "targetPolicy": "self",
+      "stat": "toughnessDamageRatio",
+      "resolvedValue": 0.2,
+      "blockedReason": null,
+      "skippedReason": null,
+      "usedForCalculation": true,
+      "category": "effect",
+      "calculationStatus": "calculation_ready",
+      "sourceTrace": {
+        "sourceId": "source:Gallagher_00:supplement:E6:toughnessDamageRatio",
+        "sourceRowId": "source:Gallagher_00:supplement:E6:toughnessDamageRatio",
+        "effectRowId": "effect:Gallagher_00:supplement:E6:toughnessDamageRatio",
+        "resolvedEffectId": "resolved:effect:Gallagher_00:supplement:E6:toughnessDamageRatio",
+        "normalizedEffectId": "normalized:effect:Gallagher_00:supplement:E6:toughnessDamageRatio",
+        "canonicalEffectKey": "effect|gallagher_00|curated_source|source:gallagher_00:supplement:e6:toughnessdamageratio|data_curated_battle-effect-supplements.json|buff|self|support|none|none|none",
+        "dedupeRole": "winner"
+      }
+    }
+  ]
+}

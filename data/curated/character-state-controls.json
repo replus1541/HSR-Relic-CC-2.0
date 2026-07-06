@@ -16,6 +16,18 @@
       ]
     },
     {
+      "key": "jingliuMoonlightStacks",
+      "scope": "activeCharacter",
+      "characterId": "Jingliu_00",
+      "label": "경류 달빛",
+      "note": "전백 상태 달빛 스택당 치명타 피해 44%. 일반 파티 3스택, 기억정령 포함 시 최대 5스택.",
+      "defaultValue": 3,
+      "options": [3, 4, 5],
+      "format": "count",
+      "effectRowIds": ["effect:Jingliu_00:curated:moonlightStacksCritDamage"],
+      "valueFormula": { "type": "stackMultiplier", "unitValue": 0.44 }
+    },
+    {
       "key": "elationCertifiedBangerStacks",
       "scope": "activeFormula",
       "formulaType": "elation",
@@ -146,6 +158,43 @@
       "valueFormula": { "type": "stackMultiplier", "unitValue": 0.14 }
     },
     {
+      "key": "anaxaSkillDamageBoost",
+      "scope": "activeCharacter",
+      "characterId": "Anaxa_00",
+      "label": "아낙사 성질 발로",
+      "note": "대상이 5가지 속성 약점을 보유한 상태",
+      "defaultValue": 1,
+      "options": [0, 1],
+      "format": "toggle",
+      "effectRowIds": ["effect:Anaxa_00:1"],
+      "valueFormula": { "type": "thresholdValue", "threshold": 1, "value": 0.2 }
+    },
+    {
+      "key": "himekoSkillBurningTarget",
+      "scope": "activeCharacter",
+      "characterId": "Himeko_00",
+      "label": "히메코 작열",
+      "note": "전투 스킬 대상이 연소 상태",
+      "defaultValue": 1,
+      "options": [0, 1],
+      "format": "toggle",
+      "effectRowIds": ["effect:Himeko_00:0"],
+      "valueFormula": { "type": "thresholdValue", "threshold": 1, "value": 0.2 }
+    },
+    {
+      "key": "ruanMeiE2BrokenEnemy",
+      "scope": "partyCharacter",
+      "characterId": "RuanMei_00",
+      "label": "완매 갈대밭",
+      "note": "약점 격파 상태의 적에게 피해",
+      "minEidolon": 2,
+      "defaultValue": 1,
+      "options": [0, 1],
+      "format": "toggle",
+      "effectRowIds": ["effect:RuanMei_00:1"],
+      "valueFormula": { "type": "thresholdValue", "threshold": 1, "value": 0.4 }
+    },
+    {
       "key": "cerydraNobilityStacks",
       "scope": "partyCharacter",
       "characterId": "Cerydra_00",
@@ -155,6 +204,17 @@
       "options": [4, 6],
       "effectRowIds": ["effect:Cerydra_00:10"],
       "valueFormula": { "type": "thresholdValue", "threshold": 6, "value": 0.08 }
+    },
+    {
+      "key": "weltZeroGravityStacks",
+      "scope": "partyCharacter",
+      "characterId": "Welt_00",
+      "label": "웰트 무중력",
+      "note": "현재 선택된 딜러가 공격하는 [무중력] 스택",
+      "defaultValue": 10,
+      "options": [4, 6, 8, 10],
+      "effectRowIds": ["effect:Welt_00:4"],
+      "valueFormula": { "type": "stackMultiplier", "unitValue": 0.1 }
     },
     {
       "key": "cyreneDemiurgeBuffCount",
