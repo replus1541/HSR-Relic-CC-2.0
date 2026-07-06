@@ -71,6 +71,7 @@ const targetPolicyOverridesByEffectId = new Map([
   ["effect:PlayerBoy_20:1", "single_ally"],
   ["effect:PlayerBoy_20:hoyowiki-source:E1:현재의_서술자:critRate:0", "single_ally"],
   ["effect:PlayerBoy_20:supplement:mimiSupportTrueDamage", "single_ally"],
+  ["effect:Sunday_10:2", "single_ally"],
   ["effect:PlayerBoy_40:2", "enemy_all"],
   ["effect:PlayerBoy_40:0", "self"],
   ["effect:Jingliu_00:0", "self"],
@@ -79,6 +80,10 @@ const targetPolicyOverridesByEffectId = new Map([
   ["effect:YaoGuang_00:0", "self"],
   ["effect:Cerydra_00:3", "single_ally"],
   ["effect:Cerydra_00:4", "single_ally"],
+  ["effect:Hyacine_00:hoyowiki-source:E2:제_정원에_앉았다_가세요:speedRatio:0", "all_allies"],
+  ["effect:RuanMei_00:hoyowiki-source:talent:프랙탈_나선:speedRatio:0", "all_allies"],
+  ["effect:Jade_00:hoyowiki-source:combatSkill:병탄_합병의_담보:speed:0", "single_ally"],
+  ["effect:Bronya_00:hoyowiki-source:E2:빠른_행군:speedRatio:0", "single_ally"],
   ["effect:Luocha_00:1", "enemy_all"],
   ["effect:DanHengPT_00:0", "enemy_all"],
   ["effect:Constance_00:0", "enemy_all"],
@@ -87,13 +92,15 @@ const targetPolicyOverridesByEffectId = new Map([
   ["effect:BlackSwan_00:0", "enemy_all"],
   ["effect:Cipher_00:0", "enemy_all"],
   ["effect:Acheron_00:0", "enemy_all"],
+  ["effect:Ashveil_00:0", "enemy_all"],
   ["effect:Ashveil_00:3", "enemy_all"],
   ["effect:Ashveil_00:5", "enemy_all"],
   ["effect:Evernight_00:0", "enemy_all"],
   ["effect:Lingsha_00:1", "enemy_all"],
   ["effect:Welt_00:0", "enemy_all"],
+  ["effect:MortenaxBlade_00:0", "enemy_all"],
   ["effect:MortenaxBlade_00:1", "enemy_all"],
-  ["effect:MortenaxBlade_00:3", "enemy_all"],
+  ["effect:MortenaxBlade_00:5", "enemy_all"],
   ["effect:Jiaoqiu_00:2", "enemy_all"],
   ["effect:Castorice_00:0", "enemy_all"],
   ["effect:Cyrene_00:16", "enemy_all"],
@@ -103,8 +110,30 @@ const targetPolicyOverridesByEffectId = new Map([
   ["effect:Harscyline_00:6", "enemy_all"],
 ]);
 
+const targetExcludesOwnerOverridesByEffectId = new Set([
+  "effect:RuanMei_00:hoyowiki-source:talent:프랙탈_나선:speedRatio:0",
+  "effect:Jade_00:hoyowiki-source:combatSkill:병탄_합병의_담보:speed:0",
+]);
+
 const hyacineSignatureLightConeId = "wiki-3775";
 const hyacineSignatureVulnerabilityByRank = [0.18, 0.225, 0.27, 0.315, 0.36];
+const ashveilSkillDefenseDownByEffectiveLevel = new Map([
+  [10, 0.4],
+  [12, 0.44],
+]);
+const mortenaxUltimateSkillLevelValues = Object.freeze({
+  vulnerability: { base: 0.5, boosted: 0.54 },
+  defenseDown: { base: 0.3, boosted: 0.32 },
+  critDamage: { base: 0.6, boosted: 0.66 },
+});
+const robinUltimateAtkBuffByEffectiveLevel = new Map([
+  [10, { ratio: 0.228, flat: 200 }],
+  [12, { ratio: 0.243, flat: 230 }],
+]);
+const cerydraMilitaryMeritAtkRatioByEffectiveLevel = new Map([
+  [10, 0.24],
+  [12, 0.252],
+]);
 const jingliuMoonlightEffectRowId = "effect:Jingliu_00:curated:moonlightStacksCritDamage";
 const jingliuMoonlightBaseEffectRowId = "effect:Jingliu_00:curated:moonlightStacksCritDamage:base";
 const jingliuMoonlightE4EffectRowId = "effect:Jingliu_00:curated:moonlightStacksCritDamage:E4Bonus";
@@ -112,6 +141,7 @@ const jingliuMoonlightBaseCritDamagePerStack = 0.24;
 const jingliuMoonlightE4CritDamagePerStack = 0.2;
 const jingliuMoonlightBaseStacks = 3;
 const jingliuMoonlightMaxStacks = 5;
+const critRateOvercapConversionRatio = 2;
 
 export function calculateBattleFinalStats({
   party = [],
@@ -168,6 +198,8 @@ export function calculateBattleFinalStats({
     activeCharacterPath: activeCharacter?.path ?? null,
     jingliuMoonlightStacks: calculateJingliuMoonlightStacks(partyCharactersById),
     lightConesByCharacterId: partyLightConesByCharacterId,
+    partyEidolons,
+    partyWideCritRateOvercapConversionEnabled: hasPartyWideCritRateOvercapConversion(partyEidolons),
     cyreneInParty: partyCharacterIds.has("Cyrene_00"),
     cyreneHasAnaxa: partyCharacterIds.has("Cyrene_00") && partyCharacterIds.has("Anaxa_00"),
     mortenaxHasOtherNihility: hasOtherNihilityCharacter(partyCharactersById, "MortenaxBlade_00"),
@@ -176,7 +208,8 @@ export function calculateBattleFinalStats({
   };
   const metadataByEffectId = new Map((effectMetadataRows ?? []).map((row) => [row.effectRowId, row]));
   const scenarioOverridesByEffectId = buildScenarioEffectOverrides({ stateControls, scenarioSettings });
-  const decoratedRows = (ledgerRows ?? []).flatMap((row) => {
+  const equipmentLedgerRows = buildEquipmentLedgerRows({ party, defaultBuildGetter });
+  const decoratedRows = [...(ledgerRows ?? []), ...equipmentLedgerRows].flatMap((row) => {
     const metadata = metadataByEffectId.get(row.sourceTrace?.effectRowId ?? row.effectRowId);
     const effectRowId = row.sourceTrace?.effectRowId ?? row.effectRowId;
     const decorated = applyScenarioEffectOverride(
@@ -191,6 +224,11 @@ export function calculateBattleFinalStats({
     partyEidolons,
     selfByCharacterId,
     rows: decoratedRows,
+    partyBranchState,
+  });
+  const selfSourceStatsByCharacterId = buildSelfSourceStatsByCharacterId({
+    selfByCharacterId,
+    partyBranchState,
   });
   const appliedRows = [];
   const skippedRows = [];
@@ -198,7 +236,7 @@ export function calculateBattleFinalStats({
   for (const row of decoratedRows) {
     const decorated = applyRuntimeSourceStatResolution(
       row,
-      { selfByCharacterId, runtimeStatsByCharacterId, activeCharacterId: activeCharacter?.characterId, partyBranchState },
+      { selfByCharacterId, selfSourceStatsByCharacterId, runtimeStatsByCharacterId, activeCharacterId: activeCharacter?.characterId, partyBranchState },
     );
     const decision = shouldApplyLedgerRow(decorated, {
       activeCharacterId: activeCharacter?.characterId,
@@ -213,10 +251,29 @@ export function calculateBattleFinalStats({
   }
 
   const battleTotals = sumRows(appliedRows.filter((row) => statBuffKeys.has(row.stat) && !isEnemyTarget(row)));
-  const enemyDebuffs = sumRows(appliedRows.filter(isEnemyTarget));
-  const damageModifiers = sumRows(appliedRows.filter((row) => damageModifierKeys.has(row.stat)));
+  const enemyDebuffRows = appliedRows.filter(isEnemyTarget);
+  const enemyDebuffs = sumRows(enemyDebuffRows);
+  const damageModifiers = sumRows(appliedRows.filter((row) => damageModifierKeys.has(row.stat) && !isEnemyOnlyDamageModifier(row)));
   const combinedStatTotals = mergeTotals(self.totals, battleTotals);
-  const finalStats = applyStatTotalsToBase(self.stats.base, combinedStatTotals);
+  const finalStats = applyCritRateOvercapConversion(
+    applyStatTotalsToBase(self.stats.base, combinedStatTotals),
+    getCritRateOvercapConversionMode(activeCharacter?.characterId, partyBranchState),
+    calculateCritRateOvercapConversionBasis({ characterId: activeCharacter?.characterId, self, appliedRows, partyBranchState }),
+  );
+  const partyFinalStats = buildPartyFinalStatsByCharacterId({
+    party,
+    activeCharacterId: activeCharacter?.characterId,
+    activeFinalStats: finalStats,
+    activeCombinedStatTotals: combinedStatTotals,
+    decoratedRows,
+    selfByCharacterId,
+    selfSourceStatsByCharacterId,
+    runtimeStatsByCharacterId,
+    partyBranchState,
+    partyCharactersById,
+    partyCharacterIds,
+    partyEidolons,
+  });
 
   return {
     activeSlot,
@@ -224,23 +281,124 @@ export function calculateBattleFinalStats({
     partySlots: party.map((slot) => ({
       characterId: slot.characterId,
       eidolon: Number(slot.eidolon ?? 0),
+      path: partyCharactersById.get(slot.characterId)?.path ?? null,
     })),
     self,
     finalStats,
+    partyFinalStatsByCharacterId: partyFinalStats.finalStatsByCharacterId,
+    partyCombinedStatTotalsByCharacterId: partyFinalStats.combinedStatTotalsByCharacterId,
     battleTotals,
     combinedStatTotals,
     enemyDebuffs,
+    enemyDebuffRows,
     damageModifiers,
     appliedRows,
     skippedRows,
     sourceTrace: {
-      ledgerRows: ledgerRows.length,
+      ledgerRows: ledgerRows.length + equipmentLedgerRows.length,
       partyRows: appliedRows.length + skippedRows.length,
       appliedRows: appliedRows.length,
       skippedRows: skippedRows.length,
       selfEntries: self.entries.length,
     },
   };
+}
+
+function buildEquipmentLedgerRows({ party = [], defaultBuildGetter } = {}) {
+  const rows = [];
+  for (const slot of party ?? []) {
+    const characterId = slot?.characterId;
+    if (!characterId) continue;
+    const defaultBuild = defaultBuildGetter?.(characterId) ?? null;
+    const selectedRelics = defaultBuild?.selectedRelics ?? {};
+    const set4Id = slot?.relicSet4Id ?? selectedRelics.set4?.id ?? null;
+    const set4Mode = slot?.relicSet4Mode ?? selectedRelics.set4Mode ?? "4";
+    if (set4Id === "wiki-relic-4769" && set4Mode !== "2+2") {
+      rows.push({
+        ledgerId: `ledger:equipment:${characterId}:wiki-relic-4769:all_allies:elation`,
+        sourceId: `source:equipment:${characterId}:wiki-relic-4769:all_allies:elation`,
+        sourceRowId: `source:equipment:${characterId}:wiki-relic-4769:all_allies:elation`,
+        effectRowId: `effect:equipment:${characterId}:wiki-relic-4769:all_allies:elation`,
+        ownerId: characterId,
+        sourceLabel: "천명에 응해 먼 길을 떠난 점술가",
+        sourceDisplayLabel: "유물 4셋 · 천명에 응해 먼 길을 떠난 점술가",
+        sourceCategory: "relic",
+        sourceTitle: "천명에 응해 먼 길을 떠난 점술가",
+        effectType: "buff",
+        targetPolicy: "all_allies",
+        stat: "elation",
+        resolvedValue: 10,
+        valueMode: "fixed",
+        usedForCalculation: true,
+        calculationStatus: "calculation_ready",
+        conditionStatus: "assumed-active",
+        sourceText: "장착한 캐릭터가 각 전투에서 처음으로 환락 스킬 발동 시 모든 아군의 환락도가 10 증가",
+        sourceTrace: {
+          effectRowId: `effect:equipment:${characterId}:wiki-relic-4769:all_allies:elation`,
+          sourceRowId: `source:equipment:${characterId}:wiki-relic-4769:all_allies:elation`,
+          source: "equipment-stat-model",
+        },
+      });
+    }
+  }
+  return rows;
+}
+
+function buildPartyFinalStatsByCharacterId({
+  party = [],
+  activeCharacterId,
+  activeFinalStats,
+  activeCombinedStatTotals,
+  decoratedRows = [],
+  selfByCharacterId,
+  selfSourceStatsByCharacterId,
+  runtimeStatsByCharacterId,
+  partyBranchState,
+  partyCharactersById,
+  partyCharacterIds,
+  partyEidolons,
+}) {
+  const finalStatsByCharacterId = {};
+  const combinedStatTotalsByCharacterId = {};
+  for (const slot of party ?? []) {
+    const characterId = slot?.characterId;
+    if (!characterId) continue;
+    if (characterId === activeCharacterId) {
+      finalStatsByCharacterId[characterId] = activeFinalStats;
+      combinedStatTotalsByCharacterId[characterId] = activeCombinedStatTotals;
+      continue;
+    }
+    const targetSelf = selfByCharacterId.get(characterId);
+    if (!targetSelf?.stats?.base) continue;
+    const targetCharacter = partyCharactersById.get(characterId);
+    const targetBranchState = {
+      ...partyBranchState,
+      activeCharacterPath: targetCharacter?.path ?? null,
+    };
+    const targetAppliedRows = [];
+    for (const row of decoratedRows) {
+      const decorated = applyRuntimeSourceStatResolution(
+        row,
+        { selfByCharacterId, selfSourceStatsByCharacterId, runtimeStatsByCharacterId, activeCharacterId: characterId, partyBranchState: targetBranchState },
+      );
+      const decision = shouldApplyLedgerRow(decorated, {
+        activeCharacterId: characterId,
+        partyCharacterIds,
+        partyEidolons,
+        assumeSingleAllyTarget: false,
+      });
+      if (decision.apply) targetAppliedRows.push(decorated);
+    }
+    const targetBattleTotals = sumRows(targetAppliedRows.filter((row) => statBuffKeys.has(row.stat) && !isEnemyTarget(row)));
+    const targetCombinedTotals = mergeTotals(targetSelf.totals, targetBattleTotals);
+    finalStatsByCharacterId[characterId] = applyCritRateOvercapConversion(
+      applyStatTotalsToBase(targetSelf.stats.base, targetCombinedTotals),
+      getCritRateOvercapConversionMode(characterId, targetBranchState),
+      calculateCritRateOvercapConversionBasis({ characterId, self: targetSelf, appliedRows: targetAppliedRows, partyBranchState: targetBranchState }),
+    );
+    combinedStatTotalsByCharacterId[characterId] = targetCombinedTotals;
+  }
+  return { finalStatsByCharacterId, combinedStatTotalsByCharacterId };
 }
 
 function buildScenarioEffectOverrides({ stateControls = [], scenarioSettings = {} } = {}) {
@@ -321,12 +479,58 @@ function buildJingliuMoonlightSplitRow(row, { effectRowId, ledgerSuffix, sourceD
   };
 }
 
+function hasPartyWideCritRateOvercapConversion(partyEidolons) {
+  return Number(partyEidolons?.get("Sunday_10") ?? 0) >= 6;
+}
+
+function getCritRateOvercapConversionMode(characterId, partyBranchState) {
+  if (!characterId) return null;
+  if (characterId === "SilverWolf999_00") return "finalCritRate";
+  if (partyBranchState?.partyWideCritRateOvercapConversionEnabled) return "sundayEquipmentPlusBuff";
+  return null;
+}
+
+function calculateCritRateOvercapConversionBasis({ characterId, self, appliedRows = [], partyBranchState } = {}) {
+  const mode = getCritRateOvercapConversionMode(characterId, partyBranchState);
+  if (mode === "sundayEquipmentPlusBuff") {
+    return calculateEquipmentCritRate(self) + calculateAppliedSundayCritRate(appliedRows);
+  }
+  return null;
+}
+
+function calculateEquipmentCritRate(self) {
+  return (self?.entries ?? [])
+    .filter((entry) => entry?.stat === "critRate" && (entry.sourceType === "유물" || entry.sourceType === "광추"))
+    .reduce((sum, entry) => sum + Number(entry.value ?? 0), 0);
+}
+
+function calculateAppliedSundayCritRate(appliedRows = []) {
+  return (appliedRows ?? [])
+    .filter((row) => row?.ownerId === "Sunday_10" && row?.stat === "critRate" && !isEnemyTarget(row))
+    .reduce((sum, row) => sum + Number(row.resolvedValue ?? 0), 0);
+}
+
+function applyCritRateOvercapConversion(stats, mode, conversionBasis = null) {
+  if (!mode || !stats) return stats;
+  const critRate = mode === "sundayEquipmentPlusBuff" ? Number(conversionBasis ?? 0) : Number(stats.critRate ?? 0);
+  if (!Number.isFinite(critRate) || critRate <= 1) return stats;
+  const convertedCritDamage = (critRate - 1) * critRateOvercapConversionRatio;
+  return {
+    ...stats,
+    critDamage: Number(stats.critDamage ?? 0) + convertedCritDamage,
+    critRateOvercapConvertedCritDamage: convertedCritDamage,
+    critRateOvercapConversionBasis: critRate,
+    critRateOvercapConversionMode: mode,
+  };
+}
+
 function buildRuntimeSourceStatsByCharacterId({
   party = [],
   partyCharacterIds,
   partyEidolons,
   selfByCharacterId,
   rows = [],
+  partyBranchState,
 } = {}) {
   const result = new Map();
   for (const slot of party ?? []) {
@@ -336,7 +540,24 @@ function buildRuntimeSourceStatsByCharacterId({
     const readyAllyWideTotals = sumRows((rows ?? []).filter((row) => (
       isRuntimeSourceStatRowForCharacter(row, characterId, { partyCharacterIds, partyEidolons })
     )));
-    result.set(characterId, applyStatTotalsToBase(self.stats.base, mergeTotals(self.totals, readyAllyWideTotals)));
+    result.set(characterId, applyCritRateOvercapConversion(
+      applyStatTotalsToBase(self.stats.base, mergeTotals(self.totals, readyAllyWideTotals)),
+      getCritRateOvercapConversionMode(characterId, partyBranchState),
+      calculateCritRateOvercapConversionBasis({ characterId, self, appliedRows: [], partyBranchState }),
+    ));
+  }
+  return result;
+}
+
+function buildSelfSourceStatsByCharacterId({ selfByCharacterId, partyBranchState } = {}) {
+  const result = new Map();
+  for (const [characterId, self] of selfByCharacterId ?? []) {
+    if (!characterId || !self?.stats) continue;
+    result.set(characterId, applyCritRateOvercapConversion(
+      self.stats,
+      getCritRateOvercapConversionMode(characterId, partyBranchState),
+      calculateCritRateOvercapConversionBasis({ characterId, self, appliedRows: [], partyBranchState }),
+    ));
   }
   return result;
 }
@@ -355,12 +576,48 @@ function isRuntimeSourceStatRowForCharacter(row, characterId, { partyCharacterId
 
 function applyRuntimeSourceStatResolution(row, {
   selfByCharacterId,
+  selfSourceStatsByCharacterId,
   runtimeStatsByCharacterId,
   activeCharacterId,
   partyBranchState,
 } = {}) {
   const sourceTrace = String(row.metadata?.sourceTrace ?? row.sourceTrace?.effectRowId ?? row.effectRowId ?? "");
   const effectRowId = row.sourceTrace?.effectRowId ?? row.effectRowId;
+  if (effectRowId === "effect:MortenaxBlade_00:1") {
+    const ownerEidolon = Number(partyBranchState?.partyEidolons?.get(row.ownerId) ?? 0);
+    return markRuntimeResolved(row, resolveMortenaxUltimateLevelValue("vulnerability", ownerEidolon), {
+      type: "skillLevelByEidolon",
+      sourceStat: "vulnerability",
+      baseLevelValue: mortenaxUltimateSkillLevelValues.vulnerability.base,
+      maxLevelValue: mortenaxUltimateSkillLevelValues.vulnerability.boosted,
+      ownerEidolon,
+    });
+  }
+  if (
+    row.ownerId === "MortenaxBlade_00"
+    && row.stat === "defenseDown"
+    && sourceTrace.includes("HoyoWiki:5217:ultimate:")
+    && sourceTrace.includes("defenseDown:3")
+  ) {
+    const ownerEidolon = Number(partyBranchState?.partyEidolons?.get(row.ownerId) ?? 0);
+    return markRuntimeResolved(row, resolveMortenaxUltimateLevelValue("defenseDown", ownerEidolon), {
+      type: "skillLevelByEidolon",
+      sourceStat: "defenseDown",
+      baseLevelValue: mortenaxUltimateSkillLevelValues.defenseDown.base,
+      maxLevelValue: mortenaxUltimateSkillLevelValues.defenseDown.boosted,
+      ownerEidolon,
+    });
+  }
+  if (effectRowId === "effect:MortenaxBlade_00:3") {
+    const ownerEidolon = Number(partyBranchState?.partyEidolons?.get(row.ownerId) ?? 0);
+    return markRuntimeResolved(row, resolveMortenaxUltimateLevelValue("critDamage", ownerEidolon), {
+      type: "skillLevelByEidolon",
+      sourceStat: "critDamage",
+      baseLevelValue: mortenaxUltimateSkillLevelValues.critDamage.base,
+      maxLevelValue: mortenaxUltimateSkillLevelValues.critDamage.boosted,
+      ownerEidolon,
+    });
+  }
   if (effectRowId === jingliuMoonlightBaseEffectRowId || effectRowId === jingliuMoonlightE4EffectRowId) {
     const stacks = Number(partyBranchState?.jingliuMoonlightStacks ?? jingliuMoonlightBaseStacks);
     const perStack = effectRowId === jingliuMoonlightE4EffectRowId
@@ -409,6 +666,52 @@ function applyRuntimeSourceStatResolution(row, {
       type: "lightConeSuperimposition",
       lightConeId: hyacineSignatureLightConeId,
       rank,
+    });
+  }
+  if (effectRowId === "effect:Sunday_10:0") {
+    const ownerCritDamage = Number(selfSourceStatsByCharacterId?.get(row.ownerId)?.critDamage ?? selfByCharacterId?.get(row.ownerId)?.stats?.critDamage ?? 0);
+    const ratio = Number(row.resolvedValue ?? 0);
+    if (!Number.isFinite(ownerCritDamage) || ownerCritDamage <= 0 || !Number.isFinite(ratio) || ratio <= 0) return row;
+    return markRuntimeResolved(row, ownerCritDamage * ratio, {
+      type: "sourceStatRatio",
+      sourceStat: "critDamage",
+      ratio,
+      sourceStatPolicy: "ownerSelfStats",
+    });
+  }
+  if (effectRowId === "effect:Sparkle_00:7") {
+    const ownerCritDamage = Number(selfSourceStatsByCharacterId?.get(row.ownerId)?.critDamage ?? selfByCharacterId?.get(row.ownerId)?.stats?.critDamage ?? 0);
+    const ratio = Number(row.resolvedValue ?? 0);
+    if (!Number.isFinite(ownerCritDamage) || ownerCritDamage <= 0 || !Number.isFinite(ratio) || ratio <= 0) return row;
+    const flat = ratio * 1.875;
+    return markRuntimeResolved(row, ownerCritDamage * ratio + flat, {
+      type: "sourceStatRatioPlusFlat",
+      sourceStat: "critDamage",
+      ratio,
+      flat,
+      sourceStatPolicy: "ownerSelfStats",
+    });
+  }
+  if (effectRowId === "effect:Sparkle_00:6") {
+    const ownerCritDamage = Number(selfSourceStatsByCharacterId?.get(row.ownerId)?.critDamage ?? selfByCharacterId?.get(row.ownerId)?.stats?.critDamage ?? 0);
+    if (!Number.isFinite(ownerCritDamage) || ownerCritDamage <= 0) return row;
+    return markRuntimeResolved(row, ownerCritDamage * 0.3, {
+      type: "sourceStatRatio",
+      sourceStat: "critDamage",
+      ratio: 0.3,
+      sourceStatPolicy: "ownerSelfStats",
+    });
+  }
+  if (effectRowId === "effect:Ashveil_00:0") {
+    const ownerEidolon = Number(partyBranchState?.partyEidolons?.get(row.ownerId) ?? 0);
+    const effectiveLevel = ownerEidolon >= 5 ? 12 : 10;
+    return markRuntimeResolved(row, ashveilSkillDefenseDownByEffectiveLevel.get(effectiveLevel) ?? 0.4, {
+      type: "skillLevelScaledEidolonBonus",
+      skillCategory: "combatSkill",
+      baseLevel: 10,
+      effectiveLevel,
+      eidolon: ownerEidolon,
+      eidolonLevelBonuses: ownerEidolon >= 5 ? [{ minEidolon: 5, levelBonus: 2, levelCap: 15 }] : [],
     });
   }
   if (row.usedForCalculation && typeof row.resolvedValue === "number") return row;
@@ -485,38 +788,22 @@ function applyRuntimeSourceStatResolution(row, {
       excludedCharacterId: "MortenaxBlade_00",
     });
   }
-  if (row.ownerId === "Sparkle_00" && row.stat === "critDamage" && sourceTrace.includes("combatSkill") && sourceTrace.includes("critDamage")) {
-    const ownerCritDamage = Number(selfByCharacterId?.get(row.ownerId)?.stats?.critDamage ?? 0);
-    const ratio = Number(row.resolvedValue ?? 0);
-    if (!Number.isFinite(ownerCritDamage) || ownerCritDamage <= 0 || !Number.isFinite(ratio) || ratio <= 0) return row;
-    const flat = ratio * 1.875;
-    return markRuntimeResolved(row, ownerCritDamage * ratio + flat, {
-      type: "sourceStatRatioPlusFlat",
-      sourceStat: "critDamage",
-      ratio,
-      flat,
-      sourceStatPolicy: "ownerSelfStats",
-    });
-  }
-  if (row.ownerId === "Sparkle_00" && row.stat === "critDamage" && sourceTrace.includes("critDamageShare")) {
-    const ownerCritDamage = Number(selfByCharacterId?.get(row.ownerId)?.stats?.critDamage ?? 0);
-    if (!Number.isFinite(ownerCritDamage) || ownerCritDamage <= 0) return row;
-    return markRuntimeResolved(row, ownerCritDamage * 0.3, {
-      type: "sourceStatRatio",
-      sourceStat: "critDamage",
-      ratio: 0.3,
-      sourceStatPolicy: "ownerSelfStats",
-    });
-  }
   if (row.ownerId === "Robin_00" && row.stat === "atkFlat" && sourceTrace.includes("sourceCombatAtkRatioPlusFlat")) {
     const ownerAtk = Number(runtimeStatsByCharacterId?.get(row.ownerId)?.atk ?? 0);
     if (!Number.isFinite(ownerAtk) || ownerAtk <= 0) return row;
-    return markRuntimeResolved(row, ownerAtk * 0.152 + 50, {
+    const ownerEidolon = Number(partyBranchState?.partyEidolons?.get(row.ownerId) ?? 0);
+    const effectiveLevel = ownerEidolon >= 5 ? 12 : 10;
+    const valueConfig = robinUltimateAtkBuffByEffectiveLevel.get(effectiveLevel) ?? robinUltimateAtkBuffByEffectiveLevel.get(10);
+    return markRuntimeResolved(row, ownerAtk * valueConfig.ratio + valueConfig.flat, {
       type: "sourceStatRatioPlusFlat",
       sourceStat: "atk",
-      ratio: 0.152,
-      flat: 50,
+      ratio: valueConfig.ratio,
+      flat: valueConfig.flat,
       sourceStatPolicy: "ownerSelfAndAllyWideReadyBuffs",
+      baseLevel: 10,
+      effectiveLevel,
+      eidolon: ownerEidolon,
+      eidolonLevelBonuses: ownerEidolon >= 5 ? [{ minEidolon: 5, levelBonus: 2, levelCap: 15 }] : [],
     });
   }
   if (row.ownerId === "RuanMei_00" && row.stat === "allDamage" && sourceTrace.includes("breakEffect-overcap-allDamage")) {
@@ -537,11 +824,19 @@ function applyRuntimeSourceStatResolution(row, {
   if (row.ownerId === "Cerydra_00" && row.stat === "atkFlat" && sourceTrace.includes("sourceCombatAtkRatio")) {
     const ownerAtk = Number(selfByCharacterId?.get(row.ownerId)?.stats?.atk ?? 0);
     if (!Number.isFinite(ownerAtk) || ownerAtk <= 0) return row;
-    return markRuntimeResolved(row, ownerAtk * 0.18, {
+    const ownerEidolon = Number(partyBranchState?.partyEidolons?.get(row.ownerId) ?? 0);
+    const effectiveLevel = ownerEidolon >= 5 ? 12 : 10;
+    const ratio = cerydraMilitaryMeritAtkRatioByEffectiveLevel.get(effectiveLevel)
+      ?? cerydraMilitaryMeritAtkRatioByEffectiveLevel.get(10);
+    return markRuntimeResolved(row, ownerAtk * ratio, {
       type: "sourceStatRatio",
       sourceStat: "atk",
-      ratio: 0.18,
+      ratio,
       sourceStatPolicy: "ownerSelfStats",
+      baseLevel: 10,
+      effectiveLevel,
+      eidolon: ownerEidolon,
+      eidolonLevelBonuses: ownerEidolon >= 5 ? [{ minEidolon: 5, levelBonus: 2, levelCap: 15 }] : [],
     });
   }
   if (row.ownerId === "DanHengPT_00" && row.stat === "atkFlat" && sourceTrace.includes("sourceCombatAtkRatio")) {
@@ -568,6 +863,16 @@ function applyRuntimeSourceStatResolution(row, {
       targetStatPolicy: "activeSelfAndAllyWideReadyBuffs",
     });
   }
+  if (row.ownerId === "Hanya_00" && row.stat === "speed" && sourceTrace.includes("sourceSpeedRatio")) {
+    const ownerSpeed = Number(runtimeStatsByCharacterId?.get(row.ownerId)?.speed ?? selfByCharacterId?.get(row.ownerId)?.stats?.speed ?? 0);
+    if (!Number.isFinite(ownerSpeed) || ownerSpeed <= 0) return row;
+    return markRuntimeResolved(row, ownerSpeed * 0.15, {
+      type: "sourceStatRatio",
+      sourceStat: "speed",
+      ratio: 0.15,
+      sourceStatPolicy: "ownerSelfAndAllyWideReadyBuffs",
+    });
+  }
   if (row.ownerId === "Cerydra_00" && row.stat === "critDamage" && sourceTrace.includes("source-atk-threshold-crit-damage")) {
     const ownerAtk = Number(runtimeStatsByCharacterId?.get(row.ownerId)?.atk ?? 0);
     if (!Number.isFinite(ownerAtk) || ownerAtk <= 0) return row;
@@ -583,6 +888,12 @@ function applyRuntimeSourceStatResolution(row, {
     });
   }
   return row;
+}
+
+function resolveMortenaxUltimateLevelValue(stat, ownerEidolon) {
+  const values = mortenaxUltimateSkillLevelValues[stat];
+  if (!values) return 0;
+  return Number(ownerEidolon ?? 0) >= 5 ? values.boosted : values.base;
 }
 
 function resolveCyrenePoemReceiverRow(row, sourceTrace, { activeCharacterId, partyBranchState } = {}) {
@@ -765,6 +1076,7 @@ function decorateLedgerRow(row, metadata) {
     ...row,
     stat: rowMetadata?.stat ?? row.stat,
     targetPolicy: targetPolicyOverride ?? row.targetPolicy,
+    targetExcludesOwner: Boolean(row.targetExcludesOwner || targetExcludesOwnerOverridesByEffectId.has(effectRowId)),
     metadata: rowMetadata,
     targetPolicyOverride: targetPolicyOverride ? {
       effectRowId,
@@ -803,6 +1115,9 @@ function shouldApplyLedgerRow(row, context) {
   }
   if (policy === "all_allies") return { apply: true };
   if (policy === "single_ally") {
+    if (context.assumeSingleAllyTarget === false) {
+      return { apply: false, reason: "single_ally_target_not_assumed" };
+    }
     return row.ownerId !== context.activeCharacterId
       ? { apply: true }
       : { apply: false, reason: "single_ally_self_target_not_assumed" };
@@ -822,6 +1137,10 @@ function normalizeTargetPolicy(policy) {
 
 function isEnemyTarget(row) {
   return normalizeTargetPolicy(row.targetPolicy).startsWith("enemy");
+}
+
+function isEnemyOnlyDamageModifier(row) {
+  return row?.stat === "vulnerability" && isEnemyTarget(row);
 }
 
 function sumRows(rows) {

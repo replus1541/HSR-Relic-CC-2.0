@@ -19,20 +19,10 @@
       "key": "elationCertifiedBangerStacks",
       "scope": "activeFormula",
       "formulaType": "elation",
-      "label": "Certified Banger",
-      "note": "환락 피해 Punchline 배율에 사용할 수치",
-      "defaultValue": 0,
-      "options": [0, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240]
-    },
-    {
-      "key": "elationMerrymake",
-      "scope": "activeFormula",
-      "formulaType": "elation",
-      "label": "Merrymake",
-      "note": "환락 전용 Merrymake 배율",
-      "defaultValue": 0,
-      "options": [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
-      "format": "percent"
+      "label": "웃음포인트",
+      "note": "환락피해 전용스택",
+      "defaultValue": 40,
+      "options": [0, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400, 420, 440, 460, 480, 500]
     },
     {
       "key": "cipherRecordedDamage",
@@ -45,6 +35,15 @@
       "format": "number"
     },
     {
+      "key": "sparxieSkillEnhancementStacks",
+      "scope": "activeCharacter",
+      "characterId": "Sparxie_00",
+      "label": "스파키 전스강화",
+      "note": "[상호작용 함정] 발동 스택",
+      "defaultValue": 4,
+      "options": [4, 6, 8, 10, 12]
+    },
+    {
       "key": "superBreakToughnessMultiplier",
       "scope": "activeFormula",
       "formulaType": "super_break",
@@ -55,15 +54,23 @@
       "format": "percent"
     },
     {
-      "key": "theHertaInterpretationStacks",
+      "key": "theHertaInterpretationMainStacks",
       "scope": "activeCharacter",
       "characterId": "TheHerta_00",
-      "label": "더 헤르타 해독",
-      "note": "강화 전투 스킬 주목표 [해독] 42스택 도달 여부",
+      "label": "주목표 해독",
+      "note": "주 목표, 주변 적군 스택 설정",
       "defaultValue": 42,
-      "options": [0, 21, 42],
-      "effectRowIds": ["effect:TheHerta_00:1"],
-      "valueFormula": { "type": "thresholdValue", "threshold": 42, "value": 0.5 }
+      "options": [10, 20, 42]
+    },
+    {
+      "key": "theHertaInterpretationAdjacentStacks",
+      "scope": "activeCharacter",
+      "characterId": "TheHerta_00",
+      "label": "주변 해독",
+      "note": "주 목표, 주변 적군 스택 설정",
+      "defaultValue": 20,
+      "options": [10, 20, 42],
+      "minEnemyCount": 2
     },
     {
       "key": "trailblazerDestructionBreakStacks",
@@ -80,8 +87,8 @@
       "key": "danHengIlPrideStacks",
       "scope": "activeCharacter",
       "characterId": "DanHengIL_00",
-      "label": "음월 긍지",
-      "note": "긍지 피해 증가 스택",
+      "label": "긍지",
+      "note": "피해 증가 스택",
       "defaultValue": 6,
       "options": [0, 3, 6],
       "effectRowIds": ["effect:DanHengIL_00:0"],
@@ -127,8 +134,8 @@
       "scope": "activeCharacter",
       "characterId": "SilverWolf999_00",
       "label": "은랑 LV.999 히든 스코어",
-      "note": "히든 스코어 치확/치피 전환",
-      "defaultValue": 300,
+      "note": "히든 스코어 스택",
+      "defaultValue": 100,
       "options": [100, 150, 200, 250, 300],
       "format": "number",
       "effectRowIds": ["effect:SilverWolf999_00:0", "effect:SilverWolf999_00:1"],
@@ -173,7 +180,7 @@
       "key": "ruanMeiE2BrokenEnemy",
       "scope": "partyCharacter",
       "characterId": "RuanMei_00",
-      "label": "완매 2돌 · 갈대밭",
+      "label": "성혼 2 · 갈대밭을 거닐며",
       "note": "격파 상태 적 공격 시 공격력 증가",
       "minEidolon": 2,
       "defaultValue": 1,
@@ -187,7 +194,7 @@
       "scope": "partyCharacter",
       "characterId": "Cerydra_00",
       "label": "케리드라 작위",
-      "note": "6충전 작위 상태일 때 속저관 적용",
+      "note": "6충전 작위 상태일 때 속관 적용",
       "defaultValue": 6,
       "options": [4, 6],
       "effectRowIds": ["effect:Cerydra_00:10"],
@@ -199,8 +206,8 @@
       "characterId": "Welt_00",
       "label": "웰트 무중력",
       "note": "현재 선택된 딜러가 공격하는 [무중력] 스택",
-      "defaultValue": 10,
-      "options": [4, 6, 8, 10],
+      "defaultValue": 3,
+      "options": [1, 2, 3],
       "effectRowIds": ["effect:Welt_00:4"],
       "valueFormula": { "type": "stackMultiplier", "unitValue": 0.1 }
     },

@@ -1,0 +1,2980 @@
+{
+  "generatedAt": "2026-07-06T11:26:53.023Z",
+  "basis": {
+    "candidateEidolon": 6,
+    "activeEidolon": 6,
+    "lightConeRank": 1,
+    "enemy": {
+      "count": 1,
+      "level": 95,
+      "toughness": 90,
+      "resistance": 20,
+      "isBroken": true
+    },
+    "attackType": "skill",
+    "damageMetric": "expectedDamage",
+    "note": "Generic coefficient 100% skill expected damage. Support true-damage and additional-damage procs from data/curated/support-damage-procs.json are included."
+  },
+  "profiles": {
+    "atk": {
+      "label": "공퍼 딜러",
+      "activeCharacterId": "Seele_00",
+      "activeCharacterName": "제레",
+      "scalingStat": "atk",
+      "baselineDamage": 11109.154378389503,
+      "rows": [
+        {
+          "characterId": "Cerydra_00",
+          "name": "케리드라",
+          "damage": 135496.8824169872,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 124387.7280385977,
+          "gainRatio": 11.196867358380361,
+          "summary": "추가피해(proc) 115,662, 공격력 1,319, 피증 40.00%",
+          "stats": [
+            {
+              "stat": "allDamage",
+              "value": 0.4,
+              "targetPolicy": "single_ally",
+              "source": "성혼 2 · 만민의 염원을 모아"
+            },
+            {
+              "stat": "atkFlat",
+              "value": 1319.413768848,
+              "targetPolicy": "single_ally",
+              "source": "특성 · 카이사르에게 영광을"
+            }
+          ],
+          "procRows": [
+            {
+              "stat": "additionalDamage(proc)",
+              "value": 115662.0303369618,
+              "damage": 115662.0303369618,
+              "source": "특성 · 군공 추가피해"
+            }
+          ]
+        },
+        {
+          "characterId": "Robin_00",
+          "name": "로빈",
+          "damage": 70061.54900637835,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 58952.39462798885,
+          "gainRatio": 5.306650049140391,
+          "summary": "추가피해(proc) 37,035, 공격력 1,438, 전투스킬 피증 25.00%, 피증 24.00%, 피증 23.00%, 속관 24.00%, 치피 23.00%",
+          "stats": [
+            {
+              "stat": "critDamage",
+              "value": 0.23,
+              "targetPolicy": "all_allies",
+              "source": "특성 · 조성의 합창"
+            },
+            {
+              "stat": "atkFlat",
+              "value": 1437.813824666,
+              "targetPolicy": "all_allies",
+              "source": "필살기 · 천음의 합주, 뭇별의 푸가"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.23,
+              "targetPolicy": "all_allies",
+              "source": "특성 · 조성의 합창"
+            },
+            {
+              "stat": "skillDamage",
+              "value": 0.25,
+              "targetPolicy": "all_allies",
+              "source": "전투 스킬 · 깃털의 아리아"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.24,
+              "targetPolicy": "all_allies",
+              "source": "성혼 1 · 미소의 국가"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.24,
+              "targetPolicy": "all_allies",
+              "source": "로빈"
+            }
+          ],
+          "procRows": [
+            {
+              "stat": "additionalDamage(proc)",
+              "value": 37034.50688806015,
+              "damage": 37034.50688806015,
+              "source": "필살기 · 협주 추가피해"
+            }
+          ]
+        },
+        {
+          "characterId": "Sparkle_00",
+          "name": "스파클",
+          "damage": 48102.35567309497,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 36993.20129470547,
+          "gainRatio": 3.329974544837353,
+          "summary": "치피 133.08%, 치피 94.98%, 치피 28.00%, 공퍼 45.00%, 방깎 30.00%, 받피증 18.00%, 받피증 12.00%, 치확 10.00%, 속관 10.00%, 전투스킬 피증 3.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.12,
+              "targetPolicy": "enemy_single",
+              "source": "특성 · RedHerring"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.18,
+              "targetPolicy": "enemy_single",
+              "source": "필살기 · HeroWithAThousandFaces"
+            },
+            {
+              "stat": "atkRatio",
+              "value": 0.45,
+              "targetPolicy": "all_allies",
+              "source": "추가 능력 · Nocturne"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.1,
+              "targetPolicy": "single_ally",
+              "source": "추가 능력 · Nocturne"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.3,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 2 · 실없는 허구"
+            },
+            {
+              "stat": "critDamage",
+              "value": 0.9497999999999998,
+              "targetPolicy": "all_allies",
+              "source": "성혼 6 · 다중 해답"
+            },
+            {
+              "stat": "critDamage",
+              "value": 1.3308239999999998,
+              "targetPolicy": "single_ally",
+              "source": "전투 스킬 · 꿈을 헤엄치는 물고기"
+            },
+            {
+              "stat": "skillDamage",
+              "value": 0.03,
+              "targetPolicy": "all_allies",
+              "source": "특성 · 서술 트릭"
+            },
+            {
+              "stat": "critRate",
+              "value": 0.1,
+              "targetPolicy": "all_allies",
+              "source": "스파클"
+            },
+            {
+              "stat": "critDamage",
+              "value": 0.28,
+              "targetPolicy": "all_allies",
+              "source": "스파클"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Ashveil_00",
+          "name": "애쉬베일",
+          "damage": 41978.77622074664,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 30869.621842357134,
+          "gainRatio": 2.778755321143742,
+          "summary": "방깎 44.00%, 방깎 44.00%, 치피 40.00%, 받피증 24.00%, 받피증 20.00%, 속관 20.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.44,
+              "targetPolicy": "enemy_all",
+              "source": "애쉬베일"
+            },
+            {
+              "stat": "critDamage",
+              "value": 0.4,
+              "targetPolicy": "all_allies",
+              "source": "애쉬베일"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 6 · 결말, 그리고 어쩌면 아무도 없었다"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.44,
+              "targetPolicy": "enemy_all",
+              "source": "전투 스킬 · 짐승을 몰아내는 채찍"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.24,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 1 · 조심, 만월엔 외출 금지"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "애쉬베일"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "MortenaxBlade_00",
+          "name": "천야 • 블레이드",
+          "damage": 40802.79590001723,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 29693.641521627724,
+          "gainRatio": 2.6728984502538182,
+          "summary": "받피증 54.00%, 피증 50.00%, 피증 50.00%, 방깎 32.00%, 속관 20.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.54,
+              "targetPolicy": "enemy_all",
+              "source": "필살기 · 뼈는 화로요, 피와 살은 땔감이니"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.5,
+              "targetPolicy": "all_allies",
+              "source": "필살기 · 만쉬심"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 1 · 죽음을 거쳐야만 갖춰지는 형태"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.32,
+              "targetPolicy": "enemy_single",
+              "source": "필살기 · 뼈는 화로요, 피와 살은 땔감이니"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.5,
+              "targetPolicy": "all_allies",
+              "source": "성혼 4 · 만쉬심 강화"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Tribbie_00",
+          "name": "트리비",
+          "damage": 32898.372452639014,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 21789.21807424951,
+          "gainRatio": 1.9613750364866473,
+          "summary": "추가피해(proc) 465, 치피 48.00%, 받피증 33.00%, 속관 26.40%, 확정피해 24.00%, 방무 18.00%",
+          "stats": [
+            {
+              "stat": "defenseIgnore",
+              "value": 0.18,
+              "targetPolicy": "all_allies",
+              "source": "성혼 4 · 마음이 통하는 평안"
+            },
+            {
+              "stat": "trueDamageRatio",
+              "value": 0.24,
+              "targetPolicy": "all_allies",
+              "source": "성혼 1 · 설탕을 줍는 축제"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.33,
+              "targetPolicy": "enemy_all",
+              "source": "필살기 · 여기에 누가 살고 있게?"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.264,
+              "targetPolicy": "all_allies",
+              "source": "전투 스킬 · 선물이 다 어디 갔지?"
+            },
+            {
+              "stat": "critDamage",
+              "value": 0.48,
+              "targetPolicy": "all_allies",
+              "source": "트리비"
+            }
+          ],
+          "procRows": [
+            {
+              "stat": "additionalDamage(proc)",
+              "value": 465.32636798846517,
+              "damage": 465.32636798846517,
+              "source": "필살기 · 결계 추가피해"
+            }
+          ]
+        },
+        {
+          "characterId": "Silwolf_00",
+          "name": "은랑",
+          "damage": 30367.913621088108,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 19258.759242698605,
+          "gainRatio": 1.733593627986881,
+          "summary": "방깎 46.80%, 방깎 8.80%, 받피증 20.00%, 받피증 12.00%, 속관 20.00%, 속관 10.50%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.46799999999999997,
+              "targetPolicy": "enemy_single",
+              "source": "필살기 · |계정 정지|"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "전투 스킬 · 수정하시겠습니까?"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.105,
+              "targetPolicy": "enemy_single",
+              "source": "전투 스킬 · 수정하시겠습니까?"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.08800000000000001,
+              "targetPolicy": "enemy_single",
+              "source": "특성 · 프로그램 응답 대기 중…"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 2 · 좀비 네트워크"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.12,
+              "targetPolicy": "enemy_all",
+              "source": "은랑"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "RuanMei_00",
+          "name": "완•매",
+          "damage": 30025.6610734436,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 18916.506695054097,
+          "gainRatio": 1.7027854731996648,
+          "summary": "공퍼 40.00%, 피증 36.00%, 피증 35.20%, 피증 24.00%, 속관 27.00%, 방무 20.00%",
+          "stats": [
+            {
+              "stat": "defenseIgnore",
+              "value": 0.2,
+              "targetPolicy": "all_allies",
+              "source": "성혼 1 · 신경망 자수"
+            },
+            {
+              "stat": "atkRatio",
+              "value": 0.4,
+              "targetPolicy": "all_allies",
+              "source": "성혼 2 · 갈대밭을 거닐며"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.36,
+              "targetPolicy": "all_allies",
+              "source": "전투 스킬 · 수면에 일렁이는 촛불"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.27,
+              "targetPolicy": "all_allies",
+              "source": "필살기 · 꽃잎에 인 물결, 옷을 물들인 꽃"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.35200000000000004,
+              "targetPolicy": "all_allies",
+              "source": "전투 스킬 · 우아한 연주"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.24,
+              "targetPolicy": "all_allies",
+              "source": "완•매"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Cyrene_00",
+          "name": "키레네",
+          "damage": 24526.18391117978,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 13417.029532790279,
+          "gainRatio": 1.2077453490870789,
+          "summary": "확정피해 26.00%, 확정피해 24.00%, 피증 20.00%, 방깎 20.00%, 치피 16.00%, 받피증 10.00%",
+          "stats": [
+            {
+              "stat": "allDamage",
+              "value": 0.2,
+              "targetPolicy": "all_allies",
+              "source": "특성 · 노래처럼 모인 모두의 염원"
+            },
+            {
+              "stat": "trueDamageRatio",
+              "value": 0.24,
+              "targetPolicy": "all_allies",
+              "source": "성혼 2 · 내일을 투영하는 열세 빛깔"
+            },
+            {
+              "stat": "trueDamageRatio",
+              "value": 0.26,
+              "targetPolicy": "all_allies",
+              "source": "전투 스킬 · 피어나라, 내세의 낙원이여"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 6 · 잔잔한 물결이 된 기억♪"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.1,
+              "targetPolicy": "enemy_all",
+              "source": "키레네"
+            },
+            {
+              "stat": "critDamage",
+              "value": 0.16,
+              "targetPolicy": "all_allies",
+              "source": "키레네"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Welt_00",
+          "name": "웰트",
+          "damage": 23355.863981808874,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 12246.709603419371,
+          "gainRatio": 1.1023980031497933,
+          "summary": "방깎 40.00%, 피증 30.00%, 속관 30.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.4,
+              "targetPolicy": "enemy_single",
+              "source": "필살기 · 유사 블랙홀"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.30000000000000004,
+              "targetPolicy": "all_allies",
+              "source": "필살기 · 유사 블랙홀"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.3,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 4 · 정의의 이름으로"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Bronya_00",
+          "name": "브로냐",
+          "damage": 22596.876908241666,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 11487.722529852163,
+          "gainRatio": 1.0340771348176676,
+          "summary": "피증 72.00%, 피증 24.00%, 공퍼 59.00%, 치피 16.80%",
+          "stats": [
+            {
+              "stat": "atkRatio",
+              "value": 0.59,
+              "targetPolicy": "all_allies",
+              "source": "필살기 · 벨로보그 행진곡"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.72,
+              "targetPolicy": "single_ally",
+              "source": "전투 스킬 · 작전 재배치"
+            },
+            {
+              "stat": "critDamage",
+              "value": 0.168,
+              "targetPolicy": "all_allies",
+              "source": "필살기 · 벨로보그 행진곡"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.24,
+              "targetPolicy": "single_ally",
+              "source": "브로냐"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Evernight_00",
+          "name": "에버나이트",
+          "damage": 22432.066519631084,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 11322.91214124158,
+          "gainRatio": 1.0192415872145855,
+          "summary": "받피증 30.00%, 치피 24.00%, 방깎 20.00%, 속관 20.00%",
+          "stats": [
+            {
+              "stat": "critDamage",
+              "value": 0.24,
+              "targetPolicy": "all_allies",
+              "source": "전투 스킬 · 조용히 떠나간 낮"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.3,
+              "targetPolicy": "enemy_all",
+              "source": "필살기 · 잘 자, 깨어있는 세상"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "all_allies",
+              "source": "성혼 6 · 그냥 이대로, 계속"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "에버나이트"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Cipher_00",
+          "name": "사이퍼",
+          "damage": 22056.131320598135,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 10946.976942208632,
+          "gainRatio": 0.9854014598540144,
+          "summary": "받피증 40.00%, 받피증 30.00%, 방깎 16.00%, 방깎 8.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.3,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 2 · 주머니를 쓱, 곤경을 틈탄 소매치기"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.4,
+              "targetPolicy": "enemy_all",
+              "source": "특성 · 해를 바꿔치기한 대도"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.16,
+              "targetPolicy": "enemy_all",
+              "source": "사이퍼"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.08,
+              "targetPolicy": "enemy_all",
+              "source": "사이퍼"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Harscyline_00",
+          "name": "히실렌스",
+          "damage": 21038.025812569875,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 9928.871434180372,
+          "gainRatio": 0.8937558247903079,
+          "summary": "방깎 27.00%, 받피증 22.00%, 받피증 5.00%, 속관 20.00%",
+          "stats": [
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 4 · 보라, 시간은 왜 흐르는가"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.27,
+              "targetPolicy": "enemy_all",
+              "source": "필살기 · 질해의 파도, 영혼을 삼키는 무곡"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.22,
+              "targetPolicy": "enemy_all",
+              "source": "전투 스킬 · 암류 뒤에서 울려 퍼지는 배음"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.05,
+              "targetPolicy": "enemy_all",
+              "source": "히실렌스"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Jiaoqiu_00",
+          "name": "초구",
+          "damage": 18902.226174829742,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 7793.071796440239,
+          "gainRatio": 0.7015000000000002,
+          "summary": "받피증 40.00%, 받피증 14.00%, 받피증 10.00%, 속관 3.00%",
+          "stats": [
+            {
+              "stat": "resistancePen",
+              "value": 0.03,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 6 · 화력으로 결정되는 맛"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.4,
+              "targetPolicy": "enemy_all",
+              "source": "특성 · 기정지변, 절묘한 맛"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.1,
+              "targetPolicy": "enemy_all",
+              "source": "초구"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.14,
+              "targetPolicy": "enemy_all",
+              "source": "초구"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Sunday_10",
+          "name": "선데이",
+          "damage": 18873.395004998758,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 7764.240626609255,
+          "gainRatio": 0.6989047376740873,
+          "summary": "치피 100.09%, 치피 12.80%, 피증 33.00%",
+          "stats": [
+            {
+              "stat": "critDamage",
+              "value": 1.0009439999999998,
+              "targetPolicy": "single_ally",
+              "source": "필살기 · 깃과 상흔의 찬송"
+            },
+            {
+              "stat": "critDamage",
+              "value": 0.128,
+              "targetPolicy": "single_ally",
+              "source": "필살기 · 깃과 상흔의 찬송"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.33,
+              "targetPolicy": "single_ally",
+              "source": "전투 스킬 · 종이와 의전의 은혜"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Lingsha_00",
+          "name": "영사",
+          "damage": 18616.050413963952,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 7506.896035574449,
+          "gainRatio": 0.6757396449704145,
+          "summary": "방깎 20.00%, 속관 20.00%, 받피증 10.00%, 받피증 8.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 1 · 파사의 향기"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 6 · 새벽녘 짙게 밴 난초향"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.1,
+              "targetPolicy": "enemy_all",
+              "source": "영사"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.08,
+              "targetPolicy": "enemy_all",
+              "source": "영사"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "DanHengPT_00",
+          "name": "단항 • 등황",
+          "damage": 18384.841073230313,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 7275.68669484081,
+          "gainRatio": 0.6549271390983737,
+          "summary": "공격력 434, 피증 24.00%, 피증 12.00%, 받피증 20.00%",
+          "stats": [
+            {
+              "stat": "atkFlat",
+              "value": 434.4782511000001,
+              "targetPolicy": "single_ally",
+              "source": "전투 스킬 · 천혜의 경관"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 6 · 초목과 티끌 모두 꿈에 들고"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.24,
+              "targetPolicy": "single_ally",
+              "source": "단항 • 등황"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.12,
+              "targetPolicy": "single_ally",
+              "source": "단항 • 등황"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Tingyun_00",
+          "name": "정운",
+          "damage": 18317.28876683099,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 7208.1343884414855,
+          "gainRatio": 0.6488463606612018,
+          "summary": "추가피해(proc) 1,972, 공격력 363, 피증 56.00%",
+          "stats": [
+            {
+              "stat": "allDamage",
+              "value": 0.56,
+              "targetPolicy": "single_ally",
+              "source": "필살기 · 상서로운 구름의 기원"
+            },
+            {
+              "stat": "atkFlat",
+              "value": 363.14794709999995,
+              "targetPolicy": "single_ally",
+              "source": "전투 스킬 · 정다운 화음"
+            }
+          ],
+          "procRows": [
+            {
+              "stat": "additionalDamage(proc)",
+              "value": 1972.1216114205815,
+              "damage": 1972.1216114205815,
+              "source": "전투스킬 · 축복 추가피해"
+            }
+          ]
+        },
+        {
+          "characterId": "Yukong_00",
+          "name": "어공",
+          "damage": 17675.513641618094,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 6566.359263228591,
+          "gainRatio": 0.5910764257630667,
+          "summary": "치피 70.00%, 공퍼 40.00%, 피증 12.00%",
+          "stats": [
+            {
+              "stat": "critDamage",
+              "value": 0.7,
+              "targetPolicy": "all_allies",
+              "source": "필살기 · 창공 꿰뚫기"
+            },
+            {
+              "stat": "atkRatio",
+              "value": 0.4,
+              "targetPolicy": "all_allies",
+              "source": "전투 스킬 · 천궁에 울리는 활"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.12,
+              "targetPolicy": "all_allies",
+              "source": "어공"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "BlackSwan_00",
+          "name": "블랙 스완",
+          "damage": 17099.205931236564,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 5990.0515528470605,
+          "gainRatio": 0.5391995960106046,
+          "summary": "받피증 27.00%, 방깎 22.00%, 방깎 7.20%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.27,
+              "targetPolicy": "enemy_all",
+              "source": "필살기 · 저편의 품에 취해"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.22,
+              "targetPolicy": "enemy_single",
+              "source": "전투 스킬 · 실추, 거짓된 신의 황혼"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.07200000000000001,
+              "targetPolicy": "enemy_all",
+              "source": "블랙 스완"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Pela_00",
+          "name": "페라",
+          "damage": 17069.598376815607,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 5960.443998426104,
+          "gainRatio": 0.5365344467640922,
+          "summary": "방깎 42.00%, 속관 12.00%",
+          "stats": [
+            {
+              "stat": "resistancePen",
+              "value": 0.12,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 4 · 완벽 해부"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.42,
+              "targetPolicy": "enemy_single",
+              "source": "필살기 · 영역 제압"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "SilverWolf999_00",
+          "name": "은랑 LV.999",
+          "damage": 16663.731567584255,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 5554.577189194752,
+          "gainRatio": 0.5,
+          "summary": "받피증 20.00%, 속관 20.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 1 · 에테르 편집"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 6 · 나 혼자만 만렙!"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "PlayerBoy_20",
+          "name": "개척자 • 기억",
+          "damage": 16576.79178965582,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 5467.637411266318,
+          "gainRatio": 0.4921740417886751,
+          "summary": "확정피해 30.00%, 확정피해 6.00%, 치피 13.20%, 치확 10.00%, 피증 8.00%",
+          "stats": [
+            {
+              "stat": "critDamage",
+              "value": 0.132,
+              "targetPolicy": "all_allies",
+              "source": "특성 · 파트너! 함께!"
+            },
+            {
+              "stat": "trueDamageRatio",
+              "value": 0.06,
+              "targetPolicy": "single_ally",
+              "source": "성혼 4 · 뮤즈의 새 댄스 파트너"
+            },
+            {
+              "stat": "critRate",
+              "value": 0.1,
+              "targetPolicy": "single_ally",
+              "source": "성혼 1 · 현재의 서술자"
+            },
+            {
+              "stat": "trueDamageRatio",
+              "value": 0.3,
+              "targetPolicy": "single_ally",
+              "source": "기억 정령 스킬 · 내가! 도와줄게!"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.08,
+              "targetPolicy": "all_allies",
+              "source": "개척자 • 기억"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Constance_00",
+          "name": "달리아",
+          "damage": 16335.561799294852,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 5226.407420905349,
+          "gainRatio": 0.4704595185995626,
+          "summary": "속관 20.00%, 받피증 12.00%, 방깎 8.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.08,
+              "targetPolicy": "enemy_all",
+              "source": "필살기 · 빠져들어... 재가 흩날리는 묘지로"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 2 · 새 삶, 생기, 애정"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.12,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 4 · 꽃술은 벌레가 갉아 먹었구나"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Moze_00",
+          "name": "맥택",
+          "damage": 15631.417104635904,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 4522.262726246401,
+          "gainRatio": 0.4070753337484896,
+          "summary": "치피 40.00%, 피증 40.00%",
+          "stats": [
+            {
+              "stat": "critDamage",
+              "value": 0.4,
+              "targetPolicy": "all_allies",
+              "source": "성혼 2 · 정벌"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.4,
+              "targetPolicy": "all_allies",
+              "source": "성혼 2 · 정벌"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Anaxa_00",
+          "name": "아낙사",
+          "damage": 15358.277942473967,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 4249.123564084464,
+          "gainRatio": 0.3824884792626728,
+          "summary": "속관 20.00%, 방깎 16.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.16,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 1 · 달로 별밤을 가린 마술사"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 2 · 진실된 역사의 자연인"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "JingYuan_00",
+          "name": "경원",
+          "damage": 15108.449954609725,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 3999.295576220222,
+          "gainRatio": 0.3600000000000001,
+          "summary": "받피증 36.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.36,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 6 · 적을 격멸하는 위령(威霊)"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Luocha_00",
+          "name": "나찰",
+          "damage": 15088.16412738688,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 3979.0097489973778,
+          "gainRatio": 0.35817395397238294,
+          "summary": "공퍼 20.00%, 속관 20.00%",
+          "stats": [
+            {
+              "stat": "atkRatio",
+              "value": 0.2,
+              "targetPolicy": "all_allies",
+              "source": "성혼 1 · 생자 정화"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 6 · 모두가 먼지로 돌아가리"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Saber_00",
+          "name": "세이버",
+          "damage": 15085.315923800064,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 3976.1615454105613,
+          "gainRatio": 0.3579175704989155,
+          "summary": "피증 66.00%",
+          "stats": [
+            {
+              "stat": "allDamage",
+              "value": 0.66,
+              "targetPolicy": "all_allies",
+              "source": "특성 · 용의 노심"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Boothill_00",
+          "name": "부트힐",
+          "damage": 14775.175323258043,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 3666.02094486854,
+          "gainRatio": 0.3300000000000003,
+          "summary": "받피증 33.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.33,
+              "targetPolicy": "enemy_single",
+              "source": "전투 스킬 · 뜨거운 자갈 위 탱고"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Hanya_00",
+          "name": "한아",
+          "damage": 14666.248995413505,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 3557.094617024002,
+          "gainRatio": 0.320194903758253,
+          "summary": "공퍼 64.00%, 공퍼 10.00%",
+          "stats": [
+            {
+              "stat": "atkRatio",
+              "value": 0.64,
+              "targetPolicy": "single_ally",
+              "source": "필살기 · 시왕의 칙령, 모두 복종하라"
+            },
+            {
+              "stat": "atkRatio",
+              "value": 0.1,
+              "targetPolicy": "single_ally",
+              "source": "전투 스킬 · 서기"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "YaoGuang_00",
+          "name": "효광",
+          "damage": 14514.208797327825,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 3405.0544189383218,
+          "gainRatio": 0.306508875739645,
+          "summary": "방무 20.00%, 받피증 15.00%",
+          "stats": [
+            {
+              "stat": "defenseIgnore",
+              "value": 0.2,
+              "targetPolicy": "all_allies",
+              "source": "성혼 1 · 옥이 떨어지는 곳에 가득한 웃음소리"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.15,
+              "targetPolicy": "enemy_all",
+              "source": "효광"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Mydeimos_00",
+          "name": "마이데이",
+          "damage": 14441.900691906358,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 3332.7463135168546,
+          "gainRatio": 0.30000000000000027,
+          "summary": "받피증 30.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.3,
+              "targetPolicy": "enemy_all",
+              "source": "마이데이"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Acheron_00",
+          "name": "아케론",
+          "damage": 14164.171832446618,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 3055.017454057115,
+          "gainRatio": 0.27500000000000013,
+          "summary": "속관 22.00%",
+          "stats": [
+            {
+              "stat": "resistancePen",
+              "value": 0.22,
+              "targetPolicy": "enemy_all",
+              "source": "특성 · 비에 젖은 단풍, 끝없는 하늘"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Castorice_00",
+          "name": "카스토리스",
+          "damage": 14164.171832446618,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 3055.017454057115,
+          "gainRatio": 0.27500000000000013,
+          "summary": "속관 22.00%",
+          "stats": [
+            {
+              "stat": "resistancePen",
+              "value": 0.22,
+              "targetPolicy": "enemy_all",
+              "source": "필살기 · 포효하는 망자, 소생의 종"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Aventurine_00",
+          "name": "어벤츄린",
+          "damage": 14053.080288662723,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 2943.9259102732194,
+          "gainRatio": 0.2650000000000001,
+          "summary": "속관 12.00%, 받피증 10.00%",
+          "stats": [
+            {
+              "stat": "resistancePen",
+              "value": 0.12,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 2 · 제한된 합리성"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.1,
+              "targetPolicy": "enemy_all",
+              "source": "어벤츄린"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Archer_00",
+          "name": "아처",
+          "damage": 13886.44297298688,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 2777.2885945973776,
+          "gainRatio": 0.2500000000000002,
+          "summary": "속관 20.00%",
+          "stats": [
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 2 · 이루지 못한 행복"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Sam_00",
+          "name": "반디",
+          "damage": 13775.351429202987,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 2666.1970508134837,
+          "gainRatio": 0.2400000000000002,
+          "summary": "받피증 24.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.24,
+              "targetPolicy": "enemy_all",
+              "source": "반디"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Mar_7th_10",
+          "name": "Mar. 7th•수렵",
+          "damage": 13713.025177749505,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 2603.870799360002,
+          "gainRatio": 0.23438964935308482,
+          "summary": "치피 60.00%",
+          "stats": [
+            {
+              "stat": "critDamage",
+              "value": 0.6,
+              "targetPolicy": "self",
+              "source": "일반 공격 · 파랑"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Luka_00",
+          "name": "루카",
+          "damage": 13508.731724121639,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 2399.5773457321357,
+          "gainRatio": 0.2160000000000002,
+          "summary": "받피증 21.60%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.21600000000000003,
+              "targetPolicy": "enemy_single",
+              "source": "필살기 · 승리의 일격"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Hyacine_00",
+          "name": "히아킨",
+          "damage": 13108.802166499616,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 1999.6477881101127,
+          "gainRatio": 0.18000000000000016,
+          "summary": "체퍼 30.00%, 받피증 18.00%",
+          "stats": [
+            {
+              "stat": "hpRatio",
+              "value": 0.3,
+              "targetPolicy": "all_allies",
+              "source": "필살기 · 비 온 뒤 맑음"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.18,
+              "targetPolicy": "enemy_all",
+              "source": "히아킨"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Aglaea_00",
+          "name": "아글라이아",
+          "damage": 12775.52753514793,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 1666.3731567584273,
+          "gainRatio": 0.15000000000000013,
+          "summary": "받피증 15.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.15,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 1 · 흔들리는 금성의 행렬"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Evanescia_00",
+          "name": "에바네시아",
+          "damage": 12775.52753514793,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 1666.3731567584273,
+          "gainRatio": 0.15000000000000013,
+          "summary": "받피증 15.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.15,
+              "targetPolicy": "enemy_all",
+              "source": "에바네시아"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Fugue_00",
+          "name": "망귀인",
+          "damage": 12621.051128111152,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 1511.896749721649,
+          "gainRatio": 0.13609467455621305,
+          "summary": "방깎 20.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "전투 스킬 · 현인의 길조, 천명의 부채"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Phainon_00",
+          "name": "파이논",
+          "damage": 12451.591597494364,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 1342.4372191048606,
+          "gainRatio": 0.12084063047285465,
+          "summary": "방깎 18.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.18,
+              "targetPolicy": "enemy_all",
+              "source": "파이논"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Asta_00",
+          "name": "아스타",
+          "damage": 12310.875532789507,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 1201.7211544000038,
+          "gainRatio": 0.10817395397238316,
+          "summary": "공퍼 25.00%",
+          "stats": [
+            {
+              "stat": "atkRatio",
+              "value": 0.25,
+              "targetPolicy": "all_allies",
+              "source": "특성 · 천체학"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Misha_00",
+          "name": "미샤",
+          "damage": 12286.622353979175,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 1177.4679755896723,
+          "gainRatio": 0.10599078341013835,
+          "summary": "방깎 16.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.16,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 2 · 청춘의 창연한 눈빛"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "PlayerBoy_40",
+          "name": "개척자 • 환락",
+          "damage": 12220.069816228457,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 1110.915437838954,
+          "gainRatio": 0.10000000000000031,
+          "summary": "받피증 10.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.1,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 4 · 세상을 구하는 데 이유는 필요 없어"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Guinaifen_00",
+          "name": "계네빈",
+          "damage": 11953.450111147109,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 844.295732757606,
+          "gainRatio": 0.07600000000000029,
+          "summary": "받피증 7.60%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.076,
+              "targetPolicy": "enemy_single",
+              "source": "특성 · 관중 없이는 예술가도 없는 법"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "FuXuan_00",
+          "name": "부현",
+          "damage": 11651.358225490947,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 542.2038471014439,
+          "gainRatio": 0.04880694143167075,
+          "summary": "피증 9.00%",
+          "stats": [
+            {
+              "stat": "allDamage",
+              "value": 0.09,
+              "targetPolicy": "all_allies",
+              "source": "부현"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Sparxie_00",
+          "name": "스파키",
+          "damage": 11452.121560541129,
+          "baselineDamage": 11109.154378389503,
+          "deltaDamage": 342.9671821516258,
+          "gainRatio": 0.030872483221476843,
+          "summary": "방깎 5.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.05,
+              "targetPolicy": "enemy_all",
+              "source": "스파키"
+            }
+          ],
+          "procRows": []
+        }
+      ]
+    },
+    "hp": {
+      "label": "체퍼 딜러",
+      "activeCharacterId": "Ren_00",
+      "activeCharacterName": "블레이드",
+      "scalingStat": "hp",
+      "baselineDamage": 15463.053724322817,
+      "rows": [
+        {
+          "characterId": "Cerydra_00",
+          "name": "케리드라",
+          "damage": 138317.20207259757,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 122854.14834827476,
+          "gainRatio": 7.945012061558687,
+          "summary": "추가피해(proc) 115,662, 공격력 1,319, 피증 40.00%",
+          "stats": [
+            {
+              "stat": "allDamage",
+              "value": 0.4,
+              "targetPolicy": "single_ally",
+              "source": "성혼 2 · 만민의 염원을 모아"
+            },
+            {
+              "stat": "atkFlat",
+              "value": 1319.413768848,
+              "targetPolicy": "single_ally",
+              "source": "특성 · 카이사르에게 영광을"
+            }
+          ],
+          "procRows": [
+            {
+              "stat": "additionalDamage(proc)",
+              "value": 115662.0303369618,
+              "damage": 115662.0303369618,
+              "source": "특성 · 군공 추가피해"
+            }
+          ]
+        },
+        {
+          "characterId": "MortenaxBlade_00",
+          "name": "천야 • 블레이드",
+          "damage": 77673.20968004747,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 62210.15595572465,
+          "gainRatio": 4.023148148148147,
+          "summary": "받피증 54.00%, 피증 50.00%, 피증 50.00%, 방깎 32.00%, 속관 20.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.54,
+              "targetPolicy": "enemy_all",
+              "source": "필살기 · 뼈는 화로요, 피와 살은 땔감이니"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.5,
+              "targetPolicy": "all_allies",
+              "source": "필살기 · 만쉬심"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 1 · 죽음을 거쳐야만 갖춰지는 형태"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.32,
+              "targetPolicy": "enemy_single",
+              "source": "필살기 · 뼈는 화로요, 피와 살은 땔감이니"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.5,
+              "targetPolicy": "all_allies",
+              "source": "성혼 4 · 만쉬심 강화"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Robin_00",
+          "name": "로빈",
+          "damage": 77473.85068367014,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 62010.796959347324,
+          "gainRatio": 4.010255546212493,
+          "summary": "추가피해(proc) 37,035, 공격력 1,438, 전투스킬 피증 25.00%, 피증 24.00%, 피증 23.00%, 속관 24.00%, 치피 23.00%",
+          "stats": [
+            {
+              "stat": "critDamage",
+              "value": 0.23,
+              "targetPolicy": "all_allies",
+              "source": "특성 · 조성의 합창"
+            },
+            {
+              "stat": "atkFlat",
+              "value": 1437.813824666,
+              "targetPolicy": "all_allies",
+              "source": "필살기 · 천음의 합주, 뭇별의 푸가"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.23,
+              "targetPolicy": "all_allies",
+              "source": "특성 · 조성의 합창"
+            },
+            {
+              "stat": "skillDamage",
+              "value": 0.25,
+              "targetPolicy": "all_allies",
+              "source": "전투 스킬 · 깃털의 아리아"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.24,
+              "targetPolicy": "all_allies",
+              "source": "성혼 1 · 미소의 국가"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.24,
+              "targetPolicy": "all_allies",
+              "source": "로빈"
+            }
+          ],
+          "procRows": [
+            {
+              "stat": "additionalDamage(proc)",
+              "value": 37034.50688806015,
+              "damage": 37034.50688806015,
+              "source": "필살기 · 협주 추가피해"
+            }
+          ]
+        },
+        {
+          "characterId": "Ashveil_00",
+          "name": "애쉬베일",
+          "damage": 61271.57448313506,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 45808.52075881224,
+          "gainRatio": 2.9624498223631672,
+          "summary": "방깎 44.00%, 방깎 44.00%, 치피 40.00%, 받피증 24.00%, 받피증 20.00%, 속관 20.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.44,
+              "targetPolicy": "enemy_all",
+              "source": "애쉬베일"
+            },
+            {
+              "stat": "critDamage",
+              "value": 0.4,
+              "targetPolicy": "all_allies",
+              "source": "애쉬베일"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 6 · 결말, 그리고 어쩌면 아무도 없었다"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.44,
+              "targetPolicy": "enemy_all",
+              "source": "전투 스킬 · 짐승을 몰아내는 채찍"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.24,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 1 · 조심, 만월엔 외출 금지"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "애쉬베일"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Sparkle_00",
+          "name": "스파클",
+          "damage": 57355.116224102385,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 41892.06249977957,
+          "gainRatio": 2.7091713736908827,
+          "summary": "치피 133.08%, 치피 94.98%, 치피 28.00%, 공퍼 45.00%, 방깎 30.00%, 받피증 18.00%, 받피증 12.00%, 치확 10.00%, 속관 10.00%, 전투스킬 피증 3.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.12,
+              "targetPolicy": "enemy_single",
+              "source": "특성 · RedHerring"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.18,
+              "targetPolicy": "enemy_single",
+              "source": "필살기 · HeroWithAThousandFaces"
+            },
+            {
+              "stat": "atkRatio",
+              "value": 0.45,
+              "targetPolicy": "all_allies",
+              "source": "추가 능력 · Nocturne"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.1,
+              "targetPolicy": "single_ally",
+              "source": "추가 능력 · Nocturne"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.3,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 2 · 실없는 허구"
+            },
+            {
+              "stat": "critDamage",
+              "value": 0.9497999999999998,
+              "targetPolicy": "all_allies",
+              "source": "성혼 6 · 다중 해답"
+            },
+            {
+              "stat": "critDamage",
+              "value": 1.3308239999999998,
+              "targetPolicy": "single_ally",
+              "source": "전투 스킬 · 꿈을 헤엄치는 물고기"
+            },
+            {
+              "stat": "skillDamage",
+              "value": 0.03,
+              "targetPolicy": "all_allies",
+              "source": "특성 · 서술 트릭"
+            },
+            {
+              "stat": "critRate",
+              "value": 0.1,
+              "targetPolicy": "all_allies",
+              "source": "스파클"
+            },
+            {
+              "stat": "critDamage",
+              "value": 0.28,
+              "targetPolicy": "all_allies",
+              "source": "스파클"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "RuanMei_00",
+          "name": "완•매",
+          "damage": 48796.202934352295,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 33333.14921002948,
+          "gainRatio": 2.1556640625,
+          "summary": "공퍼 40.00%, 피증 36.00%, 피증 35.20%, 피증 24.00%, 속관 27.00%, 방무 20.00%",
+          "stats": [
+            {
+              "stat": "defenseIgnore",
+              "value": 0.2,
+              "targetPolicy": "all_allies",
+              "source": "성혼 1 · 신경망 자수"
+            },
+            {
+              "stat": "atkRatio",
+              "value": 0.4,
+              "targetPolicy": "all_allies",
+              "source": "성혼 2 · 갈대밭을 거닐며"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.36,
+              "targetPolicy": "all_allies",
+              "source": "전투 스킬 · 수면에 일렁이는 촛불"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.27,
+              "targetPolicy": "all_allies",
+              "source": "필살기 · 꽃잎에 인 물결, 옷을 물들인 꽃"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.35200000000000004,
+              "targetPolicy": "all_allies",
+              "source": "전투 스킬 · 우아한 연주"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.24,
+              "targetPolicy": "all_allies",
+              "source": "완•매"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Tribbie_00",
+          "name": "트리비",
+          "damage": 45435.379358551276,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 29972.32563422846,
+          "gainRatio": 1.9383186638667036,
+          "summary": "추가피해(proc) 465, 치피 48.00%, 받피증 33.00%, 속관 26.40%, 확정피해 24.00%, 방무 18.00%",
+          "stats": [
+            {
+              "stat": "defenseIgnore",
+              "value": 0.18,
+              "targetPolicy": "all_allies",
+              "source": "성혼 4 · 마음이 통하는 평안"
+            },
+            {
+              "stat": "trueDamageRatio",
+              "value": 0.24,
+              "targetPolicy": "all_allies",
+              "source": "성혼 1 · 설탕을 줍는 축제"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.33,
+              "targetPolicy": "enemy_all",
+              "source": "필살기 · 여기에 누가 살고 있게?"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.264,
+              "targetPolicy": "all_allies",
+              "source": "전투 스킬 · 선물이 다 어디 갔지?"
+            },
+            {
+              "stat": "critDamage",
+              "value": 0.48,
+              "targetPolicy": "all_allies",
+              "source": "트리비"
+            }
+          ],
+          "procRows": [
+            {
+              "stat": "additionalDamage(proc)",
+              "value": 465.32636798846517,
+              "damage": 465.32636798846517,
+              "source": "필살기 · 결계 추가피해"
+            }
+          ]
+        },
+        {
+          "characterId": "Silwolf_00",
+          "name": "은랑",
+          "damage": 40126.42480549046,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 24663.371081167643,
+          "gainRatio": 1.594987091222031,
+          "summary": "방깎 46.80%, 방깎 8.80%, 받피증 20.00%, 받피증 12.00%, 속관 20.00%, 속관 10.50%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.46799999999999997,
+              "targetPolicy": "enemy_single",
+              "source": "필살기 · |계정 정지|"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "전투 스킬 · 수정하시겠습니까?"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.105,
+              "targetPolicy": "enemy_single",
+              "source": "전투 스킬 · 수정하시겠습니까?"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.08800000000000001,
+              "targetPolicy": "enemy_single",
+              "source": "특성 · 프로그램 응답 대기 중…"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 2 · 좀비 네트워크"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.12,
+              "targetPolicy": "enemy_all",
+              "source": "은랑"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Cyrene_00",
+          "name": "키레네",
+          "damage": 37541.47118950481,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 22078.417465181992,
+          "gainRatio": 1.427817419430772,
+          "summary": "확정피해 26.00%, 확정피해 24.00%, 피증 20.00%, 방깎 20.00%, 치피 16.00%, 받피증 10.00%",
+          "stats": [
+            {
+              "stat": "allDamage",
+              "value": 0.2,
+              "targetPolicy": "all_allies",
+              "source": "특성 · 노래처럼 모인 모두의 염원"
+            },
+            {
+              "stat": "trueDamageRatio",
+              "value": 0.24,
+              "targetPolicy": "all_allies",
+              "source": "성혼 2 · 내일을 투영하는 열세 빛깔"
+            },
+            {
+              "stat": "trueDamageRatio",
+              "value": 0.26,
+              "targetPolicy": "all_allies",
+              "source": "전투 스킬 · 피어나라, 내세의 낙원이여"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 6 · 잔잔한 물결이 된 기억♪"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.1,
+              "targetPolicy": "enemy_all",
+              "source": "키레네"
+            },
+            {
+              "stat": "critDamage",
+              "value": 0.16,
+              "targetPolicy": "all_allies",
+              "source": "키레네"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Welt_00",
+          "name": "웰트",
+          "damage": 36484.57202706346,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 21021.518302740646,
+          "gainRatio": 1.3594674556213024,
+          "summary": "방깎 40.00%, 피증 30.00%, 속관 30.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.4,
+              "targetPolicy": "enemy_single",
+              "source": "필살기 · 유사 블랙홀"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.30000000000000004,
+              "targetPolicy": "all_allies",
+              "source": "필살기 · 유사 블랙홀"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.3,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 4 · 정의의 이름으로"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Bronya_00",
+          "name": "브로냐",
+          "damage": 34994.46922535458,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 19531.415501031763,
+          "gainRatio": 1.263102091555794,
+          "summary": "피증 72.00%, 피증 24.00%, 공퍼 59.00%, 치피 16.80%",
+          "stats": [
+            {
+              "stat": "atkRatio",
+              "value": 0.59,
+              "targetPolicy": "all_allies",
+              "source": "필살기 · 벨로보그 행진곡"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.72,
+              "targetPolicy": "single_ally",
+              "source": "전투 스킬 · 작전 재배치"
+            },
+            {
+              "stat": "critDamage",
+              "value": 0.168,
+              "targetPolicy": "all_allies",
+              "source": "필살기 · 벨로보그 행진곡"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.24,
+              "targetPolicy": "single_ally",
+              "source": "브로냐"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Sunday_10",
+          "name": "선데이",
+          "damage": 31371.900437197128,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 15908.84671287431,
+          "gainRatio": 1.028829556987846,
+          "summary": "치피 100.09%, 치피 12.80%, 피증 33.00%",
+          "stats": [
+            {
+              "stat": "critDamage",
+              "value": 1.0009439999999998,
+              "targetPolicy": "single_ally",
+              "source": "필살기 · 깃과 상흔의 찬송"
+            },
+            {
+              "stat": "critDamage",
+              "value": 0.128,
+              "targetPolicy": "single_ally",
+              "source": "필살기 · 깃과 상흔의 찬송"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.33,
+              "targetPolicy": "single_ally",
+              "source": "전투 스킬 · 종이와 의전의 은혜"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Evernight_00",
+          "name": "에버나이트",
+          "damage": 30926.269418777934,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 15463.215694455117,
+          "gainRatio": 1.0000104746536609,
+          "summary": "받피증 30.00%, 치피 24.00%, 방깎 20.00%, 속관 20.00%",
+          "stats": [
+            {
+              "stat": "critDamage",
+              "value": 0.24,
+              "targetPolicy": "all_allies",
+              "source": "전투 스킬 · 조용히 떠나간 낮"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.3,
+              "targetPolicy": "enemy_all",
+              "source": "필살기 · 잘 자, 깨어있는 세상"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "all_allies",
+              "source": "성혼 6 · 그냥 이대로, 계속"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "에버나이트"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Cipher_00",
+          "name": "사이퍼",
+          "damage": 30158.730716328653,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 14695.676992005836,
+          "gainRatio": 0.9503735325506937,
+          "summary": "받피증 40.00%, 받피증 30.00%, 방깎 16.00%, 방깎 8.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.3,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 2 · 주머니를 쓱, 곤경을 틈탄 소매치기"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.4,
+              "targetPolicy": "enemy_all",
+              "source": "특성 · 해를 바꿔치기한 대도"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.16,
+              "targetPolicy": "enemy_all",
+              "source": "사이퍼"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.08,
+              "targetPolicy": "enemy_all",
+              "source": "사이퍼"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Harscyline_00",
+          "name": "히실렌스",
+          "damage": 28691.130874057795,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 13228.077149734978,
+          "gainRatio": 0.8554634411524871,
+          "summary": "방깎 27.00%, 받피증 22.00%, 받피증 5.00%, 속관 20.00%",
+          "stats": [
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 4 · 보라, 시간은 왜 흐르는가"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.27,
+              "targetPolicy": "enemy_all",
+              "source": "필살기 · 질해의 파도, 영혼을 삼키는 무곡"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.22,
+              "targetPolicy": "enemy_all",
+              "source": "전투 스킬 · 암류 뒤에서 울려 퍼지는 배음"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.05,
+              "targetPolicy": "enemy_all",
+              "source": "히실렌스"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Saber_00",
+          "name": "세이버",
+          "damage": 27330.04844298917,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 11866.994718666352,
+          "gainRatio": 0.7674418604651165,
+          "summary": "피증 66.00%",
+          "stats": [
+            {
+              "stat": "allDamage",
+              "value": 0.66,
+              "targetPolicy": "all_allies",
+              "source": "특성 · 용의 노심"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Moze_00",
+          "name": "맥택",
+          "damage": 26397.477681592965,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 10934.423957270148,
+          "gainRatio": 0.7071322490505676,
+          "summary": "치피 40.00%, 피증 40.00%",
+          "stats": [
+            {
+              "stat": "critDamage",
+              "value": 0.4,
+              "targetPolicy": "all_allies",
+              "source": "성혼 2 · 정벌"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.4,
+              "targetPolicy": "all_allies",
+              "source": "성혼 2 · 정벌"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "DanHengPT_00",
+          "name": "단항 • 등황",
+          "damage": 26323.151921405355,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 10860.098197082538,
+          "gainRatio": 0.7023255813953488,
+          "summary": "공격력 434, 피증 24.00%, 피증 12.00%, 받피증 20.00%",
+          "stats": [
+            {
+              "stat": "atkFlat",
+              "value": 434.4782511000001,
+              "targetPolicy": "single_ally",
+              "source": "전투 스킬 · 천혜의 경관"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 6 · 초목과 티끌 모두 꿈에 들고"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.24,
+              "targetPolicy": "single_ally",
+              "source": "단항 • 등황"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.12,
+              "targetPolicy": "single_ally",
+              "source": "단항 • 등황"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Jiaoqiu_00",
+          "name": "초구",
+          "damage": 26310.38591193528,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 10847.332187612461,
+          "gainRatio": 0.7015000000000002,
+          "summary": "받피증 40.00%, 받피증 14.00%, 받피증 10.00%, 속관 3.00%",
+          "stats": [
+            {
+              "stat": "resistancePen",
+              "value": 0.03,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 6 · 화력으로 결정되는 맛"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.4,
+              "targetPolicy": "enemy_all",
+              "source": "특성 · 기정지변, 절묘한 맛"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.1,
+              "targetPolicy": "enemy_all",
+              "source": "초구"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.14,
+              "targetPolicy": "enemy_all",
+              "source": "초구"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Tingyun_00",
+          "name": "정운",
+          "damage": 26181.886117370646,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 10718.83239304783,
+          "gainRatio": 0.6931898824219629,
+          "summary": "추가피해(proc) 650, 공격력 363, 피증 56.00%",
+          "stats": [
+            {
+              "stat": "allDamage",
+              "value": 0.56,
+              "targetPolicy": "single_ally",
+              "source": "필살기 · 상서로운 구름의 기원"
+            },
+            {
+              "stat": "atkFlat",
+              "value": 363.14794709999995,
+              "targetPolicy": "single_ally",
+              "source": "전투 스킬 · 정다운 화음"
+            }
+          ],
+          "procRows": [
+            {
+              "stat": "additionalDamage(proc)",
+              "value": 649.867177209714,
+              "damage": 649.867177209714,
+              "source": "전투스킬 · 축복 추가피해"
+            }
+          ]
+        },
+        {
+          "characterId": "Lingsha_00",
+          "name": "영사",
+          "damage": 25540.21308503059,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 10077.159360707774,
+          "gainRatio": 0.6516927083333333,
+          "summary": "방깎 20.00%, 속관 20.00%, 받피증 10.00%, 받피증 8.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 1 · 파사의 향기"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 6 · 새벽녘 짙게 밴 난초향"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.1,
+              "targetPolicy": "enemy_all",
+              "source": "영사"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.08,
+              "targetPolicy": "enemy_all",
+              "source": "영사"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "PlayerBoy_20",
+          "name": "개척자 • 기억",
+          "damage": 24239.004476880637,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 8775.95075255782,
+          "gainRatio": 0.5675431844845478,
+          "summary": "확정피해 30.00%, 확정피해 6.00%, 치피 13.20%, 치확 10.00%, 피증 8.00%",
+          "stats": [
+            {
+              "stat": "critDamage",
+              "value": 0.132,
+              "targetPolicy": "all_allies",
+              "source": "특성 · 파트너! 함께!"
+            },
+            {
+              "stat": "trueDamageRatio",
+              "value": 0.06,
+              "targetPolicy": "single_ally",
+              "source": "성혼 4 · 뮤즈의 새 댄스 파트너"
+            },
+            {
+              "stat": "critRate",
+              "value": 0.1,
+              "targetPolicy": "single_ally",
+              "source": "성혼 1 · 현재의 서술자"
+            },
+            {
+              "stat": "trueDamageRatio",
+              "value": 0.3,
+              "targetPolicy": "single_ally",
+              "source": "기억 정령 스킬 · 내가! 도와줄게!"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.08,
+              "targetPolicy": "all_allies",
+              "source": "개척자 • 기억"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "BlackSwan_00",
+          "name": "블랙 스완",
+          "damage": 23272.995366697964,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 7809.941642375146,
+          "gainRatio": 0.5050711057215298,
+          "summary": "받피증 27.00%, 방깎 22.00%, 방깎 7.20%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.27,
+              "targetPolicy": "enemy_all",
+              "source": "필살기 · 저편의 품에 취해"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.22,
+              "targetPolicy": "enemy_single",
+              "source": "전투 스킬 · 실추, 거짓된 신의 황혼"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.07200000000000001,
+              "targetPolicy": "enemy_all",
+              "source": "블랙 스완"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "SilverWolf999_00",
+          "name": "은랑 LV.999",
+          "damage": 23194.580586484226,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 7731.526862161409,
+          "gainRatio": 0.5,
+          "summary": "받피증 20.00%, 속관 20.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 1 · 에테르 편집"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 6 · 나 혼자만 만렙!"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Pela_00",
+          "name": "페라",
+          "damage": 22934.853229387023,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 7471.799505064206,
+          "gainRatio": 0.4832033593281344,
+          "summary": "방깎 42.00%, 속관 12.00%",
+          "stats": [
+            {
+              "stat": "resistancePen",
+              "value": 0.12,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 4 · 완벽 해부"
+            },
+            {
+              "stat": "defenseDown",
+              "value": 0.42,
+              "targetPolicy": "enemy_single",
+              "source": "필살기 · 영역 제압"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Yukong_00",
+          "name": "어공",
+          "damage": 22714.38333193623,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 7251.329607613414,
+          "gainRatio": 0.4689455095281301,
+          "summary": "치피 70.00%, 공퍼 40.00%, 피증 12.00%",
+          "stats": [
+            {
+              "stat": "critDamage",
+              "value": 0.7,
+              "targetPolicy": "all_allies",
+              "source": "필살기 · 창공 꿰뚫기"
+            },
+            {
+              "stat": "atkRatio",
+              "value": 0.4,
+              "targetPolicy": "all_allies",
+              "source": "전투 스킬 · 천궁에 울리는 활"
+            },
+            {
+              "stat": "allDamage",
+              "value": 0.12,
+              "targetPolicy": "all_allies",
+              "source": "어공"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Constance_00",
+          "name": "달리아",
+          "damage": 22616.030957342897,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 7152.977233020079,
+          "gainRatio": 0.4625850340136055,
+          "summary": "속관 20.00%, 받피증 12.00%, 방깎 8.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.08,
+              "targetPolicy": "enemy_all",
+              "source": "필살기 · 빠져들어... 재가 흩날리는 묘지로"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 2 · 새 삶, 생기, 애정"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.12,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 4 · 꽃술은 벌레가 갉아 먹었구나"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Anaxa_00",
+          "name": "아낙사",
+          "damage": 21137.82140596011,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 5674.767681637291,
+          "gainRatio": 0.36698880976602255,
+          "summary": "속관 20.00%, 방깎 16.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.16,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 1 · 달로 별밤을 가린 마술사"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 2 · 진실된 역사의 자연인"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "JingYuan_00",
+          "name": "경원",
+          "damage": 21029.75306507903,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 5566.699340756211,
+          "gainRatio": 0.3599999999999999,
+          "summary": "받피증 36.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.36,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 6 · 적을 격멸하는 위령(威霊)"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Boothill_00",
+          "name": "부트힐",
+          "damage": 20565.861453349346,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 5102.807729026528,
+          "gainRatio": 0.32999999999999985,
+          "summary": "받피증 33.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.33,
+              "targetPolicy": "enemy_single",
+              "source": "전투 스킬 · 뜨거운 자갈 위 탱고"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Mydeimos_00",
+          "name": "마이데이",
+          "damage": 20101.969841619666,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 4638.916117296849,
+          "gainRatio": 0.30000000000000027,
+          "summary": "받피증 30.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.3,
+              "targetPolicy": "enemy_all",
+              "source": "마이데이"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "YaoGuang_00",
+          "name": "효광",
+          "damage": 19912.708506973006,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 4449.654782650188,
+          "gainRatio": 0.28776041666666674,
+          "summary": "방무 20.00%, 받피증 15.00%",
+          "stats": [
+            {
+              "stat": "defenseIgnore",
+              "value": 0.2,
+              "targetPolicy": "all_allies",
+              "source": "성혼 1 · 옥이 떨어지는 곳에 가득한 웃음소리"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.15,
+              "targetPolicy": "enemy_all",
+              "source": "효광"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Acheron_00",
+          "name": "아케론",
+          "damage": 19715.393498511592,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 4252.339774188775,
+          "gainRatio": 0.2749999999999999,
+          "summary": "속관 22.00%",
+          "stats": [
+            {
+              "stat": "resistancePen",
+              "value": 0.22,
+              "targetPolicy": "enemy_all",
+              "source": "특성 · 비에 젖은 단풍, 끝없는 하늘"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Castorice_00",
+          "name": "카스토리스",
+          "damage": 19715.393498511592,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 4252.339774188775,
+          "gainRatio": 0.2749999999999999,
+          "summary": "속관 22.00%",
+          "stats": [
+            {
+              "stat": "resistancePen",
+              "value": 0.22,
+              "targetPolicy": "enemy_all",
+              "source": "필살기 · 포효하는 망자, 소생의 종"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Hyacine_00",
+          "name": "히아킨",
+          "damage": 19688.175627814522,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 4225.121903491705,
+          "gainRatio": 0.27323981270567166,
+          "summary": "체퍼 30.00%, 받피증 18.00%",
+          "stats": [
+            {
+              "stat": "hpRatio",
+              "value": 0.3,
+              "targetPolicy": "all_allies",
+              "source": "필살기 · 비 온 뒤 맑음"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.18,
+              "targetPolicy": "enemy_all",
+              "source": "히아킨"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Aventurine_00",
+          "name": "어벤츄린",
+          "damage": 19560.762961268363,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 4097.709236945546,
+          "gainRatio": 0.2649999999999999,
+          "summary": "속관 12.00%, 받피증 10.00%",
+          "stats": [
+            {
+              "stat": "resistancePen",
+              "value": 0.12,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 2 · 제한된 합리성"
+            },
+            {
+              "stat": "vulnerability",
+              "value": 0.1,
+              "targetPolicy": "enemy_all",
+              "source": "어벤츄린"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Luocha_00",
+          "name": "나찰",
+          "damage": 19328.81715540352,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 3865.7634310807043,
+          "gainRatio": 0.25,
+          "summary": "공퍼 20.00%, 속관 20.00%",
+          "stats": [
+            {
+              "stat": "atkRatio",
+              "value": 0.2,
+              "targetPolicy": "all_allies",
+              "source": "성혼 1 · 생자 정화"
+            },
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 6 · 모두가 먼지로 돌아가리"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Archer_00",
+          "name": "아처",
+          "damage": 19328.81715540352,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 3865.7634310807043,
+          "gainRatio": 0.25,
+          "summary": "속관 20.00%",
+          "stats": [
+            {
+              "stat": "resistancePen",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 2 · 이루지 못한 행복"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Mar_7th_10",
+          "name": "Mar. 7th•수렵",
+          "damage": 19294.462192802814,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 3831.4084684799964,
+          "gainRatio": 0.24777825498034267,
+          "summary": "치피 60.00%",
+          "stats": [
+            {
+              "stat": "critDamage",
+              "value": 0.6,
+              "targetPolicy": "self",
+              "source": "일반 공격 · 파랑"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Sam_00",
+          "name": "반디",
+          "damage": 19174.186618160293,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 3711.1328938374754,
+          "gainRatio": 0.24,
+          "summary": "받피증 24.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.24,
+              "targetPolicy": "enemy_all",
+              "source": "반디"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Luka_00",
+          "name": "루카",
+          "damage": 18803.073328776543,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 3340.019604453726,
+          "gainRatio": 0.21599999999999975,
+          "summary": "받피증 21.60%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.21600000000000003,
+              "targetPolicy": "enemy_single",
+              "source": "필살기 · 승리의 일격"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Aglaea_00",
+          "name": "아글라이아",
+          "damage": 17782.51178297124,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 2319.4580586484226,
+          "gainRatio": 0.1499999999999999,
+          "summary": "받피증 15.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.15,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 1 · 흔들리는 금성의 행렬"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Evanescia_00",
+          "name": "에바네시아",
+          "damage": 17782.51178297124,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 2319.4580586484226,
+          "gainRatio": 0.1499999999999999,
+          "summary": "받피증 15.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.15,
+              "targetPolicy": "enemy_all",
+              "source": "에바네시아"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Fugue_00",
+          "name": "망귀인",
+          "damage": 17315.398701715658,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 1852.3449773928405,
+          "gainRatio": 0.11979166666666696,
+          "summary": "방깎 20.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.2,
+              "targetPolicy": "enemy_single",
+              "source": "전투 스킬 · 현인의 길조, 천명의 부채"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Phainon_00",
+          "name": "파이논",
+          "damage": 17110.430008900697,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 1647.3762845778801,
+          "gainRatio": 0.10653628409675742,
+          "summary": "방깎 18.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.18,
+              "targetPolicy": "enemy_all",
+              "source": "파이논"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "FuXuan_00",
+          "name": "부현",
+          "damage": 17081.280276868227,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 1618.2265525454095,
+          "gainRatio": 0.10465116279069764,
+          "summary": "피증 9.00%",
+          "stats": [
+            {
+              "stat": "allDamage",
+              "value": 0.09,
+              "targetPolicy": "all_allies",
+              "source": "부현"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "PlayerBoy_40",
+          "name": "개척자 • 환락",
+          "damage": 17009.3590967551,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 1546.3053724322817,
+          "gainRatio": 0.10000000000000009,
+          "summary": "받피증 10.00%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.1,
+              "targetPolicy": "enemy_all",
+              "source": "성혼 4 · 세상을 구하는 데 이유는 필요 없어"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Misha_00",
+          "name": "미샤",
+          "damage": 16910.257124768086,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 1447.203400445269,
+          "gainRatio": 0.0935910478128179,
+          "summary": "방깎 16.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.16,
+              "targetPolicy": "enemy_single",
+              "source": "성혼 2 · 청춘의 창연한 눈빛"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Guinaifen_00",
+          "name": "계네빈",
+          "damage": 16638.245807371353,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 1175.192083048536,
+          "gainRatio": 0.07600000000000007,
+          "summary": "받피증 7.60%",
+          "stats": [
+            {
+              "stat": "vulnerability",
+              "value": 0.076,
+              "targetPolicy": "enemy_single",
+              "source": "특성 · 관중 없이는 예술가도 없는 법"
+            }
+          ],
+          "procRows": []
+        },
+        {
+          "characterId": "Sparxie_00",
+          "name": "스파키",
+          "damage": 15887.96440014053,
+          "baselineDamage": 15463.053724322817,
+          "deltaDamage": 424.9106758177131,
+          "gainRatio": 0.027479091995221028,
+          "summary": "방깎 5.00%",
+          "stats": [
+            {
+              "stat": "defenseDown",
+              "value": 0.05,
+              "targetPolicy": "enemy_all",
+              "source": "스파키"
+            }
+          ],
+          "procRows": []
+        }
+      ]
+    }
+  }
+}

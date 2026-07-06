@@ -14276,19 +14276,9 @@
       "sourceStatus": "hoyowiki_reviewed_default",
       "recommendedLightCones": [
         {
-          "id": "wiki-77",
-          "name": "별바다 순항",
-          "path": "hunt"
-        },
-        {
-          "id": "wiki-54",
-          "name": "논검",
-          "path": "hunt"
-        },
-        {
-          "id": "wiki-47",
-          "name": "침묵만이",
-          "path": "hunt"
+          "id": "wiki-5218",
+          "name": "갤럭시 시티에 오신 것을 환영합니다",
+          "path": "elation"
         }
       ],
       "recommendedRelics": [
@@ -14304,8 +14294,8 @@
         }
       ],
       "selectedLightCone": {
-        "id": "wiki-5220",
-        "name": "미래엔 우리가 함께할 거야",
+        "id": "wiki-5218",
+        "name": "갤럭시 시티에 오신 것을 환영합니다",
         "path": "elation"
       },
       "selectedRelics": {
@@ -18540,20 +18530,20 @@
       "sourceStatus": "hoyowiki_reviewed_default",
       "recommendedLightCones": [
         {
-          "id": "wiki-66",
-          "name": "오늘도 평화로운 하루",
-          "path": "erudition"
+          "id": "wiki-4779",
+          "name": "그녀가 보기로 결심했을 때",
+          "path": "elation"
         },
         {
-          "id": "wiki-67",
-          "name": "은하철도의 밤",
-          "path": "erudition"
+          "id": "wiki-5008",
+          "name": "넘치는 환락의 축복",
+          "path": "elation"
         }
       ],
       "recommendedRelics": [
         {
-          "id": "wiki-relic-3161",
-          "name": "지식의 바다에 빠진 학자",
+          "id": "wiki-relic-4769",
+          "name": "천명에 응해 먼 길을 떠난 점술가",
           "category": "터널 유물"
         },
         {
@@ -18563,14 +18553,14 @@
         }
       ],
       "selectedLightCone": {
-        "id": "wiki-5219",
-        "name": "다음 꽃피는 계절의 만남",
+        "id": "wiki-4779",
+        "name": "그녀가 보기로 결심했을 때",
         "path": "elation"
       },
       "selectedRelics": {
         "set4": {
-          "id": "wiki-relic-1237",
-          "name": "가상공간을 누비는 메신저",
+          "id": "wiki-relic-4769",
+          "name": "천명에 응해 먼 길을 떠난 점술가",
           "category": "터널 유물"
         },
         "set4Alt": null,

@@ -32,6 +32,16 @@
         "usesCrit": true,
         "usesDamageBonus": true
       },
+      "elation-crit": {
+        "evaluationKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": false
+      },
+      "elation-support": {
+        "evaluationKey": "elation",
+        "usesCrit": true,
+        "usesDamageBonus": false
+      },
       "dot": {
         "evaluationKey": "dot",
         "usesCrit": false,
@@ -559,13 +569,13 @@
       "calculationUse": "ui_and_default_profile_metadata_only",
       "sourceBackedCombatEffect": false,
       "uiTypeProfile": {
-        "roleClass": "지원형 서포터",
-        "damageTemplate": "support",
+        "roleClass": "환락 서포터",
+        "damageTemplate": "elation-support",
         "statProfile": "support",
-        "primaryStat": "critDamage",
-        "displayTypeLabel": "지원형 서포터",
-        "evaluationTemplateKey": "utility",
-        "usesCrit": false,
+        "primaryStat": "elation",
+        "displayTypeLabel": "환락 서포터",
+        "evaluationTemplateKey": "elation",
+        "usesCrit": true,
         "usesDamageBonus": false
       },
       "relicTypeProfile": {
@@ -2399,14 +2409,14 @@
       "calculationUse": "ui_and_default_profile_metadata_only",
       "sourceBackedCombatEffect": false,
       "uiTypeProfile": {
-        "roleClass": "치확 / 치피 딜러",
-        "damageTemplate": "crit",
+        "roleClass": "환락 / 치확 딜러",
+        "damageTemplate": "elation-crit",
         "statProfile": "atk",
         "primaryStat": "atk",
-        "displayTypeLabel": "공퍼 / 치확 딜러",
-        "evaluationTemplateKey": "crit",
+        "displayTypeLabel": "환락 / 치확 딜러",
+        "evaluationTemplateKey": "elation",
         "usesCrit": true,
-        "usesDamageBonus": true
+        "usesDamageBonus": false
       },
       "relicTypeProfile": {
         "relicProfile": "elationDps",
@@ -2971,14 +2981,14 @@
       "calculationUse": "ui_and_default_profile_metadata_only",
       "sourceBackedCombatEffect": false,
       "uiTypeProfile": {
-        "roleClass": "치확 / 치피 딜러",
-        "damageTemplate": "crit-summon",
+        "roleClass": "환락 / 치확 딜러",
+        "damageTemplate": "elation-crit",
         "statProfile": "atk",
         "primaryStat": "atk",
-        "displayTypeLabel": "공퍼 / 치확 딜러",
-        "evaluationTemplateKey": "crit",
+        "displayTypeLabel": "환락 / 치확 딜러",
+        "evaluationTemplateKey": "elation",
         "usesCrit": true,
-        "usesDamageBonus": true
+        "usesDamageBonus": false
       },
       "relicTypeProfile": {
         "relicProfile": "elationDps",
@@ -3336,14 +3346,14 @@
       "calculationUse": "ui_and_default_profile_metadata_only",
       "sourceBackedCombatEffect": false,
       "uiTypeProfile": {
-        "roleClass": "치확 / 치피 딜러",
-        "damageTemplate": "crit",
+        "roleClass": "환락 / 치확 딜러",
+        "damageTemplate": "elation-crit",
         "statProfile": "atk",
         "primaryStat": "atk",
-        "displayTypeLabel": "공퍼 / 치확 딜러",
-        "evaluationTemplateKey": "crit",
+        "displayTypeLabel": "환락 / 치확 딜러",
+        "evaluationTemplateKey": "elation",
         "usesCrit": true,
-        "usesDamageBonus": true
+        "usesDamageBonus": false
       },
       "relicTypeProfile": {
         "relicProfile": "elationDps",
@@ -4485,13 +4495,13 @@
       "calculationUse": "ui_and_default_profile_metadata_only",
       "sourceBackedCombatEffect": false,
       "uiTypeProfile": {
-        "roleClass": "지원형 서포터",
-        "damageTemplate": "support",
+        "roleClass": "환락 서포터",
+        "damageTemplate": "elation-support",
         "statProfile": "support",
-        "primaryStat": "critDamage",
-        "displayTypeLabel": "지원형 서포터",
-        "evaluationTemplateKey": "utility",
-        "usesCrit": false,
+        "primaryStat": "elation",
+        "displayTypeLabel": "환락 서포터",
+        "evaluationTemplateKey": "elation",
+        "usesCrit": true,
         "usesDamageBonus": false
       },
       "relicTypeProfile": {
@@ -4537,20 +4547,20 @@
       "sourceBackedCombatEffect": false,
       "uiTypeProfile": {
         "roleClass": "환락 서포터",
-        "damageTemplate": "crit",
+        "damageTemplate": "elation-support",
         "statProfile": "atk",
-        "primaryStat": "atk",
+        "primaryStat": "elation",
         "displayTypeLabel": "환락 서포터",
-        "evaluationTemplateKey": "crit",
+        "evaluationTemplateKey": "elation",
         "usesCrit": true,
-        "usesDamageBonus": true
+        "usesDamageBonus": false
       },
       "relicTypeProfile": {
         "relicProfile": "elationSupport",
         "presetId": "crit",
         "presetLabel": "치명 세팅",
         "sourceRole": "환락 서포터",
-        "set4Id": "wiki-relic-1237",
+        "set4Id": "wiki-relic-4769",
         "set4AltId": null,
         "set4Mode": "4",
         "set2Id": "wiki-relic-137",

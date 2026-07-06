@@ -33,24 +33,67 @@ const calculatorStateStorageName = "hsr_relic_cc_v2_calculator_state_v1";
 const calculatorStateVersion = 1;
 const cookieMaxAgeSeconds = 60 * 60 * 24 * 180;
 const lightCones = lightconeCandidates.lightCones ?? [];
+const skillDamageRows = (skillDamageMetadata.rows ?? []).map(normalizeSkillDamageRow);
 const supersededGeneratedEffectRowIds = new Set(hoyowikiSourceEffectSupplements.supersedesEffectRowIds ?? []);
+const forceKeepGeneratedEffectRowIds = new Set([
+  "effect:MortenaxBlade_00:4",
+  "effect:MortenaxBlade_00:6",
+]);
 const excludedEffectRowIds = new Set([
+  "effect:MortenaxBlade_00:0",
+  "effect:TheHerta_00:1",
   "effect:Jingliu_00:hoyowiki-source:E4:달의_검을_쥐고:allDamage:1",
 ]);
 const generatedCombatLedgerRows = (combatLedgerSample.rows ?? combatLedgerSample.ledgerRows ?? [])
-  .filter((row) => !supersededGeneratedEffectRowIds.has(row.sourceTrace?.effectRowId ?? row.effectRowId));
+  .filter((row) => !shouldDropSupersededGeneratedEffect(getEffectRowId(row)));
 const generatedBattleEffectMetadataRows = (battleEffectMetadata.rows ?? [])
-  .filter((row) => !supersededGeneratedEffectRowIds.has(row.effectRowId));
+  .filter((row) => !shouldDropSupersededGeneratedEffect(getEffectRowId(row)));
 const combatLedgerRows = [
   ...generatedCombatLedgerRows,
   ...(hoyowikiSourceEffectSupplements.ledgerRows ?? []),
   ...(battleEffectSupplements.ledgerRows ?? []),
-].filter((row) => !excludedEffectRowIds.has(row.sourceTrace?.effectRowId ?? row.effectRowId));
+].filter((row) => !shouldExcludeEffectRowId(getEffectRowId(row)));
 const battleEffectMetadataRows = [
   ...generatedBattleEffectMetadataRows,
   ...(hoyowikiSourceEffectSupplements.metadataRows ?? []),
   ...(battleEffectSupplements.metadataRows ?? []),
-].filter((row) => !excludedEffectRowIds.has(row.effectRowId));
+].filter((row) => !shouldExcludeEffectRowId(getEffectRowId(row)));
+
+function getEffectRowId(row) {
+  return row?.sourceTrace?.effectRowId ?? row?.effectRowId ?? "";
+}
+
+function shouldDropSupersededGeneratedEffect(effectRowId) {
+  return supersededGeneratedEffectRowIds.has(effectRowId) && !forceKeepGeneratedEffectRowIds.has(effectRowId);
+}
+
+function shouldExcludeEffectRowId(effectRowId) {
+  return (
+    excludedEffectRowIds.has(effectRowId)
+    || isExcludedAshveilDuplicateDefenseDown(effectRowId)
+    || isExcludedMortenaxHoyoWikiSourceEffect(effectRowId)
+  );
+}
+
+function isExcludedAshveilDuplicateDefenseDown(effectRowId) {
+  const id = String(effectRowId ?? "");
+  return (
+    id.startsWith("effect:Ashveil_00:hoyowiki-source:")
+    && id.endsWith(":defenseDown:0")
+  );
+}
+
+function isExcludedMortenaxHoyoWikiSourceEffect(effectRowId) {
+  const id = String(effectRowId ?? "");
+  if (!id.startsWith("effect:MortenaxBlade_00:hoyowiki-source:")) {
+    return false;
+  }
+  return (
+    id.endsWith(":allDamage:2")
+    || id.endsWith(":ultimateDamage:0")
+    || id.endsWith(":followDamage:0")
+  );
+}
 
 function buildBattleLedgerRowsForParty(party) {
   return [
@@ -61,6 +104,31 @@ function buildBattleLedgerRowsForParty(party) {
       characterGetter: getCharacter,
     }),
   ];
+}
+
+function normalizeSkillDamageRow(row) {
+  if (row?.characterId !== "DanHengIL_00") return row;
+  if (row.skillId === "DanHengIL_00:Skill11") {
+    return {
+      ...row,
+      title: "연화",
+      sourceSkillTitle: "연화",
+      targetProfile: "single",
+      targetScope: "single",
+      parts: (row.parts ?? []).slice(0, 1),
+    };
+  }
+  if (row.skillId === "DanHengIL_00:Skill01") {
+    return {
+      ...row,
+      title: "빛나는 도약",
+      sourceSkillTitle: "빛나는 도약",
+      targetProfile: "blast",
+      targetScope: "blast",
+      parts: (row.parts ?? []).slice(4, 6),
+    };
+  }
+  return row;
 }
 
 const defaultBuildRows = Object.values(defaultCharacterBuilds.builds ?? {});
@@ -168,13 +236,15 @@ const statLabels = {
   dotDamage: "지속피해 피증",
   breakDamage: "격파피해 피증",
   trueDamageRatio: "확정피해",
+  specialFinal: "확정피해",
   elation: "환락도",
   merrymake: "Merrymake",
-  resistancePenetration: "속저관",
-  resistancePen: "속저관",
+  resistancePenetration: "속관",
+  resistancePen: "속관",
   defenseIgnore: "방무",
   defenseDown: "방깎",
   vulnerability: "받피증",
+  takenCritDamage: "받치피증",
   additionalDamage: "추가피해",
 };
 
@@ -241,6 +311,8 @@ function createDefaultEquipmentForCharacter(character) {
   const defaultBuild = getDefaultBuild(character?.characterId);
   const lightcone = getDefaultLightCone(character, defaultBuild);
   const set4 = defaultBuild?.selectedRelics?.set4 ?? null;
+  const set4Alt = defaultBuild?.selectedRelics?.set4Alt ?? null;
+  const set4Mode = defaultBuild?.selectedRelics?.set4Mode ?? "4";
   const set2 = defaultBuild?.selectedRelics?.set2 ?? null;
   return {
     lightconeId: lightcone?.id ?? null,
@@ -249,6 +321,9 @@ function createDefaultEquipmentForCharacter(character) {
     lightconeIconFile: lightcone ? getLightConeIconFile(lightcone, "png") : null,
     relicSet4Id: set4?.id ?? null,
     relicSet4Name: set4?.name ?? "터널 유물",
+    relicSet4AltId: set4Alt?.id ?? null,
+    relicSet4AltName: set4Alt?.name ?? null,
+    relicSet4Mode: set4Mode,
     relicSet2Id: set2?.id ?? null,
     relicSet2Name: set2?.name ?? "차원 장신구",
     relicMainStats: { ...(defaultBuild?.mainStats ?? {}) },
@@ -306,6 +381,8 @@ function createCompactPersistedState(payload) {
       lightconeId: slot.lightconeId,
       lightconeRank: slot.lightconeRank,
       relicSet4Name: slot.relicSet4Name,
+      relicSet4AltName: slot.relicSet4AltName,
+      relicSet4Mode: slot.relicSet4Mode,
       relicSet2Name: slot.relicSet2Name,
       relicMainStats: slot.relicMainStats,
       relicSubStatPriority: slot.relicSubStatPriority,
@@ -321,6 +398,9 @@ function serializePartySlot(slot) {
     lightconeId: slot.lightconeId,
     lightconeRank: clampInteger(slot.lightconeRank ?? 1, 1, 5),
     relicSet4Name: slot.relicSet4Name,
+    relicSet4AltId: slot.relicSet4AltId,
+    relicSet4AltName: slot.relicSet4AltName,
+    relicSet4Mode: slot.relicSet4Mode,
     relicSet2Name: slot.relicSet2Name,
     relicMainStats: sanitizeRelicMainStats(slot.relicMainStats),
     relicSubStatPriority: sanitizeRelicSubStatPriority(slot.relicSubStatPriority),
@@ -328,11 +408,27 @@ function serializePartySlot(slot) {
   };
 }
 
+function migratePersistedDefaultEquipment(slot = {}) {
+  if (slot.characterId !== "YaoGuang_00") return slot;
+  const next = { ...slot };
+  if (next.lightconeId === "wiki-5219") {
+    next.lightconeId = "wiki-4779";
+  }
+  if (next.relicSet4Name === "가상공간을 누비는 메신저") {
+    next.relicSet4Name = "천명에 응해 먼 길을 떠난 점술가";
+    next.relicSet4Id = "wiki-relic-4769";
+    next.relicSet4AltId = null;
+    next.relicSet4AltName = null;
+    next.relicSet4Mode = "4";
+  }
+  return next;
+}
+
 function restorePersistedParty(persistedParty, fallbackParty) {
   if (!Array.isArray(persistedParty)) return fallbackParty;
   const usedCharacterIds = new Set();
   return fallbackParty.map((fallbackSlot, index) => {
-    const persistedSlot = persistedParty[index] ?? {};
+    const persistedSlot = migratePersistedDefaultEquipment(persistedParty[index] ?? {});
     const character = getCharacter(persistedSlot.characterId);
     if (!character || unavailableCharacterIds.has(character.characterId) || usedCharacterIds.has(character.characterId)) {
       usedCharacterIds.add(fallbackSlot.characterId);
@@ -342,6 +438,7 @@ function restorePersistedParty(persistedParty, fallbackParty) {
     const defaults = createDefaultEquipmentForCharacter(character);
     const lightcone = lightCones.find((row) => row.id === persistedSlot.lightconeId);
     const set4 = findRelicSetByName(persistedSlot.relicSet4Name, "set4");
+    const set4Alt = findRelicSetByName(persistedSlot.relicSet4AltName, "set4");
     const set2 = findRelicSetByName(persistedSlot.relicSet2Name, "set2");
     const relicMainStats = {
       ...defaults.relicMainStats,
@@ -362,6 +459,11 @@ function restorePersistedParty(persistedParty, fallbackParty) {
       ...(set4 ? {
         relicSet4Id: set4.id,
         relicSet4Name: set4.name,
+      } : {}),
+      ...(set4Alt ? {
+        relicSet4AltId: set4Alt.id,
+        relicSet4AltName: set4Alt.name,
+        relicSet4Mode: "2+2",
       } : {}),
       ...(set2 ? {
         relicSet2Id: set2.id,
@@ -620,6 +722,9 @@ function sanitizeRelicPatch(source = {}) {
   return {
     relicSet4Id: source.relicSet4Id ?? null,
     relicSet4Name: source.relicSet4Name ?? "터널 유물",
+    relicSet4AltId: source.relicSet4AltId ?? null,
+    relicSet4AltName: source.relicSet4AltName ?? null,
+    relicSet4Mode: source.relicSet4Mode ?? (source.relicSet4AltName ? "2+2" : "4"),
     relicSet2Id: source.relicSet2Id ?? null,
     relicSet2Name: source.relicSet2Name ?? "차원 장신구",
     relicMainStats,
@@ -752,7 +857,7 @@ function getCompareConditionDetail(condition, party = []) {
   }
   if (condition.type === "relic") {
     const relic = condition.relicPatch ?? {};
-    return `4셋 ${relic.relicSet4Name ?? "유물"} / 2셋 ${relic.relicSet2Name ?? "장신구"}`;
+    return getRelicSetSummary(relic);
   }
   if (condition.type === "custom") {
     const effect = normalizeCustomCompareEffect(condition.customEffect);
@@ -889,8 +994,25 @@ function getRelicIconFile(relicSet, pieceIndex = null) {
   return pieceIndex ? `${relicId}-${name}-${pieceIndex}-piece-${pieceIndex}.png` : `${relicId}-${name}.png`;
 }
 
-function RelicPieceIcon({ piece, set4, set2 }) {
-  const relicSet = piece.setKey === "set2" ? set2 : set4;
+function isRelicTwoTwo(slot) {
+  return slot?.relicSet4Mode === "2+2" && Boolean(slot?.relicSet4AltName || slot?.relicSet4AltId);
+}
+
+function getRelicSetSummary(slot) {
+  if (isRelicTwoTwo(slot)) {
+    return `2셋 ${slot.relicSet4Name ?? "터널 유물"} / 2셋 ${slot.relicSet4AltName ?? "터널 유물"} / 2셋 ${slot.relicSet2Name ?? "차원 장신구"}`;
+  }
+  return `4셋 ${slot?.relicSet4Name ?? "터널 유물"} / 2셋 ${slot?.relicSet2Name ?? "차원 장신구"}`;
+}
+
+function getRelicPieceSetForSlot(piece, set4, set4Alt, set2) {
+  if (piece.setKey === "set2") return set2;
+  if (set4Alt && (piece.key === "body" || piece.key === "feet")) return set4Alt;
+  return set4;
+}
+
+function RelicPieceIcon({ piece, set4, set4Alt, set2 }) {
+  const relicSet = getRelicPieceSetForSlot(piece, set4, set4Alt, set2);
   const primary = getRelicIconFile(relicSet, piece.pieceIndex);
   const fallback = getRelicIconFile(relicSet);
   const generic = `/relic-piece-icons/${piece.key}.svg`;
@@ -1015,11 +1137,11 @@ const percentStatKeys = new Set([
   "defenseIgnore",
   "defenseDown",
   "vulnerability",
+  "takenCritDamage",
   "dealtCritDamage",
   "followCritDamage",
   "specialFinal",
   "trueDamageRatio",
-  "elation",
   "merrymake",
 ]);
 
@@ -1031,7 +1153,7 @@ const customCompareEffectOptions = [
   { key: "critDamage", stat: "critDamage", label: "치피", unit: "percent", targetPolicy: "self", defaultValue: 0.3 },
   { key: "speed", stat: "speed", label: "속도", unit: "flat", targetPolicy: "self", defaultValue: 10 },
   { key: "allDamage", stat: "allDamage", label: "가피증", unit: "percent", targetPolicy: "self", defaultValue: 0.1 },
-  { key: "resistancePen", stat: "resistancePen", label: "속저관", unit: "percent", targetPolicy: "enemy_all", defaultValue: 0.1 },
+  { key: "resistancePen", stat: "resistancePen", label: "속관", unit: "percent", targetPolicy: "enemy_all", defaultValue: 0.1 },
   { key: "vulnerability", stat: "vulnerability", label: "받피증", unit: "percent", targetPolicy: "enemy_all", defaultValue: 0.1 },
   { key: "defenseDown", stat: "defenseDown", label: "방깎", unit: "percent", targetPolicy: "enemy_all", defaultValue: 0.1 },
   { key: "defenseIgnore", stat: "defenseIgnore", label: "방무", unit: "percent", targetPolicy: "self", defaultValue: 0.1 },
@@ -1081,7 +1203,19 @@ const customCompareDamageModifierKeys = new Set([
   "defenseDown",
 ]);
 
+const damageAmountStatKeys = new Set([
+  "additionalDamage",
+  "additionalDamage(proc)",
+  "supportProcDamage",
+]);
+
 function formatStatValue(stat, value) {
+  if (damageAmountStatKeys.has(stat)) {
+    return formatDamageNumber(value);
+  }
+  if (stat === "elation") {
+    return `${formatNumber(value)} %`;
+  }
   if (percentStatKeys.has(stat)) {
     return formatPercent(value);
   }
@@ -1096,6 +1230,10 @@ function formatRelicSubStatRollValue(stat, rolls) {
 
 function formatStatLabel(stat) {
   return statLabels[stat] ?? stat ?? "-";
+}
+
+function formatUiText(value) {
+  return String(value ?? "").replace(/필살기/g, "궁극기");
 }
 
 function getCustomCompareEffectOption(stat) {
@@ -1152,6 +1290,7 @@ function normalizePrimaryStatKey(stat) {
   if (stat === "hp") return "hpRatio";
   if (stat === "def") return "defRatio";
   if (stat === "break") return "breakEffect";
+  if (stat === "elation") return "elation";
   if (stat === "critDamage") return "critDamage";
   if (stat === "critRate") return "critRate";
   return stat ?? null;
@@ -1162,12 +1301,14 @@ function normalizePrimaryFinalStatKey(stat) {
   if (stat === "hp" || stat === "hpRatio" || stat === "hpFlat") return "hp";
   if (stat === "def" || stat === "defRatio" || stat === "defFlat") return "def";
   if (stat === "break") return "breakEffect";
+  if (stat === "elation") return "elation";
   if (stat === "critDamage") return "critDamage";
   if (stat === "critRate") return "critRate";
   return stat ?? null;
 }
 
 function formatPrimaryStatProfile(profile) {
+  if (isElationTypeProfile(profile)) return "환락도";
   const primaryStat = profile?.uiTypeProfile?.primaryStat ?? profile?.uiTypeProfile?.statProfile ?? null;
   const normalized = normalizePrimaryStatKey(primaryStat);
   return primaryStatLabels[primaryStat] ?? formatStatLabel(normalized) ?? "-";
@@ -1221,6 +1362,23 @@ function getProfileStatSpecs(character, profile, slot) {
   const template = profile?.uiTypeProfile?.damageTemplate;
   const typeLabel = profile?.uiTypeProfile?.displayTypeLabel ?? "";
   const primary = normalizePrimaryFinalStatKey(profile?.uiTypeProfile?.primaryStat);
+  if (isElationTypeProfile(profile)) {
+    if (profile?.relicTypeProfile?.relicProfile === "elationSupport") {
+      const specs = [
+        ["환락도", "elation"],
+        ["속도", "speed"],
+      ];
+      if (slot.relicMainStats?.rope === "energyRegen") specs.push(["에너지 회복", "energyRegen"]);
+      specs.push(["치피", "critDamage"]);
+      return specs;
+    }
+    return [
+      ["치확", "critRate"],
+      ["치피", "critDamage"],
+      ["환락도", "elation"],
+      ["속도", "speed"],
+    ];
+  }
   if (template === "break") {
     return [
       ["격특", "breakEffect"],
@@ -1247,10 +1405,21 @@ function getProfileStatSpecs(character, profile, slot) {
   ];
 }
 
+function isElationTypeProfile(profile) {
+  const relicProfile = profile?.relicTypeProfile?.relicProfile;
+  const template = profile?.uiTypeProfile?.damageTemplate;
+  const label = `${profile?.uiTypeProfile?.roleClass ?? ""} ${profile?.uiTypeProfile?.displayTypeLabel ?? ""}`;
+  return String(relicProfile ?? "").startsWith("elation")
+    || String(template ?? "").startsWith("elation")
+    || label.includes("환락");
+}
+
 function buildCharacterProfileRows(character, slot, selfStats) {
   const profile = getCustomTypeProfile(character.characterId);
   const typeLabel = profile?.uiTypeProfile?.displayTypeLabel ?? `${elementLabels[character.element] ?? character.element ?? "-"} / ${pathLabels[character.path] ?? character.path ?? "-"}`;
-  const primaryStat = normalizePrimaryFinalStatKey(profile?.uiTypeProfile?.primaryStat ?? profile?.uiTypeProfile?.statProfile) ?? "speed";
+  const primaryStat = isElationTypeProfile(profile)
+    ? "elation"
+    : normalizePrimaryFinalStatKey(profile?.uiTypeProfile?.primaryStat ?? profile?.uiTypeProfile?.statProfile) ?? "speed";
   const primaryLabel = formatPrimaryStatProfile(profile);
   const rows = [
     { label: "타입", value: typeLabel, kind: "role" },
@@ -1435,6 +1604,7 @@ function CharacterStatusCard({ slot, active, onSelect, onEidolonChange, onOpenLi
   }
 
   const set4 = { id: slot.relicSet4Id, name: slot.relicSet4Name };
+  const set4Alt = isRelicTwoTwo(slot) ? { id: slot.relicSet4AltId, name: slot.relicSet4AltName } : null;
   const set2 = { id: slot.relicSet2Id, name: slot.relicSet2Name };
   const defaultBuild = getDefaultBuild(character.characterId);
   const selfStats = calculateSelfEquipmentStats({
@@ -1469,10 +1639,10 @@ function CharacterStatusCard({ slot, active, onSelect, onEidolonChange, onOpenLi
       </div>
 
       <button className="calc-equipment-button" type="button" aria-label={`${character.displayName} 유물 선택`} onClick={onOpenRelic}>
-        <div className="calc-relic-parts" title={`${slot.relicSet4Name} / ${slot.relicSet2Name}`}>
+        <div className="calc-relic-parts" title={getRelicSetSummary(slot)}>
           {relicPieces.map((piece) => (
             <span key={piece.key} title={piece.name}>
-              <RelicPieceIcon piece={piece} set4={set4} set2={set2} />
+              <RelicPieceIcon piece={piece} set4={set4} set4Alt={set4Alt} set2={set2} />
             </span>
           ))}
         </div>
@@ -1572,6 +1742,8 @@ function LightConePickerSheet({ slot, onClose, onApply }) {
 
 function RelicEditorSheet({ slot, onClose, onApply }) {
   const [set4Name, setSet4Name] = useState(slot.relicSet4Name ?? "터널 유물");
+  const [set4AltName, setSet4AltName] = useState(slot.relicSet4AltName ?? "");
+  const [set4Mode, setSet4Mode] = useState(slot.relicSet4Mode ?? (slot.relicSet4AltName ? "2+2" : "4"));
   const [set2Name, setSet2Name] = useState(slot.relicSet2Name ?? "차원 장신구");
   const [openSetPicker, setOpenSetPicker] = useState(null);
   const [mainStats, setMainStats] = useState(() => ({ ...(slot.relicMainStats ?? {}) }));
@@ -1587,13 +1759,18 @@ function RelicEditorSheet({ slot, onClose, onApply }) {
   });
   const tunnelOptions = uniqueOptions([
     set4Name,
+    set4AltName,
     ...defaultBuildRows.map((row) => row.selectedRelics?.set4?.name),
+    ...defaultBuildRows.map((row) => row.selectedRelics?.set4Alt?.name),
   ]);
   const ornamentOptions = uniqueOptions([
     set2Name,
     ...defaultBuildRows.map((row) => row.selectedRelics?.set2?.name),
   ]);
   const set4 = findRelicSetByName(set4Name, "set4") ?? { id: slot.relicSet4Id, name: set4Name };
+  const set4Alt = set4Mode === "2+2" && set4AltName
+    ? findRelicSetByName(set4AltName, "set4") ?? { id: slot.relicSet4AltId, name: set4AltName }
+    : null;
   const set2 = findRelicSetByName(set2Name, "set2") ?? { id: slot.relicSet2Id, name: set2Name };
 
   function closeAndApply() {
@@ -1601,6 +1778,9 @@ function RelicEditorSheet({ slot, onClose, onApply }) {
     onApply({
       relicSet4Id: set4?.id ?? null,
       relicSet4Name: set4Name,
+      relicSet4AltId: set4Alt?.id ?? null,
+      relicSet4AltName: set4Alt?.name ?? null,
+      relicSet4Mode: set4Alt ? "2+2" : "4",
       relicSet2Id: set2?.id ?? null,
       relicSet2Name: set2Name,
       relicMainStats: mainStats,
@@ -1661,7 +1841,7 @@ function RelicEditorSheet({ slot, onClose, onApply }) {
                   <RelicSetIcon relicSet={set4} fallbackPiece="head" />
                 </span>
                 <span className="calc-relic-set-copy">
-                  <span>4셋 유물</span>
+                  <span>{set4Alt ? "2셋 유물" : "4셋 유물"}</span>
                   <strong>{set4Name}</strong>
                 </span>
               </button>
@@ -1681,6 +1861,59 @@ function RelicEditorSheet({ slot, onClose, onApply }) {
                       >
                         <span className="calc-relic-set-thumb">
                           <RelicSetIcon relicSet={relicSet} fallbackPiece="head" />
+                        </span>
+                        <strong>{option}</strong>
+                      </button>
+                    );
+                  })}
+                </div>
+              ) : null}
+            </div>
+            <div className={`calc-relic-set-field ${openSetPicker === "set4Alt" ? "is-open" : ""}`}>
+              <button
+                type="button"
+                className="calc-relic-set-trigger"
+                onClick={() => setOpenSetPicker((current) => (current === "set4Alt" ? null : "set4Alt"))}
+              >
+                <span className="calc-relic-set-thumb">
+                  <RelicSetIcon relicSet={set4Alt ?? set4} fallbackPiece="body" />
+                </span>
+                <span className="calc-relic-set-copy">
+                  <span>{set4Alt ? "2셋 유물" : "보조 2셋 없음"}</span>
+                  <strong>{set4AltName || "4셋 사용"}</strong>
+                </span>
+              </button>
+              {openSetPicker === "set4Alt" ? (
+                <div className="calc-relic-set-menu">
+                  <button
+                    type="button"
+                    className={!set4AltName ? "is-active" : ""}
+                    onClick={() => {
+                      setSet4AltName("");
+                      setSet4Mode("4");
+                      setOpenSetPicker(null);
+                    }}
+                  >
+                    <span className="calc-relic-set-thumb">
+                      <RelicSetIcon relicSet={set4} fallbackPiece="head" />
+                    </span>
+                    <strong>4셋 사용</strong>
+                  </button>
+                  {tunnelOptions.map((option) => {
+                    const relicSet = findRelicSetByName(option, "set4") ?? { name: option };
+                    return (
+                      <button
+                        type="button"
+                        className={option === set4AltName ? "is-active" : ""}
+                        key={option}
+                        onClick={() => {
+                          setSet4AltName(option);
+                          setSet4Mode("2+2");
+                          setOpenSetPicker(null);
+                        }}
+                      >
+                        <span className="calc-relic-set-thumb">
+                          <RelicSetIcon relicSet={relicSet} fallbackPiece="body" />
                         </span>
                         <strong>{option}</strong>
                       </button>
@@ -1740,7 +1973,7 @@ function RelicEditorSheet({ slot, onClose, onApply }) {
               <div className="calc-piece-editor-head">
                 <label className={`calc-piece-main-field ${fixedMainStat ? "is-fixed" : ""}`}>
                   <span className="calc-piece-main-thumb">
-                    <RelicPieceIcon piece={piece} set4={set4} set2={set2} />
+                    <RelicPieceIcon piece={piece} set4={set4} set4Alt={set4Alt} set2={set2} />
                   </span>
                   <strong>{piece.name} : {formatStatLabel(mainStat)}</strong>
                   {!fixedMainStat ? (
@@ -1874,22 +2107,41 @@ function IconFilterRow({ items, value, onChange, label }) {
   );
 }
 
-function CharacterPickerSheet({ value, selectedIds, onSelect, onClose }) {
+function CharacterPickerSheet({ value, selectedIds = [], selectedSlots = [], onSelect, onDeselect, onClose }) {
   const [query, setQuery] = useState("");
   const [pathFilter, setPathFilter] = useState(null);
   const [elementFilter, setElementFilter] = useState(null);
+  const selectedSlotByCharacterId = useMemo(() => new Map(
+    (selectedSlots ?? [])
+      .filter((slot) => slot?.characterId)
+      .map((slot) => [slot.characterId, slot]),
+  ), [selectedSlots]);
+  const selectedCharacterIds = useMemo(
+    () => new Set([...(selectedIds ?? []), ...selectedSlotByCharacterId.keys()]),
+    [selectedIds, selectedSlotByCharacterId],
+  );
   const options = useMemo(() => {
     const normalized = query.trim().toLowerCase();
-    return characterIdentity.rows
+    const matchesFilter = (character) => {
+      if (unavailableCharacterIds.has(character.characterId)) return false;
+      if (pathFilter && character.path !== pathFilter) return false;
+      if (elementFilter && character.element !== elementFilter) return false;
+      if (!normalized) return true;
+      const text = [character.displayName, character.characterId, ...(character.aliasNames ?? [])].join(" ").toLowerCase();
+      return text.includes(normalized);
+    };
+    const pinned = (selectedSlots ?? [])
+      .map((slot) => getCharacter(slot?.characterId))
+      .filter(Boolean)
+      .filter(matchesFilter)
+      .filter((character, index, rows) => rows.findIndex((row) => row.characterId === character.characterId) === index);
+    const regular = characterIdentity.rows
       .filter((character) => {
-        if (unavailableCharacterIds.has(character.characterId)) return false;
-        if (pathFilter && character.path !== pathFilter) return false;
-        if (elementFilter && character.element !== elementFilter) return false;
-        if (!normalized) return true;
-        const text = [character.displayName, character.characterId, ...(character.aliasNames ?? [])].join(" ").toLowerCase();
-        return text.includes(normalized);
+        if (selectedSlotByCharacterId.has(character.characterId)) return false;
+        return matchesFilter(character);
       });
-  }, [elementFilter, pathFilter, query]);
+    return [...pinned, ...regular];
+  }, [elementFilter, pathFilter, query, selectedSlotByCharacterId, selectedSlots]);
 
   return (
     <div className="calc-modal-backdrop is-picker" role="dialog" aria-modal="true" aria-label="캐릭터 선택" onClick={onClose}>
@@ -1907,21 +2159,32 @@ function CharacterPickerSheet({ value, selectedIds, onSelect, onClose }) {
         <IconFilterRow items={elementFilterIcons} value={elementFilter} onChange={setElementFilter} label="속성 필터" />
         <div className="calc-character-grid">
           {options.map((character) => {
-            const disabled = selectedIds.includes(character.characterId) && character.characterId !== value;
+            const selectedSlot = selectedSlotByCharacterId.get(character.characterId);
+            const selectedInParty = Boolean(selectedSlot);
+            const currentSlotCharacter = Boolean(value && character.characterId === value);
+            const disabled = !onDeselect && selectedCharacterIds.has(character.characterId) && character.characterId !== value;
             return (
               <button
                 key={character.characterId}
-                className={character.characterId === value ? "is-active" : ""}
+                className={`${currentSlotCharacter ? "is-active is-current-slot-character" : ""} ${selectedInParty ? "is-selected-in-party" : ""}`}
                 type="button"
                 title={character.displayName}
-                aria-label={character.displayName}
+                aria-label={selectedInParty ? `${character.displayName} 선택취소` : character.displayName}
                 disabled={disabled}
                 onClick={() => {
+                  if (selectedSlot && onDeselect) {
+                    onDeselect(selectedSlot.slotId);
+                    onClose();
+                    return;
+                  }
                   onSelect(character.characterId);
                   onClose();
                 }}
               >
-                <CharacterAvatar character={character} variant="withText" />
+                <span className="calc-party-face calc-character-grid-face">
+                  <CharacterAvatar character={character} />
+                  {selectedInParty ? <span className="calc-character-selected-label">선택취소</span> : null}
+                </span>
                 <strong>{character.displayName}</strong>
               </button>
             );
@@ -1966,9 +2229,12 @@ function EnemyEditor({ enemy, onChange }) {
 const finalStatDisplayOrder = ["hp", "atk", "def", "speed", "critRate", "critDamage", "elementDamage", "breakEffect", "effectHitRate", "energyRegen"];
 const attackTypeLabels = {
   basic: "일반 공격",
+  basic_enhanced: "강화 일반 공격",
   skill: "전투 스킬",
-  ultimate: "필살기",
+  elation_skill: "환락 스킬",
+  ultimate: "궁극기",
   follow_up: "추가 공격",
+  memosprite: "기억 정령 공격",
   dot: "지속 피해",
 };
 
@@ -1978,6 +2244,9 @@ const contributionTabs = [
   { key: "party", label: "파티원 추천" },
 ];
 const partyRecommendationPreviewCount = 5;
+const partyRecommendationFixedScenarioSettings = Object.freeze({
+  weltZeroGravityStacks: 3,
+});
 const partyRecommendationEidolonOptions = [
   { value: 0, label: "명함" },
   { value: 1, label: "1돌" },
@@ -1985,19 +2254,23 @@ const partyRecommendationEidolonOptions = [
   { value: 6, label: "6돌" },
 ];
 
-function buildPartySpecificControls(party, activeSlotId) {
+function buildPartySpecificControls(party, activeSlotId, enemy = {}) {
   const activeSlot = party.find((slot) => slot.slotId === activeSlotId) ?? party[0] ?? null;
   const activeFormulaTypes = new Set(
-    (skillDamageMetadata.rows ?? [])
+    skillDamageRows
       .filter((row) => row.characterId === activeSlot?.characterId)
       .map((row) => row.damageFormulaType ?? "normal"),
   );
   return (characterStateControls.controls ?? [])
-    .map((control) => resolvePartySpecificControl(control, { party, activeSlot, activeFormulaTypes }))
-    .filter(Boolean);
+    .flatMap((control) => {
+      const resolved = resolvePartySpecificControl(control, { party, activeSlot, activeFormulaTypes, enemy });
+      if (!resolved) return [];
+      return Array.isArray(resolved) ? resolved : [resolved];
+    });
 }
 
-function resolvePartySpecificControl(control, { party, activeSlot, activeFormulaTypes }) {
+function resolvePartySpecificControl(control, { party, activeSlot, activeFormulaTypes, enemy }) {
+  if (Number.isFinite(Number(control.minEnemyCount)) && getEnemyCountForControl(enemy) < Number(control.minEnemyCount)) return null;
   if (control.scope === "partyCharacter") {
     const targetSlot = party.find((slot) => slot.characterId === control.characterId);
     if (!targetSlot) return null;
@@ -2005,6 +2278,16 @@ function resolvePartySpecificControl(control, { party, activeSlot, activeFormula
   }
   if (control.scope === "activeFormula") {
     if (!activeFormulaTypes.has(control.formulaType)) return null;
+    if (control.key === "elationCertifiedBangerStacks") {
+      return party
+        .filter(isElationCharacterSlot)
+        .map((slot) => buildStateControl({
+          ...control,
+          key: buildCharacterScenarioSettingKey(control.key, slot.characterId),
+          characterId: slot.characterId,
+        }, slot))
+        .filter(Boolean);
+    }
     return buildStateControl(control, activeSlot);
   }
   if (control.scope === "activeCharacter") {
@@ -2012,6 +2295,18 @@ function resolvePartySpecificControl(control, { party, activeSlot, activeFormula
     return buildStateControl(control, activeSlot);
   }
   return null;
+}
+
+function getEnemyCountForControl(enemy = {}) {
+  return Math.min(Math.max(Math.round(Number(enemy?.count ?? 1)), 1), 5);
+}
+
+function isElationCharacterSlot(slot) {
+  return getCharacter(slot?.characterId)?.path === "elation";
+}
+
+function buildCharacterScenarioSettingKey(baseKey, characterId) {
+  return `${baseKey}:${characterId}`;
 }
 
 function buildStateControl(control, slot) {
@@ -2055,6 +2350,42 @@ function formatStateControlOptionLabel(value, control) {
   return formatNumber(value);
 }
 
+function normalizeControlTitleText(value) {
+  return String(value ?? "").replace(/[•·\s]/g, "").toLowerCase();
+}
+
+function stripRepeatedCharacterName(label, characterLabel) {
+  const text = String(label ?? "").trim();
+  const characterText = String(characterLabel ?? "").trim();
+  if (!text || !characterText) return text;
+  const candidates = [
+    characterText,
+    characterText.replace(/[•·\s]/g, ""),
+    characterText.replace(/[•·]/g, " "),
+  ]
+    .map((candidate) => candidate.trim())
+    .filter(Boolean);
+  for (const candidate of candidates) {
+    if (text.startsWith(candidate)) return text.slice(candidate.length).replace(/^[\s:·•-]+/, "").trim();
+  }
+  const normalizedLabel = normalizeControlTitleText(text);
+  const normalizedCharacter = normalizeControlTitleText(characterText);
+  if (!normalizedCharacter || !normalizedLabel.startsWith(normalizedCharacter)) return text;
+  let consumed = 0;
+  let normalizedConsumed = "";
+  for (const char of text) {
+    consumed += char.length;
+    normalizedConsumed = normalizeControlTitleText(text.slice(0, consumed));
+    if (normalizedConsumed.length >= normalizedCharacter.length) break;
+  }
+  return text.slice(consumed).replace(/^[\s:·•-]+/, "").trim() || text;
+}
+
+function isToggleStateControl(control) {
+  const values = control.options.map((option) => Number(option.value));
+  return control.format === "toggle" || (values.length === 2 && values.includes(0) && values.includes(1));
+}
+
 function PartySpecificSettingPanel({ controls, values, onChange, title = "캐릭터 스택 / 상태 설정" }) {
   if (!controls.length) return null;
   return (
@@ -2065,8 +2396,11 @@ function PartySpecificSettingPanel({ controls, values, onChange, title = "캐릭
       <div className="calc-party-settings-controls">
         {controls.map((control) => {
           const character = getCharacter(control.characterId);
+          const currentValue = Number(values[control.key] ?? control.defaultValue);
+          const displayLabel = stripRepeatedCharacterName(control.label, control.characterLabel);
+          const toggleControl = isToggleStateControl(control);
           return (
-          <label key={control.key} className="calc-party-settings-card">
+          <div key={control.key} className="calc-party-settings-card">
             <span className="calc-party-settings-owner">
               <span className="calc-party-face">
                 <CharacterAvatar character={character} />
@@ -2074,15 +2408,50 @@ function PartySpecificSettingPanel({ controls, values, onChange, title = "캐릭
               <span className="calc-party-settings-copy">
                 <span className="calc-party-settings-title">
                   <b>{control.characterLabel ?? "전투 조건"}</b>
-                  <span>{control.label}</span>
+                  {character?.path ? (
+                    <img
+                      className="calc-party-settings-path-icon"
+                      src={filterIconUrl(getPathIconFile(character.path))}
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  ) : null}
+                  <span title={displayLabel}>{displayLabel}</span>
                 </span>
                 <em>{control.note}</em>
               </span>
             </span>
-            <select value={values[control.key] ?? control.defaultValue} onChange={(event) => onChange(control.key, Number(event.target.value))}>
-              {control.options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
-            </select>
-          </label>
+            {toggleControl ? (
+              <button
+                className={`calc-state-switch ${currentValue ? "is-on" : ""}`}
+                type="button"
+                role="switch"
+                aria-checked={Boolean(currentValue)}
+                aria-label={`${control.characterLabel ?? "전투 조건"} ${displayLabel}`}
+                onClick={() => onChange(control.key, currentValue ? 0 : 1)}
+              >
+                <span aria-hidden="true" />
+                <b>{currentValue ? "ON" : "OFF"}</b>
+              </button>
+            ) : control.options.length <= 2 ? (
+              <span className="calc-state-segmented" role="group" aria-label={`${control.characterLabel ?? "전투 조건"} ${displayLabel}`}>
+                {control.options.map((option) => (
+                  <button
+                    key={option.value}
+                    className={Number(option.value) === currentValue ? "is-active" : ""}
+                    type="button"
+                    onClick={() => onChange(control.key, Number(option.value))}
+                  >
+                    {option.label}
+                  </button>
+                ))}
+              </span>
+            ) : (
+              <select value={currentValue} onChange={(event) => onChange(control.key, Number(event.target.value))} aria-label={`${control.characterLabel ?? "전투 조건"} ${displayLabel}`}>
+                {control.options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+              </select>
+            )}
+          </div>
           );
         })}
       </div>
@@ -2090,8 +2459,9 @@ function PartySpecificSettingPanel({ controls, values, onChange, title = "캐릭
   );
 }
 
-function BattleStatEvaluationPanel({ evaluation }) {
+function BattleStatEvaluationPanel({ evaluation, battleResult }) {
   const [expandedRows, setExpandedRows] = useState(() => new Set());
+  const eidolonsByCharacterId = useMemo(() => buildEidolonMap(battleResult), [battleResult]);
   const toggle = (key) => {
     setExpandedRows((current) => {
       const next = new Set(current);
@@ -2104,7 +2474,7 @@ function BattleStatEvaluationPanel({ evaluation }) {
   return (
     <section className="calc-evaluation-panel" aria-label="스탯 평가">
       {evaluation.groups.map((group) => (
-        <article key={group.key} className="calc-evaluation-group">
+        <article key={group.key} className={`calc-evaluation-group ${group.key === "primaryStats" ? "is-primary-stats" : ""}`}>
           <h3>{group.label}</h3>
           <div className="calc-evaluation-list">
             {group.rows.map((row) => {
@@ -2124,7 +2494,43 @@ function BattleStatEvaluationPanel({ evaluation }) {
                       <span className="calc-evaluation-chevron" aria-hidden="true" />
                     </em>
                   </button>
-                  {expanded && (
+                  {expanded && group.key === "primaryStats" ? (
+                    <ul className="calc-evaluation-source-list is-primary-source-list">
+                      {row.entries?.length ? groupEvaluationEntriesByOwner(row.entries).map((ownerGroup) => {
+                        const ownerCharacter = getCharacter(ownerGroup.ownerId);
+                        return (
+                          <li key={`${rowKey}:${ownerGroup.key}`} className="calc-primary-source-group">
+                            <div className="calc-primary-source-owner">
+                              <span className="calc-party-face">
+                                <CharacterAvatar character={ownerCharacter} />
+                              </span>
+                              <strong>{ownerGroup.ownerLabel ?? ownerCharacter?.displayName ?? ownerGroup.ownerId ?? "출처"}</strong>
+                              <small className="calc-contribution-eidolon">E{getOwnerEidolon(eidolonsByCharacterId, ownerGroup.ownerId)}</small>
+                            </div>
+                            <ul>
+                              {ownerGroup.entries.map((entry) => {
+                                const parts = getNamedEvaluationValueParts(entry);
+                                return (
+                                  <li key={`${rowKey}:${ownerGroup.key}:${entry.id}:${entry.stat}`} className="calc-primary-source-row">
+                                    <span className="calc-evaluation-source-mark" title={entry.sourceType ?? "출처"}>
+                                      <SourceTypeMark entry={entry} ownerCharacter={ownerCharacter} />
+                                    </span>
+                                    <span className="calc-evaluation-source-stat">{parts.label}</span>
+                                    <EvaluationSourceAmount parts={parts} />
+                                    <span className="calc-evaluation-source-label" title={entry.label ?? ""}>
+                                      <EvaluationSourceLabel label={entry.label} />
+                                    </span>
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          </li>
+                        );
+                      }) : (
+                        <li><span>표시할 출처 항목이 없습니다.</span></li>
+                      )}
+                    </ul>
+                  ) : expanded && (
                     <ul className="calc-evaluation-source-list">
                       {row.entries?.length ? groupEvaluationEntriesByOwner(row.entries).slice(0, 8).map((ownerGroup) => {
                         const ownerCharacter = getCharacter(ownerGroup.ownerId);
@@ -2174,12 +2580,12 @@ function groupEvaluationEntriesByOwner(entries = []) {
   const groups = new Map();
   let totalMagnitude = 0;
   for (const entry of entries) {
-    const ownerKey = entry.groupKey ?? entry.ownerId ?? entry.ownerLabel ?? "unknown";
+    const ownerKey = entry.ownerId ?? entry.ownerLabel ?? "unknown";
     if (!groups.has(ownerKey)) {
       groups.set(ownerKey, {
         key: ownerKey,
         ownerId: entry.ownerId,
-        ownerLabel: entry.groupLabel ?? entry.ownerLabel ?? entry.ownerId ?? "출처",
+        ownerLabel: entry.ownerLabel ?? entry.ownerId ?? "출처",
         totalMagnitude: 0,
         entries: [],
       });
@@ -2266,6 +2672,7 @@ function shouldDisplayRawRatioStat(stat) {
     || stat === "defenseIgnore"
     || stat === "defenseDown"
     || stat === "vulnerability"
+    || stat === "takenCritDamage"
     || stat === "damageBoost"
     || stat === "allDamage"
     || stat === "basicDamage"
@@ -2279,8 +2686,70 @@ function shouldDisplayRawRatioStat(stat) {
     || stat === "specialFinal";
 }
 
+function getKoreanEntryIconUrl(entry, ownerCharacter) {
+  const sourceType = String(entry?.sourceType ?? "");
+  const label = String(entry?.label ?? "");
+  if (sourceType.includes("유물") || sourceType.includes("장신구") || isKoreanRelicSourceLabel(label)) {
+    return getKoreanRelicSourceIconUrl(label);
+  }
+  if (sourceType.includes("광추")) {
+    return getLightConeIconUrl(label, ownerCharacter);
+  }
+  if (ownerCharacter?.path && (sourceType.includes("행적") || sourceType.includes("성혼"))) {
+    return filterIconUrl(getPathIconFile(ownerCharacter.path));
+  }
+  return null;
+}
+
+function getKoreanRelicSourceIconUrl(label) {
+  const text = String(label ?? "");
+  const setName = String(text.match(/\((.+)\)/)?.[1] ?? "").trim();
+  if (setName) {
+    const relicSet = findRelicSetByName(setName);
+    const iconFile = getRelicIconFile(relicSet, getKoreanRelicPieceIndexFromLabel(text));
+    if (iconFile) return encodeURI(`/relic-icons/${iconFile}`);
+  }
+  return getKoreanRelicPieceIconUrl(text) ?? getRelicSourceIconUrl(text);
+}
+
+function getKoreanRelicPieceIndexFromLabel(label) {
+  const text = String(label ?? "");
+  if (text.includes("머리")) return 1;
+  if (text.includes("손")) return 2;
+  if (text.includes("몸통")) return 3;
+  if (text.includes("신발")) return 4;
+  if (text.includes("차원 구체") || text.includes("구체")) return 1;
+  if (text.includes("연결 매듭") || text.includes("매듭")) return 2;
+  return null;
+}
+
+function getKoreanRelicPieceIconUrl(label) {
+  const text = String(label ?? "");
+  if (text.includes("머리")) return "/relic-piece-icons/head.svg";
+  if (text.includes("손")) return "/relic-piece-icons/hands.svg";
+  if (text.includes("몸통")) return "/relic-piece-icons/body.svg";
+  if (text.includes("신발")) return "/relic-piece-icons/feet.svg";
+  if (text.includes("차원 구체") || text.includes("구체")) return "/relic-piece-icons/sphere.svg";
+  if (text.includes("연결 매듭") || text.includes("매듭")) return "/relic-piece-icons/rope.svg";
+  return null;
+}
+
+function isKoreanRelicSourceLabel(label) {
+  const text = String(label ?? "");
+  return text.includes("유물")
+    || text.includes("주옵")
+    || text.includes("부옵")
+    || text.includes("셋 효과")
+    || text.includes("머리")
+    || text.includes("손")
+    || text.includes("몸통")
+    || text.includes("신발")
+    || text.includes("차원 구체")
+    || text.includes("연결 매듭");
+}
+
 function SourceTypeMark({ entry, ownerCharacter }) {
-  const iconUrl = getEntryIconUrl(entry, ownerCharacter);
+  const iconUrl = getKoreanEntryIconUrl(entry, ownerCharacter) ?? getEntryIconUrl(entry, ownerCharacter);
   if (iconUrl) {
     const className = [
       iconUrl.startsWith("/filter-icons/") ? "is-path-icon" : "",
@@ -2305,6 +2774,217 @@ function EvaluationSourceAmount({ parts }) {
   );
 }
 
+function ContributionDetailItem({ entry }) {
+  const parts = getNamedEvaluationValueParts(entry);
+  const ownerCharacter = getCharacter(entry.ownerId);
+  const percent = getContributionDisplayPercent(entry);
+  return (
+    <li>
+      <span className="calc-evaluation-source-mark" title={entry.sourceType ?? "출처"}>
+        <SourceTypeMark entry={entry} ownerCharacter={ownerCharacter} />
+      </span>
+      <span className="calc-evaluation-source-stat">{parts.label}</span>
+      <EvaluationSourceAmount parts={parts} />
+      <span className="calc-evaluation-source-label" title={entry.label ?? ""}>
+        <EvaluationSourceLabel label={entry.label} />
+      </span>
+      <span className="calc-contribution-detail-percent">{formatPercent(percent)}</span>
+    </li>
+  );
+}
+
+function ContributionDetailRows({ entries = [], rowKey }) {
+  return getContributionDetailEntries(entries).map((entry) => (
+    <ContributionDetailItem
+      key={`${rowKey}:${entry.id}:${entry.stat}:${entry.effectiveStat ?? ""}`}
+      entry={entry}
+    />
+  ));
+}
+
+function getContributionDisplayPercent(entry) {
+  return Math.min(1, Math.max(0, Number(entry?.displayPercent ?? entry?.percent ?? entry?.damagePercent ?? entry?.impactPercent ?? 0)));
+}
+
+function getContributionDetailEntries(entries = []) {
+  return sortContributionDetailEntriesByStatGroup(mergeContributionDetailEntries(entries));
+}
+
+function getPartyRecommendationDetailEntries(entries = []) {
+  return sortContributionDetailEntriesByStatGroup(mergeContributionDetailEntries(entries));
+}
+
+function mergeContributionDetailEntries(entries = []) {
+  const groups = new Map();
+  for (const entry of entries) {
+    const mergeKey = getContributionDetailMergeKey(entry);
+    if (!mergeKey) {
+      groups.set(`single:${entry.id}:${entry.stat}`, { ...entry });
+      continue;
+    }
+    if (!groups.has(mergeKey)) {
+      groups.set(mergeKey, { ...entry, mergedEffectRowIds: [entry.effectRowId].filter(Boolean) });
+      continue;
+    }
+    const group = groups.get(mergeKey);
+    group.value = Number(group.value ?? 0) + Number(entry.value ?? 0);
+    group.effectiveValue = Number(group.effectiveValue ?? 0) + Number(entry.effectiveValue ?? entry.value ?? 0);
+    group.contributionValue = Number(group.contributionValue ?? 0) + Number(entry.contributionValue ?? 0);
+    group.magnitude = Number(group.magnitude ?? 0) + Number(entry.magnitude ?? 0);
+    group.percent = Number(group.percent ?? 0) + Number(entry.percent ?? 0);
+    group.displayPercent = Number(group.displayPercent ?? 0) + Number(entry.displayPercent ?? entry.percent ?? 0);
+    group.impactPercent = Number(group.impactPercent ?? 0) + Number(entry.impactPercent ?? entry.percent ?? 0);
+    group.damagePercent = Number(group.damagePercent ?? 0) + Number(entry.damagePercent ?? 0);
+    group.skillContributions = mergeSkillContributionValues(group.skillContributions, entry.skillContributions);
+    group.mergedEffectRowIds = [...new Set([...(group.mergedEffectRowIds ?? []), entry.effectRowId].filter(Boolean))];
+    group.id = `${group.id}:merged`;
+    group.label = getMergedContributionSourceLabel(group, entry);
+  }
+  return [...groups.values()];
+}
+
+function getContributionDetailMergeKey(entry) {
+  const sourceKey = getContributionSourceSkillKey(entry);
+  const statKey = entry.effectiveStat ?? entry.stat ?? "unknown";
+  return sourceKey ? `${entry.ownerId ?? "unknown"}:${statKey}:${sourceKey}` : null;
+}
+
+function getContributionSourceSkillKey(entry) {
+  const trace = String(entry.sourceTrace ?? "");
+  const parts = trace.split(":");
+  if (parts[0] === "HoyoWiki" && parts.length >= 4) {
+    return parts.slice(0, 4).join(":");
+  }
+  return null;
+}
+
+function getMergedContributionSourceLabel(group, entry) {
+  const trace = String(group.sourceTrace ?? entry.sourceTrace ?? "");
+  const parts = trace.split(":");
+  const title = parts[0] === "HoyoWiki" && parts[3] ? parts[3] : stripSourceParentheses(group.label ?? entry.label ?? "");
+  return `${title} 합산`;
+}
+
+function mergeSkillContributionValues(base = {}, addition = {}) {
+  if (!base && !addition) return undefined;
+  const next = { ...(base ?? {}) };
+  for (const [skillId, value] of Object.entries(addition ?? {})) {
+    next[skillId] = Number(next[skillId] ?? 0) + Number(value ?? 0);
+  }
+  return next;
+}
+
+function sortContributionDetailEntriesByStatGroup(entries = []) {
+  const groupRankByStat = new Map();
+  for (const entry of entries) {
+    const statKey = getContributionEntryStatKey(entry);
+    const rank = getContributionSortValue(entry);
+    groupRankByStat.set(statKey, (groupRankByStat.get(statKey) ?? 0) + rank);
+  }
+  return [...entries].sort((a, b) => {
+    const statA = getContributionEntryStatKey(a);
+    const statB = getContributionEntryStatKey(b);
+    return Number(groupRankByStat.get(statB) ?? 0) - Number(groupRankByStat.get(statA) ?? 0)
+      || String(formatStatLabel(statA)).localeCompare(String(formatStatLabel(statB)), "ko")
+      || getContributionSortValue(b) - getContributionSortValue(a)
+      || String(a.label).localeCompare(String(b.label), "ko");
+  });
+}
+
+function getContributionEntryStatKey(entry) {
+  return entry?.effectiveStat ?? entry?.stat ?? "unknown";
+}
+
+function combineContributionEntriesByStat(entries = []) {
+  const groups = new Map();
+  for (const entry of entries) {
+    const statKey = entry.effectiveStat ?? entry.stat ?? "unknown";
+    if (!groups.has(statKey)) {
+      groups.set(statKey, {
+        key: statKey,
+        rows: [],
+        value: 0,
+        effectiveValue: 0,
+        contributionValue: 0,
+        magnitude: 0,
+        percent: 0,
+        impactPercent: 0,
+        damagePercent: 0,
+        displayPercent: 0,
+        skillContributions: {},
+        mergedEffectRowIds: [],
+        mergedSourceRowIds: [],
+      });
+    }
+    const group = groups.get(statKey);
+    group.rows.push(entry);
+    group.value += Number(entry.value ?? 0);
+    group.effectiveValue += Number(entry.effectiveValue ?? entry.value ?? 0);
+    group.contributionValue += Number(entry.contributionValue ?? 0);
+    group.magnitude += Math.abs(Number(entry.magnitude ?? entry.contributionValue ?? entry.effectiveValue ?? entry.value ?? 0));
+    group.percent += Number(entry.percent ?? 0);
+    group.impactPercent += Number(entry.impactPercent ?? entry.percent ?? 0);
+    group.damagePercent += Number(entry.damagePercent ?? 0);
+    group.displayPercent += Number(entry.displayPercent ?? entry.damagePercent ?? entry.impactPercent ?? entry.percent ?? 0);
+    group.skillContributions = mergeSkillContributionValues(group.skillContributions, entry.skillContributions);
+    group.mergedEffectRowIds = [...new Set([...(group.mergedEffectRowIds ?? []), entry.effectRowId, ...(entry.mergedEffectRowIds ?? [])].filter(Boolean))];
+    group.mergedSourceRowIds = [...new Set([...(group.mergedSourceRowIds ?? []), entry.sourceRowId, ...(entry.mergedSourceRowIds ?? [])].filter(Boolean))];
+  }
+  return [...groups.values()].map((group) => {
+    const rows = group.rows.sort(sortContributionDetailEntries);
+    const first = rows[0] ?? {};
+    if (rows.length === 1) return first;
+    return {
+      ...first,
+      id: `party-rec-stat:${group.key}:${first.ownerId ?? "unknown"}`,
+      stat: group.key,
+      effectiveStat: group.key,
+      value: group.value,
+      effectiveValue: group.effectiveValue,
+      contributionValue: group.contributionValue,
+      magnitude: group.magnitude,
+      percent: group.percent,
+      impactPercent: group.impactPercent,
+      damagePercent: group.damagePercent,
+      displayPercent: group.displayPercent,
+      skillContributions: group.skillContributions,
+      mergedEffectRowIds: group.mergedEffectRowIds,
+      mergedSourceRowIds: group.mergedSourceRowIds,
+      sourceId: null,
+      sourceRowId: null,
+      effectRowId: null,
+      sourceTrace: null,
+      label: getMergedStatContributionLabel(rows),
+    };
+  });
+}
+
+function getMergedStatContributionLabel(rows = []) {
+  const labels = [...new Set(rows.map((row) => stripSourceParentheses(row.label)).filter(Boolean))];
+  if (!labels.length) return `${rows.length}개 출처 합산`;
+  if (labels.length === 1) return labels[0];
+  return `${labels[0]} 외 ${labels.length - 1}개 합산`;
+}
+
+function sortContributionDetailEntries(a, b) {
+  return getContributionSortValue(b) - getContributionSortValue(a)
+    || String(a.label).localeCompare(String(b.label), "ko");
+}
+
+function getContributionSortValue(entry) {
+  return Math.abs(Number(
+    entry?.displayPercent
+    ?? entry?.damagePercent
+    ?? entry?.impactPercent
+    ?? entry?.percent
+    ?? entry?.magnitude
+    ?? entry?.contributionValue
+    ?? entry?.effectiveValue
+    ?? entry?.value
+    ?? 0,
+  ));
+}
+
 function stripSourceParentheses(text) {
   return String(text ?? "").replace(/\s*\([^)]*\)\s*/g, " ").replace(/\s+/g, " ").trim();
 }
@@ -2315,7 +2995,7 @@ function getSourceTypeIconUrl(sourceType, ownerCharacter) {
     return null;
   }
   if (normalized.includes("light") || normalized.includes("cone") || normalized.includes("광추")) return null;
-  if (ownerCharacter?.path && (normalized.includes("trace") || normalized.includes("행적") || normalized.includes("eidolon") || normalized.includes("성혼") || normalized.includes("buff") || normalized.includes("debuff"))) {
+  if (ownerCharacter?.path && (normalized.includes("trace") || normalized.includes("행적") || normalized.includes("eidolon") || normalized.includes("성혼") || normalized.includes("buff") || normalized.includes("debuff") || normalized.includes("characterskill") || normalized.includes("skill") || normalized.includes("ultimate"))) {
     return filterIconUrl(getPathIconFile(ownerCharacter.path));
   }
   return null;
@@ -2465,7 +3145,7 @@ function ContributionPanel({
                     <span>{group.label}</span>
                     <b><span>{formatDamageNumber(group.baseDamage)}</span><small>DMG</small></b>
                   </strong>
-                  <small>{group.rows.length}명 후보 기준</small>
+                  <small>{group.basisLabel}</small>
                 </div>
               </div>
               <div className="calc-contribution-list calc-damage-source-list">
@@ -2496,21 +3176,7 @@ function ContributionPanel({
                       </button>
                       {expanded && (
                         <ul className="calc-contribution-detail-list is-character-detail">
-                          {row.rows.slice(0, 12).map((entry) => {
-                            const parts = getNamedEvaluationValueParts(entry);
-                            return (
-                              <li key={`${rowKey}:${entry.id}:${entry.stat}`}>
-                                <span className="calc-evaluation-source-stat">{parts.label}</span>
-                                <span className="calc-evaluation-source-mark" title={entry.sourceType ?? "출처"}>
-                                  <SourceTypeMark entry={entry} ownerCharacter={getCharacter(entry.ownerId)} />
-                                </span>
-                                <EvaluationSourceAmount parts={parts} />
-                                <span className="calc-evaluation-source-label" title={entry.label ?? ""}>
-                                  <EvaluationSourceLabel label={entry.label} />
-                                </span>
-                              </li>
-                            );
-                          })}
+                          <ContributionDetailRows entries={row.rows} rowKey={rowKey} />
                         </ul>
                       )}
                     </article>
@@ -2536,7 +3202,7 @@ function ContributionPanel({
   return (
     <section className="calc-contribution-panel" aria-label="피해 기여도">
       <div className="calc-contribution-list">
-        {rows.length ? rows.slice(0, 10).map((row, index) => {
+        {rows.length ? rows.map((row, index) => {
           const rowKey = `${viewMode}:${row.key}`;
           const expanded = expandedRows.has(rowKey);
           const ownerCharacter = viewMode === "character" ? getCharacter(row.rows?.[0]?.ownerId) : null;
@@ -2558,27 +3224,13 @@ function ContributionPanel({
                     </strong>
                   </div>
                 </div>
-                <em>{formatPercent(row.percent)}</em>
-                <i aria-hidden="true"><span style={{ width: `${Math.max(3, Math.min(100, row.percent * 100))}%` }} /></i>
+                <em>{formatPercent(getContributionDisplayPercent(row))}</em>
+                <i aria-hidden="true"><span style={{ width: `${Math.max(3, Math.min(100, getContributionDisplayPercent(row) * 100))}%` }} /></i>
                 <span className="calc-contribution-chevron" aria-hidden="true" />
               </button>
               {expanded && (
                 <ul className={`calc-contribution-detail-list ${viewMode === "stat" ? "is-stat-detail" : "is-character-detail"}`}>
-                  {row.rows.slice(0, 12).map((entry) => {
-                    const parts = getNamedEvaluationValueParts(entry);
-                    return (
-                      <li key={`${rowKey}:${entry.id}:${entry.stat}`}>
-                        <span className="calc-evaluation-source-stat">{parts.label}</span>
-                        <span className="calc-evaluation-source-mark" title={entry.sourceType ?? "출처"}>
-                          <SourceTypeMark entry={entry} ownerCharacter={getCharacter(entry.ownerId)} />
-                        </span>
-                        <EvaluationSourceAmount parts={parts} />
-                        <span className="calc-evaluation-source-label" title={entry.label ?? ""}>
-                          <EvaluationSourceLabel label={entry.label} />
-                        </span>
-                      </li>
-                    );
-                  })}
+                  <ContributionDetailRows entries={row.rows} rowKey={rowKey} />
                 </ul>
               )}
             </article>
@@ -2598,39 +3250,231 @@ function buildPartyRecommendationGroups(skillCards = [], contributionViews = {})
   const activeCharacterId = contributionViews?.battleResult?.activeCharacter?.characterId;
   const partyCharacterIds = new Set((contributionViews?.battleResult?.partySlots ?? []).map((slot) => slot.characterId).filter(Boolean));
   return skillCards.slice(0, 10).map((card) => {
+    const baseDamage = getRecommendationDamageValue(card);
     const rows = groupSkillSourceRowsByOwner(buildSkillSourceRows(card, sourceRows))
       .filter((row) => row.ownerId && row.ownerId !== activeCharacterId && partyCharacterIds.has(row.ownerId))
       .map((row) => ({
         ...row,
-        deltaDamage: Number(card.critDamage ?? 0) * Number(row.percent ?? 0),
-        gainRatio: Number(card.critDamage ?? 0) > 0 ? Number(row.percent ?? 0) : 0,
+        deltaDamage: baseDamage * Number(row.impactPercent ?? row.percent ?? 0),
+        gainRatio: baseDamage > 0 ? Number(row.impactPercent ?? row.percent ?? 0) : 0,
+        impactPercent: Number(row.impactPercent ?? row.percent ?? 0),
       }))
       .filter((row) => row.deltaDamage > 0)
       .sort((a, b) => b.deltaDamage - a.deltaDamage || String(a.ownerLabel).localeCompare(String(b.ownerLabel), "ko"));
     return {
       key: `party-rec:${card.id}`,
       label: getDamageSkillDisplayLabel(card),
-      baseDamage: Number(card.critDamage ?? 0),
-      rows,
+      baseDamage,
+      basisLabel: formatPartyRecommendationBasisLabel(card),
+      rows: normalizeRecommendationGraphPercents(rows),
     };
   }).filter((group) => group.rows.length);
+}
+
+function formatPartyRecommendationBasisLabel(card) {
+  const parts = [
+    `계수: ${formatNumber(card?.coefficientPercent ?? 0, 1)} %`,
+    formatDamageTargetLabel(card),
+    formatDamageDistributionLabel(card),
+  ].filter(Boolean);
+  return parts.join(" · ");
+}
+
+function formatDamageDistributionLabel(card) {
+  const mode = card?.trace?.targetDistribution;
+  if (mode === "total_shared") return "균등분담";
+  if (mode === "part_roles") return "혼합 판정";
+  if (mode === "bounce_total") return "바운스 총합";
+  return null;
+}
+
+function getRecommendationDamageValue(card) {
+  return Number(card?.expectedDamage ?? card?.critDamage ?? 0);
+}
+
+function buildCurrentPartySupportProcRows({ party = [], activeSlotId, skillCards = [], battleResult, enemy } = {}) {
+  const activeSlot = party.find((slot) => slot.slotId === activeSlotId) ?? party[0] ?? null;
+  const rows = [];
+  const bySkillId = new Map();
+  if (!activeSlot?.characterId || !skillCards.length) return { rows, bySkillId };
+  for (const supportSlot of party) {
+    if (!supportSlot?.characterId || supportSlot.slotId === activeSlot.slotId) continue;
+    const supportCharacter = getCharacter(supportSlot.characterId);
+    if (!supportCharacter?.characterId) continue;
+    for (const card of skillCards) {
+      const procDamage = calculateCandidateSupportProcDamage({
+        supportCharacter,
+        supportSlot,
+        activeCard: card,
+        activeBattleResult: battleResult,
+        enemy,
+      });
+      if (!procDamage.rows.length) continue;
+      for (const row of procDamage.rows) {
+        const nextRow = {
+          ...row,
+          skillContributions: { [card.id]: Number(row.contributionValue ?? 0) },
+        };
+        rows.push(nextRow);
+        if (!bySkillId.has(card.id)) bySkillId.set(card.id, []);
+        bySkillId.get(card.id).push(nextRow);
+      }
+    }
+  }
+  return { rows, bySkillId };
+}
+
+function applySupportProcRowsToSkillCards(skillCards = [], rowsBySkillId = new Map()) {
+  return skillCards.map((card) => {
+    const rows = rowsBySkillId.get(card.id) ?? [];
+    const additionalDamage = rows.reduce((sum, row) => sum + Number(row.contributionValue ?? 0), 0);
+    if (additionalDamage <= 0) return card;
+    return {
+      ...card,
+      supportProcDamage: additionalDamage,
+      critDamage: Number(card.critDamage ?? 0) + additionalDamage,
+      expectedDamage: Number(card.expectedDamage ?? card.critDamage ?? 0) + additionalDamage,
+      trace: {
+        ...(card.trace ?? {}),
+        supportProcDamage: additionalDamage,
+      },
+    };
+  });
+}
+
+function augmentContributionViewsWithSupportProcRows(baseViews = {}, supportRows = [], displaySkillCards = []) {
+  const totalDamage = displaySkillCards.reduce((sum, card) => sum + Number(card.critDamage ?? 0), 0);
+  const rescaledBaseViews = rescaleContributionViewsForDisplayDamage(baseViews, totalDamage);
+  const decoratedSupportRows = supportRows.map((row) => decorateContributionSourceRow(row, totalDamage));
+  if (!supportRows.length) {
+    return {
+      ...rescaledBaseViews,
+      totalDamage,
+    };
+  }
+  const sourceRows = [...(rescaledBaseViews.sourceRows ?? []), ...decoratedSupportRows];
+  return {
+    ...rescaledBaseViews,
+    totalDamage,
+    sourceRows,
+    characterRows: mergeSupportRowsIntoContributionGroups(
+      rescaledBaseViews.characterRows ?? [],
+      decoratedSupportRows,
+      (row) => row.ownerLabel,
+      totalDamage,
+    ),
+    statRows: mergeSupportRowsIntoContributionGroups(
+      rescaledBaseViews.statRows ?? [],
+      decoratedSupportRows,
+      (row) => row.effectiveStat ?? row.stat,
+      totalDamage,
+      (key) => statLabels[key] ?? key,
+    ),
+  };
+}
+
+function rescaleContributionViewsForDisplayDamage(baseViews = {}, totalDamage = 0) {
+  return {
+    ...baseViews,
+    sourceRows: normalizeContributionDisplayPercents((baseViews.sourceRows ?? []).map((row) => decorateContributionSourceRow(row, totalDamage))),
+    characterRows: normalizeContributionDisplayPercents((baseViews.characterRows ?? []).map((group) => decorateContributionGroupRow(group, totalDamage))),
+    statRows: normalizeContributionDisplayPercents((baseViews.statRows ?? []).map((group) => decorateContributionGroupRow(group, totalDamage))),
+  };
+}
+
+function decorateContributionSourceRow(row, totalDamage) {
+  const value = getContributionDamageValue(row);
+  const damagePercent = getContributionDamagePercent(value, totalDamage);
+  return {
+    ...row,
+    magnitude: value,
+    damagePercent,
+    impactPercent: damagePercent,
+  };
+}
+
+function decorateContributionGroupRow(group, totalDamage) {
+  const value = getContributionDamageValue(group);
+  const damagePercent = getContributionDamagePercent(value, totalDamage);
+  return {
+    ...group,
+    value,
+    magnitude: value,
+    damagePercent,
+    impactPercent: damagePercent,
+    rows: normalizeContributionDisplayPercents((group.rows ?? []).map((row) => decorateContributionSourceRow(row, totalDamage))),
+  };
+}
+
+function mergeSupportRowsIntoContributionGroups(baseGroups = [], supportRows = [], keyGetter, totalDamage = 0, labelGetter = (key) => key) {
+  const grouped = new Map(baseGroups.map((group) => [group.key, { ...group, rows: [...(group.rows ?? [])] }]));
+  for (const row of supportRows) {
+    const key = keyGetter(row) ?? "unknown";
+    if (!grouped.has(key)) {
+      grouped.set(key, {
+        key,
+        label: labelGetter(key),
+        ownerId: row.ownerId ?? null,
+        ownerLabel: row.ownerLabel ?? labelGetter(key),
+        value: 0,
+        statValue: 0,
+        rows: [],
+      });
+    }
+    const group = grouped.get(key);
+    const value = getContributionDamageValue(row);
+    group.value = getContributionDamageValue(group) + value;
+    group.contributionValue = group.value;
+    group.magnitude = group.value;
+    group.statValue = Number(group.statValue ?? 0) + Math.abs(Number(row.effectiveValue ?? row.value ?? 0));
+    group.damagePercent = getContributionDamagePercent(group.value, totalDamage);
+    group.impactPercent = group.damagePercent;
+    group.skillContributions = addSkillContributionMaps(group.skillContributions, row.skillContributions);
+    group.rows.push(row);
+  }
+  return normalizeContributionDisplayPercents([...grouped.values()].map((group) => decorateContributionGroupRow(group, totalDamage)))
+    .sort((a, b) => Number(b.percent ?? 0) - Number(a.percent ?? 0) || String(a.label).localeCompare(String(b.label), "ko"));
+}
+
+function normalizeContributionDisplayPercents(rows = []) {
+  const total = rows.reduce((sum, row) => sum + getContributionDamageValue(row), 0);
+  return rows.map((row) => ({
+    ...row,
+    percent: total > 0 ? getContributionDamageValue(row) / total : 0,
+    displayPercent: total > 0 ? getContributionDamageValue(row) / total : 0,
+  }));
+}
+
+function addSkillContributionMaps(base = {}, addition = {}) {
+  const next = { ...(base ?? {}) };
+  for (const [skillId, value] of Object.entries(addition ?? {})) {
+    next[skillId] = Number(next[skillId] ?? 0) + Number(value ?? 0);
+  }
+  return next;
+}
+
+function getContributionDamageValue(row) {
+  return Math.abs(Number(row?.magnitude ?? row?.contributionValue ?? row?.value ?? 0));
+}
+
+function getContributionDamagePercent(value, totalDamage) {
+  const denominator = Number(totalDamage ?? 0);
+  if (denominator <= 0) return 0;
+  return Math.min(1, Math.max(0, Math.abs(Number(value ?? 0)) / denominator));
 }
 
 function buildPartyCandidateRecommendationGroups({ party = [], activeSlotId, enemy, baseSkillCards = [], scenarioSettings = {}, candidateEidolon = 0 } = {}) {
   const baseBySkillId = new Map(baseSkillCards.map((card) => [card.id, card]));
   const activeSlot = party.find((slot) => slot.slotId === activeSlotId) ?? party[0] ?? null;
   if (!activeSlot?.characterId || !baseSkillCards.length) return [];
-  const replacementSlots = party.filter((slot) => slot.slotId !== activeSlot.slotId);
-  const candidateReplacementSlots = replacementSlots.length ? replacementSlots : [activeSlot];
   const selectedIds = new Set(party.map((slot) => slot.characterId).filter(Boolean));
   const candidates = characterIdentity.rows
     .filter((character) => character?.characterId && character.characterId !== activeSlot.characterId)
     .filter((character) => !unavailableCharacterIds.has(character.characterId))
     .map((character) => buildCandidateDamageDelta({
       character,
-      party,
+      activeSlot,
       activeSlotId,
-      replacementSlots: candidateReplacementSlots,
       enemy,
       baseBySkillId,
       alreadySelected: selectedIds.has(character.characterId),
@@ -2647,98 +3491,129 @@ function buildPartyCandidateRecommendationGroups({ party = [], activeSlotId, ene
     return {
       key: `party-candidate:${baseCard.id}`,
       label: getDamageSkillDisplayLabel(baseCard),
-      baseDamage: Number(baseCard.critDamage ?? 0),
-      rows,
+      baseDamage: getRecommendationDamageValue(baseCard),
+      basisLabel: formatPartyRecommendationBasisLabel(baseCard),
+      rows: normalizeRecommendationGraphPercents(rows),
     };
   }).filter((group) => group.rows.length);
 }
 
-function buildCandidateDamageDelta({ character, party, activeSlotId, replacementSlots = [], enemy, baseBySkillId, alreadySelected, scenarioSettings = {}, candidateEidolon = 0 }) {
+function normalizeRecommendationGraphPercents(rows = []) {
+  const totalDelta = rows.reduce((sum, row) => sum + Math.max(0, Number(row.deltaDamage ?? 0)), 0);
+  if (totalDelta <= 0) return rows.map((row) => ({ ...row, percent: 0 }));
+  return rows.map((row) => ({
+    ...row,
+    percent: Math.max(0, Number(row.deltaDamage ?? 0)) / totalDelta,
+    impactPercent: Number(row.impactPercent ?? row.gainRatio ?? 0),
+  }));
+}
+
+function buildCandidateDamageDelta({ character, activeSlot, activeSlotId, enemy, baseBySkillId, alreadySelected, scenarioSettings = {}, candidateEidolon = 0 }) {
   const skillRows = new Map();
-  for (const replacementSlot of replacementSlots) {
-    const candidateSlot = {
-      ...createDefaultEquipmentForCharacter(character),
-      slotId: replacementSlot.slotId,
-      characterId: character.characterId,
-      eidolon: candidateEidolon,
-    };
-    const candidateParty = party.map((slot) => (slot.slotId === replacementSlot.slotId ? candidateSlot : slot));
-    const candidateStateControls = buildPartySpecificControls(candidateParty, activeSlotId);
-    const candidateBattleResult = calculateBattleFinalStats({
-      party: candidateParty,
-      activeSlotId,
-      characterGetter: getCharacter,
-      defaultBuildGetter: getDefaultBuild,
-      characterStatBaseline,
-      equipmentStatModel,
-      lightCones,
-      ledgerRows: buildBattleLedgerRowsForParty(candidateParty),
-      effectMetadataRows: battleEffectMetadataRows,
-      scenarioSettings,
-      stateControls: candidateStateControls,
-    });
-    const candidateSkillCards = calculateSkillDamageCards({
+  if (!activeSlot?.characterId) return null;
+  const candidateSlot = {
+    ...createDefaultEquipmentForCharacter(character),
+    slotId: "party-recommendation-candidate",
+    characterId: character.characterId,
+    eidolon: candidateEidolon,
+  };
+  const candidateParty = [activeSlot, candidateSlot];
+  const candidateStateControls = buildPartySpecificControls(candidateParty, activeSlotId, enemy);
+  const candidateBattleResult = calculateBattleFinalStats({
+    party: candidateParty,
+    activeSlotId,
+    characterGetter: getCharacter,
+    defaultBuildGetter: getDefaultBuild,
+    characterStatBaseline,
+    equipmentStatModel,
+    lightCones,
+    ledgerRows: buildBattleLedgerRowsForParty(candidateParty),
+    effectMetadataRows: battleEffectMetadataRows,
+    scenarioSettings,
+    stateControls: candidateStateControls,
+  });
+  const candidateSkillCards = calculateSkillDamageCards({
+    battleResult: candidateBattleResult,
+    skillRows: skillDamageRows,
+    enemy,
+    scenarioSettings,
+  });
+  const contributionViews = {
+    ...buildDamageContributionViews({
       battleResult: candidateBattleResult,
-      skillRows: skillDamageMetadata.rows ?? [],
+      skillCards: candidateSkillCards,
+      skillRows: skillDamageRows,
       enemy,
       scenarioSettings,
+      sourceOwnerId: character.characterId,
+    }),
+    battleResult: candidateBattleResult,
+  };
+  for (const candidateCard of candidateSkillCards) {
+    const baseCard = baseBySkillId.get(candidateCard.id);
+    if (!baseCard) continue;
+    const supportProcDamage = calculateCandidateSupportProcDamage({
+      supportCharacter: character,
+      supportSlot: candidateSlot,
+      activeCard: candidateCard,
+      activeBattleResult: candidateBattleResult,
+      enemy,
+      damageMetric: "expected",
     });
-    const contributionViews = {
-      ...buildDamageContributionViews({
-        battleResult: candidateBattleResult,
-        skillCards: candidateSkillCards,
-        skillRows: skillDamageMetadata.rows ?? [],
-        enemy,
-        scenarioSettings,
-        sourceOwnerId: character.characterId,
-      }),
-      battleResult: candidateBattleResult,
-    };
-    for (const candidateCard of candidateSkillCards) {
-      const baseCard = baseBySkillId.get(candidateCard.id);
-      if (!baseCard) continue;
-      const supportProcDamage = calculateCandidateSupportProcDamage({
-        supportCharacter: character,
-        supportSlot: candidateSlot,
-        activeCard: candidateCard,
-        activeBattleResult: candidateBattleResult,
-        enemy,
-      });
-      const adjustedCandidateDamage = Number(candidateCard.critDamage ?? 0) + supportProcDamage.damage;
-      const deltaDamage = adjustedCandidateDamage - Number(baseCard.critDamage ?? 0);
-      const sourceRows = buildSkillSourceRows(candidateCard, contributionViews.sourceRows ?? [])
-        .filter((row) => row.ownerId === character.characterId)
-        .sort(sortSourceRowsByContribution);
-      if (supportProcDamage.rows.length) {
-        sourceRows.unshift(...supportProcDamage.rows);
-      }
-      const gainRatio = Number(baseCard.critDamage ?? 0) > 0 ? deltaDamage / Number(baseCard.critDamage ?? 0) : 0;
-      const nextRow = {
-        key: `${candidateCard.id}:${character.characterId}`,
-        ownerId: character.characterId,
-        ownerLabel: character.displayName ?? character.name ?? character.characterId,
-        replacementSlotId: replacementSlot.slotId,
-        eidolon: candidateEidolon,
-        deltaDamage,
-        gainRatio,
-        percent: gainRatio,
-        alreadySelected,
-        rows: sourceRows,
-      };
-      const current = skillRows.get(candidateCard.id);
-      if (!current || nextRow.deltaDamage > current.deltaDamage) {
-        skillRows.set(candidateCard.id, nextRow);
-      }
+    const baseDamage = getRecommendationDamageValue(baseCard);
+    const adjustedCandidateDamage = getRecommendationDamageValue(candidateCard) + supportProcDamage.damage;
+    const deltaDamage = adjustedCandidateDamage - baseDamage;
+    let sourceRows = buildSkillSourceRows(candidateCard, contributionViews.sourceRows ?? [])
+      .filter((row) => row.ownerId === character.characterId)
+      .sort(sortSourceRowsByContribution);
+    if (supportProcDamage.rows.length) {
+      sourceRows.unshift(...supportProcDamage.rows);
     }
+    sourceRows = decorateRecommendationDetailRows(sourceRows, adjustedCandidateDamage, candidateCard.id);
+    const gainRatio = baseDamage > 0 ? deltaDamage / baseDamage : 0;
+    skillRows.set(candidateCard.id, {
+      key: `${candidateCard.id}:${character.characterId}`,
+      ownerId: character.characterId,
+      ownerLabel: character.displayName ?? character.name ?? character.characterId,
+      replacementSlotId: candidateSlot.slotId,
+      eidolon: candidateEidolon,
+      deltaDamage,
+      gainRatio,
+      impactPercent: gainRatio,
+      percent: 0,
+      alreadySelected,
+      rows: sourceRows,
+    });
   }
   return { characterId: character.characterId, skillRows };
 }
 
-function calculateCandidateSupportProcDamage({ supportCharacter, supportSlot, activeCard, activeBattleResult, enemy }) {
+function decorateRecommendationDetailRows(rows = [], finalDamage = 0, cardId = null) {
+  return rows
+    .map((row) => {
+      const magnitude = Math.abs(getSkillSourceRowMagnitude(row, cardId));
+      const damagePercent = getContributionDamagePercent(magnitude, finalDamage);
+      return {
+        ...row,
+        magnitude,
+        damagePercent,
+        impactPercent: damagePercent,
+        percent: damagePercent,
+        skillContributions: cardId
+          ? { ...(row.skillContributions ?? {}), [cardId]: magnitude }
+          : row.skillContributions,
+      };
+    })
+    .filter((row) => Number(row.magnitude ?? 0) > 0)
+    .sort(sortSourceRowsByContribution);
+}
+
+function calculateCandidateSupportProcDamage({ supportCharacter, supportSlot, activeCard, activeBattleResult, enemy, damageMetric = "crit" }) {
   if (!supportCharacter?.characterId || !activeCard) return { damage: 0, rows: [] };
   const procs = (supportDamageProcs.procs ?? [])
     .filter((proc) => proc.ownerId === supportCharacter.characterId)
-    .filter((proc) => (proc.triggerAttackTypes ?? []).includes(activeCard.attackType));
+    .filter((proc) => (proc.triggerAttackTypes ?? []).includes(activeCard.attackType))
+    .filter((proc) => supportProcMeetsEidolonRequirement(proc, supportSlot));
   if (!procs.length) return { damage: 0, rows: [] };
 
   const supportSelf = calculateSelfEquipmentStats({
@@ -2749,17 +3624,19 @@ function calculateCandidateSupportProcDamage({ supportCharacter, supportSlot, ac
     equipmentStatModel,
     lightCones,
   });
-  const supportStats = supportSelf.stats ?? {};
+  const supportStats = activeBattleResult?.partyFinalStatsByCharacterId?.[supportCharacter.characterId] ?? supportSelf.stats ?? {};
   const activeStats = activeBattleResult?.finalStats ?? {};
   const rows = procs
     .map((proc) => {
       const damage = calculateSupportProcDamageValue({
         proc,
+        supportEidolon: supportSlot?.eidolon,
         supportStats,
         activeStats,
         activeCard,
         activeBattleResult,
         enemy,
+        damageMetric,
       });
       if (!Number.isFinite(damage) || damage <= 0) return null;
       const stat = proc.type === "trueDamageRatio" ? "trueDamageRatio" : "additionalDamage";
@@ -2767,13 +3644,18 @@ function calculateCandidateSupportProcDamage({ supportCharacter, supportSlot, ac
         id: `support-proc:${proc.key}:${activeCard.id}`,
         ownerId: supportCharacter.characterId,
         ownerLabel: supportCharacter.displayName ?? supportCharacter.name ?? supportCharacter.characterId,
-        label: proc.label,
+        label: formatUiText(proc.label),
         stat,
         effectiveStat: stat,
         value: damage,
         effectiveValue: damage,
         contributionValue: damage,
+        magnitude: damage,
+        skillContributions: { [activeCard.id]: damage },
         sourceType: "characterSkill",
+        sourceTrace: proc.sourceTrace ?? null,
+        sourceText: proc.sourceText ?? null,
+        sourceEffectRowId: proc.sourceEffectRowId ?? null,
       };
     })
     .filter(Boolean);
@@ -2783,33 +3665,91 @@ function calculateCandidateSupportProcDamage({ supportCharacter, supportSlot, ac
   };
 }
 
-function calculateSupportProcDamageValue({ proc, supportStats = {}, activeStats = {}, activeCard, activeBattleResult, enemy }) {
+function supportProcMeetsEidolonRequirement(proc, supportSlot) {
+  const required = getSupportProcMinEidolon(proc);
+  return Number(supportSlot?.eidolon ?? 0) >= required;
+}
+
+function getSupportProcMinEidolon(proc) {
+  const explicit = Number(proc?.minEidolon ?? NaN);
+  if (Number.isFinite(explicit)) return explicit;
+  const metadata = battleEffectMetadataRows.find((row) => row.effectRowId === proc?.sourceEffectRowId);
+  const metadataValue = Number(metadata?.minEidolon ?? 0);
+  return Number.isFinite(metadataValue) ? metadataValue : 0;
+}
+
+function calculateSupportProcDamageValue({ proc, supportEidolon = 0, supportStats = {}, activeStats = {}, activeCard, activeBattleResult, enemy, damageMetric = "crit" }) {
   if (proc.type === "trueDamageRatio") {
     if (isSupportProcAlreadyApplied(proc, activeBattleResult)) return 0;
-    return Number(activeCard?.directCritDamage ?? activeCard?.critDamage ?? 0) * Number(proc.ratio ?? 0);
+    const baseDamage = damageMetric === "expected"
+      ? Number(activeCard?.directExpectedDamage ?? activeCard?.expectedDamage ?? activeCard?.critDamage ?? 0)
+      : Number(activeCard?.directCritDamage ?? activeCard?.critDamage ?? 0);
+    return baseDamage * Number(proc.ratio ?? 0);
   }
   const stats = proc.scalingOwner === "active" ? activeStats : supportStats;
   const scalingValue = Number(stats[proc.scalingStat] ?? 0);
   if (!Number.isFinite(scalingValue) || scalingValue <= 0) return 0;
-  const critMultiplier = resolveSupportProcCritMultiplier(proc, supportStats, activeStats);
+  const critMultiplier = resolveSupportProcCritMultiplier(proc, supportStats, activeStats, damageMetric, supportEidolon);
+  const coefficient = resolveSupportProcCoefficient(proc, supportEidolon);
+  const damageModifiers = activeBattleResult?.damageModifiers ?? {};
+  const enemyDebuffs = activeBattleResult?.enemyDebuffs ?? {};
   const attackDamageKey = getAttackDamageStatKey(activeCard?.attackType);
-  const damageBoost = Number(stats.allDamage ?? 0)
-    + Number(stats.elementDamage ?? 0)
-    + Number(stats[attackDamageKey] ?? 0);
+  const damageBoost = calculateSupportProcDamageBoost({ stats, damageModifiers, attackDamageKey, attackType: activeCard?.attackType });
+  const vulnerability = supportNumber(enemyDebuffs.vulnerability) + supportNumber(damageModifiers.vulnerability);
+  const defenseIgnore = supportClamp(supportNumber(enemyDebuffs.defenseDown) + supportNumber(damageModifiers.defenseIgnore), 0, 0.95);
+  const resistancePen = supportNumber(damageModifiers.resistancePen);
+  const specialFinal = supportNumber(damageModifiers.specialFinal);
   return Math.max(0, scalingValue
-    * Number(proc.coefficient ?? 0)
+    * coefficient
     * (1 + damageBoost)
+    * (1 + vulnerability)
+    * (1 + specialFinal)
     * critMultiplier
-    * calculateSupportDefenseMultiplier(enemy?.level)
-    * calculateSupportResistanceMultiplier(enemy?.resistance)
+    * calculateSupportDefenseMultiplier(enemy?.level, defenseIgnore)
+    * calculateSupportResistanceMultiplier(enemy?.resistance, resistancePen)
     * calculateSupportBrokenMultiplier(enemy));
 }
 
-function resolveSupportProcCritMultiplier(proc, supportStats = {}, activeStats = {}) {
+function calculateSupportProcDamageBoost({ stats = {}, damageModifiers = {}, attackDamageKey = null, attackType = null } = {}) {
+  return supportNumber(stats.allDamage)
+    + supportNumber(stats.elementDamage)
+    + supportNumber(stats[attackDamageKey])
+    + supportNumber(damageModifiers.allDamage)
+    + supportNumber(damageModifiers[attackDamageKey])
+    + supportNumber(attackType === "follow_up" ? damageModifiers.followDamage : 0);
+}
+
+function resolveSupportProcCoefficient(proc, supportEidolon = 0) {
+  const base = Number(proc?.coefficient ?? 0);
+  const eidolon = Number(supportEidolon ?? 0);
+  return (proc?.coefficientByMinEidolon ?? [])
+    .filter((row) => eidolon >= Number(row?.minEidolon ?? Infinity))
+    .sort((a, b) => Number(b.minEidolon ?? 0) - Number(a.minEidolon ?? 0))
+    .map((row) => Number(row.coefficient))
+    .find((value) => Number.isFinite(value))
+    ?? base;
+}
+
+function resolveSupportProcCritMultiplier(proc, supportStats = {}, activeStats = {}, damageMetric = "crit", supportEidolon = 0) {
   if (proc.critMode === "none") return 1;
-  if (proc.critMode === "fixed") return Number(proc.critMultiplier ?? 1);
+  if (proc.critMode === "fixed") return resolveSupportProcFixedCritMultiplier(proc, supportEidolon);
   const stats = proc.critMode === "active" ? activeStats : supportStats;
+  if (damageMetric === "expected") {
+    const critRate = Math.max(0, Math.min(1, Number(stats.critRate ?? 0)));
+    return 1 + critRate * Number(stats.critDamage ?? 0);
+  }
   return 1 + Number(stats.critDamage ?? 0);
+}
+
+function resolveSupportProcFixedCritMultiplier(proc, supportEidolon = 0) {
+  const base = Number(proc?.critMultiplier ?? 1);
+  const eidolon = Number(supportEidolon ?? 0);
+  return (proc?.critMultiplierByMinEidolon ?? [])
+    .filter((row) => eidolon >= Number(row?.minEidolon ?? Infinity))
+    .sort((a, b) => Number(b.minEidolon ?? 0) - Number(a.minEidolon ?? 0))
+    .map((row) => Number(row.critMultiplier))
+    .find((value) => Number.isFinite(value))
+    ?? base;
 }
 
 function getAttackDamageStatKey(attackType) {
@@ -2817,7 +3757,9 @@ function getAttackDamageStatKey(attackType) {
     basic: "basicDamage",
     skill: "skillDamage",
     ultimate: "ultimateDamage",
+    elation_skill: null,
     follow_up: "followDamage",
+    memosprite: null,
     dot: "dotDamage",
   }[attackType] ?? null;
 }
@@ -2831,20 +3773,29 @@ function isSupportProcAlreadyApplied(proc, battleResult) {
   ));
 }
 
-function calculateSupportDefenseMultiplier(enemyLevel = 95) {
+function calculateSupportDefenseMultiplier(enemyLevel = 95, defenseIgnore = 0) {
   const attackerLevel = 80;
   const attackerTerm = attackerLevel + 20;
-  const enemyTerm = Number(enemyLevel ?? 95) + 20;
+  const enemyTerm = (Number(enemyLevel ?? 95) + 20) * (1 - supportClamp(defenseIgnore, 0, 0.95));
   return attackerTerm / (attackerTerm + enemyTerm);
 }
 
-function calculateSupportResistanceMultiplier(enemyResistance = 20) {
+function calculateSupportResistanceMultiplier(enemyResistance = 20, resistancePen = 0) {
   const resistance = Number(enemyResistance ?? 20) / 100;
-  return Math.min(Math.max(1 - resistance, 0.1), 2);
+  return supportClamp(1 - resistance + supportNumber(resistancePen), 0.1, 2);
 }
 
 function calculateSupportBrokenMultiplier(enemy = {}) {
   return enemy?.isBroken === false ? 0.9 : 1;
+}
+
+function supportNumber(value, fallback = 0) {
+  const numeric = Number(value);
+  return Number.isFinite(numeric) ? numeric : fallback;
+}
+
+function supportClamp(value, min, max) {
+  return Math.min(Math.max(supportNumber(value), min), max);
 }
 
 function formatContributionUnit(row) {
@@ -2929,10 +3880,7 @@ function DamageResultPanel({ battleResult, skillCards = [], contributionViews, v
     <section className="calc-damage-analysis-panel" aria-label="계산 결과">
       <div className="calc-damage-analysis-list">
         {skillCards.length ? skillCards.slice(0, 10).map((card) => {
-          const sourceRows = buildSkillSourceRows(card, contributionViews?.sourceRows ?? []);
-          const sourceGroups = viewMode === "stat"
-            ? groupSkillSourceRowsByStat(sourceRows)
-            : groupSkillSourceRowsByOwner(sourceRows);
+          const sourceGroups = buildSkillContributionGroups(card, contributionViews, viewMode);
           return (
           <article key={card.id} className="calc-damage-skill-card">
             <div className="calc-damage-skill-head">
@@ -2941,7 +3889,7 @@ function DamageResultPanel({ battleResult, skillCards = [], contributionViews, v
                   <span>{getDamageSkillDisplayLabel(card)}</span>
                   <b><span>{formatDamageNumber(card.critDamage)}</span><small>DMG</small></b>
                 </strong>
-                <small>계수: {formatNumber(card.coefficientPercent, 1)} % · {getSkillScalingStatLabel(card)} · {formatDamageTargetLabel(card)}</small>
+                <small>계수: {formatNumber(card.coefficientPercent, 1)} % · {formatDamageTargetLabel(card)}</small>
               </div>
             </div>
             <div className="calc-contribution-list calc-damage-source-list">
@@ -2967,27 +3915,13 @@ function DamageResultPanel({ battleResult, skillCards = [], contributionViews, v
                           </strong>
                         </div>
                       </div>
-                      <em>{formatPercent(row.percent)}</em>
-                      <i aria-hidden="true"><span style={{ width: `${Math.max(3, Math.min(100, row.percent * 100))}%` }} /></i>
+                      <em>{formatPercent(getContributionDisplayPercent(row))}</em>
+                      <i aria-hidden="true"><span style={{ width: `${Math.max(3, Math.min(100, getContributionDisplayPercent(row) * 100))}%` }} /></i>
                       <span className="calc-contribution-chevron" aria-hidden="true" />
                     </button>
                     {expanded && (
                       <ul className={`calc-contribution-detail-list ${viewMode === "stat" ? "is-stat-detail" : "is-character-detail"}`}>
-                        {row.rows.slice(0, 12).map((entry) => {
-                          const parts = getNamedEvaluationValueParts(entry);
-                          return (
-                            <li key={`${rowKey}:${entry.id}:${entry.stat}`}>
-                              <span className="calc-evaluation-source-stat">{parts.label}</span>
-                              <span className="calc-evaluation-source-mark" title={entry.sourceType ?? "출처"}>
-                                <SourceTypeMark entry={entry} ownerCharacter={getCharacter(entry.ownerId)} />
-                              </span>
-                              <EvaluationSourceAmount parts={parts} />
-                              <span className="calc-evaluation-source-label" title={entry.label ?? ""}>
-                                <EvaluationSourceLabel label={entry.label} />
-                              </span>
-                            </li>
-                          );
-                        })}
+                        <ContributionDetailRows entries={row.rows} rowKey={rowKey} />
                       </ul>
                     )}
                   </article>
@@ -3014,9 +3948,9 @@ function DamageResultPanel({ battleResult, skillCards = [], contributionViews, v
 }
 
 function getDamageSkillDisplayLabel(card) {
-  const attackType = attackTypeLabels[card?.attackType] ?? card?.attackType ?? "피해";
-  const title = String(card?.title ?? "").trim();
-  return title && title !== attackType ? `${attackType} · ${title}` : attackType;
+  const displayAttackType = card?.displayAttackType ?? card?.attackType;
+  const attackType = attackTypeLabels[displayAttackType] ?? displayAttackType ?? "피해";
+  return attackType;
 }
 
 function getSkillScalingStatLabel(card) {
@@ -3029,6 +3963,7 @@ function formatDamageTargetLabel(card) {
   const normalized = raw.toLowerCase();
   if (normalized.includes("single")) return "단일 공격";
   if (normalized.includes("blast")) return "확산 공격";
+  if (normalized.includes("bounce")) return "바운스";
   if (normalized.includes("aoe") || normalized.includes("all")) return "전체 공격";
   return raw;
 }
@@ -3049,6 +3984,7 @@ function groupSkillSourceRowsByOwner(rows = []) {
     }
     const group = groups.get(key);
     group.percent += Number(row.percent ?? 0);
+    group.impactPercent = Number(group.impactPercent ?? 0) + Number(row.impactPercent ?? row.percent ?? 0);
     group.rows.push(row);
   }
   return [...groups.values()]
@@ -3056,7 +3992,31 @@ function groupSkillSourceRowsByOwner(rows = []) {
       ...group,
       rows: group.rows.sort(sortSourceRowsByContribution),
     }))
-    .sort((a, b) => b.percent - a.percent || String(a.ownerLabel).localeCompare(String(b.ownerLabel), "ko"));
+    .sort((a, b) => Number(b.impactPercent ?? b.percent ?? 0) - Number(a.impactPercent ?? a.percent ?? 0) || String(a.ownerLabel).localeCompare(String(b.ownerLabel), "ko"));
+}
+
+function buildSkillContributionGroups(card, contributionViews = {}, viewMode = "character") {
+  const sourceRows = buildSkillSourceRows(card, contributionViews?.sourceRows ?? []);
+  const detailGroups = viewMode === "stat"
+    ? groupSkillSourceRowsByStat(sourceRows)
+    : groupSkillSourceRowsByOwner(sourceRows);
+  const totalDamage = Number(card?.critDamage ?? 0);
+  const groups = detailGroups
+    .map((group) => {
+      const detailValue = (group.rows ?? []).reduce((sum, row) => sum + Math.abs(Number(row.magnitude ?? 0)), 0);
+      const damagePercent = getContributionDamagePercent(detailValue, totalDamage);
+      return {
+        ...group,
+        value: detailValue,
+        contributionValue: detailValue,
+        magnitude: detailValue,
+        damagePercent,
+        impactPercent: damagePercent,
+        rows: group.rows,
+      };
+    });
+  return normalizeContributionDisplayPercents(groups)
+    .sort((a, b) => getContributionDisplayPercent(b) - getContributionDisplayPercent(a) || String(a.ownerLabel).localeCompare(String(b.ownerLabel), "ko"));
 }
 
 function groupSkillSourceRowsByStat(rows = []) {
@@ -3076,6 +4036,7 @@ function groupSkillSourceRowsByStat(rows = []) {
     }
     const group = groups.get(key);
     group.percent += Number(row.percent ?? 0);
+    group.impactPercent = Number(group.impactPercent ?? 0) + Number(row.impactPercent ?? row.percent ?? 0);
     group.value += Math.abs(Number(row.value ?? 0));
     group.statValue += Math.abs(Number(row.effectiveValue ?? row.value ?? 0));
     group.rows.push(row);
@@ -3085,12 +4046,11 @@ function groupSkillSourceRowsByStat(rows = []) {
       ...group,
       rows: group.rows.sort(sortSourceRowsByContribution),
     }))
-    .sort((a, b) => b.percent - a.percent || String(a.ownerLabel).localeCompare(String(b.ownerLabel), "ko"));
+    .sort((a, b) => Number(b.percent ?? 0) - Number(a.percent ?? 0) || String(a.ownerLabel).localeCompare(String(b.ownerLabel), "ko"));
 }
 
 function sortSourceRowsByContribution(a, b) {
-  return Math.abs(Number(b.contributionValue ?? b.effectiveValue ?? b.value ?? 0))
-    - Math.abs(Number(a.contributionValue ?? a.effectiveValue ?? a.value ?? 0))
+  return getContributionSortValue(b) - getContributionSortValue(a)
     || String(a.label).localeCompare(String(b.label), "ko");
 }
 
@@ -3099,7 +4059,9 @@ function getRelevantStatsForSkillCard(card) {
     basic: "basicDamage",
     skill: "skillDamage",
     ultimate: "ultimateDamage",
+    elation_skill: null,
     follow_up: "followDamage",
+    memosprite: null,
     dot: "dotDamage",
   }[card?.attackType];
   const formulaType = card?.damageFormulaType ?? "normal";
@@ -3117,6 +4079,7 @@ function getRelevantStatsForSkillCard(card) {
       "resistancePen",
       "specialFinal",
       "trueDamageRatio",
+      "additionalDamage",
     ]);
     return relevantStats;
   }
@@ -3128,6 +4091,7 @@ function getRelevantStatsForSkillCard(card) {
     "resistancePen",
     "specialFinal",
     "trueDamageRatio",
+    "additionalDamage",
   ]);
 
   if (formulaType === "dot") {
@@ -3135,7 +4099,7 @@ function getRelevantStatsForSkillCard(card) {
     return relevantStats;
   }
 
-  addStats(relevantStats, ["critRate", "critDamage", "dealtCritDamage"]);
+  addStats(relevantStats, ["critRate", "critDamage", "dealtCritDamage", "takenCritDamage"]);
   if (formulaType === "elation") {
     addStats(relevantStats, ["elation", "merrymake", "takenCritDamage", card?.attackType === "follow_up" ? "followCritDamage" : null]);
     return relevantStats;
@@ -3170,13 +4134,25 @@ function buildSkillSourceRows(card, sourceRows) {
     .filter((row) => relevantStats.has(row.stat) || relevantStats.has(row.effectiveStat))
     .map((row) => ({
       ...row,
-      magnitude: Math.abs(Number(row.skillContributions?.[card.id] ?? row.contributionValue ?? row.effectiveValue ?? row.value ?? 0)),
-    }));
-  const total = rows.reduce((sum, row) => sum + row.magnitude, 0);
-  if (total <= 0) return [];
-  return rows
-    .map((row) => ({ ...row, percent: row.magnitude / total }))
+      magnitude: Math.abs(getSkillSourceRowMagnitude(row, card.id)),
+    }))
+    .filter((row) => row.magnitude > 0);
+  const totalDamage = Number(card?.critDamage ?? 0);
+  if (totalDamage <= 0) return [];
+  return normalizeContributionDisplayPercents(rows)
+    .map((row) => ({
+      ...row,
+      damagePercent: getContributionDamagePercent(row.magnitude, totalDamage),
+      impactPercent: getContributionDamagePercent(row.magnitude, totalDamage),
+    }))
     .sort((a, b) => b.magnitude - a.magnitude);
+}
+
+function getSkillSourceRowMagnitude(row, cardId) {
+  if (row?.skillContributions && typeof row.skillContributions === "object") {
+    return Number(row.skillContributions[cardId] ?? 0);
+  }
+  return Number(row?.contributionValue ?? row?.effectiveValue ?? row?.value ?? 0);
 }
 
 function formatEvaluationValue(row) {
@@ -3333,7 +4309,7 @@ function calculateConditionDamageSummary({ party, activeSlotId, enemy, scenarioS
   }), customEffects);
   const cards = calculateSkillDamageCards({
     battleResult,
-    skillRows: skillDamageMetadata.rows ?? [],
+    skillRows: skillDamageRows,
     enemy,
     scenarioSettings,
   });
@@ -3404,7 +4380,49 @@ function applyCustomCompareEffectsToBattleResult(battleResult, customEffects = [
     }
   }
 
+  applyCustomCompareCritRateOvercapConversion(next);
   return next;
+}
+
+function applyCustomCompareCritRateOvercapConversion(battleResult) {
+  const finalStats = battleResult?.finalStats;
+  if (!finalStats) return;
+  const activeCharacterId = battleResult.activeCharacter?.characterId;
+  const hasSundayE6 = (battleResult.partySlots ?? []).some((slot) => (
+    slot.characterId === "Sunday_10" && Number(slot.eidolon ?? 0) >= 6
+  ));
+  const previousConverted = Number(finalStats.critRateOvercapConvertedCritDamage ?? 0);
+  const conversionBasis = activeCharacterId === "SilverWolf999_00"
+    ? Number(finalStats.critRate ?? 0)
+    : hasSundayE6
+      ? calculateSundayCritRateOvercapBasis(battleResult)
+      : 0;
+  const nextConverted = Math.max(0, (conversionBasis - 1) * 2);
+  if (Number.isFinite(previousConverted) && previousConverted !== 0) {
+    addNumericValue(finalStats, "critDamage", -previousConverted);
+  }
+  if (nextConverted > 0) {
+    addNumericValue(finalStats, "critDamage", nextConverted);
+    finalStats.critRateOvercapConvertedCritDamage = nextConverted;
+    finalStats.critRateOvercapConversionBasis = conversionBasis;
+    finalStats.critRateOvercapConversionMode = activeCharacterId === "SilverWolf999_00"
+      ? "finalCritRate"
+      : "sundayEquipmentPlusBuff";
+  } else {
+    delete finalStats.critRateOvercapConvertedCritDamage;
+    delete finalStats.critRateOvercapConversionBasis;
+    delete finalStats.critRateOvercapConversionMode;
+  }
+}
+
+function calculateSundayCritRateOvercapBasis(battleResult) {
+  const equipmentCritRate = (battleResult.self?.entries ?? [])
+    .filter((entry) => entry?.stat === "critRate" && (entry.sourceType === "유물" || entry.sourceType === "광추"))
+    .reduce((sum, entry) => sum + Number(entry.value ?? 0), 0);
+  const sundayCritRate = (battleResult.appliedRows ?? [])
+    .filter((row) => row?.ownerId === "Sunday_10" && row?.stat === "critRate")
+    .reduce((sum, row) => sum + Number(row.resolvedValue ?? 0), 0);
+  return equipmentCritRate + sundayCritRate;
 }
 
 function addNumericValue(target, key, value) {
@@ -3457,8 +4475,8 @@ function ConditionComparePanel({
     () => applyCompareConditionsToParty(party, sanitizedConditions, activeSlotId),
     [activeSlotId, party, sanitizedConditions],
   );
-  const baseStateControls = useMemo(() => buildPartySpecificControls(baseParty, activeSlotId), [activeSlotId, baseParty]);
-  const compareStateControls = useMemo(() => buildPartySpecificControls(compareParty, activeSlotId), [activeSlotId, compareParty]);
+  const baseStateControls = useMemo(() => buildPartySpecificControls(baseParty, activeSlotId, enemy), [activeSlotId, baseParty, enemy]);
+  const compareStateControls = useMemo(() => buildPartySpecificControls(compareParty, activeSlotId, enemy), [activeSlotId, compareParty, enemy]);
   const compareScenarioSettings = useMemo(
     () => ({ ...baseScenarioSettings, ...compareOverrides }),
     [baseScenarioSettings, compareOverrides],
@@ -3498,7 +4516,7 @@ function ConditionComparePanel({
   const compareContributionViews = useMemo(() => buildDamageContributionViews({
     battleResult: compareSummary.battleResult,
     skillCards: compareSummary.cards,
-    skillRows: skillDamageMetadata.rows ?? [],
+    skillRows: skillDamageRows,
     enemy,
     scenarioSettings: compareScenarioSettings,
   }), [compareScenarioSettings, compareSummary.battleResult, compareSummary.cards, enemy]);
@@ -3598,7 +4616,7 @@ function ConditionComparePanel({
             </div>
             <div className="calc-damage-analysis-list calc-condition-result-list">
               {conditionRows.length ? conditionRows.slice(0, 10).map(({ baseCard, compareCard, deltaDamage, gainRatio }, index) => {
-                const sourceGroups = groupSkillSourceRowsByOwner(buildSkillSourceRows(compareCard, compareContributionViews?.sourceRows ?? []));
+                const sourceGroups = buildSkillContributionGroups(compareCard, compareContributionViews, "character");
                 return (
                   <article key={compareCard.id} className={`calc-damage-skill-card calc-condition-result-card ${deltaDamage >= 0 ? "is-up" : "is-down"}`}>
                     <div className="calc-damage-skill-head">
@@ -3607,7 +4625,7 @@ function ConditionComparePanel({
                           <span>{getDamageSkillDisplayLabel(compareCard)}</span>
                           <b><span>{formatDamageNumber(compareCard.critDamage)}</span><small>DMG</small></b>
                         </strong>
-                        <small>계수: {formatNumber(compareCard.coefficientPercent, 1)} % {formatDamageTargetLabel(compareCard)}</small>
+                        <small>계수: {formatNumber(compareCard.coefficientPercent, 1)} % · {formatDamageTargetLabel(compareCard)}</small>
                       </div>
                     </div>
                     <div className="calc-condition-result-detail">
@@ -3641,21 +4659,7 @@ function ConditionComparePanel({
                             </button>
                             {expanded && (
                               <ul className="calc-contribution-detail-list is-character-detail">
-                                {group.rows.slice(0, 12).map((entry) => {
-                                  const parts = getNamedEvaluationValueParts(entry);
-                                  return (
-                                    <li key={`${rowKey}:${group.key}:${entry.id}:${entry.stat}`}>
-                                      <span className="calc-evaluation-source-stat">{parts.label}</span>
-                                      <span className="calc-evaluation-source-mark" title={entry.sourceType ?? "출처"}>
-                                        <SourceTypeMark entry={entry} ownerCharacter={getCharacter(entry.ownerId)} />
-                                      </span>
-                                      <EvaluationSourceAmount parts={parts} />
-                                      <span className="calc-evaluation-source-label" title={entry.label ?? ""}>
-                                        <EvaluationSourceLabel label={entry.label} />
-                                      </span>
-                                    </li>
-                                  );
-                                })}
+                                <ContributionDetailRows entries={group.rows} rowKey={`${rowKey}:${group.key}`} />
                               </ul>
                             )}
                           </article>
@@ -3958,13 +4962,20 @@ function CompareLightConeMiniCard({ label, lightcone, rank, editable = false, on
 
 function CompareRelicSummaryCard({ slot }) {
   const set4 = findRelicSetByName(slot.relicSet4Name, "set4") ?? { name: slot.relicSet4Name };
+  const set4Alt = isRelicTwoTwo(slot) ? findRelicSetByName(slot.relicSet4AltName, "set4") ?? { name: slot.relicSet4AltName } : null;
   const set2 = findRelicSetByName(slot.relicSet2Name, "set2") ?? { name: slot.relicSet2Name };
   return (
     <article className="calc-condition-relic-card">
       <span>
-        <small>4셋</small>
+        <small>{set4Alt ? "2셋" : "4셋"}</small>
         <strong>{slot.relicSet4Name ?? "터널 유물"}</strong>
       </span>
+      {set4Alt ? (
+        <span>
+          <small>2셋</small>
+          <strong>{slot.relicSet4AltName ?? "터널 유물"}</strong>
+        </span>
+      ) : null}
       <span>
         <small>2셋</small>
         <strong>{slot.relicSet2Name ?? "차원 장신구"}</strong>
@@ -3972,7 +4983,7 @@ function CompareRelicSummaryCard({ slot }) {
       <div className="calc-condition-relic-pieces">
         {relicPieces.map((piece) => (
           <span key={piece.key} title={piece.name}>
-            <RelicPieceIcon piece={piece} set4={set4} set2={set2} />
+            <RelicPieceIcon piece={piece} set4={set4} set4Alt={set4Alt} set2={set2} />
           </span>
         ))}
       </div>
@@ -4007,7 +5018,7 @@ export function CalculatorRoute() {
   const lightconeSlot = party.find((slot) => slot.slotId === lightconeSlotId) ?? null;
   const relicSlot = party.find((slot) => slot.slotId === relicSlotId) ?? null;
   const selectedIds = party.map((slot) => slot.characterId).filter(Boolean);
-  const partySpecificControls = useMemo(() => buildPartySpecificControls(party, activeSlotId), [activeSlotId, party]);
+  const partySpecificControls = useMemo(() => buildPartySpecificControls(party, activeSlotId, enemy), [activeSlotId, enemy, party]);
   const battleLedgerRows = useMemo(() => buildBattleLedgerRowsForParty(party), [party]);
   const battleResult = useMemo(() => calculateBattleFinalStats({
     party,
@@ -4024,34 +5035,77 @@ export function CalculatorRoute() {
   }), [activeSlotId, battleLedgerRows, party, partySpecificControls, partySpecificSettings]);
   const skillCards = useMemo(() => calculateSkillDamageCards({
     battleResult,
-    skillRows: skillDamageMetadata.rows ?? [],
+    skillRows: skillDamageRows,
     enemy,
     scenarioSettings: partySpecificSettings,
   }), [battleResult, enemy, partySpecificSettings]);
+  const currentSupportProcRows = useMemo(() => buildCurrentPartySupportProcRows({
+    party,
+    activeSlotId,
+    skillCards,
+    battleResult,
+    enemy,
+  }), [activeSlotId, battleResult, enemy, party, skillCards]);
+  const displaySkillCards = useMemo(
+    () => applySupportProcRowsToSkillCards(skillCards, currentSupportProcRows.bySkillId),
+    [currentSupportProcRows, skillCards],
+  );
   const activeCustomTypeProfile = getCustomTypeProfile(battleResult?.activeCharacter?.characterId);
   const statEvaluation = useMemo(() => buildBattleStatEvaluation({
     battleResult,
     customTypeProfile: activeCustomTypeProfile,
     enemy,
   }), [activeCustomTypeProfile, battleResult, enemy]);
-  const contributionViews = useMemo(() => ({
-    ...buildDamageContributionViews({
+  const contributionViews = useMemo(() => {
+    const baseViews = buildDamageContributionViews({
       battleResult,
       skillCards,
-      skillRows: skillDamageMetadata.rows ?? [],
+      skillRows: skillDamageRows,
       enemy,
       scenarioSettings: partySpecificSettings,
-    }),
-    battleResult,
-  }), [battleResult, enemy, partySpecificSettings, skillCards]);
+    });
+    return {
+      ...augmentContributionViewsWithSupportProcRows(baseViews, currentSupportProcRows.rows, displaySkillCards),
+      battleResult,
+    };
+  }, [battleResult, currentSupportProcRows, displaySkillCards, enemy, partySpecificSettings, skillCards]);
+  const partyRecommendationScenarioSettings = useMemo(() => ({
+    ...partySpecificSettings,
+    ...partyRecommendationFixedScenarioSettings,
+  }), [partySpecificSettings]);
+  const partyRecommendationBaseSkillCards = useMemo(() => {
+    const activeSlot = party.find((slot) => slot.slotId === activeSlotId) ?? party[0] ?? null;
+    if (!activeSlot?.characterId) return [];
+    const soloParty = [activeSlot];
+    const soloStateControls = buildPartySpecificControls(soloParty, activeSlotId, enemy);
+    const soloBattleResult = calculateBattleFinalStats({
+      party: soloParty,
+      activeSlotId,
+      characterGetter: getCharacter,
+      defaultBuildGetter: getDefaultBuild,
+      characterStatBaseline,
+      equipmentStatModel,
+      lightCones,
+      ledgerRows: buildBattleLedgerRowsForParty(soloParty),
+      effectMetadataRows: battleEffectMetadataRows,
+      scenarioSettings: partyRecommendationScenarioSettings,
+      stateControls: soloStateControls,
+    });
+    return calculateSkillDamageCards({
+      battleResult: soloBattleResult,
+      skillRows: skillDamageRows,
+      enemy,
+      scenarioSettings: partyRecommendationScenarioSettings,
+    });
+  }, [activeSlotId, enemy, party, partyRecommendationScenarioSettings]);
   const partyRecommendationGroups = useMemo(() => buildPartyCandidateRecommendationGroups({
     party,
     activeSlotId,
     enemy,
-    baseSkillCards: skillCards,
-    scenarioSettings: partySpecificSettings,
+    baseSkillCards: partyRecommendationBaseSkillCards,
+    scenarioSettings: partyRecommendationScenarioSettings,
     candidateEidolon: ownedCharacterEidolon,
-  }), [activeSlotId, enemy, ownedCharacterEidolon, party, partySpecificSettings, skillCards]);
+  }), [activeSlotId, enemy, ownedCharacterEidolon, party, partyRecommendationBaseSkillCards, partyRecommendationScenarioSettings]);
 
   useEffect(() => {
     writePersistedCalculatorState({ activeTab, calculationView, party, activeSlotId, enemy, partySpecificSettings, ownedCharacterEidolon, compareConditions, compareKeepSlotIds });
@@ -4063,6 +5117,16 @@ export function CalculatorRoute() {
 
   function patchSlot(slotId, patch) {
     setParty((current) => current.map((slot) => (slot.slotId === slotId ? { ...slot, ...patch } : slot)));
+  }
+
+  function clearPartySlot(slotId) {
+    setParty((current) => current.map((slot) => (
+      slot.slotId === slotId
+        ? { ...slot, ...createDefaultEquipmentForCharacter(null), characterId: null, eidolon: 0 }
+        : slot
+    )));
+    setCompareConditions((current) => current.filter((condition) => condition.slotId !== slotId));
+    setCompareKeepSlotIds((current) => current.filter((currentSlotId) => currentSlotId !== slotId));
   }
 
   function changeMainDealer(slotId) {
@@ -4186,6 +5250,9 @@ export function CalculatorRoute() {
         ...slot,
         relicSet4Id: defaults.relicSet4Id,
         relicSet4Name: defaults.relicSet4Name,
+        relicSet4AltId: defaults.relicSet4AltId,
+        relicSet4AltName: defaults.relicSet4AltName,
+        relicSet4Mode: defaults.relicSet4Mode,
         relicSet2Id: defaults.relicSet2Id,
         relicSet2Name: defaults.relicSet2Name,
         relicMainStats: { ...(defaults.relicMainStats ?? {}) },
@@ -4318,7 +5385,7 @@ export function CalculatorRoute() {
               />
               {statEvaluation?.groups?.length ? (
                 <section className="calc-evaluation-shell" aria-label="전투 스탯 평가">
-                  <BattleStatEvaluationPanel evaluation={statEvaluation} />
+                  <BattleStatEvaluationPanel evaluation={statEvaluation} battleResult={battleResult} />
                 </section>
               ) : null}
               <ContributionTabs value={contributionViewMode} onChange={setContributionViewMode} />
@@ -4326,13 +5393,13 @@ export function CalculatorRoute() {
                 <ContributionPanel
                   viewMode={contributionViewMode}
                   contributionViews={contributionViews}
-                  skillCards={skillCards}
+                  skillCards={displaySkillCards}
                   partyRecommendationGroups={partyRecommendationGroups}
                   partyRecommendationEidolon={ownedCharacterEidolon}
                   onPartyRecommendationEidolonChange={applyOwnedCharacterEidolon}
                 />
               ) : (
-                <DamageResultPanel battleResult={battleResult} skillCards={skillCards} contributionViews={contributionViews} viewMode={contributionViewMode} />
+                <DamageResultPanel battleResult={battleResult} skillCards={displaySkillCards} contributionViews={contributionViews} viewMode={contributionViewMode} />
               )}
             </>
           )}
@@ -4360,10 +5427,12 @@ export function CalculatorRoute() {
         <CharacterPickerSheet
           value={activeSlot.characterId}
           selectedIds={selectedIds}
+          selectedSlots={party}
           onSelect={(characterId) => {
             const character = getCharacter(characterId);
-            patchActiveSlot({ characterId, ...createDefaultEquipmentForCharacter(character) });
+            patchActiveSlot({ characterId, ...createDefaultEquipmentForCharacter(character), eidolon: ownedCharacterEidolon });
           }}
+          onDeselect={clearPartySlot}
           onClose={() => setPickerOpen(false)}
         />
       )}
