@@ -507,6 +507,7 @@ function serializeCompareCondition(condition) {
     lightconeId: condition.lightconeId,
     lightconeRank: condition.lightconeRank,
     relicPatch: condition.relicPatch,
+    customEffect: condition.customEffect,
   };
 }
 
@@ -584,6 +585,15 @@ function normalizeCompareCondition(condition, party = [], mainDealerSlotId = nul
     };
   }
 
+  if (type === "custom") {
+    return {
+      id,
+      type,
+      slotId: slot.slotId,
+      customEffect: normalizeCustomCompareEffect(condition.customEffect),
+    };
+  }
+
   return null;
 }
 
@@ -617,6 +627,7 @@ function createDefaultCompareConditionDraft(party, slotId, type = "character", m
     lightconeId: slot?.lightconeId ?? defaultLightcone?.id ?? null,
     lightconeRank: clampInteger(slot?.lightconeRank ?? 1, 1, 5),
     relicPatch: sanitizeRelicPatch(slot),
+    customEffect: createDefaultCustomCompareEffect(),
   };
   if (targetType === "partyMember") {
     return {
@@ -703,6 +714,7 @@ function getCompareConditionTitle(condition, party = []) {
   if (condition.type === "partyMember") return `${slotLabel} 파티원 변경`;
   if (condition.type === "lightCone") return `${slotLabel} 광추 변경`;
   if (condition.type === "relic") return `${slotLabel} 유물 변경`;
+  if (condition.type === "custom") return `${slotLabel} 커스텀 효과`;
   return "비교 조건";
 }
 
@@ -724,6 +736,11 @@ function getCompareConditionDetail(condition, party = []) {
   if (condition.type === "relic") {
     const relic = condition.relicPatch ?? {};
     return `4셋 ${relic.relicSet4Name ?? "유물"} / 2셋 ${relic.relicSet2Name ?? "장신구"}`;
+  }
+  if (condition.type === "custom") {
+    const effect = normalizeCustomCompareEffect(condition.customEffect);
+    const option = getCustomCompareEffectOption(effect.stat);
+    return `${option.label} +${formatCustomCompareEffectValue(effect)}`;
   }
   return "-";
 }
@@ -953,6 +970,9 @@ function renderRankedLightConeText(text, rank) {
 }
 
 const percentStatKeys = new Set([
+  "hpRatio",
+  "atkRatio",
+  "defRatio",
   "critRate",
   "critDamage",
   "damageBoost",
@@ -983,6 +1003,64 @@ const percentStatKeys = new Set([
   "merrymake",
 ]);
 
+const customCompareEffectOptions = [
+  { key: "hpRatio", stat: "hpRatio", label: "체력", unit: "percent", targetPolicy: "self", defaultValue: 0.1 },
+  { key: "atkRatio", stat: "atkRatio", label: "공격력", unit: "percent", targetPolicy: "self", defaultValue: 0.1 },
+  { key: "defRatio", stat: "defRatio", label: "방어력", unit: "percent", targetPolicy: "self", defaultValue: 0.1 },
+  { key: "critRate", stat: "critRate", label: "치확", unit: "percent", targetPolicy: "self", defaultValue: 0.1 },
+  { key: "critDamage", stat: "critDamage", label: "치피", unit: "percent", targetPolicy: "self", defaultValue: 0.3 },
+  { key: "speed", stat: "speed", label: "속도", unit: "flat", targetPolicy: "self", defaultValue: 10 },
+  { key: "allDamage", stat: "allDamage", label: "가피증", unit: "percent", targetPolicy: "self", defaultValue: 0.1 },
+  { key: "resistancePen", stat: "resistancePen", label: "속저관", unit: "percent", targetPolicy: "enemy_all", defaultValue: 0.1 },
+  { key: "vulnerability", stat: "vulnerability", label: "받피증", unit: "percent", targetPolicy: "enemy_all", defaultValue: 0.1 },
+  { key: "defenseDown", stat: "defenseDown", label: "방깎", unit: "percent", targetPolicy: "enemy_all", defaultValue: 0.1 },
+  { key: "defenseIgnore", stat: "defenseIgnore", label: "방무", unit: "percent", targetPolicy: "self", defaultValue: 0.1 },
+];
+
+const customCompareEffectByKey = new Map(customCompareEffectOptions.map((option) => [option.key, option]));
+const customCompareStatBuffKeys = new Set([
+  "hpRatio",
+  "atkRatio",
+  "defRatio",
+  "speedRatio",
+  "speed",
+  "critRate",
+  "critDamage",
+  "breakEffect",
+  "effectHitRate",
+  "effectResistance",
+  "energyRegen",
+  "outgoingHealingBoost",
+  "elementDamage",
+  "allDamage",
+  "basicDamage",
+  "skillDamage",
+  "ultimateDamage",
+  "followDamage",
+  "dotDamage",
+  "breakDamage",
+  "dealtCritDamage",
+  "followCritDamage",
+  "specialFinal",
+]);
+const customCompareDamageModifierKeys = new Set([
+  "allDamage",
+  "basicDamage",
+  "skillDamage",
+  "ultimateDamage",
+  "followDamage",
+  "dotDamage",
+  "breakDamage",
+  "trueDamageRatio",
+  "dealtCritDamage",
+  "followCritDamage",
+  "specialFinal",
+  "defenseIgnore",
+  "resistancePen",
+  "vulnerability",
+  "defenseDown",
+]);
+
 function formatStatValue(stat, value) {
   if (percentStatKeys.has(stat)) {
     return formatPercent(value);
@@ -998,6 +1076,46 @@ function formatRelicSubStatRollValue(stat, rolls) {
 
 function formatStatLabel(stat) {
   return statLabels[stat] ?? stat ?? "-";
+}
+
+function getCustomCompareEffectOption(stat) {
+  return customCompareEffectByKey.get(stat) ?? customCompareEffectOptions[0];
+}
+
+function normalizeCustomCompareEffect(effect = {}) {
+  const option = getCustomCompareEffectOption(effect.stat ?? effect.key);
+  const numeric = Number(effect.value);
+  const value = Number.isFinite(numeric) ? numeric : option.defaultValue;
+  return {
+    stat: option.stat,
+    value,
+    targetPolicy: option.targetPolicy,
+  };
+}
+
+function createDefaultCustomCompareEffect() {
+  return normalizeCustomCompareEffect(customCompareEffectOptions[0]);
+}
+
+function formatCustomCompareEffectValue(effect = {}) {
+  const normalized = normalizeCustomCompareEffect(effect);
+  const option = getCustomCompareEffectOption(normalized.stat);
+  if (option.unit === "percent") return `${formatNumber(normalized.value * 100)}%`;
+  return formatNumber(normalized.value);
+}
+
+function getCustomCompareEffectInputValue(effect = {}) {
+  const normalized = normalizeCustomCompareEffect(effect);
+  const option = getCustomCompareEffectOption(normalized.stat);
+  const value = option.unit === "percent" ? normalized.value * 100 : normalized.value;
+  return Number.isFinite(value) ? String(Number(value.toFixed(2))) : "";
+}
+
+function parseCustomCompareEffectInput(stat, inputValue) {
+  const option = getCustomCompareEffectOption(stat);
+  const numeric = Number(inputValue);
+  if (!Number.isFinite(numeric)) return option.defaultValue;
+  return option.unit === "percent" ? numeric / 100 : numeric;
 }
 
 function formatStatList(stats = [], limit = 4) {
@@ -1223,6 +1341,21 @@ function SettingsIcon() {
         strokeLinejoin="round"
         strokeWidth="2"
         d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm7.4-2.1a7.7 7.7 0 0 0 0-2.8l2-1.5-2-3.5-2.4 1a7.8 7.8 0 0 0-2.4-1.4L14.2 2h-4.4l-.4 3.2A7.8 7.8 0 0 0 7 6.6l-2.4-1-2 3.5 2 1.5a7.7 7.7 0 0 0 0 2.8l-2 1.5 2 3.5 2.4-1a7.8 7.8 0 0 0 2.4 1.4l.4 3.2h4.4l.4-3.2a7.8 7.8 0 0 0 2.4-1.4l2.4 1 2-3.5-2-1.5Z"
+      />
+    </svg>
+  );
+}
+
+function SparkleIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16">
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="m12 3 1.7 5.1L19 10l-5.3 1.9L12 17l-1.7-5.1L5 10l5.3-1.9L12 3Zm6.5 12 .8 2.4 2.2.8-2.2.8-.8 2.4-.8-2.4-2.2-.8 2.2-.8.8-2.4ZM5.5 14l.6 1.8 1.9.7-1.9.7-.6 1.8-.6-1.8-1.9-.7 1.9-.7.6-1.8Z"
       />
     </svg>
   );
@@ -3007,7 +3140,7 @@ function AppliedEffectPanel({ battleResult }) {
   );
 }
 
-function SettingsSheet({ onClose, ownedCharacterEidolon = 0, onOwnedCharacterEidolonChange }) {
+function SettingsSheet({ onClose, ownedCharacterEidolon = 0, onOwnedCharacterEidolonChange, onResetRelicsAndCompare }) {
   const links = [
     { label: "데이터 검증", note: "스킬, 성혼, 계수, 효과 추출 현황", href: "/extraction" },
     { label: "효과 원장", note: "계산 적용/미적용 효과 추적", href: "/ledger" },
@@ -3053,6 +3186,13 @@ function SettingsSheet({ onClose, ownedCharacterEidolon = 0, onOwnedCharacterEid
               </strong>
             </button>
           ))}
+          <button className="calc-settings-action is-reset" type="button" onClick={onResetRelicsAndCompare}>
+            <span aria-hidden="true">R</span>
+            <strong>
+              유물/비교조건 초기화
+              <small>파티 캐릭터와 돌파는 유지하고 유물 세팅, 비교 조건만 초기화</small>
+            </strong>
+          </button>
         </div>
         <footer className="calc-settings-version">
           <span>HSR RELIC CC 2.0</span>
@@ -3113,8 +3253,8 @@ function LegacyConditionComparePanel({ party, activeSlotId, onMainDealerChange, 
   );
 }
 
-function calculateConditionDamageSummary({ party, activeSlotId, enemy, scenarioSettings = {}, stateControls = [] }) {
-  const battleResult = calculateBattleFinalStats({
+function calculateConditionDamageSummary({ party, activeSlotId, enemy, scenarioSettings = {}, stateControls = [], customEffects = [] }) {
+  const battleResult = applyCustomCompareEffectsToBattleResult(calculateBattleFinalStats({
     party,
     activeSlotId,
     characterGetter: getCharacter,
@@ -3126,7 +3266,7 @@ function calculateConditionDamageSummary({ party, activeSlotId, enemy, scenarioS
     effectMetadataRows: battleEffectMetadataRows,
     scenarioSettings,
     stateControls,
-  });
+  }), customEffects);
   const cards = calculateSkillDamageCards({
     battleResult,
     skillRows: skillDamageMetadata.rows ?? [],
@@ -3135,6 +3275,77 @@ function calculateConditionDamageSummary({ party, activeSlotId, enemy, scenarioS
   });
   const totalDamage = cards.reduce((sum, card) => sum + Number(card.critDamage ?? 0), 0);
   return { battleResult, cards, totalDamage };
+}
+
+function applyCustomCompareEffectsToBattleResult(battleResult, customEffects = []) {
+  const normalizedEffects = (customEffects ?? [])
+    .map((effect) => normalizeCustomCompareEffect(effect))
+    .filter((effect) => Number.isFinite(Number(effect.value)));
+  if (!normalizedEffects.length) return battleResult;
+
+  const next = {
+    ...battleResult,
+    finalStats: { ...(battleResult.finalStats ?? {}) },
+    battleTotals: { ...(battleResult.battleTotals ?? {}) },
+    combinedStatTotals: { ...(battleResult.combinedStatTotals ?? {}) },
+    enemyDebuffs: { ...(battleResult.enemyDebuffs ?? {}) },
+    damageModifiers: { ...(battleResult.damageModifiers ?? {}) },
+    appliedRows: [...(battleResult.appliedRows ?? [])],
+    sourceTrace: {
+      ...(battleResult.sourceTrace ?? {}),
+      appliedRows: Number(battleResult.sourceTrace?.appliedRows ?? battleResult.appliedRows?.length ?? 0) + normalizedEffects.length,
+    },
+  };
+  const baseStats = battleResult.finalStats?.base ?? battleResult.self?.stats?.base ?? {};
+
+  for (const effect of normalizedEffects) {
+    const option = getCustomCompareEffectOption(effect.stat);
+    const value = Number(effect.value);
+    const targetPolicy = option.targetPolicy;
+    const row = {
+      ledgerId: `custom-compare:${option.key}:${next.appliedRows.length}`,
+      ownerId: battleResult.activeCharacter?.characterId,
+      sourceId: "custom-compare",
+      sourceName: "커스텀 비교조건",
+      sourceLabel: "커스텀",
+      stat: option.stat,
+      value,
+      resolvedValue: value,
+      targetPolicy,
+      metadata: {
+        effectType: "커스텀",
+        sourceDisplayLabel: `커스텀 · ${option.label}`,
+      },
+      sourceTrace: {
+        effectRowId: `custom-compare:${option.key}`,
+        source: "condition-compare-custom",
+      },
+      usedForCurrentBattle: true,
+    };
+    next.appliedRows.push(row);
+
+    if (targetPolicy === "enemy_all") {
+      addNumericValue(next.enemyDebuffs, option.stat, value);
+      if (option.stat === "resistancePen") addNumericValue(next.damageModifiers, option.stat, value);
+      continue;
+    }
+
+    if (customCompareStatBuffKeys.has(option.stat)) {
+      addNumericValue(next.battleTotals, option.stat, value);
+      addNumericValue(next.combinedStatTotals, option.stat, value);
+      addNumericValue(next.finalStats, getEffectiveStatKey(option.stat), getEffectiveStatContribution(option.stat, value, baseStats));
+    }
+    if (customCompareDamageModifierKeys.has(option.stat)) {
+      addNumericValue(next.damageModifiers, option.stat, value);
+    }
+  }
+
+  return next;
+}
+
+function addNumericValue(target, key, value) {
+  if (!target || !key || !Number.isFinite(Number(value))) return;
+  target[key] = Number(target[key] ?? 0) + Number(value);
 }
 
 function ConditionComparePanel({
@@ -3151,10 +3362,25 @@ function ConditionComparePanel({
   onAutoRecommend,
   onToggleKeepSlot,
   compareFeedback,
+  resetToken = 0,
 }) {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [compareOverrides, setCompareOverrides] = useState({});
   const [expandedRows, setExpandedRows] = useState(() => new Set());
+  const autoRecommendSettingsRef = useRef(null);
+  useEffect(() => {
+    setCompareOverrides({});
+    setExpandedRows(new Set());
+  }, [resetToken]);
+  useEffect(() => {
+    if (!settingsOpen) return undefined;
+    function handlePointerDown(event) {
+      if (autoRecommendSettingsRef.current?.contains(event.target)) return;
+      setSettingsOpen(false);
+    }
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, [settingsOpen]);
   const sanitizedConditions = useMemo(
     () => sanitizeCompareConditions(compareConditions, party, activeSlotId),
     [activeSlotId, compareConditions, party],
@@ -3173,6 +3399,12 @@ function ConditionComparePanel({
     () => ({ ...baseScenarioSettings, ...compareOverrides }),
     [baseScenarioSettings, compareOverrides],
   );
+  const compareCustomEffects = useMemo(
+    () => sanitizedConditions
+      .filter((condition) => condition.type === "custom")
+      .map((condition) => condition.customEffect),
+    [sanitizedConditions],
+  );
   const baseSummary = useMemo(() => calculateConditionDamageSummary({
     party: baseParty,
     activeSlotId,
@@ -3186,7 +3418,8 @@ function ConditionComparePanel({
     enemy,
     scenarioSettings: compareScenarioSettings,
     stateControls: compareStateControls,
-  }), [activeSlotId, compareParty, compareScenarioSettings, compareStateControls, enemy]);
+    customEffects: compareCustomEffects,
+  }), [activeSlotId, compareCustomEffects, compareParty, compareScenarioSettings, compareStateControls, enemy]);
   const baseCardById = useMemo(() => new Map(baseSummary.cards.map((card) => [card.id, card])), [baseSummary.cards]);
   const conditionRows = compareSummary.cards.map((compareCard) => {
     const baseCard = baseCardById.get(compareCard.id);
@@ -3225,18 +3458,22 @@ function ConditionComparePanel({
               <PlusIcon />
               <span>비교조건 추가</span>
             </button>
-            <button className="calc-text-action-button" type="button" onClick={onAutoRecommend}>자동추천</button>
-            <button
-              className="calc-text-action-button calc-condition-recommend-settings-button"
-              type="button"
-              aria-label="자동추천 설정"
-              aria-expanded={settingsOpen}
-              onClick={() => setSettingsOpen((current) => !current)}
-            >
-              <span className="calc-condition-settings-mark" aria-hidden="true" />
+            <button className="calc-text-action-button" type="button" onClick={onAutoRecommend}>
+              <SparkleIcon />
+              <span>자동추천</span>
             </button>
-            {settingsOpen && (
-              <div className="calc-auto-recommend-settings-popover">
+            <div className="calc-condition-settings-wrap" ref={autoRecommendSettingsRef}>
+              <button
+                className="calc-text-action-button calc-condition-recommend-settings-button"
+                type="button"
+                aria-label="자동추천 설정"
+                aria-expanded={settingsOpen}
+                onClick={() => setSettingsOpen((current) => !current)}
+              >
+                <SettingsIcon />
+              </button>
+              {settingsOpen && (
+                <div className="calc-auto-recommend-settings-popover">
                 <div className="calc-auto-recommend-party-row">
                   {party.map((slot) => {
                     const character = getCharacter(slot.characterId);
@@ -3260,14 +3497,15 @@ function ConditionComparePanel({
                   })}
                 </div>
               </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
         <div className="calc-condition-list">
           {hasConditions ? sanitizedConditions.map((condition, index) => (
-            <div className="calc-condition-row-wrap" key={condition.id}>
-              <button className="calc-condition-row-main" type="button" onClick={() => onEditCondition(condition.id)}>
-                <span>{index + 1}</span>
+            <div className="calc-condition-row-main" key={condition.id}>
+              <button className="calc-condition-row-content" type="button" onClick={() => onEditCondition(condition.id)}>
+                <span className="calc-contribution-rank" aria-hidden="true">{index + 1}</span>
                 <div>
                   <strong>{getCompareConditionTitle(condition, party)}</strong>
                   <small>{getCompareConditionDetail(condition, party)}</small>
@@ -3290,47 +3528,56 @@ function ConditionComparePanel({
         {hasConditions ? (
           <>
             <div className="calc-condition-delta-strip">
-              <span><small>기준 피해</small><b>{formatDamageNumber(baseSummary.totalDamage)}</b></span>
-              <span><small>비교 피해</small><b>{formatDamageNumber(compareSummary.totalDamage)}</b></span>
-              <span><small>변화량</small><b className={totalDelta >= 0 ? "is-positive" : "is-negative"}>{formatSignedDamageNumber(totalDelta)} <em>({formatSignedPercent(totalRatio)})</em></b></span>
+              <span><small>기존</small><b>{formatDamageNumber(baseSummary.totalDamage)} <em>DMG</em></b></span>
+              <span><small>비교</small><b>{formatDamageNumber(compareSummary.totalDamage)} <em>DMG</em></b></span>
+              <span><small>증감량</small><b className={totalDelta >= 0 ? "is-positive" : "is-negative"}>{formatSignedPercent(totalRatio)}</b></span>
             </div>
-            <div className="calc-condition-result-list">
+            <div className="calc-damage-analysis-list calc-condition-result-list">
               {conditionRows.length ? conditionRows.slice(0, 10).map(({ baseCard, compareCard, deltaDamage, gainRatio }, index) => {
-                const rowKey = `condition-result:${compareCard.id}`;
-                const expanded = expandedRows.has(rowKey);
                 const sourceGroups = groupSkillSourceRowsByOwner(buildSkillSourceRows(compareCard, compareContributionViews?.sourceRows ?? []));
                 return (
-                  <article key={compareCard.id} className={`calc-condition-result-card ${deltaDamage >= 0 ? "is-up" : "is-down"} ${expanded ? "is-expanded" : ""}`}>
-                    <button className="calc-condition-result-head" type="button" aria-expanded={expanded} onClick={() => toggleExpandedRow(rowKey)}>
-                      <span>{index + 1}</span>
+                  <article key={compareCard.id} className={`calc-damage-skill-card calc-condition-result-card ${deltaDamage >= 0 ? "is-up" : "is-down"}`}>
+                    <div className="calc-damage-skill-head">
                       <div>
-                        <strong>{getDamageSkillDisplayLabel(compareCard)}</strong>
-                        <small>{formatDamageTargetLabel(compareCard)}</small>
+                        <strong className="calc-damage-skill-title-line">
+                          <span>{getDamageSkillDisplayLabel(compareCard)}</span>
+                          <b><span>{formatDamageNumber(compareCard.critDamage)}</span><small>DMG</small></b>
+                        </strong>
+                        <small>계수: {formatNumber(compareCard.coefficientPercent, 1)}% {formatDamageTargetLabel(compareCard)}</small>
                       </div>
-                      <b>{formatDamageNumber(compareCard.critDamage)} <em>DMG</em></b>
-                      <i className="calc-contribution-chevron" aria-hidden="true" />
-                    </button>
-                    <div className="calc-condition-result-detail">
-                      <span><small>기준</small><b>{formatDamageNumber(baseCard?.critDamage ?? 0)}</b></span>
-                      <span><small>차이</small><b className={deltaDamage >= 0 ? "is-positive" : "is-negative"}>{formatSignedDamageNumber(deltaDamage)}</b></span>
-                      <span><small>증감률</small><b className={deltaDamage >= 0 ? "is-positive" : "is-negative"}>{formatSignedPercent(gainRatio)}</b></span>
                     </div>
-                    {expanded && (
-                      <div className="calc-condition-source-list">
-                        {sourceGroups.length ? sourceGroups.slice(0, 4).map((group, groupIndex) => {
-                          const ownerCharacter = getCharacter(group.ownerId);
-                          return (
-                            <article key={`${rowKey}:${group.key}`} className="calc-condition-source-group">
-                              <div className="calc-condition-source-head">
-                                <span className="calc-contribution-rank">{groupIndex + 1}</span>
+                    <div className="calc-condition-result-detail">
+                      <span><small>기존</small><b>{formatDamageNumber(baseCard?.critDamage ?? 0)} <em>DMG</em></b></span>
+                      <span><small>비교</small><b>{formatDamageNumber(compareCard.critDamage)} <em>DMG</em></b></span>
+                      <span><small>증감량</small><b className={deltaDamage >= 0 ? "is-positive" : "is-negative"}>{formatSignedPercent(gainRatio)}</b></span>
+                    </div>
+                    <div className="calc-contribution-list calc-damage-source-list">
+                      {sourceGroups.length ? sourceGroups.map((group, groupIndex) => {
+                        const rowKey = `condition-result:${compareCard.id}:${group.key}`;
+                        const expanded = expandedRows.has(rowKey);
+                        const ownerCharacter = getCharacter(group.ownerId);
+                        return (
+                          <article key={rowKey} className={`calc-contribution-card ${expanded ? "is-expanded" : ""} ${groupIndex === 0 ? "is-top-contributor" : ""}`}>
+                            <button type="button" className="calc-contribution-row" aria-expanded={expanded} onClick={() => toggleExpandedRow(rowKey)}>
+                              <span className="calc-contribution-rank">{groupIndex + 1}</span>
+                              <div className="calc-contribution-owner">
                                 <span className="calc-party-face">
                                   <CharacterAvatar character={ownerCharacter} />
                                 </span>
-                                <strong>{group.ownerLabel}<small>E{getOwnerEidolon(eidolonsByCharacterId, group.ownerId)}</small></strong>
-                                <em>{formatPercent(group.percent)}</em>
+                                <div className="calc-contribution-label">
+                                  <strong>
+                                    <span>{group.ownerLabel}</span>
+                                    <small className="calc-contribution-eidolon">E{getOwnerEidolon(eidolonsByCharacterId, group.ownerId)}</small>
+                                  </strong>
+                                </div>
                               </div>
+                              <em>{formatPercent(group.percent)}</em>
+                              <i aria-hidden="true"><span style={{ width: `${Math.max(3, Math.min(100, group.percent * 100))}%` }} /></i>
+                              <span className="calc-contribution-chevron" aria-hidden="true" />
+                            </button>
+                            {expanded && (
                               <ul className="calc-contribution-detail-list is-character-detail">
-                                {group.rows.slice(0, 4).map((entry) => {
+                                {group.rows.slice(0, 12).map((entry) => {
                                   const parts = getNamedEvaluationValueParts(entry);
                                   return (
                                     <li key={`${rowKey}:${group.key}:${entry.id}:${entry.stat}`}>
@@ -3346,11 +3593,11 @@ function ConditionComparePanel({
                                   );
                                 })}
                               </ul>
-                            </article>
-                          );
-                        }) : <p className="calc-condition-empty-note">이 스킬에 연결할 수 있는 출처 row가 없습니다.</p>}
-                      </div>
-                    )}
+                            )}
+                          </article>
+                        );
+                      }) : <p className="calc-condition-empty-note">이 스킬에 연결할 수 있는 출처 row가 없습니다.</p>}
+                    </div>
                   </article>
                 );
               }) : (
@@ -3396,6 +3643,7 @@ function CompareConditionEditorModal({
     { key: "character", label: "캐릭터" },
     { key: "lightCone", label: "광추" },
     { key: "relic", label: "유물" },
+    { key: "custom", label: "커스텀" },
   ];
 
   function patchDraft(patch) {
@@ -3416,6 +3664,21 @@ function CompareConditionEditorModal({
       id: current.id,
       type: nextType,
     }));
+  }
+
+  function changeCustomEffectStat(stat) {
+    const option = getCustomCompareEffectOption(stat);
+    patchDraft({ customEffect: normalizeCustomCompareEffect({ stat: option.stat, value: option.defaultValue }) });
+  }
+
+  function changeCustomEffectValue(value) {
+    const currentEffect = normalizeCustomCompareEffect(draft.customEffect);
+    patchDraft({
+      customEffect: normalizeCustomCompareEffect({
+        stat: currentEffect.stat,
+        value: parseCustomCompareEffectInput(currentEffect.stat, value),
+      }),
+    });
   }
 
   function apply() {
@@ -3507,6 +3770,31 @@ function CompareConditionEditorModal({
           <div className="calc-condition-relic-edit">
             <CompareRelicSummaryCard slot={{ ...targetSlot, ...(draft.relicPatch ?? {}) }} />
             <button className="calc-text-action-button is-primary" type="button" onClick={() => setRelicEditorOpen(true)}>유물 설정</button>
+          </div>
+        ) : null}
+
+        {draft.type === "custom" ? (
+          <div className="calc-condition-custom-edit">
+            <label className="calc-condition-target-field">
+              <span>효과</span>
+              <select value={normalizeCustomCompareEffect(draft.customEffect).stat} onChange={(event) => changeCustomEffectStat(event.target.value)}>
+                {customCompareEffectOptions.map((option) => (
+                  <option key={option.key} value={option.stat}>{option.label}</option>
+                ))}
+              </select>
+            </label>
+            <label className="calc-condition-target-field">
+              <span>수치</span>
+              <span className="calc-condition-custom-value-field">
+                <input
+                  type="number"
+                  inputMode="decimal"
+                  value={getCustomCompareEffectInputValue(draft.customEffect)}
+                  onChange={(event) => changeCustomEffectValue(event.target.value)}
+                />
+                <b>{getCustomCompareEffectOption(normalizeCustomCompareEffect(draft.customEffect).stat).unit === "percent" ? "%" : "pt"}</b>
+              </span>
+            </label>
           </div>
         ) : null}
 
@@ -3642,6 +3930,7 @@ export function CalculatorRoute() {
   const [compareKeepSlotIds, setCompareKeepSlotIds] = useState(initialState.compareKeepSlotIds);
   const [compareEditorConditionId, setCompareEditorConditionId] = useState(null);
   const [compareFeedback, setCompareFeedback] = useState("");
+  const [compareResetToken, setCompareResetToken] = useState(0);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [pickerOpen, setPickerOpen] = useState(false);
   const [lightconeSlotId, setLightconeSlotId] = useState(null);
@@ -3822,6 +4111,31 @@ export function CalculatorRoute() {
     setCompareFeedback(`${recommendations.length}개 비교조건을 자동추천으로 적용했습니다.`);
   }
 
+  function resetRelicsAndCompareConditions() {
+    if (!window.confirm("파티 캐릭터와 돌파는 유지하고 유물 세팅, 비교 조건만 초기화할까요?")) return;
+    setParty((current) => current.map((slot) => {
+      const character = getCharacter(slot.characterId);
+      if (!character) return slot;
+      const defaults = createDefaultEquipmentForCharacter(character);
+      return {
+        ...slot,
+        relicSet4Id: defaults.relicSet4Id,
+        relicSet4Name: defaults.relicSet4Name,
+        relicSet2Id: defaults.relicSet2Id,
+        relicSet2Name: defaults.relicSet2Name,
+        relicMainStats: { ...(defaults.relicMainStats ?? {}) },
+        relicPieces: defaults.relicPieces ?? {},
+        relicSubStatPriority: [...(defaults.relicSubStatPriority ?? relicSubStats)],
+        defaultBuildSourceStatus: defaults.defaultBuildSourceStatus ?? null,
+      };
+    }));
+    setCompareConditions([]);
+    setCompareKeepSlotIds([]);
+    setCompareEditorConditionId(null);
+    setCompareFeedback("유물 세팅과 비교 조건을 초기화했습니다.");
+    setCompareResetToken((value) => value + 1);
+  }
+
   function applyOwnedCharacterEidolon(value) {
     const eidolon = sanitizeEidolonPreset(value, ownedCharacterEidolon);
     setOwnedCharacterEidolon(eidolon);
@@ -3925,6 +4239,7 @@ export function CalculatorRoute() {
                 onAutoRecommend={applyAutoCompareRecommendations}
                 onToggleKeepSlot={toggleCompareKeepSlot}
                 compareFeedback={compareFeedback}
+                resetToken={compareResetToken}
               />
             </>
           ) : (
@@ -3969,11 +4284,12 @@ export function CalculatorRoute() {
         />
       )}
       {settingsOpen && (
-        <SettingsSheet
-          onClose={() => setSettingsOpen(false)}
-          ownedCharacterEidolon={ownedCharacterEidolon}
-          onOwnedCharacterEidolonChange={applyOwnedCharacterEidolon}
-        />
+          <SettingsSheet
+            onClose={() => setSettingsOpen(false)}
+            ownedCharacterEidolon={ownedCharacterEidolon}
+            onOwnedCharacterEidolonChange={applyOwnedCharacterEidolon}
+            onResetRelicsAndCompare={resetRelicsAndCompareConditions}
+          />
       )}
       {pickerOpen && (
         <CharacterPickerSheet

@@ -440,7 +440,9 @@ p {
 .calc-top-actions {
   display: flex;
   align-items: center;
+  align-self: center;
   gap: 4px;
+  height: 42px;
 }
 
 .calc-icon-button {
@@ -2586,7 +2588,7 @@ p {
 
 .calc-condition-row-main {
   display: grid;
-  grid-template-columns: 28px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 32px;
   align-items: center;
   gap: 6px;
   width: 100%;
@@ -2594,6 +2596,19 @@ p {
   border: 0;
   border-radius: 8px;
   background: var(--calc-surface-2);
+  color: inherit;
+  padding: 0;
+}
+
+.calc-condition-row-content {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  background: transparent;
   color: inherit;
   padding: 7px;
   text-align: left;
@@ -2604,45 +2619,26 @@ p {
   cursor: default;
 }
 
-.calc-condition-row-wrap {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 32px;
-  align-items: stretch;
-  gap: 6px;
-}
-
-.calc-condition-row-main > span {
-  display: inline-grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-  background: var(--calc-surface-3);
-  color: #f2c16d;
-  font-size: 0.72rem;
-  font-weight: 950;
-}
-
-.calc-condition-row-main div {
+.calc-condition-row-content div {
   display: grid;
   gap: 2px;
   min-width: 0;
 }
 
-.calc-condition-row-main strong {
+.calc-condition-row-content strong {
   color: var(--calc-text);
   font-size: 0.78rem;
   font-weight: 900;
 }
 
-.calc-condition-row-main small {
+.calc-condition-row-content small {
   color: var(--calc-muted);
   font-size: 0.7rem;
   font-weight: 750;
   line-height: 1.35;
 }
 
-.calc-condition-row-main small em {
+.calc-condition-row-content small em {
   color: var(--calc-muted);
   font-style: normal;
   font-weight: 760;
@@ -2653,10 +2649,17 @@ p {
   place-items: center;
   min-width: 32px;
   border: 0;
-  border-radius: 8px;
-  background: var(--calc-surface-2);
+  align-self: stretch;
+  border-radius: 0 8px 8px 0;
+  background: color-mix(in srgb, var(--calc-danger) 9%, transparent);
   color: var(--calc-muted);
   cursor: pointer;
+}
+
+.calc-condition-remove-button:hover,
+.calc-condition-remove-button:focus-visible {
+  color: #ffb7ad;
+  background: color-mix(in srgb, var(--calc-danger) 18%, transparent);
 }
 
 .calc-condition-remove-button span {
@@ -2730,29 +2733,9 @@ p {
   padding: 0;
 }
 
-.calc-condition-settings-mark {
+.calc-condition-settings-wrap {
   position: relative;
-  display: block;
-  width: 16px;
-  height: 16px;
-  border: 2px solid currentColor;
-  border-radius: 999px;
-}
-
-.calc-condition-settings-mark::before,
-.calc-condition-settings-mark::after {
-  position: absolute;
-  inset: 50% auto auto 50%;
-  width: 2px;
-  height: 22px;
-  border-radius: 999px;
-  background: currentColor;
-  content: "";
-  transform: translate(-50%, -50%);
-}
-
-.calc-condition-settings-mark::after {
-  transform: translate(-50%, -50%) rotate(90deg);
+  display: grid;
 }
 
 .calc-auto-recommend-settings-popover {
@@ -2778,10 +2761,10 @@ p {
   position: relative;
   display: grid;
   place-items: center;
-  border: 0;
+  border: 1px solid color-mix(in srgb, var(--calc-line) 76%, transparent);
   border-radius: 8px;
-  background: transparent;
-  padding: 0;
+  background: var(--calc-surface-2);
+  padding: 3px;
   cursor: pointer;
 }
 
@@ -2817,14 +2800,29 @@ p {
   color: var(--calc-text);
 }
 
+.calc-auto-recommend-party-slot.is-main-dealer {
+  background: color-mix(in srgb, var(--calc-surface-3) 80%, var(--calc-surface-2));
+  border-color: color-mix(in srgb, var(--calc-text) 14%, var(--calc-line));
+}
+
+.calc-auto-recommend-party-slot.is-keep:not(.is-main-dealer) {
+  background: color-mix(in srgb, #b9e37b 12%, var(--calc-surface-2));
+  border-color: color-mix(in srgb, #b9e37b 36%, var(--calc-line));
+}
+
 .calc-auto-recommend-party-slot.is-keep:not(.is-main-dealer) .calc-auto-recommend-keep-badge {
   background: rgba(185, 227, 123, 0.2);
   color: #b9e37b;
 }
 
+.calc-auto-recommend-party-slot.is-replace {
+  background: color-mix(in srgb, #c58b55 13%, var(--calc-surface-2));
+  border-color: color-mix(in srgb, #c58b55 38%, var(--calc-line));
+}
+
 .calc-auto-recommend-party-slot.is-replace .calc-auto-recommend-keep-badge {
-  background: rgba(197, 139, 85, 0.2);
-  color: #c58b55;
+  background: rgba(197, 139, 85, 0.3);
+  color: #e1a66f;
 }
 
 .calc-condition-feedback {
@@ -3068,7 +3066,7 @@ p {
 
 .calc-condition-type-tabs {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 6px;
 }
 
@@ -3098,6 +3096,7 @@ p {
 }
 
 .calc-condition-target-field select,
+.calc-condition-target-field input,
 .calc-condition-mini-card select {
   min-height: 34px;
   border: 1px solid var(--calc-line);
@@ -3105,6 +3104,33 @@ p {
   background: var(--calc-surface-2);
   color: var(--calc-text);
   padding: 0 8px;
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.calc-condition-custom-edit {
+  display: grid;
+  gap: 8px;
+}
+
+.calc-condition-custom-value-field {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 42px;
+  align-items: center;
+  gap: 6px;
+}
+
+.calc-condition-custom-value-field input {
+  width: 100%;
+}
+
+.calc-condition-custom-value-field b {
+  display: grid;
+  place-items: center;
+  min-height: 34px;
+  border-radius: 8px;
+  background: var(--calc-surface-2);
+  color: var(--calc-muted);
   font-size: 0.78rem;
   font-weight: 850;
 }
@@ -3933,6 +3959,19 @@ p {
 
 .calc-settings-action:hover:not(:disabled) {
   background: var(--calc-surface-3);
+}
+
+.calc-settings-action.is-reset {
+  background: color-mix(in srgb, var(--calc-danger) 10%, var(--calc-surface-2));
+}
+
+.calc-settings-action.is-reset > span {
+  background: color-mix(in srgb, var(--calc-danger) 24%, var(--calc-surface-3));
+  color: #ffb7ad;
+}
+
+.calc-settings-action.is-reset:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--calc-danger) 16%, var(--calc-surface-3));
 }
 
 .calc-settings-action:disabled {
@@ -4857,6 +4896,7 @@ p {
   .calc-damage-skill-head small,
   .calc-evaluation-group h3,
   .calc-condition-row-main small,
+  .calc-condition-row-content small,
   .calc-condition-delta-strip small,
   .calc-condition-empty-note {
     font-size: 13px;
@@ -4875,6 +4915,7 @@ p {
   .calc-enemy-card select,
   .calc-text-action-button,
   .calc-condition-row-main strong,
+  .calc-condition-row-content strong,
   .calc-contribution-tabs button,
   .calc-contribution-label strong,
   .calc-contribution-unit,
@@ -4888,10 +4929,6 @@ p {
   .calc-damage-skill-head b,
   .calc-condition-delta-strip b {
     font-size: 16px;
-  }
-
-  .calc-condition-row-main > span {
-    font-size: 13px;
   }
 
   .calc-contribution-row em.is-damage-gain small,
@@ -4949,6 +4986,7 @@ p {
   .calc-party-evaluation .calc-evaluation-source-label small,
   .calc-party-evaluation .calc-contribution-detail-list div small,
   .calc-condition-compare .calc-condition-row-main small,
+  .calc-condition-compare .calc-condition-row-content small,
   .calc-condition-compare .calc-condition-delta-strip small {
     font-size: 13.5px;
   }
@@ -4973,6 +5011,7 @@ p {
   .calc-main-dealer-option strong,
   .calc-current-party-summary-copy strong,
   .calc-condition-row-main strong,
+  .calc-condition-row-content strong,
   .calc-damage-skill-head strong,
   .calc-contribution-label strong,
   .calc-contribution-row-card strong,
@@ -5003,6 +5042,7 @@ p {
   .calc-damage-skill-head small,
   .calc-evaluation-group h3,
   .calc-condition-row-main small,
+  .calc-condition-row-content small,
   .calc-condition-delta-strip small,
   .calc-condition-empty-note,
   .calc-contribution-row em.is-damage-gain small,
@@ -5021,8 +5061,7 @@ p {
   .calc-main-dealer-eidolon,
   .calc-contribution-eidolon,
   .calc-contribution-rank,
-  .calc-auto-recommend-keep-badge,
-  .calc-condition-row-main > span {
+  .calc-auto-recommend-keep-badge {
     font-size: 12.5px;
   }
 }
@@ -5061,7 +5100,8 @@ p {
   line-height: var(--text-card-title-line);
 }
 
-.calc-condition-row-main strong {
+.calc-condition-row-main strong,
+.calc-condition-row-content strong {
   font-size: var(--text-section-title-size);
   font-weight: var(--text-section-title-weight);
   line-height: var(--text-section-title-line);
@@ -5115,6 +5155,7 @@ p {
 .calc-current-party-summary-copy small,
 .calc-main-dealer-option small,
 .calc-condition-row-main small,
+.calc-condition-row-content small,
 .calc-condition-delta-strip small,
 .calc-condition-empty-note,
 .calc-party-settings-owner em,
@@ -5158,7 +5199,6 @@ p {
 .calc-contribution-eidolon,
 .calc-contribution-rank,
 .calc-auto-recommend-keep-badge,
-.calc-condition-row-main > span,
 .calc-lightcone-thumb b,
 .calc-party-summary-role-badge {
   font-size: var(--text-badge-size);
@@ -5323,7 +5363,8 @@ p {
     line-height: 18px;
   }
 
-  .calc-condition-row-main small {
+  .calc-condition-row-main small,
+  .calc-condition-row-content small {
     font-size: 13px;
     font-weight: 700;
     line-height: 18px;
