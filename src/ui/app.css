@@ -1790,14 +1790,16 @@ p {
 }
 
 .calc-evaluation-source-mark {
-  display: grid;
-  place-items: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: var(--calc-source-icon-size);
   height: var(--calc-source-icon-size);
   min-width: 0;
   overflow: hidden;
   justify-self: center;
   align-self: center;
+  line-height: 0;
 }
 
 .calc-evaluation-source-label {
@@ -1807,8 +1809,9 @@ p {
 }
 
 .calc-evaluation-source-mark b {
-  display: grid;
-  place-items: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: var(--calc-source-icon-size);
   height: var(--calc-source-icon-size);
   border-radius: var(--calc-source-icon-radius);
@@ -1823,9 +1826,11 @@ p {
   display: block;
   width: var(--calc-source-icon-size);
   height: var(--calc-source-icon-size);
+  flex: 0 0 auto;
   background: transparent;
   border-radius: 0;
   object-fit: contain;
+  vertical-align: middle;
 }
 
 .calc-evaluation-source-mark img.is-path-icon {
@@ -2287,19 +2292,26 @@ p {
 }
 
 .calc-contribution-detail-list .calc-evaluation-source-mark {
-  display: grid;
-  place-items: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
   justify-self: center;
+  align-self: center;
+  line-height: 0;
 }
 
 .calc-contribution-detail-list .calc-evaluation-source-mark img {
   display: block;
   width: 22px;
   height: 22px;
+  flex: 0 0 auto;
   border-radius: 0;
   background: transparent;
   padding: 0;
   object-fit: contain;
+  vertical-align: middle;
 }
 
 .calc-contribution-detail-list .calc-evaluation-source-mark img.is-path-icon {

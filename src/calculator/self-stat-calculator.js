@@ -96,7 +96,7 @@ function buildLightConeEntries(lightCone, rank) {
       stat,
       value: Number(value),
       sourceType: "광추",
-      source: `${lightCone.name} S${clampRank(rank)}`,
+      source: `광추 · ${lightCone.name} S${clampRank(rank)}`,
       conditionStatus: "always-on",
     }));
 }
@@ -124,13 +124,13 @@ function buildRelicEntries(slot, defaultBuild, model) {
   const set2 = findRelicSet(model, relicBuild.set2Id);
   const entries = [];
   if (set4 && set4Alt && relicBuild.set4Mode === "2+2") {
-    pushStatEntries(entries, set4.twoPieceStats, "유물", `2셋 효과 (${set4.name})`);
-    pushStatEntries(entries, set4Alt.twoPieceStats, "유물", `2셋 효과 (${set4Alt.name})`);
+    pushStatEntries(entries, set4.twoPieceStats, "유물", `유물 2셋 효과 (${set4.name})`);
+    pushStatEntries(entries, set4Alt.twoPieceStats, "유물", `유물 2셋 효과 (${set4Alt.name})`);
   } else if (set4) {
-    pushStatEntries(entries, set4.twoPieceStats, "유물", `2셋 효과 (${set4.name})`);
-    pushStatEntries(entries, set4.fourPieceStats, "유물", `4셋 효과 (${set4.name})`);
+    pushStatEntries(entries, set4.twoPieceStats, "유물", `유물 2셋 효과 (${set4.name})`);
+    pushStatEntries(entries, set4.fourPieceStats, "유물", `유물 4셋 효과 (${set4.name})`);
   }
-  if (set2) pushStatEntries(entries, set2.twoPieceStats ?? set2.stats, "유물", `2셋 효과 (${set2.name})`);
+  if (set2) pushStatEntries(entries, set2.twoPieceStats ?? set2.stats, "유물", `유물 2셋 효과 (${set2.name})`);
   for (const piece of relicPieceOrder) {
     const pieceSet = getRelicPieceSet(piece, set4, set4Alt, set2);
     const mainStat = piece.fixedMainStat ?? relicBuild.mainStats[piece.key] ?? relicBuild.pieces[piece.key]?.mainStat;
@@ -160,7 +160,8 @@ function getRelicPieceSet(piece, set4, set4Alt, set2) {
 }
 
 function formatRelicPieceSource(optionType, piece, relicSet) {
-  return `유물 ${optionType} · ${piece.name}`;
+  const setName = relicSet?.name ? ` (${relicSet.name})` : "";
+  return `유물 ${optionType} · ${piece.name}${setName}`;
 }
 
 function buildAssumedSubStats(priority = [], mainStat) {

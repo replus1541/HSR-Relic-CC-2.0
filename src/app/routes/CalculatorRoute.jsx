@@ -2279,7 +2279,13 @@ function shouldDisplayRawRatioStat(stat) {
 
 function SourceTypeMark({ entry, ownerCharacter }) {
   const iconUrl = getEntryIconUrl(entry, ownerCharacter);
-  if (iconUrl) return <img className={iconUrl.startsWith("/filter-icons/") ? "is-path-icon" : ""} src={iconUrl} alt="" />;
+  if (iconUrl) {
+    const className = [
+      iconUrl.startsWith("/filter-icons/") ? "is-path-icon" : "",
+      iconUrl.startsWith("/lightcone-icons/") ? "is-lightcone-icon" : "",
+    ].filter(Boolean).join(" ");
+    return <img className={className} src={iconUrl} alt="" />;
+  }
   return <b>{getCompactSourceTypeLabel(entry?.sourceType)}</b>;
 }
 
@@ -2309,7 +2315,7 @@ function getEntryIconUrl(entry, ownerCharacter) {
   const label = String(entry?.label ?? "");
   const normalizedSourceType = sourceType.toLowerCase();
   if (normalizedSourceType.includes("relic") || normalizedSourceType.includes("ornament") || sourceType.includes("유물") || isRelicSourceLabel(label)) return getRelicSourceIconUrl(label);
-  if (sourceType.includes("광추")) return getLightConeIconUrl(label, ownerCharacter);
+  if (normalizedSourceType.includes("light") || normalizedSourceType.includes("cone") || sourceType.includes("광추")) return getLightConeIconUrl(label, ownerCharacter);
   return getSourceTypeIconUrl(sourceType, ownerCharacter);
 }
 
@@ -2333,10 +2339,20 @@ function getRelicSourceIconUrl(label) {
   const setName = String(label.match(/\((.+)\)/)?.[1] ?? "").trim();
   if (setName) {
     const relicSet = findRelicSetByName(setName);
-    const iconFile = getRelicIconFile(relicSet);
+    const iconFile = getRelicIconFile(relicSet, getRelicPieceIndexFromLabel(label));
     if (iconFile) return encodeURI(`/relic-icons/${iconFile}`);
   }
   return getRelicPieceIconUrl(label) ?? "/relic-piece-icons/head.svg";
+}
+
+function getRelicPieceIndexFromLabel(label) {
+  if (label.includes("머리")) return 1;
+  if (label.includes("손")) return 2;
+  if (label.includes("몸통")) return 3;
+  if (label.includes("신발")) return 4;
+  if (label.includes("구체")) return 1;
+  if (label.includes("매듭")) return 2;
+  return null;
 }
 
 function getRelicPieceIconUrl(label) {
