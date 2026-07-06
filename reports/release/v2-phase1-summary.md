@@ -1,6 +1,6 @@
-# v2 Phase 1 Summary
+# v2 Integration Summary
 
-Generated for Task 18-B.
+Generated for Task 18-B and refreshed after the 2026-07-06 calculator passes.
 
 ## Implemented Scope
 
@@ -13,14 +13,20 @@ Generated for Task 18-B.
 - SRTools/FreeSR canonical loadout state adapters.
 - Legacy diff fixture runner and triage report.
 - Unified validation and app smoke verification.
+- Source-backed skill damage metadata and formula buckets for normal, break,
+  DoT, super break, elation, and true damage.
+- Data-driven character state controls used by both the stat/damage calculator
+  and condition compare.
+- Party recommendation support proc damage and owned-character eidolon presets.
 
 ## Verified Commands
 
 - `npm.cmd run validate`
-- `npm.cmd run verify`
 - `npm.cmd run build`
+- `npm.cmd run verify:app`
+- `npm.cmd run verify:damage-formulas`
 
-All passed in Task 18-A.
+All passed in the latest 2026-07-06 verification pass.
 
 ## Release Status
 

@@ -127,4 +127,4 @@ npm.cmd run build
 - `reports/release/v2-phase1-known-gaps.md`
 - `reports/release/v2-phase1-audit.md`
 
-현재 release blocker는 문서화된 기준에서 없습니다. 다만 dynamic formula resolver, full external import fixture, legacy runtime parity, full UI workflow는 known gap으로 남아 있습니다.
+현재 release blocker는 문서화된 기준에서 없습니다. dynamic formula resolver와 formula bucket 검증은 2026-07-06 calculator pass에서 구현/검증 완료되었습니다. 남은 known gap은 full external import fixture coverage, legacy runtime parity, 그리고 full external import/editing workflow 검증입니다.

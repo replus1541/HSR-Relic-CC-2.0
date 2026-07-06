@@ -9,11 +9,13 @@ import customRelicTypeProfiles from "../../../data/curated/custom-relic-type-pro
 import defaultCharacterBuilds from "../../../data/generated/default-character-builds.json";
 import equipmentStatModel from "../../../data/generated/equipment-stat-model.json";
 import hoyowikiSourceEffectSupplements from "../../../data/generated/hoyowiki-source-effect-supplements.json";
+import relicIconManifest from "../../../data/generated/relic-icon-manifest.json";
 import skillDamageMetadata from "../../../data/generated/skill-damage-metadata.json";
 import lightconeCandidates from "../../../data/legacy-reference/game-db/lightcone-effect-candidates.json";
 import supportDamageProcs from "../../../data/curated/support-damage-procs.json";
 import { buildBattleStatEvaluation, buildDamageContributionViews } from "../../calculator/battle-stat-evaluation.js";
 import { calculateBattleFinalStats } from "../../calculator/battle-final-stat-calculator.js";
+import { buildLightConeEffectRows } from "../../calculator/lightcone-effect-ledger.js";
 import { calculateSkillDamageCards } from "../../calculator/skill-damage-calculator.js";
 import { calculateSelfEquipmentStats, formatSelfStatValue } from "../../calculator/self-stat-calculator.js";
 import { Badge } from "../../ui/components/index.js";
@@ -32,6 +34,9 @@ const calculatorStateVersion = 1;
 const cookieMaxAgeSeconds = 60 * 60 * 24 * 180;
 const lightCones = lightconeCandidates.lightCones ?? [];
 const supersededGeneratedEffectRowIds = new Set(hoyowikiSourceEffectSupplements.supersedesEffectRowIds ?? []);
+const excludedEffectRowIds = new Set([
+  "effect:Jingliu_00:hoyowiki-source:E4:달의_검을_쥐고:allDamage:1",
+]);
 const generatedCombatLedgerRows = (combatLedgerSample.rows ?? combatLedgerSample.ledgerRows ?? [])
   .filter((row) => !supersededGeneratedEffectRowIds.has(row.sourceTrace?.effectRowId ?? row.effectRowId));
 const generatedBattleEffectMetadataRows = (battleEffectMetadata.rows ?? [])
@@ -40,12 +45,24 @@ const combatLedgerRows = [
   ...generatedCombatLedgerRows,
   ...(hoyowikiSourceEffectSupplements.ledgerRows ?? []),
   ...(battleEffectSupplements.ledgerRows ?? []),
-];
+].filter((row) => !excludedEffectRowIds.has(row.sourceTrace?.effectRowId ?? row.effectRowId));
 const battleEffectMetadataRows = [
   ...generatedBattleEffectMetadataRows,
   ...(hoyowikiSourceEffectSupplements.metadataRows ?? []),
   ...(battleEffectSupplements.metadataRows ?? []),
-];
+].filter((row) => !excludedEffectRowIds.has(row.effectRowId));
+
+function buildBattleLedgerRowsForParty(party) {
+  return [
+    ...combatLedgerRows,
+    ...buildLightConeEffectRows({
+      party,
+      lightCones,
+      characterGetter: getCharacter,
+    }),
+  ];
+}
+
 const defaultBuildRows = Object.values(defaultCharacterBuilds.builds ?? {});
 const defaultBuildByCharacterId = new Map(defaultBuildRows.map((row) => [row.characterId, row]));
 const customTypeRows = customRelicTypeProfiles.rows ?? [];
@@ -740,7 +757,7 @@ function getCompareConditionDetail(condition, party = []) {
   if (condition.type === "custom") {
     const effect = normalizeCustomCompareEffect(condition.customEffect);
     const option = getCustomCompareEffectOption(effect.stat);
-    return `${option.label} +${formatCustomCompareEffectValue(effect)}`;
+    return `${option.label} + ${formatCustomCompareEffectValue(effect)}`;
   }
   return "-";
 }
@@ -865,6 +882,9 @@ function normalizeRelicId(relicSet) {
 function getRelicIconFile(relicSet, pieceIndex = null) {
   const relicId = normalizeRelicId(relicSet);
   const name = String(relicSet?.name ?? "").replace(/\s+/g, " ").trim();
+  const manifestRow = relicIconManifest.byRelicId?.[relicId];
+  if (pieceIndex && manifestRow?.pieces?.[String(pieceIndex)]) return manifestRow.pieces[String(pieceIndex)];
+  if (manifestRow?.set) return manifestRow.set;
   if (!relicId || !name) return null;
   return pieceIndex ? `${relicId}-${name}-${pieceIndex}-piece-${pieceIndex}.png` : `${relicId}-${name}.png`;
 }
@@ -946,7 +966,7 @@ function formatDamageNumber(value) {
 
 function formatPercent(value) {
   if (value === undefined || value === null || Number.isNaN(Number(value))) return "-";
-  return `${formatNumber(Number(value) * 100)}%`;
+  return `${formatNumber(Number(value) * 100).replace(/^-/, "- ")} %`;
 }
 
 function renderRankedLightConeText(text, rank) {
@@ -1100,7 +1120,7 @@ function createDefaultCustomCompareEffect() {
 function formatCustomCompareEffectValue(effect = {}) {
   const normalized = normalizeCustomCompareEffect(effect);
   const option = getCustomCompareEffectOption(normalized.stat);
-  if (option.unit === "percent") return `${formatNumber(normalized.value * 100)}%`;
+  if (option.unit === "percent") return `${formatNumber(normalized.value * 100)} %`;
   return formatNumber(normalized.value);
 }
 
@@ -1436,7 +1456,7 @@ function CharacterStatusCard({ slot, active, onSelect, onEidolonChange, onOpenLi
         <div className="calc-status-title-line">
           <strong>{character.displayName}</strong>
           <label className="calc-eidolon-control">
-            <select value={slot.eidolon} onChange={(event) => onEidolonChange(Number(event.target.value))} aria-label={`${character.displayName} 성혼`}>
+            <select className="calc-eidolon-select" value={slot.eidolon} onChange={(event) => onEidolonChange(Number(event.target.value))} aria-label={`${character.displayName} 성혼`}>
               {[0, 1, 2, 3, 4, 5, 6].map((level) => (
                 <option key={level} value={level}>E{level}</option>
               ))}
@@ -1757,7 +1777,7 @@ function RelicEditorSheet({ slot, onClose, onApply }) {
                     <label className="calc-roll-field">
                       <span>ROLL</span>
                       <span className="calc-roll-control">
-                        <b>+{subStat.rolls}</b>
+                        <b>+ {subStat.rolls}</b>
                         <strong>{formatRelicSubStatRollValue(subStat.stat, subStat.rolls)}</strong>
                       </span>
                       <select
@@ -1766,7 +1786,7 @@ function RelicEditorSheet({ slot, onClose, onApply }) {
                         aria-label={`${piece.name} 부옵 ${index + 1} ROLL`}
                       >
                         {relicRollOptions.map((roll) => (
-                          <option key={roll} value={roll}>+{roll} / {formatRelicSubStatRollValue(subStat.stat, roll)}</option>
+                          <option key={roll} value={roll}>+ {roll} / {formatRelicSubStatRollValue(subStat.stat, roll)}</option>
                         ))}
                       </select>
                     </label>
@@ -1936,7 +1956,7 @@ function EnemyEditor({ enemy, onChange }) {
       <label>
         속성 저항
         <select value={enemy.resistance} onChange={(event) => onChange({ ...enemy, resistance: Number(event.target.value) })}>
-          {enemyResistanceOptions.map((value) => <option key={value} value={value}>{value}%</option>)}
+          {enemyResistanceOptions.map((value) => <option key={value} value={value}>{value} %</option>)}
         </select>
       </label>
     </section>
@@ -2028,7 +2048,7 @@ function resolveStateControlOptions(control, slot) {
 
 function formatStateControlOptionLabel(value, control) {
   if (control.format === "toggle") return Number(value) >= 1 ? "ON" : "OFF";
-  if (control.format === "percent") return `${formatNumber(Number(value) * 100)}%`;
+  if (control.format === "percent") return `${formatNumber(Number(value) * 100)} %`;
   if (control.format === "number") return formatDamageNumber(value);
   if (control.format === "count") return `${formatNumber(value)}명`;
   if (String(control.key ?? "").toLowerCase().includes("stack")) return `${formatNumber(value)}스택`;
@@ -2211,10 +2231,10 @@ function getNamedEvaluationValueParts(entry) {
   const statLabel = statLabels[displayStat] ?? statLabels[stat] ?? stat ?? "스탯";
   const value = formatStatValue(displayStat, displayValue);
   const numericValue = Number(displayValue ?? 0);
-  const sign = numericValue > 0 ? "+" : "";
+  const sign = numericValue > 0 ? "+ " : "";
   const toneClass = numericValue > 0 ? "is-positive-stat" : numericValue < 0 ? "is-negative-stat" : "";
   const flatText = shouldShowFlatContribution(rawStat, displayStat, stat, entry)
-    ? ` (${Number(entry?.effectiveValue ?? 0) > 0 ? "+" : ""}${formatStatValue(stat, entry?.effectiveValue)})`
+    ? ` (${Number(entry?.effectiveValue ?? 0) > 0 ? "+ " : ""}${formatStatValue(stat, entry?.effectiveValue)})`
     : "";
   return { label: statLabel, sign, value, flatText, toneClass };
 }
@@ -2629,7 +2649,7 @@ function buildCandidateDamageDelta({ character, party, activeSlotId, replacement
       characterStatBaseline,
       equipmentStatModel,
       lightCones,
-      ledgerRows: combatLedgerRows,
+      ledgerRows: buildBattleLedgerRowsForParty(candidateParty),
       effectMetadataRows: battleEffectMetadataRows,
       scenarioSettings,
       stateControls: candidateStateControls,
@@ -2811,13 +2831,13 @@ function formatContributionUnit(row) {
 
 function formatSignedPercent(value) {
   const numeric = Number(value ?? 0);
-  const sign = numeric > 0 ? "+" : "";
-  return `${sign}${formatPercent(numeric)}`;
+  if (numeric > 0) return `+ ${formatPercent(numeric)}`;
+  return formatPercent(numeric);
 }
 
 function formatSignedDamageNumber(value) {
   const numeric = Number(value ?? 0);
-  const sign = numeric > 0 ? "+" : numeric < 0 ? "-" : "";
+  const sign = numeric > 0 ? "+ " : numeric < 0 ? "- " : "";
   return `${sign}${formatDamageNumber(Math.abs(numeric))}`;
 }
 
@@ -2844,25 +2864,25 @@ function buildStatSensitivityRows(skillCards) {
     {
       key: "primaryFlat",
       label: "계수 스탯",
-      unitLabel: "+100",
+      unitLabel: "+ 100",
       delta: skillCards.reduce((sum, card) => sum + (Number(card.scalingValue) > 0 ? Number(card.critDamage) * (100 / Number(card.scalingValue)) : 0), 0),
     },
     {
       key: "critDamage",
       label: "치명타 피해",
-      unitLabel: "+10%",
+      unitLabel: "+ 10 %",
       delta: skillCards.reduce((sum, card) => sum + Number(card.nonCritDamage ?? 0) * 0.1, 0),
     },
     {
       key: "damageBoost",
       label: "피해 증가",
-      unitLabel: "+10%",
+      unitLabel: "+ 10 %",
       delta: skillCards.reduce((sum, card) => sum + Number(card.critDamage ?? 0) * (0.1 / Math.max(0.1, 1 + Number(card.trace?.damageBoost ?? 0))), 0),
     },
     {
       key: "vulnerability",
       label: "받는 피해 증가",
-      unitLabel: "+10%",
+      unitLabel: "+ 10 %",
       delta: skillCards.reduce((sum, card) => sum + Number(card.critDamage ?? 0) * (0.1 / Math.max(0.1, 1 + Number(card.trace?.vulnerability ?? 0))), 0),
     },
   ].filter((row) => row.delta > 0);
@@ -2898,7 +2918,7 @@ function DamageResultPanel({ battleResult, skillCards = [], contributionViews, v
                   <span>{getDamageSkillDisplayLabel(card)}</span>
                   <b><span>{formatDamageNumber(card.critDamage)}</span><small>DMG</small></b>
                 </strong>
-                <small>계수: {formatNumber(card.coefficientPercent, 1)}% {formatDamageTargetLabel(card)}</small>
+                <small>계수: {formatNumber(card.coefficientPercent, 1)} % {formatDamageTargetLabel(card)}</small>
               </div>
             </div>
             <div className="calc-contribution-list calc-damage-source-list">
@@ -3281,7 +3301,7 @@ function calculateConditionDamageSummary({ party, activeSlotId, enemy, scenarioS
     characterStatBaseline,
     equipmentStatModel,
     lightCones,
-    ledgerRows: combatLedgerRows,
+    ledgerRows: buildBattleLedgerRowsForParty(party),
     effectMetadataRows: battleEffectMetadataRows,
     scenarioSettings,
     stateControls,
@@ -3562,7 +3582,7 @@ function ConditionComparePanel({
                           <span>{getDamageSkillDisplayLabel(compareCard)}</span>
                           <b><span>{formatDamageNumber(compareCard.critDamage)}</span><small>DMG</small></b>
                         </strong>
-                        <small>계수: {formatNumber(compareCard.coefficientPercent, 1)}% {formatDamageTargetLabel(compareCard)}</small>
+                        <small>계수: {formatNumber(compareCard.coefficientPercent, 1)} % {formatDamageTargetLabel(compareCard)}</small>
                       </div>
                     </div>
                     <div className="calc-condition-result-detail">
@@ -3883,7 +3903,7 @@ function CompareCharacterMiniCard({ character, label, eidolon, onPickCharacter, 
           <strong>{character?.displayName ?? "선택"}</strong>
         </span>
       </button>
-      <select value={clampInteger(eidolon, 0, 6)} onChange={(event) => onEidolonChange?.(Number(event.target.value))} disabled={!onEidolonChange}>
+      <select className="calc-eidolon-select" value={clampInteger(eidolon, 0, 6)} onChange={(event) => onEidolonChange?.(Number(event.target.value))} disabled={!onEidolonChange}>
         {[0, 1, 2, 3, 4, 5, 6].map((level) => (
           <option key={level} value={level}>E{level}</option>
         ))}
@@ -3963,6 +3983,7 @@ export function CalculatorRoute() {
   const relicSlot = party.find((slot) => slot.slotId === relicSlotId) ?? null;
   const selectedIds = party.map((slot) => slot.characterId).filter(Boolean);
   const partySpecificControls = useMemo(() => buildPartySpecificControls(party, activeSlotId), [activeSlotId, party]);
+  const battleLedgerRows = useMemo(() => buildBattleLedgerRowsForParty(party), [party]);
   const battleResult = useMemo(() => calculateBattleFinalStats({
     party,
     activeSlotId,
@@ -3971,11 +3992,11 @@ export function CalculatorRoute() {
     characterStatBaseline,
     equipmentStatModel,
     lightCones,
-    ledgerRows: combatLedgerRows,
+    ledgerRows: battleLedgerRows,
     effectMetadataRows: battleEffectMetadataRows,
     scenarioSettings: partySpecificSettings,
     stateControls: partySpecificControls,
-  }), [activeSlotId, party, partySpecificControls, partySpecificSettings]);
+  }), [activeSlotId, battleLedgerRows, party, partySpecificControls, partySpecificSettings]);
   const skillCards = useMemo(() => calculateSkillDamageCards({
     battleResult,
     skillRows: skillDamageMetadata.rows ?? [],

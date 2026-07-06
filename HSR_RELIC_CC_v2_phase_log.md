@@ -1847,3 +1847,27 @@
 - Rebalanced mobile top tabs into a 3-column grid so the labels use the available width more evenly.
 - Bumped the visible settings version from `v2.005` to `v2.006`.
 - Verification: `npm.cmd run build -- --emptyOutDir=false` passed; `npm.cmd run verify:app` passed; `node tools\inspect_calculator_mobile.mjs` passed with escalated browser launch.
+
+---
+
+## Release Known Gap Sync
+
+### Status
+
+- status: completed
+- started: 2026-07-06
+- completed: 2026-07-06
+- request: align remaining v2 known-gap docs with the current formula/state-control implementation baseline
+
+### Work Log
+
+- Rechecked the current baseline with `npm.cmd run validate`, `npm.cmd run verify:damage-formulas`, and `npm.cmd run build -- --emptyOutDir=false`.
+- Updated `reports/release/v2-phase1-known-gaps.md` so `dynamic_formula` is no longer listed as an unsupported resolver gap.
+- Updated `reports/release/v2-phase1-summary.md` with the formula bucket, character state-control, support-proc, and eidolon-preset passes.
+- Updated `README.md` so the remaining known gaps are limited to full external import fixture coverage, legacy runtime parity, and external import/editing workflow verification.
+
+### Verification
+
+- `npm.cmd run validate`: passed.
+- `npm.cmd run verify:damage-formulas`: passed; checks=10.
+- `npm.cmd run build -- --emptyOutDir=false`: passed. Vite chunk-size warning remains.

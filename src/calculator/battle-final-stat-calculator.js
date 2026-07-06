@@ -69,6 +69,8 @@ const chrysosHeirCharacterIds = new Set([
 
 const targetPolicyOverridesByEffectId = new Map([
   ["effect:PlayerBoy_20:1", "single_ally"],
+  ["effect:PlayerBoy_20:hoyowiki-source:E1:현재의_서술자:critRate:0", "single_ally"],
+  ["effect:PlayerBoy_20:supplement:mimiSupportTrueDamage", "single_ally"],
   ["effect:PlayerBoy_40:2", "enemy_all"],
   ["effect:PlayerBoy_40:0", "self"],
   ["effect:Jingliu_00:0", "self"],
@@ -104,7 +106,10 @@ const targetPolicyOverridesByEffectId = new Map([
 const hyacineSignatureLightConeId = "wiki-3775";
 const hyacineSignatureVulnerabilityByRank = [0.18, 0.225, 0.27, 0.315, 0.36];
 const jingliuMoonlightEffectRowId = "effect:Jingliu_00:curated:moonlightStacksCritDamage";
-const jingliuMoonlightCritDamagePerStack = 0.44;
+const jingliuMoonlightBaseEffectRowId = "effect:Jingliu_00:curated:moonlightStacksCritDamage:base";
+const jingliuMoonlightE4EffectRowId = "effect:Jingliu_00:curated:moonlightStacksCritDamage:E4Bonus";
+const jingliuMoonlightBaseCritDamagePerStack = 0.24;
+const jingliuMoonlightE4CritDamagePerStack = 0.2;
 const jingliuMoonlightBaseStacks = 3;
 const jingliuMoonlightMaxStacks = 5;
 
@@ -171,13 +176,14 @@ export function calculateBattleFinalStats({
   };
   const metadataByEffectId = new Map((effectMetadataRows ?? []).map((row) => [row.effectRowId, row]));
   const scenarioOverridesByEffectId = buildScenarioEffectOverrides({ stateControls, scenarioSettings });
-  const decoratedRows = (ledgerRows ?? []).map((row) => {
+  const decoratedRows = (ledgerRows ?? []).flatMap((row) => {
     const metadata = metadataByEffectId.get(row.sourceTrace?.effectRowId ?? row.effectRowId);
     const effectRowId = row.sourceTrace?.effectRowId ?? row.effectRowId;
-    return applyScenarioEffectOverride(
+    const decorated = applyScenarioEffectOverride(
       decorateLedgerRow(row, metadata),
       scenarioOverridesByEffectId.get(effectRowId),
     );
+    return expandRuntimeLedgerRow(decorated);
   });
   const runtimeStatsByCharacterId = buildRuntimeSourceStatsByCharacterId({
     party,
@@ -272,6 +278,49 @@ function applyScenarioEffectOverride(row, override) {
   };
 }
 
+function expandRuntimeLedgerRow(row) {
+  const effectRowId = row.sourceTrace?.effectRowId ?? row.effectRowId;
+  if (effectRowId !== jingliuMoonlightEffectRowId) return [row];
+  return [
+    buildJingliuMoonlightSplitRow(row, {
+      effectRowId: jingliuMoonlightBaseEffectRowId,
+      ledgerSuffix: "base",
+      sourceDisplayLabel: "특성 · 달빛 스택",
+      minEidolon: null,
+      perStack: jingliuMoonlightBaseCritDamagePerStack,
+    }),
+    buildJingliuMoonlightSplitRow(row, {
+      effectRowId: jingliuMoonlightE4EffectRowId,
+      ledgerSuffix: "e4",
+      sourceDisplayLabel: "성혼 4 · 달의 검을 쥐고",
+      minEidolon: 4,
+      perStack: jingliuMoonlightE4CritDamagePerStack,
+    }),
+  ];
+}
+
+function buildJingliuMoonlightSplitRow(row, { effectRowId, ledgerSuffix, sourceDisplayLabel, minEidolon, perStack }) {
+  return {
+    ...row,
+    ledgerId: `${row.ledgerId}:${ledgerSuffix}`,
+    sourceRowId: `${row.sourceRowId}:${ledgerSuffix}`,
+    resolvedValue: perStack,
+    minEidolon,
+    metadata: {
+      ...(row.metadata ?? {}),
+      effectRowId,
+      sourceDisplayLabel,
+      minEidolon,
+      sourceText: row.metadata?.sourceText ?? row.sourceTrace?.sourceText ?? "",
+    },
+    sourceTrace: {
+      ...(row.sourceTrace ?? {}),
+      effectRowId,
+      sourceRowId: `${row.sourceTrace?.sourceRowId ?? row.sourceRowId}:${ledgerSuffix}`,
+    },
+  };
+}
+
 function buildRuntimeSourceStatsByCharacterId({
   party = [],
   partyCharacterIds,
@@ -312,12 +361,15 @@ function applyRuntimeSourceStatResolution(row, {
 } = {}) {
   const sourceTrace = String(row.metadata?.sourceTrace ?? row.sourceTrace?.effectRowId ?? row.effectRowId ?? "");
   const effectRowId = row.sourceTrace?.effectRowId ?? row.effectRowId;
-  if (effectRowId === jingliuMoonlightEffectRowId) {
+  if (effectRowId === jingliuMoonlightBaseEffectRowId || effectRowId === jingliuMoonlightE4EffectRowId) {
     const stacks = Number(partyBranchState?.jingliuMoonlightStacks ?? jingliuMoonlightBaseStacks);
-    return markRuntimeResolved(row, stacks * jingliuMoonlightCritDamagePerStack, {
+    const perStack = effectRowId === jingliuMoonlightE4EffectRowId
+      ? jingliuMoonlightE4CritDamagePerStack
+      : jingliuMoonlightBaseCritDamagePerStack;
+    return markRuntimeResolved(row, stacks * perStack, {
       type: "jingliuMoonlightAutoStacks",
       stackCount: stacks,
-      perStack: jingliuMoonlightCritDamagePerStack,
+      perStack,
     });
   }
   if (row.ownerId === "Cyrene_00") {
@@ -708,18 +760,19 @@ function mergeTotals(...totalsList) {
 function decorateLedgerRow(row, metadata) {
   const effectRowId = row.sourceTrace?.effectRowId ?? row.effectRowId;
   const targetPolicyOverride = targetPolicyOverridesByEffectId.get(effectRowId);
+  const rowMetadata = metadata ?? row.metadata ?? null;
   return {
     ...row,
-    stat: metadata?.stat ?? row.stat,
+    stat: rowMetadata?.stat ?? row.stat,
     targetPolicy: targetPolicyOverride ?? row.targetPolicy,
-    metadata,
+    metadata: rowMetadata,
     targetPolicyOverride: targetPolicyOverride ? {
       effectRowId,
       originalTargetPolicy: row.targetPolicy,
       targetPolicy: targetPolicyOverride,
     } : null,
-    sourceLabel: metadata?.sourceLabel ?? row.ownerId ?? "unknown",
-    minEidolon: metadata?.minEidolon ?? null,
+    sourceLabel: rowMetadata?.sourceLabel ?? row.sourceLabel ?? row.ownerId ?? "unknown",
+    minEidolon: rowMetadata?.minEidolon ?? row.minEidolon ?? null,
   };
 }
 
@@ -733,6 +786,9 @@ function shouldApplyLedgerRow(row, context) {
   const ownerEidolon = Number(context.partyEidolons.get(row.ownerId) ?? 0);
   if (Number.isFinite(Number(row.minEidolon)) && ownerEidolon < Number(row.minEidolon)) {
     return { apply: false, reason: "eidolon_requirement_not_met" };
+  }
+  if (row.targetExcludesOwner && row.ownerId === context.activeCharacterId) {
+    return { apply: false, reason: "target_excludes_owner" };
   }
   if (row.runtimeTargetCharacterId) {
     return row.runtimeTargetCharacterId === context.activeCharacterId

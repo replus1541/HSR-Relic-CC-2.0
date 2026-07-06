@@ -72,7 +72,8 @@ export function buildBattleStatEvaluation({
     row("primary", primaryLabel(primaryStat), finalStats[primaryStat], primaryStatKeys[primaryStat] ?? [primaryStat], { level: "neutral" }, { valueStat: primaryStat }),
     row("speed", "속도", finalStats.speed, ["speed", "speedRatio"]),
   ];
-  const critRows = template.usesCrit
+  const showCritRows = template.usesCrit || hasRows(["critRate", "critDamage", "dealtCritDamage", "followCritDamage"]);
+  const critRows = showCritRows
     ? [
         row("critRate", "치확", finalStats.critRate, ["critRate"], getCritRateEvaluation(finalStats.critRate)),
         row("critDamage", "치피", finalStats.critDamage, ["critDamage"]),

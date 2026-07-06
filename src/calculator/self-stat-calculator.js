@@ -49,7 +49,7 @@ export function calculateSelfEquipmentStats({
 
 export function formatSelfStatValue(stat, value) {
   if (!Number.isFinite(Number(value))) return "-";
-  if (isPercentStat(stat)) return `${formatNumber(Number(value) * 100, 1)}%`;
+  if (isPercentStat(stat)) return `${formatNumber(Number(value) * 100, 1)} %`;
   return formatNumber(value, stat === "speed" ? 1 : 0);
 }
 
@@ -200,7 +200,7 @@ function buildFinalStats(base, totals) {
     atk: base.atk * (1 + valueOf(totals.atkRatio)) + valueOf(totals.atkFlat),
     def: base.def * (1 + valueOf(totals.defRatio)) + valueOf(totals.defFlat),
     speed: base.speed * (1 + valueOf(totals.speedRatio)) + valueOf(totals.speed),
-    critRate: clamp(base.critRate + valueOf(totals.critRate), 0, 1),
+    critRate: Math.max(0, base.critRate + valueOf(totals.critRate)),
     critDamage: base.critDamage + valueOf(totals.critDamage),
     elementDamage: valueOf(totals.elementDamage),
     allDamage: valueOf(totals.allDamage),

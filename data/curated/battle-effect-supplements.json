@@ -49,6 +49,20 @@
       "effectType": "buff",
       "targetPolicy": "self",
       "stat": "toughnessDamageRatio"
+    },
+    {
+      "effectRowId": "effect:PlayerBoy_20:supplement:mimiSupportTrueDamage",
+      "sourceId": "source:PlayerBoy_20:supplement:mimiSupportTrueDamage",
+      "ownerId": "PlayerBoy_20",
+      "sourceLabel": "개척자 • 기억",
+      "sourceDisplayLabel": "기억 정령 스킬 · 내가! 도와줄게!",
+      "sourceTrace": "Fandom:Trailblazer_Remembrance:memospriteSkill:LemmeHelpYou:trueDamageRatio:curated-source-2026-07-06",
+      "sourceCategory": "memospriteSkill",
+      "sourceTitle": "내가! 도와줄게!",
+      "minEidolon": null,
+      "effectType": "buff",
+      "targetPolicy": "singleAlly",
+      "stat": "trueDamageRatio"
     }
   ],
   "ledgerRows": [
@@ -101,6 +115,32 @@
         "resolvedEffectId": "resolved:effect:Gallagher_00:supplement:E6:breakEffect",
         "normalizedEffectId": "normalized:effect:Gallagher_00:supplement:E6:breakEffect",
         "canonicalEffectKey": "effect|gallagher_00|curated_source|source:gallagher_00:supplement:e6:breakeffect|data_curated_battle-effect-supplements.json|buff|self|support|none|none|none",
+        "dedupeRole": "winner"
+      }
+    },
+    {
+      "ledgerId": "ledger:curated:effect:PlayerBoy_20:supplement:mimiSupportTrueDamage",
+      "sourceId": "source:PlayerBoy_20:supplement:mimiSupportTrueDamage",
+      "sourceRowId": "source:PlayerBoy_20:supplement:mimiSupportTrueDamage",
+      "canonicalEffectKey": "effect|playerboy_20|curated_source|source:playerboy_20:supplement:mimisupporttruedamage|data_curated_battle-effect-supplements.json|buff|single_ally|support|none|none|none",
+      "valueMode": "fixed",
+      "ownerId": "PlayerBoy_20",
+      "subjectId": "PlayerBoy_20",
+      "targetPolicy": "single_ally",
+      "stat": "trueDamageRatio",
+      "resolvedValue": 0.3,
+      "blockedReason": null,
+      "skippedReason": null,
+      "usedForCalculation": true,
+      "category": "effect",
+      "calculationStatus": "calculation_ready",
+      "sourceTrace": {
+        "sourceId": "source:PlayerBoy_20:supplement:mimiSupportTrueDamage",
+        "sourceRowId": "source:PlayerBoy_20:supplement:mimiSupportTrueDamage",
+        "effectRowId": "effect:PlayerBoy_20:supplement:mimiSupportTrueDamage",
+        "resolvedEffectId": "resolved:effect:PlayerBoy_20:supplement:mimiSupportTrueDamage",
+        "normalizedEffectId": "normalized:effect:PlayerBoy_20:supplement:mimiSupportTrueDamage",
+        "canonicalEffectKey": "effect|playerboy_20|curated_source|source:playerboy_20:supplement:mimisupporttruedamage|data_curated_battle-effect-supplements.json|buff|single_ally|support|none|none|none",
         "dedupeRole": "winner"
       }
     },

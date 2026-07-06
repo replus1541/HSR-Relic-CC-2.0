@@ -1,21 +1,41 @@
 import fs from "node:fs";
 import { calculateBattleFinalStats } from "../src/calculator/battle-final-stat-calculator.js";
-import { buildDamageContributionViews } from "../src/calculator/battle-stat-evaluation.js";
+import { buildBattleStatEvaluation, buildDamageContributionViews } from "../src/calculator/battle-stat-evaluation.js";
+import { buildLightConeEffectRows } from "../src/calculator/lightcone-effect-ledger.js";
 import { calculateSkillDamageCards } from "../src/calculator/skill-damage-calculator.js";
 
 const characterIdentity = readJson("data/generated/character-identity.json");
 const characterStatBaseline = readJson("data/generated/character-stat-baseline.json");
 const equipmentStatModel = readJson("data/generated/equipment-stat-model.json");
 const defaultCharacterBuilds = readJson("data/generated/default-character-builds.json");
+const customRelicTypeProfiles = readJson("data/curated/custom-relic-type-profiles.json");
 const lightconeCandidates = readJson("data/legacy-reference/game-db/lightcone-effect-candidates.json");
 const combatLedgerSample = readJson("data/generated/combat-ledger-sample.json");
 const battleEffectMetadata = readJson("data/generated/battle-effect-metadata.json");
+const hoyowikiSourceEffectSupplements = readJson("data/generated/hoyowiki-source-effect-supplements.json");
+const battleEffectSupplements = readJson("data/curated/battle-effect-supplements.json");
 const skillDamageMetadata = readJson("data/generated/skill-damage-metadata.json");
 const characterStateControls = readJson("data/curated/character-state-controls.json");
 
 const enemy = { count: 3, level: 95, toughness: 90, resistance: 20 };
 const checks = [];
 const samples = [];
+const supersededGeneratedEffectRowIds = new Set(hoyowikiSourceEffectSupplements.supersedesEffectRowIds ?? []);
+const excludedEffectRowIds = new Set([
+  "effect:Jingliu_00:hoyowiki-source:E4:달의_검을_쥐고:allDamage:1",
+]);
+const baseLedgerRows = [
+  ...((combatLedgerSample.rows ?? combatLedgerSample.ledgerRows ?? [])
+    .filter((row) => !supersededGeneratedEffectRowIds.has(row.sourceTrace?.effectRowId ?? row.effectRowId))),
+  ...(hoyowikiSourceEffectSupplements.ledgerRows ?? []),
+  ...(battleEffectSupplements.ledgerRows ?? []),
+].filter((row) => !excludedEffectRowIds.has(row.sourceTrace?.effectRowId ?? row.effectRowId));
+const baseEffectMetadataRows = [
+  ...((battleEffectMetadata.rows ?? [])
+    .filter((row) => !supersededGeneratedEffectRowIds.has(row.effectRowId))),
+  ...(hoyowikiSourceEffectSupplements.metadataRows ?? []),
+  ...(battleEffectSupplements.metadataRows ?? []),
+].filter((row) => !excludedEffectRowIds.has(row.effectRowId));
 
 checkNormalFollowUp();
 checkDot();
@@ -27,6 +47,12 @@ checkCharacterStateControlCatalog();
 checkCharacterStateControlsResolveEffectRows();
 checkCipherRecordedTrueDamage();
 checkTrueDamageRatio();
+checkLightConeTeamCritBuffs();
+checkCritBuffsVisibleForSupportProfiles();
+checkTrailblazerCritBuffVisibleForAllyDealer();
+checkTrailblazerMimiSupportTrueDamageVisibleForAllyDealer();
+checkHyacineSpeedSources();
+checkJingliuMoonlightRows();
 
 const failed = checks.filter((check) => !check.pass);
 const reportText = [
@@ -177,17 +203,131 @@ function checkTrueDamageRatio() {
   samples.push(`Cyrene trueDamageRatio: base=${round(baseCard?.critDamage)}, with=${round(trueCard?.critDamage)}, true=${round(trueCard?.trueDamage)}`);
 }
 
+function checkLightConeTeamCritBuffs() {
+  const base = calculateFor("PlayerBoy_20", ["PlayerBoy_20", "Sparkle_00"]);
+  const withSparkleLightCone = calculateFor("PlayerBoy_20", [
+    "PlayerBoy_20",
+    { characterId: "Sparkle_00", lightconeId: "wiki-1936", lightconeRank: 1 },
+  ]);
+  const critRateDelta = Number(withSparkleLightCone.battleResult.finalStats?.critRate ?? 0) - Number(base.battleResult.finalStats?.critRate ?? 0);
+  const critDamageDelta = Number(withSparkleLightCone.battleResult.finalStats?.critDamage ?? 0) - Number(base.battleResult.finalStats?.critDamage ?? 0);
+  const lightconeRows = withSparkleLightCone.battleResult.appliedRows.filter((row) => row.effectType === "lightcone" || row.metadata?.effectType === "lightcone");
+  record(
+    "Sparkle signature light cone team crit buffs apply",
+    Math.abs(critRateDelta - 0.1) < 1e-6 && Math.abs(critDamageDelta - 0.28) < 1e-6 && lightconeRows.length >= 2,
+    `critRateDelta=${round(critRateDelta, 3)} critDamageDelta=${round(critDamageDelta, 3)} lightconeRows=${lightconeRows.length}`,
+  );
+  samples.push(`Sparkle LC team crit: CR +${round(critRateDelta, 3)}, CD +${round(critDamageDelta, 3)}`);
+}
+
+function checkCritBuffsVisibleForSupportProfiles() {
+  const result = calculateFor("PlayerBoy_20", [
+    "PlayerBoy_20",
+    { characterId: "Sparkle_00", lightconeId: "wiki-1936", lightconeRank: 1 },
+  ]);
+  const evaluation = buildBattleStatEvaluation({
+    battleResult: result.battleResult,
+    customTypeProfile: getCustomTypeProfile("PlayerBoy_20"),
+    enemy,
+  });
+  const critRateRow = evaluation.groups.flatMap((group) => group.rows ?? []).find((row) => row.key === "critRate");
+  const sourceLabels = (critRateRow?.entries ?? []).map((entry) => entry.label).join(" | ");
+  record(
+    "crit buffs are visible in major stat panel for support profiles",
+    Boolean(critRateRow) && (critRateRow.entries ?? []).some((entry) => String(entry.label ?? "").includes("속세에서의 유희")),
+    `critRateRow=${Boolean(critRateRow)} labels=${sourceLabels || "-"}`,
+  );
+}
+
+function checkTrailblazerCritBuffVisibleForAllyDealer() {
+  const result = calculateFor("Seele_00", [
+    "Seele_00",
+    { characterId: "PlayerBoy_20", eidolon: 1 },
+  ]);
+  const evaluation = buildBattleStatEvaluation({
+    battleResult: result.battleResult,
+    customTypeProfile: getCustomTypeProfile("Seele_00"),
+    enemy,
+  });
+  const critRateRow = evaluation.groups.flatMap((group) => group.rows ?? []).find((row) => row.key === "critRate");
+  const hasTrailblazerSource = (critRateRow?.entries ?? []).some((entry) => entry.ownerId === "PlayerBoy_20" && Number(entry.value ?? 0) > 0);
+  record(
+    "Remembrance Trailblazer ally crit buff is visible for active dealer",
+    Boolean(critRateRow) && hasTrailblazerSource,
+    `critRateRow=${Boolean(critRateRow)} trailblazerSource=${hasTrailblazerSource}`,
+  );
+}
+
+function checkTrailblazerMimiSupportTrueDamageVisibleForAllyDealer() {
+  const e0 = calculateFor("Seele_00", [
+    "Seele_00",
+    { characterId: "PlayerBoy_20", eidolon: 0 },
+  ]);
+  const e4 = calculateFor("Seele_00", [
+    "Seele_00",
+    { characterId: "PlayerBoy_20", eidolon: 4 },
+  ]);
+  const evaluation = buildBattleStatEvaluation({
+    battleResult: e0.battleResult,
+    customTypeProfile: getCustomTypeProfile("Seele_00"),
+    enemy,
+  });
+  const trueDamageRow = evaluation.groups.flatMap((group) => group.rows ?? []).find((row) => row.key === "trueDamageRatio");
+  const hasTrailblazerSource = (trueDamageRow?.entries ?? []).some((entry) => entry.ownerId === "PlayerBoy_20" && Number(entry.value ?? 0) > 0);
+  const e0Ratio = Number(e0.battleResult.damageModifiers?.trueDamageRatio ?? 0);
+  const e4Ratio = Number(e4.battleResult.damageModifiers?.trueDamageRatio ?? 0);
+  record(
+    "Remembrance Trailblazer Mimi Support true damage is visible for active dealer",
+    Math.abs(e0Ratio - 0.3) < 1e-6 && Math.abs(e4Ratio - 0.36) < 1e-6 && Boolean(trueDamageRow) && hasTrailblazerSource,
+    `E0=${round(e0Ratio, 3)} E4=${round(e4Ratio, 3)} trueDamageRow=${Boolean(trueDamageRow)} trailblazerSource=${hasTrailblazerSource}`,
+  );
+  samples.push(`Trailblazer Mimi Support trueDamageRatio: E0=${round(e0Ratio, 3)}, E4=${round(e4Ratio, 3)}`);
+}
+
+function checkHyacineSpeedSources() {
+  const base = calculateFor("Hyacine_00", [{ characterId: "Hyacine_00", lightconeId: "wiki-3351", lightconeRank: 1 }]);
+  const e2 = calculateFor("Hyacine_00", [{ characterId: "Hyacine_00", eidolon: 2, lightconeId: "wiki-3351", lightconeRank: 1 }]);
+  const signature = calculateFor("Hyacine_00", [{ characterId: "Hyacine_00", lightconeId: "wiki-3775", lightconeRank: 1 }]);
+  const e2Delta = Number(e2.battleResult.finalStats?.speed ?? 0) - Number(base.battleResult.finalStats?.speed ?? 0);
+  const signatureDelta = Number(signature.battleResult.finalStats?.speed ?? 0) - Number(base.battleResult.finalStats?.speed ?? 0);
+  record(
+    "Hyacine speed sources apply in calculator",
+    e2Delta > 20 && signatureDelta > 15,
+    `E2 speedDelta=${round(e2Delta, 2)} signature speedDelta=${round(signatureDelta, 2)}`,
+  );
+  samples.push(`Hyacine speed: E2 +${round(e2Delta, 2)}, signature +${round(signatureDelta, 2)}`);
+}
+
+function checkJingliuMoonlightRows() {
+  const e3 = calculateFor("Jingliu_00", [{ characterId: "Jingliu_00", eidolon: 3 }]);
+  const e4 = calculateFor("Jingliu_00", [{ characterId: "Jingliu_00", eidolon: 4 }]);
+  const e3Rows = e3.battleResult.appliedRows.filter((row) => String(row.sourceTrace?.effectRowId ?? "").includes("moonlightStacksCritDamage"));
+  const e4Rows = e4.battleResult.appliedRows.filter((row) => String(row.sourceTrace?.effectRowId ?? "").includes("moonlightStacksCritDamage"));
+  const wrongAllDamage = e4.battleResult.appliedRows.some((row) => row.sourceTrace?.effectRowId === "effect:Jingliu_00:hoyowiki-source:E4:달의_검을_쥐고:allDamage:1");
+  record(
+    "Jingliu moonlight crit damage is split and E4 allDamage misread excluded",
+    e3Rows.length === 1 && e4Rows.length === 2 && !wrongAllDamage,
+    `E3 rows=${e3Rows.length} E4 rows=${e4Rows.length} wrongAllDamage=${wrongAllDamage}`,
+  );
+  samples.push(`Jingliu moonlight rows: E3=${e3Rows.length}, E4=${e4Rows.length}`);
+}
+
 function getCard(characterId, predicate, scenarioSettings = {}) {
   const result = calculateFor(characterId, [characterId], scenarioSettings);
   return result.skillCards.find((card) => predicate(card)) ?? result.skillCards[0] ?? null;
 }
 
 function calculateFor(activeCharacterId, partyCharacterIds, scenarioSettings = {}) {
-  const party = partyCharacterIds.map((characterId, index) => ({
+  const party = partyCharacterIds.map((item, index) => {
+    const slot = typeof item === "string" ? { characterId: item } : item;
+    return {
     slotId: `slot-${index + 1}`,
-    characterId,
-    eidolon: 0,
-  }));
+    characterId: slot.characterId,
+    eidolon: Number(slot.eidolon ?? 0),
+    lightconeId: slot.lightconeId,
+    lightconeRank: slot.lightconeRank ?? 1,
+    };
+  });
   const battleResult = calculateBattleFinalStats({
     party,
     activeSlotId: "slot-1",
@@ -196,8 +336,15 @@ function calculateFor(activeCharacterId, partyCharacterIds, scenarioSettings = {
     characterStatBaseline,
     equipmentStatModel,
     lightCones: lightconeCandidates.lightCones ?? [],
-    ledgerRows: combatLedgerSample.rows ?? combatLedgerSample.ledgerRows ?? [],
-    effectMetadataRows: battleEffectMetadata.rows ?? [],
+    ledgerRows: [
+      ...baseLedgerRows,
+      ...buildLightConeEffectRows({
+        party,
+        lightCones: lightconeCandidates.lightCones ?? [],
+        characterGetter: getCharacter,
+      }),
+    ],
+    effectMetadataRows: baseEffectMetadataRows,
     scenarioSettings,
     stateControls: characterStateControls.controls ?? [],
   });
@@ -216,6 +363,10 @@ function getCharacter(characterId) {
 
 function getDefaultBuild(characterId) {
   return defaultCharacterBuilds.builds?.[characterId] ?? null;
+}
+
+function getCustomTypeProfile(characterId) {
+  return (customRelicTypeProfiles.rows ?? []).find((row) => row.characterId === characterId) ?? null;
 }
 
 function record(name, pass, detail) {
