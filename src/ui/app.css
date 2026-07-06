@@ -1274,6 +1274,11 @@ p {
   object-fit: contain;
 }
 
+.calc-main-dealer-icons img.is-element-icon {
+  width: 22px;
+  height: 22px;
+}
+
 .calc-main-dealer-chevron {
   justify-self: end;
   width: 12px;

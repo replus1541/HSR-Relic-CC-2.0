@@ -1345,8 +1345,8 @@ function MainDealerOptionContent({ slot, fallbackLabel = "캐릭터 미선택" }
         <small>{character ? getCharacterTypeLabel(character) : "-"}</small>
       </span>
       <span className="calc-main-dealer-icons" aria-hidden="true">
-        {character?.element && <img src={filterIconUrl(getElementIconFile(character.element))} alt="" />}
-        {character?.path && <img src={filterIconUrl(getPathIconFile(character.path))} alt="" />}
+        {character?.element && <img className="is-element-icon" src={filterIconUrl(getElementIconFile(character.element))} alt="" />}
+        {character?.path && <img className="is-path-icon" src={filterIconUrl(getPathIconFile(character.path))} alt="" />}
       </span>
     </span>
   );
