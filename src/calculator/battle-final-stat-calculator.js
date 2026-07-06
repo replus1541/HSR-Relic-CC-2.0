@@ -321,7 +321,7 @@ function buildEquipmentLedgerRows({ party = [], defaultBuildGetter } = {}) {
         effectRowId: `effect:equipment:${characterId}:wiki-relic-4769:all_allies:elation`,
         ownerId: characterId,
         sourceLabel: "천명에 응해 먼 길을 떠난 점술가",
-        sourceDisplayLabel: "유물 4셋 · 천명에 응해 먼 길을 떠난 점술가",
+        sourceDisplayLabel: "유물 4셋 효과",
         sourceCategory: "relic",
         sourceTitle: "천명에 응해 먼 길을 떠난 점술가",
         effectType: "buff",

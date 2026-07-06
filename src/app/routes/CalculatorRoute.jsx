@@ -1379,6 +1379,15 @@ function getProfileStatSpecs(character, profile, slot) {
       specs.push(["치피", "critDamage"]);
       return specs;
     }
+    if (character?.characterId === "Sparxie_00") {
+      return [
+        ["치확", "critRate"],
+        ["치피", "critDamage"],
+        ["환락도", "elation"],
+        ["공격력", "atk"],
+        ["속도", "speed"],
+      ];
+    }
     return [
       ["치확", "critRate"],
       ["치피", "critDamage"],
@@ -1423,6 +1432,7 @@ function isElationTypeProfile(profile) {
 
 function buildCharacterProfileRows(character, slot, selfStats) {
   const profile = getCustomTypeProfile(character.characterId);
+  const displaySelfStats = buildDisplaySelfStats(character, selfStats);
   const typeLabel = profile?.uiTypeProfile?.displayTypeLabel ?? `${elementLabels[character.element] ?? character.element ?? "-"} / ${pathLabels[character.path] ?? character.path ?? "-"}`;
   const primaryStat = isElationTypeProfile(profile)
     ? "elation"
@@ -1430,13 +1440,32 @@ function buildCharacterProfileRows(character, slot, selfStats) {
   const primaryLabel = formatPrimaryStatProfile(profile);
   const rows = [
     { label: "타입", value: typeLabel, kind: "role" },
-    { label: `주요스탯 : ${primaryLabel}`, value: formatCalculatedSelfStat(selfStats?.stats, primaryStat), kind: "primary" },
+    { label: `주요스탯 : ${primaryLabel}`, value: formatCalculatedSelfStat(displaySelfStats?.stats, primaryStat), kind: "primary" },
   ];
   for (const [label, stat] of getProfileStatSpecs(character, profile, slot)) {
     if (stat === primaryStat) continue;
-    rows.push({ label, value: formatCalculatedSelfStat(selfStats?.stats, stat), kind: stat === "speed" ? "speed" : "metric" });
+    rows.push({ label, value: formatCalculatedSelfStat(displaySelfStats?.stats, stat), kind: stat === "speed" ? "speed" : "metric" });
   }
   return rows;
+}
+
+function buildDisplaySelfStats(character, selfStats) {
+  if (character?.characterId !== "Sparxie_00" || !selfStats?.stats) return selfStats;
+  const atk = Number(selfStats.stats.atk ?? 0);
+  const dynamicElation = calculateSparxieElationByAtk(atk);
+  if (dynamicElation <= 0) return selfStats;
+  return {
+    ...selfStats,
+    stats: {
+      ...selfStats.stats,
+      elation: Number(selfStats.stats.elation ?? 0) + dynamicElation,
+    },
+  };
+}
+
+function calculateSparxieElationByAtk(atk) {
+  const value = Math.min(80, Math.max(0, Math.floor((Number(atk ?? 0) - 2000 + 1e-9) / 100) * 5));
+  return Number.isFinite(value) ? value : 0;
 }
 
 function formatMainStatList(mainStats = {}) {
