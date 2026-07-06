@@ -136,7 +136,7 @@ function buildRelicEntries(slot, defaultBuild, model) {
     const mainStat = piece.fixedMainStat ?? relicBuild.mainStats[piece.key] ?? relicBuild.pieces[piece.key]?.mainStat;
     const mainValue = model?.relicMainStatOptions?.[mainStat]?.value;
     if (Number.isFinite(Number(mainValue))) {
-      entries.push({ stat: mainStat, value: Number(mainValue), sourceType: "유물", source: formatRelicPieceSource("주 옵션", piece, pieceSet), conditionStatus: "always-on" });
+      entries.push({ stat: mainStat, value: Number(mainValue), sourceType: "유물", source: formatRelicPieceSource("주옵", piece, pieceSet), conditionStatus: "always-on" });
     }
     const subStats = relicBuild.pieces[piece.key]?.subStats?.length
       ? relicBuild.pieces[piece.key].subStats
@@ -146,7 +146,7 @@ function buildRelicEntries(slot, defaultBuild, model) {
       const rolls = Number.isFinite(Number(subStat.rolls)) ? Number(subStat.rolls) : 0;
       const value = Number(rollValue) * (1 + Math.max(0, rolls));
       if (Number.isFinite(value) && value !== 0) {
-        entries.push({ stat: subStat.stat, value, sourceType: "유물", source: formatRelicPieceSource("부 옵션", piece, pieceSet), conditionStatus: "assumed-average-roll" });
+        entries.push({ stat: subStat.stat, value, sourceType: "유물", source: formatRelicPieceSource("부옵", piece, pieceSet), conditionStatus: "assumed-average-roll" });
       }
     }
   }
@@ -160,8 +160,7 @@ function getRelicPieceSet(piece, set4, set4Alt, set2) {
 }
 
 function formatRelicPieceSource(optionType, piece, relicSet) {
-  const setSuffix = relicSet?.name ? ` (${relicSet.name})` : "";
-  return `유물 ${optionType} · ${piece.name}${setSuffix}`;
+  return `유물 ${optionType} · ${piece.name}`;
 }
 
 function buildAssumedSubStats(priority = [], mainStat) {

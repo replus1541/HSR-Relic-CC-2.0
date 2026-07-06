@@ -168,7 +168,7 @@ const primaryStatLabels = {
   speed: "속도",
   breakEffect: "격파 특수효과",
   critRate: "치명타 확률",
-  critDamage: "치명타 피해",
+  critDamage: "치피",
   effectHitRate: "효과 명중",
 };
 
@@ -1223,6 +1223,20 @@ function SettingsIcon() {
         strokeLinejoin="round"
         strokeWidth="2"
         d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm7.4-2.1a7.7 7.7 0 0 0 0-2.8l2-1.5-2-3.5-2.4 1a7.8 7.8 0 0 0-2.4-1.4L14.2 2h-4.4l-.4 3.2A7.8 7.8 0 0 0 7 6.6l-2.4-1-2 3.5 2 1.5a7.7 7.7 0 0 0 0 2.8l-2 1.5 2 3.5 2.4-1a7.8 7.8 0 0 0 2.4 1.4l.4 3.2h4.4l.4-3.2a7.8 7.8 0 0 0 2.4-1.4l2.4 1 2-3.5-2-1.5Z"
+      />
+    </svg>
+  );
+}
+
+function PlusIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16">
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="2.2"
+        d="M12 5v14M5 12h14"
       />
     </svg>
   );
@@ -3104,6 +3118,7 @@ function LegacyConditionComparePanel({ party, activeSlotId, onMainDealerChange, 
 function ConditionPartySummary({ party, activeSlotId, onSelectSlot }) {
   const [open, setOpen] = useState(false);
   const activeSlot = party.find((slot) => slot.slotId === activeSlotId) ?? party[0];
+  const activeCharacter = getCharacter(activeSlot?.characterId);
 
   const renderOption = (slot, index) => {
     return <MainDealerOptionContent slot={slot} fallbackLabel={`빈 슬롯 ${index + 1}`} />;
@@ -3117,17 +3132,15 @@ function ConditionPartySummary({ party, activeSlotId, onSelectSlot }) {
         if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
       }}
     >
-      <div className="calc-main-dealer-trigger calc-party-summary-trigger">
-        {renderOption(activeSlot, party.indexOf(activeSlot))}
-      </div>
       <button
-        className="calc-icon-button calc-condition-dealer-settings"
+        className="calc-main-dealer-trigger calc-party-summary-trigger"
         type="button"
-        aria-label="비교 캐릭터 설정"
         aria-expanded={open}
+        aria-label={`비교 캐릭터 ${activeCharacter?.displayName ?? "캐릭터 미선택"} 선택`}
         onClick={() => setOpen((current) => !current)}
       >
-        <SettingsIcon />
+        {renderOption(activeSlot, party.indexOf(activeSlot))}
+        <span className="calc-main-dealer-chevron" aria-hidden="true" />
       </button>
       {open && (
         <div className="calc-main-dealer-menu calc-party-summary-menu" role="listbox" aria-label="파티 기준 캐릭터 선택">
@@ -3195,6 +3208,7 @@ function ConditionComparePanel({
   onRemoveCondition,
   onAutoRecommend,
   onToggleKeepSlot,
+  compareFeedback,
 }) {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [compareOverrides, setCompareOverrides] = useState({});
@@ -3267,7 +3281,10 @@ function ConditionComparePanel({
         <div className="calc-condition-editor-head">
           <h3>비교 조건</h3>
           <div className="calc-condition-actions-row">
-            <button className="calc-text-action-button is-primary" type="button" onClick={onAddCondition}>비교조건 추가</button>
+            <button className="calc-text-action-button is-primary" type="button" onClick={onAddCondition}>
+              <PlusIcon />
+              <span>비교조건 추가</span>
+            </button>
             <button className="calc-text-action-button" type="button" onClick={onAutoRecommend}>자동추천</button>
             <button
               className="calc-text-action-button calc-condition-recommend-settings-button"
@@ -3291,12 +3308,13 @@ function ConditionComparePanel({
                         className={`calc-auto-recommend-party-slot ${active ? "is-main-dealer" : ""} ${keep ? "is-keep" : "is-replace"}`}
                         type="button"
                         disabled={active}
+                        aria-pressed={keep}
                         onClick={() => onToggleKeepSlot(slot.slotId)}
                       >
                         <span className="calc-party-face">
                           <CharacterAvatar character={character} />
                         </span>
-                        <span className="calc-auto-recommend-keep-badge">{active ? "고정" : keep ? "유지" : "교체"}</span>
+                        <span className="calc-auto-recommend-keep-badge">{keep ? "고정" : "교체"}</span>
                       </button>
                     );
                   })}
@@ -3401,7 +3419,8 @@ function ConditionComparePanel({
             </div>
           </>
         ) : null}
-        <p className="calc-condition-meta-note">자동추천 기준: 보유 캐릭터 E{ownedCharacterEidolon}, 유지 슬롯 제외</p>
+        {compareFeedback && <p className="calc-condition-feedback">{compareFeedback}</p>}
+        <p className="calc-condition-meta-note">자동추천 기준: 보유 캐릭터 E{ownedCharacterEidolon}, 고정 슬롯 제외</p>
       </article>
 
       <EnemyEditor enemy={enemy} onChange={onEnemyChange} />
@@ -3684,6 +3703,7 @@ export function CalculatorRoute() {
   const [compareConditions, setCompareConditions] = useState(initialState.compareConditions);
   const [compareKeepSlotIds, setCompareKeepSlotIds] = useState(initialState.compareKeepSlotIds);
   const [compareEditorConditionId, setCompareEditorConditionId] = useState(null);
+  const [compareFeedback, setCompareFeedback] = useState("");
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [pickerOpen, setPickerOpen] = useState(false);
   const [lightconeSlotId, setLightconeSlotId] = useState(null);
@@ -3777,6 +3797,7 @@ export function CalculatorRoute() {
   }
 
   function applyCompareCondition(condition) {
+    setCompareFeedback("");
     setCompareConditions((current) => {
       const normalized = normalizeCompareCondition(condition, party, activeSlotId);
       if (!normalized) return current;
@@ -3789,11 +3810,17 @@ export function CalculatorRoute() {
 
   function toggleCompareKeepSlot(slotId) {
     if (slotId === activeSlotId) return;
+    const nextIsKeep = !compareKeepSlotIds.includes(slotId);
     setCompareKeepSlotIds((current) => (
       current.includes(slotId)
         ? current.filter((item) => item !== slotId)
         : [...current, slotId]
     ));
+    if (nextIsKeep) {
+      setCompareConditions((current) => current.filter((condition) => condition.slotId !== slotId));
+    }
+    const slotIndex = party.findIndex((slot) => slot.slotId === slotId);
+    setCompareFeedback(`${slotIndex >= 0 ? slotIndex + 1 : ""}번 슬롯을 ${nextIsKeep ? "고정" : "교체 후보"}으로 설정했습니다.`);
   }
 
   function buildAutoCompareConditions() {
@@ -3848,9 +3875,13 @@ export function CalculatorRoute() {
 
   function applyAutoCompareRecommendations() {
     const recommendations = buildAutoCompareConditions();
-    if (!recommendations.length) return;
+    if (!recommendations.length) {
+      setCompareFeedback("자동추천 가능한 비교조건이 없습니다. 고정 슬롯을 줄이거나 직접 비교조건을 추가해 주세요.");
+      return;
+    }
     if (compareConditions.length && !window.confirm("기존 비교 조건을 자동추천 조건으로 교체할까요?")) return;
     setCompareConditions(recommendations);
+    setCompareFeedback(`${recommendations.length}개 비교조건을 자동추천으로 적용했습니다.`);
   }
 
   function applyOwnedCharacterEidolon(value) {
@@ -3946,11 +3977,15 @@ export function CalculatorRoute() {
               compareConditions={compareConditions}
               compareKeepSlotIds={compareKeepSlotIds}
               ownedCharacterEidolon={ownedCharacterEidolon}
-              onAddCondition={() => setCompareEditorConditionId("__new__")}
+              onAddCondition={() => {
+                setCompareFeedback("");
+                setCompareEditorConditionId("__new__");
+              }}
               onEditCondition={setCompareEditorConditionId}
               onRemoveCondition={(conditionId) => setCompareConditions((current) => current.filter((condition) => condition.id !== conditionId))}
               onAutoRecommend={applyAutoCompareRecommendations}
               onToggleKeepSlot={toggleCompareKeepSlot}
+              compareFeedback={compareFeedback}
             />
           ) : (
             <>

@@ -16,18 +16,6 @@
       ]
     },
     {
-      "key": "jingliuMoonlightStacks",
-      "scope": "activeCharacter",
-      "characterId": "Jingliu_00",
-      "label": "경류 달빛",
-      "note": "전백 상태 달빛 스택당 치명타 피해 44%. 일반 파티 3스택, 기억정령 포함 시 최대 5스택.",
-      "defaultValue": 3,
-      "options": [3, 4, 5],
-      "format": "count",
-      "effectRowIds": ["effect:Jingliu_00:curated:moonlightStacksCritDamage"],
-      "valueFormula": { "type": "stackMultiplier", "unitValue": 0.44 }
-    },
-    {
       "key": "elationCertifiedBangerStacks",
       "scope": "activeFormula",
       "formulaType": "elation",

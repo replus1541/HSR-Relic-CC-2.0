@@ -775,14 +775,14 @@ p {
 }
 
 .calc-status-title-line {
-  display: grid;
-  grid-template-columns: minmax(0, max-content) 60px minmax(40px, 1fr);
+  display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
   min-width: 0;
 }
 
 .calc-status-title-line strong {
+  flex: 0 1 auto;
   min-width: 0;
 }
 
@@ -799,6 +799,7 @@ p {
 
 .calc-eidolon-control {
   display: block;
+  flex: 0 0 auto;
   min-width: 0;
 }
 
@@ -832,6 +833,7 @@ p {
 }
 
 .calc-lightcone-button {
+  margin-left: auto;
   justify-self: end;
   display: grid;
   place-items: center;
@@ -2061,10 +2063,22 @@ p {
   cursor: pointer;
 }
 
+.calc-party-recommendation-eidolon-tabs button {
+  color: rgba(197, 139, 85, 0.72);
+  font-size: 13px;
+  font-weight: 850;
+  line-height: 18px;
+}
+
 .calc-party-recommendation-eidolon-tabs button.is-active,
 .calc-settings-segmented button.is-active {
   background: rgba(192, 142, 73, 0.22);
   color: var(--calc-text);
+}
+
+.calc-party-recommendation-eidolon-tabs button.is-active {
+  color: #c58b55;
+  font-weight: 900;
 }
 
 .calc-contribution-card.is-top-contributor .calc-contribution-row i span {
@@ -2532,11 +2546,11 @@ p {
 
 .calc-condition-party-summary {
   position: relative;
-  grid-template-columns: minmax(0, 1fr) 42px;
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .calc-condition-party-summary .calc-main-dealer-trigger {
-  cursor: default;
+  cursor: pointer;
 }
 
 .calc-condition-dealer-settings {
@@ -2676,6 +2690,7 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 5px;
   min-height: 34px;
   border: 0;
   border-radius: 8px;
@@ -2685,6 +2700,10 @@ p {
   font-size: 0.74rem;
   font-weight: 900;
   cursor: pointer;
+}
+
+.calc-text-action-button svg {
+  flex: 0 0 auto;
 }
 
 .calc-text-action-button.is-primary {
@@ -2803,6 +2822,19 @@ p {
 .calc-auto-recommend-party-slot.is-keep:not(.is-main-dealer) .calc-auto-recommend-keep-badge {
   background: rgba(185, 227, 123, 0.2);
   color: #b9e37b;
+}
+
+.calc-auto-recommend-party-slot.is-replace .calc-auto-recommend-keep-badge {
+  background: rgba(197, 139, 85, 0.2);
+  color: #c58b55;
+}
+
+.calc-condition-feedback {
+  margin: 2px 0 0;
+  color: #b9e37b;
+  font-size: var(--text-label-size);
+  font-weight: 800;
+  line-height: var(--text-label-line);
 }
 
 .calc-condition-empty-note {
@@ -5225,8 +5257,7 @@ p {
   }
 
   .calc-status-title-line {
-    grid-template-columns: minmax(0, 1fr) 58px 44px;
-    gap: 8px;
+    gap: 6px;
   }
 
   .calc-status-head select {

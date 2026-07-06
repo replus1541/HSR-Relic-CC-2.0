@@ -103,6 +103,10 @@ const targetPolicyOverridesByEffectId = new Map([
 
 const hyacineSignatureLightConeId = "wiki-3775";
 const hyacineSignatureVulnerabilityByRank = [0.18, 0.225, 0.27, 0.315, 0.36];
+const jingliuMoonlightEffectRowId = "effect:Jingliu_00:curated:moonlightStacksCritDamage";
+const jingliuMoonlightCritDamagePerStack = 0.44;
+const jingliuMoonlightBaseStacks = 3;
+const jingliuMoonlightMaxStacks = 5;
 
 export function calculateBattleFinalStats({
   party = [],
@@ -157,6 +161,7 @@ export function calculateBattleFinalStats({
   ]).filter(([characterId]) => Boolean(characterId)));
   const partyBranchState = {
     activeCharacterPath: activeCharacter?.path ?? null,
+    jingliuMoonlightStacks: calculateJingliuMoonlightStacks(partyCharactersById),
     lightConesByCharacterId: partyLightConesByCharacterId,
     cyreneInParty: partyCharacterIds.has("Cyrene_00"),
     cyreneHasAnaxa: partyCharacterIds.has("Cyrene_00") && partyCharacterIds.has("Anaxa_00"),
@@ -306,6 +311,15 @@ function applyRuntimeSourceStatResolution(row, {
   partyBranchState,
 } = {}) {
   const sourceTrace = String(row.metadata?.sourceTrace ?? row.sourceTrace?.effectRowId ?? row.effectRowId ?? "");
+  const effectRowId = row.sourceTrace?.effectRowId ?? row.effectRowId;
+  if (effectRowId === jingliuMoonlightEffectRowId) {
+    const stacks = Number(partyBranchState?.jingliuMoonlightStacks ?? jingliuMoonlightBaseStacks);
+    return markRuntimeResolved(row, stacks * jingliuMoonlightCritDamagePerStack, {
+      type: "jingliuMoonlightAutoStacks",
+      stackCount: stacks,
+      perStack: jingliuMoonlightCritDamagePerStack,
+    });
+  }
   if (row.ownerId === "Cyrene_00") {
     const resolvedCyreneRow = resolveCyrenePoemReceiverRow(row, sourceTrace, { activeCharacterId, partyBranchState });
     if (resolvedCyreneRow) return resolvedCyreneRow;
@@ -627,6 +641,15 @@ function hasOtherNihilityCharacter(partyCharactersById, excludedCharacterId) {
     if (normalizeCharacterPath(character?.path) === "nihility") return true;
   }
   return false;
+}
+
+function calculateJingliuMoonlightStacks(partyCharactersById) {
+  let memospriteCount = 0;
+  for (const [characterId, character] of partyCharactersById ?? []) {
+    if (characterId === "Cyrene_00") continue;
+    if (normalizeCharacterPath(character?.path) === "memory") memospriteCount += 1;
+  }
+  return Math.min(jingliuMoonlightMaxStacks, jingliuMoonlightBaseStacks + memospriteCount);
 }
 
 function normalizeCharacterPath(path) {
